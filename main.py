@@ -18,15 +18,7 @@ from  langchain_core.documents.base import Document
 # except KeyboardInterrupt:
 #     pass
 
-
-vector_store = Chroma(persist_directory='chroma_db', embedding_function=OpenAIEmbeddings())
-retriever = vector_store.as_retriever()
-answer = retriever.invoke("mendez")
-print(answer)
-print('\n\n\n')
 rag_model = RAGModel()
-retriever2 = rag_model.retriever.get_retriever()
-print(retriever2.invoke("mendez"))
-# answer, retrieved_docs = rag_model.query("Is requirement 'System should be fast' a good requirement?")
-# print("\n\nAnswer:\n\n", answer)
-# print("\n\nRetrieved Documents:\n\n", retrieved_docs)
+answer, retrieved_docs = rag_model.query("Is requirement 'System should be fast' a good requirement?")
+print("\n\nAnswer:\n\n", answer)
+print("\n\nRetrieved Documents:\n\n", retrieved_docs)

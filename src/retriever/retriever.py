@@ -6,7 +6,7 @@ from src.query_translation.query_translator import query_translator
 
 class Retriever:
 
-    def __init__(self, persist_directory='chroma_db', type='basic'):
+    def __init__(self, type='basic', persist_directory='chroma_db' ):
         self.embedding_model = OpenAIEmbeddings()
         self.vector_store = Chroma(persist_directory=persist_directory, embedding_function=self.embedding_model)
         self.retriever = self.vector_store.as_retriever()

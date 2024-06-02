@@ -4,9 +4,8 @@ from langchain.prompts import ChatPromptTemplate
 
 
 class Generator:
-    def __init__(self, retriever):
+    def __init__(self):
         self.llm = ChatOpenAI(temperature=0)
-        self.retriever = retriever
     
     def generate_answer(self, question, context):
         # prompt = self.get_prompt(question, context)

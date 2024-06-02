@@ -6,8 +6,8 @@ from src.generator.generator import Generator
 
 class RAGModel:
     def __init__(self, type='basic'):
-        self.retriever = Retriever(type)
-        self.generator = Generator(self.retriever)
+        self.retriever = Retriever(type=type)
+        self.generator = Generator()
 
     def query(self, question):
         retrieved_docs = self.retriever.retrieve(question)
