@@ -26,7 +26,9 @@ class Retriever:
         if  self.type == 'step-back':
             self.query_translator = query_translator(type='step-back')
             adjusted_query = self.query_translator.translate_query(query)
-            documents =  self.retriever.invoke(adjusted_query)
+            documents_original_query =  self.retriever.invoke(query)
+            documents_stepback_query =  self.retriever.invoke(adjusted_query)
+            documents = documents_original_query + documents_stepback_query
             formatted_docs = self.get_page_content(documents)
             return formatted_docs
         else:
@@ -37,6 +39,8 @@ class Retriever:
         # print("Context:")
         # print(result)
         return result
+    
+    
 
     # def add_documents(self, new_documents):
         # self.vectorstore.add_documents(new_documents)

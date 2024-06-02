@@ -18,7 +18,7 @@ from  langchain_core.documents.base import Document
 # except KeyboardInterrupt:
 #     pass
 
-rag_model = RAGModel()
+rag_model = RAGModel(type='step-back')
 answer, retrieved_docs = rag_model.query("Is requirement 'System should be fast' a good requirement?")
 print("\n\nAnswer:\n\n", answer)
 print("\n\nRetrieved Documents:\n\n", retrieved_docs)

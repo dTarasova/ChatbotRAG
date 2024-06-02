@@ -1,4 +1,7 @@
 from langchain_core.prompts import ChatPromptTemplate, FewShotChatMessagePromptTemplate
+from langchain_openai import ChatOpenAI
+from langchain_core.output_parsers import StrOutputParser
+from langchain.prompts import ChatPromptTemplate
 
 class query_translator:
     def __init__(self, type):
@@ -45,6 +48,12 @@ def step_back_translate(query):
             # Few shot examples
             few_shot_prompt,
             # New question
-            ("user", "{question}"),
+            ("user", "{query}"),
         ]
     )
+
+    chain = prompt | ChatOpenAI(temperature=0) | StrOutputParser()
+
+    result =  chain.invoke({"query": query})
+    print('\n\nresult of step back translation: ', result)
+    return result
