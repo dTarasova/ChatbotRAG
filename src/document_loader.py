@@ -100,32 +100,82 @@ def add_docs_from_folder(folder_path):
         add_doc_todb(doc)
 
 
-def playaround_pymupdf(doc_path='data/first_batch/Rapid quality assurance with Requirements Smells.pdf'):
+def playaround_pymupdf(doc_path='data/Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf'):
 
     doc = pymupdf.open(doc_path)
+    toc = doc.get_toc()
 
-    page = doc.load_page(0)
-    content = page.get_contents()
-    print("content")
-    print(content)
-    links = page.get_links()
-    print("links")
-    for link in page.links():
-        print(link)
-    print("annots")
-    for annot in page.annots():
-        # do something with 'annot'
-        print(annot)
+    for toc_item in toc:
+        print(toc_item)
+    one_toc = toc[0]
+    print("\n\none_toc")
+    for toc_item in one_toc:
+        print(toc_item)
+        print(type(toc_item))
 
-    text = page.get_text("blocks")
-    for t in text:
-        print(t)
+    
+    #[[lvl, title, page, …], …]
+    # page = doc.load_page(0)
+    # content = page.get_contents()
+    # print("content")
+    # print(content)
+    # links = page.get_links()
+    # print("links")
+    # for link in page.links():
+    #     print(link)
+    # print("annots")
+    # for annot in page.annots():
+    #     # do something with 'annot'
+    #     print(annot)
 
-create_db()
-get_db()
+    # text = page.get_text("blocks")
+    # for t in text:
+    #     print(t)
+
+
 # add_docs_todb('data\_second_batch\Rapid quality assurance with Requirements Smells.pdf')
 # get_db()
 
+def extract_text_from_pdf(pdf_path):
+    """Extracts text from a PDF file."""
+    document = pymupdf.open(pdf_path)
+    text = ''
+    for page_num in range(len(document)):
+        page = document.load_page(page_num)
+        text += page.get_text()
+    return text
+
+def extract_paragraphs(pdf_path):
+    document = pymupdf.open(pdf_path)
+    text = []
+    for page_num in range(len(document)):
+        page = document.load_page(page_num)
+        paragraphs = page.get_text("blocks")
+        print(paragraphs)
+        text.extend(paragraphs)
+    return text
+
+def remove_references(text):
+    """
+    Removes the references section from the text.
+    Assumes the references section starts with a heading like 'References' or 'Bibliography'
+    and continues until the end of the document.
+    """
+    # Create a regex pattern to match the references section heading and its content
+    pattern = re.compile(r'(References|Bibliography).*', re.DOTALL | re.IGNORECASE)
+    cleaned_text = re.sub(pattern, '', text)
+    return cleaned_text
+
+FILE2 = 'data/Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf'
+FILE1 = 'data/first_batch/Rapid quality assurance with Requirements Smells.pdf'
+def preprocess_scientific_paper(file_path = FILE1):
+    # Extract text from file
+    text = extract_text_from_pdf(file_path)
+
+    # Remove the references section
+    cleaned_text = remove_references(text)
+
+    return cleaned_text
 
 
 """For more refined document adding 
