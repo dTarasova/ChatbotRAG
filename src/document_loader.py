@@ -151,7 +151,7 @@ def extract_paragraphs(pdf_path):
     for page_num in range(len(document)):
         page = document.load_page(page_num)
         paragraphs = page.get_text("blocks")
-        print(paragraphs)
+        #print(paragraphs)
         text.extend(paragraphs)
     return text
 
@@ -161,6 +161,8 @@ def remove_references(text):
     Assumes the references section starts with a heading like 'References' or 'Bibliography'
     and continues until the end of the document.
     """
+    #TODO: search from the end
+    #TODO: verify that it is one line word
     # Create a regex pattern to match the references section heading and its content
     pattern = re.compile(r'(References|Bibliography).*', re.DOTALL | re.IGNORECASE)
     cleaned_text = re.sub(pattern, '', text)
@@ -174,6 +176,28 @@ def preprocess_scientific_paper(file_path = FILE1):
 
     # Remove the references section
     cleaned_text = remove_references(text)
+
+    
+    paragraphs = extract_paragraphs(file_path)
+    try: 
+        with open('text.txt', "w", encoding="utf-8") as f:
+            f.write(text)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    paragraphs_text = ''
+    for paragraph in paragraphs:
+        paragraphs_text += paragraph[4] + '\n\n'
+
+    print(type(paragraphs[0]))
+    for p in paragraphs[0]:
+        print(type(p))
+    
+
+    # cleaned_paragraphs = remove_references(paragraphs_text)
+    with open('paragraphs.txt', "w", encoding="utf-8") as f:
+        f.write(paragraphs_text)
+
+
 
     return cleaned_text
 

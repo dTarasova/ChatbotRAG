@@ -27,4 +27,4 @@ FILE2 = 'data/Naming the Pain in Requirements Engineering Contemporary Problems,
 
 # playaround_pymupdf(FILE2)
 result = preprocess_scientific_paper()
-print(result)
+# print(result)
