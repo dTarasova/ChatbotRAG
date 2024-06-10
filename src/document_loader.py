@@ -148,10 +148,10 @@ def extract_text_from_pdf(pdf_path):
 def extract_paragraphs(pdf_path):
     document = pymupdf.open(pdf_path)
     text = []
-    for page_num in range(len(document)):
+    doc_len = len(document)
+    for page_num in range(doc_len):
         page = document.load_page(page_num)
         paragraphs = page.get_text("blocks")
-        #print(paragraphs)
         text.extend(paragraphs)
     return text
 
@@ -222,3 +222,39 @@ Still one collection
 TODO: Experiment 2 
 Added a filtering function for text, so that it doesn't include content 
 """
+
+def remove_references_section(text):
+    """Removes the references section from the text."""
+    lines = text.split('\n')
+    for i, line in enumerate(reversed(lines)):
+        if line.strip().lower() == "references" or line.strip().lower() == "bibliography":
+            cut_index = len(lines) - i - 1
+            return '\n'.join(lines[:cut_index])
+    return text
+
+
+def remove_ref_paragraphs(paragraphs):
+    for i, paragraph in enumerate(reversed(paragraphs)):
+            paragraph_text = paragraph[4].strip().lower()
+            if paragraph_text == "references" or paragraph_text == "bibliography":
+                cut_index = len(paragraphs) - i - 1
+                return paragraphs[:cut_index]
+    return paragraphs
+
+def process_pdf(input_pdf_path, output_pdf_path):
+    text = extract_paragraphs(input_pdf_path)
+    modified_paragraphs = remove_ref_paragraphs(text)
+    save_paragraphs_to_txt(modified_paragraphs, output_pdf_path)
+
+def save_text_to_txt(text, file_path):
+    try: 
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(text)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+def save_paragraphs_to_txt(paragraphs, file_path):
+    paragraphs_text = ''
+    for paragraph in paragraphs:
+        paragraphs_text += paragraph[4] + '\n\n'
+    save_text_to_txt(paragraphs_text, file_path)

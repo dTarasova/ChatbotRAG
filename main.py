@@ -1,4 +1,4 @@
-from src.document_loader import playaround_pymupdf, preprocess_scientific_paper
+from src.document_loader import playaround_pymupdf, preprocess_scientific_paper, process_pdf
 from src.rag_model import RAGModel
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
@@ -26,5 +26,6 @@ from  langchain_core.documents.base import Document
 FILE2 = 'data/Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf'
 
 # playaround_pymupdf(FILE2)
-result = preprocess_scientific_paper()
-# print(result)
+preprocess_scientific_paper(FILE2)
+
+process_pdf(FILE2, 'text_wo_ref.txt')
