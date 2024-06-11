@@ -1,0 +1,1659 @@
+
+IEEE TRANSACTIONS ON SOFTWARE ENGINEERING1
+
+
+A Study about the Knowledge and Use ofRequirements Engineering Standards inIndustry
+
+
+Xavier Franch, Martin Glinz, Daniel Mendez, Norbert Seyff
+
+
+Abstract—Context. The use of standards is considered a vital part of any engineering discipline. So one could expect that standardsplay an important role in Requirements Engineering (RE) as well. However, little is known about the actual knowledge and use ofRE-related standards in industry. Objective. In this article, we investigate to which extent standards and related artifacts such astemplates or guidelines are known and used by RE practitioners. Method. To this end, we have conducted a questionnaire-basedonline survey. We could analyze the replies from 90 RE practitioners using a combination of closed and open-text questions. Results.Our results indicate that the knowledge and use of standards and related artifacts in RE is less widespread than one might expect froman engineering perspective. For example, about 47% of the respondents working as requirements engineers or business analysts donot know the core standard in RE, ISO/IEC/IEEE 29148. Participants in our study mostly use standards by personal decision ratherthan being imposed by their respective company, customer, or regulator. Beyond insufﬁcient knowledge, we also found cultural andorganizational factors impeding the widespread adoption of standards in RE. Conclusions. Overall, our results provide empiricallyinformed insights into the actual use of standards and related artifacts in RE practice and – indirectly – about the value that the currentstandards create for RE practitioners.
+
+
+Index Terms—Standard, requirements engineering, guideline, template, survey
+
+
+!
+
+
+1INTRODUCTION
+
+
+Standards play a vital role in engineering, especially whenmany manufacturers, suppliers, and providers need to col-laborate and interact for developing products and providingservices in given domains. The use of standards allows“to beneﬁt from the wisdom and experience of others,rather than reinvent the wheel each time” [30]. Hardingand McPherson [11] found that “Managers recognize stan-dardization as essential to daily operations, regardless ofthe company’s economic sector”. Consequently, knowingstandards and learning how to work with them can beconsidered relevant in engineering education [1] [32].Being an engineering discipline, one could expect thatstandards play an important role in Requirements Engineer-ing (RE) as well. However, we have personally observedover the years that there are people in industry who do notuse any standards or who only use them scarcely in theirRE work. Moreover, practitioners (as well as researchers)
+
+
+•Xavier Franch is with the Universitat Polit`ecnica de Catalunya, 08034Barcelona, Catalonia, Spain. E-mail: franch@essi.upc.edu
+
+
+•Martin Glinz is with the University of Zurich, 8006 Zurich, Switzerland.E-Mail: glinz@iﬁ.uzh.ch
+
+
+•Daniel Mendez is with the Blekinge Institute of Technology, 37179Karlskrona, Sweden, and also with the fortiss GmbH, 80805 Munich,Germany. E-Mail: daniel.mendez@bth.se
+
+
+•Norbert Seyff is with the University of Applied Sciences and ArtsNorthwestern Switzerland, 5210 Windisch, Switzerland, and also withthe University of Zurich, 8006 Zurich, Switzerland. E-Mail: nor-bert.seyff@fhnw.ch
+
+
+Manuscript received 25 Jan. 2021; revised 14 May 2021; accepted 28 May2021.Recommended for acceptance by Z. Jin.
+
+
+may lose track of the evolution of standards in the ﬁeld.For instance, we still ﬁnd today publications citing theIEEE 830-1998 standard [14] although it has been retiredand superseded by the ISO/IEC/IEEE 29148 standard [25].Hence, our observations indicate that RE practitioners mightnot widely adopt or even know RE-related standards.This motivated us to investigate the role of standardsin contemporary RE. This article reports on a survey studyabout the degree to which RE-related standards are actuallyknown and used in industry—and why they are or are notused. To the best of our knowledge, there is no systematicstudy of this topic so far.The results of our study contribute insights into theactual use of RE standards in industry. We found that theknowledge and use of standards in RE as reported in thestudy is less widespread than one might expect. Further-more, we identiﬁed which standards are most known andused by practitioners, and whether and how they use othertypes of artifacts with the same purpose as standards.All data analyzed and reported in this article is availableas an open replication package under http://doi.org/10.5281/zenodo.4755756 including codebook and instrument,raw data and ﬁltered data, and the results of our dataanalysis with respect to the research questions and thedemographics.
+
+
+2BACKGROUND AND RELATED WORK
+
+
+In the context of engineering, the term standard refers to“something established by authority, custom, or generalconsent as a model or example or (...) as a rule for the mea-sure of quantity, weight, extent, value, or quality” (Merriam-
+
+
+arXiv:2105.13961v3  [cs.SE]  6 Sep 2021
+
+
+2IEEE TRANSACTIONS ON SOFTWARE ENGINEERING
+
+
+Webster online dictionary). This deﬁnition also applies tosoftware engineering in general and RE in particular, wherestandards may prescribe methods, templates, quality met-rics and deﬁnitions of terms.Using standards in RE has many advantages. Adheringto standards makes work products less dependent on theindividual capabilities and working styles of the peopleproducing these work products. It also makes work prod-ucts easier to read and comprehend, particularly for peoplenot involved in creating them. Frequently, standards pro-vide procedures or predeﬁned structures. Adhering to themhelps avoid mistakes and improves the quality of the workproducts produced.Most RE-related standards are created and publishedby recognized standardization organizations such as ISO,IEEE, or OMG. We call these de-jure standards. Besides,there are also de-facto standards which are created by com-panies, authors of inﬂuential books, or organizations ofprofessionals and widely adopted by the community. Wefurther distinguish between normative standards about prac-tices, documentation, and terminology on the one hand, andstandardized artifacts, e.g., languages, templates or guidelines(such as UML or VOLERE) on the other hand. Schneiderand Berenbach [33] conducted a literature survey on de-jure and normative RE-related standards including the eightmost adopted standards at that moment (2013), togetherwith their relationships and some practical observationsand advices on their use. We have not found any follow-up to this literature survey, neither updating the collectionof de-jure and normative standards, nor including de-factostandards or standardized artifacts.The use of RE-related standards in practice has not beenstudied so far. Khan et al. report that there are no systematicmapping studies conducted on software engineering stan-dards in general (thus, RE in particular) [27]. Still, somestudies do mention occasionally standards as part of amore general goal. The NaPiRE study [29] [34] includes aninvestigation of whether or not companies have deﬁned REprocess standards. While most of the analyzed projects did,only 25% of them used standards predeﬁned by a regula-tion. The RE-Pract study [7] reports some observations frompractitioners about the perceived importance of standards,e.g., “Aligning requirements to regulatory standards is ex-tremely important in many industry”, “I recomend to usethe IEEE’s standard, that was a better guidance to achivemy objective” [sic]. However, neither NaPiRE nor RE-Practwent any further in that direction.Our study aims at closing this gap. We are interested inthe industrial adoption of all types of standards mentionedabove. This interest is reﬂected in the research questions,and in the subsequent survey questions presented next.
+
+
+3STUDY DESIGN
+
+
+3.1Goal and Research Questions
+
+
+The overall goal of our study is to understand to whichextent RE practitioners know standards, how often they usethem, and what the underlying reasons are. To this end, weconducted a questionnaire-based online survey. The scopeof our study encompasses (a) speciﬁc RE standards, forexample, ISO/IEC/IEEE 29148 [25], and (b) standards from
+
+
+TABLE 1Research questions and sub-questions.
+
+
+RQ1To what extent are RE-related standards known bypractitioners?RQ1.1What RE-related standards are known by practitioners?RQ1.2How did practitioners know about these standards?RQ2To what extent are RE-related standards used bypractitioners?RQ2.1How often do practitioners use each of these standards?RQ2.2For which purpose do practitioners use each of thesestandards?RQ2.3Why do practitioners use these standards?RQ2.4Why do practitioners not use the standards that theyknow?RQ3Under which conditions are RE-related standards usedby practitioners?RQ3.1What factors affect this usage?RQ3.2What are the major impediments in effectively using RE-related standards?RQ3.3What are the perceived advantages coming from the useof RE-related standards?RQ4Do practitioners use further guidelines or documenta-tion templates in their RE process?RQ4.1What type of guidelines or templates do they use?RQ4.2How often are these guidelines or templates used?RQ4.3For which purpose do practitioners use each of theseguidelines or templates?RQ4.4How are these guidelines or templates used in combina-tion with RE-related standards?
+
+
+other ﬁelds such as quality or systems and software engi-neering that discuss aspects of RE processes, practices, andartifacts. We use the term RE-related standards for denotingthe standards in the scope of our study and include bothde-jure standards and de-facto ones. Furthermore, we alsotarget standardized artifacts such as UML diagrams or usecase templates, since we are aware that many practitionersuse them with a similar purpose as standards.We derive four main research questions (RQs), listed inTable 1. RQ1, RQ2, and RQ3 focus on the knowledge and useof RE-related standards and, thus, they are useful for stan-dardization organizations as well as for practitioners whomight want to better understand or adopt standards. RQ4investigates the use of standardized artifacts, in particular,guidelines or templates. With this question, we anticipatethe case where some practitioners might not be using anynormative standards, but adhere to well-established prac-tices or processes that may have been issued, e.g., by theircompany.
+
+
+3.2Selecting Standards for the Survey
+
+
+We decided to provide a list of candidate standards whererespondents can mark the ones they know. This approachhas the disadvantage of potentially biasing the respondents’answers by our pre-deﬁned list of standards. Yet, we con-sider this approach to be much faster and more convenientfor respondents than forcing them to write down the namesof the standards which could make respondents forget aboutsome of the standards they know (rendering comparisonof responses invalid). Another advantage is that when re-spondents do not check a standard in the presented list of
+
+
+FRANCH ET AL.: STUDY ABOUT THE KNOWLEDGE AND USE OF REQUIREMENTS ENGINEERING STANDARDS IN INDUSTRY3
+
+
+standards, we can conclude that they actually do not knowit.To mitigate bias, we decided to present respondentswith both a pre-deﬁned list of RE-related standards anda list of empty text ﬁelds, where respondents could enteradditional standards that they know and consider relevant,e.g., domain-speciﬁc standards that they deem relevant fortheir RE work.We chose standards according to scope (including RE-related standards from the ﬁelds of quality and systemsand software engineering but not considering domain-speciﬁcstandards) and type (both de-facto and de-jure). The ﬁrstand obvious candidate is ISO/IEC/IEEE 29148 [25], which isprimarily about RE processes and documentation. We usedthe 2011 version, as the revised version (2018) was not yetavailable when we designed the survey. We also includedIEEE 830-1998 [14] on software requirements speciﬁcations.Although IEEE 830-1998 has been retired and supersededby ISO/IEC/IEEE 29148, we had sufﬁcient evidence that itis still in use.Among the ISO standards, we found ISO/IEC TR24766 [21] on RE tool capabilities, and ISO/IEC 26551 [18]on product line requirements engineering. As both of themdeal with a speciﬁc subtopic in RE, we selected the ﬁrst oneas a representative for this category.When searching for non-ofﬁcial industry standards, wefound the IREB Glossary of RE Terminology [9]. Given thefact that using this glossary is mandatory in the IREB CPREcertiﬁcation and more than 50,000 people world-wide holdan IREB CPRE Foundation Level certiﬁcate, we consider thisglossary a de-facto standard for RE terminology.Next, we searched the ﬁeld of quality standards forrequirements-related ones. We chose ISO/IEC 25010 [16] onsystem and software quality models and ISO/IEC 25030 [17]on quality requirements as representatives. Furthermore, weincluded ISO/IEC 9126 [20]. Although this family of stan-dards has been superseded by the ISO/IEC 250xx family, itis still used and referenced.Finally, we searched for RE-related standards in theﬁeld of systems and software engineering. We includedISO/IEC/IEEE 12207 [22] on software life cycle processes(2008 and 2017 versions) and ISO/IEC/IEEE 15288 [23] onsystem life cycle processes: both of them are closely relatedto ISO/IEC/IEEE 29148. Further, we decided to includeanother terminology standard, ISO/IEC/IEEE 24765[24]on systems and software engineering vocabulary (2010 and2017 versions).Table 2 lists the selected standards. More details aboutstandards in RE and how they relate to each other can befound in Schneider and Berenbach’s paper [33].
+
+
+3.3Target Population
+
+
+As a target population, we chose practitioners who act orwho have acted in the role of a requirements engineer inat least one industry project, and also practitioners fromneighbouring ﬁelds such as quality management or testing.That is to say, we used the term requirements engineer in itsbroadest possible sense [6], including technical and non-technical roles dealing with the speciﬁcation and manage-ment of requirements. We relied on convenience samplingas described in Sect. 3.5.
+
+
+3.4Instrument
+
+
+Our survey questionnaire starts with questions for gatheringdemographic information with the purpose of analyzing itlater to identify factors which may have an inﬂuence onthe choices made by our respondents. In particular, weimplemented the following demographic factors: countryof work; highest education degree; job functions performedin the last six years; years of experience in RE or relatedﬁelds; RE-related certiﬁcates they hold (e.g., from IREB1
+
+
+or ISTQB2); average number of people involved in theirprojects; organizational role played by the team in thecompany; main industrial sector; class of systems delivered.The rest of the survey included one question per sub-RQ.First, respondents provided their knowledge of the selectedstandards (as described in Sect. 3.2). Next, respondents wereable to add standards they know in addition to those givenas pre-deﬁned options for selection. Those added standardswere included in follow-up questions to answer RQ2. ForRQ2, the questionnaire was dynamic with respect to previ-ous answers. For example, the survey presented only thosestandards to the respondents that they had declared to knowin RQ1.1.
+
+
+3.5Data Collection
+
+
+To enable world-wide participation, we decided to use aweb-based survey tool. To this end, we implemented thesurvey using the Questback survey tool. After the initialimplementation of the questionnaire, three RE practitionerswere invited to ﬁll it out as part of a piloting phase toensure its correct understanding and to ﬁnd possible defectsregarding content and presentation. Based on these pilots,we implemented some minor corrections (e.g., by removingduplicates in the answer options), added some information(e.g., how to interpret the questions), and also made someminor text changes.Data collection took place over six weeks starting byFebruary 2019. In order to increase our target audience, weused various social media channels and mailing lists, e.g.the IREB mailing list. Moreover, we asked in our personalnetworks of practitioners to spread the word, which meansthat we cannot communicate a response rate. To compensatefor the threats emerging from this convenience samplingstrategy, we included a broad set of demographic questions(see Sect.3.4).
+
+
+3.6Data Analysis
+
+
+For the analysis of RQ1 and RQ2, we exported the survey re-sults to spreadsheets and calculated descriptive statistics. Inall the sub-questions, we provide ﬁrst an overall view of theresults in shares of responses relative to the total number ofresponses. We use accompanying ﬁgures to illustrate theseprovide additional insights related to individual standardsas shares of respondents that use (RQ2.2, RQ2.3) or do notuse (RQ2.4) such standards. Finally, we remark that we havevarying numbers of responses as reported in Table 3. This is
+
+
+1. https://www.ireb.org/2. https://www.istqb.org/
+
+
+4IEEE TRANSACTIONS ON SOFTWARE ENGINEERING
+
+
+TABLE 2Standards selected for the questionnaire.
+
+
+ISO/IEC/IEEE 29148currentRE speciﬁcRE processes and documentationIEEE 830-1998supersededRE speciﬁcRE processes and documentationISO/IEC TR 24766currentRE speciﬁcRE tool capabilitiesIREB GlossarycurrentRE speciﬁcRE vocabularyISO/IEC 25010currentQualitySystems and Software quality modelsISO/IEC 25030currentQualityQuality requirementsISO/IEC 9126supersededQualitySystems and Software quality modelsISO/IEC/IEEE 12207currentSystems and Software EngineeringSoftware life cycle modelsISO/IEC/IEEE 15288currentSystems and Software EngineeringSystem life cycle modelsISO/IEC/IEEE 24765currentSystems and Software EngineeringSys&Sw engineering vocabulary
+
+
+due to the fact that we used dynamic questions for RQ2, asexplained in Section 3.4 above.
+
+
+RQ3 required the analysis of free text answers. We ap-plied content analysis according to the following steps:
+
+
+1) Filtering. Responses were ﬁltered by excluding: a)empty ﬁelds (including responses as “—” or “n.a.”); b)text not answering the questions (e.g., “Regularly” asanswer to the question “What are the factors drivingthe use of the standards?”); c) vagueness (e.g., “To dobetter job”); d) lack of expertise (e.g., “I’m not closeenough to the standards used to answer this questionconﬁdently”). A few long responses were kept as validbut some parts fall into the cases b)-d), in which casewe removed the affected part, but kept the rest.
+
+
+2) Term extraction. The remaining responses were splitinto semantically relevant terms. In this step, onlyequal or very similar terms (e.g., “Lack of awareness”and “Limited awareness”) were aligned. Non-essential,very concrete information was also disregarded (e.g.,“Keep CMMI certiﬁcation” was converted into “Com-pany certiﬁcation”).
+
+
+3) Topic identiﬁcation. The extracted terms were comparedto each other looking for topics that reﬂect semanticsimilarities. For instance, the topic “Lack of experts”includes the terms “Lack of training” and “Lack ofconsultancy”. Some methodological guidelines follow:
+
+
+• We analyzed the context of every sentence. For in-stance, the impediment term “Ignorant managers”could be classiﬁed only as “Company capacity”(namely, managers do not have the skills to usestandards in RE activities) but a careful reading ofthe context shows that it also refers to an attitudeproblem, so it needs to be classiﬁed also into the topic“Employees’ attitude”.
+
+
+• We avoided over-interpretation; instead, we pre-ferred to reﬂect the respondents’ opinions. For in-stance, two beneﬁts mentioned by respondents were“Acquisition of a shared language” and “Improvedcommunication”. While the former is a means for thelatter, we preferred to keep them separated given thedifferent emphasis.
+
+
+4) Categoryidentiﬁcation.Theidentiﬁedtopicsweregrouped into categories to facilitate further analysis.For instance, the category “Project factors” includes thetopics “Time”, “Cost”, “Effort” and “Risk”.
+
+
+The coding was performed by one of the authors andreviewed by another author. The coder and the reviewerdiscussed and resolved the ﬁndings from the review.RQ4 followed the same four steps as RQ3. However,given the higher diversity of responses that soon emerged,we followed an iterative process:
+
+
+• In a ﬁrst iteration, two authors analyzed the baselinedata, with focus on ﬁltering and term extraction. Then,they held a ﬁrst dedicated meeting to discuss theirproposals and understand each other’s rationale andbrainstorm about topics and categories.
+
+
+• Building on this shared understanding, one of these twoauthors conducted a second iteration with a completeproposal on ﬁltering and term extraction and a draftof topics and categories, which was consolidated in ameeting among the two authors.
+
+
+• In a subsequent plenary meeting, all authors discussedthe coding proposal and identiﬁed some issues with thecodes and the categories.
+
+
+• Last, a third author made a last iteration to adjust theproposal, which was again discussed by all authors,leading to the ﬁnal coding.
+
+
+4RESULTS
+
+
+In this section, we report the results related to the fourresearch questions, preceded by demographics of the study.Throughout the section, we will use the notation “[N;P%]”to inform about statements provided by N respondentsamounting to P% of the total number of respondents an-swering that particular question. Besides, unless otherwisestated, graphics will show absolute numbers in the Y-axisand percentages over the corresponding bars. Please notethat while all respondents provide answers to the questionsunder RQ1, the number of respondents to RQ2 varies asthese answers are given only to those standards the respon-dents know and use (or don’t use), and the variations inRQ3 and RQ4 are even greater since not all respondentsprovided answers to the open text questions. Therefore, wewill specify the population size explicitly as to make thepercentages accurate.
+
+
+4.1Demographics
+
+
+We received in total 99 answers from which we discarded 9either because they were empty or because they contained
+
+
+FRANCH ET AL.: STUDY ABOUT THE KNOWLEDGE AND USE OF REQUIREMENTS ENGINEERING STANDARDS IN INDUSTRY5
+
+
+80
+
+
+70
+
+
+60
+
+
+50
+
+
+40
+
+
+30
+
+
+20
+
+
+10
+
+
+0
+
+
+RE / BA
+
+
+PO
+
+
+Manager
+
+
+EDU
+
+
+Developer
+
+
+Tester
+
+
+ARCH
+
+
+QA
+
+
+RES
+
+
+Others
+
+
+78.9%
+
+
+31.1%28.9%
+
+
+22.2%21.1%20.0%
+
+
+11.1% 10.0%
+
+
+RE / BARequirements Engineer / Business Analyst
+
+
+POProduct Owner
+
+
+EDUTrainer / Educator
+
+
+ARCHSystem / Software Architect
+
+
+QAQuality Engineer / Quality Manager
+
+
+RESResearcher in Industry
+
+
+Number of respondents
+
+
+Fig. 1. Demographics: Job functions of respondents in the last six years.
+
+
+dubious information. Demographic characteristics are asfollows:Country of work. Respondents are spread over all conti-nents except Africa with Europe having the biggest share[48;53.3%]. China and Germany are the dominant countrieswith [19;21.1%] respondents for each of them.Position. Most of the respondents declare more thanone job function in the last six years [68;75.6%]. Amongthem, the most popular is by far the job of requirementsengineer/business analyst reaching almost 80 percent of re-spondents, with the rest distributed rather uniformly exceptfor researcher in industry (see Figure 1). A few respondentsreport a handful of other positions, as consultant or certiﬁ-cation specialist.Certiﬁcates. Answers to this open-text question were verydiverse3.Many respondents hold a professional training certiﬁcate[52;57.8%], some have even more than one [22;24.4%]. Aslight majority of respondents hold an RE-related certiﬁcate[46;51.1%], with IREB certiﬁcates being by far the mostpopular ones ([43;47.8%] when considering all types ofcertiﬁcates). The runner-up is ISTQB certiﬁcation [11;12.2%].A majority of respondents certiﬁed by these two associa-tions are at the foundation level (IREB-FL and ISTQB-FL)[44;48.9%], while the number of respondents with advancedor specialist level certiﬁcates is lower [13;14.4%]. A fewrespondents have some agile-related certiﬁcate [7;7.8%]. Stilla good number of respondents [19; 21.1%] have certiﬁcatesnot in the former categories, with CBAP, PMI-PBA, CCBAand TOGAF mentioned by more than one respondent.Years of experience. The majority of respondents have tenyears or more of experience [39;43.3%] or between fourand nine years [33;36.7%], which can be considered a goodindicator for the quality of the information gathered in thequestionnaire.Education. The majority of respondents hold an MSca PhD. [7;7.8%] have a diploma or engineering degree whose
+
+
+3. Some responses were a bit ambiguous and we needed to take somedecisions to resolve these ambiguities.
+
+
+equivalence to BSc or MSc cannot be established. [6;6.7%]hold other or unspeciﬁed degrees.Project size. The majority of respondents works in smallteams with up to ten members [44;48.9%], while a similaramount works in teams with more than ten but less thanhundred members [40;44.4%]. Only a few respondents workin very large teams with one hundred or more members (upto eight hundred) [6; 6.7%].Main industrial sector. No single sector dominates amongthe respondents. Finance is the most mentioned sector[14;15.6%], followed by Automotive [10;11.1%], Healthcare[10;11.1%], Manufacturing [8;8.9%], E-commerce [7;7.8%], andEnergy [6;6.7%]. The remaining 19 mentioned sectors donot exceed four responses each. A few respondents [4;4.4%]report that they cannot identify a single sector.System class. Nearly half of the respondents [42;46.7%]work mainly on business information systems. Twenty re-spondents work on software-intensive embedded systems[20;22.2%] and also twenty on hybrid systems. A few re-spondents work on other types of systems [8;8.9%], such asmobile apps or research software development.
+
+
+4.2RQ1. To what extent are RE-related standardsknown by practitioners?
+
+
+4.2.1RQ1.1. What RE-related standards are known bypractitioners?Fig. 2 shows how many RE-related standards the respon-dents know. These numbers include the ten standards wehad enumerated in the survey, as well as the further stan-dards that the respondents speciﬁed in the free form entryﬁeld. Numbers are diverse. While about 27% of respondentsknow more than four standards, a larger percentage (over42%) do not know more than two, with almost 8% sayingthat they do not know any.Fig. 3 shows the knowledge of the ten RE-related stan-dards listed in Table 2 by the 90 respondents. The mostwidely known standard is a de facto standard, the IREB Glos-sary of Requirements Engineering Terminology, known by70% of respondents. This number aligns with the large shareof respondents who are certiﬁed by IREB (see Sect. 4.1). Theother two standards that excel in the responses are the twocore RE de-jure standards, ISO/IEC/IEEE 29148 [25] and
+
+
+[13; 14.4%]
+
+
+[7; 7.8%]
+
+
+[18; 20.0%]
+
+
+[10; 11.1%]
+
+
+[18; 20.0%]
+
+
+[24; 26.7%]
+
+
+none
+
+
+one
+
+
+two
+
+
+three
+
+
+four
+
+
+more than four
+
+
+
+
+
+6IEEE TRANSACTIONS ON SOFTWARE ENGINEERING
+
+
+70
+
+
+60
+
+
+50
+
+
+40
+
+
+30
+
+
+20
+
+
+10
+
+
+0
+
+
+70.0%
+
+
+55.6% 54.4%
+
+
+35.6% 33.3%
+
+
+28.9%
+
+
+24.4% 23.3%
+
+
+18.9% 15.6%
+
+
+8.9%
+
+
+IREB Glossary
+
+
+IEEE 830-1998
+
+
+ISO/IEC/IEEE 29148
+
+
+ISO/IEC 25010
+
+
+ISO/IEC/IEEE 12207
+
+
+ISO/IEC/IEEE 15288
+
+
+ISO/IEC 25030
+
+
+ISO/IEC 9126
+
+
+ISO/IEC/IEEE 24765
+
+
+ISO/IEC TR 24766
+
+
+Others
+
+
+Number of respondents
+
+
+Fig. 3. RQ1.1: Knowledge of RE-related standards (percentages givenover the set of 90 respondents).
+
+
+its predecessor, IEEE 830-1998 [14], which are known byabout 55% percent of the respondents. Less than 36% of therespondents know the remaining standards.In response to our open question asking for additionalRE-related standards, roughly one third of the respondents[29;32.2%] suggested up to 38 terms or concepts. How-ever, after analyzing the suggestions, only seven of themcan be considered as RE-related standards: IEC 62304 onMedical Device Software [12], ISO 16404 on requirementsmanagement for space systems [15], the aircraft standardsARP4754A [2] and DO-178 [5], ISO/IEC 29110 on proﬁlesand guidelines for Very Small Entities [19], IEEE 1233-1998,a guide for developing SRS [13], and ISO/IEC 26551 onproduct line RE [18].
+
+
+4.2.2RQ1.2. How did practitioners know about these stan-dards?
+
+
+All the 83 respondents who know some standard answeredthis question5. Almost three quarters of them [60;72.3%]know standards by more than one source, and even a few[10;12.0%] from four or more sources. Fig. 4 summarizes theresponses for the sources presented in the questionnaire.Books and papers are the dominant source mentioned bytwo thirds of respondents, while the other two remarkablesources are training courses and the web. A few respon-dents mentioned sources not in the list, e.g., “From ourcustomers”.
+
+
+4.3RQ2: To what extent are RE-related standards usedby practitioners?
+
+
+As mentioned in Sect. 3.4, the questionnaire was dynamicin this part, showing the respondents only those standardsthey selected in previous questions: (i) RQ2.1 asked onlyabout those standards that the respondents had declared toknow under RQ1.1; (ii) RQ2.2 and RQ2.3 asked only aboutthose standards that the respondents had declared to use inat least some projects under RQ2.1; (iii) RQ2.4 asked onlyabout those standards that the respondents had declared toknow but not to use in any project under RQ2.1. Table 3
+
+
+5. Therefore, percentages in RQ1.2 are computed over the 83 respon-dents who know some standard.
+
+
+60
+
+
+50
+
+
+40
+
+
+30
+
+
+20
+
+
+10
+
+
+0
+
+
+Reading books or 
+
+
+papers
+
+
+Training courses
+
+
+Surﬁng the web
+
+
+From my 
+
+
+colleagues
+
+
+University studies
+
+
+Just by chance
+
+
+From my
+
+
+manager
+
+
+I can’t remember
+
+
+Others
+
+
+Number of respondents
+
+
+66.3%
+
+
+45.8%43.4%
+
+
+27.7%
+
+
+21.1%
+
+
+8.4%6.0%9.6%
+
+
+3.6%
+
+
+Fig. 4. RQ1.2: Sources for the knowledge of RE-related standards(percentages given over the set of 83 respondents who know at leastone standard).
+
+
+shows the resulting numbers6. We discarded for analysisthe standards mentioned in the free-text responses, becausethey were mentioned only by two respondents at most.
+
+
+TABLE 3RQ2. Responses to survey questions
+
+
+Research Question
+
+
+IEEE 830-1998
+
+
+ISO/IEC/IEEE 29148
+
+
+IREB Glossary
+
+
+ISO/IEC TR 24766
+
+
+ISO/IEC 25010
+
+
+ISO/IEC 25030
+
+
+ISO/IEC 9126
+
+
+ISO/IEC/IEEE 24765
+
+
+ISO/IEC/IEEE 12207
+
+
+ISO/IEC/IEEE 15288
+
+
+2.1504963143222211730262.2&2.339344692214121424212.4812144968222
+
+
+80%
+
+
+70%
+
+
+60%
+
+
+50%
+
+
+40%
+
+
+30%
+
+
+20%
+
+
+10%
+
+
+0%
+
+
+90%
+
+
+100%
+
+
+ISO/IEC/IEEE 15288
+
+
+ISO/IEC/IEEE 12207
+
+
+ISO/IEC/IEEE 24765
+
+
+ISO/IEC9126
+
+
+ISO/IEC25010
+
+
+ISO/IECTR 24766
+
+
+ISO/IEC25030
+
+
+IREBGlossary
+
+
+ISO/IEC/IEEE 29148
+
+
+IEEE830-1998
+
+
+Average
+
+
+50496314322221173026
+
+
+In every projectIn most projectsIn some projectsNeverI prefer not to answer
+
+
+Fig. 5. RQ2.1: Frequency of using RE-related standards (number ofrespondents knowing each standard as per RQ1.1 shown above thebars).
+
+
+4.3.1RQ2.1: Frequency of using standardsFig. 5 summarizes the frequency of using the standards.For each standard, we show the percentages of use relativeto the number of respondents who had stated to know
+
+
+6. A few respondents did not provide information, therefore numbersdo not completely match with RQ1’s results.
+
+
+FRANCH ET AL.: STUDY ABOUT THE KNOWLEDGE AND USE OF REQUIREMENTS ENGINEERING STANDARDS IN INDUSTRY7
+
+
+the standard. From the great amount of results we couldcompare, we have selected two particular observations toreport.1. Which standards are used intensively (i.e., in every orin most projects)? Although all known standards are usedat least in some projects, the percentage of respondentswho use them in every project is rather low (only 15.1%of responses) and no single standard excels with respect tothis continuous usage (results range from 10.0% in the caseof ISO/IEC/IEEE 12207 to 21.4% for ISO/IEC TR 24766). Ifwe add responses that report usage in most projects, we canobserve that the numbers grow to 34.9% on average withISO/IEC/IEEE 24765 [9;52.9%] and ISO/IEC/IEEE 15288[12;46.2%] being the two most frequently used standards interms of percentages, while the others gradually decrease inpercentage down to ISO/IEC 25030 [5;22.7%]. If we focus onabsolute numbers, the IREB Glossary is the most intensivelyused standard with 26 respondents, which represents 41.2%of the respondents who know it.2. Which standards are never used? The ISO/IEC 9126standard is the least used one in our study: it is never usedby eight of the 21 respondents who know it [8;38.1%]. Also,it is worth pointing out that the share of respondents whonever use ISO/IEC/IEEE 29148 [12;24.5%] is larger than theshare of respondents who never use its predecessor IEEE830-1998 [8;16.0%]. On the opposite side, two standards areintensively used by those respondents who know them,namely ISO/IEC/IEEE 12207 [24;80.0%] and ISO/IEC/IEEE15288 [21;80.8%].
+
+
+4.3.2RQ2.2: Purposes of standards usedWhen asking our respondents for the purposes they usestandards for at least in some projects, we received a verymixed picture as shown in Fig. 6. A ﬁrst observation is thatin general, respondents use a single standard for severalpurposes that are reported in a relatively narrow bandover all responses, from 17.9% (Documenting requirements)down to 10.1% (Compliance), with a 3.4% of other purposes(e.g., “Put in place governance around RE”). This narrowrange shows that there is no single purpose clearly favoredover the others when considering the ensemble of all RE-related standards and demands a closer look to individualstandards.Some standards’ usage matches the original purpose ofthe standard. For IEEE 830-1998, for example, documentationis the main purpose reported by the respondents [27;69.2%],while management is the least cited one [9;23.1%]. Thismatches the standard’s intention of providing a guidelinefor writing requirements speciﬁcations. Also, the usage ofthe IREB Glossary primarily as a communication [30;65.2%]and documentation [28;60.9%] asset ﬁts well with the in-tended purpose of a glossary.In contrast, there are standards whose usage does notmatch with the original purpose. For example, the qualitystandard ISO/IEC 9126 is not very often cited with the pur-pose of quality management [4;33.3%]; instead, respondentsreport on documentation as its main purpose [6;50.0%]. Thismay arguably be considered an unexpected usage. Con-versely, its successor ISO/IEC 25010 is really considered forquality management [13; 59.1%]. Other observations fromour study are:
+
+
+ISO/IEC/IEEE 15288
+
+
+ISO/IEC/IEEE 12207
+
+
+ISO/IEC/IEEE 24765
+
+
+ISO/IEC9126
+
+
+ISO/IEC25010
+
+
+ISO/IECTR 24766
+
+
+ISO/IEC25030
+
+
+IREBGlossary
+
+
+ISO/IEC/IEEE 29148
+
+
+IEEE830-1998
+
+
+Average
+
+
+80%
+
+
+70%
+
+
+60%
+
+
+50%
+
+
+40%
+
+
+30%
+
+
+20%
+
+
+10%
+
+
+0%
+
+
+90%
+
+
+100%10510315123543327405652
+
+
+Setting up the requirements process
+
+
+Eliciting requirements
+
+
+Communicating in the team and with others
+
+
+Documenting requirements
+
+
+Managing requirements
+
+
+Quality management
+
+
+Compliance with regulations
+
+
+Other purposes
+
+
+Fig. 6. RQ2.2: Purpose of using standards (number of responses givenfor each standard shown above the bars).
+
+
+• All standards serve for all purposes to a certain extent.In fact, only two standards (ISO/IEC 25030:2007 andISO/IEC/IEEE 15288:2015) rated a purpose below 15%,and both of them referred to elicitation.
+
+
+• The IREB Glossary and ISO/IEC/IEEE 29148 are themost versatile standards, with no purpose having ashare of more than 20% of responses.
+
+
+• On the other hand, some standards are mentionedin relation to a main purpose. As mentioned earlier,IEEE 830-1998 is used primarily for documentation andISO/IEC 25010 for quality management purposes. Wealso found that ISO/IEC TR24766 is mainly used forrequirements management, ISO/IEC 25030 for qualitymanagement, and ISO/IEC/IEEE 24765 for communi-cation. Nevertheless, the dominance is not big and thereis no single purpose reaching the 30% threshold overthe number of respondents using the standard.
+
+
+4.3.3RQ2.3: Reasons for using standards
+
+
+We asked the respondents to state the reasons why theyuse the standards they know at least in some projects.Again, some respondents reported more than one reasonper standard, but not so often as in the previous sub-question. In contrast to other questions in our survey, wereceived a clear picture here (Fig. 7). The primary reasonreported by respondents for using the standards is “Bypersonal choice”. On average, the respondents mentionedthis reason more often than the other four reasons “Imposedby the company”, “Imposed by the customer”, “Imposedby regulations” or “Because all the team members use it”combined.This dominance is especially remarkable in the case ofthe IREB Glossary, where no other reason exceeds 10%,compared to the [38;82.6%] of personal choice. The only casein which this dominance is not so rampant is ISO/IEC 9126,where personal choice [6;50.0%] is only slightly higher thancompany imposition [5;41.7%]. Here it is also worth notingthat an ofﬁcially retired standard is imposed by so manycompanies.
+
+
+8IEEE TRANSACTIONS ON SOFTWARE ENGINEERING
+
+
+ISO/IEC/
+
+
+IEEE 15288
+
+
+ISO/IEC/
+
+
+IEEE 12207
+
+
+ISO/IEC/
+
+
+IEEE 24765
+
+
+ISO/IEC9126
+
+
+ISO/IEC25010
+
+
+ISO/IECTR 24766
+
+
+ISO/IEC25030
+
+
+IREBGlossary
+
+
+ISO/IEC/
+
+
+IEEE 29148
+
+
+IEEE830-1998
+
+
+Average
+
+
+80%
+
+
+70%
+
+
+60%
+
+
+50%
+
+
+40%
+
+
+30%
+
+
+20%
+
+
+10%
+
+
+0%
+
+
+90%
+
+
+100%51495513271917223228
+
+
+Other reasons
+
+
+By personalchoice
+
+
+All members inmy team use it
+
+
+Imposed by do-main regulation
+
+
+Imposed by thecustomer
+
+
+Imposed by mycompany
+
+
+Fig. 7. RQ2.3: Reasons for using standards (number of responses givenfor each standard shown above the bars).
+
+
+4.3.4RQ2.4: Reasons for not using known standardsFig. 8 summarizes, for each of the known standards, reasonswhy our respondents don’t use them at all. Overall, noneof the reasons dominates, although not providing sufﬁcientbeneﬁts is the most reported one (22.6% over the totalnumber of responses). It is interesting to note that cost andnon-applicability are the least frequently mentioned reasons(12.9% each). Among the other reasons provided as free textanswers (18.3%), we highlight “Insufﬁcient knowledge fora quick and efﬁcient use”, “We haven’t had the time tocarefully revise the material”, “No need for now to applythem” and “No speciﬁc guideline by my company”.
+
+
+ISO/IEC/
+
+
+IEEE 15288
+
+
+ISO/IEC/
+
+
+IEEE 12207
+
+
+ISO/IEC/
+
+
+IEEE 24765
+
+
+ISO/IEC9126
+
+
+ISO/IEC25010
+
+
+ISO/IECTR 24766
+
+
+ISO/IEC25030
+
+
+IREBGlossary
+
+
+ISO/IEC/
+
+
+IEEE 29148
+
+
+IEEE830-1998
+
+
+Average
+
+
+80%
+
+
+70%
+
+
+60%
+
+
+50%
+
+
+40%
+
+
+30%
+
+
+20%
+
+
+10%
+
+
+0%
+
+
+90%
+
+
+100%101620910119323
+
+
+Other reasons
+
+
+Too costly to apply
+
+
+Too time-consum-ing to apply
+
+
+It does not providesufficient benefits
+
+
+Not applicable incontext of my work
+
+
+Irrelevant for mywork
+
+
+Fig. 8. RQ2.4: Reasons for not using standards known to our respon-dents (number of responses given for each standard shown above thebars).
+
+
+4.4RQ3. Under which conditions are RE-related stan-dards used by practitioners?
+
+
+As mentioned in Sect. 3.6, the answer to this RQ requiredthe coding of three optional open-text ﬁelds, one per sub-question. Table 4 provides a summary. Responses are verydiverse, ranging from one single word (“Regulation”) tovery elaborated sentences (one response up to 172 wordsmentioning ﬁve impediments in RQ3.2). Details on theanswers to the RQs follow.
+
+
+4.4.1RQ3.1. What factors affect the use of the standards?A slight majority of respondents [48;53.3%] does not men-tion any factor driving the use of standards, while a few
+
+
+TABLE 4Coding overview for RQ3.
+
+
+SubRQRespondents1Terms2TopicsCategories
+
+
+RQ3.13864 (72)525RQ3.24455 (78)284RQ3.34557 (88)446
+
+
+1 After ﬁltering according to Sect. 3.62 Left, number of different terms. In parentheses, totalnumber of references to these terms, considering re-peated references in different responses.
+
+
+TABLE 5RQ3.1: Factors affecting standard adoption.
+
+
+Category1Factors2
+
+
+Attribute6: Consistency, Quality[24; 63.2%]3: Adaptability, Completeness, Maturity2: Competence development, Efﬁciency, Satisfac-tion1: Abstraction, (Lack of) Ambiguity, Clarity, (Lackof) Complexity, Credibility, Guidance, Security,Testability
+
+
+Activity2: Audit, Communication, Compliance,/ProcessUnderstanding[11; 28.9%]1: (Required by) Bureaucracy, Certiﬁcation, Gov-ernance, Quality assurance, Review, Training
+
+
+Logical4: (Best) PracticesAsset3: Body of Knowledge[11; 28.9%]2: Regulations, Vocabulary1: Guidelines/Procedures, Reference framework
+
+
+RE Phases1: Elicitation, Management, NFR, Safety,andTypes[5; 13.2%]
+
+
+Regulatory
+
+
+Scope6: Requirement, External Stakeholder[27; 71.1%]5: Organization4: Product3: Market, Project, Team2: SRS1: Colleagues, Documentation, Industry (as awhole), IT infrastructure, Process, Self (the re-spondent), (Other) Standards
+
+
+1 [x;y%]: x, number of respondents who mentioned factors in thiscategory; y%, percentage regarding the 38 respondents.
+
+
+2 Digits show the number of responses citing every factor.
+
+
+more [4;4.4%] state that they do not know or give too vagueor directly invalid statements.We analyzed the responses given by the rest of thetiﬁed ﬁve categories (see Table 5):
+
+
+• Attribute. Includes factors related to some quality as-pect, e.g., consistency, quality or maturity.
+
+
+• Activity/Process. Identiﬁes activities or processes thatmay beneﬁt from the use of standards, as communi-cation, audits or governance.
+
+
+• Logical Asset. Enumerates concepts used in RE that maybe improved through the use of standards, e.g., body ofknowledge, vocabularies or regulations.
+
+
+• RE Phases and Types. Declares RE-speciﬁc phases andtypes in which some respondents recognize the needof applying standards, like requirements managementand safety requirements.
+
+
+FRANCH ET AL.: STUDY ABOUT THE KNOWLEDGE AND USE OF REQUIREMENTS ENGINEERING STANDARDS IN INDUSTRY9
+
+
+• Scope. Binds the context of a given factor. Topics of thiscategory act as modiﬁers of topics of the former.
+
+
+TABLE 6RQ3.2: Impediments on the effective use of standards.
+
+
+Category1Factors2
+
+
+Knowledge9: Insufﬁcient knowledge/skills-related6: Company capacity[19; 43.2%]3: Lack of awareness2: Application/Project domain, Lack of experts1: Company context, Limited industrial adoption
+
+
+Intrinsic3: Difﬁcult to read, Not useful, Rigid,[16; 36.4%]Too theoretical1: Copyright limitations, Resources to invest, Tooabstract, Too complicated, Too many standards,Too simple
+
+
+Cultural8: Poor consideration of RE in company[14; 31.8%]6: Employees’ attitude4: Company culture1: Processes considered unnecessary, Quality notsought, Resistance to standards
+
+
+Operational4: Poor effectiveness[10; 22.7%]3: Need of tailoring2: Cost pressure1: Lack of tool support, Time pressure
+
+
+1 [x;y%]: x, number of respondents who mentioned factors in thiscategory; y%, percentage given over the 44 respondents whoprovided valid answers.
+
+
+2 Digits show the number of responses citing every factor.
+
+
+4.4.2RQ3.2. What are the major impediments in effectivelyusing RE-related standards?Almost half of the respondents [43;47.8%] do not mentionany impediment regarding the use of standards, while a fewmore [3;3.3%] state that they are not aware of any or providean invalid statement.We grouped the impediments emerging from the re-sponses given by the [44;48.9%] remaining respondents intofour categories (see Table 6):
+
+
+• Knowledge-related. Includes factors related to the knowl-edge or mastering of standards, e.g., lack of awarenessof their existence or shortage of resources to invest intheir acquisition or application.
+
+
+• Intrinsic. Enumerates characteristics that the respon-dents assign to standards, e.g., they are too theoretical,too complicated or simply not useful.
+
+
+• Cultural. Collects some factors that act as impedimentsdue to the culture of the organization, for exampleemployees’ lack of motivation or the under-estimationof RE by managers.
+
+
+• Operational. Declares barriers that emerge once the stan-dard has started to be applied, like time pressures or theneed of tailoring to the speciﬁc needs of the companyor project.
+
+
+4.4.3RQ3.3. What are the perceived advantages comingfrom the use of RE-related standards?Nearly half of the respondents [42;46.7%] do not mentionany perceived advantage from using standards, and a few[3;3.3%] state that they are not aware of any or provideconfounding information.
+
+
+TABLE 7RQ3.3: Perceived beneﬁts from the use of standards.
+
+
+Category1Factors2
+
+
+Attribute11: Quality[20; 44.4%]4: Consistency3: Clarity, Completeness2: Compliance, Effectiveness1: Credibility, Timeliness (state-of-the-art)
+
+
+Methodology4: Evolutionand IT3: Approach to development[15; 33.3%]2: Acceptance of results, Reuse, Structure (of pro-cess and documentation)1: Design & Implementation, Good practices, Pre-vision, Project handling, Technology leverage,
+
+
+Human4: Common understanding, CommunicationFactors3: Agreed terminology, Shared language,[18; 40.0%](Support to) Argumentation1: Established knowledge, Giving advice, Profes-sional approach, Rationale (for decisions), (Per-sonal) Satisfaction
+
+
+Project3: Cost/Budget, RiskFactors2: Time[6; 13.3%]1: Effort
+
+
+Organiza-2: Customer satisfactiontional1: Finances, Team management,[5; 11.1%]Awareness on RE
+
+
+RE-2: Speciﬁcationrelated1: Body of knowledge, Business analysis,[7; 15.6%]Business alignment, Elicitation, Glossary, Man-agement
+
+
+1 [x;y%]: x, number of respondents who mentioned factors in thiscategory; y%, percentage given over the 45 respondents whoprovided valid answers.
+
+
+2 Digits show the number of responses citing every factor.
+
+
+We proceeded similarly as for the previous sub-questionsand grouped the beneﬁts emerging from the rest of re-sponses [45;50.0%] into six categories (see Table 7):
+
+
+• Attribute. Includes factors directly related to improvedproperties of the requirements, e.g., their quality, con-sistency, clarity or completeness.
+
+
+• Methodology and IT. Enumerates aspects of the methodor the technological solution which may beneﬁt fromstandards, for instance, easier product evolution orimproved project management.
+
+
+• Human factors. Enumerates improved human abilitiesor skills, e.g., providing better arguments in decision-making or better communication abilities.
+
+
+• Projects factors. Collects some factors that are related tothe project measurement or success, like risk, time oreffort.
+
+
+• Organizational. Declares beneﬁts directly perceived bythe organization, as customer satisfaction or team man-agement.
+
+
+• RE-related. Identiﬁes beneﬁts related with the RE pro-cess, like improved requirements elicitation or manage-ment, or a more comprehensive body of knowledge(“structure to the [RE] ﬁeld”).
+
+
+10IEEE TRANSACTIONS ON SOFTWARE ENGINEERING
+
+
+4.5RQ4. Do practitioners use further guidelines ordocumentation templates in their RE process?
+
+
+RQ4 includes four research sub-questions. Answers to
+
+
+4.5.1RQ4.1. What further guidelines or templates do prac-titioners use?
+
+
+We applied the analysis method described in Section 3.6over a total of 136 responses from 54 respondents. Tenresponses had to be discarded because they referred tostandards instead of guidelines and templates (and shouldhave been provided as responses to RQ1.1 accordingly).One respondent explicitly stated not to use any guidelinesor templates. As a result, we were left with 125 responsesfrom 52 respondents (i.e., 57,8% over the total number ofrespondents). Some responses referred to more than oneconcept and after decomposing them, we ﬁnally came upwith 149 individual references to guidelines, templates andother standardized artifacts. We identiﬁed 65 primary codesto classify these responses. For 28 of them, we identiﬁed asecondary code providing further information (e.g., a partic-ular tool or a particular technique). In total, we identiﬁed 34secondary codes. However, the analysis of the secondarycodes did not yield any notable insights with respect toRQ4.1. The primary codes were grouped into three cate-gories following the question made, further divided intosubcategories (see Table 8 for the coding and Fig. 9 for thenumber and percentage of respondents using every type ofartifact):
+
+
+• Templates. Writing templates are the dominant type,both for individual elements (e.g., use cases, user sto-ries) and entire documents (typically, the requirementsspeciﬁcation). Some respondents reported templates forRE-related processes (e.g., product gap analysis), whilea few more just reported the use of templates in generalor did not provide details.
+
+
+• Guidelines. We followed a similar sub-classiﬁcation asabove, although in this case we didn’t distinguishamong guidelines for writing individual elements ordocuments because the responses were in general notvery speciﬁc regarding this aspect.
+
+
+• Others. Here we grouped all the codes corresponding toresponses that were neither templates nor guidelines.Mainly, modeling languages, processes other than RE-related ones, tools, diagrams, and other miscellaneous(e.g., traceability matrices, ontologies, architecture de-velopment methods).
+
+
+The number of respondents reporting use of templatesmore than doubles the number related to the use of guide-lines. Furthermore, the number of respondents who re-ported the use of both templates and guidelines is as lowas [10;19,2%]. The number of respondents referring to otherartifacts is the same as the number of respondents usingtemplates. Most usual references were to modeling lan-guages (especially UML) and processes (remarkably Scrum).We also observed that respondents who use other artifactstend to use several of them together, e.g., various types ofUML diagrams.
+
+
+18
+
+
+16
+
+
+14
+
+
+12
+
+
+10
+
+
+8
+
+
+6
+
+
+4
+
+
+2
+
+
+0
+
+
+TemplatesGuidelinesOthers
+
+
+Element
+
+
+Document
+
+
+Process
+
+
+General
+
+
+Writing 
+
+
+requirements
+
+
+Processes
+
+
+General
+
+
+Diagrams
+
+
+Languages
+
+
+Processes
+
+
+Tools
+
+
+Miscellaneous
+
+
+32.7%
+
+
+25%
+
+
+11.5% 11.5%
+
+
+17.3%
+
+
+5.8%
+
+
+11.5%
+
+
+9.6%
+
+
+30.8%
+
+
+26.9%
+
+
+7.7%
+
+
+30.8%
+
+
+Number of respondents
+
+
+Fig. 9. RQ4.1: Overview of respondents’ use of templates and guidelines(percentages given over the set of 52 respondents who provided validresponses).
+
+
+4.5.2RQ4.2. How often are these guidelines or templatesused?
+
+
+Table 9 shows the frequency of use of templates, guidelinesand other standardized artifacts. All categories have a simi-lar distribution, with close to half of the responses reportinguse in every project and with all categories around 20% ofscarce use (“in some project”).We have also analyzed usage at the level of the primarycodes and in general differences are not remarkable. We onlyremark the following cases:
+
+
+• The usage of guidelines for writing requirements ishighly polarized, with 4 usages out of 10 in everyproject, and 5 other usages only in some project.
+
+
+• On the contrary, the usage of diagrams concentrates inthe mid-range of usage (“in most projects”), as stated in12 out of the 13 reported usages.
+
+
+• All 5 usages of tools apply to every project.
+
+
+4.5.3RQ4.3. For which purpose do practitioners use eachof these guidelines or templates?
+
+
+Table 10 shows the frequency of the purposes of use of tem-plates, guidelines and other standardized artifacts. Docu-mentation of requirements is by far the main purpose of use,especially in the case of templates. The rest of purposes donot reach 17% of the responses given. Interesting results arethe high percentage of responses reporting communicationpurposes for artifacts other than templates and guidelines,as well as the relative importance of guidelines for require-ments management and setting up the RE process. Most ofthe respondents who mentioned “Other” simply wanted toexpress multiple purposes for an artifact.As in the previous sub-question, we analyzed the indi-vidual artifacts in detail. We found the following:
+
+
+• Although documentation is the main purpose of bothdocument level templates and element level templates,the dominance is different. While at the document levelit is the dominant purpose (12 out of 14), only 9 out of21 mention this purpose on the element level.
+
+
+• The main purpose of the different types of otherartifacts varies: diagrams for eliciting requirements[7;53.8%], languages for documenting them [10;52.6%],
+
+
+FRANCH ET AL.: STUDY ABOUT THE KNOWLEDGE AND USE OF REQUIREMENTS ENGINEERING STANDARDS IN INDUSTRY11
+
+
+TABLE 8RQ4.1: Overview of responses and respondents concerning the use of templates and guidelines.
+
+
+Category1Sub-category1Primary Code (examples)2
+
+
+Templates[34;65.4%]
+
+
+Element level template [17;32.7%]Functional requirements template, User story
+
+
+Document level template [13;25.0%]Business requirements documentation template, System requirements speciﬁca-tion template
+
+
+Process support template [6;11.5%]Change management template, Scoping template
+
+
+Templates in general [6;11.5%]General templates, Requirements documentation templates
+
+
+Guidelines[14;26,9%]
+
+
+Guidelines for writing requirements[9;17.3%]
+
+
+Requirements writing guideline, Speciﬁcation writing guideline
+
+
+Guidelinesforrequirements-relatedprocesses [6;11.5%]
+
+
+Conﬁguration management guideline, RE process guideline
+
+
+Guidelines in general [3;5.8%]General guidelines
+
+
+Others[34;65.4%]
+
+
+Standardized diagrams [5;9.6%]Activity diagram, Class diagram
+
+
+Standardized languages [16;30.8%]Modelling language
+
+
+Standardized processes [14;26.9%]Change request process, Software development process
+
+
+Tools [4;7.7%]Tool
+
+
+Miscellaneous other [16;30.8%]Architecture development method, Body of knowledge, Data dictionary, Productvision board, Test case
+
+
+1 In [x;y%], x is the number of respondents who mentioned primary codes in this category, and y% is the percentage of x over the numberof respondents who use standardized artifacts (52).
+
+
+
+
+
+TABLE 9Summary of use of templates, guidelines and otherstandardized artifacts (Usage refers to projects).
+
+
+Usage1TemplatesGuidelinesOthersOverall
+
+
+Every[25;50.0%][10;45.5%][33;42.9%][68;45.6%]Most[15;30.0%][8;36.4%][28;36.4%][51;34.2%]Some[10;20.0%][4;18.2%][16;20.85%] [30;20.1%]
+
+
+Total502277149
+
+
+1 [x;y%]: x, number of responses that report the given levelof use for the given category; y%, percentage of x over thenumber of responses for the given category (which appearsin the last row).
+
+
+processes for communication purposes [7;43.8%] andtools for managing requirements [2;40.0%].
+
+
+4.5.4RQ4.4. How are these guidelines or templates usedin combination with RE-related standards?
+
+
+Up to 56 respondents provided 103 responses to this lastsub-question (which includes two respondents who did notprovide answers to the previous sub-questions). This meansthat some respondents (concretely, 33) reported more thanone type of combination; unfortunately, the questionnairedid not gather explicit information about the context of eachtype, and the respondents did not use the free text to informeither.Fig. 10 shows that the greatest percentage of respondentsreported use of standardized artifacts as a way to add detailto standards in three possible different ways (provide con-text, add speciﬁc details, or add details in general), while thenumber of respondents using the artifacts as replacementof, or independently of, standards did not reach 25% in anycase.
+
+
+TABLE 10Summary of purposes of using templates, guidelines and otherstandardized artifacts.
+
+
+Usage1TemplatesGuidelinesOthersOverall
+
+
+Docu-mentation
+
+
+[23;46.0%][9;40.9%][22;28.6%][54;36.2%]
+
+
+Commu-nication
+
+
+[5;10.0%][0;0.0%][20;26.0%][25;16.8%]
+
+
+Elicita-tion
+
+
+[5;10.0%][1;4.5%][11;14.3%][17;11.4%]
+
+
+Mana-gement
+
+
+[5;10.0%][4;18.2%][7;9.1%][16;10.7%]
+
+
+Setupprocess
+
+
+[3;6.0%][4;18.2%][6;7,8%][13;8.7%]
+
+
+Qualitymgmt.
+
+
+[3;6.0%][3;13.6%][3;3.9%][9;6.0%]
+
+
+Com-pliance
+
+
+[3;6.0%][1;4.5%][1;1.3%][5;3.4%]
+
+
+Others[3;6.0%][0;0.0%][7;9.1%][10;6.7%]
+
+
+Total502277149
+
+
+1 [x;y%]: x, number of responses that report the given levelof use for the given category; y%, percentage of x over thenumber of responses for the given category (which appearsin the last row).
+
+
+5DISCUSSION
+
+
+In this section, we discuss our major ﬁndings in detail.Finding 1: The general knowledge about RE standards isrespondents do not know more than two RE-related stan-dards. We found similar percentages for the respondentswho do not know the core RE standard, ISO/IEC/IEEE29148, and its predecessor IEEE 830-1998: 45.6 percentand 44.4 percent, respectively. If we analyze individualresponses in detail, 27.8% of all respondents do not knowany of these two core standards. Even the most knownstandard in our study, the IREB Glossary of RE Terminology,is not known by 30% of the respondents, and this number
+
+
+12IEEE TRANSACTIONS ON SOFTWARE ENGINEERING
+
+
+60%
+
+
+50%
+
+
+40%
+
+
+30%
+
+
+20%
+
+
+10%
+
+
+0%
+
+
+Contextualize
+
+
+Provide 
+
+
+speciﬁc details
+
+
+Provide details 
+
+
+in general
+
+
+Not used with 
+
+
+standards
+
+
+Replace 
+
+
+standards
+
+
+Other
+
+
+31232213122#responses
+
+
+% over 103 responses% over 56 respondents
+
+
+
+
+
+ISO/IEC/
+
+
+IEEE 15288
+
+
+ISO/IEC/
+
+
+IEEE 12207
+
+
+ISO/IEC/
+
+
+IEEE 24765
+
+
+ISO/IEC9126
+
+
+ISO/IEC25010
+
+
+ISO/IECTR 24766
+
+
+ISO/IEC25030
+
+
+IREBGlossary
+
+
+ISO/IEC/
+
+
+IEEE 29148
+
+
+IEEE830-1998
+
+
+80%
+
+
+70%
+
+
+60%
+
+
+50%
+
+
+40%
+
+
+30%
+
+
+20%
+
+
+10%
+
+
+0%
+
+
+All respondents
+
+
+RE and BA respondents
+
+
+Fig. 11. Knowledge of RE-related standards by requirements engineersand business analysts.
+
+
+grows to 51,1% if we consider those respondents withoutany IREB certiﬁcation.In summary, and this is a main result of our study, wefound that the level of knowledge of RE-related standards is notas high as one could expect. This lack of knowledge may pre-vent practitioners from making informed decisions in theirprojects, for example, whether to apply a certain method,follow a certain template or use the right terminology. Thisdoes not mean that knowing about standards will alwayslead to their application, but knowing a standard allowsto decide against its application based on well-justiﬁedreasons.We discuss next if there is any demographic factor withan inﬂuence on the knowledge of standards. Remarkably,one could expect that the 71 respondents who hold or heldthe job title requirements engineer or business analyst in thepast six years would be more knowledgeable. However, asFig. 11 shows, differences are not important. In the samevein, the knowledge of quality standards by the 18 re-spondents occupying positions of quality engineers/qualitymanagers is not massive, with 61.1% of them knowingISO/IEC 25010 and only 38.9% and 33.3% knowing ISO/IEC25030 and ISO/IEC 9126, respectively. Therefore, we con-clude that according to our study, the job title is not determi-nant for the knowledge of standards.
+
+
+We also analyzed the possible relation with the experi-ence level. In general, results suggest that more experiencedprofessionals have a slightly wider knowledge of standards.For instance, the percentage of respondents with morethan ten years of experience who know IEEE 830-1998 orISO/IEC/IEEE 29148 is 82.1%, compared to the 64.7% of therest of the population. We found similar results for otherstandards that suggest that experience has an inﬂuence on theknowledge of standards.We also compared knowledge of standards with the classof systems developed by our respondents. Although mostof the knowledge was evenly distributed, we found thatthe 20 respondents working on embedded systems havescarce knowledge of quality-related standards (a total of[16;80%] do not know any) but instead are more aware ofother engineering standards ([12;60%] know at least one),which is opposite to what we found for the rest of systemclasses. Therefore, system class may be determinant in the typeof standards that practitioners need to master for their work.We analyzed other possible inﬂuencing factors such assize or role of the team, but couldn’t ﬁnd any furtherrelationships, except certiﬁcation. Our general observationis that only 3.8% of certiﬁed respondents do not know anystandards, in contrast to the 13.2% of non-certiﬁed respon-dents. This indicates a positive inﬂuence of certiﬁcation on stan-dard knowledge. However, some particular standards do notfollow this general trend, and, in particular, the knowledgeof IEEE 830-1998 or ISO/IEC/IEEE 29148 is slightly lowerfor certiﬁed respondents than for non-certiﬁed respondents(71.2% vs. 73.7%), with the only exception of the advancedlevel certiﬁcation population segment, for which the per-centage increases to 84.6%.Finding 2: Even the known standards are barely used. Even ifrespondents know the standards, they still barely use them.For example, only 14.3% of the respondents who knowISO/IEC/IEEE 29148 actually use it in all their projects,while almost two thirds of them (65.3%) use it only insome projects or even never. Again, the situation doesnot improve much when considering the job title. For in-stance, when combining the numbers for not knowing ornever using standards, [26;36.6%] of the RE/BA respondentsdo not know or never use the two core RE standards,ISO/IEC/IEEE 29148 and its predecessor IEEE 830-1998.The numbers are similarly striking if we focus on respon-dents instead of standards: 37 out of the 83 respondents whodeclared to know some standard (i.e., 44.6%) use all of themscarcely (i.e., they use all standards they know only in someprojects or never, or they prefer not to respond7).Similarly to above, we investigated if some demographicfactors could have an impact on the use of standards. We fo-cused again on experience level and certiﬁcation. While wedid not ﬁnd any relationship among level of experience anduse of standards, we found that respondents without anycertiﬁcation are more prone to use standards scarcely thanthe rest (54.5% compared to 38.0% for certiﬁed respondents).Considering this observation and also the increased level ofgeneral knowledge, we may conclude that certiﬁcation has apositive inﬂuence on RE-related standards knowledge and use.
+
+
+7. Arguably, we consider declining of a response as an indicator ofscarce use.
+
+
+FRANCH ET AL.: STUDY ABOUT THE KNOWLEDGE AND USE OF REQUIREMENTS ENGINEERING STANDARDS IN INDUSTRY13
+
+
+There may be further reasons behind the limited useof standards. For instance, as early as in 1994, Pﬂeegeret al. remarked as criticism at that time that “standardshave codiﬁed approaches whose effectiveness has not beenrigorously and scientiﬁcally demonstrated” [31]. Anotherreason can be the time needed to develop and deliver astandard. Phillips [32] found that it typically takes threeyears to create an ISO standard. Therefore, the contentsof a standard may already look a bit outdated when thestandard is ﬁnally published. Last, in software engineeringin general, Laporte et al. [28] have reported as reasons fornot applying standards the perception that they are meantfor larger organizations and require much documentationand bureaucracy.Finding 3: Superseded old standards are still in use. Olderstandards, such as the IEEE 830-1998, are still being usedas a documentation guideline despite being supersededby follow-up standards. One reason could be that IEEE830-1998 is much shorter and conciser than ISO/IEC/IEEE29148. Since our results also show that documentation isthe most cited purpose for standards in general, it mightbe even the case that IEEE 830-1998, which is especiallyappreciated by respondents in this regard, could be hardto replace completely by ISO/IEC/IEEE 29148.Other reasons could also apply. For instance, due to thelack of continuous training and learning, practitioners mightnot gain awareness about new standards and supersededold ones. In fact, only two respondents mentioned at somepoint that the former standards were superseded by thenew ones, which supports this argument. Also, in RQ2.3,we could observe that the two ofﬁcially retired standardsIEEE 830-1998 and ISO/IEC 9126 are those with the highestpercentages of being imposed by organizations. This couldbe linked with some of the impediments reported in RQ3.2,as the lack of knowledge in the organization. Other possiblereasons could be reluctance to change, especially if prac-titioners cannot perceive a real beneﬁt in ISO/IEC/IEEE29148 compared to IEEE 830-1998, or that the communica-tion of a new standard when it is released is not effective.We couldn’t ﬁnd any further evidence from the data. Forinstance, we explored if respondents with more experiencewere not aware of the new standards and stuck to the oldones, but this was not the case.Finding 4: University curricula do not communicate theexistence of standards effectively. Our results in Fig. 4 showthat even if the great majority of our respondents haveuniversity degrees, university studies take only the 5th placewhen it comes to where the respondents learned aboutthe standards, with only [18;22.1%] of respondents citinguniversity studies as a source. Only respondents with a PhDyield a greater share of up to 33.3%, but this segment ofthe population is small (only 9 respondents in our study).For the rest of respondents, and especially those holdingan engineering degree, training courses and self-learning(reading or web searches) were much more inﬂuential.This observation collides with some criteria formulatedby the Accreditation Board for Engineering and Technology(ABET), e.g., “students must be prepared for engineeringpractice through a curriculum culminating in a major designexperience based on the knowledge and skills acquired inearlier course work and incorporating appropriate engineer-
+
+
+ing standards and multiple realistic constraints” [1] andsuggests the need for RE educators in university settings togive more attention to this area. This action has to overcomereported impediments to teaching standards as lack of textbooks, lack of practical knowledge by educators, and avail-ability and cost of access to technical standard documents[26], [32]. Innovative approaches such as gamiﬁcation [8]may help educators to improve the teaching of standards.Finding 5: Standards do not provide adequate support neitherfor requirements elicitation nor for compliance with regulations.Our results show that these two aspects are the worst ratedpurposes for which standards are used with averages ofWhen looking at respondents instead of responses, we geta similar picture: elicitation and compliance are the worstrated purposes, with less than 30 percent of respondentsusing standards for these purposes. Especially noticeable isthe case of requirements elicitation, given that this activityis recognized as crucial in the RE discipline. In our opinion,this ﬁnding calls for an effort by standard agencies andorganizations to improve this aspect in later versions ofcurrent standards, or even new standards.Finding 6: There is a great variety of factors driving the useof standards. The dominant reason for using standards isPersonal Choice (see Fig. 7), with an average of 51.1% anda range from 35.3% for ISO/IEC 9126 to 69.1% for the IREBGlossary. When taking together the cases where standardsare imposed by regulators, customers or the respondents’organization, being imposed is the follow-up reason for usingstandards, ranging from 18.2% for the IREB Glossary to47.1% for ISO/IEC 9126 and an average of 33.5%. Theformer is no surprise, as the IREB Glossary is no ofﬁcialstandard, while the latter aligns with Finding 3, as ISO/IEC9126 was ofﬁcially withdrawn in 2011, when its successor,ISO/IEC 25010 was released.As the results for RQ3 (see Sect. 4.4) show, respondentsprovide many reasons for justifying the use of standards. Ahigh share (63.2%) mention speciﬁc factors as drivers on theuse of standards, and among them, consistency and qualityare the most frequently cited ones. As mentioned in oneresponse, “when dealing in large teams, diverse processesand workshops running in parallel, the standards help inensuring consistency on the level of details documentedto help in smoother implementations”. Communication atall levels is also a frequently cited factor, as reﬂected, e.g.,by “Common understanding in the team”, “Ensure a com-mon understanding of the requirements with internal andexternal stakeholders”, and “To introduce a common RElanguage in my department (RE glossary)”.Finding 7: Lack of knowledge and skills, and personal andorganizational culture, are the main impediments to the adoptionof standards. The greatest share of respondents reporting im-pediments ([33;75.0%]) identify different knowledge-relatedor cultural issues (see Table 68). Resolving them could pavethe way to improved standards adoption.Cultural issues are the most striking ones since theyseem difﬁcult to be solved in an organization in the shortterm. Among them, the poor consideration of RE (8 re-
+
+
+8. Please take into account that a respondent may identify severalfactors as impediments.
+
+
+14IEEE TRANSACTIONS ON SOFTWARE ENGINEERING
+
+
+sponses) goes beyond the standards adoption problem. Arespondent summarized the problem as “Too [few] peopleknow about the challenge of the work with requirements.Project managers think you just ask the business and that’sit”. Moreover, from a business point of view, “most compa-nies lack [an] RE process because they don’t see the value”.Another respondent stated “[A] realistic budget is almostnever allocated to RE” In this context, it is not just theadoption of RE-related standards that is jeopardized, butthe whole RE process.Last, the percentually high number of respondents whocomplain about standards per se (16 respondents, i.e. 36.4%of those who mentioned impediments) cannot be neglected.Some criticisms look very well justiﬁed and should beconsidered as useful input for standard organizations. Forexample, standards are said to be too rigid, too theoretical,or to put it simpler: “they do not answer the real needs”.However, other responses express beliefs that show a mis-conception about how current standards may be used suchas “Our environment is changing too fast to use an oldfashioned standard” or “our standard way of specifyingrequirements is using natural language, so we cannot beneﬁtfrom modelling standards”. This points out the need of abetter communication of the utility of standards.Finding 8: Human factors do equally beneﬁt from the use ofRE-related standards as the quality of requirements. More than athird of our respondents who reported beneﬁts ([18;40.0%])mentioned that human-related skills or activities have im-proved after the use of RE-related standards. This is equalto the share of respondents mentioning beneﬁts relatedto an improvement of the quality9 of the requirements([18;40.0%]) and underlines that the importance of standardstranscends a purely technical perspective on RE.From a communication perspective, all involved stake-holders beneﬁt from standards: “[there is a] common un-derstanding among the people working on requirements”,“easier communications with customers and other counter-parties”. “Glossary standardization” is one of the referencedassets supporting communication.Another emerging human-related aspect is the conﬁ-dence that standards give to requirement engineers to justifytheir decisions, e.g., “the BA always has the necessary toolset for arguments” or “I have been challenged in the pastfor why I have chosen to adopt a certain methodology orapproach and having a standard to reference has allowedme to promote my opinion more effectively”. Being awareof this may help requirements engineers realizing aboutpersonal outcomes they may take from standards’ adoption.Needless to say, the impact on human factors does notmean that technical beneﬁts should be dismissed. It is notjust “higher quality of requirements”, but as a consequence“higher project success and ﬁnal product quality; improvedcustomer satisfaction”. One of the respondents even pro-vided a rough estimate of this gain: “Up to 30% less timeand budget consuming for entire project effort (not at thebeginning, but over time)”.Finding 9: The use of standards and standardized artifactsappears to be independent. When analyzing the usage of
+
+
+9. Respondents mentioning the attributes consistency, quality, com-pliance, completeness, credibility, or clarity; see Table 7. We omitted theattributes effectiveness and timeliness as they refer to process quality.
+
+
+standardized artifacts, it could be expected that there issome kind of relationship with the usage of standards. Weinvestigated two particular hypotheses:
+
+
+• (1) Respondents knowing less standards, or using lessoften the standards that they know, use more standard-ized artifacts, or use them more often. This would bean indicator that standardized artifacts may be used asa kind of substitute for standards.
+
+
+• (2) Respondents knowing more standards, or usingmore often the standards that they know, use more stan-dardized artifacts, or use them more often. This wouldbe an indicator that the proﬁle, attitude or educationof the respondent is more determinant than the type ofresource used.However, we couldn’t ﬁnd any relationship among theseconcepts, which lead us to conclude that according to thisstudy, the use of standards and other artifacts as templates,guidelines, notations and languages, are not related to eachother. Besides, we explored also the possible inﬂuence ofdemographic factors and we did not ﬁnd any result either.
+
+
+6THREATS TO VALIDITY
+
+
+As any other empirical study, ours has faced several threatsto validity that we report in this section.Convenience Sampling. Sampling is a major challenge inempirical research, especially when conducting surveys.Selecting a representative random sample of the target pop-ulation is frequently beyond of what is possible in a researchproject. Therefore, researchers often opt for conveniencesampling instead. This was also the case for our research.As we did not have the resources required to survey alarge enough random sample of people, we selected ourrespondents by reaching out to a population related toour (social and industrial) networks. We mitigated relatedthreats in accordance with Gravetter and Forzano [10] by,ﬁrst, carefully selecting a broad cross-section of the targetpopulation [3] and, second, being transparent in our demo-graphics.Quality of the instrument. One of the main issues was toimplement a balance on the amount of information gath-ered and the questionnaire completion time. As reportedby Dillman et al.: “The desire of surveyors to obtain an-swers to increasingly detailed questions needed for complexmodeling of attitudes and behaviors appears often to be inconﬂict with the limitations and patience of respondents forproviding answers” [4]. A further challenge was to ensurethat the respondents all had the same understanding ofthe questions as we had when implementing them, alsodue to the verbose notion of what a standard eventuallyis. This threat to the internal validity was evident in thesuggestion of standards that respondents gave in RQ1.1,which in general we discarded as the suggestions did notmatch the concept as we deﬁned it.Also in terms of construct validity, a related challengealso concerns the pre-selection of standards. To mitigate thisthreat, we conducted pilots of the questionnaire to ensure itssufﬁcient completeness, but also the correct understandingand to ﬁnd possible defects. Based on these pilots, weAn argument to support the adequacy of the ﬁnal set of
+
+
+FRANCH ET AL.: STUDY ABOUT THE KNOWLEDGE AND USE OF REQUIREMENTS ENGINEERING STANDARDS IN INDUSTRY15
+
+
+pre-selected standards is that respondents mentioned veryfew additional standards in the open text ﬁelds. However,there is always the possibility that some standard or type ofstandards is missing, for instance because respondents maynot be aware that they actually use a standard or becausethey do not know the name even if they know they areusing it.Accuracy of the coding. RQ3 and RQ4 were implementedwith free-text questions. Therefore, we needed to applycontent analysis. In order to reduce the threat of inaccuratecoding, also in the light of coding being always a creativetask inﬂuenced by researchers’ bias, we applied some well-deﬁned steps as reported in Sect. 3.6. Designated authorstook the lead of the process, iteratively identifying terms,topics, and categories. The entire team discussed the resultswhen a consolidated proposal was available. In this process,the codes were slightly adjusted to consolidate each other’sopinions. Furthermore, in RQ4, we deemed convenient a lastiteration involving a different author. As a ﬁnal mitigationstrategy to threats to the internal validity, we decided todisclose our raw data and the resulting coding schemeas a replication package 10 so that other researchers cancomprehend how we have drawn our conclusions from thedata.Average response rate. We implemented RQ1 and RQ2 inthe questionnaire through closed questions. Together withthe dynamic implementation of the RQ2-related part of thequestionnaire, almost all respondents provided answers tothe questions related to RQ1 and RQ2. On the contrary,RQ3 and RQ4 were implemented in the questionnaire asopen-ended free text questions, and this motivated that thepercentage of responses dropped down to almost half ofthe survey population resulting in a threat to the internalvalidity, but also to the conclusions we can draw based onthese two research questions.Generalization of results. Given the relatively low num-ber of responses received and also the great diversity ofrespondents, we cannot claim that the ﬁndings of our studywould necessarily correspond to results obtained whenconducting the same survey with a different part of the REpopulation. Given the lack of evidence in the subject un-der investigation, we also cannot generalize our results byanalogy. This threatens the external validity of our results.However, we believe that the results already provide greatinsights into the current state of affairs in the adoption ofRE standards and our disclosed replication package allowsother researchers in the community to replicate our studywith further samples.
+
+
+7CONCLUSIONS AND FUTURE WORK
+
+
+In this article, we have reported on the results of a surveywith practitioners on the use of RE-related standards inindustry. To our knowledge, this is the ﬁrst study of thiskind.We found that the knowledge and use of standards bythe respondents of our study is much lower than antic-ipated. The majority of respondents decide themselves touse standards; mandatory use imposed by the company, a
+
+
+
+
+
+customer, or a regulator are minor factors in comparison.Beyond insufﬁcient knowledge, there are also cultural andorganizational factors that impede the widespread adoptionof RE-related standards.The interpretation of our ﬁndings is subject to futurework. Our results could be an indicator that RE as a dis-cipline is still in an immature state. However, the reasonbehind our observations could also be that RE is a disciplinewhere standards are less important for systematic and suc-cessful work than they are in other engineering disciplines.Our ﬁndings are useful for a variety of stakeholders.
+
+
+• Practitioners get an overview of RE-related standardsand how their colleagues apply them in practice. Thiscan alert practitioners to standards that are worthadopting. In addition, discussing major impedimentsand perceived advantages can help to plan for adop-tion. By promoting the systematic application of stan-dards, our work as a whole is a means of improving thestate of practice.
+
+
+• Standardization bodies may learn about the acceptanceof their standards by industry and understand whataspects could be improved.
+
+
+• Researchers can take these results as a basis for furtherstudies that will help interpret our ﬁndings and extendthe research. Based on our disclosed open access repli-cation package, they can even start their own analysisusing our shared data set. It would also be interestingto repeat this study with a broader scope and a largercommunity of participants. Furthermore, it would beworthwhile to study factors that impede the adoptionof standards in more detail and with different empiricalmethods, for example, by analyzing the inﬂuence oforganizational culture. Finally, exploring the beneﬁtsassociated with the use of standards could providevaluable insights for researchers and practitioners andpromote informed decision-making about the adoptionof standards.The low degree of knowledge of relevant RE standardsis an indicator that many requirements engineers feel thatstandards do not add sufﬁcient value in the context oftheir work. In this light, our results also provide a startingpoint for investigations about how to improve or augmentexisting standards so that they provide more value to theRE professionals who apply and use them.
+
+
+ACKNOWLEDGEMENTS
+
+
+We thank our respondents for their time and effort whichmade this study possible. This work was partially supportedproject at Blekinge Institute of Technology.
+

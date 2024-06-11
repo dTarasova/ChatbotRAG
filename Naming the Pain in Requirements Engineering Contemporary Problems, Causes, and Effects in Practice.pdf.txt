@@ -1,0 +1,1002 @@
+
+Empirical Software Engineering manuscript No.(will be inserted by the editor)
+
+
+Naming the Pain in Requirements Engineering
+
+
+Contemporary Problems, Causes, and Eﬀects in Practice
+
+
+D. M´endez Fern´andez · S. Wagner · M.Kalinowski · M. Felderer · P. Mafra · A.Vetr`o · T. Conte · M.-T. Christiansson ·D. Greer · C. Lassenius · T. M¨annist¨o ·M. Nayebi · M. Oivo · B. Penzenstadler ·Schekelmann · S. Sen · R. Spinola · A.Tuzcu · J. L. de la Vara · R. Wieringa
+
+
+Received: date / Accepted: date
+
+
+Abstract Requirements Engineering (RE) has received much attention in re-search and practice due to its importance to software project success. Its inter-disciplinary nature, the dependency to the customer, and its inherent uncertaintystill render the discipline diﬃcult to investigate. This results in a lack of empiricaldata. These are necessary, however, to demonstrate which practically relevant REproblems exist and to what extent they matter. Motivated by this situation, weinitiated the Naming the Pain in Requirements Engineering (NaPiRE) initiativewhich constitutes a globally distributed, bi-yearly replicated family of surveys onthe status quo and problems in practical RE.In this article, we report on the qualitative analysis of data obtained from228 companies working in 10 countries in various domains and we reveal whichcontemporary problems practitioners encounter. To this end, we analyse 21 prob-lems derived from the literature with respect to their relevance and criticality independency to their context, and we complement this picture with a cause-eﬀectanalysis showing the causes and eﬀects surrounding the most critical problems.Our results give us a better understanding of which problems exist and howthey manifest themselves in practical environments. Thus, we provide a ﬁrst stepto ground contributions to RE on empirical observations which, until now, weredominated by conventional wisdom only.
+
+
+Keywords requirements engineering · survey research
+
+
+1 Introduction
+
+
+Requirements Engineering (RE) aims at the elicitation, analysis, and speciﬁcationof requirements that unambiguously reﬂect the intended purpose of a software
+
+
+Daniel M´endez Fern´andezTechnische Universit¨at M¨unchen, GermanyTel.: +49-89-28917056E-mail: Daniel.Mendez@tum.de
+
+
+arXiv:1611.10288v1  [cs.SE]  27 Nov 2016
+
+
+2D. M´endez Fern´andez et al.
+
+
+system considering and aligning the viewpoints of all relevant stakeholders. Pre-cise and consistent requirements directly contribute to appropriateness and cost-eﬀectiveness in the development of a system [34] whereby RE is a determinantof productivity and (product) quality [12]. Yet, RE remains a discipline that isinherently complex due to the various inﬂuences in industrial environments. Theprocess itself is driven by uncertainty as many aspects are usually not clear whensetting up a project [29]. The project setting, however, inﬂuences the choice ofmethods, approaches, and tools in RE as in no other software engineering disci-pline. This makes it impossible to standardise the discipline and to propose holisticsolutions to RE. The interdisciplinary nature of the discipline and the dependencyto various socio-economic and process-related factors that pervade RE make itdiﬃcult to investigate and improve [27].
+
+
+Over the last years, we have observed a strong research community arise andpropose a plethora of promising contributions to RE. Yet, we still know very littleabout the practical impact of those contributions or whether they are in tune withthe practical problems they intend to address [30]. The state of empirical evidencein RE is particularly weak and dominated by, if at all, isolated case studies andsmall-scale studies investigating aspects that hardly can be generalised. It remainsoften unknown for which situations the observed eﬀects of applying a speciﬁcmethod holds or what the long-term views are on cost and beneﬁt when adoptingand applying those methods. In most cases, accurate evaluations starve in thefuture work section of publications [8].
+
+
+Theoretical and practical contributions to RE are heavily steered by conven-tional wisdom rather than empirical observations. In our current understanding,there are two reasons. First, we still do not exploit the full potential of empiricalsoftware engineering principles in RE [10] to reveal theories and practically rele-vant improvement goals, and, in consequence, for evaluating contributions on thebasis of clear and practically relevant hypotheses. Both, however, are a prerequisitefor problem-driven research. Second – and more important – it is per se diﬃcultto provide proper empirical ﬁgures that could demonstrate, for instance, problemsin RE or even particular success factors [8]. This leads to the current situationwhere we still lack empirically grounded and comprehensive theories for RE. Toreach this aim, we need, as a ﬁrst step, to expand our knowledge about whichproblems exist in RE and what their causes are while covering the particularitiesof the project contexts for which those phenomena hold. This knowledge aboutthe state of practice and potentially resulting problems in RE would allow us tobetter steer future research in a problem-driven manner.
+
+
+This overall situation motivated the Naming the Pain in Requirements Engi-neering (NaPiRE) initiative under the umbrella of the International Software En-gineering Research Network (ISERN). NaPiRE constitutes a globally distributedfamily of practitioner surveys on the status quo, problems, and their causes andeﬀects in RE. The overall objective of NaPiRE is to establish an open knowledgebase about the status quo as well as practical problems and needs in RE. In thelong run, the obtained data shall support us in deﬁning a holistic theory of RE cov-ering a broad set of context factors for which particular phenomena hold. NaPiREis currently run by 26 researchers from 14 countries around the world.
+
+
+Naming the Pain in Requirements Engineering3
+
+
+1.1 Research Objective
+
+
+Our objective is to use the NaPiRE data from the 2014/15 survey run to explorewhich problems practitioners experience and what their causes and eﬀects are.This shall allow us to provide a basis for steering RE research in a problem-drivenmanner.
+
+
+1.2 Contribution
+
+
+In this article, we contribute with an analysis of:
+
+
+1. RE problems practitioners experience in their project setting and an analysisof the problems with respect to their criticality for project failures, including adiﬀerentiated view according to chosen context factors such as the developmentprocess model used (agile or plan-driven).
+
+
+2. Most reported causes of the RE problems, as reported by our survey respon-dents, and their inﬂuence on the most cited RE problems.
+
+
+3. Causes and eﬀects, providing an overview on the survey results on causes andeﬀects of the most critical RE problems.The analysis is based on data obtained from 228 companies in 10 countries.We expect our contributions to
+
+
+– increase the awareness of practitioners of problems reoccurring in RE andcauses that lead to those problems, thereby allowing them to directly assesstheir own situation with respect to the state of practice, and
+
+
+– provide an empirical foundation for researchers to base their investigations ona set of practical problems and causes.
+
+
+1.3 Outline
+
+
+The article is organised as follows. In Section 2, we describe related work andalso provide information on the background of the NaPiRE initiative includingpreviously published material. Section 3 introduces the study design includingresearch questions and the data collection and analysis procedures. In Section 4,we report on our study results, before concluding our article in Section 5.
+
+
+2 Related Work and Background
+
+
+In the following, we will discuss work related to our study, before introducing theNaPiRE initiative and previously published material in that context in detail.
+
+
+2.1 Related Work
+
+
+There is a large body of research on requirements engineering in general and onspeciﬁc RE methods in particular. Our study touches on the results of many ofthem, but we cannot discuss them all here. There exist surprisingly few compre-hensive systematic literature reviews. For instance, there is a systematic review
+
+
+4D. M´endez Fern´andez et al.
+
+
+on eﬀectiveness of requirements elicitation techniques [13] and mapping studieson creativity [24], requirements speciﬁcation improvement methods [35] as well asthe empirical work on requirements speciﬁcations techniques [9]. In the latter, theauthors emphasise that most studies are experiments, and that the practitioners’view is missing.We will focus on related work which performed survey research in the area ofrequirements engineering or at least with a strong RE component.1 In RE surveyresearch, we see two major areas: investigations of techniques and methods andinvestigations of general practices and contemporary issues in practice. Both areasinvestigate to some degree problems in RE and their causes.Contributions that investigate techniques and methods analyse, for example,selected requirements phases and which techniques are suitable to support typicaltasks in those phases. Cox et al. [11] performed a broader investigation of all phasesto analyse the perceived value of the RE practices recommended by Sommervilleand Sawyer [38]. Studies like those reveal the eﬀects of given techniques whenapplying them in practical contexts.Surveys on general practices and phenomena in industry include the well-knownChaos Report of the Standish Group, examining especially root causes for projectfailures of which most are to be seen in RE, such as missing user involvement.Whereas the report is known to have serious ﬂaws in its design negatively af-fecting the validity of the results [14], other studies, such as the (German) Suc-cess study [6], conduct a similar investigation of German companies including adetailed and reproducible study design. Still, both surveys exclusively investigatefailed projects and general causes at the level of overall software processes. A sim-ilar focus, but exclusively narrowed down to the area of RE, had the study ofKamata et al. [23]. They analysed the criticality of the single parts of the IEEEsoftware requirements speciﬁcation Std. 830-1998 [17] on project success.The focus of those studies, however, does not support the investigation of con-temporary phenomena and problems of RE in industry. Nikula et al. [33] presenta survey on RE at the organisational level of small and medium-sized companiesin Finland. Based on their ﬁndings, they inferred improvement goals, e.g., on opti-mising knowledge transfer. Staples et al. [39] conducted a study investigating theindustrial reluctance on software process improvement. They discovered diﬀerentreasons why organisations do not adopt normative improvement solutions, for ex-ample, CMMI and related frameworks (focussing on assessing and benchmarkingcompanies rather than on problem-driven improvements, see [32, 36]). Exemplaryreasons for a reluctance to normative improvement frameworks were the smallcompany size where the respondents did not see clear beneﬁt.A survey that directly focused on discovering problems in practical settingswas performed by Hall et al. [3]. They empirically underpin the problems dis-cussed by Hsia et al. [16] and investigated a set of critical organisational andproject-speciﬁc problems, such as communication problems, inappropriate skillsor vague requirements. Solemon, Sahibuddin, and Abd Ghani [37] report on a sur-vey on RE problems and practices in Malaysian software companies. They foundseveral of the RE problems we also saw in our survey. Liu, Li, and Peng [25] de-scribe a survey conducted in China about practices and problems in RE. They
+
+
+1 Parts of the following text are based on our related work discussion in [28] as the relatedwork has not changed signiﬁcantly.
+
+
+Naming the Pain in Requirements Engineering5
+
+
+discuss several problems we also investigated but concentrate on China. Verneret al. [40] ran a survey in Australia and the USA. They concentrated on successfactors in RE and found good requirements, customer/user involvement, and ef-fective requirements management to be the best predictors of project success. Inthe study reported in this article, we identiﬁed problems and their causes whichcan be used to reﬁne the abstract success factors identiﬁed by Verner et al. Forinstance, we identiﬁed incomplete and/or hidden requirements as a main problemto reach ’good requirements’ and weak qualiﬁcation as well as lack of experience asits main causes. These causes are useful guidelines to reach more eﬀective require-ments management. Further studies on RE problems and causes are still rare. Forinstance, Al-Rawas and Easterbrook [2] present a ﬁeld study on communicationproblems in requirements engineering.In summary, we have existing work using survey research to understand speciﬁcRE techniques as well as to understand practical problems. Yet, so far there hasnot been a large, replicated and world-wide analysis of RE problems together withtheir causes in practice.
+
+
+2.2 The NaPiRE Initiative
+
+
+The NaPiRE (Naming the Pain in Requirements Engineering) initiative was startedby Daniel M´endez Fern´andez and Stefan Wagner in 2012 as a reaction to the lackof a general empirical basis for requirements engineering research. The basic ideawas to establish a broad survey investigating the status quo of requirements engi-neering in practice together with contemporary problems practitioners encounter.This should lead to the identiﬁcation of interesting further research areas as wellas success factors for RE.The initial team was convinced that because of the diversity of RE in researchand practice, we would not be able to achieve this high goal by ourselves and ina single survey. Therefore, NaPiRE was created as a means to collaborate withresearchers from all over the world to conduct the survey in diﬀerent countries.This allows us to investigate RE in diﬀerent cultural environments and increasethe overall sample size. Furthermore, we decided to run the survey every two yearsso that we can cover slightly diﬀerent areas over time and have the possibility toobserve trends. The conduct of NaPiRE is guided by the four principles describedin Tab. 1.At present, the NaPiRE initiative has members from 14 countries mostly fromEurope but also North-America, South-America and Asia. There have been tworuns of the survey so far. The ﬁrst was the test run performed only in Germanyand in the Netherlands in 2012/13. The second run was performed in 10 coun-tries in 2014/15. All up-to-date information on NaPiRE together with links to allpublications and the data is available on the web site http://www.re-survey.org.The ﬁrst run in Germany together with the overall study design was publishedin [28]. A preliminary version was also published in [27] and the detailed dataand descriptive analysis is available as technical report [26]. This ﬁrst run alreadycovered the spectrum of status quo and problems. It had additional questions onthe expectations on a good RE which we removed in the second run because theyprovided the least interesting insights. The study design was described with thebi-yearly replications and world-wide distribution in detail. Furthermore, a ﬁrst
+
+
+6D. M´endez Fern´andez et al.
+
+
+Table 1 Guiding principles of NaPiRE
+
+
+OpennessOpenness begins by cordially inviting researchers and practi-tioners of any software-engineering-related community to con-tribute to NaPiRE and ends by disclosing our results andreports without any restrictions or commercial interest.TransparencyAll results obtained from the distributed surveys are com-mitted to the PROMISE repository. This shall allow otherresearchers an independent data analysis and interpretation.AnonymityThe participation in NaPiRE in the form of a survey respon-dent is possible by invitation only. This supports a transpar-ent result set and response rate. We collect no personal data,however, and every data set obtained from the survey will becarefully cleansed of information that might be traced backto a speciﬁc company to ensure that no personal data will bedisclosed to the public. That is, we guarantee that no answerset can be related to survey participants.Accuracy and ValidityWith accuracy and validity, we refer in particular to the datacollection and to the data analysis. Each question in the sur-vey is carefully deﬁned according to a jointly deﬁned theory tospeciﬁcally conﬁrm or refute existing expectations. The dataanalysis is furthermore performed in joint collaboration bydiﬀerent researchers to maximise the validity of the results.
+
+
+version of a theory of the status quo and problems in RE was provided in theform of hypotheses. Overall, we were able to get full responses from 58 companiesto test the theory. Most of the proposed theory could be supported and changeswere discussed based on the data. Finally, a detailed qualitative analysis of theexperienced problems and how they manifest themselves was made. The articleat hands concentrates on the replication of that part of the survey, with furtheremphasis on the problems and their causes.For the second run, we have published three papers so far, concentrating onspeciﬁc aspects and the data from only one or two countries. So far, there is nocomprehensive analysis of problems and causes based on the complete, interna-tional data set.In [18], we used the Brazilian data to explore how to analyse problems andcauses in RE in detail. In particular, we tested the use of probabilistic cause-eﬀect diagrams on this data to better understand the relationship of causes andproblems. We introduced those diagrams for causal analysis purposes [22], and havefurther detailed them subsequently [21]. We decided to employ these diagrams inour subsequent eﬀorts, including this article, in which we use them for analysingcauses and eﬀects of problems based on the complete data set.Thereafter, in [31], we concentrated on analysing the similarities and diﬀerencesin the experienced problems between Brazil and Germany. We also used the prob-abilistic cause-eﬀect diagrams for problem and cause analysis. Our key insights inthis article were that the dominating factors are related to human interactions in-dependent of country, project type or company. Furthermore, we observed a higherinclination to standardised development process models in Brazil and slightly morenon-agile, plan-driven RE in Germany.Finally, in [19], we concentrated on the often mentioned problem of Incompleteand / or hidden requirements and investigated common causes for this problembased on the Austrian and Brazilian data. The most common causes we found were
+
+
+Naming the Pain in Requirements Engineering7
+
+
+Missing qualiﬁcation of RE team members, Lack of experience, Missing domainknowledge, Unclear business needs and Poorly deﬁned requirements.
+
+
+3 Study Design
+
+
+The overall objective of the NaPiRE endeavour is to use survey research in aglobally distributed an replicated manner to build a holistic theory of the industrialstatus quo in requirements engineering. To this end, we conduct the survey bi-yearly while continuously adapting our questionnaire in response to data obtainedfrom previous years (see also Sect. 2.2).In the following, we introduce those information on the study design relevant tothe analysis presented of this article. Details on the overall principles and processfollowed in NaPiRE, as well as on the team involved, can be taken from our projectwebsite RE-Survey.org. There, we also publish the full instrument used under thepublication section.
+
+
+3.1 Research Questions
+
+
+Our objective is to get a better understanding of which problems practitionersencounter in RE, and how those problems relate to the overall project setting(causes and problems). To this end, we formulate three research questions, shownin Table 2, to steer the design of our study.
+
+
+Table 2 Research questions.
+
+
+RQ 1Which contemporary problems exist in RE?RQ 2What are observable patterns of problems and context characteristics?RQ 3What are their perceived causes and eﬀects?
+
+
+The ﬁrst question aims at understanding which problems practitioners experi-more descriptive view is complemented by the second research question, whichaims at understanding whether there exist problems that relate to speciﬁc contextfactors, such as the company size or the type of used process model. Once we un-derstand whether there exist speciﬁc patterns in the problems, we want to knowwhat their perceived causes and implications are going beyond project failure.
+
+
+3.2 Instrument
+
+
+The overall instrument used in NaPiRE constitutes in total 35 questions used tocollect data on (a) the demographics, (b) how practitioners elicit and documentrequirements, (c) how requirements are changed and aligned with tests, (d) whatand how RE standards are applied and tailored, (e) how RE is improved, andﬁnally (f) what problems practitioners experience in their RE. In the study athands, we focus on the problems practitioners experience in their RE while using
+
+
+8D. M´endez Fern´andez et al.
+
+
+Table 3 Questions (simpliﬁed and condensed excerpt).
+
+
+PartsNo.QuestionType
+
+
+DemographicsQ 1What is the size of your company?Closed(SC)Q 2Please describe the main business area and applicationdomain.Open
+
+
+Q 3Does your company participate in globally distributedprojects?Closed(SC)
+
+
+Q 4In which country are you personally located?OpenQ 5To which project role are you most frequently assigned?Closed(SC)Q 6How do you rate your experience in this role?Closed(SC)Q 7Which organisational role does your company take mostfrequently in your projects?Closed(MC)
+
+
+Q 8Which process model do you follow (or a variation ofit)?Closed(MC)
+
+
+Status QuoQ 9How do you elicit requirements?Closed(MC)Q 10How do you document functional requirements?Closed(SC)Q 11How do you document non-functional requirements?Closed(SC)Q 12How do you deal with changing requirements after theinitial release?Closed(SC)
+
+
+.........Q 16What requirements engineering company standard haveyou established at your company?Closed(MC)
+
+
+.........
+
+
+ProblemsQ 28Considering your personal experiences, how do the fol-lowing (more general) problems in requirements engi-neering apply to your projects?
+
+
+Likert
+
+
+Q 29Consideringyourpersonallyexperiencedproblems(stated in the previous question), which ones would youclassify as the ﬁve most critical ones (ordered by theirrelevance).
+
+
+Closed
+
+
+Q 30Considering your personally experienced most criticalproblems (selected in the previous question), whichcauses do they have?
+
+
+Open
+
+
+Q 31Considering your personally experienced most criticalproblems (selected in the previous question), which im-plications do they have?
+
+
+Open
+
+
+Q 32Considering your personally experienced most criticalproblems (selected in the previous question), whichmitigations do you deﬁne (if at all)?
+
+
+Open
+
+
+Q 33Considering your personally experienced most criticalproblems (selected in the previous question), whichwould you classify as a major cause for project failure(if at all)?
+
+
+Closed(MC)
+
+
+the answers given to selected questions on the status quo to answer RQ 2. Table 3summarises an excerpt of our questionnaire demonstrating the scope of our study.The full questionnaire can be taken from the publication section of our projectwebsite.
+
+
+In this part, we use a mix of open questions and closed ones. The type ofquestion is denoted in the table (last column). In case of closed questions, theanswers can be mutually exclusive single choice answers (SC) or multiple choiceones (MC). Most of the closed multiple choice questions include a free text option,e.g., “other” so that the respondents can express company-speciﬁc deviations fromstandards we ask for. We furthermore use Likert scales on an ordinal scale of 5 anddeﬁne for each a maximum value (e.g., “agree”, or “very important”), a minimumvalue (e.g., “disagree”, or “very unimportant”), and the middle (“neutral”). Thelatter allows the respondents to make a selection when they have, for example, noopinion on the given answer options. Finally, we deﬁne selected questions as condi-tional ones to guide through the survey by ﬁltering subsequent question selection.
+
+
+Naming the Pain in Requirements Engineering9
+
+
+For instance, if respondents state that they have not deﬁned any company-speciﬁcRE standard (Q 16), the remaining questions on the standards are omitted.For the analysis of the problems (Q 28 to Q 33), we ﬁrst present a list of prob-lems practitioners are meant to typically encounter in practice. This list emergedfrom previously conducted external studies (see also our related work section 2)and has been already used in our ﬁrst survey round (see also [28] for a richerdiscussion on the elaboration of the list). For this survey round, we use the samelist which includes a set of 21 pre-compiled problems shown next in no particularorder:
+
+
+– Communication ﬂaws within the project team– Communication ﬂaws between project team and the customer– Terminological problems– Unclear responsibilities– Incomplete and / or hidden requirements– Insuﬃcient support by project lead– Insuﬃcient support by customer– Stakeholders with diﬃculties in separating requirements from previously knownsolution designs
+
+
+– Inconsistent requirements– Missing traceability– Moving targets (changing goals, business processes and / or requirements)– Gold plating (implementation of features without corresponding requirements)– Weak access to customer needs and / or (internal) business information– Weak knowledge of customer’s application domain– Weak relationship to customer– Time boxing / Not enough time in general– Discrepancy between high degree of innovation and need for formal acceptanceof (potentially wrong / incomplete / unknown) requirements
+
+
+– Technically unfeasible requirements– Underspeciﬁed requirements that are too abstract and allow for various inter-pretations
+
+
+– Unclear / unmeasurable non-functional requirements– Volatile customer’s business domain regarding, e.g., changing points of contact,business processes or requirementsThe respondents are then asked to report the relevance of the presented prob-lems for their project setting, before being asked to select the 5 most criticalones (Q 29). The subsequent questions on the causes, the eﬀects, and potentialmitigation strategies consider then those 5 problems.
+
+
+3.3 Data Collection
+
+
+The survey is conducted by invitation only to have a better control over the dis-tribution of the survey among speciﬁc companies and also to control the responserate. The responses where, however, anonymous to allow our respondents to freelyshare their experiences made within their respective company. For each company,we invited one respondent as a representative of the company. In case of largecompanies involving several autonomous business units working each in a diﬀer-ent industrial sector and application domain, we selected a representative of each
+
+
+10D. M´endez Fern´andez et al.
+
+
+unit. For the data collection, each country representative deﬁned an invitation listincluding contacts from diﬀerent companies and initiated the data collection inde-pendently as an own survey project. All surveys relied on the same survey tool2
+
+
+hosted and administrated by the representatives for Germany. Information on theoverall data collection procedure can be also taken from our project website.For the study at hands, we conducted the survey in the countries summarisedin Table 4. The data collection phase varied among the countries and some ofthe countries also collected the data in multiple tranches potentially resulting inlonger inactivity phases.
+
+
+Table 4 Data collection phase (overview).
+
+
+AreaCountryData Collection Phase
+
+
+Central Europe (CE)Austria (AT)2014-05-07 to 2014-09-15Germany (DE)2014-05-07 to 2014-08-18Ireland (IE)2014-05-07 to 2014-12-31North America (NA)Canada (CA)2014-05-07 to 2015-08-15United States of America (US)2014-05-07 to 2015-05-01Northern Europe (NE)Estonia (EE)2014-05-07 to 2014-10-31Finland (FI)2015-06-01 to 2015-08-28Norway (NO)2014-05-07 to 2014-09-15Sweden (SE)2014-05-07 to 2014-09-15South America (SA)Brasil (BR)2014-12-09 to 2015-03-31
+
+
+3.4 Data Analysis
+
+
+To answer our research questions, we ﬁrst need to quantify the answers given forthe selection of the predeﬁned problems the participants shall rank as they haveexperienced them in their projects. As part of this quantiﬁcation, we also sum upto which extent the given problems have led to project failures in the experienceof the participants.For analysing the answers given to the open question on what causes andeﬀects the RE problems have (Q 30 to Q 32), we apply qualitative data analysistechniques as recommended in context of Grounded Theory [15, 1]. In particular,we considered the following basic coding steps:
+
+
+1. Open coding to analyse the data by adding codes (representing key character-istics) to small coherent units in the answers, and categorising the developedconcepts in a hierarchy of categories as an abstraction of a set of codes – allrepeatedly performed until reaching a state of saturation. We deﬁne the (theo-retical) saturation as the point where no new codes (or categories) are identiﬁedand the results are convincing to all participating researchers [4].
+
+
+2. Axial coding to deﬁne relationships between the concepts, e.g., “causal condi-tions” or “consequences”.
+
+
+2 We implemented the survey as a Web application using the Enterprise Feedback Suite.
+
+
+Naming the Pain in Requirements Engineering11
+
+
+3. Internal Validation as a form of internal quality assurance of the obtainedresults.Please note that we deviate from the approach to Grounded Theory as intro-duced by Glaser and Strauss [15] in two ways. First, given that we analyse datafrom an anonymously conducted survey after the fact, we are not able to follow aconstant comparison approach where we iterate between the data collection andthe analysis. This also means that we are not able to validate our results withthe participants, but have to rely in internal validation procedures to reduce theresulting threats to the validity (see also Sect. 3.5 discussing our validity proce-dures). Second, we do not inductively build a theory from bottom up, as we startwith a predeﬁned conceptual model (i.e. the problems) whereby we do not applyselective coding to infer a central category.In our instrument, we have already a predeﬁned set of RE problem codes (givenRE problems, see Q 28 and 29) for which we want to know how the participantssee their causes and eﬀects. For this reason, we rely on a mix of bottom-up andtop-down approach. That is, we start with our pre-deﬁned core category, namelyRE problems and a set of codes each representing one key RE problem, and threesub-categories: Causes, Eﬀects, and Mitigation Strategies, which then group thecodes emerging from the free text answers given by the participants. Within thecauses and eﬀects, we pre-deﬁne again the sub-categories. These sub-categories areas follows:
+
+
+– For the causes, we use the sub-categories Input, Method, Organization, People,Tools suggested in our previous work on defect causal analysis [20] as we wantto know from where in the socio-economic context the problems stem.
+
+
+– For the implications, we use the sub-categories Customer, Design or Imple-mentation, Product, Project or Organization, and Veriﬁcation or Validationas done in our previous work [31] as we want to know where in the softwareproject ecosystem the problems manifest themselves.For each answer given by the participant, we then apply open coding andaxial coding until reaching a saturation in the codes and relationships, and weallocate the codes to the previously deﬁned sub-categories. A rich discussion onthe principles of analysing textual data and how we generally apply it in context ofthe NaPiRE initiative can also be found in our previously published material [41].For coding our results, we ﬁrst coded in a team of two coders the ﬁrst 250statements to get a ﬁrst impression of the resulting codes, the way of formulat-ing them and the level of abstraction for capturing the codes. After having thisoverview, we organised a team of ﬁve coders within Germany and Brazil. Eachof the coders then coded approx. 200 statements for causes and additional200statements for eﬀects, while getting the initial codes from the pilot phase as orien-tation. In case the coder was not sure how to code given statements, she markedthe code accordingly for the validation phase. During that validation phase, weformed an additional team of three independent coders who then reviewed thosecodes marked as “needs validation” as well as an additional sample, comprising20% of the statements assigned to each coder, selected on their own. After thevalidation phase, we initiated a call where we discussed last open issues regardingcodes which still needed further validation, before closing the coding phase. Theoverall coding process took in total three months.To interpret the resulting codes, in particular the answers to research question2 where we want to know whether there exist patterns of problems and context
+
+
+12D. M´endez Fern´andez et al.
+
+
+characteristics, we need to put the answers to the problems in relation to theanswers given to previous questions in the questionnaire. To this end, we applymanual blocking to our results, i.e. we select subsets of results which include spe-ciﬁc variable selections; for instance all results for which a speciﬁc process modelhas been selected. We then discuss in the group of researchers whether there arespeciﬁc diﬀerences in the problems visible, e.g. compared to the problems whenother process models have been selected. However, blocking the codes according toall possible permutations of the variables in the questionnaire is not feasible. Forthis reason, we intentionally block the codes according to a combination of the twovariables company size (Q 1) and the type of software process models used (Q 8)(agile or plan-driven), which we believe to be suitable for an initial observation ofrelevant patterns. Of course, further blocking variables from the status quo sectionof the questionnaire could be used. However, the relation of the whole underlyingNaPiRE theory to the manifestation of the problems also involves signiﬁcant eﬀortand is left for future work.
+
+
+3.5 Validity
+
+
+The overall NaPiRE endeavour includes several procedures for checking validity,i.e., concerning the data collection and analysis phases, as described in detail inour previously published material [28]. For the analysis of qualitative data, whichis in the scope of this article, we deﬁned additional procedures as described next.The major threat to validity arises from the actual coding process as codingis essentially a creative task. Subjective facets of the coders, such as experiences,expertise, and expectations, strongly inﬂuence the way we code free text state-ments. A further threat arises from the fact that we cannot validate our resultswith the respondents given the anonymous nature of our survey. Finally, codingover a distributed team of researchers can additionally lead to a possibly limiteddegree of saturation in the emerging codes.To decrease the threats, we ﬁrst conducted a pilot phase in the analysis. Afteragreeing on the ﬁrst resulting codes within the group of coders, i.e. after get-ting a common understanding on the wording and the level of abstraction in thecodes, we then applied researcher triangulation for the actual coding process. Anindependent group of researchers coded all the statements given by the respon-dents, before we subsequently conducted a validation phase within the group ofresearchers. The validation phase during coding should then minimise the amountof incorrect codes. This validation focussed on codes declared as “needs validation”,but also on further codes presumably being coded correctly. There, we focused onthe occurrences of the codes rather than on the choice of the labels for the codes(e.g., CRs and change requests are seen as the same code).
+
+
+4 Study Results
+
+
+In the following, we present the survey results concerning the RE problems (RQ 1),observable patterns (RQ 2) and their common causes and eﬀects (RQ 3) as re-ported by our respondents. We ﬁrst summarise the information about the study
+
+
+Naming the Pain in Requirements Engineering13
+
+
+population, characterising the responding organisations, as this information is cru-cial to enable a suitable interpretation of the results.
+
+
+4.1 Study Population
+
+
+In total, 354 organisations spread across 10 diﬀerent countries agreed to answerthe survey. Out of these, 228 (63%) completed the survey by going through allof its questions and successfully reaching its end. Table 5 shows the number ofcompleted datasets and the completion rate per country.
+
+
+Table 5 Study population including response rates, total datasets obtained, completeddatasets, and completion rates. The explanation of the country codes can be take from Table 4.
+
+
+ResponseTotalCompletedCompletionAreaCountryRateDatasetsDatasetsRate
+
+
+CEAT72%181478%DE36.8%504182%IE39.7%251872%NACA75%151387%US36.2%251560%NEEE25.7%9889%FI37.5%181583%NO70.8%171059%SE51.8%592034%SABR35.3%1187463%
+
+
+Total:35422864%
+
+
+The results reported in this article consider the completed datasets only. These228 organisations were active in a variety of diﬀerent business domains. The do-mains were provided by the respondents in free text format (see Table 3, questionQ2) and coded by the researchers. The tag cloud for the coded business domainscan be seen in Figure 1.This ﬁgure shows the frequency of each domain code and highlights the mostfrequent ones. At all, 215 of the 228 organisations provided answers for their busi-ness domain. There is a huge variety in the business domains ranging from embed-ded software systems (described by the respondents as “Automotive, EmbeddedSoftware” or “Software for medical devices”) over business systems (“business in-telligence for data centres” or “Software ERP”) to consulting (“IT Consulting” or“Consulting for secure systems and software”). The most frequent code assignedwas cross-cutting which means that the organisation is actively working with prod-ucts and/or services that can be applied to several diﬀerent business domains (e.g.,cloud computing and web applications, custom software development, enterpriseresource planning products, IT consulting services). Additionally, we identiﬁed avery large amount of diﬀerent domains with few data points in each one. Therefore,considering the amount of organisations active in several domains and the largevariety of diﬀerent domains reported, we decided to characterise the responding
+
+
+14D. M´endez Fern´andez et al.
+
+
+    
+
+
+   
+
+
+    
+
+
+    
+
+
+     
+
+
+     
+
+
+    
+
+
+     
+
+
+     
+
+
+  
+
+
+crosscutting (60)
+
+
+public (28)
+
+
+sector (28)
+
+
+enterprise (20)
+
+
+ﬁnance (26)
+
+
+planning (20)resource (23)
+
+
+automotive (15)
+
+
+healthcare (14)
+
+
+management (16)
+
+
+business (9)
+
+
+energy (11)
+
+
+insurance (11)
+
+
+logistics (8)
+
+
+telecom (9)transportation (8)
+
+
+aerospace (5)
+
+
+education (5)
+
+
+gas (5) geoprocessing (4)
+
+
+informed (5)
+
+
+intelligence (4)oil (5)
+
+
+process (5)
+
+
+aviation (3)
+
+
+communication (3)construction (3)
+
+
+defence (3) e-commerce (3)
+
+
+entertainment (3)games (3)
+
+
+human (3)
+
+
+shipping (3)
+
+
+workforce (3)
+
+
+agriculture (2)
+
+
+chemicals (2)
+
+
+customer (2)
+
+
+electronic (2)
+
+
+railway (2) relationship (2)
+
+
+scientiﬁc (2)software (2)
+
+
+automation (1)
+
+
+e-
+
+
+government (1)
+
+
+funerary (1)
+
+
+goods (1)industrial (1)
+
+
+networking (1)
+
+
+pulp (1)
+
+
+steel (1)
+
+
+Fig. 1 Tag cloud of the business domains of the responding organisations.
+
+
+organisations independently of their business domain, in terms of domain cross-cutting characteristics of size and process model used (see also Sect. 3.4).Concerning size, we grouped organisations as small, medium, and large-sized.For this grouping, as in [31], we used the number of employees (software andother areas). Organisations with up to 50 employees were considered small-sizedorganisations, with 51 to 250 were considered medium-sized organisations, andwith more than 250 were considered large-sized. Out of the 228 organisations thatcompleted the questionnaire, 216 provided their number of employees. The sizesof these organisations are shown in Table 6.
+
+
+Table 6 Sizes of responding organisations.
+
+
+CentralNorthNorthernSouthSizeEuropeAmericaEuropeAmericaTotal
+
+
+Small1211202669Medium40121733Large36163428114
+
+
+Total52276671216
+
+
+We can observe that the datasets include relatively large samples of both,small and large-sized organisations. Considering the distributions of size per region,except for SA, the responding large-sized organisations slightly outweigh the smalland medium-sized organisations.Regarding the process models used, respondents answered a multiple choicequestion with the following options: RUP, Scrum, V-Model XT, Waterfall, XP, andOther (in this case informing textually which process model they use). We groupedthese process models into agile (Scrum and XP), plan-driven (RUP, Waterfall andV-Model XT), and mixed (for those organisations that informed to use agile andplan-driven process models or variations therein). Out of the 228 organisationsthat completed the questionnaire, 196 selected one of the ﬁve predeﬁned optionsfor their process model. The process model of these organisations is shown inTable 7.Again, the datasets include relatively large samples of both, agile and plan-driven organisations. Considering the distribution per region, except for CE, the
+
+
+Naming the Pain in Requirements Engineering15
+
+
+Table 7 Software process models used in responding organisations.
+
+
+CentralNorthNorthernSouthModelEuropeAmericaEuropeAmericaTotal
+
+
+Agile1213353292Plan-driven15481946Mixed178191458
+
+
+Total45246265196
+
+
+responding organisations following agile process models in the respondents envi-ronment outweigh the plan-driven ones. The amount of organisations using mixedprocess models (or more than one) is large. However, we decided to exclude themixed ones from our corresponding analyses to remove a potential confoundingfactor, as in these cases we had no information on the extent to which each pro-cess model is applied in the organisation.As we believe that agile and plan-driven process models may have diﬀerenteﬀects on small, medium, and large-sized organisations, we also crossed these twocharacterisation dimensions aiming at further exploring potential RE problem pat-
+
+
+Table 8 Responding organisations by size and process models used.
+
+
+ProcessCentralNorthNorthernSouthModelSizeEuropeAmericaEuropeAmericaTotal
+
+
+AgileSmall24101430AgileMedium20101022AgileLarge9814839Plan-drivenSmall321511Plan-drivenMedium10124Plan-drivenLarge10261220
+
+
+Total27164251136
+
+
+Excluding the 58 organisations with mixed process models, 136 organisationsthat completed the questionnaire informed the number of employees and prede-ﬁned process model options. While agile process models are being applied by smalland large-sized representatives of the responding organisations, plan-driven pro-cess models are mainly applied by the large-sized ones (although we still have somesamples of small sized plan-driven organisations).We therefore could obtain a balanced characterisation of small, medium andlarge-sized organisations of diﬀerent regions enrolled in both, plan-driven and agiledevelopment methods.
+
+
+4.2 Problems in RE (RQ 1)
+
+
+Based on the set of 21 pre-deﬁned general RE problems listed in the NaPiREquestionnaire, the respondents were asked to rank the ﬁve most critical ones.The top 10 most critical RE problems, as informed by the 228 respondents, arevisualised together with the frequency in which they are meant to lead to projectfailure in a simpliﬁed manner in Figure 2.
+
+
+16D. M´endez Fern´andez et al.
+
+
+Fig. 2 Overall frequency of top 10 RE problems and their relation to project failure.
+
+
+Naming the Pain in Requirements Engineering17
+
+
+Table 9 further summarises the 10 most cited RE problems providing moredetails. There, we report on how many of the respondents cited particular prob-lems, how many considered them as a major cause for project failure, and howoften each problem was ranked in each of the ﬁve potential ranking positions, thus,showing how the bars in Figure 2 are composed.
+
+
+Table 9 Most cited top 10 RE problems.
+
+
+RE ProblemTotal
+
+
+Cause for project failure
+
+
+Ranked as #1
+
+
+Ranked as #2
+
+
+Ranked as #3
+
+
+Ranked as #4
+
+
+Ranked as #5
+
+
+Incomplete and / or hidden requirements109 (48%)433425231710Communication ﬂaws between project teamand customer93 (41%)45362215911
+
+
+Moving targets (changing goals, business pro-cesses and / or requirements)76 (33%)392316131212
+
+
+Underspeciﬁed requirements that are too ab-stract76 (33%)281017181912
+
+
+Time boxing / Not enough time in general72 (32%)241611141714Communicationﬂawswithintheprojectteam62 (27%)25191311910
+
+
+Stakeholders with diﬃculties in separatingrequirements from known solution designs56 (25%)1013131299
+
+
+Insuﬃcient support by customer45 (20%)246131268Inconsistent requirements44 (19%)15896912Weak access to customer needs and / or busi-ness information42 (18%)16710889
+
+
+Out of these critical RE problems we highlight the ﬁrst ﬁve, which were citedby more than 30% of the respondents. Noteworthy is also, however, that someproblems even if they seem not to occur as often as others, seem to be still morecritical as they are meant to lead more often to project failure; for instance, In-complete and / or hidden requirements being the most frequently cited problemis, from a relative point of view, not meant to lead as often to project failureas Communication ﬂaws between project team and the customer even if it occursmore often. Furthermore, Moving targets do lead more often to project failuresthan Underspeciﬁed requirements that are too abstract even if they show the sametotal frequency of occurrence.The analysis of the problem patterns described next, concentrates on the topﬁve problems.
+
+
+4.3 Problem Patterns (RQ 2)
+
+
+Given the diversity of the responding organisations, in particular concerning theirsizes and process models, we block the results according to those context factorsto further investigate how the problems manifest within such clusters, aiming at
+
+
+18D. M´endez Fern´andez et al.
+
+
+identifying potential RE problem patterns (see also Sect. 3.4). Table 10 showsthe ﬁve most critical RE problems per process model and organisational size.We can see that besides Gold Plating, which appears for plan-driven medium-sized organisations, all other problems are also listed in the list of the overall 10most cited RE problems (Table 9). Nevertheless, it is noteworthy that this speciﬁccluster had only 4 organisations and that this fact might not represent a relevantdiﬀerence. Also the textual statements of the corresponding respondents did notshow much speciﬁcs of plan-driven, medium-sized companies in that respect. Onlythe statement “The team believes to be very qualiﬁed to understand the business“hints in the direction that in a plan-driven development process, the developersare not exposed to as much customer feedback as necessary and think they alreadyknow the customer’s business.
+
+
+Concerning the occurrence of the problems within the clusters, the only prob-lem being consistently in the top 3 is Incomplete and/or hidden requirements. It isalso the most cited problem overall. We will discuss its causes and eﬀects in detail
+
+
+Very common is also Communication ﬂaws between project team and the cus-tomer. It appears in the three most cited problems in all clusters except for plan-driven and small-sized organisations. We can see one reason in the free-text an-swers especially for large companies. They tend to split the work in several teamsof which some work directly with customers, while others don’t. One respondentdescribes that their “sales or account teams, product managers [. . . ] act as proxiesfor the end user”. Small and agile companies seem to suﬀer especially from cus-tomers not willing to participate with a considerable amount of time (“Not enoughcustomers willing to help out and also time constraints”, “Customer is busy andskips meetings.” or “Customers have no time to explain what they actually need”).The plan-driven, small companies who rated this problem as important, did notshow a consistent pattern of reasons in their free-text answers.
+
+
+Another diﬀerence concerns the Moving targets problem. This problem is facedby all plan-driven but also large agile organisations. That plan-driven companiescite this problem often in comparison to agile companies supports the basic premiseof agile software development that it helps to quickly adapt to changing needs. Therespondents from plan-driven organisations mention as reasons the “Lack of changemanagement on the customer side”, the “Unclear business vision and understand-ing by stakeholders” and overall “badly written requirements”. The negative eﬀectson their projects are manifold including “project delays; extended engagement ofresources beyond original plan; customer dissatisfaction” and “expensive projects,time consuming implementation, bad quality”.
+
+
+But why do also large, agile companies often experience the Moving targetsproblem? We do not see a clear answer from the free-text responses. Some of theanswers could be explained such that large companies in general have larger, morecomplex projects which also might run for a longer time. Then the mentionedproblems are more signiﬁcant. For example, a change in the management of thecustomers was mentioned and seems to have large eﬀects: “senior managementconfusion/churn”. But also the chance that over time other people bring in newideas and constraints seems to be more likely: “There are always some stakeholdersinvolved in later part of the project who would come up with new things”. Evenagile development processes cannot compensate this.
+
+
+Naming the Pain in Requirements Engineering19
+
+
+Table 10 5 most critical problems per process model used and company size.
+
+
+ProcessCitationModelSizeTotalTop 5 ProblemsCount
+
+
+AgileSmall301. Incomplete and / or hidden requirements18 (60%)2. Communication ﬂaws between project team andthe customer14 (47%)
+
+
+3. Underspeciﬁed requirements that are too abstract13 (43%)4. Communication ﬂaws within the project team10 (33%)5. Time boxing / Not enough time in general13 (43%)
+
+
+AgileMedium201. Communication ﬂaws between project team andthe customer12 (55%)
+
+
+2. Incomplete and / or hidden requirements9 (41%)3. Communication ﬂaws within the project team8 (36%)4. Stakeholders with diﬃculties in separating re-quirements from known solution designs8 (36%)
+
+
+5. Weak access to customer needs and / or businessinformation7 (32%)
+
+
+AgileLarge391. Incomplete and / or hidden requirements17 (44%)2. Moving targets (changing goals, business pro-cesses and / or requirements)17 (44%)
+
+
+3. Communication ﬂaws between project team andthe customer15 (38%)
+
+
+4. Time boxing / Not enough time in general14 (36%)5. Underspeciﬁed requirements that are too abstract11 (28%)
+
+
+Plan-drivenSmall111. Incomplete and / or hidden requirements7 (64%)
+
+
+2. Communication ﬂaws within the project team6 (55%)3. Moving targets (changing goals, business pro-cesses and / or requirements)6 (55%)
+
+
+4. Time boxing / Not enough time in general5 (45%)5. Underspeciﬁed requirements that are too abstract5 (45%)
+
+
+Plan-drivenMedium41. Communication ﬂaws between project team andthe customer2 (50%)
+
+
+2. Gold plating (implementation of features withoutcorresponding requirements)2 (50%)
+
+
+3. Incomplete and / or hidden requirements2 (50%)4. Moving targets (changing goals, business pro-cesses and / or requirements)2 (50%)
+
+
+5. Underspeciﬁed requirements that are too abstract2 (50%)5. Weak access to customer needs and / or businessinformation2 (50%)
+
+
+Plan-drivenLarge301. Incomplete and / or hidden requirements14 (47%)
+
+
+2. Communication ﬂaws between project team andthe customer13 (43%)
+
+
+3.Underspeciﬁed requirements that are too abstract10 (33%)4. Communication ﬂaws within the project team9 (30%)5. Moving targets (changing goals, business pro-cesses and / or requirements)8 (27%)
+
+
+5. Stakeholders with diﬃculties in separating re-quirements from known solution designs8 (27%)
+
+
+Another diﬀerence between the clusters concerns the Time boxing problem,which appears mainly in agile and in small organisations. In both agile and plan-driven, small companies, we found three (related) reasons for this prevalence oftime boxing problems: bad estimations, unrealistic release dates and scope changes.Our respondents often mentioned that estimations were not accurate: “A combi-nation of bad planning and bad estimation of time for development” or “Badestimates, unrealistic expectations”. Especially sales and marketing is blamed forpromising unrealistic dates: “Sales shouldn’t give wishful promises” or “Releasedates are sometimes arbitrary and often released early to customers creating a
+
+
+20D. M´endez Fern´andez et al.
+
+
+hard deadline”. At last, frequent scope changes seem to contribute to this prob-lem: “Last minute changes; change of priority; Business urgency”.Finally, we noticed that Weak access to customer needs and / or businessinformation only appeared in the medium-sized clusters. For all medium-sizedorganisations, including the ones with mixed process models, it was the third mostcited problem, with 13 citations, while it did not appear in the top 5 RE problemsfor small- and large-sized organisations. We could not ﬁnd any consistent patternsin the free-text answers of the medium-sized companies. We can only speculatethat small-sized organisations might adapt themselves to ﬁt the availability of theircustomers, while large organisations might have more inﬂuence on their customersto achieve the required access.
+
+
+4.4 Cause-Eﬀect Analysis (RQ 3)
+
+
+In the following, we will summarise causes and eﬀects as reported by our respon-dents for the discussed RE problems. After selecting the ﬁve most critical REproblems, we asked our respondents to provide what they believe to be the maincauses and eﬀects for each of the problems. They provided the causes and eﬀectsin an open question format, with one open question for the cause and anotherfor the eﬀect for each the previously selected RE problems. Details on the dataanalysis procedure can be taken from Section 3.4. In the following, we ﬁrst discussthe main causes for the RE problems, before discussing the causes and eﬀects forthe top problems in detail.
+
+
+4.4.1 Main Causes for RE Problems
+
+
+In total, 177 of the 228 organisations that completed the survey provided textualinformation for at least one cause and we received in total 820 textual answersfor causes and eﬀects of RE problems. The coding process yielded 92 diﬀerentcodes for causes of RE problems and 49 diﬀerent codes for their eﬀects. Whileit does not make sense to analyse eﬀects out of the context of the RE problemsthat provoke them, causes are at the beginning of the causal system [7]. Thus,an isolated view on causes (without consideration of their speciﬁc RE problemcontext) may provide valuable information, for example, on how to prevent REproblems in general. We therefore ﬁrst provide a descriptive view on the most citedcauses of RE problems.The ten most reported causes and how often they have been reported withineach of the analysed clusters are shown in Table 11. For the percentages, weconsidered the total amount of organisations that completely answered the survey,given that empty answers could mean that they did not consider any speciﬁc cause.We can observe that the main reported causes of RE problems are Lack of time,Lack of experience of RE team members, and Weak qualiﬁcation of RE team mem-bers. While none of the causes was cited by more than 20% of the organisations,this ﬁgure changes within the speciﬁc clusters, where some causes were commonlyreported. The cause frequencies above 20% within each cluster are highlighted inbold. What can also be seen, even if implicitly, are cycles in the causes and the
+
+
+Naming the Pain in Requirements Engineering21
+
+
+Table 11 Most cited causes of RE problems. Clusters yielding in more than 20% frequencyof the causes are highlighted.
+
+
+AgileAgileAgilePlan-Plan-Plan-drivendrivendrivenAllSmallMediumLargeSmallMediumLargeCause22830223911430
+
+
+Lack of time42 (18%)2 (7%)6 (27%)3 (8%)3 (27%)0 (0%)10 (33%)Lack of experience ofRE team members41 (18%)5 (17%)6 (27%)4 (10%)4 (36%)0 (0%)8 (27%)
+
+
+Weak qualiﬁcation ofRE team members31 (14%)1 (3%)8 (37%)1 (3%)2 (18%)2 (50%)4 (13%)
+
+
+Communication ﬂawsbetween project teamand the customer
+
+
+30 (13%)2 (7%)2 (9%)6 (15%)3 (27%)0 (0%)7 (23%)
+
+
+Requirements remaintoo abstract29 (13%)4 (13%)2 (9%)5 (13%)0 (0%)0 (0%)6 (20%)
+
+
+Changingbusinessneeds21 (9%)1 (3%)2 (9%)3 (8%)1 (9%)0 (0%)0 (0%)
+
+
+Customerdoesnotknow what he wants20 (9%)3 (10%)0 (0%)8 (21%)0 (0%)1 (25%)1 (3%)
+
+
+Missingdirectcom-municationtocus-tomer
+
+
+18 (8%)1 (3%)4 (18%)3 (8%)1 (9%)0 (0%)0 (0%)
+
+
+Language barriers17 (7%)0 (0%)1 (5%)3 (8%)1 (9%)0 (0%)4 (13%)Stricttimescheduleby customer16 (7%)2 (7%)0 (0%)4 (10%)0 (0%)0 (0%)2 (7%)
+
+
+problems, i.e. some of the causes are, in fact, problems; for instance, Communi-cations between project team and the customer is given as one problem, but alsonamed by our respondents as a cause.To analyse the inﬂuence of the most cited causes on the most cited problemsand, in turn, of those problems to project failure (as reported by the survey re-spondents), we visualise the relationships via an alluvial diagram. This diagram isshown in Figure 3. The decision to relate only the most cited causes to the mostcited RE problems was taken to enhance the visualisation.
+
+
+Communication flaws between project team and the customer
+
+
+Customer does not know what he wants
+
+
+Lack of a well-defined RE process
+
+
+Lack of experience of RE team members
+
+
+Lack of time
+
+
+Missing direct communication to customer
+
+
+Requirements remain too abstract
+
+
+Too high team distribution
+
+
+Unclear roles and responsonsibilities at customer side
+
+
+Weak qualification of RE team members
+
+
+Communication flaws between project team and the customer
+
+
+Communication flaws within the project team
+
+
+Incomplete and / or hidden requirements
+
+
+Inconsistent requirements
+
+
+Insufficient support by customer
+
+
+Moving targets (changing goals, business processes and / or requirements)
+
+
+Stakeholders with difficulties in separating requirements from previously known solution designs
+
+
+Time boxing / Not enough time in general
+
+
+Underspecified requirements that are too abstract and allow for various interpretations
+
+
+Weak access to customer needs and / or (internal) business information
+
+
+Project Completed
+
+
+Project Failed
+
+
+Fig. 3 Relation of top 10 causes, top 10 problems, and the project impact.
+
+
+22D. M´endez Fern´andez et al.
+
+
+As it appears, some of the ten most cited causes are more related to some spe-ciﬁc problems than to others. Typical examples that can be seen are Lack of timeleading mainly to the Time boxing problem, Lack of experience of RE team membersleading mainly to Incomplete and / or hidden requirements and Underspeciﬁed re-quirements, or Too high team distribution leading mainly to Communication ﬂawswithin the project team.Concerning project failure, the occurrence of some RE problems seems to leadvery often to project failure. Out of these, we highlight Communication ﬂaws be-tween project team and the customer, Incomplete and / or hidden requirements,Underspeciﬁed requirements, Communication ﬂaws within the project team, andInsuﬃcient support from the customer. However, in particular relating to projectfailure, it is noteworthy that this diagram is based on a reduced dataset, con-sidering only instances which contain one of the main causes, one of the mainproblems, and a project impact. The complete data on how often each of the mostcited problems was related by the respondents to project failure is provided inTable 9.
+
+
+4.4.2 Causes and Eﬀects of Top RE Problems
+
+
+To provide a more complete view on the causes and eﬀects reported for some ofthe most critical RE problems, in particular, the three most cited ones (which arealso the three most cited ones for project failure), Incomplete and / or hiddenrequirements, Communication ﬂaws between us and the customer, and MovingTargets, we built probabilistic cause-eﬀect diagrams. Those diagrams have alreadybeen applied in previous eﬀorts in the NaPiRE context, based on data from Brazil(see also Section 2.2). It is noteworthy to mention that, despite of the name ofthose diagrams, within this paper we use them to represent relative frequencies,i.e. how often each cause or eﬀect was cited out of the total citations, and notprobabilities.Figures 4 and 5 respectively show such cause-eﬀect diagrams for the causes andthe eﬀects of the Incomplete and / or hidden requirements problem. For instance,in Figure 4, we can see that the most frequently cited causes were related to thecategories Input (∼34%, i.e. 31 out of 91 reported causes were from that category),Method (∼33%), and People (∼29%). The ﬁve most frequent reported causesfor this problem are the Weak qualiﬁcation (∼9%) and the Lack of experience(∼9%) of the RE team members, Time pressure (∼5%), Stakeholders lackingbusiness vision and understanding (∼4%), the use of Poor requirements elicitationtechniques (∼4%), Specifying the requirements in an too abstract way (∼4%), andMissing completeness checks (∼4%).Concerning the eﬀects of this problem, it can be seen in Figure 5 that the mainaﬀected categories were Project or Organization (∼43%, i.e. 37 out of 87 reportedeﬀects were from that category), Design or Implementation (∼23%), and Product(∼21%). The most frequently cited causes were Time overrun (∼10%), Postimplementation rework (∼9%) and Poor product quality (∼9%).The causes and eﬀects of the Communication ﬂaws between project team andthe customer problem are depicted in Figures 6 and 7. The prevailing cause cate-gories for this RE problem are Method (∼38%, i.e. 30 out of 78 cited causes werefrom that category) and Input (∼33%). The ﬁve most frequently reported causes
+
+
+Naming the Pain in Requirements Engineering23
+
+
+Fig. 4 Probabilistic cause-eﬀect diagram for Incomplete and / or hidden requirements fo-cussing on the causes.
+
+
+Fig. 5 Probabilistic cause-eﬀect diagram for Incomplete and / or hidden requirements fo-cussing on the eﬀects.
+
+
+for this problem are Inherent communication ﬂaws (∼12%), Missing direct com-munication (∼10%), Language barriers (∼9%), Time pressure (∼6%), Missingengagement by the customer (∼6%), and a Too high team distribution (∼6%).In this case (Figure 7), the main aﬀected categories were Project or Organiza-tion (∼47%, i.e. 32 out of 68 eﬀects were from that category), Product (∼22%),and Customer (∼19%). The main cited eﬀects for this problem were Customer dis-satisfaction (∼16%), Time overrun (∼13%), and Poor product quality (∼10%).
+
+
+24D. M´endez Fern´andez et al.
+
+
+Fig. 6 Probabilistic cause-eﬀect diagram for Communication ﬂaws between project team andcustomer focussing on the causes.
+
+
+Fig. 7 Probabilistic cause-eﬀect diagram for Communication ﬂaws between project team andcustomer focussing on the eﬀects.
+
+
+Finally, Figures 8 and 9 show the probabilistic cause-eﬀect diagram for thecauses and the eﬀects of Moving Targets. As shown in Figure 8, the causes of thisproblem are heavily concentrated on the Input category (∼66%, i.e. 40 out of 61cited causes were from that category). Its main causes were coded to Changingbusiness needs (∼15%), Customers who do not know what they want (∼13%),Volatile industry segments that lead to changes (∼10%), Poor project management(∼7%), and Weak management at the customer side (∼5%).Again, as expected for one of the most cited RE problems, the eﬀects are severe(Figure 9). Most of the eﬀects are concentrated in the Project or Organization(∼68%, i.e. 38 out of 56 cited eﬀects were from that category) category, which
+
+
+Naming the Pain in Requirements Engineering25
+
+
+Fig. 8 Probabilistic cause-eﬀect diagram for Moving targets focussing on the causes.
+
+
+might explain why this problem has such a strong relation to project failure. Infact, 51% of the organisations that cited Moving Targets as a problem stated thatit led to project failure. In this case, the eﬀect Time overrun is clearly the mostcited one (∼27%), followed by Budget overrun (∼13%), and Overall demotivation(∼7%).
+
+
+Fig. 9 Probabilistic cause-eﬀect diagram for Moving targets focussing on the eﬀects.
+
+
+26D. M´endez Fern´andez et al.
+
+
+5 Conclusions
+
+
+In this article, we contributed the analysis of contemporary problems practitionersexperience in their industrial project setting. To this end, we relied on the NaPiREinitiative (http://www.re-survey.org), a global family of bi-yearly replicated sur-veys where the aim is to overcome the problem of by now isolated investigations inRE that are not yet representative. Our analysis of contemporary problems usesdata provided by 228 companies spread over 10 countries and included an investi-gation of problems practitioners experience, what the causes of those problems are,and how the problems manifest themselves in the process going beyond simpliﬁedviews on project failure.
+
+
+5.1 Discussion of Results
+
+
+In this section, we discuss our research questions based on the obtained surveyresults and their potential implications.
+
+
+Problems in RE (RQ 1) Our ﬁrst research question concerned the contemporaryproblems in RE. We identiﬁed and ranked the problems cited as the most criticalones by the 228 organisations that completed the survey. This result reﬂects thecontemporary opinion of organisations spread throughout ten diﬀerent countries,of diﬀerent sizes and using diﬀerent process models. We believe that this resultprovides further insights into industrial RE problem trends and that it helps tolay the foundation to steer academic and industrial research in a problem-drivenmanner where scientiﬁc contributions to RE can be put in tune with practicallyrelevant problems. Out of the identiﬁed problems, we highlighted Incomplete and/ or hidden requirements, Communication ﬂaws between project team and the cus-tomer, and Moving targets, which were the most cited ones and also the onesmostly related to project failure.
+
+
+Problem Patterns (RQ 2) The second research question relates to identifying pat-terns between problems and context characteristics. Of course, there are severalways of blocking our results that could have been performed for this analysis. Inthis initial eﬀort, we focused on the type of process model (agile or plan-driven)and on the organisational size, blocking those clusters of survey responses. Withinthese blocks, it was already possible to observe some relevant behavioural diﬀer-ences. For instance, considering the three most cited problems, Incomplete and/orhidden requirements appears in all clusters, while Communication ﬂaws betweenproject team and the customer does not seem to be a major problem for smallplan-driven organisations and Moving targets occurs mainly in plan-driven and inlarge organisations. Future work includes investing additional eﬀort relating theproblems to other relevant constructs of the underlying NaPiRE theory. Basedon our initial observations, we believe that speciﬁc advice to organisations withdiﬀerent characteristics on how to prevent critical RE problems could be valuablebeyond the type of advice available in current guidelines and maturity models.
+
+
+Naming the Pain in Requirements Engineering27
+
+
+Cause-Eﬀect Analysis (RQ 3) The third research question concerned the causesand the eﬀects as they have been perceived by our respondents. We identiﬁedthe most reported causes and analysed their inﬂuence on the most critical REproblems. We could observe that the causes tend to diﬀer within the selectedblocks and that some of the ten most cited causes have more inﬂuence on somespeciﬁc problems than on others.Additionally, and still in the context of RQ 3, we analysed the causes and eﬀectsrelated to the three most critical RE problems. We believe that the identiﬁcationof the causes can already help organisation to focus their prevention eﬀorts. Forinstance, we identiﬁed that, in general, the main reported causes for Incompleteand/or hidden requirements are the Weak qualiﬁcation and the Lack of experienceof the RE team members, Time pressure, Stakeholders without business vision,Poor elicitation techniques, Too abstract speciﬁcations, and Missing completenesschecks. Based on this information, an organisation facing this or similar problemscould take ﬁrst counter measures, such as:
+
+
+1. Checking on the qualiﬁcation and experience of its team members, providingtraining if needed, in particular, on avoiding abstract speciﬁcations. This couldalso be supported by including and training RE standards that put emphasison the way requirements should be elicited and speciﬁed.
+
+
+2. Adjusting its portfolio management to avoid accepting projects under extremetime pressure or involving stakeholders that lack business vision.
+
+
+3. Assessing and improving the eﬃciency of their elicitation techniques.4. Improving their completeness check, within the philosophy of their develop-ment paradigm. Plan-driven organisations, for instance, could institutionaliserequirements inspections based on RE standards for the artefacts, while agileorganisations could introduce the Deﬁnition of Ready (DoR) practice, whichis commonly used in agile projects to avoid the beginning of work on featuresthat do not comply with clearly deﬁned completion criteria.Future work in this direction includes setting up a knowledge base on typicalcauses of RE problems and on actions that could be taken to mitigate or preventthem (success factors). However, we reinforce that these are informal suggestions ofthe authors based on the identiﬁed causes and that our analyses need to be backedup by complementary investigations, ideally also by applying diﬀerent empiricalresearch methods on project data (e.g., case studies and experiments). Moreover,organisations should perform in depth causal analysis in their projects to assureaddressing the right causes, the ones that are really happening in their concretecontext.
+
+
+5.2 Relation to Existing Evidence
+
+
+In this section, we relate the results of this article to evidence from previousNaPiRE studies and other related RE surveys presented in Section 2.
+
+
+Previous NaPiRE Evidence The ﬁrst NaPiRE run with data from 58 respondentsfrom Germany [28] provided a very similar picture of the top problems as we foundhere. The by far most cited problem in both was surveys incomplete / hiddenrequirements. Moving targets, time boxing and underspeciﬁed requirements are tooabstract being in the top 5 in both surveys. Diﬃculty of separating requirements
+
+
+28D. M´endez Fern´andez et al.
+
+
+from known solutions, inconsistent requirements and communication ﬂaws in theteam occurred in both top tens with a slightly diﬀerent ranking. Most interestingis communications ﬂaws between team and customer. It moved from rank 6 inthe ﬁrst run to rank 2 in second run. Furthermore, the ﬁrst run included missingtraceability and gold plating (ranks 9 and 10) which were replaced in the secondrun by insuﬃcient support by customer and weak access to customer needs (ranks8 and 10). Hence, the extension to other countries and a larger sample emphasisedmainly customer-related problems. This suggests that these problems are not soprevalent in Germany. Analysing the data from the second run in this respectsomewhat supports this: The problems insuﬃcient support by customer and weakaccess to customer needs are mentioned less often than in most other countries. Areason could be that more often than in other countries, the team and the customerare geographically close and speak the same language. Yet, communication ﬂawsbetween team and customer are also very prevalent in the German data of thesecond run.In [18], the the Brazilian data set was analysed w.r.t. the cited problems, causesand eﬀects. The set of top problems in Brazil matches exactly the top problemsin the global data set. The ranking of the problems diﬀers only slightly. There arediﬀerences in the causes and eﬀects, but the general categories are consistent withsome variation in the weights.The data sets from Brazil and Germany were also compared separately [31].The top ﬁve problems from both countries are in the top 8 of the global data set.Also all other results are very similar to the results from the full data set.Finally, the data sets from Brazil and Austria was used to investigate in detailthe incomplete / hidden requirements problem [19]. The causes found there arealso included in the results of this article. The distribution over the categories ofcauses changed slightly from a strong focus on people (40%) to input (34%) andmethod (33%). Yet, the results of this article contain far more causes than wefound in [19].
+
+
+Further Existing Evidence Our results corroborate and extend existing ﬁndingsreported by other researchers. For example, the German Success study [6] investi-gated factors that inﬂuence project success in general, not limited to requirementsengineering. Most of the factors are consequently more abstract than ours. How-ever, the study found that project success is independent of the degree of manage-ment support. We can support this to a certain extent in the sense that missingmanagement support was not often perceived as a problem.Kamata et al. [23] investigate relations between requirements quality andproject success or failure, which aimed at a more limited view than we took as therequirements speciﬁcation was in scope of their investigation rather then the wholeRE process. Therefore, the results are not directly comparable. Nevertheless, theirﬁnding that a relatively small set of requirements has strong impact on projectsuccess or failure is relevant for our top RE problem of incomplete and / or hiddenrequirements, because it further substantiates the problem of single missing and /or hidden requirements.Nikula et al. [33] ﬁnd in their state of practice survey on requirements engineer-ing in small- and medium-sized companies that completeness, change managementand descriptions are the three most needed techniques to further develop RE inthe participating companies. These three top needs are directly related to our
+
+
+Naming the Pain in Requirements Engineering29
+
+
+three top RE problems and, thus, further underpin their high rating in our sur-vey and the relevance of the provided cause-eﬀect analysis for these problems inSection 4.4.2.Solemon et al. [37] report requirements engineering problems and practices insoftware companies. Diﬀering from our study, the focus of the researchers was toidentify RE problems rather than relating them to possible causes. They classiﬁedRE problems into organisational and RE process related ones. The reported mainorganisational problems are lack of customer and user communication problem,lack of developer communication, as well as poor time and resources allocation.The main problems in the RE process are related to changing requirements, incom-plete requirements, ambiguous requirements and poor user understanding. Withregard to the mentioned communication, resource, change, completeness and un-derstandability issues, our survey supports their ﬁndings, and additionally providea more ﬁne-grained distinction and relationships between causes and eﬀects.Liu et al. [25] present results of a survey on why requirements engineering fails.According to that survey, major failure reasons are an unclear understanding ofthe system by the customer, constant change of user needs and understanding,missing access to domain knowledge for software engineers, reuse of existing designin wrong context and environment, lack of domain and technical expertise for REdecision makers, tight project schedule, broken communication links, as well aslack of standardised data and interface deﬁnitions. The authors do not clearlydistinguish between problems and their causes, but all listed major failure reasonsare related to our main RE problems and their causes.Verner et al. [40] further ran a survey in Australia and the USA. They con-centrated on success factors in RE and found good requirements, customer/userinvolvement, and eﬀective requirements management to be the best predictors ofproject success. Disregarding the diﬃculties to precisely capture what “good re-quirements” are, our results still can be considered in tune with their observationsas we identiﬁed problems and their causes which (if negated) can be used to reﬁnethe abstract success factors identiﬁed by Verner et al. For instance, we identiﬁedincomplete and/or hidden requirements as a main problem and weak qualiﬁcationas well as lack of experience as its main causes.Al-Rawas and Easterbrook [2] ﬁnally present a ﬁeld study on communicationproblems in requirements engineering. The results show that organisational issueshave great inﬂuence on the eﬀectiveness of communication, and furthermore thatin general users ﬁnd the notations used by software practitioners to model theirrequirements diﬃcult to understand and validate. The topic of the study showsthat communication is an important RE problem, which is also reﬂected by ourresults. Also the presented results are in tune with the causes for communicationﬂaws that we present.
+
+
+5.3 Impact/Implications
+
+
+Our ﬁndings complement existing evidence on problems in RE in various ways.First, we could distill a detailed picture of problems practitioners experience intheir project setting including a rich analysis of eﬀects going beyond project failure.Second, the analysis of the causes and eﬀects in dependency to context factorsallows us to steer a ﬁrst empirically founded discussion on phenomena that hold for
+
+
+30D. M´endez Fern´andez et al.
+
+
+particular contexts. Third, and most importantly, revealing not only the problems,but also their causes, allows us to get a ﬁrst picture of requirements engineeringsuccess factors which, if met, should mitigate the problems.Based on this analysis, we can already steer further problem-driven research,for example on agile requirements engineering. It also allows us to further exploreRE success factors suitable to establish maturity models and RE improvementendeavours that are grounded on empirical data.Overall, our contribution does not only support researchers to steer their re-search, but also practitioners to evaluate their own current RE situation againstoverall industrial trends presented here.
+
+
+5.4 Limitations
+
+
+We have analysed the results from the survey conducted in ten countries yieldinga broad population, while applying the diﬀerent procedures to control the validityas described in section 3.5. Still, we are aware that our study has limitations. Mostimportantly, our results are based on a reasonable but still limited number of re-spondents. Also, the responses are not equally distributed over business domainsand families of systems (such as embedded systems). This probably has an inﬂu-ence on the rankings of the problems if speciﬁc domains have speciﬁc problems.We can, for example, not say reliably how the picture would change if consideringsafety-critical systems only, let alone as they appear less frequently in our datathan information systems. We can only assume that the picture would change forpractices that tend to be seen as more important for the development of highlydependable, safety-critical systems than for business information systems (such astraceability). Furthermore, we cannot make concrete statements about how gen-eralisable the results eventually are, because we still are not able to estimate therepresentativeness of our population (given the unavailability of empirical datacharacterising all industry segments in every considered country). This means inconsequence that we cannot generalise going beyond the contexts described andthat we might even expect partially diﬀerent results in diﬀerent countries. There-fore, we need to follow our design of a family of surveys and further steer thecontinuous replications and syntheses of the results while capturing precisely thecontext to establish a more reliable and empirically solid theory.Furthermore, inherent to survey research is that surveys can only reveal stake-holders’ perceptions on current practices rather than empirically backed-up knowl-edge about those practices. To some extent, we aim at revealing exactly thoseperceptions. However, the answers given by our respondents might still be biased.We mitigated this threat by conducting the survey anonymously, but need to backup (and further explore) the insights revealed via this survey by adding moreinvestigations using other empirical methods, e.g., interviews and case studies.A further limitation arises from the qualitative data and its analysis. Manualcoding of qualitative data is by nature a creative process where experiences, ex-pectations and the expertise of the coders inﬂuence the results. We mitigated thisthreat to a certain extent by applying researcher triangulation, yet the picturemight still change if involving other researchers.Finally, a major threat arises from the way we designed our instrument as itstill includes too many (to a certain extent closed) questions which might enforce
+
+
+Naming the Pain in Requirements Engineering31
+
+
+too simpliﬁed views by the respondents on the particularities of their project en-vironments. We asked our respondents to categorise their software process modelused based on a pre-deﬁned list of options. This means that although the respon-dents might have selected, for instance, Scrum, we still have no guarantee that theprocess model followed was indeed Scrum or even agile. It could have also been aplan-driven, iterative model baptised as “Scrum” in that organisational context.That is, respondents might have misinterpreted the options or they might haverelied on a diﬀerent understanding on the process model used (or even on howthe process model should be rather than how it actually is), let alone because ofthe fuzzy notion of “agile” that allows for too many variations. So far, we can-not mitigate the threats arising from this circumstance, but use the lessons welearnt in this replication to further foster our learning curve during the follow-upre-redesign of our instrument. Similarly, the part of our instrument used to revealproblems relies, from a conceptual point of view, on a simpliﬁed understandingof causes and eﬀects. We realised that such a simpliﬁed view on phenomena andtheir sequential cause-eﬀect dependencies is not suﬃcient to capture the complexdependencies of the various factors in a project; we need, in fact, to extend ourinstrument with means that allow to capture complex systems of phenomena asrecommended in context of system theory (and system thinking respectively). There-design of our instrument therefore includes, inter alia, a more indirect approachthat relies on triangulation from multiple questions to support richer and morerobust results (see also our next section).
+
+
+5.5 Future Work
+
+
+We are currently analysing the overall data obtained from the current NaPiREsurvey round with respect to the responses on the status quo in RE. This currentanalysis complements the investigation presented here with a ﬁrst holistic theoryon the current status quo in RE. Another work already in progress is the usageof results from the cause-eﬀect analysis to establish a maturity model for REincluding practical recommendations on how to improve RE in response to certaincontext-speciﬁc situations.Besides current analyses of the survey data and subsequent work based on thedata, we are planning the next survey round to be started in 2017. To this end, wewill ﬁrst revise our instrument to better mitigate the limitations discussed above.This re-design includes:
+
+
+– A richer set of questions to describe the context of our respondents includinga more speciﬁc focus on teams and project environments rather the overallorganisation.
+
+
+– A more diﬀerentiated view on the particularities of the projects and the processmodels used including a more indirect approach that relies on triangulationfrom multiple, more objective questions on the practices actually used.
+
+
+– A more diﬀerentiated view relying on more open questions following an ap-proach as recommended by the 5-why methodology to capture the complexsystem of dependent phenomena rather than relying of single causes and ef-fects of a set of pre-compiled problems.
+
+
+32D. M´endez Fern´andez et al.
+
+
+Given that NaPiRE is a community eﬀort aimed at bringing forward the em-pirical RE community, we cordially invite researchers and practitioners to join usin our follow-up activities to steer future replications of our family of surveys.
+
+
+5.6 Acknowledgements
+
+
+We want to thank all members of ISERN who supported the design of this researchinitiative. Furthermore, we want to thank all our contacts from industry for theirparticipation in the survey. Our gratitude also goes to the reviewers whose con-structive feedback supported us improving our manuscript and in particular thefurther re-design of our instrument for the follow-up replications. Finally, DietmarPfahl was supported by the Estonian Research Council.
+
