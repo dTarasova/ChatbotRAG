@@ -1,0 +1,167 @@
+original_name,webapp_name
+lfdn,ID
+v_300,Language
+v_23,Country
+v_3,TeamSize
+v_1,Sector
+v_2,DROP
+v_4,SystemClass
+v_5,DROP
+v_6,"Compatibility (e.g., co-existence, interoperability)"
+v_7,"Maintainability (e.g., analysability, modularity, modifiability, reusability, testability)"
+v_8,"Performance efficiency (e.g., time behaviour, resource utilisation, capacity)"
+v_9,"Portability (e.g., adaptability, installability, replaceability)"
+v_10,"Reliability (e.g., availability, fault tolerance, maturity, recoverability)"
+v_11,"Security (e.g., accountability, authenticity, confidentiality, integrity, non-repudiation)"
+v_12,"Safety (e.g., freedom of risk for health or disaster)"
+v_13,"Usability (e.g., accessibility, appropriateness recognisability, learnability, operability, user error protection, user interface aesthetics)"
+v_14,DROP
+v_15,DROP
+v_16,TeamDistribution
+v_17,MainRoleRespondent
+v_18,DROP
+v_19,ExperienceRespondent
+v_20,CertificationRoleRespondent
+v_21,OrganisationalRoleTeam
+v_22,DROP
+v_24,CharacterisationWayOfWorking
+v_25,CharacterisationRelationshipCustomer
+v_26,ReasonBadRelationship
+v_27,ReasonGoodRelationship
+v_28,"We elicit and / or refine requirements in several iterations"
+v_29,"We elicit and / or refine requirements in a specifically dedicated project phase"
+v_34,DROP
+v_35,DROP
+v_36,"Interviews"
+v_37,"Analysis of existing documents"
+v_38,"Risk analyses"
+v_39,"Prototyping"
+v_40,"Workshops and focus groups"
+v_41,"(Requirements) Reuse databases and guidelines"
+v_42,"Design Thinking / Lean Startup"
+v_43,"External experts"
+v_44,"Observations"
+v_47,"We do not elicit requirements (ourselves)"
+v_45,DROP
+v_46,DROP
+v_51,PrimaryResponsibilityRequirementsElicitation
+v_52,DROP
+v_59,DocumentationGranularity
+v_60,DROP
+v_61,"They are the basis for the implementation."
+v_62,"They are source for tests."
+v_63,"They are used in customer acceptance."
+v_64,"They are part of the contract."
+v_65,"They are a reminder for further discussions with the customer, product owner, and / or other team members"
+v_66,DROP
+v_67,DROP
+v_76,"Architectural constraints"
+v_73,"Development process aspects"
+v_79,"Formal properties"
+v_68,"Functional properties of the system"
+v_70,"Goals"
+v_71,"Quality properties"
+v_74,"Rules (e.g., business rules)"
+v_78,"Stakeholders"
+v_77,"System behaviour"
+v_75,"Technical interfaces"
+v_69,"Usage scenarios"
+v_72,"User interface(s)"
+v_80,DROP
+v_81,DROP
+v_87,"Activity diagrams"
+v_92,"Business process models"
+v_88,"Class diagrams"
+v_91,"Goal models"
+v_83,"Natural language / informal (plain) text"
+v_93,"Prototypes / User screens"
+v_89,"Sequence diagrams"
+v_94,"Sketches"
+v_90,"State machines"
+v_84,"Structured lists of requirements"
+v_86,"Use case diagrams"
+v_82,"Use cases"
+v_85,"User stories"
+v_95,DROP
+v_96,DROP
+v_97,"Compatibility (e.g., co-existence, interoperability)"
+v_98,"Maintainability (e.g., analysability, modularity, modifiability, reusability, testability)"
+v_99,"Performance efficiency (e.g., time behaviour, resource utilisation, capacity)"
+v_100,"Portability (e.g., adaptability, install ability, replaceability)"
+v_101,"Reliability (e.g., availability, fault tolerance, maturity, recoverability)"
+v_102,"Safety (e.g. freedom of risk for health or distaster)"
+v_303,"Security (e.g., accountability, authenticity, confidentiality, integrity, non-repudiation"
+v_103,"Usability (e.g., accessibility, appropriateness recognizability, learnability, operability, user error protection, user interface aesthetics)"
+v_104,DROP
+v_105,DROP
+v_343,"Compatibility (e.g., co-existence, interoperability)"
+v_344,"Maintainability (e.g., analysability, modularity, modifiability, reusability, testability)"
+v_345,"Performance efficiency (e.g., time behaviour, resource utilisation, capacity)"
+v_346,"Portability (e.g., adaptability, install ability, replaceability)"
+v_347,"Reliability (e.g., availability, fault tolerance, maturity, recoverability)"
+v_348,"Safety (e.g. freedom of risk for health or distaster)"
+v_349,"Security (e.g., accountability, authenticity, confidentiality, integrity, non-repudiation"
+v_350,"Usability (e.g., accessibility, appropriateness recognizability, learnability, operability, user error protection, user interface aesthetics)"
+v_351,DROP
+v_110,"Automatic checking"
+v_108,"Informal peer reviews"
+v_106,"Inspections (formal technical reviews using reading techniques or checklists)"
+v_109,"Simulations"
+v_107,"Walkthroughs"
+v_111,"We do not verify and / or validate our requirements"
+v_112,DROP
+v_113,DROP
+v_158,"Testers participate in requirements reviews."
+v_159,"We check the coverage of requirements with tests."
+v_160,"We define acceptance criteria and tests for requirements."
+v_161,"We derive tests from system models."
+v_162,"We do not align tests and requirements."
+v_163,DROP
+v_164,DROP
+v_165,RequirementsChanges
+v_166,DROP
+v_167,SatisfactionRE
+v_168,ReasonsDissatisfaction
+v_170,ConsequencesDissatisfyingRE
+v_171,NecessaryChangeInRE
+v_169,ReasonsSatisfaction
+v_172,ConsequencesSatisfyingRE
+v_173,PastChangesInRE
+v_174,"Communication flaws within the project team"
+v_175,"Communication flaws between the project and the customer"
+v_176,"Terminological problems"
+v_177,"Incomplete or hidden requirements"
+v_178,"Insufficient support by project lead"
+v_179,"Insufficient support by customer"
+v_180,"Stakeholders with difficulties in separating requirements from previously known solution designs"
+v_181,"Inconsistent requirements"
+v_182,"Missing traceability"
+v_183,"Moving targets (changing goals, business processes and / or requirements)"
+v_184,"Gold plating (implementation of features without corresponding requirements)"
+v_185,"Weak access to customer needs and / or (internal) business information"
+v_186,"Weak knowledge about customer's application domain"
+v_187,"Weak relationship between customer and project lead"
+v_188,"Time boxing / Not enough time in general"
+v_189,"Discrepancy between high degree of innovation and need for formal 
+acceptance of (potentially wrong / incomplete / unknown) requirements"
+v_190,"Technically unfeasible requirements"
+v_191,"Underspecified requirements that are too abstract and allow for various interpretations"
+v_192,"Unclear / unmeasurable non-functional requirements"
+v_193,"Volatile customer's business domain regarding, e.g., changing points of contact, business processes or requirements"
+v_246,"Top 1 Problem"
+v_248,"Top 2 Problem"
+v_250,"Top 3 Problem"
+v_252,"Top 4 Problem"
+v_254,"Top 5 Problem"
+v_277,"Top 1 Problem Cause"
+v_278,"Top 2 Problem Cause"
+v_279,"Top 3 Problem Cause"
+v_280,"Top 4 Problem Cause"
+v_281,"Top 5 Problem Cause"
+v_282,"Top 1 Problem Effect"
+v_283,"Top 2 Problem Effect"
+v_284,"Top 3 Problem Effect"
+v_285,"Top 4 Problem Effect"
+v_286,"Top 5 Problem Effect"
+v_194,DROP
+v_297,DROP

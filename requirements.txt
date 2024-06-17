@@ -6,3 +6,6 @@ langchain_community
 langchain_core
 langchainhub
 vectorview
+pandas
+langchain_experimental
+tabulate
