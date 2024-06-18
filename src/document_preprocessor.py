@@ -16,7 +16,7 @@ def extract_paragraphs_from_pdf(pdf_path: str) -> list[str]:
     for page_num in range(doc_len):
         page = document.load_page(page_num)
         blocks = page.get_text("blocks")
-        text_elements = [block[4] for block in blocks]
+        text_elements = [block[4].lower() for block in blocks]
         paragraphs.extend(text_elements)
     return paragraphs
 

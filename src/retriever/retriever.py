@@ -2,49 +2,61 @@ from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 from  langchain_core.documents.base import Document
 
+from src.retriever.retriever_results_ranker import RRFResultsRanker, ResultsRanker
 from src.query_translation.query_translator import query_translator
 
 class Retriever:
 
-    def __init__(self, type='basic', persist_directory='chroma_db' ):
+    def __init__(self, type='basic', persist_directory='chroma_db', ranker_type = 'rrf' ):
         self.embedding_model = OpenAIEmbeddings()
         self.vector_store = Chroma(persist_directory=persist_directory, embedding_function=self.embedding_model)
         self.retriever = self.vector_store.as_retriever()
         self.type = type
+        self.ranker = self.create_ranker(ranker_type)
 
-    def get_retriever(self):
+    def get_retriever(self): 
         return self.retriever
+    
+    def create_ranker(self, ranker_type) -> ResultsRanker:
+        if ranker_type == 'rrf':
+            return RRFResultsRanker()
+        else:
+            return ResultsRanker()
+        
+    def rank_results(self, results) -> list[Document]:
+        return self.ranker.get_results(results)
 
+    
+    def retrieve_docs(self, query: str) -> list[Document]:
+        documents =  self.retriever.invoke(query)
+        return documents
 
-    def retrieve(self, query):
-        if  self.type == 'basic':
-            self.query_translator = query_translator(type='basic')
-            adjusted_query = self.query_translator.translate_query(query)
-            documents =  self.retriever.invoke(adjusted_query)
-            formatted_docs = self.get_page_content(documents)
-            return formatted_docs
-        if  self.type == 'step-back':
+    def retrieve_context(self, query: str) -> str:
+        docs = self.retrieve_docs(query)
+        additional_info = ""
+        if self.type == 'step-back':
             self.query_translator = query_translator(type='step-back')
             adjusted_query = self.query_translator.translate_query(query)
-            documents_original_query =  self.retriever.invoke(query)
             documents_stepback_query =  self.retriever.invoke(adjusted_query)
-            documents = documents_original_query + documents_stepback_query
-            formatted_docs = self.get_page_content(documents)
-            return formatted_docs
-        else:
-            raise ValueError("Unsupported retrieval method")
+            docs.extend(documents_stepback_query)
+            additional_info += f"Step-back query: {adjusted_query}\n\n"
         
-    def get_page_content(self, docs: list[Document]):
+        ranked_docs = self.rank_results(docs)
+        context = self.create_context(ranked_docs, additional_info=additional_info)
+        print(f"Context: {context}")
+        return context
+
+    def create_context(self, docs: list[Document], additional_info: str = "") -> str:
+        context = additional_info
+        for doc in docs:
+            context += "\n\n".join(doc.page_content)
+        return context
+        
+    def get_doc_content(self, docs: list[Document]) -> str:
         result = "\n\n".join(doc.page_content for doc in docs)
-        # print("Context:")
-        # print(result)
         return result
     
     
-
-    # def add_documents(self, new_documents):
-        # self.vectorstore.add_documents(new_documents)
-        # self.bm25_retriever.add_documents(new_documents)
 
 # TODO: idea for the future
 # def retrieve(self, query):

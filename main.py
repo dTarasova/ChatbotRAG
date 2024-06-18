@@ -13,22 +13,26 @@ from  langchain_core.documents.base import Document
 
 #     return "Here is an answer " + '\n' + answer
 
-# try:
-#     while True:
-#         print("\nHow can I help you? For the end of the conversation please press Ctrl+c")
-#         question = input()
-#         answer = invoke(question)
-#         print(answer) 
-# except KeyboardInterrupt:
-#     pass
+try:
+    while True:
+        print("\nHow can I help you? For the end of the conversation please press Ctrl+c")
+        question = input()
+        rag_model = RAGModel(type='step-back')
+        answer, retrieved_docs = rag_model.query(question)
+        print(answer) 
+        for doc in retrieved_docs:
+            print(doc)
+            print("\n\n")
+except KeyboardInterrupt:
+    pass
 
-rag_model = RAGModel(type='step-back')
-answer, retrieved_docs = rag_model.query("Is requirement 'System should be fast' a good requirement?")
-print("\n\nAnswer:\n\n", answer)
-print("\n\nRetrieved Documents:\n\n", retrieved_docs)
+# rag_model = RAGModel(type='step-back')
+# answer, retrieved_docs = rag_model.query("Is requirement 'System should be fast' a good requirement?")
+# print("\n\nAnswer:\n\n", answer)
+# print("\n\nRetrieved Documents:\n\n", retrieved_docs)
 
-FILE1 = 'data/first_batch/Rapid quality assurance with Requirements Smells.pdf'
-FILE2 = 'data/Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf'
+# FILE1 = 'data/first_batch/Rapid quality assurance with Requirements Smells.pdf'
+# FILE2 = 'data/Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf'
 
 # playaround_pymupdf(FILE2)
 

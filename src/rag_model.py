@@ -10,8 +10,9 @@ class RAGModel:
         self.generator = Generator()
 
     def query(self, question):
-        retrieved_docs = self.retriever.retrieve(question)
-        answer = self.generator.generate_answer(question, retrieved_docs)
+        question_lowered = question.lower()
+        retrieved_docs = self.retriever.retrieve_context(question_lowered)
+        answer = self.generator.generate_answer(question_lowered, retrieved_docs)
         return answer, retrieved_docs
 
 if __name__ == "__main__":
