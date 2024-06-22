@@ -9,24 +9,11 @@ class Generator:
         self.type = type
     
     def generate_answer(self, question, context):
-        # prompt = self.get_prompt(question, context)
-        # print("\n\nAnswer with RAG:")
-        # result = self.llm.invoke(prompt)
-        # print(result)
         prompt = self.get_prompt(question, context)
         chain = prompt | self.llm | StrOutputParser()
         result = chain.invoke({"question": question})
         return result
-    # def generate_answer(self):
-        # final_rag_chain = (
-        # prompt
-        # | self.llm
-        # | StrOutputParser()
-        # )
-        # print("\n\nAnswer with RAG:")
-        # result = final_rag_chain.invoke({"question": prompt})
-        # print(result)
-        # return result
+
     
     def get_prompt(self, question, context):
         if self.type == 'basic':
@@ -45,7 +32,6 @@ class Generator:
                             ### Question ### : {question}""" 
 
         prompt = ChatPromptTemplate.from_template(template)
-        # print('\n\nPrompt:\n\n', prompt)
         return prompt
     
     def get_step_back_prompt(self, question, context):
@@ -61,7 +47,6 @@ class Generator:
                             ### Question ### : {question}""" 
 
         prompt = ChatPromptTemplate.from_template(template)
-        # print('\n\nPrompt:\n\n', prompt)
         return prompt
 
 

@@ -7,22 +7,23 @@ from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 from  langchain_core.documents.base import Document
 
-# def invoke(question: str):
-#     chain = retrieve_generate()
-#     answer = chain.invoke(question)
-
-#     return "Here is an answer " + '\n' + answer
+from src.wo_rag import get_openai_answer
 
 try:
     while True:
         print("\nHow can I help you? For the end of the conversation please press Ctrl+c")
         question = input()
         rag_model = RAGModel(type='step-back')
-        answer, retrieved_docs = rag_model.query(question)
-        print(answer) 
-        for doc in retrieved_docs:
-            print(doc)
-            print("\n\n")
+        print_context = True
+        answer, context = rag_model.query(question)
+        print("\n\nAnswer:\n\n", answer)
+        if print_context:
+            print("\n\nContext:\n\n")
+            print(context)
+
+        openai_answer = get_openai_answer(question)
+        print("\n\n Regular OpenAI without context: \n\n")
+        print(openai_answer)
 except KeyboardInterrupt:
     pass
 

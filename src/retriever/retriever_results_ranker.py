@@ -1,5 +1,5 @@
+from langchain_core.documents.base import Document
 from json import loads, dumps
-from  langchain_core.documents.base import Document
 
 class ResultsRanker:
     def __init__(self, cutoff_number=3):
@@ -18,23 +18,37 @@ class ResultsRanker:
     
 
 class RRFResultsRanker(ResultsRanker):
-    def __init__(self, k=60):
+    def __init__(self, k=60, cutoff_number=3):
+        super().__init__(cutoff_number)
         self.k = k
-        ResultsRanker.__init__(self)
 
     def rank(self, results: list[Document]):
+        # fused_scores = {}
+
+        # for rank, doc in enumerate(results):
+        #     doc_str = doc.page_content
+        #     if doc_str not in fused_scores:
+        #         fused_scores[doc_str] = 0
+        #     fused_scores[doc_str] += 1 / (rank + self.k)
+
+        # reranked_results_contents = sorted(fused_scores.items(), key=lambda x: x[1], reverse=True)
+        # reranked_results = [Document(page_content=doc, score=score) for doc, score in reranked_results_contents]
+
+        # return reranked_results
+    
         fused_scores = {}
 
         for rank, doc in enumerate(results):
-            doc_str = dumps(doc.page_content)
-            if doc_str not in fused_scores:
+            doc_str = doc.page_content
+            if doc_str not in fused_scores.keys():
                 fused_scores[doc_str] = 0
             fused_scores[doc_str] += 1 / (rank + self.k)
 
-        reranked_results_contents = [
-            (loads(doc), score)
+        reranked_results = [
+            (doc, score)
             for doc, score in sorted(fused_scores.items(), key=lambda x: x[1], reverse=True)
         ]
-        reranked_results = [Document(page_content=doc, score=score) for doc, score in reranked_results_contents]
 
-        return reranked_results
+        reranked_documents = [Document(page_content=doc, score=score) for doc, score in reranked_results]
+
+        return reranked_documents

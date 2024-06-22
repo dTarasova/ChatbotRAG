@@ -38,18 +38,17 @@ class Retriever:
             self.query_translator = query_translator(type='step-back')
             adjusted_query = self.query_translator.translate_query(query)
             documents_stepback_query =  self.retriever.invoke(adjusted_query)
-            docs.extend(documents_stepback_query)
+            documents_stepback_query.extend(docs)
+            docs = documents_stepback_query
             additional_info += f"Step-back query: {adjusted_query}\n\n"
         
         ranked_docs = self.rank_results(docs)
         context = self.create_context(ranked_docs, additional_info=additional_info)
-        print(f"Context: {context}")
         return context
 
     def create_context(self, docs: list[Document], additional_info: str = "") -> str:
         context = additional_info
-        for doc in docs:
-            context += "\n\n".join(doc.page_content)
+        context += "\n\n".join(doc.page_content for doc in docs)
         return context
         
     def get_doc_content(self, docs: list[Document]) -> str:

@@ -15,6 +15,16 @@ def get_basic_rag_prompt() -> ChatPromptTemplate:
     return prompt
 
 
+def get_basic_openai_prompt() -> ChatPromptTemplate:
+    template = """You are an expert in Requirements Engineering. 
+    Answer the following question with detailed and accurate information. The answer should be explainable. 
+    Ensure that your answer directly addresses the user's question.
+
+    Question: {question}"""
+    prompt = ChatPromptTemplate.from_template(template)
+    return prompt
+
+
 def get_rag_fusion_prompt() -> ChatPromptTemplate:
     template = """You are a helpful assistant that generates multiple search queries based on a single input query. \n
     Generate multiple search queries related to: {question} \n
