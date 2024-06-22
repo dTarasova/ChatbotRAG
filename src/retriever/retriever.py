@@ -51,9 +51,7 @@ class Retriever:
         context += "\n\n".join(doc.page_content for doc in docs)
         return context
         
-    def get_doc_content(self, docs: list[Document]) -> str:
-        result = "\n\n".join(doc.page_content for doc in docs)
-        return result
+
     
     
 
