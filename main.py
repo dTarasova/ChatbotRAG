@@ -13,23 +13,23 @@ try:
     while True:
         print("\nHow can I help you? For the end of the conversation please press Ctrl+c")
         question = input()
-        # rag_model = RAGModel(type='step-back')
-        # print_context = True
-        # answer, context = rag_model.query(question)
-        # print("\n\nAnswer:\n\n", answer)
-        # if print_context:
-        #     print("\n\nContext:\n\n")
-        #     print(context)
+        rag_model = RAGModel(type='step-back')
+        print_context = True
+        answer, context = rag_model.query(question)
+        print("\n\nAnswer:\n\n", answer)
+        if print_context:
+            print("\n\nContext:\n\n")
+            print(context)
 
-        # openai_answer = get_openai_answer(question)
-        # print("\n\n Regular OpenAI without context: \n\n")
-        # print(openai_answer)
+        openai_answer = get_openai_answer(question)
+        print("\n\n Regular OpenAI without context: \n\n")
+        print(openai_answer)
 
 
         rag2_model = RAGModel(type='structured_data')
         answer2, context2 = rag2_model.query(question)
-        print("\n\nAnswer2:\n\n", answer2)  
-        print("\n\nContext2:\n\n")
+        print("\n\nAnswer with data from NAPiRE:\n\n", answer2)  
+        print("\n\nNAPiRE Context:\n\n")
         print(context2)
 
 except KeyboardInterrupt:

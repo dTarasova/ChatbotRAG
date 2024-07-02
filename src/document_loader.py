@@ -69,7 +69,7 @@ def add_doc_todb(doc_path):
 
     pages = text_splitter.split_text(processed_pdf)
 
-    documents = [Document(page_content=page, metadata={"title": tail}) for page in pages]
+    documents = [Document(page_content=page, metadata={"source": tail}) for page in pages]
 
     vector_store = Chroma(persist_directory=PERSIST_DIRECTORY,
                           embedding_function=OpenAIEmbeddings())

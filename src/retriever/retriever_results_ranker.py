@@ -23,32 +23,38 @@ class RRFResultsRanker(ResultsRanker):
         self.k = k
 
     def rank(self, results: list[Document]):
+    
         # fused_scores = {}
 
         # for rank, doc in enumerate(results):
+        #     #todo: add metadata to the document
         #     doc_str = doc.page_content
-        #     if doc_str not in fused_scores:
+        #     if doc_str not in fused_scores.keys():
         #         fused_scores[doc_str] = 0
         #     fused_scores[doc_str] += 1 / (rank + self.k)
 
-        # reranked_results_contents = sorted(fused_scores.items(), key=lambda x: x[1], reverse=True)
-        # reranked_results = [Document(page_content=doc, score=score) for doc, score in reranked_results_contents]
+        # reranked_results = [
+        #     (doc_str, score)
+        #     for doc_str, score in sorted(fused_scores.items(), key=lambda x: x[1], reverse=True)
+        # ]
 
-        # return reranked_results
-    
+        # reranked_documents = [Document(page_content=doc, score=score, metadata=doc.metadata) for doc, score in reranked_results]
+
+        # return reranked_documents
+
         fused_scores = {}
 
         for rank, doc in enumerate(results):
-            doc_str = doc.page_content
-            if doc_str not in fused_scores.keys():
-                fused_scores[doc_str] = 0
-            fused_scores[doc_str] += 1 / (rank + self.k)
+            #todo: add metadata to the document
+            if doc not in fused_scores.keys():
+                fused_scores[doc] = 0
+            fused_scores[doc] += 1 / (rank + self.k)
 
         reranked_results = [
             (doc, score)
             for doc, score in sorted(fused_scores.items(), key=lambda x: x[1], reverse=True)
         ]
 
-        reranked_documents = [Document(page_content=doc, score=score) for doc, score in reranked_results]
+        reranked_documents = [Document(page_content=doc.page_content, score=score, metadata=doc.metadata) for doc, score in reranked_results]
 
         return reranked_documents

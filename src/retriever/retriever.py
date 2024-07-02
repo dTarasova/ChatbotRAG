@@ -48,7 +48,10 @@ class Retriever:
 
     def create_context(self, docs: list[Document], additional_info: str = "") -> str:
         context = additional_info
-        context += "\n\n".join(doc.page_content for doc in docs)
+        for doc in docs:
+            context_str = doc.page_content
+            source_str = doc.metadata["source"]
+            context += f"Context: {context_str}\n Source: {source_str}\n\n"
         return context
         
 
