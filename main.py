@@ -48,3 +48,9 @@ except KeyboardInterrupt:
 
 # process_pdf(FILE2, 'text_new.txt')
 # create_db()
+
+# from huggingface_hub import InferenceClient
+# client = InferenceClient()
+
+# image = client.text_to_image("An astronaut riding a horse on the moon.")
+# image.save("astronaut.png")

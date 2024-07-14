@@ -10,3 +10,4 @@ pandas
 langchain_experimental
 tabulate
 chardet
+huggingface_hub 
