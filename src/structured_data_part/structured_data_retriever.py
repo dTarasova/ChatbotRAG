@@ -3,25 +3,36 @@ from langchain_experimental.agents.agent_toolkits import create_csv_agent, creat
 from langchain_openai import ChatOpenAI, OpenAI
 from langchain.prompts import ChatPromptTemplate
 import chardet
+import openai
 import pandas as pd
 
 
-FILE_PATH = "data/napire_data/data_with_columns.csv"
+FILE_PATH = "data/napire_data/napire_best.csv"
 
 class StructuredDataRetriever:
     def __init__(self, data_source=FILE_PATH):
         self.data_source = data_source
+        self.df = self.preprocess_data()
         self.agent = self.create_agent()
 
+    def preprocess_data(self):
+        df = pd.read_csv(self.data_source, header=0)
+        # with open(self.data_source, 'rb') as rawdata:
+        #     result = chardet.detect(rawdata.read(100000))
+        #     encoding = result['encoding']
+        # df = pd.read_csv(self.data_source, header=0, sep=";", encoding=encoding)
+
+        # cols_df = pd.read_csv("data/napire_data/columns_encoded.csv")
+        # rename_dict = dict(zip(cols_df['original_name'], cols_df['webapp_name']))
+        # df.rename(columns=rename_dict, inplace=True)
+        # df.drop(df.columns[df.columns.str.contains('unnamed|drop', case=False)], axis=1, inplace=True)
+        # df.to_csv('napire_best.csv', index=False)
+        return df
+
     def create_agent(self):
-        with open(self.data_source, 'rb') as rawdata:
-            result = chardet.detect(rawdata.read(100000))
-            encoding = result['encoding']
-        df = pd.read_csv(self.data_source, header=0, sep=";", encoding=encoding)
-        df.drop(df.columns[df.columns.str.contains('unnamed',case = False)],axis = 1, inplace = True)
         agent = create_pandas_dataframe_agent(
             ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k"),
-            df,
+            self.df,
             verbose=True,
             agent_type=AgentType.OPENAI_FUNCTIONS ,
             allow_dangerous_code=True
@@ -29,9 +40,11 @@ class StructuredDataRetriever:
         return agent
     
     def retrieve_context(self, question: str):
-        context = self.agent.invoke(question)
+        extended_question = f"Use the df to answer the question. Ignore all values like 'not shown', 'not answered' and similar. Question: {question}"
+        context = self.agent.invoke(extended_question)
         answer = context["output"]
         return answer
+    
     
     # def generate_answer():
        

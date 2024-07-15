@@ -8,22 +8,24 @@ from langchain_openai import OpenAIEmbeddings
 from  langchain_core.documents.base import Document
 
 from src.wo_rag import get_openai_answer
+from src.structured_data_part.data_preprocessing import improve_csv_quality
 
+# improve_csv_quality('data/napire_data/reworked_df_napire_from_questionary.csv', 'data/napire_data/napire_improved.csv')
 try:
     while True:
         print("\nHow can I help you? For the end of the conversation please press Ctrl+c")
         question = input()
-        rag_model = RAGModel(type='step-back')
-        print_context = True
-        answer, context = rag_model.query(question)
-        print("\n\nAnswer:\n\n", answer)
-        if print_context:
-            print("\n\nContext:\n\n")
-            print(context)
+        # rag_model = RAGModel(type='step-back')
+        # print_context = True
+        # answer, context = rag_model.query(question)
+        # print("\n\nAnswer:\n\n", answer)
+        # if print_context:
+        #     print("\n\nContext:\n\n")
+        #     print(context)
 
-        openai_answer = get_openai_answer(question)
-        print("\n\n Regular OpenAI without context: \n\n")
-        print(openai_answer)
+        # openai_answer = get_openai_answer(question)
+        # print("\n\n Regular OpenAI without context: \n\n")
+        # print(openai_answer)
 
 
         rag2_model = RAGModel(type='structured_data')
@@ -31,7 +33,10 @@ try:
         print("\n\nAnswer with data from NAPiRE:\n\n", answer2)  
         print("\n\nNAPiRE Context:\n\n")
         print(context2)
-
+# What are the main challenges in requirements engineering?
+# What are the main techniques of requirements elicitation?
+# How to support maintainability of requirements?
+# What are the architectural constraints ?
 except KeyboardInterrupt:
     pass
 

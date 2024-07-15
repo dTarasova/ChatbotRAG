@@ -50,7 +50,7 @@ class Retriever:
         context = additional_info
         for doc in docs:
             context_str = doc.page_content
-            source_str = doc.metadata["source"]
+            source_str = doc.metadata["title"]
             context += f"Context: {context_str}\n Source: {source_str}\n\n"
         return context
         
