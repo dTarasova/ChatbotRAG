@@ -1,0 +1,2502 @@
+
+naming the pain in requirements engineering:a design for a global family of surveys and first results from germany
+
+
+daniel m´endez fern´andeza,∗, stefan wagnerb
+
+
+asoftware & systems engineering, institut f¨ur informatik, technische universit¨at m¨unchen, boltzmannstr. 3, 85748garching, germanybsoftware engineering group, institute of software technology, university of stuttgart, universit¨atsstr. 38, 70569 stuttgart,germany
+
+
+abstract
+
+
+context: for many years, we have observed industry struggling in deﬁning a high quality requirementsengineering (re) and researchers trying to understand industrial expectations and problems. although weare investigating the discipline with a plethora of empirical studies, they still do not allow for empiricalgeneralisations.objective: to lay an empirical and externally valid foundation about the state of the practice in re,we aim at a series of open and reproducible surveys that allow us to steer future research in a problem-drivenmanner.method: we designed a globally distributed family of surveys in joint collaborations with diﬀerentresearchers and completed the ﬁrst run in germany. the instrument is based on a theory in the form of aset of hypotheses inferred from our experiences and available studies. we test each hypothesis in our theoryand identify further candidates to extend the theory by correlation and grounded theory analysis.results: in this article, we report on the design of the family of surveys, its underlying theory, and thefull results obtained from germany with participants from 58 companies. the results reveal, for example,a tendency to improve re via internally deﬁned qualitative methods rather than relying on normativeapproaches like cmmi. we also discovered various re problems that are statistically signiﬁcant in practice.for instance, we could corroborate communication ﬂaws or moving targets as problems in practice. ourresults are not yet fully representative but already give ﬁrst insights into current practices and problems inre, and they allow us to draw lessons learnt for future replications.conclusion: our results obtained from this ﬁrst run in germany make us conﬁdent that the surveydesign and instrument are well-suited to be replicated and, thereby, to create a generalisable empirical basisof re in practice.
+
+
+keywords:requirements engineering, survey research, family of surveys
+
+
+1. introduction
+
+
+requirements engineering (re) is a discipline that constitutes a holistic key to successful developmentprojects as the elicitation, speciﬁcation and validation of precise and stakeholder-appropriate requirementsare critical determinants of software & system quality [1].at the same time, re is characterised bythe involvement of interdisciplinary stakeholders and uncertainty as many aspects are not clear from thebeginning of a project. hence, re is highly volatile and inherently complex by nature.although the importance of a high quality re and its continuos improvement have been recognised formany years, we can still observe industry struggling in deﬁning and applying a high quality re [2]. the
+
+
+∗corresponding authoremail address: mendezfe@in.tum.de (daniel m´endez fern´andez)
+
+
+preprint submitted to information and software technologynovember 30, 2016
+
+
+arxiv:1611.09511v1  [cs.se]  29 nov 2016
+
+
+diversity of how re is performed in various industrial environments, each having its particularities in thedomains of application or the software process models used, dooms the discipline to be not only a processarea diﬃcult to improve, but also diﬃcult to investigate for common practices and shortcomings.from a researcher’s perspective, empirical research in re thereby becomes a crucial and challengingtask. it is crucial as empirical studies of any kind in re, ranging from classical action research throughobservational studies to broad exploratory surveys, are necessary to understand the practical needs andimprovement goals in re, to steer problem-driven research and to empirically validate new research propos-als [3]. it is challenging, because we still need a solid empirical basis that allows for generalisations takinginto account the human factors that inﬂuence the anyway hardly standardisable discipline like no otherin software engineering. in consequence, qualitative research methods are gaining much attention [4], andsurvey research has become an indispensable means to investigate re especially in a broader context.
+
+
+1.1. problem statement
+
+
+although we are conﬁdent about the value of survey research to understand practical needs and todistill improvement goals in re, we still lack a solid empirical survey basis. the reason seems to lie inan ironically paradoxical circumstance: the appropriate design of a survey in re and the statisticallysound interpretation of the results going beyond purely observational, qualitative analyses and reasoningis very challenging, because we still lack empirically grounded theories in re [3]. in turn, we still lacksuch theories in re as we still have no empirically sound survey basis. available surveys in re eitherinvestigate isolated techniques in application (small scope), or they focus on a small data population (singlecountries or companies) so that the ﬁndings of the surveys are hardly generalisable – they cannot be viewedas representative.yet missing is a series of grounded empirical investigations of practical problems and needs in re thatallows for empirical generalisations to steer future research in a problem-driven manner.
+
+
+1.2. research objective
+
+
+our long-term research objective is to establish an open and externally valid set of empirical ﬁndingsabout practical problems and needs in re that allows us to steer future research in a problem-driven manner.to this end, we want to conduct a continuously and independently replicated, globally distributed surveyon re that investigates the state of the practice and trends including industrial expectations, status quo,experienced problems and what eﬀects those problems have. the work presented in this article forms theﬁrst steps in this direction.
+
+
+1.3. contribution
+
+
+in this article, we contribute the design of a globally distributed family of surveys on re and theresults obtained from its initial start in germany.our instrument relies on an initial theory obtainedfrom available re studies and used to generate hypotheses which we test during the results analysis. theresults gathered from open questions are further used to already extend our initial theory using groundedtheory analysis. furthermore, we investigate patterns in statistically signiﬁcant correlations to ﬁnd furthercandidate hypotheses for the theory.in [5], we already published the design of the family of surveys and the used instrument, and we discussedpreliminary results from its initial start in germany. in this article, we extend the previously publishedmaterial by contributing:
+
+
+1. a detailed theory on which the improvement of requirements engineering practices can be based on. weinfer our initial theory from our experiences and available empirical studies in re. this theory includesfor each research question a set of testable hypotheses about industrial expectations on good re, thestatus quo in re and its improvement, and contemporary problems in re. we use the hypotheses inour theory to test our results during our analysis procedure.
+
+
+2. the full results from germany including the responses from 58 companies (out of 73 responses) and adetailed analysis of those results via:
+
+
+2
+
+
+tation of the answers and an initial validation of the theory.
+
+
+• a correlation analysis among all variables in the complete data set to investigate whether statis-tically signiﬁcant patterns can be distilled.
+
+
+• an investigation of the implications speciﬁc problems in re have. as this topic is barely in-vestigated yet, we have no predeﬁned expectations and, thus, we apply grounded theory (topotentially extend our initial theory).
+
+
+3. a set of lessons learnt from our initial run in germany used to modify the process and the instrumentfor the replication that is already ongoing at the time of writing this article.our contribution is thus intended to serve two audiences: researchers that will participate in the surveyreplications and ones interested in the survey results.
+
+
+1.4. terminology used in the survey
+
+
+to ensure an unambiguous terminology for our paper, we explain the most frequently used terms toreport on our survey. table 1 summarises for this purpose relevant terms and deﬁnitions.
+
+
+table 1: terminology used in this paper.
+
+
+artefactdeliverable that abstracts from contents of a speciﬁcation document. it isused as input, output, or as an intermediate result of a process deﬁnition(see also [6]). synonyms used: work product, document.grounded theorygrounded theory is a set of integrated concepts/hypotheses, which aresystematically generated from qualitative and quantitative data (see [7, 8]).replication studyreproduction of an empirical study with the purpose of empirical gener-alisation, i.e. continuous repetition of a study until reaching a saturationin the observations objectively leading to same or similar results as thereplicated studies. each replication is performed independently by diﬀerentresearchers (see [9]).re standardstandardised organisational requirements engineering (re) model that ab-stracts from the idealised execution of the re phase in a developmentproject.it includes the description of the process (deﬁnition) to follow,the artefacts to be created, as well as roles involved [10]. synonyms used:re reference model, methodology [11] (taking a broader view)theory“a theory provides explanations and understanding in terms of basic con-cepts and underlying mechanisms, which constitute an important counter-part to knowledge of passing trends and their manifestation” [12, 13]. weuse this term in the sense of a social theory (see [14, 8]) and refer to a set offalsiﬁable and testable statements/hypotheses having an inductive naturewith no apodictic propositions.
+
+
+1.5. outline
+
+
+the remainder of the article is as follows. in sect. 2, we introduce available contributions in the contextof our research, which gaps are left open, and how we intent to close those gaps. in sect. 3, we presentour starting theory in the form of a series hypotheses for our areas of interested. in sect. 4, we present thedesign of the family of surveys, including the research questions based on the theory, the used methodologyand instrumentation, and the data analysis and validity procedures. the results of the survey in germanyare reported in sect. 5. in sect. 6, we summarise our lessons learnt and discuss those things we change toin future to facilitate the replications, before giving a summary of results and a concluding discussion insect. 7.
+
+
+3
+
+
+2. related work
+
+
+as the topics of our survey touch many diﬀerent areas in requirements engineering, it is impossible tocomprehensively discuss all related work in that sense. therefore, we focus on survey research on re andour own previously published material.
+
+
+2.1. survey research on requirements engineeringwe classify re survey research into two major areas: investigations of techniques and methods andinvestigations of general practices and contemporary phenomena in industry. contributions that investigatetechniques and methods analyse, for example, selected requirements phases and which techniques are suitableto support typical tasks in those phases. zowghi et al. [15], for example, conducted a survey about whichtechniques support the elicitation phase. an exemplary survey on the choice of elicitation techniques wascarried out by carrizo et al. [16]. studies like those reveal the eﬀects of given techniques when applyingthem in practical contexts.surveys on general practices and phenomena in industry include the well-known chaos report of thestandish group, examining, inter alia, root causes for project failures of which most are to be seen in re,such as missing user involvement. whereas the report is known to have serious ﬂaws in its design negativelyaﬀecting the validity of the results [17], other studies, such as the (german) success study [18], conduct asimilar investigation of german companies including a detailed and reproducible study design. still, bothsurveys exclusively investigate failed projects and general causes at the level of overall software processes.the focus of those studies, however, does not support the investigation of contemporary phenomena andproblems of re in industry. neill and laplante [19] conducted a survey on current practices in re; forexample, the used requirements elicitation and modelling techniques. nikula et al. [20] present a survey onre at the organisational level of small and medium-size companies in finland. based on their ﬁndings, theyinferred improvement goals, e.g., on optimising knowledge transfer. a study investigating the industrialreluctance on software process improvement was performed by staples et al. [21]. they discovered diﬀerentreasons why organisations do not adopt normative improvement solutions as the ones dictated by cmmiand related frameworks (focussing on assessing and benchmarking companies rather than on conductingproblem-driven, inductive improvements, see [22, 23, 5]). exemplary reasons for a reluctance to normativeimprovement frameworks were the small company size where the respondents did not see clear beneﬁt. asurvey that directly focused on discovering problems in practical settings was performed by hall et al. [24].they empirically underpin the problems discussed by hsia et al. [25] and investigated a set of criticalorganisational and project-speciﬁc problems, such as communication problems, inappropriate skills or vaguerequirements.solemon, sahibuddin, and abd ghani [26] report on a survey on re problems and practices in malaysiansoftware companies. they found several of the re problems we also saw in our survey. liu, li, and peng [27]describe a survey conducted in china about practices and problems in re. they discuss several problemswe also investigated but concentrate on china. verner et al. [28] ran a survey in australia and the usa.they concentrated on success factors in re and found good requirements, customer/user involvement, andeﬀective requirements management to be the best predictors of project success.although giving valuable insights into industrial environments, the discussed surveys do by now notallow for generalisation as they focus on single aspects in re, such as problems in re processes or reimprovements, or they focus on speciﬁc countries. thus, these studies by now remain not representative.to close this gap in literature, we designed a family of surveys in joint collaboration with diﬀerentresearchers. the design of the survey as well as the interpretation of the results are both conducted alongan initial theory. by relying on an initial theory built on the basis of or experiences and available studies,and by bringing together diﬀerent interdisciplinary communities during replications, the family of surveysshall contribute to an empirical basis for empirical generalisations and problem-driven research in re.
+
+
+2.2. previously published materialwe previously published the basic survey design and discussed preliminary results from germany inconference proceedings [5]. those results were obtained from an intermediate data export and contained
+
+
+4
+
+
+answers from 30 respondents (see also fig. 1 on page 11). the full data set is published in addition asa technical report [29], which we used to inform the participants about the results. we interpreted thoseresults with basic descriptive statistics and reasoning.in the article at hand, we rely on the full results from the completed survey including answers from73 companies of which we use 58 as those responses are complete. we extend our previously publishedintermediate analysis with a full data analysis including:
+
+
+1. a detailed theory with a series of hypotheses we inferred from our own experiences and observationsas well as from available literature
+
+
+2. a detailed data analysis including statistical analysis and the application of grounded theory tocomprehensively analyse quantitative data as well as qualitative data
+
+
+3. theory and expectations
+
+
+before we go into the design of the survey in the next section, we describe the theory and expectations wehave about the state-of-practice and problems in requirements engineering which we will test using the surveyresults. the basis for this theory is mostly our observations and experiences in industrial collaborations aswell as our (incomplete) impression of the existing literature. for future work, a possibility would be to runa systematic literature review as a more complete foundation of the theory. our intention is that using thefamily of surveys that runs continuously, we can iteratively reﬁne and extend the theory using the surveyresults and interactions between the participating researchers.we use the term theory in the sense of a social theory [14, 8] and refer to a set of falsiﬁable andtestable hypotheses having an inductive nature (see also tab. 1). the underlying objective of our researchis to improve requirements engineering in practice. the study shall serve the purpose of getting a betterempirical understanding on the status quo in requirements engineering as well as contemporary problemsso that we can infer common improvement goals.hence, we structure our initial social theory into four subsets of hypotheses. we ﬁrst need to describethe current status of requirements engineering practice. second, similarly, we describe hypotheses on thestatus quo in requirements engineering improvement. as the status quo might not reﬂect what practitionersexpect from a good re, we want to understand the expectations practitioners have on good requirementsengineering practice. we focus in particular on expectations on company-speciﬁc re standards. lastly, toderive improvement goals, we formulate our theory about concrete problems in re practice.in the following, we deﬁne the concrete hypotheses for each theory subset. each hypothesis is intendedto be falsiﬁable and testable by statistical analysis later based on the survey results. we state all hypothesisin the alternate form.the null hypothesis is always that the distribution of the answers is symmetricabout a central value µ. in our theory, we describe our alternative hypotheses that the true location isgreater or less than that, respectively. for easier tracing of the theory to the questionnaire used in thesurvey, we provide the question number as well as our alternative hypothesis. in case of answer sets usinga likert scale, the alternative hypothesis is either > 3 meaning that the median rating was important/veryimportant or agree/strongly agree or < 3 meaning that the median rating was unimportant/very unimportantor disagree/strongly disagree. for easier readability of the table, we denote > 3 as “+” and < 3 as “−”.in case of yes/no questions, the numerical value is > 0 for “yes” (0 would be “no”).to ease thereadability, we group diﬀerent hypotheses for all answer possibilities to one single hypothesis if possible.
+
+
+3.1. expectations on good requirements engineeringbefore we describe our theory on the actual practices and problems in re, we ﬁrst describe our un-derstanding of the expectations of practitioners how good requirements engineering should look like. allhypotheses in this theory subset are shown in tab. 2.as a prerequisite, we assume that practitionersconsider improvement in requirements engineering beneﬁcial but also challenging. yet, we also expect thatoverall practitioners will consider improvements in all development phases and areas, like project manage-ment or implementation, beneﬁcial but challenging. we expect re improvement to be challenging due tothe volatility in the process [30], but also, for example, quality assurance due to the diﬃculty of developingand applying adequate (valid) metrics and measurements (see, e.g., [31]).
+
+
+5
+
+
+table 2: hypotheses about the expectations on good requirements engineering.
+
+
+no.hypotheses on improvement (q 9 and q 10)expec.
+
+
+h 1the improvement of all development phases is beneﬁcial.+h 2the improvement of all development phases is challenging.+
+
+
+hypotheses on general expectations on standardisation in re (q 11)
+
+
+h 3the standardisation of re does not hamper creativity.−h 4the standardisation of re improves the overall process quality.+h 5standardised document templates and tool support beneﬁts the communication.+h 6the structure of documents should be standardised across diﬀerent project environments, butthe process itself should be left open for project participants.+
+
+
+hypotheses on particular aspects in company-speciﬁc re standards (q 12)
+
+
+h 7the deﬁnition of standard methods and modelling techniques is not important.−h 8tool support for v&v of req. spec. is not important.−h 9the deﬁnition of standardised re artefacts with document templates and/or tool support isimportant.+
+
+
+h 10tailoring mechanisms according to project characteristics are important.+h 11the deﬁnition of roles and responsibilities is important.+h 12support of impact analysis is important.+h 13deep integration with other disciplines is important.+support of agility in the process is. . .h 14+h 15−support of prototyping is. . .h 16+h 17−
+
+
+hypotheses on reasons for deﬁning a company-speciﬁc re standard (q 13)
+
+
+h 18formal prerequisites for project acquisition do not motivate a standard.−h 19support of progress control does not motivate a standard.−h 20seamless development by integrating re into the development process motivates a standard.+h 21better tool support motivates a standard.+h 22support of distributed development motivates a standard.+h 23better quality assurance of artefacts motivates a standard.+h 24support of benchmarks motivates a standard.+h 25support of project management and planning motivates a standard.+h 26higher eﬃciency motivates a standard.+h 27knowledge transfer motivates a standard.+compliance to regulations and standards (like cmmi). . .h 28−h 29+
+
+
+hypotheses on barriers for deﬁning a company-speciﬁc re standard (q 14)
+
+
+h 30higher demand for communication does not barrier deﬁning a standard.−h 31higher process complexity barriers deﬁning a standard.+h 32lower eﬃciency barriers deﬁning a standard.+h 33missing willingness to change barriers deﬁning a standard.+h 34missing possibilities of standardisation barrier deﬁning a standard.+
+
+
+the subsequent set of hypotheses initially characterises the expectations practitioners have on a good re.we concentrate on hypotheses about the re standards that are or should be in place in their companies.due to the known criticality and importance of re [1], its sensitivity to the customer domain, and theunderspeciﬁed terminology, e.g., in the area of non-functional requirements [32], we expect the practitionersto rate a standardisation of re as increasing the overall quality. the terminological problems in re andthe consequences of the process complexity on the quality of the artefacts created are also reasons why webelieve the standardisation of artefacts is important [2].after the general expectations on re standardisation, we deﬁne hypotheses according to our experiencesabout the expectations practitioners have on particular aspects of their own standards. for instance, basedon our investigation published in [30, 6], we expect practitioners to demand standards that focus on there artefacts, clear roles and responsibilities, and tailoring mechanisms rather than on strict processes andmethods to allow for more ﬂexibility and a better communication.while we see tool support to be a project-speciﬁc decision that often cannot be dictated in multi-project environments, we believe aspects of process integration (e.g., with change management) to be ratedvery important [33]. regarding the support for agility and the application of prototyping, we expect it tobe rated as important while practitioners working in the embedded systems domain should have limitedpossibilities for agility because of diﬀerent suppliers with restricted access to the customers domains and thediﬃculty of combining hardware/software co-design in agile approaches. our expectation is also that theembedded systems domain will see the use of prototypes as important, e.g., due to the challenges arising
+
+
+6
+
+
+from software/hardware co-design.finally, we deﬁne hypotheses for the motivation and barriers practitioners expect when deﬁning anre standard. based on similar observations as in the previous hypotheses, we expect practitioners to seethe improvement of the quality in the re artefacts to be the main motivation for deﬁning a company-speciﬁc re standard.this should especially hold for small/medium-sized companies which do not seecompliance to regulations and (improvement) standards as a motivation due to their general reluctance tosuch standards [21]. relying, for example, on the observations made by damian et al. [34], we also supposepractitioners to agree on the support of knowledge transfer and, thus, on the need of deﬁning artefactmodels in the company standards, because artefact models make implicit knowledge about the domainexplicit (e.g., with templates or modelling guidelines) [6]. as a barrier to deﬁning an re standard, we relyon our experiences in research cooperations and expect practitioners to agree on a higher process complexity,the missing willingness for change and the missing possibilities for standardisation.
+
+
+3.2. status quo in requirements engineeringfollowing the establishment of hypotheses on re improvement and the expectations of practitioners onre standardisation, we focus on the current state of re in practice in this second subset of our theory. wedescribe the re practice in the areas of elicitation, process tailoring, change management, and the used restandard. the hypotheses are shown in tab. 3.
+
+
+table 3: hypotheses on the status quo in requirements engineering practice.
+
+
+no.hypotheses on the elicitation of requirements (q 16)expec.
+
+
+h 35requirements are elicited via workshops.yesh 36requirements are elicited via change requests.yes
+
+
+hypotheses on deﬁning and tailoring an re standard (q 18 and q 22)
+
+
+h 37requirements engineering standards are deﬁned due to company-speciﬁc demands.yesh 38the re standard is tailored at the beginning of a project by the project lead based on expe-riences.yes
+
+
+hypotheses on the characteristics of their re standard (q 19)
+
+
+h 39the standard does not rely on an architecture model with diﬀerent levels of abstraction−h 40the standard does not include a diﬀerentiated view on diﬀerent requirements classes anddependencies.−
+
+
+h 41the standard does not includes tracing relationships among the contents.−h 42the standard does not include a diﬀerentiated view on non-functional requirements.−h 43the standard includes a diﬀerentiated view on diﬀerent requirements classes, but no depen-dencies.+
+
+
+hypotheses on the application of the re standard (q 21 and q 23)
+
+
+h 44each project can decide whether to use the standard.yesh 45the application of the re standard is controlled via analytical quality assurance.yes
+
+
+hypothesis on change management (q 20)
+
+
+h 46a requirements change management is established after formally accepting a requirementsspeciﬁcation.yes
+
+
+regarding the elicitation of requirements, we expect practitioners, especially in large companies, toconduct workshops and otherwise rely on formal change management via change requests, because weexperience german companies not yet to be aﬃne to agile methods.instead of factors lying outside the company, we expect that re standards are deﬁned because ofcompany-speciﬁc demands.based on our experiences, we also expect that the re standard is tailoredby the project lead based on his or her experience at the beginning of each project instead of using a deﬁnedtailoring approach. the main reason is that tailoring itself is a topic that is still not well explored [35]. thisespecially holds for re [36].we generally expect the company-speciﬁc re standards to be immature compared to other disciplinesdue to the inherently complex nature of re. we rely, for example, on the observations of [24] and suppose thestandards to deﬁne coarse processes rather than well deﬁned artefact models that support traceability [37].also, we expect the standards to distinguish diﬀerent requirements classes but not to include a detailedview with clear (tracing) dependencies. this is especially true for non-functional aspects as quality itself isa multifaceted topic with various domain-dependent interpretations [32, 38, 39].in consequence, we expect the application of their standards not to be mandatory. still, given multi-staged bidding procedures and complex, formal tendering procedures as well as oﬀ-shoring being important
+
+
+7
+
+
+topics for german companies, we expect the requirements speciﬁcations to be controlled as part of anfinally, for the state of practice in change management, we expect that it is still the case that a require-ments change management is established after a requirements speciﬁcation (expected to be complete) wasformally accepted. this is due to our observations that agile approaches for handling requirements changeare not widespread in germany yet.
+
+
+3.3. status quo in requirements engineering improvement
+
+
+similar to the theory subset before, we look into the current state of practice; this time the practice inre improvement. we see process improvement important for any software engineering discipline but forthe volatile and complex re, we expect this to be essential. our hypotheses are shown in tab. 4.
+
+
+table 4: hypotheses on requirements engineering improvement.
+
+
+no.hypotheses on continuous improvement (q 24 and q 25)expec.
+
+
+h 47requirements engineering is not continuously improved.noh 48a continuous improvement is done to determine strengths and weaknesses.yes
+
+
+hypotheses on re improvement (q 26, q 27, and q 29)re improvement is done systematically. . .h 49yesh 50yesh 51yesh 52re improvement is done via internally deﬁned standards/approaches.yesh 53re assessments/audits are done using qualitative methods.yes
+
+
+given the plethora of diﬀerent (not necessarily compatible) methods and practices for re and the stilllow number of reported evidence on applying those methods in practice [3], as well as the inherent complexityand volatility of re itself, improving re (going beyond audits and assessments) remains a diﬃcult topicwith only few known concepts [23, 41]. for this reason, we believe that most participants do not improvetheir re continuously. for those who do, we expect the main reason to be able to determine strengths andweaknesses of their re process and standard.for those that improve their re, we rely on the observations made by staples et al. [21] in the areaof software process improvement. large companies use assessments conducted by an own business unit orvia external consultants, e.g., as part of a certiﬁcation program (see also [22]). small and medium-sizedcompanies, however, do not have the resources to have separate improvement groups. instead, they willconduct improvements by project participants directly. we believe that normative improvement approachesare losing industrial attention as they are steered by externally deﬁned goals and norms with the purpose ofassessing and benchmarking diﬀerent companies. we consequently expect that qualitative re improvementapproaches are predominantly used [23, 41] based on internally deﬁned standards and approaches.
+
+
+3.4. contemporary problems in requirements engineering
+
+
+finally, the last theory subset describes our main area of interest of our study: contemporary problemsof practitioners in their re practice. we deﬁne hypotheses about problems in the re standard and theirprojects in tab. 5.regarding the problems in the re standards used by practitioners, we again make use of experienceswe have made. that is, we take into account that an re standard can either follow the activity-basedparadigm, where coarse activities, methods, and practices are deﬁned, or the artefact-based paradigm,where the standard is deﬁned on the basis of a process-agnostic artefact model that deﬁnes which artefactsto produce and which relationships to take into account (see also [6]). our experiences on the establishmentof an re standard and the implications the choice of a particular paradigm has at project level results fromexperiments, case studies, and ﬁeld studies we conducted in this area [42, 30, 2]. based on those empiricalinvestigations and the fact that most standards follow the activity-based paradigm as artefact orientationis still a young philosophy with various interpretations and manifestations in practice [36], we formulatecorresponding expectations on problems practitioners see in their standards.
+
+
+8
+
+
+table 5: hypotheses on contemporary problems in requirements engineering.
+
+
+no.hypotheses on problems with the re standard (q 31)expec.
+
+
+h 54it is not too hard to understand.−h 55it is not too complex.−h 56it scales to the projects’ high complexity.−h 57it suﬃciently deﬁnes roles and responsibilities.−h 58it is too abstract.+h 59it does not support the speciﬁcation of precise requirements.+h 60it is too heavy weight for our projects.+h 61it is not ﬂexible enough.+h 62it does not suﬃciently deﬁne a clear terminology.+h 63it gives no guidance on how to create the speciﬁcation documents.+h 64it does not suﬃciently allow for deviations according to project circumstances.+h 65it is not suﬃciently integrated into project management.+h 66it is not suﬃciently integrated into design and architecture.+h 67it is not suﬃciently integrated into risk management.+h 68it is not suﬃciently integrated into test management.+
+
+
+hypotheses on re problems within projects (q 32)
+
+
+h 69communication ﬂaws within the project team are not a problem.−h 70insuﬃcient support by the project lead is not a problem.−h 71gold plating (implementing features without corresponding requirements) is not a problem.−h 72weak knowledge of the customer’s application domain is not a problem.−h 73technically unfeasible requirements are not a problem.−h 74a weak relationship to the customer is not a problem.−h 75a volatile customer business domain (e.g., changing business requirements) is not a problem.−h 76communication ﬂaws between project team and customer are a problem.+h 77there are terminological problems.+h 78unclear responsibilities are a problem.+h 79incomplete and/or hidden requirements are a problem.+h 80insuﬃcient support by the customer is a problem.+h 81stakeholders with diﬃculties in separating requirements from previous solutions are a problem.+h 82inconsistent requirements are a problem.+h 83missing traceability is a problem.+h 84moving targets are a problem.+h 85weak access to customer needs and/or business information is a problem.+h 86time boxing and not enough time in general is a problem.+h 87the discrepancy between the high degree of innovation and the need of formal requirementsacceptance is a problem.+
+
+
+h 88underspeciﬁed requirements that are too abstract and allow for various interpretations are aproblem.+
+
+
+h 89unclear and unmeasurable non-functional requirements are a problem.+
+
+
+we expect the standards to insuﬃciently deﬁne terminology and to not guide the creation of syntacticallycomplete and consistent artefacts as the focus lies on potentially incompatible methods and modellingtechniques rather than on clearly deﬁned artefacts, modelling concepts, and their dependencies. whereaswe expect the standards to be seen as easy to understand and consequently to be seen as too abstract, weexpect practitioners to rate the standard to be too heavy-weight for their projects. furthermore, as theintegration of re into diﬀerent phases of the software process life cycle is still an open research area, webelieve the practitioners to have problems with this integration.regarding more general re problems in practical projects, we take into account the broad spectrumof empirical investigations introduced in sect. 2 including the investigations of hall et al. [24] and hsia etal. [25] on problems in re in practical settings as well as investigations on factors that generally inﬂuencethe performance of re at project level [2].according to those investigations, we formulate that practitioners have problems with inconsistent re-quirements as (beside other reasons) activity-oriented standards do not guide the creation of precise re-sults [30]. another example is the problem of having weak access to customer needs, because this was statedas a major project inﬂuence that needs to be taken into account in a previous investigation [2]. in the end,we also expect companies that are not aware of their re artefacts to state to have more problems with thecompleteness and consistency in the project-speciﬁc speciﬁcation documents.
+
+
+4. design of a family of surveys
+
+
+in the following, we introduce the design of the family of surveys. our objective is to herewith lay thefoundation for a survey to be continuously replicated in diﬀerent countries. with those replications, we aim at
+
+
+9
+
+
+generalising the state of practice and trends in re including practitioners’ expectations, the status quo in reand its improvement, and contemporary problems experienced in companies. to support the disseminationof the results and the collaboration among the research communities, we provide for each replication rounda shared survey infrastructure using the same questionnaire, and we disclose the anonymised data to thepromise repository (see also the project website re-survey.org for further information).in the following, we formulate ﬁve research questions that build the frame for our surveys. afterwards, wedesign the overall methodology and introduce the instrument, i.e. the (typed) questions and the categories,of the validity procedures in sect. 4.5.
+
+
+4.1. research questions
+
+
+we formulate ﬁve research questions, shown in tab. 6, to steer the overall design of the surveys.
+
+
+table 6: research questions.
+
+
+rq 1what are the expectations on a good re ?rq 2how is re deﬁned, applied, and controlled?rq 3how is re continuously improved?rq 4which contemporary problems exist in re, and what implications do they have?rq 5are there observable patterns of expectations, status quo, and problems in re?
+
+
+not included in those research questions (but in the instrument) are questions to characterise the surveyrespondents and the industrial environment in which they are involved. the ﬁrst research question aimsat investigating the expectations and preferences the respondents have on a good re. research question 2and 3 have the goal of investigating the status quo in the re as it is established in their companies aswell as industrial undertakings to continuously improve re. research question 4 aim at investigating whichproblems practitioners experience in their project environments, what implications these problems have onthe product and process, and to what extent those problems have already lead to failed projects. finally,research question 5 considers the analysis of statistically signiﬁcant correlations in the result set of rq 1-4including the variables used to characterise the study population.
+
+
+4.2. methodology
+
+
+we designed our family of surveys based so that we can test the theory deﬁned in sect. 3 and ﬁndnew hypotheses to extend the theory. this design contains four stages, which we illustrate in a simpliﬁedmanner in fig. 1. we distinguish between activities performed in isolation in germany and activities wherewe actively involved, or will involve again, international research communities.the ﬁrst two stages contain the activities carried out to design and validate the survey structure (theresearch questions and the instrument). the third stage consists of the survey implementation and theinitial start in germany from which we drew a baseline to report our intermediate ﬁndings in [5]. the laststage contains the survey replications which began at the time of writing this article.considering the notion of “replication”, we rely on the classiﬁcation introduced by g´omez et al. [9] andaim at empirical generalisations. each replication of the survey is performed independently by diﬀerentresearchers in diﬀerent countries using the same infrastructure and instrument, before synthesising andreporting the overall results in joint collaboration. for the initial start of the survey, we rely on the describedtheory for deﬁning the research questions and the instrument. due to an expected learning curve on basisof the results, we expect that the theory will become more mature and change from year to year aﬀectingthe variables in the instrument.in the following, we introduce the four stages of our methodology in more detail. the resulting instrumentof the survey is introduced in the next sect. 4.3.
+
+
+10
+
+
+international replication
+
+
+global replication
+
+
+validationpreparation
+
+
+germanyinternational communities
+
+
+conceptualisation 
+
+
+of research 
+
+
+questionspresentation & discussions at 
+
+
+communities
+
+
+initial creation of 
+
+
+questionnaire
+
+
+internal validation
+
+
+external validation
+
+
+industrial pilot
+
+
+initiation
+
+
+first interpretation
+
+
+creation 
+
+
+distribution list
+
+
+implementation / 
+
+
+correction
+
+
+invitation
+
+
+synthesis & 
+
+
+reporting
+
+
+1. replication
+
+
+(netherlands)
+
+
+dissemination
+
+
+creation 
+
+
+distribution list
+
+
+invitation
+
+
+data analysis & 
+
+
+interpretation
+
+
+final reporting
+
+
+online survey
+
+
+spreadsheet
+
+
+data analysis & 
+
+
+interpretation
+
+
+creation 
+
+
+distribution list
+
+
+invitation
+
+
+creation 
+
+
+distribution list
+
+
+baseline report
+
+
+yearly re community report
+
+
+replicationreport
+
+
+surveyresults
+
+
+creation 
+
+
+distribution list
+
+
+invitation
+
+
+data analysis & 
+
+
+interpretation
+
+
+planning
+
+
+promise repository
+
+
+data analysis & 
+
+
+interpretation
+
+
+invitation
+
+
+data analysis & 
+
+
+interpretation
+
+
+current stage
+
+
+figure 1: overview of the methodology.
+
+
+4.2.1. preparationbased on discussions at international events and the experiences we made during previous studies, weconceptualised an initial set of research questions and jointly discussed them at diﬀerent community forums.the background and the thematic frame for the research questions was investigating the status quo in reand its improvement in industry as well as contemporary problems practitioners have in their professionalproject setting to reason for improvement goals.we presented the idea of a joint survey at several international workshops and conferences as well as
+
+
+11
+
+
+in personal communications with various researchers in requirements engineering and empirical softwareengineering around the world. after checking for the resonance and agreeing with other researchers on ajoint collaboration in the envisioned topic, we created an initial version of the instrument to answer ourresearch questions. this questionnaire includes, where possible and reasonable, closed questions for a cleardata analysis and to keep the eﬀort low for practitioners when answering the questionnaire. to maximisethe validity, we performed a series of validation tasks, which we introduce in the following.
+
+
+4.2.2. validationafter creating the initial questionnaire, we performed a series of validation tasks, which took us in totalthree months. we ﬁrst performed an internal validation of the questionnaire with a review by researchersnot involved in the design of the questionnaire at the technische universit¨at m¨unchen and the universityof stuttgart. this internal validation should ensure that the closed questions are clearly interpretable andsuﬃciently complete to answer the research questions, i.e., it should increase the internal and the constructvalidity. for the external review, we invited several researchers from diﬀerent universities of which the oneslisted in tab. 7 could do the review in the short time frame we could allow.
+
+
+table 7: involved researchers.
+
+
+reviewresearcher
+
+
+internal reviewexternal reviewm. daneva, r. wieringa (twente)m. genero (castilla-la mancha)j. m¨unch (helsinki)
+
+
+after increasing the construct validity with the external validation, we implemented the survey as a webapplication using the enterprise feedback suite. with this web-based version, we conducted an industrialpilot phase with an industry participant. this participant has worked for ﬁve years as process consultantand has deep insights into the envisioned application domains, used re standards, and he is familiar withthe terminology used. his feedback and the analysis of the responses served to identify vague questions,incomplete answers in the closed questions, and how those answers apply to his context, thus, increasing theinternal and the external validity. we complemented this pilot with two additional dry runs and externalvalidations, before re-setting the data tables for the initiation of the survey.
+
+
+4.2.3. initiationthe initiation phase contains mostly the survey conducted in germany. the survey was closed and byinvitation only to allow for a transparent and reproducible response rate and to ensure that the surveywas answered by not more than one representative contact person per company (or business unit in case oflarge enterprises). in addition, the survey is anonymous due to the criticality of the questions. this paperincludes, besides this design of the family of survey, the full data analysis form the german survey. thesurvey in germany was online from november 17th, 2012, until january, 31st, 2013.in each survey round, we begin with the creation of a distribution list. this distribution list containsresearch partners from the universities while aiming at diﬀerent roles from diﬀerent companies of diﬀer-ent sizes and application domains. where possible, we inform the partners in advance and select, wherereasonable, appropriate contact persons to support high response rates. the oﬃcial invitation contains
+
+
+• the basic information about the goals of the survey, the categories of questions and the context of thesurvey as part of a global family of surveys, and
+
+
+• the link to the survey and a password.we additionally ask the participants to forward the invitation if necessary and to inform us about thenumber of participants to support the inference of the response rate. we further re-ensure the participantsabout the anonymous nature of the survey and that they can add their e-mail address at the end of thequestionnaire (not associated with the answers) so that we can inform them about the ﬁnal results as anincentive.
+
+
+12
+
+
+we triggered a ﬁrst replication in the netherlands after drawing the ﬁrst results we concluded from abaseline report – previously presented in [5]. the results as well as experiences from this ﬁrst replication willserve to further disseminate the survey among the diﬀerent re-related and empirical research communitiesas well as improvements to the design and theory.to this end, we use the current theory and questionnaire and modify and extend it with the resultspresented in this article.that is, we discuss given questions based, e.g., on whether we could conﬁrmcorresponding hypotheses from our theory and we change the questionnaire accordingly (see also the thediscussions of our results in relation to our theory in sect. 5 and the lessons learnt discussion in sect. 6).
+
+
+4.2.4. international replicationswe will hold calls and workshops for the detailed planning of the next iterations with the researchersfrom diﬀerent countries with whom we have already involved or agreed to join the endeavour. we plan eachreplication round to be performed in isolation by diﬀerent researchers using the same pre-agreed theory,corresponding questionnaire, and the survey infrastructure provided by us. the replications are performed,after a planning phase, independently and the survey design will change over the years due to a certainlearning curve.to ensure a reproducible generalisation and the openness of the results to the communities, we willdisclose the anonymised results to the promise repository1. the overall aim is to establish a representativeand open data basis to investigate industrial trends in re. in addition, we will invite all replications fromeach round to join us in synthesising all the results and data analysis to discuss global insights and trendsas well as diﬀerences between diﬀerent countries.
+
+
+4.3. survey instrumenttable 8 summarises the questions of the survey in a simpliﬁed and condensed manner. we deﬁne intotal 35 questions grouped according to the research questions, except for the ﬁfth research question thatconsiders a correlation analysis among all answers given. we begin with a set of questions to characterisethe respondents and the companies in which they work. at the end of the survey, the respondents can entertheir e-mail address and freely add any other aspect that remained unaddressed in the survey (used as inputfor future modiﬁcations of the instrument).for each question in the table, we denote whether it is an open question or a closed one and whetherthe answers are mutually exclusive single choice answers (sc) or multiple choice ones (mc). most of theclosed multiple choice questions include a free text option, e.g., “other” so that the respondents can expresscompany-speciﬁc deviations from standards we ask for. we furthermore use likert scales on an ordinalscale of 5 and deﬁned for each a maximum value (e.g., “agree”, or “very important”), a minimum value(e.g., “disagree”, or “very unimportant”), and the middle (“neutral”). the latter allows the respondents tomake a selection when they have, for example, no opinion on the given answer options. finally, we deﬁneq 17 and q 24 as conditional to guide through the survey by ﬁltering subsequent question selection. forinstance, if respondents state in rq 17 that they have not deﬁned any company-speciﬁc re standard, thelast questions of this section are omitted.the full questionnaire (including which expected answers were conﬁrmed and which ones were rejected)is available in the publication section of the website re-survey.org.
+
+
+4.4. data analysisthe data of the survey contains a mix of information about the companies and the re standards usedand expert opinions of the subjects involved in those companies.moreover, each survey (our base andfurther replications) does not rely on random samples as we opt for industry participants to whom we havecontact, even if the participants distribute the invitation to further colleagues. finally, regarding the expertopinions, we express the subjects’ opinions with likert scales which are speciﬁed with ordinal scales with no
+
+
+1http://promisedata.googlecode.com
+
+
+13
+
+
+table 8: questions (simpliﬁed and condensed).
+
+
+rqno.questiontype
+
+
+–q 1what is the size of the enterprise?closed(sc)q 2what is the main business area of your company?closed(mc)q 3does your company participate in globally distributed projects?closed(sc)q 4in which country are you personally located?openq 5in which application domain/branch are you most frequently involved in your projects?closed(mc)q 6to which project role are you most frequently assigned to in those projects?closed(sc)q 7how would you classify your experience as part of this role?closed(sc)q 8which organisational role takes your company usually in aforementioned projects?closed(sc)
+
+
+rq 1q 9how beneﬁcial would you rate an improvement for following disciplines in your company?likertq 10how challenging would you rate an improvement for following disciplines in your com-pany?likert
+
+
+q 11please rate the following statements on re standardisation according to your expecta-tions.likert
+
+
+q 12how important would you consider the following aspects when deﬁning an re standard?likertq 13which reasons do you agree with as a motivation to deﬁne an re standard?likertq 14which reasons do you see as a barrier to deﬁne an re standard?likert
+
+
+rq 2q 15how would you classify you/your company to be involved in re?closed(sc)q 16if you elicit requirements in your regular projects, how do you elicit them?closed(mc)q 17what re standard have you established at your company?closed(mc)q 18which of the following reasons apply to the deﬁnition of an re standard in your com-pany?closed(mc)
+
+
+q 19how would you rate the following statements to apply to your re standard?likertq 20how is your change management deﬁned regarding your re?closed(mc)q 21which of the following statements apply to the project-speciﬁc application of your restandard?closed(mc)
+
+
+q 22how is your re standard applied (tailored) in your regular projects?closed(mc)q 23how is the application of your re standard controlled?closed(mc)
+
+
+rq 3q 24is your re continuously improved?closed(sc)q 25what would you consider to be the motivation for a continuous improvement?closed(mc)q 26which of the following statements applies regarding the continuous re improvement?closed(mc)q 27do you use a normative, external standard for your improvement?closed(sc)q 28if you use an internal improvement standard and not an external one, what where thereasons?open
+
+
+q 29which methods do you use for your re improvement (regarding assessments/audits)?closed(mc)q 30if you use metrics to assess your re in the projects, which ones would you deem mostimportant?open
+
+
+rq 4q 31please rate the following statements for your re standard according to your experiences.likertq 32how do the following (more general) problems in re apply to your projects?likertq 33considering your personally experienced problems (stated in the previous question),which ones would you classify as the ﬁve most critical ones (ordered by their relevance)?closed
+
+
+q 34considering your personally experienced most critical problems (selected in the previousquestion), how do these problems manifest themselves in the process, e.g., in requestsfor changes?
+
+
+open
+
+
+q 35considering your personally experienced most critical problems (selected in the previousquestion), which would you classify as a major cause for project failures (if at all)?closed(mc)
+
+
+and “disagree”) are not equally distributed. in other cases, we have open questions or certain variablesin nominal scales, e.g., the companies either apply certain methods for their re improvement or they donot. for this reason, we need to rely on diﬀerent procedures for the data analysis. we will introduce thoseprocedures structured according to the research questions in the following.
+
+
+statistical analysis for rq 1–3. for the analysis of the answers to rq 1–3, we ﬁrst rely on descriptivestatistics to get a better understanding of the data. we use the mode and median for the central tendencyof the ordinal data and the median absolute deviations (mad) for its dispersion. for the nominal data, wecalculate the share of respondents choosing the respective option.second, we apply the one-sided, unpaired wilcoxon signed rank test to test our theories discuss in detailin sect. 3. we test the hypotheses at a conﬁdence level of 0.95 and we will present the resulting p-valueswith an accuracy of four digits after the decimal point.
+
+
+descriptive interpretation and grounded theory for rq 4. to answer rq 4, i.e., the analysis of contem-porary problems in re, we ﬁrst quantify the answers given for the selection of the predeﬁned problems theparticipants shall rank as they have experienced them in their projects. as part of this quantiﬁcation, wealso sum up to which extent the given problems have led to project failures in the opinion of the participants.
+
+
+14
+
+
+for analysing the answers given to the open question on what implications the re problems have (q 34),we apply the grounded theory method. in contrast to the previously applied analysis procedures wherewe conﬁrm or reject the hypotheses deﬁned in our theory (see sect. 3), the answers given for rq 4 are notrelated to any expectations yet whereby we follow an inductive logic approach to generate a new theorybased on given qualitative data, respectively to extend our previously deﬁned theory. grounded theory, inits essence [7, 8], considers the four following basic steps in an inductive bottom-up approach:
+
+
+1. open coding to analyse the data by adding codes (representing key characteristics) to small coherentunits in the answers, and categorising the developed concepts in a hierarchy of categories as an ab-straction of a set of codes – all repeatedly performed until reaching a state of saturation. we deﬁne the(theoretical) saturation as the point where no new codes (or categories) are identiﬁed and the theoryis convincing to all participating researchers [43].
+
+
+3. selective coding to infer a central core category.4. validation to conﬁrm the developed theory with the participants.however, we already have a predeﬁned set of codes (given re problems) for which we want to know howthe participants see their implications. for this reason, we have to deviate our procedure from the standardprocedure and rely on a mix of bottom-up and top-down. that is, we start with selective coding and buildthe core category with two sub-categories, namely re problems with a set of codes each representing one reproblem and implications, which then groups the codes deﬁned for the answers given by the participants.for the second category, we conduct open coding and axial coding for the answers until reaching a saturationfor a hierarchy of (sub-)categories, codes, and relationships.
+
+
+correlation analysis for rq 5. as we are looking for general relationships between answers to our questions,we calculate kendall’s τ as correlation coeﬃcient for ordinal data, i.e., on a likert scale and binary answerscoded as 0 and 1. as we are only interested in stronger relationships, we ﬁlter for τs larger than 0.5 andsmaller than -0.5. the intuition is that we wanted at least a medium strength of the relationship as discussedin [44]. we inspect each of the remaining relationships and test them for statistical signiﬁcance with an αlevel of 0.05. then, we discuss in the team of researchers if there is a reasonable interpretation for each ofthe remaining statistically signiﬁcant correlation. if that is the case, we select it as candidate for inclusionin the theory.
+
+
+4.5. validity proceduresas a means to increase the validity of the family of surveys, we have built the instrument on the basis ofa theory induced from available studies (see sect. 3). furthermore, we conducted a self-contained, iterativeinternal reviews and external reviews to increase the internal and the construct validity via researchertriangulation. to support for the external validity in advance, we conducted a pilot phase in an industrialcontext and used the feedback in further external reviews and dry-runs of the surveys. the external validity,however, will eventually be supported during replications that ﬁnally support empirical generalisations.however, as we plan to add the results from the correlation analysis and the grounded theory approachto our basic theory for future replications, we need to ensure the validity of especially those results. asshown in the previous section, we refer to researcher triangulation during the correlation analysis to decide forinclusion of the results. regarding the results of applying grounded theory, we need to tackle the problemof expecting a small data population and not being able to validate our results with the participants, thus,leading to a possibly limited degree of saturation.to tackle this problem, we rely also here in advance on researcher triangulation.to this end, wereproducibly perform the open coding and the axial coding in a team of two researchers. during opencoding, we use spreadsheets to allocate the initial codes to the answers and to categorise the codes andtheir occurrences (e.g., “change requests” being named 4 times). we perform axial coding by followingthe relations from the single problems to the codes and counting also here the occurrences (e.g., “changerequests” are named 3 times as a consequence of the problem “hidden requirements” and one time as aconsequence of the problem “moving targets”). after completing the open coding and the axial coding, a
+
+
+15
+
+
+third researcher independently rebuilds a sample of codes and relationships on the basis of given statementsto validate the results from the ﬁrst run in the spreadsheet. this validation focusses on the occurrences ofthe codes rather than on the choice of the labels for the codes (e.g., “crs” and “change requests” are seenas the same code). this shall allow to compensate for the potentially limited degree of saturation.
+
+
+5. results from germany
+
+
+in the following, we present the results from the ﬁrst survey round conducted in germany. we invitedin total 105 contacts to participate in the survey as representatives for their companies. in cases of largeenterprises with diﬀerent business units focusing each on diﬀerent application domains, we invited for eachbusiness unit one representative (if known).the contacts arise from previous research cooperations orknowledge transfer workshops for practitioners hosted at our universities.in the following, we ﬁrst summarise the information about the study population, before describing theresults for each of the research questions. questions for which we have no suﬃcient data are omitted (mostlyadditional open answer possibilities in mc questions). for the research questions 1–4, we ﬁrst describe theresults including descriptive statistics, before discussing the results in relation to our theory of sect. 3(including the hypotheses tests). the analysis of the results to the open question in research question 4(grounded theory) and research question 5 (correlation analysis) are summarised without interpretation inrelation to our theory.
+
+
+5.1. study population
+
+
+we registered 73 participants (out of the 105 invited ones) who did not, however, complete the fullquestionnaire. to get a consistent result set, we took 58 completed questionnaires into our result set. thisgives us a response rate of 55 %. the average time to complete the questionnaire was 28 minutes. this issimilar to the expectation we had from pilot runs with about 30 minutes.most respondents (mode) work in an enterprise with more than 2,000 employees.the median areenterprises with 251–500 employees (q 1). therefore, the respondents tend to work in larger companies, butwe have representatives from companies of all sizes. the respondents represent a broad range of softwaredomains (see tab. 9).
+
+
+table 9: study population’s software domains (q 5).
+
+
+custom software development36 %it consulting36 %project management consulting35 %software process consulting31 %standard software development28 %embedded software development7 %
+
+
+most of the respondents (97 %) work in companies that participate in globally distributed projects (q 3).the large majority of respondents are located in germany with a few exceptions located in switzerland,austria or france (q 4). most (mode) of the respondents work in the role of business analyst/requirementsengineer in their projects (q 6).80 % of the respondents are experts with more than three years ofexperience. the rest has 1–3 years of experience (q 7). the companies of the the respondents cover all theroles (customer, contractor, product development) in their projects. 19 % state that they take the customerrole, 47 % take the role of a contractor, and 38 % refer to product development (q 8).
+
+
+5.2. expectations on a good re (rq 1)regarding the practitioners’ expectations on a good re, we cover two topics: re (process) improvementand expectations on re company standards.
+
+
+16
+
+
+beneﬁcial: 5)
+
+
+phase/disciplinemodemed.madmin.max.
+
+
+requirements engineering55125project management44125architecture and design44125quality assurance44115implementation34125
+
+
+5.2.1. re improvementwe ﬁrst looked at how improving the re compares to general software process improvements in otherareas. tab. 10 shows that the respondents considered process improvement in all oﬀered areas as beneﬁcial.we sort the results in this and the following tables with descending mode and then descending median.despite seeing beneﬁt in the improvement of all phases, it was considered very beneﬁcial only for re.for all the results, the deviation was small. the results about how challenging an improvement is diﬀer onlyslightly. only for re improvements, most respondents rated it as very challenging (tab. 11).
+
+
+table 11: how challenging would you personally rate an improvement of . . . in your company? (q 10: not challenging at all:1 . . . very challenging: 5)
+
+
+phase/disciplinemodemed.madmin.max.
+
+
+requirements engineering54115quality assurance44115architecture and design43115project management43115implementation43115
+
+
+again, however, all disciplines were considered as more or less challenging. the deviation here was alsosmall. fig. 2 shows a comparison of both the ratings for how beneﬁcial and how challenging improvementsin the diﬀerent disciplines are.
+
+
+requirementsengineering
+
+
+very
+
+
+beneficial
+
+
+very
+
+
+challenging
+
+
+not 
+
+
+at all
+
+
+no
+
+
+opinion
+
+
+no
+
+
+opinion
+
+
+projectmanagement
+
+
+architecture &design
+
+
+qualityassurance
+
+
+implementation
+
+
+figure 2: comparision of beneﬁcial (left side) and challenging (right side) areas for improvement. the vertical ticks show themedian, the grey bars the mad around the median and the horizontal lines the total range of answers.
+
+
+17
+
+
+
+
+
+statementmodemed.madmin.max.
+
+
+the standardisation of requirements engineering improves the overall processquality54115
+
+
+oﬀering standardised document templates and tool support beneﬁts the commu-nication54115
+
+
+oﬀering standardised document templates increases the quality of the work prod-ucts44115
+
+
+the structure of documents should be standardised across diﬀerent project envi-ronments, but the process itself should be left open for project participants44115
+
+
+the standardisation of requirements engineering hampers the creativity12115
+
+
+5.2.2. requirements engineering standardwe then asked about the expectations of the respondents on standards in re. the results are shownin tab. 12. on average, we see an agreement or moderate agreement on most statements we oﬀered: thestandardisation of re improves the overall process quality. oﬀering standardised document templates andtool support seems to beneﬁt the communication and increases the quality of the artefacts. the structureof documents should be standardised across diﬀerent project environments, but the process itself should beleft open for project participants. the only statement that received on average moderate disagreement wasthat the standardisation of re hampers the creativity. for all statements, the deviation in the answers waslow (mad: 1).
+
+
+important: 5)
+
+
+aspectmodemed.madmin.max.
+
+
+support for agility54115deﬁnition of tailoring mechanisms54115deﬁnition of artefacts44125deﬁnition of roles44115deﬁnition of methods44125support of impact analysis44125process integration44115support for prototyping44115tool support for v&v43.50.515
+
+
+building on that, we asked about how important diﬀerent aspects of a potential company-speciﬁc stan-dard are. the results in tab. 13 show that all the oﬀered aspects seem to be important. the support foragility and the deﬁnition of a tailorable standard received the highest number of very important answers.all other aspects, i.e. the deﬁnition of artefacts, roles, methods, tool support for v&v and the integrationwith other phases, the most common answers were important. the deviation was again low with a madbetween 0.5 and 1.when asked about the motivation for a company-wide standard for re, the respondents agreed moder-ately with most of the given reasons as shown in tab. 14. exceptions are better quality assurance of artefactsthat received mostly agreements and formal prerequisite in my domain that mostly received disagreement.the deviation in all reasons was 1 or lower.when asked about barriers to deﬁning a company-wide standard for re, the respondents mostly wereneutral to our proposed reasons (tab. 15). only the missing willingness for change in the company wasagreed by most of the respondents, whereas the respondents disagreed with the lower eﬃciency.
+
+
+relation to our theorywe repeat the hypotheses of our theory together with the p-values of the wilcoxon tests in tab. 16. wecould fully support our theory that all phases or disciplines are beneﬁcial to improve. this is not the case forhow challenging such an improvement is. only the hypotheses that re and quality assurance improvement
+
+
+18
+
+
+table 14: which reasons do you agree with as a motivation to deﬁne an re standard? (q 13: i disagree: 1 . . . i agree: 5)
+
+
+aspectmodemed.madmin.max.
+
+
+better qa of artefacts54115seamless development44115better tool support44115better progress control44115higher eﬃciency44115knowledge transfer44115support of project mgmt.44015support of distributed dev.43115support for benchmarks43115compliance to regulations33115prerequisite in domain12115
+
+
+table 15: which reasons do you see as barrier to deﬁne an re standard? (q 14: i disagree: 1 . . . i agree: 5)
+
+
+aspectmodemed.madmin.max.
+
+
+missing willingness for change54115higher process complexity33115higher communication demand33115missing possibility for standardisation33115lower eﬃciency12115
+
+
+is challenging could be supported. hence, in that respect, re seems to be especially challenging. overall,we found the results are too broad to add a lot of new information and, hence, will not test the hypothesesin future replications.we could also fully support our theory on general expectations on standardisation of re (h 3–h 6). withstrong statistical signiﬁcance, we corroborate that the standardisation of re improves the overall processquality but does not hamper the creativity. standardised document templates and tool support beneﬁts thecommunication. the structure of the documents should be standardised across diﬀerent project environ-ments, but the process itself should be left open for project participants. we will leave these hypotheses inthe theory for future testing.next, we tested our theory on speciﬁc aspects in company-speciﬁc re standard (h 7–h 17).thisled to mixed results.we corroborated the hypotheses that the deﬁnition of standardised re artefactswith document templates and/or tool support is important, that tailoring mechanisms according to projectcharacteristics are important, and that the deﬁnition of roles and responsibilities is important. furthermore,we found statistically signiﬁcant that the support of impact analysis is important and that deep integrationwith other disciplines is important. we split the hypothesis about the support of agility into two hypothesesdepending on the application area. we could only support that for embedded systems, the support of agilityis not important. we consider the rejection of h 14 as a particularity of german companies and, hence,leave this hypothesis in the theory. for the hypotheses h 16 and h 17, we believe that our diﬀerentiationalong the software domains might not be appropriate. we will not split the hypothesis in the future theoryand only assume that the support of prototyping is important in general.the hypotheses for h 18–h 29 are about reasons for deﬁning a company-speciﬁc re standard. the tests ofthese hypotheses also show a mixed picture. we could corroborate the seamless development by integratingre into the development process, better tool support, better quality assurance of artefacts, support ofproject management and planning, and higher eﬃciency and knowledge transfer to be motivational whenestablishing a standard. it is not a motivation for a standard that it is a formal prerequisite for projectacquisition. yet, we did not see a signiﬁcant result about large companies having standards like cmmias a motivation for an re standard and smaller companies not.we tend to remove the split of thesehypotheses and test in future theories that compliance to regulations does not motivate an re standard.for the support of progress control and benchmarks, we will adapt the theory according to the evidenceinto the opposite: support of progress control does motivate a standard. support of benchmarks does not
+
+
+19
+
+
+table 16: results of hypothesis tests for rq 1. statistically signiﬁcant hypotheses highlighted (*).
+
+
+no.hypotheses on improvement (q 9 and q 10)p-value
+
+
+h 1*the improvement of all development phases is beneﬁcial.h 1-a*the improvement of re is beneﬁcial.< 0.0001h 1-b*the improvement of project management is beneﬁcial.< 0.0001h 1-c*the improvement of architecture and design is beneﬁcial.< 0.0001h 1-d*the improvement of implementation is beneﬁcial.0.0006h 1-e*the improvement of quality assurance is beneﬁcial.< 0.0001h 2the improvement of all development phases is challenging.h 2-a*the improvement of re is challenging.0.0002h 2-bthe improvement of project management is challenging.0.0898h 2-cthe improvement of architecture and design is challenging.0.0580h 2-dthe improvement of implementation is challenging.0.9067h 2-e*the improvement of quality assurance is challenging.0.0060
+
+
+hypotheses on general expectations on standardisation in re (q 11)
+
+
+h 3*the standardisation of re does not hamper creativity.0.0001h 4*the standardisation of re improves the overall process quality.< 0.0001h 5*standardised document templates and tool support beneﬁts the communication.< 0.0001h 6*the structure of documents should be standardised across diﬀerent project environments, butthe process itself should be left open for project participants.0.0017
+
+
+hypotheses on particular aspects in company-speciﬁc re standards (q 12)
+
+
+h 7the deﬁnition of standard methods and modelling techniques is not important.0.9999h 8tool support for v&v of req. spec. is not important.0.9958h 9*the deﬁnition of standardised re artefacts with document templates and/or tool support isimportant.< 0.0001
+
+
+h 10*tailoring mechanisms according to project characteristics are important.< 0.0001h 11*the deﬁnition of roles and responsibilities is important.0.0001h 12*support of impact analysis is important.< 0.0001h 13*deep integration with other disciplines is important.0.0005support of agility in the process is. . .h 140.3804h 15*0.0094support of prototyping is. . .h 160.1015h 170.5857
+
+
+hypotheses on reasons for deﬁning a company-speciﬁc re standard (q 13)
+
+
+h 18*formal prerequisite for project acquisition does not motivate a standard.0.0026h 19support of progress control does not motivate a standard.0.9750h 20*seamless development by integrating re into development process motivates a standard.< 0.0001h 21*better tool support motivates a standard.0.0021h 22support of distributed development motivates a standard.0.1224h 23*better quality assurance of artefacts motivates a standard.< 0.0001h 24support of benchmarks motivates a standard.0.5950h 25*support of project management and planning motivates a standard.< 0.0001h 26*higher eﬃciency motivates a standard.< 0.0001h 27*knowledge transfer motivates a standard.< 0.0001compliance to regulations and standards (like cmmi). . .h 280.4250h 290.1569
+
+
+hypotheses on barriers for deﬁning a company-speciﬁc re standard (q 14)
+
+
+h 30higher demand for communication does not barrier deﬁning a standard.0.3132h 31*higher process complexity barriers deﬁning a standard.0.0416h 32lower eﬃciency barriers deﬁning a standard.0.9980h 33*missing willingness to change barriers deﬁning a standard.0.0041h 34missing possibilities of standardisation barrier deﬁning a standard.0.5662
+
+
+motivate a standard. we observed several times, however that re standards were motivated by supportingdistributed development. hence, we decide to leave the corresponding hypothesis as is in the theory.the last set of hypotheses for rq 1 was about barriers for deﬁning a company-speciﬁc re standard. wecould only corroborate two hypotheses: higher process complexity and missing willingness to change bar-rier deﬁning re standards. as the rejected hypotheses were not clear from our experiences and literature,we decide to change them according to the evidence into their opposites: higher demand for communi-cation barriers deﬁning a standard. lower eﬃciency barriers deﬁning a standard. missing possibilities ofstandardisation barrier deﬁning a standard.
+
+
+5.3. status quo in re (rq 2)
+
+
+after the expectations, we asked the respondents how they are involved in re in regular projects.an overview of the results is shown in fig. 3. most of the respondents elicit and specify the requirements
+
+
+20
+
+
+themselves (q 15). if they elicit requirements, we asked them about how they elicit them. of the respondents,80 % use workshops and discussions with the stakeholders, 58 % use change requests, 44 % use prototyping,48 % refer to agile approaches at the customer’s site, and 7 % use other approaches (q 16).
+
+
+workshops withstakeholderschangerequests
+
+
+prototyping
+
+
+other
+
+
+agileapproaches
+
+
+elicitationq 16
+
+
+currentreferencemodelq 17
+
+
+motivationfor referencemodelq 18
+
+
+re reference modelwith artefactsre reference modelwith rolesre reference modelpredefined by process
+
+
+no reference model
+
+
+re reference modelpredefined by regulation
+
+
+company-specificdemandscustomerdemandssalesdepartment
+
+
+tailoringq 22
+
+
+project beginningby project lead
+
+
+continuoustailoring approach
+
+
+tool support
+
+
+no tailoring approach
+
+
+controlq 23
+
+
+project assessment
+
+
+constructivequality assurance
+
+
+analyticalquality assurance
+
+
+no control
+
+
+34 %
+
+
+32 %
+
+
+21 %
+
+
+53 %
+
+
+62 %
+
+
+21 %
+
+
+11 %
+
+
+28 %
+
+
+64 %
+
+
+10 %
+
+
+8 %
+
+
+48 %
+
+
+44 %
+
+
+9 %
+
+
+18 %
+
+
+15 %
+
+
+80 %
+
+
+58 %
+
+
+48 %
+
+
+44 %
+
+
+7%
+
+
+figure 3: summary of the status quo in re. the bars show the percentage of the respondents who gave the correspondinganswer.
+
+
+almost half of the respondents (44 %) use an own re standard that deﬁnes the process including rolesand responsibilities. 45 % of the respondents put their focus on the deﬁnition of (coarse) artefacts anddocument templates.a standard that is predeﬁned by the development process (e.g., rational uniﬁedprocess) employ 18 %, and 9 % use a standard that is predeﬁned according to a regulation (e.g., itil).only 15 % use no re standard at all (q 17).the main reason for the deﬁnition of an re standard were company-speciﬁc demands (64 %). only10 % had an explicit demand from a customer and 8 % because of arguments from the sales department.other reasons include to make requirements more uniform and quality and standardisation (q 18).overall, the respondents rate their re standard well in terms of what it contains. they mostly moder-ately agree with the statements about what their standard contains (tab. 17). only the weaker statementthat the model has a diﬀerentiated view on diﬀerent classes of requirements but not their dependencies israted mostly as an disagreement. by looking at the mad, however, we observe that the deviation for three
+
+
+21
+
+
+of the statements is comparably high with 2. hence, there is not a clear agreement between the respondents.
+
+
+
+
+
+aspectmodemed.madmin.max.
+
+
+classes of requirements & dependencies43115non-functional requirements43215relies on architectural model43215tracing43215classes of requirements, but no dependencies12115
+
+
+change management of the requirements mostly falls into two categories: almost half of the respondents(49 %) have a change management after the formal acceptance of the requirements speciﬁcation and 45 %have a continuous change management as part of an agile approach. 26 % have change management duringre. only 6 % have no change management at all (q 20).the majority of the respondents (53 %) agreed that in their company each project can decide whetherto use the re standard. that diﬀerent business units have diﬀerent standards as well as that all projectshave to work according to the same standard each were agreed to by 30 % (q 21).the tailoring of the re standard is done at the companies of 62 % of the respondents at the beginningof the project by a project lead or a requirements engineer based on experience. 28 % have a tailoringapproach that continuously guides the application of the standard in their projects. 21 % have tool supportfor tailoring their re standard. 11 % state to not have a particular tailoring approach (q 22).we found similar rates for how the application of the re standard is controlled. 34 % use project assess-ments, 32 % use analytical quality assurance, e.g., as part of quality gates, and 53 % use constructive qualityassurance, e.g., checklists or templates. a ﬁfth of the respondents (21 %) do not control the application oftheir re standard at all (q 23).
+
+
+relation to our theorywe also tested our hypotheses for rq 2 with the wilcoxon test. the theories are shown in tab. 18
+
+
+with p-values. our theories about the elicitation of requirements (h 35 and h 36) could both be supported.requirements are elicited via workshops and change requests. we could also support both hypotheses ondeﬁning and tailoring re standards. the standards are deﬁned based on demands speciﬁc for the company.the project lead tailors the standard at the beginning of a project based on experiences.
+
+
+table 18: results of hypothesis tests for rq 2. statistically signiﬁcant hypotheses highlighted (*).
+
+
+no.hypotheses on the elicitation of requirements (q 16)p-value
+
+
+h 35*requirements are elicited via workshops.< 0.0001h 36*requirements are elicited via change requests.< 0.0001
+
+
+hypotheses on deﬁning and tailoring an re standard (q 18 and q 22)
+
+
+h 37*requirements engineering standards are deﬁned due to company-speciﬁc demands.< 0.0001h 38*the re standard is tailored at the beginning of a project by the project lead based on expe-riences.< 0.0001
+
+
+hypotheses on the characteristics of their re standard (q 19)
+
+
+h 39the standard does not rely on an architecture model with diﬀerent levels of abstraction0.6074h 40the standard does not include a diﬀerentiated view on diﬀerent requirements classes anddependencies.0.4625
+
+
+h 41the standard does not include tracing relationships among the contents.0.2397h 42the standard does not include a diﬀerentiated view on non-functional requirements.0.7982h 43the standard includes a diﬀerentiated view on diﬀerent requirements classes, but no depen-dencies.0.9969
+
+
+hypotheses on the application of the re standard (q 21 and q 23)
+
+
+h 44*each project can decide whether to use the standard.< 0.0001h 45*the application of the re standard is controlled via analytical quality assurance.< 0.0001
+
+
+hypothesis on change management (q 20)
+
+
+h 46*a requirements change management is established after formally accepting a requirementsspeciﬁcation.< 0.0001
+
+
+in contrast, our hypotheses about characteristics of company-speciﬁc re standards were all not statis-tically signiﬁcant. hence, the overall quality of the existing re standard seems to be seen as higher than
+
+
+22
+
+
+we expected. hence, we decide to remove h 43 as it is related to h 40 and adapt the other hypotheses(h 39–h42) to the opposite.we could, however, corroborate the hypotheses h 44 and h 45 about the application of re standards.each project can decide whether to use the company standard. then, the application of the re stan-dard is controlled via analytical quality assurance. also the hypothesis about change management (h 46)was statistically signiﬁcant: a requirements change management is established after formally accepting arequirements speciﬁcation. hence, we will keep these hypotheses in the theory.
+
+
+5.4. status quo in re improvement (rq 3)most of the respondents (83 %) employ continuous improvement to re (q 24). an overview of theresults on re improvement is shown in fig. 4. when asked about the motivation about this continuousimprovement, of those, 79 % think that this continuous improvement helps them to determine their strengthsand weaknesses and to act accordingly. 32 % agree that an improvement is expected by their customers.for only 3 % of those with continuous improvement, it is demanded by a regulation (e.g., cmmi, cobit oritil) (q 25).
+
+
+helps determine
+
+
+strength & weaknessesexpected bycustomers
+
+
+demanded byregulation
+
+
+motivationq 25
+
+
+systematicimprovementq 26
+
+
+own business unitor roleno systematicimprovementexternalconsultant
+
+
+improvementmethodsq 29
+
+
+qualitativeanalysis
+
+
+metrics
+
+
+79 %
+
+
+32 %
+
+
+3 %
+
+
+55 %
+
+
+29 %
+
+
+5 %
+
+
+79 %
+
+
+21 %
+
+
+figure 4: summary of the status quo in re improvement. the bars show the percentage of the respondents who gave thecorresponding answer.
+
+
+we then asked about how they conduct their re improvements. 55 % systematically improve re via anown business unit or role. 5 % improve re via an external consultant. 29 % do not systematically improvere, but it remains the responsibility of the project participants. other mentioned means to systematicalimprovements are an internal task force, retrospectives and company-wide open space events (q 26).half of the respondents with a continuous re improvement (50 %) explicitly state to not use a normative,external standard for their improvement (q 27). several respondents use internal standards like an internalprocess description system or best practices from literature. exemplary statements for rejecting normativestandards are “i am not convinced of the external standards”, “we want to live our own agility”, “[we needmore] ﬂexibility”, or “[because of the] individualism of the projects” (q 28).regarding the methods used, 79 % of the respondents that employ improvement qualitatively analysetheir projects, e.g., with interviews to gather lessons learnt. 21 % refer to particular metrics and measure-ments to automatically assess their projects including customer satisfaction via a/b tests (q 29, q 30).
+
+
+relation to our theorycontinuous improvement in re seems to be performed in the majority of the companies. we found thisalso to show in the result that our hypothesis that re is not continuously improved was not signiﬁcant
+
+
+23
+
+
+(tab. 19). hence, we revert this hypothesis according to the empirical evidence and will use requirementsengineering is continuously improved. in the future theory. we could, however, corroborate that if re iscontinuously improved, it is done to determine strength and weaknesses. we will keep this hypothesis.
+
+
+table 19: results of hypothesis tests for rq 3. statistically signiﬁcant hypotheses highlighted (*).
+
+
+no.hypotheses on continuous improvement (q 24 and q 25)p-value
+
+
+h 47requirements engineering is not continuously improved.0.4182h 48*a continuous improvement is done to determine strengths and weaknesses.< 0.0001
+
+
+hypotheses on re improvement (q 26, q 27, and q 29)re improvement is done systematically. . .h 49*0.0009h 500.5000h 51*0.0359h 52*re improvement is done via internally deﬁned standards/approaches.0.0098h 53*re assessments/audits are done using qualitative methods.< 0.0001
+
+
+from our further hypotheses on re improvement, we could support that re is done systematicallyvia an own business unit / role in the case of large companies with more than 2,000 employees and byproject participants in the case of small and medium-sized companies. we could also corroborate that reimprovement is done via internally deﬁned standards and approaches and that re assessments are doneusing qualitative methods. we will remove the hypothesis h 50 that re improvement is done by externalconsultants in large companies as this seems to be not uniformly the case.
+
+
+5.5. contemporary problems in re (rq 4)
+
+
+finally, after laying the groundwork about how re is deﬁned, lived and improved, we wanted to under-stand current problems in re in practice. to this end, we ﬁrst asked about the problems the participantsexperienced in their re standards as well as the problems the participants experienced in their projects.the results are tested in relation to our theory introduced in sect. 3. as a second step, we asked whatimplications the project-speciﬁc problems have and analysed the answers by applying grounded theory(see also sect. 4.4).in the following, we introduce ﬁrst the results in the stated problems and their relation to our theory,before introducing the results of what their implications are.
+
+
+5.5.1. stated re problemsof our oﬀered problems for the re standards, most of them had a strong agreement among the respon-dents that they are not a problem (tab. 20). only two problems have as most frequent answer i agree:risk management. both have lower medians, however, and the latter problem also has a high deviation. wealso observed that for . . . does not suﬃciently deﬁne a clear terminology, there is a higher median and alsoslightly increased deviation. apart from these, the deviations are low for all problems.second, we asked about more general problems in re in the respondents’ projects (tab. 21). there, wereceived a more mixed picture of re in practice. on the one hand, the respondents agreed with problemslike customers struggling with separating requirements from solutions and moving targets (see upper partof table) or moderately agreed with problems such as time boxing or gold plating. on the other hand,two problems were disagreed with: “weak knowledge of the customer’s application domain”, and “weakrelationship to customer” (lower part of table). the rest was considered neutral or was moderately disagreedwith. the deviations were mostly small (1). in two problems, we have a deviation of 1.5, which suggests aslightly higher diversity in the answers. accordingly, we could not ﬁnd any large or signiﬁcant correlationbetween the problems stated by the respondents and the answers selected in rq 1 and 2 (e.g., the relevancefinally, we asked the respondents to rank the problems as they have experienced them according to theircriticality from 1 to 5 (q 33). the results of the ranking are illustrated in fig. 5. on the left side of theﬁgure, we illustrate the ranking of the problems according to their criticality in the sense of their frequency(e.g., “problem number 1”). the right side of the ﬁgure accumulates all problems according to their overall
+
+
+24
+
+
+0"
+
+
+0"
+
+
+0"
+
+
+1"
+
+
+1"
+
+
+2"
+
+
+0"
+
+
+3"
+
+
+4"
+
+
+1"
+
+
+5"
+
+
+1"
+
+
+3"
+
+
+3"
+
+
+5"
+
+
+7"
+
+
+7"
+
+
+1"
+
+
+9"
+
+
+11"
+
+
+16"
+
+
+0"
+
+
+1"
+
+
+2"
+
+
+2"
+
+
+3"
+
+
+3"
+
+
+5"
+
+
+8"
+
+
+8"
+
+
+9"
+
+
+9"
+
+
+11"
+
+
+11"
+
+
+12"
+
+
+13"
+
+
+13"
+
+
+16"
+
+
+20"
+
+
+22"
+
+
+22"
+
+
+31"
+
+
+0"5"10"15"20"25"30"35"
+
+
+weak"domain"knowledge""
+
+
+weak"rela9onship"to"customer"
+
+
+high"degree"of"innova9on"vs."need"for"formal"acceptance"
+
+
+technically"unfeasible"reqs."
+
+
+insuﬃcient"support"by"project"lead"
+
+
+weak"access"to"customer"needs"
+
+
+vola9le"domain""
+
+
+unclear"responsibili9es"
+
+
+insuﬃcient"support"by"customer"
+
+
+terminological"problems"
+
+
+unclear"nonmfunc9onal"reqs."
+
+
+gold"pla9ng"
+
+
+missing"traceability"
+
+
+communica9on"ﬂaws"in"team"
+
+
+inconsistent"reqs."
+
+
+communica9on"ﬂaws"to"customer"
+
+
+underspeciﬁed"reqs."
+
+
+separa9on"reqs."from"known"solu9ons"
+
+
+time"boxing"
+
+
+moving"targets"
+
+
+incomplete"/"hidden"reqs."
+
+
+overall"frequency"cause"for"project"fail"
+
+
+overall'view'on'problems''in'rela0on'to'project'fail
+
+
+problem'#'1'(n=50)
+
+
+problem'#'2'(n=48)
+
+
+problem'#'3'(n=45)
+
+
+problem'#'4'(n=40)
+
+
+problem'#'5'(n=38)
+
+
+31
+
+
+16
+
+
+22 22
+
+
+20
+
+
+16
+
+
+11
+
+
+9
+
+
+1
+
+
+1313
+
+
+12
+
+
+1111
+
+
+99
+
+
+88
+
+
+77
+
+
+5
+
+
+33
+
+
+11
+
+
+4
+
+
+3
+
+
+5
+
+
+33
+
+
+222
+
+
+000 0 0
+
+
+0
+
+
+5
+
+
+10
+
+
+15
+
+
+20
+
+
+25
+
+
+30
+
+
+figure 5: summary of selected most critical problems and their causes for project failures (q 33, q 35).
+
+
+25
+
+
+
+
+
+statementmodemed.madmin.max.
+
+
+not integrated into risk management53215gives no guidance on how to create speciﬁcation documents42115has no clear terminology33215does not deﬁne roles22115not integrated into design22115is too hard to understand12114is too complex12114is too abstract12114does not support precise speciﬁcation12115is too heavy weight12114is not ﬂexible enough12115does not allow for deviations12115not integrated into project management12115not integrated into test management12115does not scale11.50.515
+
+
+
+
+
+problemmodemed.madmin.max.
+
+
+separating requirements from solution54115moving targets54115communication ﬂaws with the customer44115incomplete and/or hidden requirements44125inconsistent requirements44115time boxing/not enough time44115underspeciﬁed requirements43.51.515communication ﬂaws within the team43115terminological problems43115gold plating43115weak access to customer needs43115unclear responsibilities33115insuﬃcient support by project lead33115insuﬃcient support by customer33115missing traceability33115high degree of innovation33115unclear non-functional requirements33115volatile customer business33115technically unfeasible requirements22115weak relationship to customer12.51.515weak knowledge of application domain12115
+
+
+frequency and additionally shows how often the participants have stated those problems to be a reason fora project fail in their experience (q 35). the most often mentioned of the most critical problems in thisranking are incomplete and/or hidden requirements and moving targets. also mentioned often are timeboxing/not enough time. please note, however, that our results on project failures do not yet allow for aclear interpretation as not all respondents selected ﬁve of the given problems.
+
+
+relation to our theoryas non of our oﬀered problems with re standards were mostly agreed with, we could only supportfew of our hypotheses in this area (tab. 22). we only could corroborate that the re standard is not toohard to understand and not too complex. it scales to the high complexity of the respondents’ projects andit suﬃciently deﬁnes roles and responsibilities. we expected signiﬁcant problems in the other hypotheseswhich does not seem to be the case. as we have seen several of these problems in practice, we decide toleave them in the theory for further replication but to augment them with additional problems with restandards to get a clearer picture if there are really no problems.we could, however, support our theory on general problems in re in several cases. most of the mentionedproblems are statistically signiﬁcant for the respondents. we had to refute that communication ﬂaws withinthe project team and gold plating are no problems. we could also not support that terminological problems,
+
+
+26
+
+
+table 22: results for hypothesis tests for rq 4. statistically signiﬁcant hypotheses highlighted (*).
+
+
+no.hypotheses on problems with the re standard (q 31)p-value
+
+
+h 54*it is not too hard to understand.< 0.0001h 55*it is not too complex.0.0098h 56*it scales to our projects’ high complexity.< 0.0001h 57*it suﬃciently deﬁnes roles and responsibilities.0.0001h 58it is too abstract.0.9999h 59it does not support the speciﬁcation of precise requirements.0.9999h 60it is too heavy weight for our projects.0.9999h 61it is not ﬂexible enough.0.9998h 62it does not suﬃciently deﬁne a clear terminology.0.8201h 63it gives no guidance on how to create the speciﬁcation documents.0.9979h 64it does not suﬃciently allow for deviations according to project circumstances.0.9999h 65it isn’t suﬃciently integrated into project management.0.9932h 66it isn’t suﬃciently integrated into design and architecture.0.9868h 67it isn’t suﬃciently integrated into risk management.0.3548h 68it isn’t suﬃciently integrated into test management.0.8209
+
+
+hypotheses on re problems within projects (q 32)
+
+
+h 69no communication ﬂaws within the project team are not a problem.0.5121h 70*insuﬃcient support by project lead is not a problem.0.0010h 71gold plating (implementing features without corresponding requirements) is not a problem.0.5985h 72*weak knowledge of the customer’s application domain is not a problem.< 0.0001h 73*technically unfeasible requirements is not a problem.0.0004h 74*a weak relationship to the customer is not a problem.< 0.0001h 75*a volatile customer’s business domain regard, e.g., changing business requirements, is not aproblem.0.0204
+
+
+h 76*communication ﬂaws between project team and customer are a problem.0.0007h 77there are terminological problems.0.1784h 78unclear responsibilities are a problem.0.3143h 79*incomplete and/or hidden requirements are a problem.< 0.0001h 80insuﬃcient support by the customer is a problem.0.1696h 81*stakeholders with diﬃculties in separating requirements from previous solutions are a problem.0.0002h 82*inconsistent requirements are a problem.< 0.0001h 83missing traceability is a problem.0.3165h 84*moving targets are a problem.0.0003h 85weak access to customer needs and/or business information is a problem.0.2173h 86*time boxing / not enough time in general is a problem.0.0154h 87the discrepancy between the high degree of innovation and the need of formal requirementsacceptance is a problem.0.1224
+
+
+h 88*underspeciﬁed requirements that are too abstract and allow for various interpretations are aproblem.0.0109
+
+
+h 89*unclear/unmeasurable non-functional requirements are a problem.0.0148
+
+
+unclear responsibilities, missing traceability, weak access to customer needs, and insuﬃcient support by thecustomer were problems. finally, it was not signiﬁcant that there is a discrepancy between high degree ofinnovation and the need of formal requirements acceptance. apart from that, we could corroborate severalproblems, such as moving targets, and others, e.g., that there is suﬃcient support by by the project lead. asall these hypotheses are based on our experiences and/or existing literature, we decide to keep all hypotheseson re problems in project in the theory. we believe we need to test them in the next replications beforewe can decide to remove or change them.
+
+
+5.5.2. implications of the problemsafter asking for the appearance of given problems in the respondents’ socio-economic contexts, we askedthe implications those problems have. as discussed earlier, we analyse this question without any pre-deﬁnedexpectations (theory) and applied grounded theory. due to the resulting complexity in given answers andresulting coding scheme, we describe the results step-wise.to this end, we ﬁrst introduce the full results from the open coding, followed by the full results of theaxial coding. in a last step, we present a condensed overall view of the results as a graph with a minimalsaturation. that is, we show only those results having a minimal occurrence in the answers to include onlythose in our theory.
+
+
+full results from open codingfigure 6 summarises the results from the open coding. we distinguish a hierarchy of categories as anabstraction of those codes deﬁned for the answers given in the questionnaire. for each code, we furthermore
+
+
+27
+
+
+denote the number of occurrences. not included in the coding are statements that cannot be unambiguouslyallocated to a code, for example, the statement “never ending story” as an implication of the problem“incomplete / hidden requirements”.
+
+
+legend
+
+
+incomplete / hidden 
+
+
+reqs
+
+
+re problems
+
+
+reasoning
+
+
+moving targets
+
+
+time boxing
+
+
+separation reqs. 
+
+
+from solutions
+
+
+underspeciﬁed 
+
+
+reqs.
+
+
+communication 
+
+
+flaws to customer
+
+
+inconsistent reqs.
+
+
+communication 
+
+
+flaws in team
+
+
+missing traceability
+
+
+gold plating
+
+
+unclear nfrs
+
+
+terminological 
+
+
+problems
+
+
+insufﬁcient support 
+
+
+by customer
+
+
+weak access to 
+
+
+customer needs
+
+
+volatile domain
+
+
+unclear 
+
+
+responsibilites
+
+
+insufﬁcient support 
+
+
+by project lead
+
+
+technically 
+
+
+unfeasible reqs.
+
+
+high degree of 
+
+
+innov. vs. need for 
+
+
+acceptance
+
+
+weak relationship 
+
+
+to customer
+
+
+implications
+
+
+overall sw 
+
+
+project quality
+
+
+ weak relationship 
+
+
+customer & 
+
+
+project lead
+
+
+time overrun
+
+
+cost overrun
+
+
+additional 
+
+
+iterations
+
+
+rework & 
+
+
+refactoring
+
+
+additional 
+
+
+communication & 
+
+
+replanning
+
+
+stagnating 
+
+
+progress
+
+
+missing 
+
+
+transparency
+
+
+unavailability 
+
+
+customer
+
+
+customer 
+
+
+dissatisfaction
+
+
+missing user 
+
+
+involvement
+
+
+missing traceability
+
+
+weak 
+
+
+communication 
+
+
+customer
+
+
+re-speciﬁc 
+
+
+phenomena
+
+
+instable 
+
+
+requirements
+
+
+failed approval of 
+
+
+reqs.
+
+
+unclear reqs.
+
+
+incomplete reqs
+
+
+obsolete reqs. 
+
+
+specs.
+
+
+effort & time 
+
+
+overrun
+
+
+underspeciﬁed 
+
+
+reqs
+
+
+sw life cycle 
+
+
+phases
+
+
+design
+
+
+inconsistent 
+
+
+object models
+
+
+too complex 
+
+
+solutions
+
+
+wrong design 
+
+
+decisions
+
+
+implementation
+
+
+wrong 
+
+
+implementation
+
+
+incomplete 
+
+
+implementation
+
+
+bugs & defects
+
+
+stripping features
+
+
+throw away
+
+
+prototypes
+
+
+increased 
+
+
+discussions
+
+
+quality 
+
+
+assurance
+
+
+increased effort 
+
+
+in testing
+
+
+increased effort 
+
+
+in reviews
+
+
+change
+
+
+management
+
+
+change requests
+
+
+informal (unpaid) 
+
+
+changes
+
+
+increased 
+
+
+process cost
+
+
+acceptance
+
+
+general problems
+
+
+missing features
+
+
+failed acceptance
+
+
+conﬁg. 
+
+
+management
+
+
+missing 
+
+
+infrastructure
+
+
+rationale
+
+
+weak 
+
+
+communication
+
+
+low creativity in 
+
+
+team
+
+
+missing cr records
+
+
+too ambitious time planning
+
+
+frequent changes
+
+
+lack of experience
+
+
+general 
+
+
+factors
+
+
+lack of support
+
+
+no prioritisation by 
+
+
+customer
+
+
+no re explicitly 
+
+
+planned (in 
+
+
+tendering) 
+
+
+missing coordination 
+
+
+of interdisciplinary 
+
+
+teams
+
+
+travelling overhead
+
+
+late
+
+
+ fault detection
+
+
+customer staff 
+
+
+overloaded
+
+
+missing overview of 
+
+
+relevant goals
+
+
+implicit 
+
+
+requirements not 
+
+
+made explicit
+
+
+missing 
+
+
+understanding & 
+
+
+unclear terminology
+
+
+factors in re
+
+
+missing abstraction from solution level
+
+
+too much abstraction 
+
+
+from solution level
+
+
+no validation
+
+
+no traceability
+
+
+unmeasurable reqs.
+
+
+improvement 
+
+
+/ mitigation
+
+
+improve artefact 
+
+
+quality
+
+
+improve time 
+
+
+planning and focus in multi project env.
+
+
+adapt flexibility to 
+
+
+change
+
+
+increase knowledge 
+
+
+transfer w/ customer
+
+
+reﬁne reqs.
+
+
+improve team 
+
+
+communication
+
+
+improve team skills
+
+
+parallelise re and 
+
+
+design activities
+
+
+improve 
+
+
+communication w/ 
+
+
+customer
+
+
+improve cost transparency
+
+
+negotiations
+
+
+no further 
+
+
+improvement
+
+
+obsolete reqs
+
+
+category
+
+
+code
+
+
+4
+
+
+x
+
+
+occurence
+
+
+5
+
+
+3
+
+
+2
+
+
+8
+
+
+2
+
+
+5
+
+
+5
+
+
+22
+
+
+2
+
+
+1
+
+
+4
+
+
+7
+
+
+1
+
+
+6
+
+
+1
+
+
+4
+
+
+4
+
+
+1
+
+
+3
+
+
+1
+
+
+3
+
+
+2
+
+
+2
+
+
+3
+
+
+1
+
+
+1
+
+
+1
+
+
+10
+
+
+9
+
+
+2
+
+
+12
+
+
+12
+
+
+7
+
+
+1
+
+
+2
+
+
+3
+
+
+1
+
+
+1
+
+
+1
+
+
+2
+
+
+2
+
+
+2
+
+
+1
+
+
+3
+
+
+1
+
+
+1
+
+
+1
+
+
+2
+
+
+6
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+3
+
+
+1
+
+
+1
+
+
+1
+
+
+3
+
+
+4
+
+
+2
+
+
+2
+
+
+3
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+(codes pre-deﬁned 
+
+
+in questionnaire)
+
+
+uncertainty in re1
+
+
+figure 6: categories and codes resulting from open coding.
+
+
+28
+
+
+given that we asked what implications the re problems (resulting from our theory) have, we wouldexpect two top-level categories. the participants also stated, however, reasons for the problems and occa-sionally also how they would expect to mitigate the problem. as shown in fig. 6, we thus categorise theresults into the pre-deﬁned category re problems, implications, and the additional category reasoning.regarding the implications, we distinguish three sub-categories. consequences of problems in the rephase itself, consequences to be seen in further phases of the sw life cycle other than re, and more abstractconsequences on the overall project quality. the highest occurrence of statements is given for the code changerequest being stated 22 times. other codes resulted from only one statement, but they were unique, speciﬁcformulations that could not be merged with other statements. for instance, the code weak relationshipcustomer & project lead in the category overall sw project quality resulted from a statement, whichwe could not allocate to another code without interpretation and potentially misinterpreting the statement(given that no validation with the respondents is possible).regarding the reasoning for given re problems, we distinguish the category rationale as a justiﬁcationof why particular problems occurred, and improvement/mitigation for statements that suggested how tomitigate particular problems. the ﬁrst category can be further divided into factors in re and generalfactors.also here, we encountered very mixed statements including detailed ones we had to allocate to codeshaving in the end only one occurrence and vague statements we could accumulate with (consequently vague)codes. subsequent original statements shall give an impression about the answers given:code missing abstraction from solution level: “stakeholders like to discuss on solution level, not on re-quirements level. developers think in solutions. the problem is: even product managers and consul-tants do it.”
+
+
+code no re explicitly planned (in tendering): “a common situation is to take part in a tender process– where requirements are speciﬁed very abstract – most of these tender processes do not include areﬁnement stage, as a supplier we are bound to fulﬁll vague requests from the initial documents.”
+
+
+code weak communication: “the communication to customer is done not by technicians, but by lawyers.”code too ambitious time planning: “delivery date is known before requirements are clear.”code implicit requirements not made explicit: “referencing common sense as a requirement basis.”code failed acceptance: “after acceptance testing failed, the hidden requirements came up and had to beﬁxed on an emergency level.”
+
+
+code missing coordination of interdisciplinary teams: “missing coordination between diﬀerent disciplines(electrical engineering, mechanical engineering, software etc.).”
+
+
+full results from axial codingthe axial coding deﬁnes the relationships between the codes. as a consequence of the categories intro-duced in the previous section, we distinguish two types of relationships:
+
+
+1. the consequences of given re problems to the category implications, and2. the consequences of the codes in the category reasoning to the re problems including rationales andimprovement suggestions.a, and adetailed categorisation of the shown codes can be taken from the previous section (fig. 6). we furtherrefrain from interpreting any transitive relationships from reasonings to implications because of the multipleinput-/output-relationships between the codes of the diﬀerent categories; for instance, while “too ambitioustime planning” was stated as an exclusive reason for “time boxing” as an re problem, the problem“incomplete / hidden requirements” has multiple reasons as well as multiple consequences.
+
+
+condensed overall view with minimal saturationfinally, we are especially interested in a condensed result set that omits the codes and the dependencieswith limited occurrences in corresponding statements. the reason is that we need a result set with a minimalsaturation to propose its integration into our theory (sect. 3) for the future replications of the survey. aftertesting the results with diﬀerent values for the minimal occurrences, we deﬁne a graph including only codes
+
+
+29
+
+
+with a minimal occurrence level of 7. this resulting graph can be taken from fig. 7. nodes represent aselection of codes and edges represent a selection of relationships between nodes.
+
+
+figure 7: condensed view on axial coding with minimal weighting of 7 in the nodes.
+
+
+with the chosen minimal occurrence level, the ﬁnal graph does not include statements coded in thecategory reasoning leaving us with a selection of re problems interconnected with their implications. thethree nodes with the highest occurrence in their underlying statements are diﬀerently coloured. changerequests (in the centre of the ﬁgure) are stated as the most frequent consequence of various re problemssuch as time boxing or incomplete / hidden requirements. additional communication and replanning (upperpart of the ﬁgure) was another frequently stated consequence of interconnected re problems, similar as astagnating process (left side of the ﬁgure).
+
+
+5.6. patterns of expectations, status quo and problems in re (rq 5)
+
+
+finally, we checked if we can ﬁnd interesting patterns of relationships in the answers we got for all ques-tions. in the following, we discuss all correlations between answers with an at least moderate, signiﬁcantcorrelation for which we found a reasonable interpretation. we excluded, for example, correlations betweenthe questions about the domain and application areas. we also excluded few correlations from other ques-tions. for example, we could not interpret that who has a change management approach that applies afterformally accepting a requirements speciﬁcation, uses qualitative methods for assessments. all remainingcorrelations are shown in tab. 23.correlation c 1 states that those who work in custom software development do not systematically improvetheir re processes. we explain this by the diﬀerent environments and customer processes many in custom
+
+
+30
+
+
+table 23: signiﬁcant correlations with an at least moderate correlation coeﬃcient.
+
+
+no.correlationkendallp-value
+
+
+c 1who does custom software development does not systematically improve.0.55290.0007c 2who rated improvement in architecture and design as beneﬁcial also rated improvement inimplementation as beneﬁcial.0.5294< 0.0001
+
+
+c 3who rated improvement in architecture and design as challenging also rated improvement inimplementation as challenging.0.5301< 0.0001
+
+
+c 4who thinks that oﬀering standardised document templates and tool support beneﬁts the com-munication also thinks that oﬀering standardised document templates increases the quality ofthe work products.
+
+
+0.5720< 0.0001
+
+
+c 5who rates tool support for validation and veriﬁcation of requirements speciﬁcation as impor-tant also agrees with tool support as a motivation to deﬁne a company-wide standard.0.5215< 0.0001
+
+
+c 6who rates the re standard as too hard to understand also rates it as too complex.0.8286< 0.0001c 7who rates the re standard as too hard to understand also rates it as too abstract.0.7857< 0.0001c 8who rates the re standard as too complex, also rates it as too abstract.0.8082< 0.0001c 9who rates the re standard as too hard to understand, also rates it as not scaling to theprojects’ high complexity.0.5165< 0.0001
+
+
+c 10who rates the re standard as too complex, also rates it as not scaling to the projects’ highcomplexity.0.5000< 0.0001
+
+
+c 11who rates the re standard as not scaling to the projects’ high complexity, also rates it as tooheavy-weight.0.5908< 0.0001
+
+
+c 12who rates the re standard as too heavy-weight, also rates it as not ﬂexible enough.0.5001< 0.0001c 13who rates the re standard as not supporting the speciﬁcation of precise requirements, ratesit as not suﬃciently deﬁning terminology.0.5228< 0.0001
+
+
+c 14who rates the re standard as not suﬃciently deﬁning a clear terminology, rates it also asgiving no guidance on how to create speciﬁcations.0.5462< 0.0001
+
+
+c 15who rates the re standard as too hard to understand, also rates it not suﬃciently allowingfor deviations according to project circumstances that cannot be formalised.0.5092< 0.0001
+
+
+c 16who rates the re standard as too heavy-weight, also rates it as not suﬃciently deﬁning rolesand responsibilities.0.5433< 0.0001
+
+
+c 17who rates the re standard as not suﬃciently deﬁning a clear terminology, also rates it as notsuﬃciently integrated with project management.0.5476< 0.0001
+
+
+c 18wo rates the re standard as not suﬃciently integrated into project management, also rates itas not suﬃciently integrated into design and architecture.0.6292< 0.0001
+
+
+c 19wo rates the re standard as not suﬃciently integrated into project management, also rates itas not suﬃciently integrated into risk management.0.6027< 0.0001
+
+
+c 20who rates the re standard as not suﬃciently integrated into project management, also ratesit as not suﬃciently integrated into test management.0.5765< 0.0001
+
+
+c 21who rates the re standard as not suﬃciently integrated into risk management, also rates itas not suﬃciently integrated into test management.0.6542< 0.0001
+
+
+c 22where time boxing / not enough time applies, also a discrepancy between high degree ofinnovation and need for formal acceptance applies.0.5253< 0.0001
+
+
+development have to work in and, hence, a systematic improvement is often diﬃcult. correlations c 2 andc 3 together suggest that those who rate architecture improvement as beneﬁcial and challenging also rateimplementation improvement as beneﬁcial and challenging. this is reasonable because architecture andimplementation are closely related and, therefore, improvements will be similar for both.correlation c 4 expresses that those who think that oﬀering standardised document templates and toolsupport beneﬁts the communication also think that oﬀering those templates increases the quality of thework products. so, if standardised document templates are seen positive, both positive aspects we oﬀeredexist in practice. similarly, if tool support is seen as positive, it is also a reason to build an re standard.this is expressed in c 5 which says that those who rate tool support for v&v of requirements speciﬁcationsas important also agree with tool support as a motivation to deﬁne a company-wide standard.the following correlations c 6 to c 21 are all related to problems with the existing re standard ofthe respondents. we found many, partly very strong, correlations between these problems. our abstractinteroperation is that if a respondent has a problematic re standard, it often has many problems. thisis in contrast to the results of the analysis of single questions where we found none of the problems to besigniﬁcant. hence, it seems either their re standard has a multitude of problems or none. also if integrationinto other phases is a problem, it is problematic for all phases (c 18–c 21). several of these correlationsseem directly logical. for example, c 10 states that if an re standard is too hard to understand, it is alsotoo abstract. moreover, we found the following two particularly interesting: c 10 suggest that those whorate the re standard as too complex also rates it as not scaling the complexity of the projects. we expectedthat complex standards at least are able to better support complex projects. this seems not to be the case.c 14 states that those who rate the re standard as not suﬃciently deﬁning a clear terminology also rate it
+
+
+31
+
+
+as giving no guidance on how to create speciﬁcations. this ﬁts well to our observations from practice thatterminology is a core aspect of a standard if we want to provide guidelines for creating artefacts.finally, c 22 says that where time boxing applies and there is not enough time in general, there is alsoa discrepancy between the high degree of innovation and the need for formal acceptance. these two aspectsﬁt well together: if we need to formally accept the requirements in a context of high innovation and projectmanagement at the same time gives only a pre-deﬁned time box for re, it will become very diﬃcult toprovide sensible requirements for acceptance.
+
+
+6. lessons learnt
+
+
+in the course of planning the family of surveys and of executing the ﬁrst survey presented in the articleat hand, we collected a number of lessons learnt. in the following, we summarise most important lessonslearnt and brieﬂy describe those things we change to facilitate the ongoing and the future replications.
+
+
+transparency by invitation. we intentionally opted for an invitation-based survey and had good resultsregarding the reproducibility of the response rate, but also regarding the amount of participants actuallycompleting the survey despite the high amount of questions (with an average of 28 minutes needed tocomplete the survey). in consequence, however, many companies did not participate in the survey and evenwithin the companies, we cannot guarantee that we always got a respondent representative for the company.therefore, we still face a trade-oﬀbetween the advantages and the disadvantages of conducting the survey byinvitation only. for the future replications, we are continuing this modus while making the whole endeavourmore public (e.g., with the website) where participants not considered in the invitations can request a codefor the survey (which still allows us to track the number of participants). however, as we are consequentlyexpecting more participants to which we have no relation at all, we need to make the questionnaire moreconcise and the collected data more reproducible (see also subsequent paragraphs).
+
+
+sample representativeness. as we did not select the sample of invitees following a known distribution ofcontext factors in germany, we cannot guarantee for its representativeness. although we carefully trackedour invitations, and thereby we are able to get a reasonably good response rate, we cannot explain, forexample, the high number of consultants among the respondents. one explanation we have is that theyare most interested in requirements engineering and that many companies do not explicitly deﬁne the roleof a requirements engineer, but see re-related tasks as consulting (potentially run as an own project). ingeneral, the invitation list was more balanced between consultants and other software domains. in futurereplications, we need to take more care for ensuring the representativeness of the sample and are currentlydeﬁning a set of context variables that allow to carefully check for the representativeness of our samples.
+
+
+conciseness of questionnaire. one aspect we consider important for the replications is the conciseness ofour questionnaire as, for the ﬁrst round, it took an average of 28 minutes to fully answer the survey. atthe same time, we need to maximise the construct validity, i.e. we need to gather as much information aspossible to accurately answer our research questions. as already stated, we intentionally planned for eachreplication a planning step where we change the questionnaire, also according the results from the previoussurveys. currently, we are changing those questions that did not bring fruitful results or where we could notconﬁrm corresponding hypotheses, we are identifying candidates for removal, and we are deﬁning completelynew questions. for example, we changed the initial questions regarding the industry sector following aninternational standard (see the previous paragraph), and we also changed the question on the requirementselicitation. questions we already removed were, for example, to what extent projects in various businessunits have to follow a company standard as this questions was too speciﬁcally dedicated to large companies.an exemplary new question is how the respondents deal with changing requirements after the initial productrelease.
+
+
+32
+
+
+level of detail in the questionnaire. despite the pilot runs and the current work on making the question-naire more concise, we still might have questions that allow for misinterpretations; for example, diﬀerentrespondents might implicitly see the aspect traceability from diﬀerent angles (e.g., between requirements,from requirements to their rationale or from requirements to the code level). we are currently working onclarifying those potentially misleading variables by including examples into the questionnaire and makingthe answer possibilities more precise. also, for the future replications, we need to collect more informationabout the status quo in requirements engineering, for example by asking what artefacts area created (e.g., usecase models, goal models or a glossary) as the knowledge about the status quo allows for more investigationsand reasoning about the problems the respondents might experience (e.g., via correlation analyse).
+
+
+7. conclusion
+
+
+in this article, we contributed the design of a global family of surveys to overcome the problem of by nowisolated investigations in re that are not yet representative. as a long-term goal, we aim at establishing anempirically sound basis for understanding practical trends and problems in re, and for inferring represen-tative improvement goals. hence, the family of surveys will build a continuous and generalisable empiricalbasis for problem-driven re research.our family of surveys is designed and validated in joint collaboration with diﬀerent researchers andpractitioners from diﬀerent countries. the instrument of the surveys further relies on a theory. this theoryalready integrates insights obtained from by now isolated empirical investigations in re and contains a setof testable hypotheses.furthermore, we reported on the results from the initial survey conducted in germany where 58 re-spondents of diﬀerent companies participated (with a response rate of 55%). we tested the hypotheses inour theory and could corroborate various expectations ranging from ones about the status quo in re as itis deﬁned and lived in companies, the improvement of re, and problems practitioners experience in theirprofessional settings.finally, we analysed our results for statistically signiﬁcant correlations between the answers given to thediﬀerent questions. the resulting correlations reveal, for example, that in cases practitioners stated to haveﬂaws in their re standard, they seem to have a multitude of ﬂaws including an insuﬃcient deﬁnition ofroles and responsibilities, an unclear terminology, or an insuﬃcient integration with further disciplines likerisk management.our results already give us the opportunity to indicate to initial trends in re as well as problems therespondents experience in their practical settings. currently, we are in the planning phase of the ﬁrst globalreplication conducted by various researchers in diﬀerent countries, which constitutes the next step in bringingtogether the various empirical and re-speciﬁc research communities. each independent replication uses thesame infrastructure and is based on the same questionnaire being modiﬁed in response to our results andour lessons learnt (see also the previous section). to guarantee a reproducible design of the survey andof the results, we commit ourselves to disclose the anonymised data of each replication to the promiserepository. the overall objective is to establish a regularly performed survey replication to continuouslyadapt and, ﬁnally, manifest a theory on the practical status quo and problems in re (further informationcan be taken from re-survey.org).in the following, we give a concluding summary of the results presented in this article and discuss thoseresults in relation to existing evidence. we conclude with a brief discussion about the expected impact, thelimitations of our study, and future work.
+
+
+7.1. summary of results
+
+
+our study revealed a broad set of ﬁndings presented in detail in sect. 5 in relation to our theory. in thefollowing, we give a brief summary of the results structured according to the research questions.
+
+
+33
+
+
+expectations on good re (rq 1). our survey showed that our respondents see re as the discipline mostbeneﬁcial, but also most challenging for an improvement stating that the missing organisational willingnessto change would constitute the biggest barrier for such an improvement. when asked about the expectationson the re standard, the results show a certain awareness for the importance of the role of re artefacts.for example, our results indicate that participants see a clear deﬁnition of artefacts (and templates) as wellas a clear terminology in their re standard positive. they state the possibilities for a quality assuranceof the created re artefacts to be the biggest motivation to establish a company-wide re standard. whendeﬁning such a standard, they rated agility to be the most important aspect the standard should support.
+
+
+deﬁnition, application and controlling of re (rq 2). regarding the status quo in the re standards, therespondents state to need more guidance on how to create precise re artefacts. 45 % of the respondents statetheir standard to include a description of expected re artefacts and only 44 % state that they have a cleardescription of roles and responsibilities. the application of the standard is in most cases (62 %) performedby the project lead based on experiences while 53 % rely on constructive quality assurance techniques. thestatus quo and the current problems the participants experience in their project environments might be alsothe reason why they expect their standard to support agility (see also the previous paragraph).
+
+
+continuous improvement of re (rq 3). our results indicate that practitioners show a general reluctanceagainst normative improvement approaches, such as cmmi. they mostly rely on a problem-driven improve-ment of their re where company-speciﬁc goals and the organisational culture is rated as a reason againstnormative approaches. exemplary statements for rejecting normative improvement approaches were “wewant to live our own agility” or “[because of the] individualism of the projects”. whereas 55 % of therespondents state an re improvement to be managed via an own role or even an own business unit, 29 %of the respondents state that an re improvement is yet not done at all.
+
+
+contemporary problems and their implications (rq 4). we could reveal various problems in re of whichthe highest ranked ones where incomplete requirements, moving targets, and time boxing – all seen to be amain cause for experienced failed project. further problems where communication ﬂaws, missing traceability,terminological problems and unclear responsibilities. when asked what implications the problems have, werevealed that most of the stated problems seem to lead to change requests, additional communication andreplanning, or to a stagnating process. we interpret, again, this result to speak for the need to bettersupport agility in the re.
+
+
+patterns in expectations, status quo and problems (rq 5). we performed a correlation analysis amongall variables in the complete data set and could reveal a set of statistically signiﬁcant patterns.thoserespondents who work in custom software development do, for example, not systematically improve theirre processes. we assume that the diﬀerent environments and customer processes complicate a systematicimprovement (see also the previous paragraphs). in the answers given to questions about the deﬁnition,application, and controlling of re, we found that those respondents who think that oﬀering standardiseddocument templates and tool support beneﬁts the communication also think that oﬀering those templatesincreases the quality of the re artefacts. we found a further set of correlations between the problems withthe existing re standard. an interesting result was that if a respondent has a problematic re standard,it often oﬀers many problems. for example, those who rate the re standard as not suﬃciently deﬁning aclear terminology also rate it as giving no guidance on how to create the re artefacts. taking into accountthe results of the analysis of single questions where we found none of the problems to be signiﬁcant, it thusseems either their re standard has a multitude of problems or none.
+
+
+7.2. relation to existing evidence
+
+
+of this theory by applying grounded theory and a correlation analysis, we could conﬁrm selected empiricalﬁndings available in literature.for example, although most respondents stated to have deﬁned an restandard, this standard is rated to have either no problems or a multitude of problems. the application of
+
+
+34
+
+
+the standard and the tailoring of the model is stated to be done according to the expertise of the projectlead. we interpreted those observation by tailoring being still an unsolved topic for re [36]. also, theresults indicate that the deﬁnition of standardised artefacts in their re standard is seen as important whileleaving open the process to the participants, thus, supporting our own observations in the area of artefactorientation [30].the improvement of the re standard is considered especially important (and challenging) for re. similarto the observations made by staples et al. [21] where smaller companies show a reluctance against normativeimprovement approaches, our results indicate to a more general reluctance independent of the company size.we interpret this as an agreement to the beneﬁts seen in problem-driven re improvement approaches [23, 41],additionally supported by our observation that 79 % of the respondents employ qualitative methods, forexample, to gather lessons learnt.regarding the re problems in practice, we could conﬁrm the observations of, for example, hsia etal. [25] or solemon, sahibuddin, and and ghani [26]. those surveys reveal many problems that directlylink to human factors such as communication problems, or inappropriate skills.we could extend theirobservation with a set of further problems, additionally ranked according to their frequency and relationfor failed projects from the perspective of the respondents. for example, moving targets and time boxingwere frequently stated problems experienced to have lead to failed projects. our grounded theory couldfurther extend those observations with consequences on the process including, inter alia, change requests oradditional communication and replanning.our results thus conﬁrm some results from selected available studies and extend them with new ones.
+
+
+7.3. impact/implicationswe can directly infer two major implications from our contributions. first, our survey design relies ona theory we draw from diﬀerent isolated studies and, thus, it integrates available studies to a broader viewon the status quo in re and its improvement as well as problems encountered in industrial environments.our survey results further conﬁrm parts of our theory and extends it with new concepts. this already givesus an initial saturation of the theory that allows researchers to steer their problem-driven research. theycan deﬁne improvement goals on an empirical basis that already goes beyond isolated investigations andvalidation research; for instance, in the area of problem-driven re improvement and in the area of artefactorientation. second, the family of surveys is and will remain open. this allows not only researchers toreproduce the results and their interpretation, but also practitioners to evaluate their own re situationagainst overall industrial trends.
+
+
+7.4. limitationswe have analysed the results from the survey conducted in germany and the next replication round hasalready begun at the time of writing this article. still, we are aware that our study still has limitations.most importantly, our theory, although already integrating available empirical studies and extending theirresults with new ones, still needs to evolve and mature along with the variables in the instrument beforewe can ﬁnally demonstrate the ability to generalise from the results. moreover, our results are based onlyon a reasonable but limited number of respondents from germany. we cannot make concrete statementsabout how generalisable the results are for germany, let alone the rest of the world. on the contrary, weexpect partially diﬀerent results in diﬀerent countries. for example, from our discussions with colleagues,we expect agile methods to be more inﬂuential in the scandinavian countries. that means we need to followour design of a family of surveys, conduct continuous replications in diﬀerent countries and syntheses theresults to establish a more reliable and empirically solid theory.inherent to the nature of survey research is still that surveys can only reveal stakeholders’ perceptionson current practices rather than empirically backed-up knowledge about those practices. to some extent,we aim at revealing exactly those perceptions (see, e.g., the research question on the expectations on goodre). for the questions about the current practices, we believe that we will mitigate this threat once we candemonstrate the ability to generalise as survey research allows us also to build a broad empirical basis.furthermore, as we test a high number of hypotheses, the results from our hypotheses tests will suﬀerfrom the multiple comparisons problem. this means that because we run multiple tests, some will be tested
+
+
+35
+
+
+as signiﬁcant by chance. there is an increase in the type i error but we chose not to correct for it to notincrease the chance for type ii errors.
+
+
+7.5. future workwe plan the further coordination of the replications, their syntheses, and their dissemination as futurework. the dissemination aims at both empirical and re research communities to support a variety of con-ceptual work in re on basis of empirically sound ﬁndings. to this end, we cordially invite further researchersto join in for additional replications over the next years to establish an externally valid empirical basis onthe state of the practice in requirements engineering. furthermore, to have a more comprehensive basis forthe underlying theory of the surveys, we plan to conduct a systematic literature review on expectations andthe state of practice in re.
+
+
+7.6. acknowledgmentswe want to thank all participants of isern 2012 and eessmod 2012 for fruitful discussions. in partic-ular, we want to thank silvia abrah˜ao, barry boehm, giovanni cantone, michael chaudron, maya daneva,marcela genero, lars pareto, and roel wieringa for participating in the thematic workshops and giving usvaluable feedback on the basic design of the family of surveys. furthermore, we want to thank the internaland the external reviewers listed in tab. 7. we are also thankful to sebastian eder and saahil ognawalafor their support in the development of the coding scheme for the grounded theory during the initial run.finally, we are grateful to michael mlynarski for supporting us in the pilot phase and to our project partnersfor their participation in the survey.
+

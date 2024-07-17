@@ -1,0 +1,798 @@
+
+automatic creation of acceptance tests by extracting conditionalsfrom requirements: nlp approach and case study
+
+
+jannik fischbacha,b,∗, julian frattinic, andreas vogelsangd, daniel mendezb,c,michael unterkalmsteinerc, andreas wehrlef, pablo restrepo henaoa, parisa youseﬁe, tedi juricice,jeannette radduenzf and carsten wiecherg
+
+
+anetlight consulting gmbh, sternstraße 5, munich, 80538, germanybfortiss gmbh, guerickestraße 25, munich, 80805, germanycblekinge institute of technology, valhallavägen 1, 371 41, karlskrona, swedenduniversity of cologne, albertus-magnus-platz, 50923, cologne, germanyeericsson, ölandsgatan 1, 371 33, karlskrona, swedenfallianz deutschland ag, dieselstr. 6, 85774, unterföhring, germanygleopold kostal gmbh & co. kg, an der bellmerei 10, lüdenscheid, 58513, germany
+
+
+a r t i c l e i n f o
+
+
+keywords:acceptance testingautomatic test case creationrequirements engineeringnatural language processingcausality extraction
+
+
+abstract
+
+
+acceptance testing is crucial to determine whether a system fulﬁlls end-user requirements. however,the creation of acceptance tests is a laborious task entailing two major challenges: (1) practitionersneed to determine the right set of test cases that fully covers a requirement, and (2) they need tocreate test cases manually due to insuﬃcient tool support. existing approaches for automaticallyderiving test cases require semi-formal or even formal notations of requirements, though unrestrictednatural language is prevalent in practice. in this paper, we present our tool-supported approach cira(conditionals in requirements artifacts) capable of creating the minimal set of required test casesfrom conditional statements in informal requirements. we demonstrate the feasibility of cira in acase study with three industry partners. in our study, out of 578 manually created test cases, 71.8 %can be generated automatically. additionally, cira discovered 80 relevant test cases that were missed
+
+
+1. introduction
+
+
+acceptance tests are used to verify the conformity be-tween end-user requirements and actual system behavior [26].each acceptance test contains a ﬁnite set of test cases thatspecify certain test inputs and expected results. test casedesign is a very laborious activity that easily accounts for40 - 70 % of the total eﬀort in the testing process [3]. thisstems from the following challenges.
+
+
+challenge 1 determining the right set of test cases thatfully covers a requirement is a diﬃcult task, especially forcomplex requirements. a requirement is considered fullycovered if a set of associated test cases assures the behaviorimplied by that requirement [53]. in a previous study [13],we found that acceptance tests are often not systematicallycreated, resulting in incomplete or excessive test cases. inthe case of missing test cases, system defects are not (or onlypartially) detected. in contrast, excessive test cases lead to
+
+
+∗corresponding author
+
+
+jannik.fischbach@netlight.com (j. fischbach);vogelsang); daniel.mendez@bth.se (d. mendez);michael.unterkalmsteiner@bth.se (m. unterkalmsteiner);henao); parisa.yousefi@ericsson.com (p. youseﬁ);radduenz); c.wiecher@kostal.com (c. wiecher)orcid(s): 0000-0002-4361-6118 (j. fischbach); 0000-0003-3995-6125 (j.frattini); 0000-0003-1041-0815 (a. vogelsang); 0000-0003-0619-6027 (d.mendez); 0000-0003-4118-0952 (m. unterkalmsteiner)
+
+
+unnecessary testing eﬀorts and increased test maintenancecosts. consequently, practitioners need to strike a balancebetween full test coverage and number of required test cases.
+
+
+challenge 2 creating acceptance tests is a predominantlymanual task due to insuﬃcient tool support [19]. most ofthe existing approaches allow the derivation of test casesfrom semi-formal requirements [52, 5, 2] (e.g., expressed incontrolled natural language) or formal requirements [34, 45](e.g., expressed in linear temporal logic), but are not suitableto process informal requirements. however, studies [28] haveshown that requirements are usually expressed in unrestrictednatural language (nl). some approaches [18, 51, 43] addressthis research gap and focus on deriving test cases from infor-mal requirements. nevertheless, they show poor performancewhen evaluated on unseen real-world data. speciﬁcally, theyare not robust against grammatical errors and fail to processwords that are not yet part of their training vocabulary [17].
+
+
+research goal we aim to develop a tool-supported ap-proach to derive the minimal set of required test cases auto-matically from nl requirements by applying natural lan-guage processing (nlp).
+
+
+principal idea functional requirements often describe sys-tem behavior by relating events to each other, e.g., “if thesystem detects an error (푒1), an error message shall be shown(푒2)”. previous studies [15, 18] show that such conditionalstatements are prevalent in both traditional and agile require-
+
+
+fischbach et al.: preprint submitted to elsevierpage i of xviii
+
+
+arxiv:2202.00932v2  [cs.se]  13 oct 2022
+
+
+automatic creation of acceptance tests by extracting conditionals from requirements
+
+
+ments such as acceptance criteria. in this paper, we focus onconditionals in nl requirements and utilize their embeddedlogical knowledge for the automatic derivation of test cases.we answer three research questions (rq):
+
+
+• rq 1: how to extract conditionals from nl require-ments and use their implied relationships for automatictest case derivation?
+
+
+• rq 2: can our automated approach create the sametest cases as the manual approach?
+
+
+• rq 3: what are the reasons for deviating test cases?
+
+
+the answers to rq 1 shall inform the implementationof a new tool-supported approach for automatic test casederivation. rq 2 and rq 3 study the impact of the newapproach: does it achieve the status quo or even lead to animprovement of the manual test case derivation? to thisend, we conduct a case study with three industry partnersand compare automatically created test cases with existing,manually created test cases. in summary, this paper makesthe following contributions (c):
+
+
+• c 1: to answer rq 1, we present our tool-supported ap-proach cira (conditionals in requirements artifacts)capable of (1) detecting conditional statements in nlrequirements, (2) extracting their implied relationshipsin ﬁne-grained form and (3) mapping these relation-ships to a cause-eﬀect-graph from which the minimalset of required test cases can be derived automatically.the output of cira are manual test cases, which - ifrequired - can be converted into automatic test casesusing third-party tools such as selenium, robot frame-work, or tricentis.
+
+
+• c 2: to answer rq 2 and rq 3, we conduct a casestudy with three companies and compare cira to themanual test case design. we show that cira is ableto automatically generate 71.8 % of the 578 manuallycreated test cases. in addition, cira identiﬁes 80 rele-vant test cases that were missed in the manual test casedesign.
+
+
+• c 3: to strengthen transparency and facilitate replica-tion, we make our tool, code, annotated data set, andall trained models publicly available.1
+
+
+running example in the course of the paper, we demon-strate the functionality of cira by means of a running exam-ple. speciﬁcally, we explain how cira automatically derivesthe minimum number of required test cases for the require-ments speciﬁcation shown in figure 1. the speciﬁcationcontains an excerpt of requirements that describe the func-tionality of “the energy management system” (themas).themas is intended to be used by people that maintain the
+
+
+our code, annotated data sets, and all trained models can be found at doi 10.5281/zenodo.5550387.
+
+
+• req a: if the temperature change is requested, thenthe determine heating/cooling mode process is acti-vated and makes a heating/cooling request.
+
+
+• req b: if the current temperature value is strictly lessthan the lower value of the valid temperature rangeor if the received temperature value is strictly greaterthan the upper value of the valid temperature range,then the themas system shall identify the currenttemperature value as an invalid temperature and shalloutput an invalid temperature status.
+
+
+• req c: the themas system shall maintain theon/off status of each heating and cooling unit.
+
+
+• req d: temperatures that do not exceed these limitsshall be output for subsequent processing.
+
+
+• req e: if this condition is true, then this module shalloutput a request to turn on the heating unit in caselo = t lt.
+
+
+• req f: the heating/cooling unit shall have no real-time delay when these statuses are sent to the themassystem.
+
+
+• req g: each thermostat shall have a unique identiﬁerby which that thermostat is identiﬁed in the themassystem.
+
+
+• req h: when an event occurs, the themas systemshall identify the event type and format an appropriateevent message.
+
+
+figure 1: requirements speciﬁcation of themas [12]
+
+
+heating and cooling systems in a building. we retrieved therequirements from the pure (public requirements) dataset [12] that contains 79 publicly available natural languagerequirements documents collected from the web. we en-courage the readers of this paper to use our online demo toprocess the running example on their own, allowing them tofollow each individual step of cira.
+
+
+outline the remainder of this paper is organized as follows:section 2 provides the theoretical background. section 3 an-swers rq 1 and introduces cira in detail. section 4 presentsthe results of our case study and answers rq 2 and rq 3.section 5 discusses our results and indicates directions forboth research and practice. section 6 brieﬂy surveys relatedwork. finally, section 7 presents our conclusions.
+
+
+2. fundamentalstest case a test case is a set of certain test inputs (inputparameters) and expected results (output parameters) usedto verify compliance with a speciﬁc requirement [26]. eachinput and output parameter is deﬁned by a variable and acondition that the parameter can take [46]. for example, theparameter “the system detects an error” can be decomposedinto variable: the system and condition: detects an error . alltest cases that constitute a single acceptance test are summa-
+
+
+fischbach et al.: preprint submitted to elsevierpage ii of xviii
+
+
+automatic creation of acceptance tests by extracting conditionals from requirements
+
+
+figure 2: overview of the cira pipeline consisting of three steps: (1) detection of conditionals, (2) ﬁne-grained extraction ofconditionals, and (3) ceg creation. processed req: if a is valid and b is false, then c is true.
+
+
+rized in a test case speciﬁcation (see figure 2, right). eachrow represents a test case. the variables of the input andoutput parameters are listed in the columns. the conditionsof the parameters that shall be inspected as part of a certaintest case are contained in the respective cells.
+
+
+conditional statements a conditional statement (short:conditional) is a grammatical structure consisting of twoparts: an adverbial clause, often referred to as the antecedent,and a main clause, also known as the consequent. this canbe illustrated by the following req:
+
+
+if the system detects an error⏟⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏟⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏟antecedent
+
+
+, an error message shall be shown⏟⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏟⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏞⏟consequent
+
+
+.
+
+
+the relationship between an antecedent and consequentcan be interpreted logically in two diﬀerent ways [16]. first,by means of an implication as 푒1 ⇒푒2, in which the an-tecedent is a suﬃcient condition for the consequent. inter-preting req as an implication requires the system to displayan error message if the antecedent is true. however, it isnot speciﬁed what the system should do if the antecedentis false. the implication allows both the occurrence of theconsequent and its absence if the antecedent is false. the caseof 푒1 = false is underspeciﬁed. from a testing point of view,underspeciﬁed requirements can be problematic because thenegative scenario is not deﬁned. in fact, when reading reqit may as well be reasonable to assume that the error messageshall not be shown if the error has not been detected. thisinterpretation corresponds to a logical equivalence (푒1 ⇔푒2),where the antecedent is both a suﬃcient and necessary condi-tion for the consequent. interpreting req as an equivalencerequires the system to display an error message if and only ifit detects an error.in a previous study [14], we found that conditionals inrequirements are interpreted ambiguously and that practition-ers disagree whether antecedents are only suﬃcient or alsonecessary for the consequent. to ensure that the automat-ically derived test cases correspond to the diﬀerent logicalinterpretations, we require two variants of test case genera-tion: the ﬁrst variant interprets conditionals as implicationsand generates only the positive test cases. the second vari-ant interprets the conditionals as equivalences and generatesboth the positive and negative test cases. cira supports bothvariants of test case generation. the user can choose whethers/he perceives antecedents to be both suﬃcient and neces-
+
+
+sary conditions for consequents or not. depending on theselection, we ﬁlter the derived test cases and display the ac-ceptance test that corresponds to the user’s interpretation. inthe given example (see figure 2), we perceive the antecedentsas necessary conditions for the consequent. accordingly, ourapproach created one positive test case (see tc 1) and twonegative test cases (see tc 2 and tc 3).for the sake of readability, in the remainder of the paper,we denote antecedents as causes and consequents as eﬀects.additionally, we term sentences that contain conditionals ascausal sentences.
+
+
+cause eﬀect graph a cause-eﬀect-graph (ceg) can beinterpreted as a combinatorial logic network, which describesthe interaction of causes and eﬀects by boolean logic [38]. itconsists of nodes for each cause and eﬀect and uses arcs withboolean operators (conjunction ∧, disjunction ∨, negation¬) to illustrate the relationship between the nodes. let 퐺bethe ceg shown in figure 2 with eﬀect set 퐸and cause set 퐶.in the example, |퐶| = 2 including 푐1, and 푐2 while |퐸| = 1with 푒1. to derive test cases from 퐺, the basic path sensitiza-tion technique (bpst) is applied. the graph is traversed backfrom the eﬀects to the causes and test cases are created accord-ing to speciﬁc decision rules (cf. [37] and [38]). these rulesachieve the maximum probability of ﬁnding failures whileavoiding the complexity of generating 2n test cases, where 푛isthe number of causes. hence, cause-eﬀect-graphing allowsus to support practitioners in balancing between suﬃcient testcoverage and the lowest possible number of test cases. thisis also indicated by the acceptance test in figure 2, whichcontains the test cases generated by bpst for 퐺. to checkthe functionality presented in the ceg comprehensively, only3 test cases are needed instead of the maximum number of23 test cases.
+
+
+3. cira pipeline
+
+
+as shown in figure 2, cira consists of three steps: weﬁrst detect whether an nl requirement contains a conditional(see subsection 3.1). second, we extract the conditionalin ﬁne-grained form (see subsection 3.2). speciﬁcally, weconsider the combinatorics between causes and eﬀects andsplit them into more granular text fragments (e.g., variableand condition), making the extracted conditionals suitable forautomatic test case derivation. third, we map the extractedcauses and eﬀects into a ceg to derive the minimum number
+
+
+fischbach et al.: preprint submitted to elsevierpage iii of xviii
+
+
+automatic creation of acceptance tests by extracting conditionals from requirements
+
+
+of required test cases (see subsection 3.3).
+
+
+input representation cira is not dependent on any spe-ciﬁc format of requirements. rather, it is able to process anykind of nl representation (i.e., cira does not dictate thesemantics and syntax that a requirements author must follow).hence, it understands unstructured representations (e.g., ifevent a occurs, then event b evaluates to true) as well as semi-structured formulations (e.g., if a is true and b is falsethen the system shall shut down). however, cira is nottrained to process requirements that span multiple sentences.
+
+
+3.1. detection of conditionalsproblem we deﬁne the detection of conditionals in nl sen-tences as a binary classiﬁcation problem, in which we aregiven a certain nl sentence and we are required to producea nominal label 푦∈= {causal, non-causal}.
+
+
+novelty in previous work [15], we compared the perfor-mance of diﬀerent approaches for this task: baseline systemsthat search for cue phrases (e.g., if, when) that usually indi-cate causes and eﬀects, machine learning (ml) approaches(e.g., random forest) and deep learning (dl) approaches(e.g., bert+softmax). in this paper, we present only thebest-performing method that combines syntactically enrichedbert embeddings with a softmax classiﬁer. for a detailedcomparison of all investigated approaches, please refer toour manuscript [15]. our detection approach is trained on8,430 nl requirements of which 4,215 sentences are causal.it achieves a macro-퐹1 score of 82 % and outperforms relatedapproaches with an average gain of 11.06 % in macro-recalland 11.43 % in macro-precision.
+
+
+solution our detection algorithm consists of two layers:1) embedding layer and 2) inference layer. for a detailedvisualization of the internal behavior of the individual layers,please refer to figure 3.1) embedding layer we represent each sentence as asequence of word embeddings. let us denote 푠as a sentencewith 푛tokens: 푠= {푣1, 푣2, … , 푣푛}, where vector 푣푖repre-sents the vector of 푖-th token with a dimension of 푑. in recentyears, several methods have been developed to implementword embeddings. traditional methods like word2vec [36]are capable of transforming a word into a single vector rep-resentation. however, they do not consider the context ofthe word. hence, words are always represented as the samevector, although they can have diﬀerent meanings dependingon their context. to address this problem, contextual wordembeddings like bidirectional encoder representations fromtransformers (bert) [8] were developed. since bert out-performs its predecessors, elmo and gpt-2, in a numberof nlp tasks, we use bert embeddings in our proposedarchitecture. bert requires input sequences with a ﬁxedlength. therefore, sentences that are shorter are adjusted tothis ﬁxed length by appending padding tokens (pad). othertokens such as the separator (sep) and classiﬁcation (cls)token, are also inserted to provide further information aboutthe sentence to the model, where sep marks the end of a sen-
+
+
+figure 3: in-depth visualization of the ﬁrst step in the cirapipeline: the detection of conditionals in nl requirements.processed req: if a is valid and b is false, then c is true.
+
+
+tence. cls is the ﬁrst token in the sequence and representsthe whole sentence (i.e., it is the pooled output of all tokensof a sentence). studies [49] have shown that the performanceof nlp models can be improved by providing explicit priorknowledge of syntactic information to the model. hence,we enrich the input sequence by adding the correspondingdependency (dep) tag to each token and feed it into bert.to choose a suitable ﬁxed length for our input sequences,we analyzed the lengths of the sentences in our data set. alength of 384 tokens showed to be reasonable and allowed usto keep bert’s computational requirements to a minimum.2) inference layer for our classiﬁcation task, we onlyuse the cls token because it stores the information of thewhole sentence. we feed the pooled information into a single-layer feedforward neural network that uses a softmax layer,which calculates the probability that a sentence contains aconditional or not: ̂푦= softmax(푊푣0 + 푏), where ̂푦is thepredicted label for the sentence, 푊is the weighted matrix,푣0 is the ﬁrst token in the sentence (i.e., the cls token), and푏is the bias. we select the class with the highest probabilityas the ﬁnal classiﬁcation result.
+
+
+running example when applying cira to the require-ments speciﬁcation shown in figure 1, cira performs theﬁrst step of its pipeline: it tries to identify which requirementsin the speciﬁcation contain a conditional. for this purpose,req a - h are tokenized in the embedding layer and enrichedwith dependency tags as described in the previous section.finally, the cls token of each req is passed to the infer-ence layer, where a softmax layer computes the probability ofthe req being causal or not. in the present example, ciraclassiﬁes req a, req b, req d, req e, req f, and reqh as causal and correctly discovers that req c and req gdo not contain a conditional statement. hence, req c andreq g are excluded from the further test generation process.the remaining requirements are forwarded to the next step,namely the extraction of conditionals.
+
+
+fischbach et al.: preprint submitted to elsevierpage iv of xviii
+
+
+automatic creation of acceptance tests by extracting conditionals from requirements
+
+
+table 1overview of the class distribution (sentence and token level) in our training, validation andtesting data sets. annotation validity per class is reported as pair-wise averaged 퐹1 score.
+
+
+complete datasettraining setvalidation settesting set
+
+
+label typesentenceswordpiecetokensbpetokenssentenceswordpiecetokensbpetokenssentenceswordpiecetokensbpetokenssentenceswordpiecetokensbpetokensannotationvalidity
+
+
+cause 11946187431831715561486214499194187818481962003197087 %cause 26615158519052340364072685405347058258471 %
+
+
+cause 313711091102105856853181231171413013271 %eﬀect 11946228142211515561837017832194221021251962234215890 %
+
+
+eﬀect 26145384542648341694200655735786664264881 %eﬀect 313811291142113952958138082129710278 %
+
+
+not relevant6646667637153754075175606315956762960174 %
+
+
+and7442799280759022152221802972987428728893 %
+
+
+toplayer
+
+
+or23082682618266766726878722727291 %
+
+
+variable1946260762575315562089620599194254325091962637264587 %
+
+
+condition1946349273497415562765327738194351334981963761373881 %lowerlayernegation3631458151328711541199341331394217117590 %
+
+
+3.2. extraction of conditionalsproblem we deﬁne the extraction of conditionals as a se-quence labeling problem, in which we are given a certain nlsentence in the form of a sequence of 푛tokens = {푥푖}푛푖=1and we are required to produce a sequence of correspond-ing token labels. speciﬁcally, we aim to demarcate tokensthat are relevant for test case derivation from tokens thatshould be excluded from further processing. in our case,we are interested in twelve token labels. since conditionalsin requirements usually consist of up to three causes andeﬀects [15], we create individual labels for each cause andeﬀect to clearly separate and map them easily to a ceg:
+
+
+1. cause 1
+
+
+2. cause 2
+
+
+⎫⎪⎬⎪⎭
+
+
+cause labels
+
+
+3. cause 3
+
+
+4. eﬀect 1
+
+
+5. eﬀect 2
+
+
+⎫⎪⎬⎪⎭
+
+
+eﬀect labels
+
+
+6. eﬀect 3
+
+
+7. not relevant marks parts of a conditional that are notrelevant for automatic test derivation.
+
+
+8. and marks a conjunctive link between two adjacentcauses or eﬀects.
+
+
+9. or marks a disjunctive link between two adjacentcauses or eﬀects.
+
+
+10. variable marks the variable of a cause or eﬀect.
+
+
+11. condition marks the condition of a cause or eﬀect.
+
+
+12. negation: marks negated causes or eﬀects.
+
+
+we use these token labels to generate two annotation lay-ers (see figure 2). the top layer represents the compositionof the sentence by specifying the causes, eﬀects, and theircombinatorics based on the labels 1 - 9. at the lower layer,we use the labels 10 - 12 to annotate the causes and eﬀectsmore ﬁne-grained. consequently, we assign at least one labeland at most two labels to a token.
+
+
+novelty contrary to the ﬁrst part of cira (the detection ofconditionals) we do not build on previous work for the ﬁne-grained extraction of conditionals and present a new approachin this paper.
+
+
+3.2.1. corpus creationdata collection to train our extraction approach, we re-quire an annotated data set, in which the combinatorics ofcauses and eﬀects as well as their variables and conditionsare labeled. existing data sets [54] are not suitable for ouruse case: the semeval-2007 [20] and semeval-2010 [23]data sets contain only single word causal pairs. in the dataset presented by dasgupta et al. [7], causes and eﬀects areonly coarsely annotated (i.e., connectives, variables, and con-ditions are not labeled). due to the unavailability of adequatedata, we create our own training corpus. to this end, webuild on the data set that we have already used for trainingour detection algorithm by randomly selecting a subset of thecausal requirements (1,946) and annotating them using ourtwelve predeﬁned labels.
+
+
+annotation process we involve four annotators with pre-vious experience in the interpretation of conditionals andconduct a workshop where we discuss several examples. toensure consistent annotations, we create an annotation guide-line, in which we deﬁne each label along with a set of sampleannotations. we use the web-based brat annotation plat-form [48] for labeling each sentence.
+
+
+annotation validity to verify the reliability of the anno-tations, we calculate the inter-annotator agreement. we dis-tribute the 1,946 causal sentences among four annotators,ensuring that 390 sentences are labeled by two annotators(overlapping quote of ≈20 %). similar to other studies [31]that also utilize brat to annotate sentences, we calculate thepair-wise averaged 퐹1 score [25] based on the overlappingsentences. speciﬁcally, we treat one rater as the subject andthe other rater’s answers as if they were a gold standard. thisallows us to calculate precision and recall for their annota-tions. we then determine the 퐹1 score as the harmonic meanof recall and precision. we calculate the 퐹1 score pairwisebetween all raters. subsequently, we take the average of 퐹1scores among all pairs of raters to quantify the agreement
+
+
+fischbach et al.: preprint submitted to elsevierpage v of xviii
+
+
+automatic creation of acceptance tests by extracting conditionals from requirements
+
+
+of our raters: the higher the average 퐹1 score, the more theraters agree with each other. for most of our labels, we obtainan inter-annotator agreement of at least 81 % (see table 1).the lowest agreement is achieved for cause 2 and cause 3(퐹1 score of 71 %). the annotators do not always agree onhow granular some expressions should be labeled (e.g., doesa text fragment represent another cause, or is it still part ofthe previous cause?). the highest agreement is measured forthe assignment of and (퐹1 score of 93 %). averaged acrossall labels, we achieve an 퐹1 score of 83 %. based on theachieved inter-annotator agreement values, we assess our la-beled data set as reliable and suitable for the implementationof our conditional extraction approach.
+
+
+data analysis table 1 shows that the majority of our sen-tences contain only a single cause and eﬀect. about one-thirdof the sentences contain more complex conditionals compris-ing two causes or two eﬀects. only a few sentences containthree causes or three eﬀects. we found that causes and ef-fects are more often connected by a conjunction than by adisjunction. negated causes and eﬀects occur in about 18 %of the sentences. at the token level, expressions labeledas eﬀect 1 are often longer than cause 1 expressions. weobserve a similar trend at the lower layer. conditions areusually longer than the variables of the causes and eﬀects.across all classes, our data set is strongly unbalanced withfour minority classes: cause 3, eﬀect 3, or, and negations.
+
+
+3.2.2. solutionour sequence labeling problem can be solved in two ways:one way is to consider the creation of both annotation layersas two separate multi-class classiﬁcation tasks. accordingly,we train two models, where the ﬁrst model is responsible forrecognizing causes and eﬀects, while the second model splitsthe causes and eﬀects into variables and conditions. in thiscase, the ﬁrst model produces the top layer and the secondmodel creates the lower layer. alternatively, we treat ourannotation task as a multi-label classiﬁcation problem. con-sequently, we train only one model, which considers all labelsduring the prediction and assigns multiple labels to a token.the diﬀerence between our multi-class and multi-label solu-tion can be illustrated using the token “a” shown in figure 2.in the case of our multi-class solution, the ﬁrst model as-signs the label cause 1 to the token, while the second modelassigns the label variable to the token. conversely, in thecase of our multi-label solution, both labels are assigned bya single model.
+
+
+models in our experiments, we compare the performanceof nine diﬀerent models for multi-class and multi-label classi-ﬁcation. table 2 provides an overview of their architecturesconsisting of three diﬀerent layers: 1) embedding layer, 2)bilstm layer, and 3) inference layer.1) embedding layer similar to the detection of condi-tionals, we also use contextual word embeddings for their ex-traction. however, we do not only perform experiments withbert but also investigate the inﬂuence of roberta [35]and distilbert [42] embeddings on the performance of our
+
+
+table 2overview of architecture and evaluation results of all trainedmodels. best macro-푭ퟏscore is marked in bold. tuned hyper-parameters are reported in terms of batch size (bs), learningrate (lr), dropout (d), and size of hidden state.
+
+
+architecture
+
+
+model #embeddingbilstminferencemacro-퐹1optimal hyperparameters
+
+
+model ibertsoftmax76 %
+
+
+top layer model:bs= 32, lr = 7.49e-05, d = 0.27lower layer model:bs = 64, lr = 6.24e-05, d = 0.18
+
+
+model iirobertasoftmax75 %
+
+
+top layer model:bs = 32, lr = 6.24e-05, d = 0.33lower layer model:bs = 32, lr = 4.28e-05, d = 0.21
+
+
+2x multi-class models
+
+
+model iiidistilbertsoftmax78 %
+
+
+top layer model:bs = 32, lr = 8.80e-05, d = 0.32lower layer model:bs = 64, lr = 9.76e-05, d = 0.36
+
+
+model ivbertsigmoid85 %bs = 64, lr = 8.79e-05, d = 0.26
+
+
+model vrobertasigmoid86 %bs = 32, lr = 6.13e-05, d = 0.13
+
+
+model vidistilbertsigmoid82 %bs = 32, lr = 4.47e-05, d = 0.14
+
+
+model viibertsigmoid83 %bs = 32, lr = 6.27e-05,lstm_hidden = 128, d= 0.31
+
+
+model viiirobertasigmoid84 %bs = 32, lr = 4.34e-05,lstm_hidden = 128, d = 0.01
+
+
+1x multi-label model
+
+
+model ixdistilbertsigmoid72 %bs = 32, lr = 9.437e-05,lstm_hidden = 128, d = 0.50
+
+
+models. distilbert represents the distilled version of bertthat allows for faster training. roberta is a tuned version ofbert, which shows better prediction performance on vari-ous benchmarks but negatively aﬀects training and inferencetime. to extract the conditionals in ﬁne-grained form, weneed to predict on the token level. hence, in contrast to thedetection algorithm where we consider only the cls tokenduring classiﬁcation, we pass each token to the classiﬁer,which assigns a label to each token. we consider both actualtokens of a sentence and synthetically added tokens (pad,sep, and cls) because initial experiments demonstratedthat the exclusion of synthetic tokens results in signiﬁcantperformance degradation (loss of ≈5 % in macro-퐹1). wehypothesize that the performance degradation stems fromthe fact that the synthetic tokens contain valuable informa-tion about the syntax and semantics of a sentence helpingthe model to comprehend the meaning of a sentence. thenumber of tokens per class diﬀers depending on the appliedtokenizer (see table 1). bert and distilbert use word-piece as a subword tokenization algorithm, while robertaemploys byte-pair encoding (bpe). nevertheless, both to-kenizers diﬀer only slightly, so we set the same maximumlength of tokens per sentence for all models. by analyzingthe annotated conditionals, a maximum length of 80 tokensproved to be reasonable.2) bidirectional-lstm layer for models vii - ix , wefeed the word vectors into a bidirectional lstm (bilstm)to obtain a hidden state for each word. bilstms have demon-strated to be well suited for sequence labeling problems, be-cause they consider both the past and future contexts of thewords. to enable the hidden states to capture both historicaland future context information, we train two lstms on theinput sequence. the forward lstm processes the sentencefrom 푣1 to 푣푛, while a backward lstm processes from 푣푛to푣1. consequently, we obtain two hidden states at each timestep 푡. ⃖⃗ℎis computed based on the previous hidden state ⃖⃗ℎ푡−1and the input at the current step 푣푡, while ⃖⃖ℎis computed based
+
+
+fischbach et al.: preprint submitted to elsevierpage vi of xviii
+
+
+automatic creation of acceptance tests by extracting conditionals from requirements
+
+
+on the future hidden state ⃖⃖ℎ푡+1 and the input at the currentstep 푣푡. we obtain the ﬁnal hidden state by concatenating theforward and backward context representations: ℎ푖= ⃖⃖⃗ℎ푖⊕⃖⃖⃖ℎ푖3) inference layer for models i - iii , we put the wordvectors into a single-layer feedforward neural network thatoutputs the ﬁnal predicted tag sequence for the input sentence.speciﬁcally, we use a softmax layer, which calculates theclass probabilities for each token: ̂푦= softmax(푊푣푖+ 푏),where ̂푦are the predicted label probabilities for the 푖-th token,푊is the weighted matrix, and 푏is the bias. we select theclass with the highest probability as the ﬁnal classiﬁcationresult. since we train two diﬀerent models for the annotationof the top and lower layer, we apply two diﬀerent softmaxfunctions. the model predicting the top layer considers ninelabels (see equation 1) while the lower layer is annotated withonly three labels (see equation 2). in essence, the ﬁrst modelaims to identify causes, eﬀects, and their combinatorics byassigning cause 1-3, eﬀect 1-3, and or/and labels. thesecond model focuses on the decomposition of causes andeﬀects by assigning variable and condition labels.
+
+
+softmax(푥푖) =푒푥푝(푥푖)
+
+
+∑9푗=1 푒푥푝(푥푗) (1)softmax(푥푖) =푒푥푝(푥푖)
+
+
+∑3푗=1 푒푥푝(푥푗) (2)
+
+
+in case of the models iv - vi , we use a sigmoid layer toperform multi-label classiﬁcation: ̂푦= sigmoid(푊푣푖+ 푏).we select the classes with a probability ≥0.5 as the ﬁnalclassiﬁcation result. in case of the models vii - ix , we con-sider the hidden states as the feature vectors. consequently,we deﬁne the sigmoid layer as: ̂푦= sigmoid(푊ℎ푖+ 푏)
+
+
+3.2.3. experimentsevaluation procedure we follow the idea of cross vali-dation and divide the data set (1,946 sentences) into a training(1,556), validation (194), and test (196) set. each class isequally represented across all three data sets, which helps toavoid bias in the prediction (see table 1). we opt for 10-foldcross-validation as a number of studies have shown that amodel that has been trained this way demonstrates low biasand variance [27]. we use precision, recall, and 퐹1 scorefor evaluating our models. since a single run of a k-foldcross-validation may result in a noisy estimate of model per-formance, we repeat the cross-validation procedure ﬁve timesand average the scores from all repetitions.our data set is strongly unbalanced. hence, we need tointerpret the evaluation metrics carefully. in particular, it isimportant to distinguish between macro and micro averagesof the metrics. macro-averaging involves the computationof the metrics per class and then averaging them. hence,each class is treated equally. micro-averaging combines thecontributions of all classes to calculate the mean. thus, ittakes label imbalance into account and favors majority classes.in our use case, all classes are equally important. predicatinga minority class like or is as crucial as predicting a majorityclass like cause 1, because it has a major impact on capturingthe combinatorics in a sentence. therefore, we choose themacro-퐹1 score as our main evaluation criterion.
+
+
+table 3performance of model v per individual label. macro-푭ퟏscoresof at least 90 % are marked in bold.
+
+
+label typeprecisionrecallmacro 푭ퟏ
+
+
+cause 192 %89 %91 %cause 283 %72 %77 %
+
+
+cause 376 %88 %82 %eﬀect 190 %89 %90 %
+
+
+eﬀect 283 %85 %84 %eﬀect 357 %76 %65 %
+
+
+not relevant91 %92 %91 %and94 %96 %95 %
+
+
+toplayer
+
+
+or85 %92 %88 %
+
+
+variable87 %92 %89 %
+
+
+condition93 %89 %91 %lowerlayernegation79 %90 %84 %
+
+
+hyperparameter tuning the performance of dl modelsdepends heavily on the network architecture, as well as the hy-perparameters used. therefore, we compare the performanceof our models using diﬀerent hyperparameter conﬁgurations.to determine the optimal hyperparameters for our models,we use the tree-structured parzen estimator algorithm [4].during the training process, we check the validation macro-퐹1 score periodically to keep the model’s checkpoint withthe best validation performance. we train our models for50 epochs on the training data with a patience of 5 epochs.table 2 shows the best hyperparameters for each model.
+
+
+results we ﬁrst compare the overall performance of ourtrained models across all classes. in addition, we study theimpact of the diﬀerent word embeddings and the bilstmlayer on the model performance. finally, we investigate theperformance of our best model to predict the individual labels.1) overall comparison the achieved macro-퐹1 scoresdemonstrate that all investigated models are able to extractconditional statements in ﬁne-grained form (see table 2).however, we observe signiﬁcant performance gaps betweenthe multi-class and multi-label models. on average, the multi-class models obtain a macro-퐹1 score of 76.34 % while themulti-label models yield an average macro-퐹1 score of 82 %.consequently, the multi-label models seem to be more suit-able for our use case. model v demonstrates the best perfor-mance with a macro-퐹1 score of 86 %, which represents aperformance gain of 8 % compared to the best multi-class
+
+
+model iii . we do not witness a major performance diﬀerenceamong most of the multi-label models. in fact, model ivshows a very similar behavior as model v and achieves amacro-퐹1 score of 85 %. model ix , however, represents anoutlier and produces the poorest macro-퐹1 score of all trainedmodels.2) impact of embeddings our experiments reveal thatthe choice of embeddings has an impact on the predictionperformance. the best performance of the multi-class mod-els is achieved by using the distilbert embeddings (seetable 2). in contrast, the multi-label models show the best
+
+
+fischbach et al.: preprint submitted to elsevierpage vii of xviii
+
+
+automatic creation of acceptance tests by extracting conditionals from requirements
+
+
+performance when building on roberta, regardless of theusage of a bilstm. interestingly, the selection of embed-dings has the greatest impact on the models that use a bilstmfor feature extraction. for example, a comparison of the per-formance of model viii and model ix reveals a performancegap of 12 % in macro-퐹1. in the case of the other models,the performance diﬀerences are considerably smaller: theperformance of model ii and model iii diﬀer by only 3 % inmacro-퐹1, while model v and model vi deviate by only 4 %in macro-퐹1.3) impact of bilstm layer in our setting, adding thebilstm layer did not lead to any performance improvement.in fact, the multi-label models demonstrate better perfor-mance without the bilstm layer. we hypothesize that ouramount of training instances is not adequate to suﬃcientlytrain the complex bilstm architecture and take advantageof its beneﬁts.4) label prediction table 3 indicates that model v iscapable of processing both conditional statements consistingof only one cause as well as conditionals with multiple causes.our model predicts cause 1 with very high precision andrecall resulting in a macro-퐹1 score of 91 %. for the predic-tion of cause 2 and cause 3, our model also performs wellby achieving macro-퐹1 scores of 77 % and 82 %, respectively.conditionals that contain only one eﬀect or two eﬀects canalso be processed well by our model. however, our experi-ments show that the model lacks certainty in the predictionof eﬀect 3 (macro-퐹1 score of only 65 %). we assume thatthis stems from its under-representation in our training set.the highest macro-퐹1 score is achieved by model v for theprediction of and. likewise, our model performs well in rec-ognizing tokens representing disjunctions (macro-퐹1 score of88 %). this indicates that our model is able to understand andextract the combinatorics of causes and eﬀects. in addition,the model performs very well in detecting tokens that arenot relevant for test case generation. our experiments provethat our model performs well in predicting both the top andlower layers. the obtained macro-퐹1 scores for variableand condition show that our model is able to decomposecauses and eﬀects into more granular fragments. in addition,
+
+
+model v reliably identiﬁes negations within the conditionalstatements.5) summary our experiments reveal that model v is bestsuited to extract conditionals in ﬁne grained form. speciﬁ-cally, the combination of roberta embeddings (embeddinglayer) and a sigmoid classiﬁer (inference layer) achieved thebest performance. we therefore use model v for the sec-ond step in the cira pipeline. a detailed insight into thefunctionality of model v is given in figure 4.
+
+
+running example in the second step, cira extracts theconditional statements from the requirements that were clas-siﬁed as causal in the ﬁrst step. for this purpose, req a,req b, req d, req e, req f, and req h are decomposedinto individual tokens using the bpe tokenizer and then con-verted into roberta embeddings. subsequently, each tokenembedding is fed into a sigmoid classiﬁer, which calculates
+
+
+figure 4: in-depth visualization of the second step in thecira pipeline: the ﬁne-grained extraction of conditionals innl requirements. processed req: if a is valid and b is false,then c is true.
+
+
+the probability for each of our twelve labels (cause 1, cause2, ... condition) that the token should be associated withthat class. we select the classes with a probability ≥0.5 asthe ﬁnal classiﬁcation result. figure 6 shows the extractedconditionals by cira from the themas requirements. therunning example demonstrates that cira is able to extractconditionals in ﬁne-grained form - independent of whetherthe requirements contain simple conditionals consisting of asingle cause and eﬀect (see req d and req f) or complexconditionals with multiple causes and eﬀects (see req b).further, cira is able to detect causes and eﬀects in diﬀerentpositions in a sentence, which can be illustrated by req e. inthis case, cira extracts the conditional statement correctlyeven though cause 1 and cause 2 do not immediately followeach other but instead are separated by eﬀect 1.
+
+
+3.3. creation of cause-eﬀect-graphin the ﬁnal step, we produce a ceg based on the extractedcauses and eﬀects. creating a ceg is not a trivial task, es-pecially for complex conditional statements consisting ofmultiple causes and eﬀects. we handle the following cases:
+
+
+1 single cause - single eﬀect in the simplest case, wecreate two nodes and draw an edge from the cause node tothe eﬀect node.
+
+
+2 multiple conjunctive causes - single eﬀect in thiscase, all causes must occur jointly for the eﬀect to occur. thus,we connect all cause nodes with the eﬀect node using theconnective ∧. we illustrate this case by using an exemplaryrequirement in figure 5.
+
+
+3 multiple disjunctive causes - single eﬀect in thiscase, the occurrence of one of the causes is suﬃcient for theeﬀect to occur. thus, we link all cause nodes with the eﬀectnode using the logical connective ∨.
+
+
+4 combination of conjunctive and disjunctive causes
+
+
+fischbach et al.: preprint submitted to elsevierpage viii of xviii
+
+
+automatic creation of acceptance tests by extracting conditionals from requirements
+
+
+figure 5: in-depth visualization of the third step in the cirapipeline: the creation of a cause-eﬀect-graph. processed req:if a is valid and b is false, then c is true.
+
+
+- single eﬀect conditionals are usually not parenthesized,which causes a certain degree of ambiguity when combiningconjunctions and disjunctions. to convert such conditionalsuniformly into a ceg, we follow the precedence rules ofpropositional logic. hence, we evaluate conjunctions withhigher precedence than disjunctions. to this end, we createan intermediate node for each set of conjunctive causes andconnect the causes with the intermediate node using the logi-cal connective ∧. subsequently, we connect the disjunctivecause(s) and the intermediate node(s) with the eﬀect using thelogical connective ∨. if no connective can be found betweentwo adjacent causes, the closest subsequent connective isused. for example, in an enumeration like “owners, tenants,and managers” only the connection between “tenants” and“managers” is explicit, whereas “owners” and “tenants” arealso implicitly connected by a conjunction.
+
+
+5 multiple conjunctive eﬀects we create a node foreach eﬀect and connect them to the causes according to therules described above. we do not allow eﬀects to be con-nected with a disjunction as this would denote an indetermin-istic system behavior.
+
+
+6 correction of incomplete nodes in the simplest case,a cause or eﬀect encompasses both a variable and condition inthe lower annotation level. we then ﬁll the created nodes withthe corresponding information. if either of the two labels ismissing, the information is extracted from the nearest referentinstead.
+
+
+running example in the third step, cira interprets theconditional statements extracted from req a, req b, reqd, req e, req f, and req h, and creates a correspond-ing ceg. subsequently, cira applies the bpst (cf. [37]and [38]) to derive the minimum number of required testcases from each ceg. figure 6 presents an overview of thecegs created by cira and the respective automatically gen-erated test speciﬁcations for each causal requirement includedin the themas requirements speciﬁcation (see figure 1).the ceg generated for req a corresponds to case 5
+
+
+described above. speciﬁcally, one cause is the trigger for two
+
+
+conjunctive eﬀects: “the heating/cooling process is activated”and “[the heating/cooling process] makes a heating/coolingrequest”. we can observe from the extracted conditional forreq a that the variable of eﬀect 2 is not explicitly deﬁned inthe requirement. we must therefore automatically completethe node of eﬀect 2 by adopting the variable from eﬀect1 (see case 6 ). req b speciﬁes complex system behaviorand contains two causes and two eﬀects. when creating acorresponding ceg, we need to consider both case 3 andcase 5 . thus, we link all cause nodes with both eﬀect nodesusing the logical connective ∨. similar to req a, we need toautomatically complete the variable of eﬀect 2 since it is notexplicitly deﬁned in req b (see case 6 ). req d contains anegated cause that is responsible for the occurrence of a singleeﬀect. in other words, not exceeding the limit is required fora temperature to be eligible for further processing. therefore,we are dealing with case 1 and have to negate the edgebetween cause and eﬀect. once again, the variable of aneﬀect node is not described in the requirement. in contrastto req a and req b we do not complement the node ofeﬀect 1 with the variable of a neighboring eﬀect but ratheradopt the variable of cause 1. the ceg generated for reqe corresponds to case 2 . hence, we connect both causenodes with the single eﬀect using the connective ∧. req fincludes a negated eﬀect that is triggered by a single cause.we thus create the ceg based on the rules described in case
+
+
+1 and negate the edge between cause and eﬀect. req hcontains one cause and two conjunctive eﬀects. we create acorresponding ceg by applying the rules described in case
+
+
+5 . we complement the node of eﬀect 2 by adopting thevariable of eﬀect 1.cira automatically created a total of 14 test cases for allcausal requirements included in our running example. thecreated acceptance tests for req d and req f are trivialand contain only two parameters that have to be checked.the other acceptance tests are of higher complexity as theycontain more input and output parameters: to fully test reqa, req e and req h, two test cases including three param-eters each have to be checked. the acceptance test createdfor req b involves three test cases with four parameters.
+
+
+answer to rq 1:
+
+
+we develop cira, an approach to identify and extractconditionals in nl and transfer them into a ceg, fromwhich the minimal set of required test cases can bederived automatically. for the detection, we use syn-tactically enriched bert embeddings combined with asoftmax classiﬁer [15]. our experiments show that asigmoid classiﬁer built on roberta embeddings (see
+
+
+model v ) is best suited to extract conditionals in ﬁne-grained form.
+
+
+4. case study: cira in practiceobjective to answer rq 2 and rq 3, we conduct a casestudy in an exploratory fashion. we aim to evaluate whether
+
+
+fischbach et al.: preprint submitted to elsevierpage ix of xviii
+
+
+automatic creation of acceptance tests by extracting conditionals from requirements
+
+
+cira could either replace or augment the existing manualapproach for creating test cases. for our study, we followthe guidelines by runeson and höst [41] for conducting casestudy research.
+
+
+4.1. case sampling and study objectswe apply purposive case sampling augmented with con-venience sampling [30]. speciﬁcally, we approached someof our industry contacts inquiring whether they are interestedin exploring the potential of cira. we were provided withdata from three companies operating in diﬀerent domains:allianz deutschland ag (insurance), ericsson (telecommuni-cation), and leopold kostal gmbh & co. kg (automotive).since the data is subject to non-disclosure agreements, weare unable to share the provided requirements and test cases.
+
+
+allianz data we analyze 219 acceptance criteria describ-ing the functionality of a business information system usedfor vehicle insurance. 127 of these acceptance criteria followa causal pattern and are therefore suitable for assessing cira.the remaining acceptance criteria specify the expected func-tionality based on process ﬂows (16 criteria) or in a staticway (76 criteria). we analyze the acceptance tests that weremanually created for each of the causal acceptance criteria.in total, 309 test cases were designed, which corresponds toabout 2.43 test cases per acceptance test.
+
+
+ericsson data we analyze 109 requirements derived fromﬁve business use cases (bucs), which are feature-levelunits of development at ericsson. the bucs originate fromdiﬀerent functional topics. 49 of these 109 requirementscontain conditionals while the remaining requirements areexpressed in a static way. in total, 65 test cases were manuallygenerated for the 49 causal requirements, which correspondsto about 1.33 test cases per acceptance test.
+
+
+kostal data we analyze a requirements speciﬁcation de-scribing a plug interlock function, which prevents a charg-ing plug from being disconnected during an active chargingprocess of an electric car. the speciﬁcation includes 135functional requirements. 79 of these functional requirementsare indeed causal while 56 requirements describe the func-tional behavior in a static way: “the signal signalname shallbe set to initvalue”. in our case study, we focus only on theacceptance tests that were manually created for the 79 causalrequirements. in total, 204 test cases were designed, whichcorresponds to about 2.58 test cases per acceptance test.
+
+
+4.2. study designapproach for rq 2 we want to study whether cira canachieve the status quo or even lead to an improvement of themanual test case derivation. to this end, we pass all studyobjects through our pipeline and compare the automaticallycreated acceptance tests with the manually created accep-tance tests. we assess two acceptance tests to be equal ifthey contain the same test cases. two test cases are equiva-lent if they consist of the same input and output parameterswith semantically identical variables and conditions. how-
+
+
+ever, we allow syntactical diﬀerences between the test cases(e.g., diﬀerent spelling of parameters), since they still test thesame functionality. by comparing the test cases created bycira with the manually created test cases, we found that itis sometimes not possible to establish a one-to-one relation-ship. partly, test designers aggregate related parameters, sothat a manual test case may cover multiple automated testcases (one-to-many relationship). therefore, two acceptancetests may also be equivalent even if the number of test casesdiﬀers. if we observe discrepancies between a manual ac-ceptance test and an automatic acceptance test, we involvetest designers from our case companies and examine the setdiﬀerences: 1) test cases created exclusively by the manualapproach (ma), and 2) test cases generated exclusively byour automated approach (aa). in both cases, we ask the testdesigners whether a certain test case is required to fully checkthe functionality described by the requirement to assess itsrelevance (rel). consequently, we investigate ﬁve diﬀerentcategories of test cases:
+
+
+•퐼푑푒푛푡푖푐푎푙: a test case that has been created manuallyas well as automatically by cira.
+
+
+•퐴퐴∧푟푒푙: a test case that has been missed in manualtest design and should be included in the acceptancetest.
+
+
+•퐴퐴∧¬푟푒푙: a superﬂuous test case that is correctly notincluded in the manually created acceptance test.
+
+
+•푀퐴∧푟푒푙: a test case that has been missed by ciraand should be included in the acceptance test.
+
+
+•푀퐴∧¬푟푒푙: a superﬂuous test case that is correctlynot included in the automatically created acceptancetest.
+
+
+approach for rq 3 to answer the third rq, we documentall errors and ambiguities of cira produced during the ap-proach for rq2 to discuss these with test designers of ourcase companies. to avoid interviewer bias, we do not involvethe test designers who created the respective acceptance tests.instead, we interview one or more colleagues who are also fa-miliar with the functionalities described in the requirements.to determine the reasons for deviating acceptance tests, weexamine the manually and automatically created test caseas well as the corresponding requirements jointly with thetest designers: a meeting between one of the two ﬁrst au-thors and each respective company is scheduled during whichall recorded deviations are presented, jointly discussed andtheir ﬁnal categorization according to the aforementionedﬁve categories is conﬁrmed. the ﬁrst author involves twotest designers at allianz and two test designers at kostal, thesecond author involves one test designer at ericsson.
+
+
+fischbach et al.: preprint submitted to elsevierpage x of xviii
+
+
+automatic creation of acceptance tests by extracting conditionals from requirements
+
+
+figure 6: overview of the conditionals extracted by cira in ﬁne grained form (left), the generated cause-eﬀect-graphs (center), and the derived acceptance tests (right) perrequirement deﬁned in the themas speciﬁcation.
+
+
+fischbach et al.: preprint submitted to elsevierpage xi of xviii
+
+
+automatic creation of acceptance tests by extracting conditionals from requirements
+
+
+0255075100125150175coverage in %
+
+
+allianz
+
+
+ericsson
+
+
+kostal
+
+
+sum
+
+
+identicalma  relma  ¬relaa  relaa  ¬rel
+
+
+76.1%22.3%15.2%3.5%
+
+
+1.6%
+
+
+63.1%36.9%15.4%56.9%
+
+
+68.1%27.5%
+
+
+4.4%
+
+
+11.3%3.9%
+
+
+71.8%25.8%
+
+
+2.4%
+
+
+13.8%9.7%
+
+
+figure 7: case study results. comparison of manually andautomatically created test cases.
+
+
+4.3. case analysiswe report on our ﬁndings structured by our research ques-tions (rq 2 and rq 3). figure 7 provides an overview ofmanually and automatically created test cases.
+
+
+rq 2: can cira create the same test cases as themanual approach?findings at allianz cira detected 90.55 % of the causalacceptance criteria. consequently, no test cases were createdfor the missed 12 causal criteria. for the correctly classiﬁedcriteria, cira generated 314 test cases. this corresponds toabout 2.73 test cases per acceptance test. we were able todraw a one-to-one relationship between 224 manually andautomatically created test cases. additionally, we observeda one-to-many relationship between eleven manually cre-ated test cases and 32 automatically created test cases. thus,76.05 % of the manually created test cases could be automat-ically generated. however, 74 test cases were not created bycira, of which 27 test cases are related to criteria that wereincorrectly identiﬁed as non-causal. according to the testdesigners, the remaining 47 ma test cases can be classiﬁedas follows: 42 are necessary to fully test the system function-ality while ﬁve test cases are superﬂuous. a comparison ofthe automatically created test cases with the manually cre-ated test cases highlights that 58 test cases have not yet beenconsidered in the manual test design. according to the testdesigner, these 58 aa test cases can be clustered as follows:47 are indeed relevant while eleven should not be includedin the acceptance test.
+
+
+findings at ericsson cira correctly classiﬁed 79.6 % ofthe causal requirements but failed to do so for ten causalrequirements. 91 test cases were automatically generatedbased on these identiﬁed requirements, which correspondsto about 2.33 test cases per acceptance test. 28 manual testcases were automatically created by cira in a one-to-one, 13more in a one-to-many relationship, resulting in an automaticgeneration of 41 of 65 test cases (63.1 %). however, 24test cases were not created by cira, of which seven testcases are related to criteria that were incorrectly identiﬁedas non-causal. according to the test designer, the remaining17 ma test cases are all necessary to fully test the system’sfunctionality. a comparison of the automatically created testcases with the manually created test cases highlights that 47test cases have not yet been considered in the manual test
+
+
+design. according to the test designer, these 47 aa test casescan be clustered as follows: ten are indeed relevant while 37should not be included in the acceptance test.
+
+
+findings at kostal cira correctly classiﬁed 72 require-ments as causal. however, it failed to identify the remainingseven causal requirements. hence, no test cases were ulti-mately created for these requirements. in the case of thecorrectly classiﬁed requirements, cira produced 194 testcases. this corresponds to about 2.69 test cases per accep-tance test. we found a one-to-one relationship between 122manually and automatically created test cases. in addition,we were able to draw a one-to-many relationship between17 manual test cases and 41 automatically created test cases.thus, 68.14 % of the manually created test cases could becreated automatically. nevertheless, 65 manually createdtest cases are not included in the set of automated test cases.16 of these exclusively manually created test cases refer tothe causal requirements that cira missed. in the case ofthe other 49 test cases, we ask test designers at kostal abouttheir relevance. in fact, 81.63 % of the exclusively manuallycreated test cases are deemed relevant. according to the testdesigners, nine test cases are superﬂuous and can be removedfrom the test set. examining the automatically created testcases, we observe that 31 test cases have not been consideredin the manual creation so far. interestingly, the test design-ers conﬁrmed that 74.19 % of these test cases were indeedmissed in the manual process. however, eight exclusivelyautomatically created test cases are not relevant and thus arecorrectly not included in the manual set.
+
+
+answer to rq 2:
+
+
+across all case companies, cira automatically created71.8 % of the 578 manually created test cases. cirawas further able to identify 136 test cases that weremissed in manual test design. in fact, 58.8 % of theseexclusively automatically generated test cases are in-deed relevant and should be included in the acceptancetest. we conclude that cira is able to automaticallycreate a signiﬁcant amount of relevant (known and new)test cases.
+
+
+rq 3: what are the reasons for deviating test cases?incomplete requirements we found that the main reasonfor test cases that could not be created automatically liesin the poor information available in the requirements. theinterviewed test designers conﬁrmed that domain knowledgeis often required to determine all relevant test cases. in thecase of kostal, 19 out of 79 requirements were incomplete.we found that cira could not generate 37 푀퐴∧푟푒푙testcases due to a lack of information in these requirements.at allianz, 16 out of 127 causal acceptance criteria lackinformation. our analysis shows that cira could not generate31 푀퐴∧푟푒푙test cases due to incomplete acceptance criteria.at ericsson, 17 푀퐴∧푟푒푙test cases could not be generateddue to underspeciﬁed or missing requirements.
+
+
+fischbach et al.: preprint submitted to elsevierpage xii of xviii
+
+
+automatic creation of acceptance tests by extracting conditionals from requirements
+
+
+incorrect combinatorics we noticed that some of the ex-clusively manually created test cases are superﬂuous - theycan be merged or are already covered by other test cases. theinterviews revealed that in these cases the combinatorics ofthe input and output parameters were interpreted incorrectly.according to the test designers, this stems mainly from thefact that test cases are often not created systematically, butrather based on past experience. unsystematic test designmay not only result in superﬂuous test cases but can also leadto necessary test cases being ignored. we observed that testdesigners tend to create positive cases and neglect negativecases. at kostal, 21 of the 23 퐴퐴∧푟푒푙test cases were actu-ally negative cases. only two positive cases were overlookedin the manual process. at allianz, 36 of the 47 퐴퐴∧푟푒푙testcases were actually negative cases. 11 positive cases weremissed by the test designers. in the case of ericsson, all ten
+
+
+퐴퐴∧푟푒푙test cases were overlooked negative test cases.
+
+
+infeasible test cases our analysis shows that some of theexclusively automatically created test cases can not occur inpractice. according to the test designers, this problem arisesmainly for negative test cases where certain scenarios aretested that can only occur theoretically. for example, someparameters can not take the value false at the same time, evenif this case should be checked from a combinatorial pointof view. in the case of kostal, we found that three of theeight 퐴퐴∧¬푟푒푙test cases can not be checked in practice. atallianz, ﬁve of the eleven 퐴퐴∧¬푟푒푙test cases can only occurtheoretically. at ericsson, 28 of 37 퐴퐴∧¬푟푒푙test cases fellinto this category.
+
+
+cira errors cira produced not only errors in the detectionof the conditionals, but also failed in some cases to extractand translate them into the ceg. at kostal, cira failedto generate 3 푀퐴∧푟푒푙test cases and instead created ﬁve
+
+
+퐴퐴∧¬푟푒푙test cases, because the generated ceg reﬂected awrong causal relation. in the case of allianz, cira failed tocreate eleven 푀퐴∧푟푒푙test cases and instead generated six
+
+
+퐴퐴∧¬푟푒푙test cases. in the case of ericsson, cira producednine 퐴퐴∧¬푟푒푙test cases due to incorrect interpretation ofthe causal relation. we found that these errors occurredmainly when the conditionals contained three or more eﬀects.this conﬁrms the ﬁndings from our experiment that cirastruggles in reliably identifying more than two eﬀects (seetable 3).
+
+
+answer to rq 3:
+
+
+in our setting, we observed four reasons for deviatingtest cases: incomplete requirements, incorrect combi-natorics, infeasible test cases, and cira errors. wefound that incomplete requirements are the main reasonfor test cases that could not be created automaticallyby cira.
+
+
+5. discussion
+
+
+this section discusses our results and summarizes boththe potentials as well as limitations of cira. based on ourdiscussion, we deduce key take-aways for practitioners.
+
+
+5.1. potentials, limitations, and key take-awaysour case study demonstrates that cira is able to supportpractitioners in deriving relevant test cases from conditionals.across all industry partners, cira automatically generatesmore than 70 % of the manually created test cases. however,cira does not achieve full automation of acceptance testcreation, mainly due to incomplete requirements. cira isheavily dependent on the information contained in the re-quirements and consequently unable to create test cases forwhich additional domain knowledge is required. thus, ourcase study conﬁrms the ﬁndings of mendez et al. [11] that in-completeness is still a major problem in practice and hindersthe automatic processing of requirements.
+
+
+1. key take-away:
+
+
+in fact, cira can help to generate acceptance testsautomatically. however, cira does not substitute atest designer since domain knowledge is often necessaryto identify all required test cases.
+
+
+according to the test designers, the main beneﬁt of cirais its ability to create test cases automatically based on heuris-tics. hence, it is independent of human bias and able toidentify test cases that may be missed in the manual process.we argue that cira should always be used as a supplementto the existing manual process to highlight all test cases thatshould be tested from a combinatorial point of view, in partic-ular negative test cases that were proportionally more oftenoverlooked than positive test cases. the automatically gen-erated set of test cases may then be manually extended bytest cases that require domain knowledge. at ericsson, weobserved that a large amount of automatically generated testcases were irrelevant since they can only occur theoretically.hence, when utilizing cira as a supplement to manual testdesign, test designers need to ﬁlter the automatically gener-ated test cases. we however argue that this does not impedethe usability of cira, as it is signiﬁcantly easier to manuallydiscard irrelevant test cases than to manually identify unde-tected, relevant test cases. we favor recall over precisionsince the performance gained due to the automatization out-weighs the manual eﬀort to ﬁlter the resulting set of proposedtest cases.
+
+
+2. key take-away:
+
+
+cira is particularly useful for automatically identifyingnegative test cases, which are often overlooked in themanual creation process. however, not all test casescreated by cira are necessarily relevant, requiringsubsequent manual review of the automatically createdtest speciﬁcations.
+
+
+fischbach et al.: preprint submitted to elsevierpage xiii of xviii
+
+
+automatic creation of acceptance tests by extracting conditionals from requirements
+
+
+previous approaches [18, 47] for extracting conditionalsanalyze the grammatical structure of a sentence by depen-dency parsing and extract the conditionals from the depen-dency tree. however, dependency trees usually contain incor-rect arcs for sentences that contain grammar mistakes causingthe approaches to extract wrong conditionals or even to failcompletely. since cira decomposes each sentence usingsubword tokenization and labels each token individually, it ismuch more robust against grammar errors and is also able toprocess out-of-vocabulary words. nevertheless, studies [32]reveal that language models such as bert show signiﬁcantperformance degradation with increasing amounts of noisydata. as a result, we hypothesize that cira’s robustnessagainst grammatical mistakes is limited to a few errors in asentence. we, therefore, propose to combine cira with re-quirements smell checkers [10] in the future to automaticallyverify the linguistic quality of requirements before passingthem into the cira pipeline.
+
+
+3. key take-away:
+
+
+fully automated acceptance test generation is diﬃcultto achieve because requirements often suﬀer from poorquality. re teams should therefore ﬁrst check the qual-ity of the requirements before processing them withcira.
+
+
+cira is limited to single sentence causality and is not ableto extract conditional statements that span multiple sentences.however, two-sentence causality may arise in practice (e.g.,indicated by “therefore”, “hence”), requiring us to extendcira in future work. according to the test designers, afurther challenge in the extraction of conditionals relates tothe handling of event chains (i.e., linked causal requirements,in which the eﬀect of a conditional represents a cause inanother conditional). in such cases, it is no longer suﬃcientto create a single ceg. rather, we must create several cegsand connect them to each other. currently, cira only allowsthe creation of acceptance tests for causal requirements. forfull automation of test case design, however, we also requireapproaches capable of processing static requirements andprocess ﬂows.
+
+
+4. key take-away:
+
+
+so far, the feasibility of cira is limited to single causalrequirements. as a consequence, we still need to de-velop methods for the automatic generation of test casesfrom static requirements and process ﬂows.
+
+
+our case study focuses on a quantitative comparison be-tween manually and automatically created test cases. how-ever, several other metrics are available to benchmark testcases [50]. for example, structural criteria like test under-standability investigate whether a test is easy to understandin terms of its internal and external descriptions. we plan toextend our study to obtain further insights into the quality ofthe test cases generated by cira.
+
+
+5.2. threats to validityas in every empirical study, our case study (see rq 2 andrq 3) is also subject to potential validity threats. this sectiondiscusses these threats and describes how we mitigated them.
+
+
+internal validity we acknowledge a possible threat to in-ternal validity due to selection bias of suitable requirementsartifacts. in all cases, the artifact selection was driven by theavailability of data. hence, requirements and test cases werenot actively sampled to improve cira’s performance.
+
+
+construct validity the comparison between the manuallyand automatically created test cases might be subject to re-searcher bias. to mitigate this risk, the ﬁrst and secondauthors individually mapped the test cases. subsequently,the mapping was cross-checked and discussed within theresearch group. a further threat to internal validity is thepotential bias of the interviewed test designers. to keep thisrisk as low as possible, we interviewed each test designerindependently and compared the reasons for the deviatingtest cases.
+
+
+external validity to achieve reasonable generalizability,we selected requirements and test cases from diﬀerent do-mains. however, the limited sample size does not provide thestatistical basis to generalize the results of our study beyondthe studied case companies. nevertheless, we hypothesizethat cira may also be valuable for other companies con-sidering that conditionals are widely used in requirements.validation of this claim requires further empirical investiga-tion.
+
+
+6. related work
+
+
+since the early 1980s, nlp techniques have been appliedto re artifacts to support a variety of use cases: e.g., require-ments classiﬁcation [24], topic modeling [22], and qualitychecks [10]. a comprehensive overview of existing nlp4retools is provided by zhao et al. [57]. in this paper, we usenlp methods to extract conditionals from requirements inﬁne-grained form and to derive test cases automatically. thissection reviews existing approaches for both use cases andrelates them to our work.
+
+
+approaches to test case derivation there is a rich bodyof work on automatically deriving test cases from semi-formaland formal requirements [1]. wang et al. [52] and zhang etal. [56] describe how to automatically generate executablesystem test cases from restricted use case models. sarmientoet al. [44] explain how semi-formal requirements can be trans-lated into petri-net models, which can be used as input fortest scenario generation. carvalho et al. [5] present theirtool nat2test푆퐶푅and show how to automatically gen-erate test cases from requirements written in sysreq-cnl.however, only a few approaches allow to automatically cre-ate test cases from informal requirements. santiago júniorand vijaykumar [43] present solimva capable of translat-ing nl requirements into state charts used for the eventual
+
+
+fischbach et al.: preprint submitted to elsevierpage xiv of xviii
+
+
+automatic creation of acceptance tests by extracting conditionals from requirements
+
+
+test case generation. verma and beg [51] describe a similarapproach for translating informal requirements into knowl-edge representation graphs. dwarakanath and sengupta [9]present litmus, a tool that applies a syntactic parser calledlink grammar in order to analyze the structure of an nl re-quirement and create test cases accordingly. goﬃet al. [21]demonstrate how to create test cases for exceptional behaviorsfrom javadoc comments. the mentioned approaches havethree major drawbacks: (1) they require manual work suchas the creation of a dictionary [43] deﬁning the applicationdomain in which the approach will be used, (2) they do notensure that only the minimal number of required test casesis created, and (3) they lack tool-support and are thus notimmediately usable for practitioners. in previous work [18],we address this research gap and present specmate that au-tomatically converts acceptance criteria into test cases byextracting cause-eﬀect-relations based on dependency pars-ing. however, we found that specmate is not robust againstgrammatical errors and fails to process words that are not yetpart of its training vocabulary. in this paper, we thereforeshift from using dependency parsing to solving the extractionof conditionals as a sequence labeling problem.
+
+
+approaches to extract conditionals several approachesfor conditional extraction have been developed [55]: rule-based approaches [29, 39] extract conditionals by applyinglinguistic patterns such as [cause] and because of this, [ef-fect]. their performance relies on hand-coded patterns, whichrequire extensive manual work. other approaches use ml.chang and choi [6] use a naive bayes classiﬁer to predict theprobability of a causal relation given a certain cue phrase (e.g.,causative verb). rink et al. [40] propose a support vector ma-chines classiﬁer trained on contextual features. more recentapproaches [7, 33] apply dl to automatically extract usefulfeatures from raw text. however, the existing approaches arenot capable of extracting conditionals in ﬁne-grained form,rendering them unsuitable for our use case. speciﬁcally, someapproaches extract only causal pairs or detect causal relationson the phrase level, but do not consider the combinatoricsbetween causes and eﬀects. in addition, they do not allowto split causes and eﬀects into more granular text fragments(e.g., variable and condition). we addressed this research gapin previous work [17] and trained a recursive neural tensornetwork (rntn) to recover the composition of conditionalsas binary trees. however, we found that the rntn strugglesto understand the semantics of out-of-vocabulary words pos-ing a threat to its applicability in practice. contrary, cira isable to handle unseen data due to subword tokenization.
+
+
+7. conclusion
+
+
+acceptance testing evaluates the conformance betweenactual and expected system behavior. however, the creationof acceptance tests is laborious and requires manual workdue to missing tool support. in this paper, we focus on condi-tional statements in functional requirements and demonstratehow nlp can be used to automatically generate the mini-mum set of required test cases. speciﬁcally, we present our
+
+
+tool-supported approach cira capable of (1) detecting con-ditional statements, (2) extracting them in ﬁne-grained form,and (3) translating them into a ceg, from which we derivethe minimal number of required test cases. we evaluate ciraby conducting a case study with three companies. our studydemonstrates that cira is able to automatically create 71.8 %of the 578 manually created test cases. additionally, ciraidentiﬁed 80 relevant test cases that were missed in manualtest design. future research will both explore the integrationof cira in an industrial context, but also explore how thecira approach can support further use cases. by providingalternative representations of causal requirements – both inthe form of a ceg and a test suite – potential improvementsto the understandability of requirements can be investigated.for example, cira could be used to create an immediatefeedback loop to conﬁrm that these alternative representa-tions reﬂect the original intention of the possibly ambiguousnatural language requirement.
+
+
+data availability a live demo of cira can be accessed attrained models are publicly available at doi 10.5281/zenodo.5550387.
+
+
+credit authorship contribution statement
+
+
+jannik fischbach: conceptualization, methodology,software, validation, investigation, data curation, writ-ing - original draft, writing - review & editing, visual-ization, supervision. julian frattini: methodology, soft-ware, validation, investigation, data curation, writing - re-view & editing, visualization. andreas vogelsang: con-ceptualization, supervision, project administration. danielmendez: methodology, writing - review & editing, super-vision. michael unterkalmsteiner: methodology, writing- review & editing, supervision. andreas wehrle: data cu-ration, software. pablo restrepo henao: software. parisayouseﬁ: resources, investigation. tedi juricic: resources,investigation. jeannette radduenz: resources, investiga-tion. carsten wiecher: resources, investigation.
+
+
+declaration of competing interest
+
+
+the authors declare that they have no known competingﬁnancial interests or personal relationships that could haveappeared to inﬂuence the work reported in this paper.
+
+
+acknowledgments
+
+
+we would like to acknowledge that this work was sup-proﬁle project at blekinge institute of technology. we thankall collaborating companies for providing access to their dataand test designers who volunteered their time to participatein this research.
+
+
+fischbach et al.: preprint submitted to elsevierpage xv of xviii
+
+
+automatic creation of acceptance tests by extracting conditionals from requirements
+

@@ -1,0 +1,330 @@
+
+empirical software engineering: from discipline to interdiscipline
+
+
+daniel m´endez fern´andeza,∗, jan-hendrik passothb
+
+
+asoftware and systems engineering, technical university of munich, germanybmunich center for technology in society, technical university of munich, germany
+
+
+abstract
+
+
+empirical software engineering has received much attention in recent years and coined the shift froma more design-science-driven engineering discipline to an insight-oriented, and theory-centric one.yet,we still face many challenges, among which some increase the need for interdisciplinary research. this isespecially true for the investigation of social, cultural and human-centric aspects of software engineering.although we can already observe an increased recognition of the need for more interdisciplinary research in(empirical) software engineering, such research conﬁgurations come with challenges barely discussed froma scientiﬁc point of view. in this position paper, we critically reﬂect upon the epistemological setting ofempirical software engineering and elaborate its conﬁguration as an interdiscipline. in particular, we (1)elaborate a pragmatic view on empirical research for software engineering reﬂecting a cyclic process forknowledge creation, (2) motivate a path towards symmetrical interdisciplinary research, and (3) adopt ﬁverules of thumb from other interdisciplinary collaborations in our ﬁeld before concluding with new emergingchallenges. this supports to elevate empirical software engineering from a developing discipline movingtowards a paradigmatic stage of normal science to one that conﬁgures interdisciplinary teams and researchmethods symmetrically.
+
+
+keywords:empirical software engineering, interdisciplinary research, symmetrical collaboration,science & technology studies
+
+
+1. introduction
+
+
+starting as a byproduct in a hardware-dominatedworld, software has become the main driver for en-tire industries and a transformative power in manyﬁelds of contemporary society. software engineer-ing practice and research are likewise continuouslyevolving to cope with the emerging challenges im-posed by its ubiquitous nature: practical, institu-tional, and cultural contexts of software are dy-namic and in constant change, and as they inﬂu-ence the shape and direction of software develop-ment, boundaries between systems and applicationdomains become fuzzy.software engineering to-day typically takes place in settings where we needto address, inter alia, application domain-speciﬁcquestions (e.g.on domain-speciﬁc terminologies,concepts, and procedures), ethical questions (e.g.
+
+
+∗corresponding authoremail address: daniel.mendez@tum.de (daniel m´endezfern´andez)
+
+
+moral assessments in context of safety-critical sit-uations), juridical questions (e.g. on data privacyor regulations of algorithms and their environmentrespectively), psychological questions (e.g. on im-provements of team communications or working en-vironments), or social and political questions (e.g.on societal impacts of software-driven technologies,the concerns of heterogenous actors, or accountabil-ity issues). human actors – whether customers, endusers, or developers – and their interests, needs,and values, but also their cognitive capabilities,fears, experiences, and expertise render softwaredevelopment endeavours as something individualand unique rather than something standardised andstrictly formalised. in the end, software is devel-oped by human beings for human beings and whatworks in one organisational context might be com-pletely alien to the culture and needs of the next.
+
+
+this poses new challenges for conﬁgurations ofactors, skills, and methods in research and practice,as well as on the education of future software engi-
+
+
+preprint submitted to journal of systems and softwarenovember 20, 2018
+
+
+arxiv:1805.08302v3  [cs.se]  17 nov 2018
+
+
+neers (and end users). although we can already seemore and more calls for more interdisciplinary re-search and the integration of non-technical skills inhigher education (see, e.g., [1, 2]), the calls and pro-posals – especially those in software engineering –concentrate largely on educational aspects, e.g. onhow to reduce the gap between isolated disciplinaryconditions in academia and multidisciplinary real-life conditions in practice (see, e.g., [3, 4]).in-terdisciplinary research, however, comes with chal-lenges barely discussed from a scientiﬁc, epistemo-logical point of view in the software engineeringcommunity. fields like health care and medicine,biology and neuroscience, or education have explic-itly tackled such issues in the last two decades, inparts driven by the need to reﬂect on conditions ofsuccess of nsf and eu funding initiatives to in-tegrate “ethical, legal and social issues / aspects”(elsi/elsa). here, scholars discussed and deﬁned“multidisciplinary”, “interdisciplinary” and “trans-disciplinary” research to classify the diﬀerent chal-lenges and opportunities that arise from such con-ﬁgurations [5, 6, 7]:
+
+
+• multidisciplinary projects involve researchersfrom various disciplines addressing a commonproblem in parallel (or sequentially) from theirdisciplinary-speciﬁc bases integrated by assem-bling results in a common book or workshop.
+
+
+• interdisciplinary projects build on a collabo-ration of researchers working jointly, but eachstill from their disciplinary-speciﬁc basis, toaddress a common problem
+
+
+• transdisciplinary projects involve researchers,practitioners and actors from governance agen-cies, ngos or companies trying to work outa shared conceptual framework instrumental-ising concepts, approaches, and theories fromtheir parent disciplines.being involved in inter- and transdisciplinaryprojects in stem cell research, neuroscience or urbanplanning, scholars have argued that even interdis-ciplinary collaborations involving only researchersfrom two or three disciplines create challenges veryclose to those formerly discussed only in the case oftransdisciplinary projects: without investing timeand eﬀort (and money) into the search for com-mon problems, a provisional but common language,and institutional backup, interdisciplinary projectstend to turn into multidisciplinary ones. this holdstrue already for “close” interdisciplinary collabo-rations between ﬁelds like industrial automationand software engineering. more pressing, but also
+
+
+more rewarding research challenges, as we will ar-gue, emerge when trying to integrate research onthe social, cultural and human-centric practices andcontexts of software engineering. dealing with is-sues that arose from the proliferation of tools andframeworks and the complexity growth in softwareengineering projects, software engineering has al-ready turned itself into an evidence-driven empir-ical discipline, commonly known as empirical soft-ware engineering.however, the emerging majorchallenges need far more symmetrical forms of in-quiry and design going beyond not only the prefer-ence for rationalism and formal reasoning still dom-inant in large parts of software engineering research,but also beyond the forms of empiricism already inplace. they give rise to the need of symmetrical in-terdisciplinary research conﬁgurations at eye levelto come to valid, but still manageable solutions tothe problem of balancing diﬀerent epistemic andpractical requirements and standards.placing symmetrical interdisciplinary conﬁgura-tions at the heart of empirical software engineer-ing research – especially when involving social, cul-tural, and human-centric facets – has eﬀects on theway that software engineering as a ﬁeld can ad-dress questions central to deﬁning it as a scientiﬁcdiscipline, such as what qualiﬁes as (good) scien-tiﬁc practice?, what counts as theory, as method-ology, and as evidence? or how are scientiﬁc con-troversies opened up, embraced, and closed?likein other inter- and transdisciplinary conﬁguration,many conceptual problems and methodological is-sues in our ﬁeld cannot be organised in terms ofone single and dominant epistemological frameworkif we do not want to close down necessary andfruitful exchanges.because of the high diversityof socio-economic and technical factors that per-vade software engineering environments, it is – notonly from a practical and pragmatic perspective,but also from an epistemological point of view –not suﬃcient to just use methods and concepts fromvarious disciplines in our research, but we need toeﬀectively integrate methods and research compe-tences from the various disciplines.contribution. in this position paper, we crit-ically reﬂect upon the broader epistemological set-ting of empirical software engineering and elaborateits conﬁguration as an “interdiscipline”.we willargue for stopping to treat empirical software engi-neering as a developing discipline moving towards aparadigmatic stage of normal science, but as a con-ﬁguration of interdisciplinary teams and research
+
+
+2
+
+
+methods - an interdiscipline. to this end, we willmake the following contributions: we (1) elaboratea pragmatic view on empirical research for softwareengineering that reﬂects a cyclic process for knowl-edge creation, (2) motivate a path towards sym-metrical interdisciplinary research, and (3) adoptﬁve rules of thumb from other interdisciplinary col-laborations.thekeyaddresseesofthismanuscriptaretwofold: (1) scholars who are new to empirical soft-ware engineering (or parts of it) in general and in-terdisciplinary research in particular, and (2) schol-ars already aware of the importance of empirical re-search methods and interdisciplinary research, andinterested in a broader epistemological view.outline.we will ﬁrst brieﬂy elaborate onthe epistemological, methodological, and pragmaticbackground of research methods already used inempirical software engineering and highlight conse-quences for theory building, methods development,and application as well as for interdisciplinary col-laborations (sect. 2). we use those insights to elab-orate a pragmatic view on empirical research forsoftware engineering that reﬂects a cyclic processfor knowledge creation in sect. 3. in sect. 4, we willdiscuss currently pressing challenges in empiricalsoftware engineering, show how they are groundedin basic controversies, and conclude by outlining aroadmap to turn empirical software engineering intoan interdiscipline in sect. 5.
+
+
+2. scientiﬁc movements and practices– in a nutshell
+
+
+in response to the emerging challenges in soft-ware engineering, we have already seen a signiﬁcantturn towards empirical approaches. various contri-butions have baptised the shift from a more designscience-oriented discipline driven by the applicationof scientiﬁc concepts and methods to practical endsto a more insight-oriented and theory-centric dis-cipline as empirical software engineering [8, 9, 10].this turn towards empiricism in software engineer-ing research and practice can be understood merelyas a surplus to formal design orientation and asan avenue to turn the conceptual, theoretical, andmathematical work in computer science into moreeasily adoptable tools for practical applications insoftware engineering projects “out of the lab, andinto the wild”. it can, however, also be understoodas an epistemic intervention to turn software engi-
+
+
+neering into a ﬁeld dealing with empirical evidenceand methodologically gained insights.the consolidation of an empirical software engi-neering community is not happening in a straight-forward and united manner, but as the estab-lishment of various, sometimes competing, sub-communities: while initial debates focussed mainlyon issues of “rationalism versus empiricism”, we cantoday still observe some separate camps under thecommon banner of empiricism, focussing on issueslike “qualitative studies vs. quantitative studies” or“students vs. professionals” (as subjects) [11]. inthis manuscript, we will not even try to address thesocial mechanisms within the research communitiesto the extent they deserve, but brieﬂy reﬂect andreason about the epistemological setting to moti-vate the challenges in our still emerging ﬁeld. aninsightful introduction into the evolution of empiri-cal software engineering can be taken from the per-sonal perspective provided by victor basili, one ofthe pioneers in the ﬁeld [10].in the following, we brieﬂy highlight importantconcepts and major historically grown, and oftencompeting, views on science as a form of knowl-edge and practice. we do not intend to discuss ap-proaches to the philosophy of science in detail, butonly to the extent necessary for shedding light ontothe ongoing debates and struggles in empirical soft-ware engineering in its attempt(s) to understandand position itself as a scientiﬁc endeavour. an ex-cellent introduction into the philosophy of scienceand its evolution can be taken from [12].
+
+
+2.1. the ghosts of rationalism and empiricismdepending on the weapons of choice regardingepistemology – the theory of knowledge – and on-tology – the study of what exists – there are variousattempts to deﬁne what the ultimate goal of scienceis and how it is best achieved.in the 17th cen-tury, when science as an institution was still young,members of the newly founded royal society weretrying to deﬁne and defend a set of practices bothdiﬀerent from seeking truth in religious texts andthe alchemistic attempt to turn copper or iron intogold or quicksilver. rationalists (or intellectualists)like descartes or hobbes argued that because thereis no serious link between a “res extensa” – a realmoutside – and the “res cogitans” of our minds [13],the only way to valid knowledge is deducing univer-sal truths from basic principles using reasoning bygeometry and mathematics. empiricists like humeor boyle argued on the contrary that certain, if not
+
+
+3
+
+
+all scientiﬁc problems cannot be deduced from ba-sic principles – simply because we cannot prove theaxioms and reasoning tends to favour logical spec-ulation – and that we need to look for empiricalproofs [14]. this turned the search for knowledgeinto a never ending process of induction, i.e. the at-tempt to infer general rules from particular cases.the struggle about the right way to institutionalisemodern science was ﬁerce: hobbes and boyle, forexample, attacked each other not only intellectu-ally, but also personally and politically [15].rationalism and empiricism both have very dis-tinct consequences in respect to what counts as“theory” or “truth” and although no serious ap-proach in the philosophy of science today would re-peat the old arguments for or against either of thetwo, the controversy is revived again from time totime in the form of implicit assumptions of whatcounts as “good”, “sound”, or “rigorous” science.some of the arguments for or against empirical ev-idence in many engineering ﬁelds today still followthese old lines of demarcation (see also sect. 4).
+
+
+2.2. the rise and fall of the unity of scienceat the beginning of the past century, an infor-mal group in vienna that started to discuss suchdiverse works as the writings of duhem, lenin, andfrege served as a breeding ground to some of themost pressing problems in the philosophy of scienceof that time. the so-called vienna circle tried torework some of the basic premises of empiricism tolink them with modern logic and therefore, even-tually, overcome the diﬀerences between inductiveand deductive strategies. some of its suggestionsinclude the use of so-called “protocol sentences” tostandardise the translation of sensory data into rea-sonable input for logical calculus [16], i.e. the useof veriﬁcation as a principle to distinguish the sci-entiﬁc use of language from its misleading naturallanguage sibling or the ultimate search for a “unityof science”[17, 18] where any concept, theory, andstatement of any potential disciplinary backgroundis both empirically grounded and formulated in acommon framework. one might say those sugges-tions were all not successful, but they failed infact so big that their ghosts still haunt us today.the idea of a uniﬁed science, for example a sciencewith one language (mathematics, logic, and veriﬁedstatements about observations in those rare caseswhere mathematics and logic are simply too com-plicated), still hinders fruitful exchange in interdis-ciplinary projects – both in cases of close disciplines
+
+
+such as theoretical and experimental physics and incases of projects that try to connect knowledge fromdomains further apart.two of the biggest critical publications refutingsome of the main arguments of logical positivism– karl popper’s “logik der forschung” (the logicof scientiﬁc discovery) [19] and thomas kuhn’s“the structure of scientiﬁc revolutions” [20] –were published in the vienna circle’s monographseries. popper famously argued against veriﬁcationand for falsiﬁcation of hypotheses1 as a hallmark ofthe validity of a truth claim: no matter how hardwe try, we can never verify a statement by induc-tive reasoning, but we can falsify it when a singleobservation does not ﬁt our general rule (cf. nullhypothesis testing). kuhn, on the other hand, ar-gued that it is only true for some time periods thatscience works the way that popper said: problem-and puzzle-solving, conservatively sticking to the-ories, methods and statements that have not yetbeen falsiﬁed.but even in the “hardest” of allsciences (physics, chemistry or astronomy), historyis full of revolutionary overturns, where paradigmsshift, believes radically change, and where what-ever was understood as true had to be evaluatedonce more in the light of a new paradigm. accord-ing to both, any scientiﬁc statement is only trueas long as it ﬁts the current paradigm – a sociallyaccepted system of believes, preferred procedures,and unquestioned doctrines in a given ﬁeld – andas long as it is not critically refuted by an empiricalobservation that, again, is only valid in the light ofa current paradigm.
+
+
+2.3. collaborations and science warsprogress in science can only move forwardthrough empirical observations as there are no otheroptions for falsiﬁcation. however, both the valid-ity of theory and observation are bound to the so-cial and cultural mechanisms of approval and ac-ceptance of a paradigm by respected peers thatare in many cases more related to judgements of“novelty”, “relevance”, or even “aesthetics” (con-sidering, e.g., mathematical work). this might notcause problems in coherent peer groups working ina “normal science” mode under a shared paradigm,but it can cause massive controversies in times of
+
+
+1when building and evaluating theories, we cannot testthe theories themselves, but their consequences via hypothe-ses which are statements proposing a suitable explanation ofsome empirical phenomena [21].
+
+
+4
+
+
+paradigm shifts in one ﬁeld and even more chaoswhen paradigms from diﬀerent ﬁelds collide.during the 1970’s and 1980’s, such collisionscaused a massive outrage on both sides whenanthropologists, historians, linguists, semioticiansand sociologists started conceptually and empiri-cally to treat the practices, organisational mech-anisms, and cultural patterns in scientiﬁc labo-ratories “symmetrically” [22, 23]: they observed,analysed, and interpreted the day-to-day work ofscience (experimenting, testing, writing, arguing,creating careers) like they treated any other ﬁeldof practice in modern societies (families, politicalcaused what became known as the “science wars”,in which each side accused the other of ignorance,stubbornness, and even hostility [26, 27].it is reasonable to say that the struggles were un-productive and unnecessary, to say the least, anda closer look at their historical background showsthat they were mainly fueled by material and sta-tus interests that instrumentalised epistemological,methodological, and ontological arguments.andalthough the last three decades have seen variousproductive and insightful collaborations betweenscholars from very diﬀerent backgrounds – anthro-pologists and biologists working together on life sci-ence issues, historians and geologists working to-gether on understanding the eﬀects of human inter-vention into ecosystems, sociologists and computerscientists working together on human-computer-interaction problems or critical algorithm design –some resemblances of the science wars can still beobserved from time to time when issues of authority(or funding) are involved.
+
+
+2.4. theory, research, and evaluation as practicethe most fruitful collaborations between schol-ars from various backgrounds build on a very sim-ple, but particularly hard to accept insight: sci-ence – the construction, testing, and evaluation oftheories, models, arguments, experiments, and ev-idence – is, if taken seriously, not an abstract anduniversal search for truth. it is a set of practices,institutions, and processes structured by changingrules, norms, and paradigms. in fact, there is noth-ing absolute about truth and there is no such thingas a universal way of scientiﬁc practice [28]. whatcounts as a valid claim, a rigid approach, or a jus-tiﬁed belief is relative to what counts as the sharedstandards and interpretations of validity, rigidity, orjustiﬁcation in the respective ﬁelds and subﬁelds of
+
+
+scientiﬁc practice. concepts and empirical meth-ods have very speciﬁc purposes – exploratory orexplanatory, oriented towards depth or overviews,towards theory-generating or theory-testing – eachrelying on diﬀerent forms of empirical data – quali-tative or quantitative, procedural or categorical, ob-servational or transactional. such an understand-ing of science as a practice (and culture) [29] hasbeen corroborated both in the ﬁeld of “science& technology studies”, an interdisciplinary ﬁeldconnecting engineers and philosophers, mathemati-cians and historians, computer scientists and sociol-ogists to empirically study how science and the de-velopment of technologies is actually done in labs,oﬃces, or at conferences [30] and by arguments de-veloped by pragmatist philosophers of science.following the early works of john dewey [31] andcharles s. peirce [32] from the early 20th century,pragmatist thinkers and empirical researchers haveargued that even if it is not possible to developand justify a gold standard for what counts as pureand well deﬁned scientiﬁc practice, one can workwith something like a least common denominator.dewey famously argued that any search for knowl-edge is following a common and ever repeating pro-cess of taking something for granted, experiencingan unsettlement of that belief, search for diﬀerenthypotheses, and experimenting in order to test hy-potheses before re-settling a new belief. while clas-sic rationalists argued for deduction as a basic prin-ciple of science – an application of a general rule toa particular case by inferring a speciﬁc result – andclassic empiricists argued for induction – the infer-ence of a general rule from a collection of particularcases –, pragmatists argue for a constant back andforth. as long as there is no particular reason fordoubt, the search for knowledge works by deduc-tively applying explicitly or implicitly known rules.but if that application of taken for granted beliefsfails, the search for knowledge switches to an induc-tive mode until the situation is settled again anddeduction is again possible. peirce formalised thatpragmatic insight in his works on logic and infer-ence and proposed that there is a more hypothet-ical form of inference linking both – an inferencethat he later called abduction – an educated, buthypothetical guess of the best explanation.summarising the resulting three principles:• induction describes the inference of a generalrule from a particular case: if one selects asample of beans from a bag (case) and all se-lected beans are white (result), then all beans
+
+
+5
+
+
+from this bag must be white (rule).
+
+
+• deduction describes the application of a gen-eral rule to a particular case: if all beans froma bag are white (rule) and a particular beanis from the bag (case) then this bean will bewhite (result).
+
+
+• abduction describes the (creative) synthesis ofa case from a general rule and a particular re-sult: if all beans from a bag are white (rule)and there is a handful of white beans available(result), then this handful is (probably) fromthe bag.if taken as a practice moving back and forththrough the application of these three principles,we can connect them in the form of an “empiricallife cycle” introduced next.
+
+
+3. pragmatic cycle for empirical research
+
+
+methodologies that are built upon pragmatist ar-guments have already shown that at least qualita-tive research has to be understood as an iterativeprocess of generating empirically grounded theoriesfrom a repetition of induction, abduction, and de-duction until a useful theoretical maturity has beenreached.we now extend that idea in our attempt to cap-ture an empirical life cycle that visualises knowl-edge creation in general as an iterative theorybuilding and theory evaluation process as shownin fig. 1. this process captures and combines thediﬀerent concepts and principles introduced in theprevious section yielding a pragmatic life cycle forempirical research such as in software engineering.
+
+
+figure 1: pragmatic cycle for empirical research.
+
+
+our empirical life cycle recognises that there isnothing absolute about truth and that there no suchthing as one universal way of scientiﬁc practice, butthat there are many diﬀerent and valid (and com-plementary) ways of undertaking research. thereis no single, empirically inquired point of view thatwill ever provide us with an entire picture wheninterpreting relevant phenomena.considering, for example, techniques to elicitsoftware requirements, eﬀectively testing the sensi-tivity of these techniques to practical contexts andbuilding robust theories would require a combina-tion of:
+
+
+1. (inductive) observational studies to explorepractical real-life contexts and relevant param-eters (such as constraints and objectives),
+
+
+2. building concepts in relation to existing the-ories that consider both system-theoreticalmodelling aspects and socio-economic aspectsalike (such as expectations on how speciﬁctechniques would yield improvements),
+
+
+3. (deductive) quasi-controlled experiments tocorroborate concepts by testing the expectedimprovements, and
+
+
+4. scaling up to practice via in-vivo studies andreplications to increase the robustness of theemerging theory.this example alone shows that even if consider-ing theory building as the pragmatic iterative cycleof constant theory building and evaluation it is, it isstill not a straight-forward one. in fact, there existmultiple paths through our lifecycle by applying dif-ferent methods in diﬀerent orders (e.g. from quan-titative to qualitative investigations or vice-versa).every empirical method, may it be a survey, a casestudy, or a controlled experiment, has its place inthis lifecycle and the appropriateness of the methodchosen and the underlying data type (qualitativeor quantitative) depends on the research questionasked. theory building and evaluation is an iter-ative practice where theories are revealed, set intocontext to existing evidence and concepts, and con-tinuously “tested” to reﬁne them and increase theirrobustness and validity.
+
+
+4. challenges in empirical software engi-neering
+
+
+although the importance of empirical approachesin software engineering research and practice is al-ready acknowledged, our still young ﬁeld faces vari-ous challenges when it comes to provide robust sci-
+
+
+6
+
+
+entiﬁc theories. the interdisciplinary nature, theuncertainties of decisions on requirements or crite-ria for evaluating quality or usefulness, the depen-dencies of domains and the heterogenous stakehold-ers involved, and the growing complexity of soft-ware development processes open up very diﬀerentavenues for empirical investigations ranging frommining software repositories to interviewing stake-holders or conducting in-depth case studies. thecloseness of software engineering phenomena to thejudgment by the individuals involved therein makesit inherently diﬃcult to build general principles andtheories; central questions are often heavily depen-dent on a socio-economic context where the bound-aries are diﬃcult to capture because of the inter-related human, economic, technological, and alsocultural factors involved.as an analogy for highlighting the diﬃculties andlimitations in theory building, a comparison withother evidence-based disciplines, such as medical re-search, can be drawn [8]. there, large sample sizesand constant replications are generally accepted forproper (statistical) conclusions while this is exactlywhat is so diﬃcult in software engineering research.in software engineering, it is not only diﬃcult todraw large sample sizes2, but also to reason abouttheir representativeness. we have, in fact, very lim-ited knowledge about true populations and theircharacteristics, especially when it comes to usedmethods, technologies, and development processesand their stakeholders: how many requirements en-gineers do generally exist? how many in germany?what are their responsibilities and their levels ofexpertise?a further problem, ﬁnally, consists ofthat knowledge acquisition in software engineeringis yet not always in tune with the pace of changes inour cases under investigation (e.g., industrial prac-tices) [33].all this often feeds critical voices who reject thevalue of empirical research at all postulating, for ex-ample, that “our inability to carry out truly scien-tiﬁc experiments [...] will yield anecdotes of limitedvalue” [34]. however, while we agree that outsidethe ﬂavour of pure mathematics – which is oftenpreferred by those opposing empiricism as the ba-sis for theory building – there is no certainty atall, it is empiricism that allows us to advance asa community to better reason about software en-gineering practices under realistic conditions. soft-
+
+
+2at least when considering larger units of analysis suchas “software projects”.
+
+
+ware engineering always takes place under very spe-ciﬁc and complex conditions that involve contexts,processes, and practices that, even if in some casesat least approximately expressible in mathematicalterms, as in the case of economic indicators, cannotbe integrated in a uniﬁed model. if the ultimatelyfailed search for a unity of science (sect. 2.2) hastaught us anything, then it is the epistemologicaland pragmatic insight that a standardised language– of mathematics, of modern logic, of “truly” com-parable protocols – cannot be the gold standardfor knowledge production.while we agree thatthe narrative and interpretative accounts createdby empirical research have always only limited va-lidity until a next iteration of our empirical life cyclecomes up with refutations or speciﬁcations, they arethe only way to bring software engineering researchcloser to the context and conditions for which soft-ware is developed and in which software is used.
+
+
+4.1. the state of empirical evidencealthough recent developments have improvedour empirical understanding of software engineer-ing practices and processes, the current state of ev-idence is still weak when compared to other moremature ﬁelds. a large extent of our everyday prac-tice in software engineering is still governed more byconventional wisdom than it is governed by empir-ical evidence. this is especially true for the social,cultural, and political aspects of software engineer-ing, such as early stages of development, renderingthe inference of robust theories inherently problem-atic.even though we can observe an increase of em-pirical studies in the various ﬁelds of software en-gineering research, many studies still do provide ei-ther circumstantial evidence by focusing on isolatedcontexts without taking into account the relationto existing evidence or – worse – they neglect thecontext completely. the eﬀects are portrayed byjacobson’s observation in context of the sematinitiative [35]: software engineering is gravely ham-pered by (1) the prevalence of fads more typical offashion industry than of an engineering discipline;(2) the lack of a sound, widely accepted theoreticalbasis; (3) the huge number of methods and methodvariants, with diﬀerences little understood and ar-tiﬁcially magniﬁed; (4) the lack of credible exper-imental evaluation and validation; and ﬁnally (5)the split between industry practice and academicresearch. the consequence of the current situationare best described by wohlin et al.saying that
+
+
+7
+
+
+“there exists no generally accepted theory in soft-conjectures exist, but yet no generally accepted the-ory” [36].as a matter of fact, a large extent ofthe theories (or theory patterns) we have for soft-ware engineering are still transferred from theoriesin other disciplines (e.g.organisational psychol-ogy), sometimes by adopting them, but mostly bytransferring them verbatim [37].software engineering itself however is often stillgoverned by folklore turned into facts [38].sim-ilarly as in other ﬁelds before, many theories spe-ciﬁc to software engineering emerged from the earlytimes of the discipline where empiricism had nosigniﬁcance at all and where claims by authoritieswhere often treated as facts.one prominent ex-ample for such a “fact” is grounded in the well-known essay by edsger dijkstra go to statementconsidered harmful [39] from 1968, largely basedon reasoning by argument and triggering a publicexchange between diﬀerent scholars via publishednotes (all considering the previous note as “harm-ful” itself).although this exchange fostered animportant and fruitful debate in the communityat that time, it still remained largely a public ex-change between scholars based on reasoning by ar-gument. this did not change until 2015, nearly 50years lager, when nagappan et al. [40] published theresults of their large-scale study analysing c codefrom github repositories and suggesting that theuse of goto statements in practice does not appearto be harmful.despite the positive developments towards em-pirical research, software engineering claims are stilloften judged based on the number, faith, and vocalenergy of their protagonists, and “facts” are oftentaken for granted based on dogmatic statements byauthorities rather than based on empirical evidence.exemplary symptoms of the resulting folklore areillustrated in tab. 1.folklore and its grounding in common sense andconventional wisdom is, if understood from a prag-matist point of view, a form of taken-for-grantedknowledge that is routinely used to frame knownand unknown situations alike. but unlike the pro-visional beliefs that govern the empirical life cycle ofscientiﬁc practice, folklore is backed up by so manydiﬀerent social and political mechanisms (dogma,
+
+
+3we consider a law to be a purely descriptive, analyti-cal theory about phenomena without explanations for thephenomena.
+
+
+inﬂuence of its protagonists, or the search for fame,to name just a few), that it is not doubted whenan empirical observation does not ﬁt. even worse:it is this dismissal of unﬁtting empirical evidencein accounts that use folklore that as an eﬀect fuelsthe troubling belief that empirical evidence in gen-eral is not able to cast doubt on what is already“commonly known”.
+
+
+4.2. from conventional wisdom to evidenceif software engineering research wants to over-come this grounding in conventional wisdom anduniversal theories, then a change towards evidence-based, theory-centric and context-sensitive soft-ware engineering research is necessary [45].thishas been more and more understood and acceptedover the last years and the growing empirical soft-ware engineering research community is fostering,in fact, great progress in methodological and sci-entiﬁc rigour [46], also by establishing standard-ised approaches and method guidelines to empiricalsoftware engineering (ranging from systematic map-ping studies [47] to case study research [48]). yet,the path towards empiricism and robust theories insoftware engineering remains stoney as there is stilla lot of uncertainty and confusion about the choiceof appropriate conﬁgurations of research methodsand about how to align new results with existingevidence – a hallmark of any insight-oriented scien-tiﬁc practice.the trouble with building a reliable body ofknowledge in any form of scientiﬁc practice is thatthere is no simple solution to it.there exists avariety of causes rooted in the lack of...
+
+
+• ...(methodological) awareness in less empiri-cally oriented software engineering sub-ﬁelds
+
+
+• ...appreciation of qualitative studies even inempirically oriented software engineering sub-ﬁelds
+
+
+• ...empirical data disclosure (from study proto-cols to the actually analysed data itself)
+
+
+• ...transparency and replicability often emerg-ing from the lack of (open) data
+
+
+• ...appreciating replication studies and the re-porting of null results
+
+
+• ...recognising context-speciﬁc conditions andthe relation to existing evidence
+
+
+• ...adoption of empirical research methods fromother disciplines to software engineering con-textsalthough there is an increased awareness amongscholars from various software engineering research
+
+
+8
+
+
+table 1: exemplary folklore in software engineering
+
+
+example: goal-oriented re. one example for the low state of empirical evidence can be seen in the ﬁeld of goal-orientedrequirements engineering (gore) with a dominance of gore solution proposals not reﬂected in industrial everydaypractice. horkoﬀet al. [41] analysed in a systematic literature review, including 966 papers published by 2016, 246 papersin detail. out of these, 131 indicate to include a case study. while at ﬁrst sight maybe positively surprising, a subsequentstudy by mavin et al. [42] revealed that only 20 of these 131 case studies were actually conducted in practical in-vivosettings. in contrast, a large-scale investigation on the status quo and problems in re indicates to that roughly 5% ofindustrial environments rely on this re technique at all (see also www.napire.org). while this does certainly not implythat the practical relevance of the contributions is weak, it implies that we have little knowledge about their relevance andimpact, let alone their practical conditions and eﬀects. we could argue that many of these contributions provide solutionsto problems not yet well understood.example: chaos report. it is diﬃcult to mayor in software engineering without learning about the chaos report ﬁguresby the standish group providing ﬁgures on reasons for software failures and, in particular, cost overruns. while those ﬁguresare still frequently cited, there exist many reports already (e.g. [43, 44]) providing suﬃcient evidence-based arguments todoubt the validity of the chaos report and raise questions on major methodological ﬂaws in how the ﬁgures were revealed.as the standish group never disclosed the data, a more accurate analysis (or replication) is, however not possible; yet itremains frequently used by researchers and (e.g. policy) advisors to support their own claims and hopes.causes and eﬀects. both examples could not be more diﬀerent and yet they share similar causes and eﬀects. as anempirical (cross-cutting) community, we are still far from a common ground with standards that hold among the varioussoftware engineering (sub-)communities and cultures. this fuels research projects isolated from practical contexts, thus,yielding conventional wisdom rather than evidence and creating, in turn, more folklore which, when being cited just oftenenough, at some point becomes accepted as universally true in the communities (remaining then diﬃcult to eradicate).
+
+
+(sub-)communities, only addressing as many ofthese issues as possible can yield a fruitful pathtowards robust software engineering theories andconcepts.otherwise, the theories we reveal re-main context-independent and universal and, thus,not applicable to speciﬁc context situations as theywould require folklore, conventional wisdom or edu-cated guessing to make them work in speciﬁc cases.in those cases they are useful, they still study toooften observable, quantiﬁable eﬀects only (“what ishappening?”) rather than providing explanationsfor core mechanisms in the phenomena (“why isit happening?”), as pointed out by jørgensen inhis keynote to the 12th international symposiumon empirical software engineering and measure-ment [49].
+
+
+as already shown in sect. 3, it is simply impos-sible to build robust theories with single-methodstudies alone or by relying on a speciﬁc data typeonly. theory building and evaluation is a contin-uous iterative process relying on a variety of dif-ferent empirical methods and each individual in-quiry needs careful consideration of context factorsand the relation to existing evidence. otherwise,all we reveal are universal theories that are builtupon apodictic arguments when what we need ﬁrstis a solid basis with context-speciﬁc theories andexplanations having survived multiple attempts for
+
+
+refutation.the path towards interdisciplinary research issurely not the sole measure of success to solve allthe issues discussed above. the research commu-nity needs to further work on shared and acceptedpractices for empirical studies, for replication stud-ies, and for data sharing, and it needs to furtherdisseminate those practices into other software en-gineering communities.as mentioned earlier, weare already making great progress in this directionreﬂected, for example, in the increase of method-ological guidelines to empirical research (see, e.g.,[48, 47, 50, 51, 52, 53], just to name a few selectedones) or in open science policies and initiatives torecognise shared data sets becoming more and moreprominent in software engineering venues (see, e.g.,the open science policies established in recent em-pirical software engineering conferences and jour-nals).it is, however, still far from reasonable to be-lieve that we can yield robust software engineer-ing theories by relying on one paradigmatic disci-plinary framework only and by forcing every otherapproach into its rigid form.
+
+
+4.3. from discipline to interdiscipline
+
+
+when it comes to integrating diﬀerent forms ofknowledge and evidence from other disciplines and
+
+
+9
+
+
+subﬁelds, a strategy under the umbrella of one soleepistemological framework has shown to be not verypromising. this is already true in the case of closeinterdisciplinary cooperations (integration of, forexample, diﬀerent ﬁelds of engineering), but is evenless viable when it comes to making use of evidence,concepts, and methods used in ﬁelds and disciplinesthat focus on more human-centric issues. such anintegration of multiple disciplines is necessary andhas already been recognised as the only eﬀectiveway to reach a more realistic understanding of hu-man involvement in software engineering endeav-ours [54]. this human involvement should not betreated as a simple facet that plays a minor role, be-cause it eventually characterises largely how wholeareas of our discipline (and with them the use of ap-proaches, methods, and tools) manifest themselvesin practice; for instance:
+
+
+• early stages of development being sensitive tothe particularities of domains, organisationalcontexts, and the various stakeholders involved(each with own hopes, desires, and beliefs),
+
+
+• software process models that speciﬁcally aimat team cultures and values (e.g., agile devel-opment),
+
+
+• software project organisation and managementtopics including planning and eﬀort estima-tion,
+
+
+• security engineering, in particular those as-pects having a human-centric dimension (e.g.social engineering), or
+
+
+• more generally, human-centred engineering (asinherent to, e.g., hci).building concepts and theories that eﬀectivelyinclude the social, cultural or, in general, humanaspects (cognitive capabilities, belief systems, val-ues) cannot be addressed by pure rational reason-ing – human practices, institutions, and values arepurely rational in very rare cases only, if at all [55].however, it can also not be eﬀectively addressedwithin one sole epistemological framework, but onlyvia a combination of methods and approaches (andskills). the use of single empirical methods is notsuﬃcient anymore, but we need to triangulate bymeans of using various methods in combination.
+
+
+5. turning empirical software engineeringinto an interdiscipline
+
+
+addressing the emerging,especially human-centric challenges in software engineering research
+
+
+needs both recognising and addressing all chal-lenges described above as they aﬀect the eﬀectiv-ity of all forms of scientiﬁc practice, as well asestablishing new forms of empirical inquiry thatgo beyond the capacities of a sole epistemologicalframework.the latter can only be reached withmore symmetrical interdisciplinary research conﬁg-urations at eye level to come to valid, but still man-ageable solutions to the problem of balancing dif-ferent epistemic standards.in the following, weelaborate on these forms of collaborations beforeconcluding with some new challenges they bring.
+
+
+5.1. establishment of symmetrical collaborationswhen transferring approaches, concepts, andmethods from other disciplines, we not only adopttheir application, but also the underlying theories.for instance, when employing qualitative methodslike interviews or observations to explore practicalcontexts and social and cultural mechanisms in-volved therein, we do not only rely on a speciﬁctechnique, but also on existing theories from so-cial science, organisational studies, or psychology.for software engineering practice and research alikethere barely exists such thing as greenﬁeld engineer-ing anymore. existing theories from related ﬁeldsand disciplines need to be considered and carefullyset in relation to each other. in our requirementsengineering example above, if taking it to an ex-treme, even system-theoretical modeling conceptsand social theories need to be carefully set in rela-tion to each other as both include structural mech-anisms each with similar or even overlapping con-cepts (e.g. regarding the notion of “interaction” or“trust”). it is naive at best and ignorant at worstto believe that a balanced combination of exper-tise can be achieved by research team conﬁgura-tions stemming from one discipline alone. however,the history of science, as discussed in sect. 2.2, hasalso shown that aiming high and for a uniﬁcationof concepts, methods, and approaches for inter- andtransdisciplinary research is also not very eﬀective.the most pragmatic way towards a balancedcombination of methods and domain expertise, weargue, is to set up ﬂexible interdisciplinary col-laborations and to shift from treating empiricalsoftware engineering as one singular discipline butas an “interdiscipline” where social, cultural, andhuman-centric issues shape the conﬁgurations ofquestions, research methods, and teams in the sameway as mathematical models and procedural guide-lines do already. we already argued that scholars
+
+
+10
+
+
+from science & technology studies – an interdis-cipline integrating actors, concepts, and methodsfrom social sciences, humanities, natural sciences,and engineering to study the various relations be-tween science, technology, and society – have de-veloped forms of in-depth collaborations mainly inthe life sciences, health, or biology that go beyondjust adding “ethical, legal and social aspects” toprojects and consortiums in these ﬁelds.we believe that these forms of collaboration canalso be very helpful for empirical software engineer-ing research and practice especially when tacklingso-called “wicked problems” [56, 57, 58]. as lieglet al. argue in the case of integrating ethics – oneﬁeld of wicked problems – into the design of emer-gency response systems, such an approach is also intune with the outlines of the current e.u. “horizon2020” funding framework, but needs experimentaldesigns for collaborations, stakeholder integrationas well as time and eﬀort to treat the ethical andsocial implications as an ”object of collective andongoing negotiation, which needs to be done in situand hand in hand with end-users and other stake-holders” [59]. balmer et al. proposed ﬁve generalrules of thumb for such “post-elsi” interdisciplinarycollaborations in general (and not only focussing onethics, but on all kind of human-centric issues) [60],and which we can thus adopt to interdisciplinaryempirical software engineering:
+
+
+1. collaborative experimentation:the conﬁgu-ration of methods and approaches in speciﬁcprojects need to be worked out experimentallyand collaboratively. instead of just plugging insome methods and concepts from one disciplinelast minute in an already designed project ofthe other discipline, the setup of research ques-tions and respective methods should be workedout together and it is advisable to carefullyplan in advance for ﬁnding a common, provi-sional language.
+
+
+2. taking risks: interdisciplinary collaborationsinvolve risks, both professionally and person-ally.major publication outlets and fundingprograms are and will be in the near futurestill organised on disciplinary terms leaving in-terdisciplinary journals, conferences, and fund-ing schemes still the exception.getting col-laborative works published is diﬃcult, to saythe least, given the diﬀerences in paradigmaticstandards or even in writing styles.this istrue also personally in terms of career develop-ment. but we have ourselves experienced it to
+
+
+be worth the risks: engaging in collaborationsearly takes time, but it makes engaging in in-novative and interesting projects later easier.
+
+
+3. collaborative reﬂexivity: reﬂexivity – the ap-plication of a scientiﬁc standard and the empir-ical life cycle repeatedly to ones own practice,concepts, and methods – is the only way tomove away from intellectual stubbornness andsticking with folklore and conventional wis-dom. but it can turn into a dangerous ally,leading to inﬁnite navel-gazing [61]. collabo-rative reﬂexivity – confronting each other bothwith insights and concepts as well as prejudicesand biases – is challenging, but a very eﬀectiveway to move forward.
+
+
+4. opening-up discussions of unshared goals: ininterdisciplinary collaborations, there are var-ious individual and disciplinary expectationsabout the goals of the collaboration. such col-laborations will lead to more responsible inno-vation or better economic and organisationalﬁt.those expectations, however, are quiteoften not completely shared personally andjudged against the standards of the respectivehome disciplines.integrating time slots andspaces for open debate about unshared goalshelps in this regard.
+
+
+5. neighbourliness: there is no need for all par-ticipants in interdisciplinary collaborations toshare all standards and practices and to strivefor becoming alike. treating the other disci-plines as neighbours and as equals means en-gaging in boundary work [62, 63] and in search-ing for common objects, artefacts, and con-cepts that can also be used in individual disci-plinary ways.
+
+
+5.2. the rise of new challenges
+
+
+to turn empirical software engineering into aninterdiscipline, we argued so far that we need toengage in coalitions with experts from other disci-plines, such as social science or psychology, insteadof treating each other as mere byproducts. this af-fects the design of multi-method programmes andthe explicit consideration of theories and conceptsfrom other disciplines instead of building variousisolated new ones. more precisely, given our currentstate of evidence, we believe that it is important toconcentrate on context-speciﬁc concepts and expla-nations as a basis for more useful and viable theoriesin the future that embed and link existing theories
+
+
+11
+
+
+from various disciplines instead of just transferringthem verbatim from the other disciplines.establishing this new perspective on empiricalsoftware engineering as an interdiscipline poses,however, new challenges such as:
+
+
+1. when can and should existing theories fromother disciplines be transferred (verbatim) tothe software engineering body of knowledge,when should they be eﬀectively integrated inparts only, and when do they need to beadapted?
+
+
+2. where and how do established method stan-dards need to be modiﬁed to enable the ef-fective design of manageable-sized short-termstudies as well as long-term interdisciplinaryresearch collaborations?
+
+
+3. how can we eﬀectively disseminate alreadyexiting method standards across the exist-ing software engineering research communities(e.g. dealing with human-centric dimensions)so that the empirical software engineering com-munity does not only preach to the choir?
+
+
+4. how can and should future software engineer-ing researchers be educated?despite all well-meant attempts so far to imple-ment inter- and trans-disciplinary training and eval-uation schemes, these are still largely oriented to-wards speciﬁc disciplinary standards [64].giventhe high diversity of disciplinary professional back-grounds in empirical software engineering, it is of-ten diﬃcult if not impossible to ﬁnd a commonground on the principles and terms established sofar. at the same time, the young age of our ﬁeldalso creates a unique chance to enhance the het-erogenous approaches in empirical software engi-neering we have in place ranging from in-depth casestudies to large scale statistical approaches in thevarious software application domains.
+
+
+6. conclusion
+
+
+software engineering research is more and moreconfronted with challenging questions that increasethe need for interdisciplinary research.this es-pecially holds when considering the human-centricfacets in our ﬁeld. although we can already observean increase in the call for more interdisciplinaryresearch and studies investigating interdisciplinarytopics, interdisciplinary research comes with addi-tional challenges barely discussed from a scientiﬁc(epistemological) point of view.
+
+
+in this position statement, we have reﬂected uponthe evolution and epistemological setting of empir-ical software engineering in the attempt to positionitself as a scientiﬁc practice. based on the lessonsfrom the history of science, being full of contro-versial and in parts competing movements, and re-ﬂecting social mechanisms of in parts competing re-search communities, we have:
+
+
+1. elaborated a pragmatic view on empirical re-search for software engineering that recognisesnot a gold standard for scientiﬁc practice, butthat reﬂects its cyclic nature in an attempt toundertaking research relying on various formsof methods, data sources, and theories fromvarious disciplines.
+
+
+2. motivated a pragmatic path towards a bal-anced combination of methods and domainexpertise via ﬂexible, symmetrical, interdisci-plinary research.
+
+
+3. adopted ﬁve rules of thumb from other, moreexperienced ﬁelds of deep interdisciplinary col-laborations and pointed to new challenges.
+
+
+we argued, in particular, for the need for sym-metrical coalitions between empirical software en-gineering researchers and researchers from otherevidence-based disciplines to shift from treating em-pirical software engineering as one singular develop-ing discipline moving towards a paradigmatic stageof normal science, but as an interdiscipline.insuch an interdiscipline, social, cultural, and human-centric issues shape the symmetrical conﬁgurationsof questions, research methods, and teams, whichpose, however, new challenges on research practiceand higher education.while we cannot proposequick solutions to these challenges, we postulate theneed for a richer discussion of these in our researchcommunity and beyond. we know that such col-laborations and approaches take time, eﬀort (andfunding) and that every attempt to open up spacesfor symmetrical collaborations also results in trade-oﬀs in terms of disciplinary standards. but we be-lieve that we will otherwise not be able to cope withtoday’s complex social, cultural and human-centricquestions in software engineering in the long run.our hope is that with this manuscript, we there-fore not only oppose the stubborn voices who arestill generally critical towards empiricism, but thatwe add to the voices of those defending the valuesof empirical research in software engineering in gen-eral and interdisciplinary research in particular.
+
+
+12
+
+
+acknowledgements
+
+
+we would like to thank magne jørgensen forstimulating and fruitful discussions on this impor-tant topic and daniel graziotin as well as theanonymous reviewers of the journal of systems andsoftware for their constructive and profound feed-back on earlier versions of this manuscript.
+

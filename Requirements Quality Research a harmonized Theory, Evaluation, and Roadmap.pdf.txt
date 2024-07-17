@@ -1,0 +1,579 @@
+
+springer nature 2021 latex template
+
+
+requirements quality research: aharmonized theory, evaluation, androadmap∗
+
+
+julian frattini1*, lloyd montgomery2, jannikfischbach3,1, daniel mendez1,1, davide fucci1 and michaelunterkalmsteiner1
+
+
+1* blekinge institute of technology, valhallv¨agen 1, karlskrona,37140, sweden .2 university of hamburg, hamburg, 20146, germany .3 netlight consulting gmbh, sternstr. 5, munich, 80538,germany .5 fortiss gmbh, guerickestraße 25, munich, 80805, germany .
+
+
+*corresponding author(s). e-mail(s): julian.frattini@bth.se;contributing authors: lloyd.montgomery@uni-hamburg.de;
+
+
+
+
+
+
+
+
+abstract
+
+
+high-quality requirements minimize the risk of propagating defects tolater stages of the software development life cycle. achieving a suffi-cient level of quality is a major goal of requirements engineering. thisrequires a clear definition and understanding of requirements quality.though recent publications make an effort at disentangling the com-plex concept of quality, the requirements quality research communitylacks identity and clear structure which guides advances and puts newfindings into an holistic perspective. in this research commentary we con-tribute (1) a harmonized requirements quality theory organizing its coreconcepts, (2) an evaluation of the current state of requirements qualityresearch, and (3) a research roadmap to guide advancements in the field.
+
+
+∗the version of record of this article, first published in requirements engi-neering, is available online at publisher’s website: http://dx.doi.org/10.1007/s00766-023-00405-y
+
+
+1
+
+
+arxiv:2309.10355v1  [cs.se]  19 sep 2023
+
+
+springer nature 2021 latex template
+
+
+2a harmonized requirements quality theory
+
+
+we show that requirements quality research focuses on normative rulesand mostly fails to connect requirements quality to its impact on sub-sequent software development activities, impeding the relevance of theresearch. adherence to the proposed requirements quality theory andfollowing the outlined roadmap will be a step towards amending this gap.
+
+
+keywords: requirements quality, theory, survey
+
+
+1 introduction
+
+
+the empirical evidence of the impact of requirements engineering (re) on thesoftware development life cycle has shown that the quality of requirementsartifacts and processes influences project success and budget adherence [1–3].moreover, the cost of defects introduced during the re phase of a project isreported to scale exponentially the longer they remain undetected [4]. thisnecessitates quality assurance techniques capable of detecting re defects assoon and as reliably as possible.requirements quality research is dedicated to supporting the softwareengineering process with the means to evaluate and improve the quality ofrequirements, mainly focusing on requirements artifacts [5]. however, recentsystematic investigations of requirements quality literature revealed a lack ofrigor and relevance of these contributions [6, 7]. moreover, the impact of thequality factors proposed in literature (i.e., requirements writing rules) remainslargely unexplored in practice [7], hindering its adoption in industry [8–11].existing quality theories and frameworks are too abstract to guide require-ments quality research at an operational level [12, 13]. these theories oftenonly divide quality into sub-categories without any means of applicability. inthis paper, we argue for the need for a theoretical and operationalizable foun-dation of requirements quality research. we review the closely related softwarequality research and draw parallels to requirements quality research to con-solidate a harmonized requirements quality theory. additionally, we surveyrequirements quality literature with respect to the theory to reveal currentshortcomings. accordingly, we make the following contributions:
+
+
+1. a harmonized requirements quality theory serving as a theoretical founda-tion for requirements quality research.
+
+
+2. a survey of requirements quality research revealing if and how conceptsof the theory are reported in the state of the art, but also emphasizingshortcomings.
+
+
+3. a consequent research roadmap aimed at mitigating these shortcomings.
+
+
+the rest of this manuscript is organized as follows: section 2 illustratesthe evolution of software quality research and draws the parallel to require-ments quality research. in section 3, we derive a harmonized requirementsquality theory from this comparison. this theory is used to evaluate the state
+
+
+springer nature 2021 latex template
+
+
+a harmonized requirements quality theory3
+
+
+of requirements quality research in section 4 and reveal current shortcomings.the consequent research roadmap to mitigate these shortcomings is presentedin section 5 before concluding in section 6.
+
+
+2 software quality research
+
+
+software quality research follows a similar premise as requirements qualityresearch. it is necessary to control the quality of software artifacts (e.g., sourcecode) as it impacts the overall quality of the development life cycle and the finalproduct. this premise aligns with the aim of requirements quality research.to show commonalities and differences between these two research fields, wereview the evolution of software quality research in section 2.1 and draw aparallel to requirements quality research in section 2.2. we reach conclusionsabout the necessary direction the latter needs to take.
+
+
+2.1 evolution of software quality research
+
+
+software quality research revolves around assessing the quality of softwareartifacts [14]. in the following, we describe the evolution of the field accordingto broy et al. [14] and deissenboeck et al. [15].
+
+
+guidelines and metrics-based approaches
+
+
+guidelines are the simplest approach for controlling the quality of softwareartifacts. for example, the java coding conventions [16] prescribe—amongother suggestions—how to name and structure java files. however, guidelinescommonly fail to significantly impact software quality, likely because theylack the motivation for their relevance [17]. for example, the aforementionedsuggestions are justified because “[c]ode conventions improve the readabilityof the software” [16] without any empirical evidence of that claim. further-more, guideline conformance is difficult to assess and hence seldom done inpractice [15]. the latter shortcoming was addressed by introducing metrics-based approaches where metrics were devised to measure relevant attributesof software artifacts. among others, lines of code [18] and cyclomatic com-plexity [19] were used to evaluate software quality automatically. nevertheless,most metrics continue to lack justification of their relevance [14, 20–22].
+
+
+quality models
+
+
+to overcome the relevance shortcoming, quality models aggregated metrics intohierarchical trees of criteria [23, 24]. the leaf nodes are specific enough to beoperationalized as an evaluation metric, while the aggregation into higher-levelquality characteristics provided the justification for their relevance. for exam-ple, low-level concepts such as structuredness and conciseness of code werejustified by their aggregation to understandability and maintainability, whichwere widely accepted as relevant software quality characteristics [24]. however,hierarchical models suffered from unclear decomposition rules and constrained
+
+
+springer nature 2021 latex template
+
+
+4a harmonized requirements quality theory
+
+
+levels of granularity, which were either too abstract to be operationalized ortoo detailed, disconnecting the applicable metrics from their rationale [14, 15].
+
+
+quality meta-models
+
+
+the popularity of quality models necessitated a structure for the proposedmodels [25]. meta-models like the goal question metric approach by basili etal. [26] and the factor-strategy quality meta model by marinescu and ratiu [27]provide this overarching structure. deissenboeck et al. [28] contribute the dapclassification for quality models, which categorizes the aim of a quality modelto be to define (d), assess (a), or predict (p). the publication further relatesquality meta-models to quality models as the “model of the constructs andrules needed to build specific quality models.” [28].
+
+
+activity-based quality models
+
+
+in addition to the shortcomings that existing quality models continued tosuffer, the elements populating these models were found to be heteroge-neous [15]—i.e., properties of a system were mixed with properties of activitiesin which the system is used. for example, the maintainability branch in thesoftware quality characteristics tree by boehm et al. [29] contains both systemproperties like the structuredness of a software artifact, but also attributesof activities in which these artifacts are used, like modifiability. the latterdescribes the activity of modifying an artifact rather than a system property,despite the adjective’s nominalization suggesting otherwise.so far, no clear rule for distinguishing a system from an activity propertyhas been proposed. we derived two heuristics from the implicit argumenta-tion of previous publications [15]. first, if a property involves an additionalagent (e.g., testability involves a test engineer, modifiability involves a mod-ifier, although not necessarily human), then it represents how the system isused—i.e., an activity property. the second heuristic comes in the form of asyntactical criterion:
+
+
+• nominalized adjectives (e.g., structured-ness, concise-ness) tend to besystem properties
+
+
+• nominalized verbs (e.g., modify-ability, access-ability, augment-ability) tendto be activity properties
+
+
+interpreting activity properties as system properties ignores an underlyingimpact relationship. for example, interpreting modifiability as the systemproperty of how receptive it is to change omits that actual system properties(e.g., whether the system is digital or analog or who has writing access rights)impact the ability of a stakeholder to modify the system, which is an activityproperty.to address the issue of heterogeneous properties, deissenboeck et al. intro-duced activity-based quality models [14, 15], which separate system propertiesfrom activity properties and form two distinct, orthogonal dimensions. the
+
+
+springer nature 2021 latex template
+
+
+a harmonized requirements quality theory5
+
+
+model expresses quality as the impact of system properties on activity proper-ties. figure 1 visualizes a simplified version of the quality model [15], showinghow code clones impact the modification sub-activity and expressive identifiersimpact the concept-location sub-activity.
+
+
+fig. 1: excerpt from the activity-based quality model for maintainability
+
+
+the activity-based quality model was successfully applied to usability [30],security [31], and service-oriented architecture [32] before wagner et al. dis-tilled a comprehensive activity-based meta-model in the scope of the quamocoproject [33, 34]. in parallel, the original use case of the activity-basedquality model, which focused on maintainability, received extensive tool sup-port [35, 36] contributing evidence to the operationalization of quality modelsin practice [37].activity-based quality models solve limitations of previous quality modelsat the cost of increased complexity, which manifests in additional challengesto operationalize and communicate the notion of quality [38]. however, thecomplexity of these models is necessary to tackle the faceted concept of qual-ity [38, 39]. research continuously tackles the inability of activity-based qualitymodels to assess artifact quality and distinguish quality levels [40]. for exam-ple, weights empirically derived from historical data replaced expert-basedpropositions [41], and bayesian networks were utilized to model the impactrelationships [42].
+
+
+2.2 mapping to requirements quality research
+
+
+in the following, we draw a parallel of the evolution of quality research betweenthe areas of software engineering and requirements engineering.
+
+
+metrics and quality models
+
+
+similar to software quality, requirements quality research historically origi-nated from proposing metrics like passive voice of requirements sentences [43]or sentence length [44], which are associated with bad quality of requirements
+
+
+springer nature 2021 latex template
+
+
+6a harmonized requirements quality theory
+
+
+specifications. frattini et al. [7] collected these quality factors and indicatedtheir limitations. most existing publications either fail to gauge the impact ofthese metrics [45] or explicitly disregard their relationship [46]. requirementsquality models [47, 48] integrate these factors into larger frameworks but oftenremain vague on their notion of impact.the investigation of impact is often limited to a comparison between thequality factor and practitioners’ subjective, general perception of the qualityof the requirements entities [49]. wilson et al. contribute a first impact matrixbetween quality indicators and quality attributes [50], but the latter suffersfrom the same system and activity properties heterogeneity. similarly, yanget al. state that “[a]mbiguity is therefore not a property just of a text, buta conjoint property of the text and of the interpretations held by a group ofreaders of that text” [51], exposing the necessary distinction between systemand activity properties.
+
+
+activity-based requirements quality
+
+
+a large portion of requirements quality research exhibits the same shortcom-ings identified and overcome by software quality research, namely that (1)requirements quality factors lack relevance due to their unknown impact, whichin turn inhibits adoption in practice, and (2) the terminology of requirementsquality aspects confuses system and activity properties.femmer et al. apply the activity-based quality perspective to requirementsengineering by proposing the activity-based requirements engineering qualitymodel (abre-qm) [52]. this model leverages the insights from activity-basedsoftware quality models [15, 17, 33] and shows that the quality of require-ments depends on the impact they have on the activities in which they areused. however, despite the authors’ call for action [53], abre-qm saw littleadoption in research as demonstrated in recent systematic investigations of therequirements quality literature [6, 7].the abre-qm example above raises the concern that requirements qual-ity researchers do not properly utilize the activity-based approach successfullyemployed in software quality research. in this manuscript, we want to encour-age further research on this approach by presenting a revised requirementsquality theory, a thorough investigation of the requirements quality literatureverifying the hypotheses from previous studies [6, 7], and a consequent researchroadmap.
+
+
+3 requirements quality theory
+
+
+we generated a harmonized requirements quality theory (rqt) by consol-idating the evolution of software quality models described in section 2.1,their application in requirements engineering as described in section 2.2, andalignment to the established quamoco quality model [34]. in terms of theorytypes [54], the rqt is both explanatory, as it explains the notion of require-ments quality, and prescriptive, as it prescribes how to report contributions
+
+
+springer nature 2021 latex template
+
+
+a harmonized requirements quality theory7
+
+
+to requirements quality. the building blocks of the theory are described insection 3.1 and illustrated with an example in section 3.2.
+
+
+3.1 theory
+
+
+the concepts that constitute this theory are visualized in figure 2, and eachconcept is described in table 1. the model represents an evolution of theoriginal activity-based requirements engineering quality model (abre-qm)proposed by femmer et al. [52]. here, we present changes to the original model.
+
+
+fig. 2: concepts of the requirements quality theory.
+
+
+conceptexplanationorigin
+
+
+entitya requirements artifact or part thereof[52]factor“[a] normative metric which maps a textual require-ment of a specific granularity” [7] to a numericaloutput
+
+
+[15, 52]
+
+
+entity-facta composition of one entity and one factor[15]
+
+
+agentany person, group of people, or automatism involvedin an activity
+
+
+[52]
+
+
+activityan activity in which the entity is used[15]attributea measurable property of an activity[30]activity-facta composition of one activity and one attribute
+
+
+impactthe impact of a fact on an activity-fact[15, 52]
+
+
+context factora factor describing the context of the impact relation-ship
+
+
+[55, 56]
+
+
+costthe magnitude of cost associated with an activity-fact[56]resourcethe resource affected by the economical impact[56, 57]
+
+
+table 1: explanation and origin of theory concepts.
+
+
+springer nature 2021 latex template
+
+
+8a harmonized requirements quality theory
+
+
+the artifact-related section of the model (left part of figure 2) is largelyequivalent to the original publications [15, 52]. entities represent requirementsartifacts of different granularity [5], which can be decomposed into furtherentities. for example, a requirements specification can be decomposed intosections, which in turn consist of paragraphs and sentences or requirements.we consider an artifact to be a high-level requirements entity and hence donot explicitly add the artifact to the model, deviating from the original [52].similarly, factors can be decomposed into sub-factors to accommodate com-posite factors. for example, antinyan et al. [58] position their proposed qualityfactor of conjunctive complexity as a sub-factor of syntactical complexity.the activity-related section of the model (middle part of figure 2) againadapts the original models [15, 52]. the concept activity does not representcommon requirements activities, like elicitation, analysis, and validation [59],but rather every process that takes a requirements entity as input and pro-duces an output. this includes some requirements activities (like analysis andvalidation, which use requirements as input) but not others (like elicitation,which often does not presuppose existing requirements). hence, we ratherrefer to them as requirements-affected activities. these further include implicitsub-activities (e.g., understanding and interpreting an entity), which can beaggregated with other, more explicit sub-activities (e.g., test case design) toform high-level activities (e.g., validation). the decomposition relationship ofthe activity concept accommodates this aggregation. to accommodate not onlyhuman actors involved in activities but also any automatism like requirementsprocessing tools [60] we abstract the concept of stakeholder to agent.we generalized the impact concept in this theory. while previous modelsassumed that impact is categorical (i.e., the occurrence of a fact has either apositive, negative, or no impact at all, like in figure 1 [15] or linear (i.e., thelarger the evaluation of a quality factor, the better/worse is its quality), weconsider the impact to model any kind of relationship between entity-factsand activity-facts. this opens up the theory to more complex relationships,which can model the actual impact more accurately and allows to compare theimpact of quality factors with each other.two concepts were added to the model. first, the impact was related to anactivity-fact composed of an activity and an attribute as proposed by winteret al. [30]. this way, the structure of the variables on the two sides of the impactrelationship is mirrored. furthermore, the necessity to associate an impact witha measurable property of an activity is emphasized. second, context factorsalso influence the impact of an entity-fact on an activity-fact. as recognizedby previous publications [55, 56], the impact differs depending on externalfactors related to, among others, the organization and the people involved [61].the economic section of the model (right part of figure 2) is a novel addi-tion to previous iterations of the activity-based models [15, 34, 52]. as long asthe subsequent economic impact of an activity-fact is unknown, the entity-factthat produces the impact on this activity-fact will remain neglected [56, 57].
+
+
+springer nature 2021 latex template
+
+
+a harmonized requirements quality theory9
+
+
+hence, the software process economics perspective introduces a cost for aspecific resource such as time or money.
+
+
+3.2 example
+
+
+in this section, we illustrate the rqt with a fictitious example to demonstrateits application. the example is additionally visualized in figure 3.
+
+
+fig. 3: exemplary instantiation of the theory
+
+
+in this example, a customer’s requirements were elicited and documentedin a requirements specification containing the entity user story 42. one rele-vant quality factor used by the organization responsible for implementing therequirements is template conformance, which prescribes that all user storiesmust follow the connextra template [62] “as a <role> i want to <goal> sothat <benefit>.” this quality factor maps the entity to a categorical value,containing—among others—the values conform, missing role, and missing allelements. in this example, the role is omitted from the user story. hence,the quality factor template conformance is evaluated to missing role, whichconstitutes the entity-fact (yellow box in figure 3).
+
+
+springer nature 2021 latex template
+
+
+10a harmonized requirements quality theory
+
+
+the organization uses this user story in a subsequent, requirements-affecteddevelopment activity, where a different stakeholder—the developer—is respon-sible for translating the entity into code. this activity can be decomposedinto two distinct sub-activities: understanding the entity and programming therespective implementation.one desired attribute of the activity understanding is determinism—i.e.,a requirements entity should have only one unique interpretation. possiblevariations of the interpretation and, therefore, the subsequent translation ofa requirement must be avoided. because the conformance quality factor isevaluated to missing role on the user story entity, the understanding activityis less deterministic, as the developer can make a different assumption aboutthe role implied by the requirement. the understanding activity has becomeambiguous, which constitutes the activity-fact (orange box in figure 3).the relationship between the entity-fact and the activity-fact is the impactof the quality factor. instead of limiting the impact concept to categoricalvalues (e.g., either has an impact or has no impact), the rqt enables morecomplex impact relationships. in this fictitious example, the quality factorvalue missing role is associated with a 64% chance of making the understandingsub-activity ambiguous. this relationship can be determined empirically viaexperimental research investigating the likelihood of the different values ofthe conformance quality factor reducing the determinism of the understandingsub-activity.the programming sub-activity may go unaffected by the entity-fact thatthe conformance has a value of missing role (green box in figure 3): regardlessof the agent’s interpretation of the requirements entity, the programming sub-activity will remain unaffected in respect to the relevant attribute durationunder the assumption of a similar user interface for both roles. whether thefeature is coded for the role receptionist (as the customer intended) or patient(as the developer assumed) does not significantly change the duration of thesub-activity if the user interfaces only barely differ.the significant impact on understanding is influenced by the organizationalmodel, which is one relevant context factor. since the organization is globallydistributed and the two involved agents are unlikely to have informal inter-actions, the impact is amplified. in contrast, in a small organization whereall involved agents share an office, the impact can be alleviated as missinginformation is recovered through informal communication. similarly, the soft-ware development process model may significantly influence the impact of thequality factor, and the use of an agile approach may reduce the impact byencouraging communication between the customer and developer. the contextfactors significantly influence the impact and, therefore, have to be includedin the relationship between entity-facts and activity-facts.the reduced determinism of the understanding activity has an economiceffect—i.e., the less deterministic the activity is, the more the implementationneeds to be revised, which costs money and time (red box in figure 3). context
+
+
+springer nature 2021 latex template
+
+
+a harmonized requirements quality theory11
+
+
+factors influence the extent of this effect as, for example, a re-implementationcan be more costly in larger organizations due to organizational overhead.for the sake of brevity, the example omits the following aspects: (1) theexample limits the number of elements populating the relationship. more qual-ity factors of the entity, activities, attributes of activities, and context factorsare possibly involved in the relationship. (2) interaction effects between qualityfactors and context factors are plausible but not reported here.however, the example demonstrates how adherence to this activity-basedrqt elevates requirements quality factors from normative rules (i.e., userstories must conform the template for the sake of it) to empirically-backedimpact predictions (i.e., user stories must conform the template to mitigateambiguous interpretations and avoid implementation cost).
+
+
+4 state of research
+
+
+despite the publication of the abre-qm [52] and its authors’ proposition toadapt the quality meta-model for future requirements quality research [53],recent systematic reviews raised concerns regarding a perspective on require-ments quality limited to the artifact-related section of the model (left part offigure 2) [6, 7].to validate these concerns, we formulate the following research question.how are the concepts of the requirements quality theory reported inrequirements quality literature? answering this research question requiresextracting information from a population of publications; accordingly, weemploy survey research as our approach to gain insight into the current state ofresearch. we follow the survey guidelines by moll´eri et al. [63] and report oursurvey in the following subsections. all supplementary material for replicatingthis study is available in our replication package1.
+
+
+4.1 survey objects
+
+
+the target population of our survey is the requirements quality literature deal-ing with quality factors in requirements artifacts. frattini et al. [7] conducteda systematic study on requirements quality factors, including a sample of 57primary studies. to our knowledge, this is the only sample that fulfills ouraforementioned requirements. this classifies the sampling as non-probabilistic,more specifically convenience sampling [63].
+
+
+4.2 study design
+
+
+we follow the recommended practices for the survey research process andreport our steps accordingly [63]. however, we disregarded steps that onlyapply to surveys with human subjects, such as participant recruitment andresponse management.
+
+
+
+
+
+springer nature 2021 latex template
+
+
+12a harmonized requirements quality theory
+
+
+we derived the definition of the research objectives in the form of theresearch question directly from previous research [6, 7, 53]. we establisheda study plan, rigorously documenting all research progress and justifica-tions for any deviations during the process. we identified and characterizedthe population of our survey and executed our sampling plan as describedin section 4.1.for our instrument design, we maintained two artifacts. we created anextraction guideline based on the rqt concepts. each concept of the rqtwas associated with one or more categorical variables, each containing a setof codes that represented if and how the concept was reported. the codeswere created ad hoc in the first iteration of extraction and refined based ondiscussions and theoretical background in the second iteration.the extent of the codes varied. the codes that represent how the conceptentity is reported are, for example, explicit and implicit. an entity is eitherreported explicitly if its scope and form are clear. it is reported implicitly if theauthors just report that the factor applies to a “requirement” without definingwhether this is a single or multiple natural language sentence, whether thelanguage is constrained or not, or whether it assumes a full sentence at all.the codes of other concepts were more complex and grouped into dis-tinct categories. for example, the codes of the concept factor were split intotwo groups, representing both the explicitness when reporting a factor (i.e.,whether the factor is explicitly reported or referenced from another publication)and the form in which the factor is reported (i.e. if the factor is representedwith a textual description or defined using a logical or mathematical formula).the extraction guideline containing all codes, explanations, and examples canbe found in the replication package.the first author extracted the appropriate code for each concept in therequirements quality theory from each publication. the extractions for eachpublication in the sample were recorded in a spreadsheet. for instrument val-idation, the second author of this manuscript independently performed theextraction task using the guideline on six (≈10%) publications randomly sam-pled from the survey objects. the second author performed the extraction ontwo of these six publications as training, and the remaining four were used tocalculate the inter-rater reliability between the first and second author.the task overlap achieved an percentage agreement [64] of 83.3%, whereascohen’s kappa yields a moderate agreement of 54.2%. as cohen’s kappa isunreliable for uneven marginal distributions [65], we calculated the more robusts-score [66]—yielding a good agreement of 76.8%—which we deem sufficientfor assessing the inter-rater reliability.we used the codes in the data analysis phase to generate descriptive statis-tics on which we based our interpretation of the state of requirements quality.these form a quantified foundation for interpreting the state of requirementsquality literature with respect to the research question. for final reporting, weadapted established reporting guidelines [63] and disclosed all material in areusable replication package.
+
+
+springer nature 2021 latex template
+
+
+a harmonized requirements quality theory13
+
+
+01020304050
+
+
+number of occurrences
+
+
+fig. 4: survey results depicting the distribution of codes.
+
+
+4.3 study results
+
+
+figure 4 visualizes the distribution of the relevant codes among all conceptsincluded in the requirements quality theory. each concept is overlaid with abar representing how many of the 57 publications contained the concept. therow below each concept represents its dimensions derived from the appropriatecodes.though both entities and factors are explicitly reported in all 57 publica-tions of the sample, a large portion (24/57 = 42.1%) of entities is reportedimplicitly—i.e., the entity’s scope is not clear. this occurs mostly becauseauthors attach the reported quality factor to the entity requirement withoutspecifying the scope or form of the entity. montgomery et al. [6] have alreadynoted this shortcoming in the requirements quality literature and it representsa terminological ambiguity in the research domain.seventeen out of 57 publications (29.8%) do not report any impact on activ-ities (code n/a) and hence neglect the practical relevance of the proposedquality factors. agents are only reported in 14 (24.6%) of all publications.activities are—when reported—predominantly elicited ad hoc (37/40 = 92%)and rarely systematically—i.e., when activities impacted by a quality fac-tor are discussed, the identification of activities has no systematic approach.attributes are also only rarely reported (8/57 = 14%).we grouped the codes classifying how impact is reported into four distinctdimensions, two of which are reported here. the evidence for the impact—when at all reported—is dominantly hypothesized (19/40 = 47.5%) and rarelyeither inductive (11/40 = 27.5%) or referenced (10/40 = 25%), i.e., drawsthe evidence from another publication. previous studies [6, 7] have also notedthis dominance of anecdotal, non-empirical evidence. the modality of impactrelationships is balanced between necessary and possible—i.e., the impact of
+
+
+springer nature 2021 latex template
+
+
+14a harmonized requirements quality theory
+
+
+quality factors is reported almost equally often to be certain or potential. theremaining two dimensions of impact (generality and frame of reference) yieldedno additional insight into the surveyed objects and are hence not reported herebut contained in the replication package.context factors are almost completely neglected and only reported to adegree varying between zero (no publication reports the influence of any tools)and 24.6% (14 out of 57 publications reporting product-related factors, e.g.,the system’s size or type).both cost and resources are reported only rarely (9/57 = 15.8% and5/57 = 8.8% respectively) and, if so, only hypothesized or referenced, neverdetermined empirically. money and time are mentioned as the resourcesaffected by activity impact, and the cost is only estimated in terms of expected“significant amounts of money” [67]).
+
+
+4.4 interpretation
+
+
+in this section, we interpret the results presented in section 4.3 and answerthe research question.publications in the requirements quality literature adhere to the rqt toa varying degree. while all publications in the sample mentioned both anentity and a quality factor, activity-related concepts, context factors, and theeconomic impact are often neglected. failing to consider the context factorsseverely threatens the external validity of the proposed quality factors [55, 56]and neglecting the economic impact risks undermines their acceptance [56, 57].context factors and economic impact are arguably more challenging toinvestigate [68]; however, we emphasize that the lack of activity perspectivewhen proposing quality factors is critical for several reasons. the completenegligence of a quality factor’s impact limits the factor to a normative, unmo-tivated prescription and challenges its practical relevance [52], which in turnpromotes skepticism regarding requirements quality factors in industry [8–11].the survey emphasized two additional shortcomings in the field of require-ments quality research. first, the tendency to elicit activities ad hoc whendiscussing the impact of requirements quality factors bears the risk of miss-ing other important impacts. most publications discuss a hypothesized impactof a quality factor on a non-systematically selected activity or set of activi-ties. this selection is usually justified by anecdotal or folkloric circumstances,like “[a]mbiguous requirements may bring about misinterpretations amongstakeholders, and prompt a few issues” [69].while these impact relationships are neither empirically proven nor fal-sified, the non-systematic selection of activities can disregard other impactrelationships. femmer et al. [52] demonstrated that a systematic elicitationof activities could reveal both positive and negative impacts by the samequality factor. for example, the factor free of ui design details, which statesthat an “artifact should describe the problem domain instead of the solutiondomain” [52], will positively affect maintainability, as ui details are volatile in
+
+
+springer nature 2021 latex template
+
+
+a harmonized requirements quality theory15
+
+
+the beginning and require a lot of change management if specified in a require-ment. conversely, the same factor negatively impacts understandability, as thepresence of ui design makes requirements more comprehensible.second, while activities are not reported consistently, attributes of activ-ities are reported even less. attributes represent measurable characteristicsof activities; for example, the activity understanding can be quantified by itsattribute level of agreement [58, 70] or a readability index [71]. neglecting thequantifiable attributes of activities impedes an empirical evaluation of a qualityfactor impact because it omits the measurement instrument for the dependentvariable (i.e., the activity-fact) in the impact relationship [30].we conclude that the requirements quality theory is implicitly embedded inthe requirements quality literature. however, insufficient adherence to it resultsin several limitations when reporting new requirements quality factors. whilethe artifact-centric theory concepts are commonly covered, activity-centricconcepts, context factors, and economic concepts receive less attention, whichdecreases these publications’ practical relevance. with this study, we empiri-cally confirm the concerns voiced in previous investigations of the requirementsquality literature [6, 7].
+
+
+4.5 threats to validity of this research
+
+
+we discuss the threats to validity proposed by wohlin et al. [72] and extendedby moll´eri et al. [63].
+
+
+internal validity
+
+
+we acknowledge a threat to internal validity due to sampling of publications.the method of object selection [6, 7] is deemed sufficiently rigorous to derivean initial theory.
+
+
+construct validity
+
+
+the constructs in this study—i.e., the elements of the theory—are establishedstrictly following mature quality theories from the field of software quality.this ensures the alignment between the underlying theory and measurementconstructs.the lack of a theory to which the surveyed publications could have adheredwhen reporting quality factors resulted in the concepts of requirements qualityoften being embedded implicitly, complicating the extraction task. we min-imized the resulting threat to internal validity through independent labelingand calculating appropriate inter-rater reliability metrics [65].
+
+
+external validity
+
+
+the selected sample of publications [7] is constrained to empirical contributionsto requirements quality research [6]. this limits the conclusion validity of thetype of evidence for the impact concept, as non-empirical work could contributetheoretical evidence for impact relationships. for example, the impact of qual-ity factors like nominalization [73] can be derived deductively by referring to
+
+
+springer nature 2021 latex template
+
+
+16a harmonized requirements quality theory
+
+
+valency reduction caused by nominalization [74]. while publications utilizinglinguistic theory are unknown to the authors, a valid conclusion regarding thistype of evidence requires a more thorough extension of the sampling strategy.
+
+
+5 research roadmap
+
+
+femmer et al. proposed an initial research roadmap detailing how to advancethe field of requirements quality research [53]. based on concerns of previousstudies [6, 7] and the survey of the state of research reported in this study, weassess and update the three suggested steps by femmer et al. [53]:
+
+
+1. creation of “a reference artifact and a usage model” eliciting typical entities,activities, and agents.
+
+
+2. creation of “a taxonomy of quality factors” as a central, accessiblerepository of quality factors.
+
+
+3. creation of “a taxonomy of impacts” as a catalog of impacts from qualityfactors onto activities.
+
+
+we reflect on these proposed research streams in sections 5.1 to 5.3 and addthree further proposals in sections 5.4 to 5.6. because these research streamsare grounded in the experiences from the software quality research, we expectcontributions to them to promote requirements quality research that is relevantto practice.
+
+
+5.1 artifact and usage model
+
+
+mendez et al. have contributed a reference artifact model for requirementsengineering [5, 75] based on their fundamental positioning on artifact orienta-tion [76, 77]. the amdire approach constitutes a domain-agnostic referencefor artifact types and serves the purpose requested by femmer et al. [53] in thatit can be tailored towards any industry context to model an artifact structure.while the elicitation of human [78] and non-human, automatic agents [79]has been addressed, a reference model for activities requires explicit attentionin literature. more importantly, with the update of the requirements qual-ity theory over the initial abre-qm [52], we argue that a reference modelfor requirements-affected activities needs to provide attributes to quantifyeach activity. such attributes enable an empirical assessment of the impact ofquality factors.additionally, a majority of publications reporting an impacted activitymention some variation of understanding or interpreting (32/40 = 80%). weassume that every requirements-affected activity comprises an initial interpre-tation sub-activity. however, such composition is obscured by the lack of aproper reference model for requirements-affected activities accounting for theiraggregated nature.it is conceivable that the interpretation sub-activity is most prone todefects, which explains the research community’s focus on ambiguity [6], asambiguity represents the non-determinism of an interpretation. we argue
+
+
+springer nature 2021 latex template
+
+
+a harmonized requirements quality theory17
+
+
+that a proper reference model for requirements-affected activities account-ing for their aggregated nature can steer research towards identifying criticalsub-activities—i.e., the ones most prone to impacting subsequent activities.
+
+
+5.2 taxonomy of quality factors
+
+
+requirements quality factors [7, 53] are the cornerstone of artifact-centric qual-ity assurance. the requirements quality factor ontology proposed by frattiniet al. [7] furthered this research stream. although the ontology is in an earlystage and requires additional iterations, quality factors and related objects—such as data sets and automation approaches—are now collected in a centralrepository.
+
+
+5.3 taxonomy of impacts
+
+
+the taxonomy of impacts that femmer et al. [53] deem the necessary finalstep of the roadmap has to be extended. previous quality models—includingthe abre-qm [52]—consider only categorical or, at most, linear impactrelationships. therefore, a taxonomy seemed sufficient to record “a list of well-examined effects of quality factors on activities” [53]. we argue that the impactrelationship can be more complex and requires a more general representation—i.e., rather than aiming for a taxonomy of impacts, we argue for developing animpact framework.given the evaluation of quality factors on requirements entities on oneside and the evaluation of activity attributes on the other side, the impactrelationship between these variables can be formulated as a regression problem.instead of relying on experts to hypothesize the (categorical) type or (linear)extent of an impact, more complex relationships can be determined using,for example, bayesian data analysis [80]. consequently, this research streamaims to develop an impact framework capable of determining these impactrelationships based on statistical instruments given sufficient data.
+
+
+5.4 context factors
+
+
+context factors must be considered in the impact relationship to operationalizethe requirements quality theory [55]. large-scale endeavors acknowledge theimportance of context factors in regard to requirements quality [1], yet nounified collection of context factors relevant to requirements engineering exists.established sets of software engineering context factors [61, 81] can be used asa starting point but require a dedicated investigation from the requirementsengineering perspective.a clear set of relevant context factors can support developing reportingguidelines for empirical studies on requirements quality and enable context-driven research [82]. while empirical software and requirements engineeringpublications typically strive for generalizability [81], scoping an empirical studyaccording to the given context factors allows the data collected in that study tobe integrated into the impact framework as outlined in section 5.3. conversely,
+
+
+springer nature 2021 latex template
+
+
+18a harmonized requirements quality theory
+
+
+rqt tool
+
+
+package
+
+
+module
+
+
+entity 
+
+
+characterization
+
+
+module
+
+
+context 
+
+
+characterization
+
+
+external
+
+
+requirements 
+
+
+tracking system
+
+
+module
+
+
+impact prediction
+
+
+requirements
+
+
+entities
+
+
+agent 
+
+
+assignment
+
+
+organizational 
+
+
+context
+
+
+quantified 
+
+
+entities
+
+
+quantified 
+
+
+context
+
+
+estimated impact on 
+
+
+affected activities
+
+
+fig. 5: architectural overview of the proposed tool-support
+
+
+reporting the limited scope of a study enables a general requirements qualitytheory that can be assembled from multiple studies in well-defined contexts.
+
+
+5.5 economic impact
+
+
+with the addition of economic concepts in the requirements quality theory, aresearch stream should be dedicated to the economic impact of activity facts.the impact relationship between quality factors and activities already benefitsthe acceptance of those factors for quality assurance in practice [53]. adding aneconomic perspective—i.e., what amount of which resource a change of a cer-tain activity-fact entails—can further bridge the gap between the normative,artifact-centric quality factors on one side and an economic decision-makingprocess on the other side [57]. since the purpose of quality factors is to sup-port quality assurance in industry, understanding this economic perspective isof high priority despite the complexity of the topic.
+
+
+5.6 tool support
+
+
+we aim to make the rqt applicable to the industrial context through thedevelopment of tool support. the components necessary to realize this toolsupport are visualized in figure 5. the goal of the tool is to estimate the impactof requirements entities and their context on the attributes of requirements-affected activities.to this end, the tool needs an interface to the requirements entities, contextinformation about the involved agents, and context information about theorganization. the former two are often available in a requirements trackingsystem like jira2 [83], while the latter a company likely has to generate andprovide manually.
+
+
+2https://www.atlassian.com/software/jira
+
+
+springer nature 2021 latex template
+
+
+a harmonized requirements quality theory19
+
+
+once provided with the necessary information, the tool characterizes bothentities and context, i.e., quantifies the natural language requirements enti-ties and the elusive factors determining the context. the quantified entitiesand context serve as input to the impact prediction model as described insection 5.3, estimating the impact on the attributes of the requirements-affected activities, which in turn enables quantifying the economic impact asdescribed in section 5.5.the realization of this tool depends on the previously described streamsof research to identify valid quality factors (section 5.2), context factors(section 5.4), and activity attributes (section 5.1). for the tool to providean automated impact prediction the following automation modules must berealized:
+
+
+1. automatic entity characterization: a shared architecture to automaticallyevaluate the requirements quality factors collected in the quality factorontology [7]
+
+
+2. automatic impact prediction: an accessible statistical model estimating theimpact of quantified entities and context on affected activities, trained onhistorical data.
+
+
+developing this tool while adhering to open science principles will allowscholars to propose new quality and context factors, customize relevant activ-ity attributes, and contribute historic data to improve the impact estimationof the prediction model. we invite contributions to the implementation andmaintenance of the tool via its dedicated repository on github3.
+
+
+6 conclusion
+
+
+in this manuscript, we investigated the software quality literature and theapplication of the activity-based quality perspective to the requirements engi-neering domain. we extend the work of femmer et al. [52] by proposing anevolved and harmonized requirements quality theory, and assess the adherenceof the requirements quality literature to this theory. our survey confirms thebias towards artifact-centric and the negligence of activity-centric concepts,which was noted in previous secondary studies [6, 7]. finally, we update therequirements quality research roadmap initiated by femmer et al. [53] to guidefuture contributions in the requirements quality research domain.we are confident that the harmonized requirements quality theory providesthe necessary guidance to propel requirements quality research and estab-lish a common understanding of quality that is operationalizable in practice.we invite fellow researchers to contribute to the theory and the requirementsquality research field in adherence to it.
+
+
+3available at https://github.com/julianfrattini/rqt-tool. an archived version is accessible at
+
+
+
+
+
+springer nature 2021 latex template
+
+
+20a harmonized requirements quality theory
+
+
+acknowledgments.this work was supported by the kks foundationnology.
+

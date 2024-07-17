@@ -1,0 +1,2448 @@
+
+status quo in requirements engineering:a theory and a global family of surveys
+
+
+stefan wagner, university of stuttgart, germanydaniel méndez fernández, technical university of munich, germanymichael felderer, university of innsbruck, austria and blekinge institute of technology, swedenantonio vetrò, nexa center for internet & society, dauin, politecnico di torino, italymarcos kalinowski, pontifical catholic university of rio de janeiro, brazilroel wieringa, university of twente, the netherlandsdietmar pfahl, university of tartu, estoniatayana conte, universidade federal do amazonas, brazilmarie-therese christiansson, karlstad university, swedendesmond greer, queen’s university belfast, ukcasper lassenius, aalto university, finland and simulamet, norwaytomi männistö, university of helsinki, finlandmaleknaz nayebi, university of calgary, canadamarkku oivo, university of oulu, finlandbirgit penzenstadler, california state university, long beach, usarafael prikladnicki, pontifícia universidade católica do rio grande do sul, brazilguenther ruhe, university of calgary, canadaandré schekelmann, hochschule niederrhein, germanysagar sen, simula, norwayrodrigo spínola, salvador university - unifacs, brazilahmed tuzcu, zeb.rolfes.schierenbeck.associates gmbh, germanyjose luis de la vara, carlos iii university of madrid, spaindietmar winkler, technische universität wien, cdl-sqi, austria
+
+
+authors’ addresses: stefan wagner, university of stuttgart, stuttgart, germany, stefan.wagner@iste.uni-stuttgart.de;daniel méndez fernández, technical university of munich, garching, germany, daniel.mendez@tum.de; michael felderer,university of innsbruck, innsbruck, austria, blekinge institute of technology, karlskrona, sweden, michael.felderer@uibk.ac.at; antonio vetrò, nexa center for internet & society, dauin, politecnico di torino, torino, italy, antonio.vetro@polito.it;marcos kalinowski, pontifical catholic university of rio de janeiro, rio de janeiro, brazil, kalinowski@inf.puc-rio.br; roelwieringa, university of twente, enschede, the netherlands, r.j.wieringa@utwente.nl; dietmar pfahl, university of tartu,tartu, estonia, dietmar.pfahl@ut.ee; tayana conte, universidade federal do amazonas, manaus, brazil, tayanaconte@gmail.com; marie-therese christiansson, karlstad university, karlstad, sweden, marie-therese.christiansson@kau.se; desmondgreer, queen’s university belfast, belfast, uk, des.greer@qub.ac.uk; casper lassenius, aalto university, espoo, finland,casper.lassenius@aa.fi, simulamet, oslo, norway, casper@simula.no; tomi männistö, university of helsinki, helsinki,finland, tomi.mannisto@helsinki.fi; maleknaz nayebi, university of calgary, calgary, canada, mnayebi@ucalgary.ca;markku oivo, university of oulu, oulu, finland, markku.oivo@oulu.fi; birgit penzenstadler, california state university,long beach, long beach, usa, birgit.penzenstadler@csulb.edu; rafael prikladnicki, pontifícia universidade católica do riogrande do sul, porto alegre, brazil, rafael.prikladnicki@gmail.com; guenther ruhe, university of calgary, calgary, canada,ruhe@ucalgary.ca; andré schekelmann, hochschule niederrhein, krefeld, germany, andre.schekelmann@hs-niederrhein.de;sagar sen, simula, fornebu, norway, sagar@simula.no; rodrigo spínola, salvador university - unifacs, salvador, brazil,jose luis de la vara, carlos iii university of madrid, madrid, spain, jvara@inf.uc3m.es; dietmar winkler, technische
+
+
+permission to make digital or hard copies of part or all of this work for personal or classroom use is granted without feeprovided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and
+
+
+
+
+
+arxiv:1805.07951v4  [cs.se]  17 dec 2018
+
+
+:2s. wagner et al.
+
+
+context: requirements engineering (re) has established itself as a software engineering discipline over thepast decades. while researchers have been investigating the re discipline with a plethora of empirical studies,attempts to systematically derive an empirical theory in context of the re discipline have just recently beenstarted. however, such a theory is needed if we are to define and motivate guidance in performing high qualityre research and practice.objective: we aim at providing an empirical and externally valid foundation for a theory of re practice,which helps software engineers establish effective and efficient re processes in a problem-driven manner.method: we designed a survey instrument and an engineer-focused theory that was first piloted in germanyand, after making substantial modifications, has now been replicated in 10 countries world-wide. we have atheory in the form of a set of propositions inferred from our experiences and available studies, as well as theresults from our pilot study in germany. we evaluate the propositions with bootstrapped confidence intervalsand derive potential explanations for the propositions.results: in this article, we report on the design of the family of surveys, its underlying theory, and the fullresults obtained from the replication studies conducted in 10 countries with participants from 228 organisations.our results represent a substantial step forward towards developing an empirical theory of re practice. theresults reveal, for example, that there are no strong differences between organisations in different countriesand regions, that interviews, facilitated meetings and prototyping are the most used elicitation techniques,that requirements are often documented textually, that traces between requirements and code or designdocuments are common, that requirements specifications themselves are rarely changed and that requirementsengineering (process) improvement endeavours are mostly internally driven.conclusion: our study establishes a theory that can be used as starting point for many further studiesfor more detailed investigations. practitioners can use the results as theory-supported guidance on selectingsuitable re methods and techniques.
+
+
+ccs concepts: • general and reference →empirical studies; • software and its engineering →re-quirements analysis;
+
+
+additional key words and phrases: requirements engineering, theory, survey research, replication
+
+
+acm reference format:stefan wagner, daniel méndez fernández, michael felderer, antonio vetrò, marcos kalinowski, roel wieringa,dietmar pfahl, tayana conte, marie-therese christiansson, desmond greer, casper lassenius, tomi männistö,maleknaz nayebi, markku oivo, birgit penzenstadler, rafael prikladnicki, guenther ruhe, andré schekelmann,sagar sen, rodrigo spínola, ahmed tuzcu, jose luis de la vara, and dietmar winkler. 2018. status quo inrequirements engineering: a theory and a global family of surveys. 1, 1 (december 2018), 47 pages.https://doi.org/10.1145/nnnnnnn.nnnnnnn
+
+
+1introduction
+
+
+as stated by wohlin et al. [63]: “there exists no generally accepted theory in software engineering,and at the same time a scientific discipline needs theories. some laws, hypotheses and conjecturesexist, but yet no generally accepted theory.” [63] what is true for the whole discipline holdsespecially for its sub-disciplines, in particular for requirements engineering (re). in a literaturesurvey published in 2007, hannay et al. [20] identified 103 publications of the period 1993–2002that report on software engineering experiments. out of those only 24 publications used in total 40theories to justify their research questions, explain the results or, rarely, test and modify theories.the authors also noticed that most theory has been developed in other disciplines and only a smallnumber of theories detected were genuine to the software engineering discipline. this observation
+
+
+the full citation on the first page. copyrights for third-party components of this work must be honored. for all other uses,contact the owner/author(s).© 2018 copyright held by the owner/author(s).xxxx-xxxx/2018/12-arthttps://doi.org/10.1145/nnnnnnn.nnnnnnn
+
+
+
+
+
+status quo in requirements engineering:3
+
+
+was also made by endres and rombach [18] in their collection of empirical observations, laws andtheories on software and systems engineering published in 2003. moreover, most of the theoriesseem to relate to management tasks rather than requirements specification, technical design,verification and validation tasks.the lack of a general theory of software engineering triggered the semat initiative (softwareengineering method and theory) which, among other things, develops and maintains the essencestandard aiming at providing comprehensive definitions and descriptions of the kernel and thelanguage for software engineering methods. however, until today, all attempts to collect theoriesof software engineering or to develop a theory of software engineering have very little to offerwith regards to re, and if there is some theory developed, it often relates to re management tasks(e.g., [2, 32]). therefore, daniel méndez fernández and stefan wagner started the napire initiative1
+
+
+(naming the pain in requirements engineering) in 2012 which constitutes a globally distributedfamily of surveys on re. in accordance with the statement made by stol and fitzgerald [60] thattheory is “both a driver for, and a result of empirical research”, the goal of this initiative is to createan empirical theory on requirements engineering practices and problems. for this, we adopt theview that a theory is a set of constructs and general propositions and, possibly, explanations ofthose propositions [56, 62].how re is conducted in a given context is a crucial factor in successful development projectsas the elicitation, specification, and validation of requirements are critical determinants of soft-ware and system quality [10]. at the same time, requirements engineering is highly volatile andinherently complex due to the involvement of interdisciplinary stakeholders and uncertainty aboutmany aspects that are not clear at the beginning of a project. the diversity of how requirementsengineering is performed in various industrial environments, each having its particularities in thedomains of application or the software process models used, makes it difficult for industry to defineand apply high-quality requirements engineering [45].
+
+
+1.1problem statementfrom a researcher’s perspective, the diversity of requirements engineering contexts makes ithard to develop general theories. rather, we expect to develop a few general propositions and alot more context-specific propositions. empirical research in re thereby becomes a crucial andchallenging task. empirical studies of all kinds, ranging from classical action research throughobservational studies to broad exploratory surveys, are necessary to understand the practicalneeds and improvement goals in requirements engineering to guide problem-driven research andto empirically validate new research proposals [13]. since requirements engineering, like mostsub-disciplines of software engineering, is highly human-based, we face the challenge to create asolid empirical basis that allows for generalisations taking into account the human factors thatinfluence the anyway hard to standardise discipline. to address this challenge, survey research hasbecome an indispensable means to investigate re across many contexts.
+
+
+1.2research objective
+
+
+our long-term research objective is to establish an empirically-based descriptive and explanatorytheory on the status quo of requirements engineering practice allowing us to guide future research ina theory-based manner. according to sjøberg et al. [56], “theory development consists of inductiveand deductive aspects, and may be initiated from both the practical or from the theoretical realm”. inpreparation of our first napire survey conducted in germany in 2012/13, we deductively developed
+
+
+1http://www.napire.org
+
+
+
+
+
+:4s. wagner et al.
+
+
+an initial, engineer-focused theory of requirements engineering practice based on experience gainedduring research collaborations with industry and ideas taken from the scientific literature [42].for this article, we improved the theory based on the results of the first run of the survey andextended it by further propositions on requirements elicitation, documentation and test alignmentto better cover the whole requirement engineering process. we reflected these changes in a newversion of the survey instrument and partially replicated the first survey in 10 countries. we reporton this partial replication in this article and call it “second run” in the following. our goal here is touse the results of this replication to evaluate and further improve the re theory. in [43] importantproblems, causes, and effects have been reported. among others, poor requirements elicitationtechniques and missing completeness checks have been identified as important causes that lead torequirements engineering problems. in this article we focus on re standards and their application,requirements elicitation approaches, and re improvement options. specifically, we want to answerthe following research questions: (i) how are requirements elicited and documented? (ii) how arerequirements changed and aligned with tests? (iii) why and how are re standards applied andtailored? and (iv) how is re improved?
+
+
+1.3contributionin [42], we published the initial theory as well as the design of the used survey instrument anddiscussed preliminary results from the first run conducted in germany. we presented and analysedthe qualitative data regarding problems in practice from the second run of the survey withoutrelating it to the prior theory in [43]. in the present article, we evaluate and propose improvementsto the theory of re practice based mostly on the quantitative analysis of the answers on the statusquo from the second run. more in particular, we present the following contributions:
+
+
+(1) we substantially enhanced our initial theory after the analysis of the results gained fromthe first run in germany and using input from collaborating researchers received duringa thematic workshop held within the isern (international software engineering network)meeting in 2015. the resulting theory includes for each research question a set of propositionsconcerning requirements elicitation, documentation, change and alignment, standards andimprovement with a focus on the involved engineers. we use the propositions in our theoryto test our results during our analysis procedure.
+
+
+(2) we report the full results from 10 countries including the responses from 228 organisationsand a detailed analysis of those results via a calculation of confidence intervals with respectto our theory. this allows a statistically sound interpretation of the answers and a validationof the theory.
+
+
+(3) based on the quantitative results, additional qualitative answers by the respondents andfurther interpretation, we propose corresponding improvements of the underlying theory inthe form of changed or new propositions and explanations.our contribution is thus intended to serve both re practitioners interested in the status quo ofre practice and re researchers interested in theories that aim to describe real-world phenomena ofre practice.
+
+
+1.4outline
+
+
+we structure the remainder of this article as follows: we start with a discussion of the related workin section 2 on theories and survey research in requirements engineering as well as the backgroundon the napire initiative and then present our current theory on the status quo in requirementsengineering practice in section 3. in section 4, we present the design of the survey which we useto validate the theory. we discuss the results of the survey in section 5 structured by the researchquestions. finally, we summarise and discuss implications and future work in section 6.
+
+
+
+
+
+status quo in requirements engineering:5
+
+
+2related workin this section we discuss theories on requirements engineering, survey research related to thescope of our contribution, and introduce the napire initiative as well as previously publishedmaterial in this context in more detail.2
+
+
+2.1theories on requirements engineering
+
+
+sjøberg et al. [56] proposed a number of activities to define software engineering theories, namely(1) defining the constructs of the theory, (2) defining the propositions of the theory, (3) providingexplanations to justify the theory, (4) determining the scope of the theory, as well as (5) testing thetheory through empirical research. in our work, we follow these proposed steps.the literature in the broader area of software engineering provides a broad spectrum on theories.in 2009, for instance, jacobson [25] motivated the need for a theory in software engineeringinitiating the semat initiative (software engineering method and theory) [24]. according tojacobson, software engineering is gravely hampered by (1) the prevalence of fads more typical offashion industry than of an engineering discipline; (2) the lack of a sound, widely accepted theoreticalbasis; (3) the huge number of methods and method variants with differences little understood andartificially magnified; (4) the lack of credible experimental evaluation and validation; and finally(5) the split between industry practice and academic research. napire aims to improve on allthese aspects in the area of requirements engineering. tarpit [26] is an example of a more generaltheory of software engineering derived from four underlying theoretical fields, i.e., (1) languagesand automata, (2) cognitive architecture, (3) problem solving, and (4) organisation structure. itsapplicability was explored in the cases of brooks’ law, domain specific languages and continuousintegration. yet, it has not been applied to re so far.bjarnason et al. [6] propose a theory of distances in software engineering. the theory is basedon a mapping study of re distances [4] as well as re and testing challenges and practices [5]. thetheory of distances in software engineering considers people-related distances but also artefact-related distances, whereas our theory focuses on artefact-related distances but also considers otheraspects like re documentation, standards and improvement.theories on requirements engineering are even more rare. the swebok [7] aims to describe thebody of knowledge in software engineering including a knowledge area on software requirements.yet, the swebok does not constitute an empirically validated theory on re, but it is created byconsensus of the participating people. while we consider it an important effort and starting point,our theory contains more details on the re process and methods including explicit propositions,which we test empirically, as well as explanations.the handbook of software and systems engineering [18] is a rare exception reporting on empiricalobservations, laws, and theories in various fields including requirements engineering. theoriescover, for example, that requirements deficiencies – in particular, incomplete, incorrect and volatilerequirements – are the prime sources of project failures. they became part of the problem analysisin [43] but are so far not integrated in the theory in the current article.besides those well known, mostly descriptive and causal, theories, there is still a lack of theoriesin requirements engineering. this article provides a step towards closing this gap. in particular, weaim for a descriptive and explanatory theory validated by a broad survey. therefore, we discusswork related to survey research on requirements engineering next.
+
+
+2parts of section 2.2 and section 2.3 are based on our related work discussion in [42] as the related work has not changedsignificantly. it has also been used in [43].
+
+
+
+
+
+:6s. wagner et al.
+
+
+2.2survey research on requirements engineering
+
+
+in re survey research, there have been investigations of techniques and methods and investigationsof general practices. we will discuss the most relevant ones in the following.contributions that investigate techniques and methods analyse, for example, selected require-ments phases and which techniques are suitable to support typical tasks in those phases. cox, niaziand verner [14] performed a broader investigation of all phases to analyse the perceived value ofthe re practices recommended by [57]. studies like those reveal the effects of given techniqueswhen applying them in practical contexts.a similar focus, but exclusively narrowed down to the area of re, had the study of kamata andtamai [29]. they analysed the criticality of the single parts of the ieee software requirementsspecification std. 830-1998 [22] for project success. palomares, quer and franch [51] investigatedthe use of requirements reuse and requirements patterns with a survey among practitioners. theyfound that reuse and patterns are done only by a minority regularly. we do not cover requirementsreuse in our survey.nikula, sajaniemi and kälviäinen [49] present a survey on re at the organisational level ofsmall and medium-sized companies in finland. based on their findings, they inferred improvementthe industrial reluctance to software process improvement. they discovered different reasons whyorganisations do not adopt normative improvement solutions, for example, cmmi and relatedframeworks (focussing on assessing and benchmarking companies rather than on problem-drivenimprovements [47, 53]). example reasons for a reluctance to normative improvement frameworkswere the small company size because of which the respondents did not see clear benefit.neil and laplante [48] conducted in 2003 a survey in the usa with a focus on some aspects wealso cover here. in particular, they found that most of the respondents use scenarios and use casesfor requirements elicitation followed by focus groups and informal modelling. separately, theyalso found that 60% of the respondents do prototyping. kassab, neill and laplante [30] updatedthis survey in a similar manner. brainstorming, interviews and user stories were techniques mostmentioned by their respondents, while workshops were only mentioned by roughly 20 %.although giving valuable insights into industrial environments, the discussed surveys do notgive a comprehensive picture as they focus on single aspects in re, such as problems in reprocesses or re improvements, or they focus on specific countries. to close this gap in literature,we designed a family of surveys. the design of the survey as well as the interpretation of theresults are both conducted along an initial theory [42]. by relying on an initial theory built on thebasis of our experiences and available studies, and by bringing together different interdisciplinarycommunities during replications, the family of surveys shall contribute to an empirical basis fortheories and problem-driven research in re. the replications around the world give us a moreheterogeneous sample. if some phenomena stand out nevertheless, then they are phenomenaoccurring in heterogeneous contexts, which have at least different cultures and languages.furthermore, there are also several literature studies available that survey the scientific literatureon specific requirements engineering activities and are related to the activities considered in thisarticle (i.e., requirements elicitation, requirements documentation, requirements change manage-ment, requirements test alignment, requirements engineering process standard and requirementsengineering improvement). dieste and juristo [17] provide a systematic review on empirical studieson requirements elicitation techniques, condori-fernandez et al. [12] a systematic mapping on em-pirical evaluation of software requirements specification techniques, inayat et al. [23] a systematicreview on agile requirements engineering practices and challenges, barmi et al. [3] a systematicmapping on requirements specification and testing alignment, loniewski et al. [34] a systematic
+
+
+
+
+
+status quo in requirements engineering:7
+
+
+review on the use of requirements engineering techniques in model-driven development and finallypekar et al. [52] a systematic mapping on improvement methods for requirements specification.they provide an interesting counterpart to our view into practice.
+
+
+2.3the napire initiative
+
+
+the basic idea of napire was to establish a broad survey investigating the status quo of requirementsengineering in practice together with contemporary problems practitioners encounter. this shouldprovide an empirical basis for theories about re and should lead to the identification of interestingfurther research areas.when we started napire, we were convinced that because of the diversity of re in researchand practice, we would not be able to achieve this ambitious goal in a small team and in a singlesurvey. therefore, napire was created as a means to collaborate with researchers from all overthe world to conduct the survey in different countries and in a replicated manner. this allows usto investigate re in different cultural environments and increase the overall sample size whilecovering slightly different areas over time and while also having the possibility to observe trends.more precisely, we started napire by establishing a first set of theory patterns based on isolatedwork published in the research community. with each replication, our hope is to further strengthenthis initial theory by corroborating it based on the gathered data and modifying it where we haveno explanation for the observed phenomena (e.g. by removing initial hypotheses or by changingthem). that is to say, based on the results from each replication, we slightly adapt the questions inthe questionnaire as well as the answer options for the next replication. the conduct of napire isgenerally guided by the four principles described in tab. 1.
+
+
+table 1. guiding principles of napire
+
+
+opennessopenness begins by cordially inviting researchers and practition-ers of any software-engineering-related community to contributeto napire and ends by disclosing our results and reports withoutany restrictions or commercial interest.transparencyall results obtained from the distributed surveys are committedto an open repository. this shall allow other researchers anindependent data analysis and interpretation.anonymitythe participation in napire in the form of a survey respondentis possible by invitation only. this supports a transparent resultset and response rate. we collect no personal data, however, andevery questionnaire obtained from the survey will be carefullycleansed of information that might be traced back to a specificcompany to ensure that no personal data will be disclosed to thepublic. that is, we guarantee that no answer set can be relatedto survey participants and their organisations.accuracy and validitywith accuracy and validity, we refer in particular to the datacollection and to the data analysis. each question in the survey iscarefully defined according to a jointly defined theory to specifi-cally confirm or refute existing expectations. the data analysisis furthermore performed in joint collaboration by different re-searchers to maximise the validity of the results.
+
+
+
+
+
+:8s. wagner et al.
+
+
+to organize our work, e.g., on the napire instrumentation, we hold joint community workshops.these community workshops take so far place at the annual meetings of the international softwareengineering research network, which forms part of the annual empirical software engineer-ing international week. we use these workshops biannually to organize the modification of thequestionnaires as a preparation for one napire run and the next workshop to discuss the resultsobtained from the run before entering the next round. in the workshops where we prepare onereplication, we discuss to which extent our initial expectations (again, based on literature) arereflected by the actual results from the previous run and, in cases where the results deviate fromour expectations, whether other propositions should be included instead. we jointly adapt thequestionnaire (questions and answer options) before centrally implementing the questionnaire,organizing pilot studies with partners from the industry, and starting the distributed data collection.at present, the napire initiative has members from 25 countries mostly from europe, north-america, south-america and asia. there have been two completed runs of the survey and thethird is taking place at the time of writing this manuscript. an overview of the timeline of theactivities of napire so far is shown in figure 1. the first was the test run performed only ingermany and the netherlands in 2012/13. the second run was performed in 10 countries in 2014/15.this article reports on the results from this second run. all up-to-date information on napiretogether with links to all publications, the instruments used for each replication, links to thepublished open data sets, as well as the steering manifesto of the initiative is available on the website http://www.napire.org.
+
+
+201220132014201520162017
+
+
+start of thenapire initiative
+
+
+first run ofthe survey ingermany andthe netherlands 
+
+
+second run ofthe survey in10 countries
+
+
+article on the prevention of incomplete/hidden requirements [27]
+
+
+article on causes of re problems  [28]
+
+
+preliminary report 
+
+
+on design and
+
+
+first run [41]
+
+
+main article ondesign, theory
+
+
+and first run [42]
+
+
+comparison of 
+
+
+brazil and
+
+
+germany [44]
+
+
+main article on problems, 
+
+
+causes and e ects from
+
+
+second run [43]
+
+
+fig. 1. timeline of the major napire activities
+
+
+a preliminary version of the report on the first run was published in [41] and the detailed dataand descriptive analysis is available as a technical report [40]. this first run already covered thespectrum of status quo and problems. we described the study design with the bi-yearly replicationsand world-wide distribution in detail in the main article for the first run [42]. it includes a firstversion of a theory of the status quo and problems in re in the form of hypotheses. overall, wewere able to get full responses from 58 organisations to test the theory. we could support most ofthe proposed theory and discussed changes based on the data. we also made a detailed qualitativeanalysis of the experienced problems and how they manifest themselves. the current article extendsand improves the theory from the first run and evaluates it using mostly quantitative analysis.for the publications of the second run, we so far have concentrated on specific aspects and/or thedata from only one or two countries. none of these has described the full status quo nor did they
+
+
+
+
+
+status quo in requirements engineering:9
+
+
+present or evaluate a theory. in [28], we used the brazilian data to explore how to analyse problemsand causes in re in detail. thereafter, in [44], we concentrated on analysing the similarities anddifferences in the experienced problems between brazil and germany. our key insights in that paperwere that the dominating factors are related to human interactions independent of country, projecttype or company. furthermore, we observed a higher inclination to standardised developmentprocess models in brazil and slightly more non-agile, plan-driven re in germany.in [27], we focused on the often mentioned problem of incomplete and/or hidden requirementsand investigated common causes for this problem based on the austrian and brazilian data. themost common causes we found were missing qualification of re team members, lack of experience,missing domain knowledge, unclear business needs and poorly defined requirements.in [61], we report on the status quo and critical problems of agile requirements engineering.the study shows that the backlog is the central means to deal with changing requirements, tracesbetween requirements and code are explicitly managed, and testing and re are typically aligned.furthermore, continuous improvement of re is performed due to intrinsic motivation and restandards are commonly practiced. main problems of agile requirements engineering with criticalconsequences are incomplete requirements, communication flaws and moving targets.finally, we describe the analysis of the part of the questionnaire on contemporary problems,their causes and effects in the corresponding main article [43]. in the current article, we use thesame data set (and therefore the same context factors such as application domains) as in [27, 28, 43].yet, we use a part of the data set not covered in the previous papers: the parts on the participantsuse of practices in requirements elicitation, requirements documentation, requirements change andalignment and their use of requirements engineering standards as well as their improvement.
+
+
+3a theory on the status quo in requirements engineering
+
+
+the basis of our family of studies is a theory on the status quo of requirements engineering practice.we started the theory in the first round of the studies and documented it in [42]. by theory we meana set of constructs and general propositions and, possibly, explanations of those propositions [56, 62].each theory has a scope, and our scope is the world-wide practice of requirements engineering.the theory is currently populated with general descriptive propositions about how requirementsengineering is practiced in industry [42] and about contemporary problems in requirementsengineering [43]. in this paper, we will add new propositions as well as explanations to the theory.we removed the part of the initial theory about the expectations of practitioners on goodrequirements engineering practices, as it did not give us particularly interesting insights. we moved,however, the propositions we found useful to the part on requirements engineering standards.furthermore, we restructured the theory into the following parts:
+
+
+• requirements elicitation• requirements documentation• requirements change and alignment• requirements engineering standards• requirements engineering improvement
+
+
+the initial theory contained hypotheses for all these parts but with differing emphasis. weespecially detailed the theory in the area of documentation to better capture what techniques areused for what. moreover, we added hypotheses on aligning requirements and tests which has notbeen investigated in our first study. the added hypotheses are based on our joint understanding andobservations from industry. we have not added any hypotheses based on the correlation analysisfrom [42] although that was its goal. the found correlations were all in the expectations on good
+
+
+
+
+
+:10s. wagner et al.
+
+
+requirements engineering practices, which we removed from the theory, or between differentbarriers for adopting re process standards. all in all, they were not particularly insightful.for this second, restructured and extended theory, we decided to follow the proposal on howto document and structure a software engineering theory by sjøberg et al. [56]. they proposeto structure such theories into the used constructs, propositions about relationships between theconstructs and, finally, possible explanations for the propositions. we describe constructs and anoverview of the propositions in this section. we then provide detailed propositions and explanationswhen we analyse the results of the survey in section 5. “the difference between a propositionand an explanation is that the former is a relationship among constructs, and the latter is arelationship among constructs and other categories, which are not central enough to becomesjøberg et al. also propose a graphical representation inspired by uml class diagrams. we use thatfor an overview of the the main constructs and relationships in form of propositions in figure 2. allmain constructs of our theory are summarised in table 2 which also makes the scope of our theoryexplicit. we expect it to be applicable world-wide and cross-domain. the selection of activities,actors, and technologies is in line with the research questions with focus on requirements elicitationand documentation, requirements changes and testing, re standards, and re improvement options.
+
+
+table 2. main constructs and scope of the theory
+
+
+constructstype
+
+
+c 1requirements elicitationactivityc 2requirements documentationactivityc 3requirements change managementactivityc 4requirements test alignmentactivityc 5requirements standard applicationactivityc 6requirements standard definitionactivityc 7requirements engineering improvementactivityc 8requirements engineeractorc 9test engineeractorc 10requirements elicitation techniquetechnologyc 11requirements documentation techniquetechnologyc 12requirements change approachtechnologyc 13requirements test alignment approachtechnologyc 14requirements engineering process standardtechnologyc 15requirements improvement meanstechnology
+
+
+scope
+
+
+the theory is supposed to be applicable to contemporary re-quirements engineering in practice world-wide. there couldbe differences in different regions of the world because of cul-tural differences or different economic environments as well asdifferences in different application domains.
+
+
+as suggested by sjøberg et al., we structure the constructs into technology, activity and actors.the main actors we describe in our theory are requirements engineers and test engineers. most ofthe theory actually relates to the requirements engineer, but we found that the test engineer might
+
+
+
+
+
+status quo in requirements engineering:11
+
+
+play an important role as well. so far, we have not included explicit propositions involving thecustomers or users of the system. while this would be interesting given the important part theyplay in requirements engineering, the theory is already at the limit of what we could handle in asingle survey. the theory should, however, be extended with these roles in the future.
+
+
+req elicitation techniqueinterviewscenarioprototypingfacilitated meetingsobservation
+
+
+req documentation techniquestructured req listdomain/business process modeluse case modelgoal modeldata modelnon‐functional reqtextualsemi‐formalformal
+
+
+technology
+
+
+req test alignment approachreq review by testercoverage by testsacceptance criteriatest derivation from models
+
+
+req change approachproduct backlog updatechange requeststrace management impact analysis
+
+
+activity
+
+
+req elicitation
+
+
+req documentation
+
+
+req change management
+
+
+req test alignment
+
+
+p 1‐5
+
+
+p 6‐13
+
+
+p 14‐20
+
+
+p 21‐24
+
+
+actor
+
+
+req engineer
+
+
+test engineer
+
+
+req standard applicationpracticecontroltailoring
+
+
+req eng process standard
+
+
+p 25‐28
+
+
+req standard defintioncompliancedevelopmenttool supportquality assuranceproject managementknowledge transferprocess complexitycommunication demandwilligness to changepossibility of standardisation
+
+
+ 
+
+
+req improvement meanscontinuous improvementstrengths/weaknessesown business unit/role
+
+
+req eng improvement 
+
+
+p 29-44
+
+
+p 45-49
+
+
+fig. 2. theory overview: constructs and index of propositions.
+
+
+we classified the propositions in terms of six activities related to requirements engineering:requirements elicitation, requirements documentation, requirements change management, requirementstest alignment, requirements engineering process standard and requirements engineering improvement.elicitation and documentation form core activities in requirements engineering. furthermore,requirements change over time, which gives rise to the activity of change management. to facilitaterequirements-based testing, we included the activity of requirements-test alignment. all activitiesand related artefacts in requirements engineering are usually captured in a process standardcontaining a blueprint of the (idealised) way of working in a specific setting (a company, a team ora project). finally, the process of requirements engineering should be regularly improved as anyother part of software development processes.
+
+
+
+
+
+:12s. wagner et al.
+
+
+we will describe the concrete propositions classified according to these activities together withthe results and refined propositions and explanations in section 5. please note that all propositionsstate that a technology or activity is used in practice. for all these propositions, we mean thatthe technologies or activities are commonly in use. in particular, just because there are infrequentapplications in practice, we would not state that it is used. it has to cross a threshold that we willdefine in the analysis procedure (sec. 4.4).
+
+
+4survey design
+
+
+the overall methodology of the napire initiative and how the survey instrument has been developedand continuously adapted has been described earlier in section 2.3, hence, we will not repeat it.instead, we define the research questions that drove the second run of the napire study and thatare relevant for the research methodology in this run, including the study instrument, analysisprocedures, and validity.
+
+
+4.1research questionsin agreement with the structure of the theory presented in section 3, we have the four researchquestions listed in tab. 3. these questions are descriptive, and each of them has an explanatorysequel. for example, if we have an answer on rq 1, then the subsequent question is: “why arerequirements elicited and documented this way?” answering these explanatory questions is partof the analysis of results in section 5.
+
+
+table 3. descriptive research questions. each question has an explanatory sequel.
+
+
+rq 1how are requirements elicited and documented?rq 2how are requirements changed and aligned with tests?rq 3how are re standards applied and tailored?rq 4how is re improved?
+
+
+we designed the survey in a way that we can investigate the updated theory and judge thesupport for it, change existing propositions or add new ones for the next run of the survey, andadd explanations where possible.
+
+
+4.2survey instrumentthe full instrument and codebook is openly available in the open data set [38]. we have in total34 questions in the survey, out of which 24 are relevant for the research questions in this article,which are listed in table 4. the further 10 questions are about general problems in requirementsengineering. we analysed the answers to these questions in [43]. in the fourth column, for eachquestion, we denote whether it is an open question or a closed one and for closed questions whetherthe answers are mutually exclusive single choice answers (sc) or multiple choice ones (mc). most ofthe closed multiple choice questions include a free text option, e.g., “other” so that the respondentscan express company-specific deviations from standards we ask for.we use likert items (an ordinal scale of 5) and defined as the maximum value “agree” and as theminimum value “disagree” and the middle (“neutral”). the latter allows the respondents to make aselection when they have, for example, no opinion on the given answer options.the survey questions have been presented to respondents as listed in table 4. at the end ofthe survey, the respondents could enter their email address and freely add any other aspect thatremained not addressed in the survey. we use this information as input for future modifications ofthe instrument.
+
+
+
+
+
+status quo in requirements engineering:13
+
+
+table 4. questions (simplified and condensed). closed questions require mutually exclusive single choiceanswers (sc) or multiple choice answers (mc).
+
+
+rqno.questiontype
+
+
+–q 1what is the size of your company?closed(sc)q 2please describe the main business area and application domain.openq 3does your company participate in globally distributed projects?closed(sc)q 4in which country are you personally located?openq 5to which project role are you most frequently assigned?closed(sc)q 6how do you rate your experience in this role?closed(sc)q 7which organisational role does your company take most frequently in your projects?closed(sc)q 8which process model do you follow (or a variation of it)?closed(mc)
+
+
+rq 1q 9how do you elicit requirements?closed(mc)q 10how do you document functional requirements?closed(mc)q 11how do you document non-functional requirements?closed(sc)
+
+
+rq 2q 21how do you perform change management in your requirements engineering?closed(mc)q 12how do you deal with changing requirements after the initial release?closed(sc)q 13which traces do you explicitly manage?closed(mc)q 14how do you analyse the effect of changes to requirements?closed(mc)q 15how do you align the software test with the requirements?closed(mc)
+
+
+rq 3q 16what re standard have you established at your company?closed(mc)q 17which reasons do you agree with as a motivation to define a company standard for re inyour company?likert
+
+
+q 18which reasons do you see as a barrier to define a company standard for re in your com-pany?likert
+
+
+q 19is the requirements engineering standard mandatory and practised?closed(sc)q 20how do you check the application of your requirements engineering standard?closed(mc)q 22how is your re standard applied (tailored) in your regular projects?closed(mc)
+
+
+rq 4q 23is your re continuously improved?closed(sc)q 24why do you continuously improve your requirements engineering?closed(mc)
+
+
+4.3data collection
+
+
+the survey has been conducted by invitation, for two main reasons: (1) to have better control overits distribution among specific companies and (2) to improve the response rate. the responseswere anonymous allowing our respondents to freely share their experiences made within theirrespective company.for each company, we invited one respondent as a representative of the company. in case oflarge companies involving several autonomous business units working each in a different industrialsector and application domain, we selected a representative of each unit. therefore, we call ourunit of analysis “organisation” as an umbrella for individual companies or business units of largercompanies. for the data collection, the country representatives defined an invitation list includingcontacts from different companies and initiated the data collection independently as an own surveyproject. the invitation list overlaps for the german invitees with the list from the first run. yet, wehave no way to track the overlap in actual respondents to the survey.all surveys relied on the same survey tool3 hosted and administrated by the representatives forgermany. we conducted the survey in the countries summarised in table 5. the data collectiontook place in 2014 and 2015, during periods that varied across countries.
+
+
+4.4data analysis
+
+
+the answers to q 2, which asks for the main business area and application domain, were analyzedqualitatively. we opted to ask for this information in an open question because there is no well-established standard to classify companies that are involved in developing software, or to classify
+
+
+3we implemented the survey as a web application using the enterprise feedback suite.
+
+
+
+
+
+:14s. wagner et al.
+
+
+table 5. data collection phases
+
+
+areacountrydata collection phase
+
+
+central europeaustria2014-05-07 to 2014-09-15germany2014-05-07 to 2014-08-18
+
+
+north americacanada2014-05-07 to 2015-08-15united states of america2014-05-07 to 2015-05-01
+
+
+northern europeestonia2014-05-07 to 2014-10-31finland2015-06-01 to 2015-08-28norway2014-05-07 to 2014-09-15sweden2014-05-07 to 2014-09-15
+
+
+south americabrasil2014-12-09 to 2015-03-31
+
+
+western europeireland2014-05-07 to 2014-12-31
+
+
+application domains. moreover, the application domain of a software product may be differentfrom the domain of a company. for example, an automotive company may only buy its software,develop embedded, safety-critical software or develop primarily its business information systems.to reduce subjectivity of interpretation of the qualitative answers to q 2, the answers were codedindependently by two different researchers. the interpretations were then compared, and anydifferences resolved. we ended up with 50 partly overlapping codes that describe the respondentssoftware and company domains best.in our preliminary publications on this run of the survey, we compared countries and regions[27, 44]. therefore, we initially also analysed the complete dataset as a whole as well as divided bycountry and region. yet, in our first analyses, we found very little differences in the results betweencountries. hence, we decided to look into whether the dataset can be considered as coming fromone sample.we conducted a preliminary analysis of the answers collected and checked them with the kruskal-wallis (k-w) test [16], which determines whether three or more samples originate from the samedistribution (in our context, a sample is a country). the k-w test is a non-parametric test, i.e., itdoes not assume that the data comes from a distribution that can be completely described by twoparameters, mean and standard deviation, as in the case of the normal distribution. if the samplescome from the same distribution, the k-w test will show no difference among them4, which in ourcase means that answers to the survey questions are consistent throughout the countries.we applied the k-w test with a confidence level α = 0.05: when the p-value is less than 0.05, thehypothesis that the samples originate from the same distribution is rejected. this happens whenthe answers to a survey question differ significantly depending on the country. we performedthe test for each survey question and each corresponding answer option, for a total of 94 tests, asreported in appendix b (the p-values less than 0.05 are highlighted in bold.). the null hypothesishad to be rejected in 27 answer options. in 67 tests, the null hypothesis could not be rejected. if wewould correct for multiple testing, this would even be more often the case. in addition, we observein tables 24 and 25 in appendix b, that there is no question in which the null hypothesis wasrejected for all its answer options: in many questions, only one or rarely two options for a questionlead to rejecting the null hypothesis.
+
+
+4unless the populations have symmetrical distributions with the same centre: however, being 10 groups in our case, it isreasonable to assume that it is highly improbable to happen.
+
+
+
+
+
+status quo in requirements engineering:15
+
+
+therefore, given that (1) in our preliminary publications on this run of the survey, we foundvery little differences in the results between countries, and (2) the k-w test was rejected only in1/3 of the answer options, most of them being unrelated, we deemed it reasonable to assume in thetheory and the further analyses all requirements engineering practice (related to software projects)world-wide and not country-specific, at least with respect to the countries involved in the survey atpresent. including further countries, especially countries with stronger cultural differences, mightchange that in the future.this fundamental assumption of our theory, however, does not tell us more about the generalpopulation. in such cases of unknown theoretical distribution, resampling methods, and in particularbootstrapping techniques, have been reported to be more reliable and accurate than inferencestatistic from samples [1, 35]. in addition, non-parametric bootstrap inference is distributionindependent (as also non-parametric tests): as a consequence, parametric or sample size assumptions(e.g., assumptions of normality of distribution and of homogeneity of variance) are not necessaryas it is not necessary to estimate the mathematical characteristics of the sampling distribution for asample-based estimate or a test statistic.we built our analysis on the bootstrapping procedure, i.e., we bootstrap from the sample (weuse 1,000 replacements) to statistically infer about the available population [35]. in our case, weestimate the means and compute bootstrap 95 % confidence intervals in the following way:
+
+
+• for binary answers (i.e., either the answer is checked or not), we encode a checked optionwith 1 and 0 otherwise, and then apply bootstrapping to estimate both mean and confidenceinterval;
+
+
+• for multiple option questions, we consider separately each option, and follow the procedureof binary answers
+
+
+• for likert item questions, we compute the mean on the encoded values for the scale options(from 1 to 5), and then apply bootstrapping to estimate both mean and confidence interval.
+
+
+it is disputable whether it is reasonable to calculate a mean for likert items, because they arewidely considered to be on an ordinal scale. we agree with this in principle. yet, it is an issue thathas been often debated and using an “interval assumption permits calculation of means, cis, andother useful statistics.” [15] they go on to suggest: “researchers very often do calculate means forresponse data from likert items. however, before doing so they should think carefully about thestrong equal-steps assumption they are making—-difficult though that is—-and bear in mind thatassumption when they report and interpret the mean.” to support this interpretation, we will alsoprovide median values and provide diagrams with the full distributions.our propositions, at present, are almost all in the form that a technology, activity or reasonfor applying or not applying a technology or activity exists in the population. hence, one wayto analyse the data would be, if there is a single answer stating the presence of it, we accept theproposition. yet, the goal of the survey is to build a basis for practice and future research to be ableto judge what is commonly used in practice. hence, we decided to introduce a threshold abovewhich we consider something commonly used. to some degree such a threshold will always bearbitrary. there is no precise understanding of common. another way to look at it is that we wouldnot consider infrequent use as common use. for this, we can base our quantification on mostellerand youtz [46], who found that the median value meant when scientists speak of infrequent is17.3 %. we agreed to round this value and that we would consider everything above 20 % to be incommon use. in particular, we will accept propositions for which the data shows that the confidenceinterval is 20 % or higher. in other words, we want to be 95 % confident that more than 20 % of thepopulation would give the corresponding answer.
+
+
+
+
+
+:16s. wagner et al.
+
+
+similarly, we handle likert items. we consider a proposition as supported if the median as wellas the lower boundary of the ci are both above 3 (the neutral answer) for positive propositions orbelow for negative propositions. as we have the neutral answer explicitly, we might also have caseswhere the median is exactly 3 and the ci also includes it. in that case, we see the correspondingproposition as not supported. furthermore, as there is also no indication for the opposite of theproposition, we would remove those propositions from the theory for the time being.afterwards, we look for explanations for the propositions that we can accept. the explanationseither come from (1) existing theories or empirical results from other studies, (2) additional infor-mation that we could extract from the answers to open questions in our survey or (3) our ownreasoning based on our experiences and discussions among the authors.
+
+
+4.5validity procedures
+
+
+the main mechanism to increase the validity of our results were the input and feedback continuouslyprovided by all participating researchers in the joint communities workshops described in section 2.3.as for this replication, we started the replication design by a series of skype calls, each with themain organizers and a regional subset of the other researchers. in those skype calls, we discussedthe theory, potential changes and how the questions for the propositions should look like. wethen organized a session with many of the participating researchers and several not involved inthe napire project to review the theory in the 2015 community workshop of the internationalsoftware engineering research network (isern). for this, we brought print-outs of the generaltheory overview and all the propositions together with potential explanations. we had roughly 20empirical researchers present who gave written feedback on all aspects they found interesting. thisresulted in various minor changes to state the theory more concisely and consistently. furthermore,we used an “other” answer option with the possibility to enter free text to capture if we missed animportant answer option. we include a discussion of these answers together with the other results.as for the data collection, we conducted, again, a pilot phase with two practitioners to test theaccuracy (and understandability) of the questionnaire, but also the anticipated analysis methodscovering both quantitative analyses and qualitative ones.
+
+
+5detailed theory and survey results
+
+
+in the following, we first summarise the information about the study population, before describingthe concrete theory, results and relation to existing evidence for each of the research questions. sincewe base our analysis on the same data set that we used in [43], we reuse some of the descriptionsand summarise the most important characteristics of our study population. the full data set isopenly available [38].
+
+
+5.1study population
+
+
+in total, 354 organisations spread across 10 countries agreed to answer the survey. out of these, 228(63 %) completed the survey by going through all of its questions and successfully reaching its end(not necessarily answering each question). table 6 shows the number of completed questionnairesand the completion rate per country. the completion rates vary mostly between roughly 60 % and80 %. this indicates for us that the completion of the questionnaire is reasonably doable. we do nothave an explanation why the completion rate in sweden was particularly low.the results reported in this article consider the completed datasets only. the domains wereprovided by the respondents in free text format (see table 4, question q2) and coded by theresearchers. the tag cloud for the coded business domains can be seen in figure 3.this figure shows the frequency of each domain code and highlights the most frequent ones. ofthe 228 organisations, 215 provided answers for their business domain. we found a huge variety in
+
+
+
+
+
+status quo in requirements engineering:17
+
+
+table 6. study population including response rates, total obtained, completed datasets, and completion rates.
+
+
+responsetotalcompletedcompletionareacountryratequestionnairesquestionnairesrate
+
+
+central europeaustria72.0 %181478 %germany36.8 %504182 %
+
+
+north americacanada75.0 %151387 %usa36.2 %251560 %
+
+
+northern europeestonia25.7 %9889 %finland37.5 %181583 %norway70.8 %171059 %sweden51.8 %592034 %
+
+
+south americabrazil35.3 %1187463 %
+
+
+western europeireland39.7 %251872 %
+
+
+total35422864 %
+
+
+    
+
+
+   
+
+
+    
+
+
+    
+
+
+     
+
+
+     
+
+
+    
+
+
+     
+
+
+     
+
+
+  
+
+
+crosscutting (60)
+
+
+public (28)
+
+
+sector (28)
+
+
+enterprise (20)
+
+
+ﬁnance (26)
+
+
+planning (20)resource (23)
+
+
+automotive (15)
+
+
+healthcare (14)
+
+
+management (16)
+
+
+business (9)
+
+
+energy (11)
+
+
+insurance (11)
+
+
+logistics (8)
+
+
+telecom (9)transportation (8)
+
+
+aerospace (5)
+
+
+education (5)
+
+
+gas (5) geoprocessing (4)
+
+
+informed (5)
+
+
+intelligence (4)oil (5)
+
+
+process (5)
+
+
+aviation (3)
+
+
+communication (3)construction (3)
+
+
+defence (3) e-commerce (3)
+
+
+entertainment (3)games (3)
+
+
+human (3)
+
+
+shipping (3)
+
+
+workforce (3)
+
+
+agriculture (2)
+
+
+chemicals (2)
+
+
+customer (2)
+
+
+electronic (2)
+
+
+railway (2) relationship (2)
+
+
+scientiﬁc (2)software (2)
+
+
+automation (1)
+
+
+e-
+
+
+government (1)
+
+
+funerary (1)
+
+
+goods (1)industrial (1)
+
+
+networking (1)
+
+
+pulp (1)
+
+
+steel (1)
+
+
+fig. 3. tag cloud of the business domains of the responding organisations.
+
+
+business domains, ranging from embedded software systems to consulting. many organisationswere actively working with products and/or services that can be used in several business domains(e.g. cloud computing and web applications, custom software development, enterprise resourceplanning products, it consulting services).additionally, we identified a very large number of different business areas and applicationdomains with few data points in each one. therefore, considering the number of organisationsactive in several business areas and application domains and the large variety of different areas anddomains reported, we decided to characterise the responding organisations independent of theirbusiness areas and application domain, i.e., in terms of the characteristics ’size’ and ’process modelused’ (see also sect. 4.4) in table 7. concerning size, we grouped organisations as small, medium,and large-sized according to the number of employees (software and other areas).
+
+
+
+
+
+:18s. wagner et al.
+
+
+table 7. sizes of responding organisations.
+
+
+centralnorthnorthernsouthwesternsizeeuropeamericaeuropeamericaeuropetotal
+
+
+small (≤50 employees)4112026869medium (51 to 250 employees)101217333large (≥251 employees)291634287114
+
+
+total3427667118216
+
+
+we can observe that the datasets include relatively large samples of both, small and large-sizedorganisations. considering the distributions of size per region, except for south-america, theresponding large-sized organisations slightly outweigh the small and medium-sized organisations.note that not all respondents answered this question.regarding the process models used, respondents answered a multiple choice question with thefollowing options: rup [33], scrum, v-model xt, waterfall, xp, and other (in this case informingus textually which process model they use). we grouped these process models into agile (scrumand xp), plan-driven (rup, waterfall and v-model xt), and mixed (for those organisations thatindicated that they use agile and plan-driven process models or variations therein). out of the 228organisations that completed the questionnaire, 196 selected one of the five predefined options fortheir process model. see table 8.
+
+
+table 8. software process models used in responding organisations.
+
+
+centralnorthnorthernsouthwesternmodeleuropeamericaeuropeamericaeuropetotal
+
+
+agile4133532892plan-driven134819246mixed1281914558
+
+
+total2925626515196
+
+
+again, the dataset includes relatively large samples of both, agile and plan-driven organisations.considering the distribution per region, except for central europe, the responding organisationsfollowing agile process models in the respondents environment outweigh the plan-driven ones.the number of organisations using mixed process models (or more than one) is large.we therefore could obtain a balanced characterisation of small, medium and large organisationsof different regions using both, plan-driven and agile development methods.
+
+
+5.2status quo in requirements elicitation and documentation
+
+
+one of the core activities in requirements engineering is eliciting the requirements from relevantstakeholders. to characterise the status quo, we want to understand what elicitation techniquesare employed in practice. in our theory from the first run, we expected practitioners, especiallyin large companies, to conduct workshops as the central technique to elicit requirements. thefirst run, however, showed that other elicitation techniques are also widely in use [42]. therefore,we widened the choice of elicitation techniques as shown in table 9. to make it consistent withcommon terminology, we adopted the elicitation techniques as described in the swebok [7]. table 9also notes whether the corresponding proposition was supported in the first run or if it is a newproposition for this run.the answer possibilities in the questionnaire correspond directly to the propositions. the pro-portion of how often the elicitation techniques from the propositions have been selected by our
+
+
+
+
+
+status quo in requirements engineering:19
+
+
+table 9. propositions about the status quo in requirements engineering elicitation prior to the survey
+
+
+supported insurveyno.propositionsfirst run or newquestion
+
+
+p 1requirements are elicited via interviews.newq 9p 2requirements are elicited via scenarios.newq 9p 3requirements are elicited via prototyping.newq 9p 4requirements are elicited via facilitated meetings (including workshops).supportedq 9p 5requirements are elicited via observation.newq 9
+
+
+respondents is shown in fig. 4 together with an error bar that represents the 95 % confidenceinterval (ci). the n in the caption denotes the number of participants that answered this question.we will report the proportion p of the participants that checked the corresponding answer and its95 % confidence interval in square brackets in the following. the most frequently used techniques
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+    
+
+
+ 
+
+
+ 
+
+
+prototyping
+
+
+   
+
+
+interviews
+
+
+scenarios
+
+
+observation
+
+
+  
+
+
+ 
+
+
+  
+
+
+          
+
+
+   
+
+
+         
+
+
+  
+
+
+ 
+
+
+  
+
+
+ 
+
+
+facilitated meetings 
+
+
+(including workshops)
+
+
+0.73
+
+
+0.67
+
+
+0.58
+
+
+0.41
+
+
+0.29
+
+
+0.000.100.200.300.400.500.600.700.800.901.00
+
+
+fig. 4. how do you elicit requirements? (n = 228)
+
+
+additional answers for “others” included “created personas and presented them to our stake-holders”, “questionnaires”/“surveys” , “analysis of existing system” and “it depends on the client.”especially some kind of surveys/questionnaires are mentioned several times. this could be acandidate for an additional proposition for the next theory.we therefore have support for all corresponding propositions p1 to p5. all five mentionedelicitation techniques are used in practice. for interviews, facilitated meeting and prototyping, eachis used by more than half of the respondents. scenarios and observations are less often used butare still not niche techniques.comparing the confidence intervals, we can also generalise that interviews, facilitated meetingsand prototyping are the three top techniques. their intervals overlap so that we cannot distinguishthem in general. they are, however, significantly more used than scenarios and observations whichagain overlap.for explanations of the propositions, we do not have any additional insights from the openanswers. it is often stated in the literature that it is important to include different viewpoints
+
+
+
+
+
+:20s. wagner et al.
+
+
+during requirements engineering (supporting early work by sommerville et al. [58]). interviewsand facilitated meetings are probably the easiest ways to collect many viewpoints. prototyping andscenarios are ways to represent the system. there it depends on the number of people a requirementsengineer shows them, how many viewpoints they get. the value of prototypes and scenarios totrigger requirements from different stakeholders (including non-technical end users) has beenreiterated by mannio and nikula [36] who developed an iterative requirements elicitation methodcombining these two approaches. observations, finally, are probably often the most difficult andtime-consuming way to get an understanding of different viewpoints. we formulate the viewpointaspect as explanation e 1 in tab. 10. furthermore, we include the theory of mannio and nikula [36]as e 2 that prototypes and scenarios are helpful for a shared understanding of the requirementsamong stakeholders. overall, tab. 10 shows that we could leave all propositions unchanged andsummarise the explanations.
+
+
+table 10. propositions about elicitation with explanations after the survey
+
+
+no.propositionschanged
+
+
+p 1requirements are elicited via interviews.p 2requirements are elicited via scenarios.p 3requirements are elicited via prototyping.p 4requirements are elicited via facilitated meetings (including workshops).p 5requirements are elicited via observation.
+
+
+no.explanationspropositions
+
+
+e 1interviews, scenarios, prototyping, facilitated meetings and observations allow the requirementsengineers to include many different viewpoints including those from non-technical stakeholdersp1–p5
+
+
+e 2prototypes and scenarios promote a shared understanding of the requirements among stakeholdersp2, p3
+
+
+the second major activity is the documentation of the elicited requirements. here, we statedpropositions along two dimensions: (1) the type of document such as structured requirementslists or use case models and (2) the level of formality. possible requirements document types arestructured requirements lists, use case models, domain/business process models, goal models and datamodels because they are often mentioned in practice and/or research. the level of formality is eithertextual free form with no constraints, textual with constraints such as the user story template (“as a...,and formal semantics. furthermore, we briefly go into non-functional requirements and expectthem to be documented in a non-quantified and textual way. the propositions of our theory relatedto requirements documentation are given in table 11. they are all new in relation to the theoryfrom the first run.
+
+
+table 11. propositions about the status quo in requirements engineering documentation prior to the survey
+
+
+supported insurveyno.propositionsfirst run or newquestion
+
+
+p 6structured requirements lists are documented textually in free form.newq 10p 7use case models are documented textually in free form.newq 10p 8use case models are documented semi-formally (e.g. using uml).newq 10p 9domain/business process models are documented semi-formally (e.g. using uml).newq 10p 10goal models are documented semi-formally (e.g. using uml).newq 10p 11goal models are documented formally.newq 10p 12data models are documented semi-formally (e.g. using uml).newq 10p 13non-functional requirements are documented in a non-quantified and textual way.newq 11
+
+
+in the questionnaire, the respondents could choose multiple items from the description tech-niques with a degree of formality. as shown in fig. 5, the three most frequent ways to document
+
+
+
+
+
+status quo in requirements engineering:21
+
+
+    
+
+
+    
+
+
+     
+
+
+     
+
+
+     
+
+
+    
+
+
+     
+
+
+     
+
+
+    
+
+
+   
+
+
+      
+
+
+     
+
+
+     
+
+
+      
+
+
+      
+
+
+   
+
+
+      
+
+
+      
+
+
+     
+
+
+      
+
+
+ 
+
+
+free-form textual structured requirements lists 
+
+
+semi-formal (uml) use case models 
+
+
+free-form textual domain/business process models 
+
+
+textual structured requirements lists with constraints 
+
+
+semi-formal (uml) data models 
+
+
+free-form textual use case models 
+
+
+textual use case models with constraints 
+
+
+free-form textual goal models 
+
+
+semi-formal (uml) domain/business process models) 
+
+
+textual domain/business process models with constraints   
+
+
+formal data models 
+
+
+free-form textual data models 
+
+
+formal domain/business process models 
+
+
+textual goal models with constraints 
+
+
+textual data models with constraints 
+
+
+formal structured requirements lists 
+
+
+formal use case models 
+
+
+semi-formal (uml) structured requirements lists 
+
+
+semi-formal (uml) goal models 
+
+
+formal goal models
+
+
+0.42
+
+
+0.39
+
+
+0.38
+
+
+0.35
+
+
+0.33
+
+
+0.31
+
+
+0.30
+
+
+0.26
+
+
+0.23
+
+
+0.20
+
+
+0.18
+
+
+0.16
+
+
+0.15
+
+
+0.14
+
+
+0.14
+
+
+0.12
+
+
+0.10
+
+
+0.08
+
+
+0.06
+
+
+0.05
+
+
+0.000.050.100.150.200.250.300.350.400.450.50
+
+
+fig. 5. how do you document functional requirements? (n = 228)
+
+
+requirements are free-form textual structured requirements lists (p = 0.42 [0.36, 0.49]), semi-formaluse case models (p = 0.39 [0.33, 0.46]) and free-form textual domain/business process modelsdocumentation techniques seems to be clearly dominating.all other documentation techniques fall below our threshold by including 0.20 in their ci. semi-formal domain/business models (p = 0.23 [0.17, 0.28]), domain/business model with constraint textformal business/domain models have p = 0.15 [0.11, 0.20], textual goal models with constraintsproposition p 6, which states that structured requirements lists are documented textually infree form, is clearly supported by our data. yet, we see textual requirements with constraints onthe same level. hence, we will update our proposition to also include this kind of requirementsdocumentation. an explanation for this could be that there are many requirements where text issufficient be it free-form or constrained. especially in agile projects and user stories, more than text
+
+
+
+
+
+:22s. wagner et al.
+
+
+is often not needed, because “the main purpose of a story card is to act as a reminder to discuss thefeature.” [11] we use this as explanation e 3 in table 12.
+
+
+table 12. propositions about requirements documentation and explanations after the survey
+
+
+no.propositionschanged
+
+
+p 6structured requirements lists are documented textually in free form or textually with constraints.✓p 7use case models are documented textually in free form or textually with constraints.✓p 8use case models are documented semi-formally (e.g. using uml).p 9domain/business process models are documented textually in free form.✓p 10goal models are commonly used in a textual form.✓p 11goal models are not documented semi-formally or formally.✓p 12data models are documented semi-formally (e.g. using uml).p 13non-functional requirements are documented textually either quantified or non-quantified.✓
+
+
+no.explanationspropositions
+
+
+e 3free-form and constraint textual requirements are sufficient for many contexts such as in agileprojects where they only act as reminders for further conversations.p 6, p 7, p 9–11
+
+
+e 4use case models and data models might not often be shared with non-technical stakeholders.hence, requirements engineers can use well-known semi-formal description techniques such asentity-relationship diagrams or uml to document them.
+
+
+p 8, p 12
+
+
+e 5the quantification depends on the type of non-functional requirement. performance is rather doc-umented quantitatively while maintainability is rather documented non-quantitatively.p 13
+
+
+we also have good support for propositions p 7 and p 8. documentation in the form of semi-formal use case models was the second most popular answer. also free-form textual descriptions ofuse cases were mentioned by 31 % of the respondents. yet, we again have the textual documentationwith constraints on a similar level. hence, we will extend p 7 to include this kind of documentation.formal use cases, in contrast, are significantly less used. for the textual description, we can use e 3again as explanation. for the semi-formal description, we believe that those documents might notbe shared with non-technical stakeholders. then the engineers might tend to use uml which isnow widely taught in degree programs (e 4).proposition p 9 stated that domain/business process models are documented semi-formally, e.g.using uml or some other standardized notation such as bpmn. this is not well supported in ourdata. the ci goes below the 20 % threshold. in contrast, the most often mentioned way to documentdomain or business process models was free-form textual with 38 %. hence, we will replace p 9with “domain and business process models are documented textually in free form.” it seems thate 3 also holds for domain and business process models.both propositions p 10 and p 11 have no support in the data. they state that goal models areeither formally or semi-formally documented. however, these two options were chosen by veryfew of the respondents. both ci are below 20 %. instead, goal models are actually most oftendocumented in a free-form textual way (26 % of the respondents). the ci only touches our 20 %threshold. the confidence interval is not overlapping with the intervals of formal and semi-formaldocumentation. therefore, we will replace these propositions with two new proposition on goalmodels: “goal models are commonly used in a textual form.” and “goal models are not documentedsemi-formally or formally.” an explanation for these new proposition could be again e 3.proposition p 12 states that data models are documented semi-formally. this is well supportedby the data. the corresponding answer is the most frequently chosen one for data models. alsoconsidering the confidence intervals it is beyond the threshold. furthermore, the semi-formalway of documentation is used significantly more often then the other ways to document datamodels. data models are probably not often directly discussed with (non-technical) customers andusers and, hence, requirements engineers can use well-known semi-formal techniques such asentity-relationship diagrams or corresponding uml class models. this is e 4 in table 12.
+
+
+
+
+
+status quo in requirements engineering:23
+
+
+finally for rq 1, we briefly touched upon the topic of non-functional requirements (such as secu-rity or performance requirements). as shown in fig. 6, we found that about half of the respondentsabout 38% state that they document non-functional requirements not in a quantified way (p = 0.38[0.31, 0.44]). answers for other included “on our user stories”, “user story acceptance criteria” or
+
+
+0.00 0.10 0.20 0.30 0.40 0.50 0.60 0.70 
+
+
+ 
+
+
+     
+
+
+     
+
+
+ 
+
+
+other
+
+
+we use non-quantified textual requirments
+
+
+we use quantified textual requirements0.54
+
+
+0.38
+
+
+0.09
+
+
+fig. 6. how do you document non-functional requirements? (n = 210)
+
+
+therefore, we have support for proposition p 13 that non-functional requirements are documentedin a non-quantified and textual way. yet, most respondents seem to quantify their non-functionalrequirements. even the confidence intervals do not overlap. we therefore accept proposition p 13but replace it with “non-functional requirements are documented textually either quantified ornon-quantified.” an explanation could be that the respondents primarily thought about performancerequirements that are often quantified (e 5). yet, other non-functional requirements such as securityor maintainability are much harder to quantify. in further studies, we need to distinguish here moreclearly.cox, niazi and verner [14] found that for documentation, making a business case of a projectwas most valuable. this adds probably a more general dimension to requirements documentationthat we have not covered. similarly, for elicitation, they found assessing system feasibility to bemost valuable. our results fit together in that they found that valuable techniques are to specifyrequirements quantitatively. we can also support nikula, sajaniemi and kälviäinen [49] thatrequirements documentation is often done textually (natural language).we have some contradicting results to neil and laplante [48]. they found that most respondentsuse scenarios & use cases and many use focus groups and informal modelling, while interviews andprototypes are far less used. in contrast, we saw scenarios as significantly less used than interviews,facilitated meetings and prototyping. a reason might be that scenarios and use cases were verypopular when neil and laplante did their study, and the popularity might have declined overthe last 15 years. yet, we can support their findings that most requirements documentations areinformal or semi-formal.their update in 2014 [30] came much closer to our results. now, they also found interviews andprototyping to be widely used techniques, while scenarios were not as dominant as in their earlierstudy. a contradiction is still that workshops are only at a bit more than 20 % while 67 % of ourrespondents mentioned them. a reason might be that [30] included further detailed elicitationtechniques that could also be seen as facilitated meetings, such as card sorting or group work.
+
+
+
+
+
+:24s. wagner et al.
+
+
+in guidelines derived from a systematic literature review of empirical studies on elicitationtechniques, dieste and juristo [17] state that especially unstructured interviews are more effectiveand output more complete information than introspective techniques or sorting techniques.marvin et al. [37] asked requirements engineering practitioners with a questionnaire and found“that use of goals in practice is inconsistent, informal, and rarely utilises formal modelling ap-proaches.” this is fully in line with our results of goals only being used informally.
+
+
+5.3status quo in requirements engineering changes and alignment
+
+
+requirements have to be continuously updated to guarantee project success and customer satisfac-tion. for the state of practice in change management, we therefore expected already in the initialstudy that a requirements change management is established after a requirements specification (ex-pected to be complete) was formally accepted. due to the importance of requirements changes, weadded several propositions, which are shown in table 13. with regard to requirements changes, weadded propositions that product backlogs are updated due to requirements changes after the initialrelease as well as that requirements changes after the initial release are reflected only in changerequests. with regard to traceability, we added propositions that trace between requirements andcode as well as between requirements and design documents are explicitly managed. furthermore,we add propositions that for analysing the effect of requirements changes, impact analysis on codeis done, but impact analysis between requirements is not performed.
+
+
+table 13. propositions about the status quo in requirements changes before the survey
+
+
+supported insurveyno.propositionsfirst run or newquestion
+
+
+p 14a requirements change management is established after formally accepting a re-quirements specification.supportedq 21
+
+
+p 15product backlogs are updated because of requirements changes after the initial re-lease.newq 12
+
+
+p 16requirements changes after the initial release are reflected only in change requests.newq 12p 17traces between requirements and code are explicitly managed.newq 13p 18traces between requirements and design documents are explicitly managed.newq 13p 19for analyzing the effect of changes to requirements, impact analysis on the code isdone.newq 14
+
+
+p 20for analyzing the effect of changes to requirements, impact analysis between re-quirements is not done.newq 14
+
+
+in the survey, we first asked how the respondents perform change management in their re-quirements engineering process. as shown in fig. 7, most respondents have a continuous changemanagement (p = 0.38 [0.31, 0.44]) or a change management approach that applies after formallyare less frequently applied. the latter two options are also considering the confidence intervalssignificantly less used.proposition p 14 stating that requirements change management is established after formallyaccepting a requirements specification is supported by the survey data. p 14 can be explained bye 6 in table 14. given the high proportion and ci of continuous change management, we will adda further proposition: “organisations use continuous change management.” this new propositioncould be explained by the continuous nature of change in agile development processes. both otheranswer options lie below the threshold although both ci include it.second, we asked how the respondents deal with changing requirements after the initial release.the answers are shown in fig. 8. the most common way to do so is to update the product backlog
+
+
+
+
+
+status quo in requirements engineering:25
+
+
+      
+
+
+      
+
+
+        
+
+
+  
+
+
+     
+
+
+ 
+
+
+       
+
+
+ 
+
+
+        
+
+
+          
+
+
+   
+
+
+          
+
+
+we have a change management approach that applies after formally 
+
+
+accepting a requirements specification.
+
+
+we do not consider a change management in re.
+
+
+we have a change management that applies during re.
+
+
+0.38
+
+
+0.33
+
+
+0.17
+
+
+0.16
+
+
+     we have a continuous change management.
+
+
+0.000.050.100.150.200.250.300.350.400.450.50
+
+
+fig. 7. how do you perform change management in your requirements engineering? (n = 215)
+
+
+table 14. propositions about requirements changes and explanations after the survey (q 12, q 13, q 14, q 21)
+
+
+no.propositionschanged
+
+
+p 14a requirements change management is established after formally accepting a requirements speci-fication.p 14aorganisations use continuous change management.✓p 15product backlogs are updated because of requirements changes after the initial release.p 16requirements changes after the initial release are reflected only in change requests.p 17traces between requirements and code are explicitly managed.p 18traces between requirements and design documents are explicitly managed.p 19for analyzing the effect of changes to requirements, impact analysis on the code is done.p 20for analyzing the effect of changes to requirements, impact analysis between requirements is notdone.
+
+
+no.explanationspropositions
+
+
+e 6in many development processes, requirements are fixed at some point(s) in time. a formal changemanagement is only needed afterwards.p 14
+
+
+e 7in agile development process, change is continuous.p 14ae 8requirements change during a development project and also after the initial release. many organ-isations only work with change requests in issue trackers. agile organisations work with somekind of product backlog (as in scrum) and change it regularly between iterations.
+
+
+p 15, p 16
+
+
+e 9explicit traces make impact analysis more effective and efficient.p 17, p 18e 10despite traces between requirements and code, the effect of changes is most directly seen on thecode level.p 19, p 20
+
+
+in fact, the confidence interval of the latter does not overlap with the two most popular answers.answers for other (p = 0.10 [0.06, 0.14]) include “all methods, depends on the project” and “wemix product backlog and change requests.”hence, proposition p 15 on the product backlog update is supported by the data. proposition p 16on requirements change only done by change requests is similarly well supported. propositionsp 15 and p 16 can be explained by e 8.is not common that traces are not managed at all (p = 0.21 [0.16, 0,27]). for the other answer, severalrespondents mentioned traces between tests and requirements: “traces between requirementsand functional/system tests are most common for us.” propositions p 17 and p 18 state that traces
+
+
+
+
+
+:26s. wagner et al.
+
+
+ 
+
+
+      
+
+
+      
+
+
+    
+
+
+ 
+
+
+other
+
+
+we regularly change the requirements specification.
+
+
+we only work with change requests.
+
+
+    we update our product backlog.0.38
+
+
+0.33
+
+
+0.19
+
+
+0.10
+
+
+0.000.050.100.150.200.250.300.350.400.450.50
+
+
+fig. 8. how do you deal with changing requirements after the initial release? (n = 216)
+
+
+between requirements and code and between requirements and design documents are explicitlymanaged. the data supports these propositions. their confidence intervals are similar but do notoverlap with the interval of the answer “none.” explanation e 9 relates to these proposition incontext with the next question on impact analysis. as many respondents do impact analysis, explicittraces may make this activity more effective and efficient.
+
+
+ 
+
+
+      
+
+
+         
+
+
+     
+
+
+traces between requirements and code
+
+
+traces between requirements and design documents
+
+
+none
+
+
+0.45
+
+
+0.43
+
+
+0.21
+
+
+0.000.100.200.300.40
+
+
+0
+
+
+0.600.50
+
+
+fig. 9. which traces do you explicitly manage? (n = 228)
+
+
+figure 10 shows that impact analysis between requirements is done by the majority of respondents0.21].propositions p 19 and p 20 state that both impact analysis on the code and between requirementsis done. our data supports both propositions. they are the most often given answer and theirconfidence intervals do not overlap with the “no analysis” answer. the explanation e 10 discusses
+
+
+
+
+
+status quo in requirements engineering:27
+
+
+        
+
+
+      
+
+
+     
+
+
+  
+
+
+we do impact analysis between requirements.
+
+
+we do impact analysis on the code.
+
+
+we do not analyse the effect of changes to requirements.
+
+
+0.58
+
+
+0.41
+
+
+0.16
+
+
+0.000.100.200.300.400.500.600.70
+
+
+fig. 10. how do you analyse the effect of changes to requirements? (n = 228)
+
+
+that despite that we saw in the question before many traces to the code, the impact of changes canstill be seen best at the code level. hence, we need both kinds of impact analyses. yet, we noticethat the two answers also have none-overlapping intervals. hence, there are significantly moreanalyses between requirements.in addition, we added propositions on the status quo in aligning tests with requirements, whichis critical to guarantee quality when requirements change and which gained increasing interest inthe last years [5]. these propositions are shown in table 15 and address the alignment measuresof tester participation in requirements reviews, check of the coverage of requirements with tests,definition of acceptance criteria for requirements, as well as test derivation from system models.
+
+
+table 15. propositions about the status quo in aligning tests with requirements before the survey
+
+
+supported insurveyno.propositionsfirst run or newquestion
+
+
+p 21to align tests with requirements, testers participate in requirements reviews.newq 15p 22to align tests with requirements, the coverage of requirements with tests is checked.newq 15p 23to align tests with requirements, acceptance criteria are defined for requirements.newq 15p 24to align tests with requirements, tests are derived from system models.newq 15
+
+
+figure 11 shows that the three most frequent answers were that this is done via definingthe corresponding propositions p 21 to p 24 state that all the four possibilities besides notaligning requirements and tests are common in practice. proposition p 24 on system models cannotbe supported by our data. only 18 % of the respondents derive tests from system models. we willreplace this proposition with: “deriving tests from system models is not used to align requirementsand tests.” propositions p 21, p 22 and p 23 are supported in the data. their confidence intervalsstrongly overlap and they are all used by about half of the respondents.table 16 explains these propositions by the circumstance that several organizational and artefact-based measures are necessary to fully align tests with requirements. the lack of support for the oldp 24 could be explained by the lack of existing system models that are complete or formal enoughto derive tests (e-12).
+
+
+
+
+
+:28s. wagner et al.
+
+
+     
+
+
+      
+
+
+     
+
+
+        
+
+
+     
+
+
+ 
+
+
+we define acceptance criteria for requirements.
+
+
+       we check the coverage of requirements with 
+
+
+tests.
+
+
+testers participate in requirements reviews.
+
+
+     we derive tests from system models.
+
+
+we do not allign test and requirements.
+
+
+0.53
+
+
+0.50
+
+
+0.47
+
+
+0.18
+
+
+0.06
+
+
+0.000.100.200.300.400.500.600.70
+
+
+fig. 11. how do you align the software test with the requirements? (n = 228)
+
+
+table 16. explanations for the propositions about aligning tests with requirements
+
+
+no.propositionschanged
+
+
+p 21to align tests with requirements, testers participate in requirements reviews.p 22to align tests with requirements, the coverage of requirements with tests is checked.p 23to align tests with requirements, acceptance criteria are defined for requirements.p 24deriving tests from system models is not used to align requirements and tests.✓
+
+
+no.explanationspropositions
+
+
+e 11to fully align tests with requirements, organizational and artifact-based measures are necessaryto link requirements and tests.p 21–p 23
+
+
+e 12often, there are no system models that are complete or formal enough to derive tests.p 24
+
+
+requirements changes are most critical if not propagated and traced accordingly. defining testscenarios and test cases based on requirements (and updates according to requirement changes)can help to (a) better understand requirements and (b) check the expected behavior of the systemin later testing phases. these test cases can be seen as “definition of acceptance criteria”, i.e., iftest cases are successfully executed and the requirement and/or requirement change has beenunderstood and implemented correctly. furthermore, test cases can be used to check whether ornot requirements and/or requirement changes are in line with customer expectations. thus, we cansupport the results of [14] to propose test cases as criteria for acceptance tests. the activity “defineacceptance criteria” can be seen as part of a change management process to elicit most valuable andcorrect requirements – a common answer in our survey. in model-driven software engineering [8],models often represent the foundation for software design, less frequently for code generation ortest case generation.in practice, models seem not to be complete or formal enough to derive test cases. however, inresearch there is a strong focus on model-based testing and formal approaches when it comes to thealignment of requirements specification and testing as a recent systematic mapping study shows [3].however, limitations in practice often include the high effort for creating and maintaining modelsas foundation for deriving code and test cases. thus, there is a trade-off between required effortsfor model handling and benefits regarding frequent changes that need to be considered on businesslevel. the straight-forward application of test cases in context of requirements and requirementchanges can be seen as a first step in context of re improvement.
+
+
+
+
+
+status quo in requirements engineering:29
+
+
+5.4status quo in requirements engineering process standardswe generally expect a company to have established a standardised way of working regardless ofwhether it is explicitly captured in a specific reference model or not. when launching napire, weworked based on the assumption that companies have established an explicit standard, mainlybecause we launched napire in germany where we observed a strong standardisation in industry(e.g. in the automotive sector).also based on our observations, however, many companies have established their own standardsand we generally expect a company-specific re standard to be immature compared to standardsfor other disciplines due to the inherently complex nature of re. we rely, for example, on theobservations of hall, beecham and rainer [19] and suppose the standards to define coarse processesrather than, for instance, well defined artefact models that support traceability [55].in consequence, we expect the application of their standards to be neither practiced nor to bemandatory. this was actually one observation from our first napire run. both form our newpropositions as indicated in tab. 17.
+
+
+table 17. propositions about the status quo in the application and tailoring of requirements engineeringprocess standards before the survey
+
+
+supported insurveyno.propositionsfirst run or newquestion
+
+
+p 25requirements engineers use their own re standard.newq 16p 26the re standard is neither mandatory nor practiced.newq 19p 27the application of the re standard is controlled via analytical quality assurance.supportedq 20p 28the re standard is tailored at the beginning of a project by the project lead basedon experiences.supportedq 22
+
+
+in the survey, we asked our respondents what re company standard is established in theircontext. the proportions of answers with their ci is shown in fig. 12. most respondents stated thatstandard that defines the process including roles and responsibilities (p = 0.34 [0.28, 0.40]), aninternal standard that defines deliverables, milestones and phases (p = 0.34 [0.28, 0.40]), as well asan internal standard that defines artefacts and offers document templates (p = 0.33 [0.27, 0.39]) arecommon in our sample. predefined standards according to a regulation like itil are less commonproposition p 25 stating that requirements engineers use their own re standard is supportedby the data which indicates that an internal standard that defines the process including roles andresponsibilities, an internal standard that defines deliverables, milestones and phases, as well as aninternal standard that defines artefacts and offers document templates are common. they all haveconfidence intervals that are well beyond the threshold and do not overlap with the confidenceinterval of “none.” yet, we notice that all of them overlap with the answer “a standard that ispredefined according to a regulation.” hence, this is reason for doubt whether an internal standardis more common in the population of software development organisations. yet, as the answer aboutregulation goes below the 20 % threshold, we do not define a new proposition for it.proposition p 25 can be explained by that re practices generally need adaptation to fit theparticularities of the context [64] (e 13). this explanation, however, is certainly still true for a broadrange of phenomena, ranging from the adaptation of general re strategies in dependency to theoverall project setting to the choice of modelling techniques in dependency to the domain andthe organizational culture of the development teams. hence, it generally supports what has been
+
+
+
+
+
+:30s. wagner et al.
+
+
+         
+
+
+        
+
+
+          
+
+
+  
+
+
+          
+
+
+          
+
+
+ 
+
+
+          
+
+
+a standard that is predefined by the development process (e.g., rational 
+
+
+unified process, scrum)
+
+
+           
+
+
+           
+
+
+ 
+
+
+          
+
+
+          
+
+
+           
+
+
+ 
+
+
+         
+
+
+an own standard that defines the process including roles and responsibilities
+
+
+an own standard that defines the coarse process with deliverables, milestones, 
+
+
+and phases
+
+
+an own standard that defines artefacts and offers document templates
+
+
+a standard that is predefined according to a regulation (e.g., itil)
+
+
+none
+
+
+0.36
+
+
+0.34
+
+
+0.34
+
+
+0.33
+
+
+0.25
+
+
+0.06
+
+
+0.000.050.100.150.200.250.300.350.400.45
+
+
+fig. 12. what re company standard have you established at your company? (n = 228)
+
+
+commonly accepted in the re research community [50]. a more detailed investigation that distilswhich context factors exactly affect which phenomena in which way is therefore necessary and inscope of future replications.
+
+
+table 18. propositions about the application and tailoring of requirements engineering process standardswith explanations after the survey
+
+
+no.propositionschanged
+
+
+p 25requirements engineers use their own re standard.p 25arequirements engineers use a standard that is predefined by the development process.✓p 26re standards are practised regardless whether they are mandatory or not.✓p 27the application of the re standard is controlled via analytical quality assurance.p 27athe application of requirements engineering standards is checked by project assessments✓p 27bthe application of requirements engineering standards is checked by constructive quality assur-ance (e.g. via checklists or templates).✓
+
+
+p 28the re standard is tailored at the beginning of a project by the project lead based on experiences.
+
+
+no.explanationspropositions
+
+
+e 13requirements engineering differs quite strongly over domains and contexts and, thus, needs toadapt to these to be effective.p 25, p 26
+
+
+e 14many practiced development processes prescribe or are associated with a specific way of perform-ing requirements engineering.p 25a
+
+
+e 15the project lead knows the specific of the domain and project context best.p 28
+
+
+the most frequent answer, however, was that a standard predefined by the development processis established. we add this as new proposition p 25a to our theory. an explanation could be thatmany respondents use development processes such as scrum or v-model xt that contain or areassociated with a specific way of dealing with requirements engineering (e 14). for example, scrumor other agile projects are usually expected to have some kind of product owner, a backlog anduser stories.with regards to whether a requirements engineering standard is mandatory or practised (seefig. 13), most respondents answer that the standard is mandatory and practised (p = 0.37 [0.30,proposition p 26 stating that requirements engineering standards are neither practised normandatory is not supported by the data. quite to the contrary, it seems that the standards arepractised in most organisations regardless whether they are mandatory or not. the two answersthat the standard is practised have overlapping confidence intervals that do not cross the other
+
+
+
+
+
+status quo in requirements engineering:31
+
+
+   
+
+
+ 
+
+
+   
+
+
+    
+
+
+   
+
+
+it is mandatory and practiced.
+
+
+it is practiced but not mandatory
+
+
+no
+
+
+it is mandatory but not practiced.
+
+
+0.37
+
+
+0.35
+
+
+0.15
+
+
+0.13
+
+
+0.000.050.100.150.200.250.300.350.400.450.50
+
+
+fig. 13. is the requirements engineering standard mandatory and practised? (n = 203)
+
+
+practised. hence, we replace p 26 by “company standards are practised regardless whether theyare mandatory or not.”furthermore, we asked the respondents how the application of requirements engineering stan-dards is checked (see fig. 14). the most common way to do so is via project assessment with p =
+
+
+  
+
+
+        
+
+
+      
+
+
+ 
+
+
+ 
+
+
+                              
+
+
+        
+
+
+via project assessments
+
+
+via constructive quality assurance, e.g., via checklists 
+
+
+or templates
+
+
+         via analytical quality assurance, e.g., as part of quality gates
+
+
+it is not checked.
+
+
+0.41
+
+
+0.35
+
+
+0.28
+
+
+0.18
+
+
+
+
+
+fig. 14. how do you check the application of your requirements engineering standard? (n = 215)
+
+
+proposition p 27 stating that the application of the re standard is controlled via analyticalquality assurance can be supported by the data. yet, project assessments and constructive qualityassurance are applied more frequently in our sample than analytical quality assurance. with 28 %of the respondents stating that they use analytical quality assurance, we will keep the propositionin the theory but add additional propositions for the other two methods: “the application ofrequirements engineering standards is checked by project assessments.” and “the application of
+
+
+
+
+
+:32s. wagner et al.
+
+
+requirements engineering standards is checked by constructive quality assurance (e.g. via checklistsor templates).”with regards to how requirements engineering standards are applied in regular projects (seenot considering a particular tailoring approach (p = 0.24 [0.18, 0.29]), having a tailoring approachthat continuously guides the application of the standard (p = 0.20 [0.14, 0.26]) as well as havingtool support for tailoring requirements engineering standards (p = 0.19 [0.13, 0.24]) are moderatelyapplied.
+
+
+         
+
+
+        
+
+
+      
+
+
+      
+
+
+         
+
+
+      
+
+
+ 
+
+
+at the beginning of a project, the project lead / requirements engineer 
+
+
+tailors the standard based on experiences
+
+
+we do not consider a particular tailoring approach
+
+
+we have defined a tailoring approach that continuously guides 
+
+
+the application of the standard in our project
+
+
+                  we have tool support for tailoring our requirements engineering 
+
+
+standard
+
+
+0.38
+
+
+0.19
+
+
+0.20
+
+
+0.24
+
+
+0.000.050.100.150.200.250.300.350.400.450.50
+
+
+fig. 15. how is your requirements engineering standard applied in your regular projects? (n = 215)
+
+
+proposition p 28 on re standard tailoring by the project lead based on experience is clearlysupported by the data. it is the most common answer and has a confidence interval that does notoverlap with the other remaining answers. this could be explained by the project lead having thebest knowledge of the domain and context of the project (e 15).table 19 summarises all our propositions on reasons and barriers for defining a requirementsengineering process standard. we expect that there is a high diversity in reasons why companiesestablish a process standard. our first napire run confirmed nine propositions which we kept. wereversed six that were not supported and kept one although it was not supported.in the following m denotes the mean of the corresponding data. main motivations to define acompany standard for re (see fig. 16) are better quality assurance of artefacts (median = 4, m = 4.3of re into the development process (median = 4, m = 4.3 [4.1, 4.4]), knowledge transfer (mediandisagreement have better tool support (median = 4, m = 3.7 [3.5, 3.9]), support of distributeddevelopment (median = 3, m = 3.6 [3.4, 3.8]), compliance to regulations and standards (median =3, m = 3.5 [3.3, 3.7]), support of benchmarks and/or comparison of different projects (median =3, m = 3.5 [3.3, 3.7]) and formal prerequisite for project acquisition in the participant’s domainthe results support our theory only partially. we have clear support with a median and lowerboundary of the mean ci above 3 for the positive propositions p 30, p 31, p 34, p 35 and p 37–p 39.we do not have clear support for p 33 and the negative propositions p 29, p 32 and p 36 as theirmedians are all 3 and the confidence intervals of the means are all at 3.0 or above. hence, we removethem from the theory for now. it might be possible to reintroduce them with more specific context.
+
+
+
+
+
+status quo in requirements engineering:33
+
+
+table 19. propositions about the reasons and barriers for defining a requirements engineering process standardbefore the survey
+
+
+supported insurveyno.propositionsfirst run or newquestion
+
+
+p 29compliance to regulations and standards (like cmmi) does not motivate a standard.opposite not supportedq 17p 30seamless development by integrating re into the development process motivates astandard.supportedq 17
+
+
+p 31better tool support motivates a standard.supportedq 17p 32formal prerequisites for project acquisition do not motivate a standard.supportedq 17p 33support of distributed development motivates a standard.not supportedq 17p 34support of progress control motivates a standard.opposite not supportedq 17p 35better quality assurance of artefacts motivates a standard.supportedq 17p 36support of benchmarks does not motivate a standard.opposite not supportedq 17p 37support of project management and planning motivates a standard.supportedq 17p 38higher efficiency motivates a standard.supportedq 17p 39knowledge transfer motivates a standard.supportedq 17p 40higher process complexity barriers defining a standard.supportedq 18p 41higher demand for communication barriers defining a standard.opposite not supportedq 18p 42lower efficiency does not barrier defining a standard.opposite not supportedq 18p 43missing willingness to change barriers defining a standard.supportedq 18p 44missing possibilities of standardisation does not barrier defining a standard.opposite not supportedq 18
+
+
+6%
+
+
+5%
+
+
+6%
+
+
+4%
+
+
+5%
+
+
+9%
+
+
+12%
+
+
+13%
+
+
+20%
+
+
+18%
+
+
+24%
+
+
+84%
+
+
+82%
+
+
+80%
+
+
+80%
+
+
+77%
+
+
+73%
+
+
+56%
+
+
+53%
+
+
+50%
+
+
+50%
+
+
+35%
+
+
+9%
+
+
+14%
+
+
+14%
+
+
+16%
+
+
+18%
+
+
+19%
+
+
+31%
+
+
+35%
+
+
+30%
+
+
+32%
+
+
+41%
+
+
+compliance to regulations and standards
+
+
+seamless development by integrating requirements
+
+
+engineering into the development process
+
+
+better tool support
+
+
+formal prerequisite for project acquisition in
+
+
+your domain
+
+
+support of distributed development
+
+
+better support of progress control
+
+
+better quality assurance of the artefacts (e.g.,
+
+
+within quality gates)
+
+
+support of benchmarks and / or comparison of
+
+
+different projects
+
+
+support of project management and planning
+
+
+higher efficiency
+
+
+knowledge transfer
+
+
+10050050100
+
+
+percentage
+
+
+responsei disagreei somewhat disagreeneutrali somewhat agreei agree
+
+
+fig. 16. which reasons do you agree with as a motivation to define a company standard for re in yourcompany? (n = 228)
+
+
+for example, there is some indication in the data that in organisations working for the public sector,in the automotive, avionics or finance domain, compliance to regulations and standards are moreimportant motivators than for other organisations.
+
+
+
+
+
+:34s. wagner et al.
+
+
+table 20. propositions about the reasons and barriers for defining a requirements engineering processstandards and explanations after the survey
+
+
+no.propositionschanged
+
+
+p 29compliance to regulations and standards (like cmmi) does not motivate a standard.✓p 30seamless development by integrating re into the development process motivates a standard.p 31better tool support motivates a standard.
+
+
+p 32formal prerequisites for project acquisition do not motivate a standard.✓p 33support of distributed development motivates a standard.p 34support of progress control motivates a standard.p 35better quality assurance of artefacts motivates a standard.
+
+
+p 36support of benchmarks does not motivate a standard.✓p 37support of project management and planning motivates a standard.p 38higher efficiency motivates a standard.p 39knowledge transfer motivates a standard.p 40higher process complexity barriers defining a standard.
+
+
+p 41higher demand for communication barriers defining a standard.✓p 42lower efficiency does not barrier defining a standard.p 43missing willingness to change barriers defining a standard.
+
+
+p 44missing possibilities of standardisation does not barrier defining a standard.✓
+
+
+no.explanationspropositions
+
+
+e 16an re standard can help to integrate re activities and artefacts with other development activities and artefacts.p 30e 17it is more efficient to build or acquire tool support for re if the activities and artefacts are standardised.p 31e 18standardised re artefacts make it easier to check if they are created and, hence, support progress control.p 34e 19if re artefacts are standardised, standardised qa can be used such as checklists or automatic checks.p 35e 20if the project lead can rely on a standardised re, the planning can rely on the standardised activities and artefacts.p 37e 21a standardised re allows the project participants to become experts in it and, therefore, become more efficient.p 38e 22the re standard codifies good practices and experiences which can be transferred to new projects and projectparticipants.p 39
+
+
+e 23an re standard might force projects to a more complex re process than necessary for the concrete context.p 40e 24using re process standards is considered more efficient (see also p 38).p 42e 25people in general are resistant to change.p 43
+
+
+main barriers to define a company standard for re (see fig. 17) are higher process complexityhigher demand for communication (median = 3, m = 3.2 [3.0, 3.4) and missing possibilities forpropositions p 40 to p 44 state whether specific barriers exist in practice or not. our resultssupport all propositions apart from p 41 and p 44 that higher demand for communication or missingpossibilities of standardisation barriers defining a standard. both are on average close to the neutralanswer. similarly as above, we will remove them for now from the theory and will look for furthercontext factors where they might have stronger agreement.in table 20 we provide explanations affecting all supported propositions on motivations andbarriers on defining re standards. we derived several of the explanations from answers to variousopen questions in the questionnaire and added existing work where appropriate. we may expectthat standardisation of re activities and artefacts would support a process integration as standardsmake explicit all relevant concepts and dependencies in the elements of a process (e.g., whichinformation in use case models is required to support testing activities) [39] (e 16). it is reasonableto have similar positive expectations for planning, quality assurance, and progress control of theartefacts, because a certain (context-specific) standardisation of the re artefacts allows for thedefinition of quality criteria or certain degrees of completion of artefacts (e 18, e 19). standardisationof re, however, is generally considered difficult, because practices considered useful in one contextcould be perceived completely alien to the culture and needs of the next. hence, standardisation ofre might enforce practices that do not fit the context, thus, making the re process more complex
+
+
+
+
+
+status quo in requirements engineering:35
+
+
+22%
+
+
+21%
+
+
+28%
+
+
+33%
+
+
+49%
+
+
+63%
+
+
+61%
+
+
+45%
+
+
+35%
+
+
+20%
+
+
+15%
+
+
+18%
+
+
+26%
+
+
+32%
+
+
+32%
+
+
+higher process complexity
+
+
+higher demand for communication
+
+
+lower efficiency
+
+
+missing willingness for changes
+
+
+missing possibilities of standardisation
+
+
+10050050100
+
+
+percentage
+
+
+responsei disagreei somewhat disagreeneutrali somewhat agreei agree
+
+
+fig. 17. which reasons do you agree with as a barrier to define a company standard for re in your company?(n = 228
+
+
+than necessary – especially when relying on universal standardisation norms [54] (e 23). thismight be also one reason why one of the major challenges in software process improvement iscoping with people’s resistance to change [31] (e 25).there is little existing research on requirements engineering standards. we have some supportfor the finding of nikula, sajaniemi and kälviäinen [49] that the majority of organisations explicitlydefine their individual re process. to our knowledge, there is also no systematic literature reviewon requirements engineering standards.
+
+
+5.5status quo in requirements engineering improvementprocess improvement is important for any software engineering practice but for an activity asvolatile and complex as re, we expect this to be essential. we skipped a more general questionof how requirements engineering improvement is done because we already had support from theprevious run that improvement is done continuously. our propositions are shown in tab. 21. thenew propositions resulted from our observation in the first napire run that re process improvementis conducted by dedicated roles and based on own established principles and approaches.in the survey, we asked whether the organisations improve their re continuously and who isresponsible for this improvement. the results in fig. 18 show project teams commonly improve
+
+
+
+
+
+:36s. wagner et al.
+
+
+table 21. propositions and explanations about requirements engineering improvement prior to the survey
+
+
+supported insurveyno.propositionsfirst run or newquestion
+
+
+p 45requirements engineering is continuously improved.opposite not supportedq 23p 46a continuous improvement is done to determine strengths and weaknesses.supportedq 24p 47requirements engineering is improved via an own business unit / role.newq 23p 48re is improved by an internally defined standard.newq 23
+
+
+0.08]). proposition p 45, which states that requirements engineering is continuously improved, issupported by the data. furthermore, proposition p 47 on re improvement via an own business unitor role is also supported by data from q 23 shown in fig. 18.
+
+
+        
+
+
+ 
+
+
+           
+
+
+      
+
+
+   
+
+
+yes, our project teams improve requirements engineering.
+
+
+yes, we improve our requirements engineering via an own business unit / role.
+
+
+no
+
+
+yes, we improve our requirements engineering via external 
+
+
+consultants.
+
+
+0.42
+
+
+0.37
+
+
+0.16
+
+
+0.05
+
+
+0.000.050.10 0.150.200.250.300.350.400.450.50
+
+
+fig. 18. is your requirements engineering continuously improved? (n = 216)
+
+
+table 22. propositions about requirements engineering improvement and explanations after the survey
+
+
+no.propositionschanged
+
+
+p 45requirements engineering is continuously improved.p 46a continuous improvement is done to determine strengths and weaknesses.p 47requirements engineering is improved via an own business unit / role.p 48re is improved by an internally defined standard.p 49re is improved using external normative standards.✓
+
+
+no.explanationspropositions
+
+
+e 26many companies have realised the importance of requirements engineering and of continuousimprovement of development processes and methods. working on it continuously helps to notforget strengths and weaknesses of the current re approach.
+
+
+p45, p 46
+
+
+e 27re improvement is performed by internally defined standards and best supported by an own busi-ness unit or role.p 47
+
+
+e 28external normative standards are often considered too complex and elaborate to apply.p 48
+
+
+there are no studies investigating re improvement directly comparable at this level of granularity.yet, a systematic mapping study [52] adds that quality assessment plays an important role forimproving software requirements specifications.at this point, we wanted to dig deeper and understand the reasoning behind doing a continuousimprovement. as shown in fig. 19, the most common and often applied improvement measure
+
+
+
+
+
+status quo in requirements engineering:37
+
+
+a certain certification (p = 0.12 [0.08, 0.17]) or due to a regulation like cmmi, cobit or itilproject development and adoption of an agile method that has inspection as one of the principlesand using them to promote continuous improvement. proposition p 46 stating that continuousimprovement is done to determine strengths and weaknesses is supported by the data. e 25 explainsboth propositions p 45 and p 46.
+
+
+0.06 
+
+
+0.00 0.10 0.20 0.30 0.40 0.50 0.60 0.70 0.80 0.90 1.00 
+
+
+          
+
+
+      
+
+
+      
+
+
+          
+
+
+          
+
+
+ 
+
+
+        
+
+
+      
+
+
+           
+
+
+          
+
+
+ 
+
+
+        
+
+
+      
+
+
+           it helps us to determine our strenghts and weaknesses and act 
+
+
+accordingly
+
+
+an improvement is expected by our customer
+
+
+we conduct the improvement to obtain a certain 
+
+
+certification.
+
+
+an improvement is demanded by a regulation (e.g., cmmi, cobit, 
+
+
+or itil)
+
+
+!"%&
+
+
+!"&'
+
+
+!"('
+
+
+fig. 19. why do you continuously improve your requirements engineering? (n = 195)
+
+
+finally, we asked whether the participants use a normative external standard such as cmmi for refor the improvement. we found that most use an internally defined (company-specific) standard for[0.29, 0.44]) although, as we saw above, certification is not a major reason for improvements. wehave support for p 48 that re is improved by an internally defined standard. yet, the data suggeststhat we should add a new proposition that re is also improved using external normative standards.an explanation for p 48 is suggested by many textual answers to the follow-up question why anexternal standard is not used. we got answers such as “there is no need for using an externalstandard. therefore, we decided to use a lightweight internal standard.”, “simplicity :-)” or “weuse very lean improvement process; less effort”. we interpret this such that external normativestandards are often considered too complex and elaborate to apply. we document this as explanatione 28.staples et al. [59] had already found that smaller companies show a reluctance against normativeimprovement approaches. we can confirm this and extend it to also include larger companies. thereluctance seems to be a more general phenomenon.
+
+
+6conclusionin this section we first present a summary of the results and relate them to existing evidence.we then discuss the impact and implications of the presented work, present limitations of theperformed study, and finally discuss directions of future work.
+
+
+6.1summary of resultssurprisingly for us, we found no strong differences among surveyed countries and regions. thedetailed analysis is not in the main results as we wanted to focus then on answering our researchquestions based on the evaluation of our theory. nevertheless, initially it was one of the aspects we
+
+
+
+
+
+:38s. wagner et al.
+
+
+wanted to investigate in more detail. some comparisons are published in [44]. yet, with the samplewe have now, we cannot support significant difference between countries and regions.
+
+
+6.1.1requirements elicitation and documentation (rq 1). most of the respondents state todocument requirements textually in free form or with some constraints. only for use cases anddata models, semi-formal approaches are used. semi-formal and formal goal models seem tobe niche. non-functional requirements are more often quantified than not (maybe because ofperformance-related non-functional requirements classes).
+
+
+6.1.2requirements change and alignment (rq 2). change management is either continuousor after formally accepting a requirements specification. less then 20 % change the specificationitself regularly. most respondents update their backlog or only work with change requests. mostrespondents do impact analysis between requirements, many do impact analysis in the code. forthat, many respondents use traces between requirements and code and requirements and designdocuments. to align tests with requirements, many respondents define acceptance criteria, coverrequirements with tests and let testers participate in requirements reviews. only 18 % derive testsfrom system models.
+
+
+6.1.3requirements engineering standards (rq 3). almost all respondents have an re companystandard. there is a similar share of different kinds of standards in the organisations of ourrespondents. a standard is also practised by most of the organisations. in many organisations, thestandard is tailored at the beginning of the project by the project lead based on experience. severalmethods are in use to check the application of the standard. there are various reasons to definean re standard. better quality assurance and higher efficiency are common motivations while itis least often a formal prerequisite for project acquisition. main barriers for defining a standardare higher process complexity because of the standard, missing willingness for change and higherdemand for communication.
+
+
+6.1.4requirements engineering improvement (rq 4). most organisations improve their require-ments engineering continuously either by the project teams themselves or by an own businessunit/role. the motivation for the improvement is overwhelmingly internally driven: it helps theorganisations to determine their strengths and weaknesses and to act accordingly. improvementsfor certifications and demanded by regulations are rarely the motivator.
+
+
+6.2comparison to last run
+
+
+in our theory from the first run [42], we covered some aspects that we did not include in this run ofthe survey. hence, we cannot compare the new results with the old results on expectations on goodrequirements engineering and details of problems with their requirements engineering standards.furthermore, we published the discussion of common problems and their causes and effects basedon the second run separately [43].overall, we have 22 propositions that were already covered in the first run of the survey. theywere presented together with their outcome from the first run in section 5 with the theory of theirrespective research questions. either we ran the same proposition in the first run, or in case it wasnot supported there, we might have had the opposite proposition. for the majority of propositions,the second run confirms the results of the first run. we have 14 propositions that were supportedin both runs directly. for three propositions, we had the opposite proposition not supported in thefirst run and could support them now in the second run.there are two further types of situations: (1) the proposition p 33, that the support of distributeddevelopment motivates a standard, was not corroborated by the data in the first run. based onour own experience, we nevertheless kept the original proposition. yet, the data of the second
+
+
+
+
+
+status quo in requirements engineering:39
+
+
+run now did not clearly support it either with an average close to neutral. (2) for p 29, p 36, p 41and p 44, we had the opposite in the first run which was not supported by the data. we changedthem for the second run but could also not support them. they received also no clear agreementor disagreement with averages close to neutral. we decided to remove these unclear propositionsfrom the theory for now as is reflected in the revised theory after the survey in section 5.
+
+
+6.3impact/implications
+
+
+we hope the impact of our work is twofold: first, practitioners can use our results to compare theirown experiences and practices to the status quo in practice more generally. this might help themfor introspections of their processes and techniques, lead to improvement initiatives and maybe totry out new techniques.second, we have now a theory that (in parts) unified previously isolated ones and that has beenvalidated by two successive survey runs. hence, it constitutes the most solid foundation to howrequirements engineering is done in practice so far. therefore, we believe it can be the startingpoint for a variety of further research. researchers working on specific techniques can check theusage of their techniques in practice and reflect on this usage. in particular, semi-formal and formalgoal models are rarely used despite a considerable attention in research. hence, it should be furtherinvestigated whether this is caused by deficiencies in these methods or just insufficient knowledgeon the side of the practitioners. many other aspects of the theory (and extensions of the theory)should be investigated with further surveys and, especially, with other research techniques such asinterviews and case studies. this would help to better understand why the status quo is like it isnow.
+
+
+6.4limitations6.4.1conclusion validity. we were not able to construct a random sample systematically cov-ering different types of organisations and requirements engineers, as we do not have generalinformation about how the population as such looks like. to deal with this limitation, we usedbootstrapping and only employed confidence intervals instead of null hypothesis testing to evaluatethe propositions of our theory.moreover, the choice of the thresholds we used (20 % and above “neutral”) is to some degreearbitrary. they are based on our first run and discussions in the napire team. yet, there could bereasonable cases for other numbers.
+
+
+6.4.2internal validity. a limitation that we always have with survey research is that surveyscan only reveal stakeholders’ perceptions on current practices in a cross-sectional manner. theseperceptions might further be distorted and not fully represent reality. also related to that, thedifferent respondents might have interpreted different terms and concepts in the questionnairedifferently in dependency to their organizational environment; for instance, the notion of "restandard [process/approach]". we tried to minimize the resulting threats to validity via the jointcommunity workshops described in section 2.3 and the subsequent industrial pilot studies, yet,we cannot completely eradicate the possibility of misinterpretations, misconceptions or simplebias. we believe that we need to live with this limitation for now to establish an empirical basisthat afterwards can be complemented with other research methods to analyse those perceptions inmore detail.the analysis of the “other” options in the closed questions did not reveal any frequent answersthat we missed in our answer options. it might still be the case that the respondents were notmotivated to spend the time to fill in free-text answers. yet, we believe that we could minimise thisthreat.
+
+
+
+
+
+:40s. wagner et al.
+
+
+6.4.3construct validity. furthermore, requirements engineering is a broad field which wecannot realistically cover in a single survey. while we aimed to be rather broad in our questions,many details could not be completely covered, such as more detailed techniques for requirementselicitation or other stakeholders such as customers or users. this is one of the reasons why we setup napire to be regularly repeated. we use this to shift the focus on different aspects to refine ourtheory while we are able to retest other parts of the theory at the same time. a specific unfortunateomission for this run of the survey was that we did not include user stories explicitly (only aspart of textual requirements lists with constraints) although we incorporated several other agileconcepts such as the product backlog explicitly.
+
+
+6.4.4external validity. being only able to participate by invitation might introduce the threatthat the participants are biased in the sense that they are somehow known to members of the napireteam. yet, in some countries, we used specific mailing lists for which we had clear knowledgethat our invitation criteria are met. furthermore, as discussed above in the design, we weight thebenefits of control over the list of invitees as higher than this risk.finally, a bigger shortcoming is that we still cannot claim to cover requirements engineeringas done in the whole world. while we have a large and geographically distributed sample withresponse rates between 25 and 75 %, our respondents primarily come from europe, north and southamerica. this probably covers a considerable part of the world’s software companies. nevertheless,to be able to really generalize and potentially see differences, we would need to cover asia, africa,and australia as well. especially asia has now a strong software industry and potentially strongercultural differences to our current sample. for example, the level of trust in organizations differdepending on whether it is in a individualist or collectivist society [21].
+
+
+6.5future work
+
+
+we are committed to further runs of the survey in the napire initiative. in parallel to this analysis,we are finalising the third run of the survey which will significantly add details on the handlingof different types of quality requirements or the relationship between the software teams and thecustomers. future studies should include even more theory considering the customer and user. ifpossible, it would also be interesting to compare difference across application domains.in addition, as we have so far concentrated on purely descriptive propositions, we now move tomore causal propositions on the relationship between different factors, such as different elicitationpractices and problems. furthermore, we are planning studies that employ other research methods,as discussed above, to get other viewpoints on the perceptions that we capture with our surveys.finally, we will also integrate our theory with other related theories like the theory of distancesin software engineering [6] as both theories do not conflict and the used concepts overlap onlypartially.
+
+
+acknowledgmentsthe authors would like to thank all practitioners who took the time to respond to our surveyas well as all colleagues who have supported the napire initiative along the way, including theinternational requirements engineering board for their financial support during the analysis ofthe recent (third) run. tayana conte is supported by cnpq (311494/2017-0). dietmar pfahl wassupported by the institutional research grant iut20-55 of the estonian research council. rafaelprikladnicki is partially funded by fapergs (process 17/2551-0001205-4) and cnpq. for the work ofdietmar winkler, the financial support by the austrian federal ministry of science, research andeconomy and the national foundation for research, technology and development is gratefullyacknowledged.
+
+
+
+
+
+status quo in requirements engineering:41
+

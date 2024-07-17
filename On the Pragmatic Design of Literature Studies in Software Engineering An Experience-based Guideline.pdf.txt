@@ -1,0 +1,2250 @@
+
+noname manuscript no.(will be inserted by the editor)
+
+
+on the pragmatic design of literature studies insoftware engineering: an experience-based guideline
+
+
+marco kuhrmann · daniel m´endezfern´andez · maya daneva
+
+
+received: date / accepted: date
+
+
+abstract systematic literature studies have received much attention in empir-ical software engineering in recent years. they have become a powerful tool tocollect and structure reported knowledge in a systematic and reproducible way.we distinguish systematic literature reviews to systematically analyze reportedevidence in depth, and systematic mapping studies to structure a ﬁeld of interestin a broader, usually quantiﬁed manner. due to the rapidly increasing body ofknowledge in software engineering, researchers who want to capture the publishedwork in a domain often face an extensive amount of publications, which needto be screened, rated for relevance, classiﬁed, and eventually analyzed. althoughthere are several guidelines to conduct literature studies, they do not yet helpresearchers coping with the speciﬁc diﬃculties encountered in the practical appli-cation of these guidelines. in this article, we present an experience-based guidelineto aid researchers in designing systematic literature studies with special emphasison the data collection and selection procedures. our guideline aims at providinga blueprint for a practical and pragmatic path through the plethora of currentlyavailable practices and deliverables capturing the dependencies among the singlesteps. the guideline emerges from various mapping studies and literature reviews
+
+
+m. kuhrmannuniversity of southern denmark,mærsk mc-kinney møller institute, section software engineering,campusvej 55, 5230 odense m, denmarktel.: +45 2460 1422e-mail: kuhrmann@acm.org
+
+
+d. m´endez fern´andeztechnical university of munich,institute for informatics, software & systems engineeringboltzmannstr. 4, 85748 garching, germanytel.: +49 89 289 17056e-mail: daniel.mendez@tum.de
+
+
+m. danevauniversity of twente,drinerlolaan 5, 7522 ae, enschede the netherlandstel.: +31 53 4892889e-mail: m.daneva@utwente.nl
+
+
+arxiv:1612.03583v1  [cs.se]  12 dec 2016
+
+
+2marco kuhrmann et al.
+
+
+conducted by the authors and provides recommendations for the general studydesign, data collection, and study selection procedures. finally, we share our ex-periences and lessons learned in applying the diﬀerent practices of the proposedguideline.
+
+
+keywords systematic literature review · systematic mapping study ·empirical software engineering · guideline proposal · lessons learned
+
+
+1 introduction
+
+
+systematic literature studies have received much attention in recent years as apowerful instrument to gather and structure reported knowledge in a systematicand reproducible way. we distinguish two types of secondary studies:
+
+
+a systematic mapping study (sms; petersen et al. [40]) is a method to builda classiﬁcation schema for topics studied in a ﬁeld of interest. by countingthe number of publications for categories within a schema, the coverage andmaturity of the research ﬁeld can be determined. graphical maps showing thenumber of publications in the diﬀerent categories of the schema represent thestudy results. mapping studies usually cover a broader range of publicationsas the analysis focuses on the key terms and abstracts of publications.
+
+
+a systematic literature review (slr; also: systematic review, sr; kitchenhamet al. [22]) is a means to identify, analyze and interpret reported evidencerelated to a set of speciﬁc research questions in a way that is unbiased and(to a degree) repeatable. in contrast to mapping studies, systematic reviewsusually cover a smaller, more speciﬁc range of publications while the analysisfocuses on the details of the published contributions.
+
+
+a mapping study is therefore often used to provide (and visualize) a big pictureof a publication space while the systematic review is additionally concerned withanalyzing and integrating the knowledge contained in the reviewed publications,as well as identifying inconsistencies among results, and areas that need moreinvestigation. both types of secondary studies (also applicable in combination)allow to share a structured overview of the publications in a speciﬁc research areaand a common understanding of the state of reported evidence in topics along agiven (or emerging) classiﬁcation scheme. since the initially proposed guidelinesto conduct literature studies in software engineering [19], we, as a community,could collect and systematize the procedures required, and we could see a boost ofsecondary studies in the various international evidence-based software engineeringvenues. this indicates the value of such studies to the research communities.
+
+
+problem statement since researchers face a variety of challenges for which avail-able guidelines do not yet give suﬃcient practical advice; they either comprisegeneric workﬂows or provide methods and techniques in a compendium-like style[22,41], or elaborate selected methods only, e.g., the eﬀectiveness of certain se-lection procedures [1,58]. hence, conducting a literature study still depends to alarge extent on the expertise of the involved researchers. furthermore, conductingliterature studies, to a large extent, still lacks tool support [13,5,52] thus makingthe research process as such diﬃcult to implement; notably for novices. while
+
+
+on the pragmatic design of literature studies in software engineering3
+
+
+working on a number of literature studies ourselves (sect. 3), we experienced thefollowing challenges to be the most critical ones worth deeper examination:
+
+
+– how do we begin a secondary study, how do we build search strings adequatefor given databases, and how can we control accurate results given the de-pendency to the expertise, experiences, and potential subconscious bias of theresearchers?
+
+
+– how do we deal with a large amount of data including hundreds or even thou-sands of potentially relevant papers to classify and structure, and how do weeﬃciently ﬁlter relevant results from irrelevant ones?
+
+
+– how do we eﬃciently work in a distributed team? which tools can we use toorganize our (potentially distributed) way of working?
+
+
+we experienced those challenges to concern mainly the design of a study [22] andthe data collection and study selection itself [58], notably independent of whetherit is conducted as a systematic review or a mapping study. the choice of oneparticular study approach or a combination thereof (as for instance found in [41]oftentimes) aﬀects subsequent data analysis where the data is structured, classiﬁed,coded, and analyzed to draw conclusions in tune with the research questions.despite the criticality of the initial design and data collection steps, little prac-tical advice is given on how to eﬀectively cope with the mentioned challenges. ex-isting guidelines are either too generic [51], or they focus on what a design shouldaccomplish rather than on how and why particular practices should be executedin a cost-eﬀective way, and how these practices are interconnected with each other(see also our discussion in sect. 4). in turn, for each literature study, researchersneed to carefully design and outline the process from the beginning again andagain, and they need to work out or even re-invent their own set of best practices.
+
+
+contribution in this article, we report on our own experiences in conducting sys-tematic literature studies and contribute
+
+
+– a detailed blueprint for the design, data collection, and study selection proce-dures steered by the aforementioned challenges.
+
+
+– a set of practical lessons learned and supporting material readily available foruse by other researchers approaching their own systematic literature studies.
+
+
+we aim at supporting researchers, who already have a basic knowledge about thegeneral guidelines, in their literature studies by providing a practical and prag-matic, experienced-based path through the available practices and deliverablescapturing the dependencies among the single steps (sect. 4). researchers can di-rectly reuse our blueprint to design and conduct their own domain-speciﬁc litera-ture study and build on top the data analysis to answer their individual researchquestions.
+
+
+outline the remainder of this article is organized as follows: in sect. 2, we presentour experienced-based approach to design and set up a literature study. we de-scribe our procedures as they emerged from our previously conducted studies. wealso outline the handover to the data analysis, which depends on the type of therespective study (mapping study and/or systematic review) and the research ques-tions previously deﬁned. our previously conducted studies from which we distill
+
+
+4marco kuhrmann et al.
+
+
+the blueprint are discussed in sect. 3 along practical lessons we learned while con-ducting these studies. in sect. 4, we ﬁnally discuss related work and position ourguideline, before concluding our article in sect. 5. in the articles’s appendix, weprovide exemplary integrated workﬂows describing reusable standard workﬂows,and further complementing material.
+
+
+2 study design and data collection: an experience-based approach
+
+
+we provide an experienced-based guideline to support the study design, and to per-form the data collection, cleaning, and study selection procedures. for each step,we provide a guideline complemented with small inline examples. the guideline isorganized in the three phases preparation, data collection and dataset cleaning,and study selection. figure 1 provides a big picture of the whole process includ-ing the most important inputs and outputs for the respective phases. the ﬁgurealso outlines the variations in the data analysis procedures that depend (in moredetail) on whether it is a mapping study or a systematic review.
+
+
+preparationdata collection & dataset cleaningstudy selection data analysis & visualisation
+
+
+protocol
+
+
+- res. questions- search strings- ...
+
+
+publications
+
+
+- all papers free from duplicates
+
+
+relevant 
+
+
+publications
+
+
+reporting
+
+
+scope of contribution: design and data collectionindividual facets of data analysis inmapping study / literature review
+
+
+classiﬁcation- qual. vis.- quant. vis.   (maps)
+
+
+report
+
+
+fig. 1 overview of the presented approach and scoping.
+
+
+our guideline presented in this article emphasizes the early stages of a literaturestudy and constitutes a new building block in the methodical instrumentation ofevidence-based software engineering [22]. a detailed discussion on the relation toexisting guidelines and publications is provided in the related work in sect. 4.
+
+
+2.1 preparation
+
+
+the study preparation phase serves the purpose of setting up the study designincluding, inter alia, the deﬁnition of appropriate research questions, the choiceof relevant literature databases, or the development of search queries. this phaserelates to the planning step mentioned in [22] where, for instance, the protocoldevelopment is described. to set the scope of the search, inclusion and exclusioncriteria need to be carefully outlined, and, if necessary, preliminary studies can becarried out to, among other things, support search string development or testingand improving the study design (see also test-retest procedures as mentioned in[22], or the quasi-gold standard search approach from [58]). in the following, wedescribe the individual and minimum steps to be carried out during the preparationof a literature study and give examples.
+
+
+on the pragmatic design of literature studies in software engineering5
+
+
+2.1.1 research goals and research questions
+
+
+there is no silver bullet to deﬁne the goals of a literature study, as this strongly de-pends on the purpose of the study. in general, the primary goal of literature studiesis to systematically collect reported knowledge in an area of interest. this can bedone in-breadth, usually in scope of mapping studies [40] that quantify selectedaspects reported in literature, or in-depth, usually in scope of systematic reviews[22] to analyze publications in detail. the purpose of a study eventually dictatesthe goals of the study, such as providing an overview of all relevant contributionsdealing with a particular topic.independent of the respective goals, we have found some general research ques-tions particularly worth considering in a literature study, as they help elaboratinga big picture and providing relevant background information about the publica-tion space. table 1 summarizes such generic research questions, which could beanswered in every literature study—regardless of the particular study’s scope andselected topic.
+
+
+table 1 exemplary standard research questions for literature studies.
+
+
+no.research question
+
+
+1which/how many publications on [topic] are published?2which/how many publications on [topic] are published over the years?3what is the scientiﬁc maturity of the publication set?4what is the contribution of the publication set?5what are observable mainstreams in the publication set?6what new approaches for [topic] are available?
+
+
+the research questions in table 1 address the general descriptive aspectspresent in every result set. questions 1 and 2 aim at drawing a demographicpicture to outline the current state of a ﬁeld under investigation, i.e., providinginformation about publication quantity and frequency. this information can beinstrumented to show the development over time of the studied domain and toanalyze trends, for example, an emerging or a maturing domain (as exemplarilydepicted in figure 2). the level of detail and data type (quantitative or qualitative)further depends on the respective study type1.to direct the study towards its goal, i.e., a mapping study or a literature re-view, further standard questions can be asked that support the next steps in thestudy selection process. for instance, the scientiﬁc maturity addresses the classi-ﬁcation according to the research type facet [55] to work out the level of evidence
+
+
+1 note that ﬁnding the “right” research question is a challenge and highly depends on theactual study type. for instance, kitchenham et al. [22] mention (standard) research questionsfor systematic reviews usually addressing the evaluation of impact and/eﬀectiveness of certainparadigms, while mapping studies usually address more high-level questions with the purpose ofproviding some sort of categorization. the questions presented in table 1 are addressing morethe latter aspect, as this covers information available from all sorts of studies. nonetheless,to plan and implement a literature study eﬃciently, staples and niazi [51] make clear thatnarrowly deﬁned research questions are key. we therefore recommend to use a combination ofgeneric research questions (e.g., table 1 to “get a feeling” about the result set) and speciﬁcnarrow research questions—even for mapping studies.
+
+
+6marco kuhrmann et al.
+
+
+2 1 3 4 6 
+
+
+9 
+
+
+6 
+
+
+27 26 24 
+
+
+33 
+
+
+28 
+
+
+34 
+
+
+46 
+
+
+24 
+
+
+29 
+
+
+36 
+
+
+33 
+
+
+44 
+
+
+38 39 
+
+
+47 46 
+
+
+42 
+
+
+8 
+
+
+0 
+
+
+10 
+
+
+20 
+
+
+30 
+
+
+40 
+
+
+50 
+
+
+1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 
+
+
+0 0 0 0 0 0 0 0 0 1 0 0 0 2 1 0 1 0 0 0 0 0 0 0 0 0 
+
+
+1 
+
+
+1 1 
+
+
+3 
+
+
+3 
+
+
+3 
+
+
+9 
+
+
+14 
+
+
+6 13 10 11 
+
+
+18 
+
+
+7 9 
+
+
+17 15 23 
+
+
+9 
+
+
+17 
+
+
+25 
+
+
+16 13 
+
+
+0 
+
+
+1 
+
+
+0 
+
+
+2 
+
+
+2 
+
+
+2 
+
+
+1 
+
+
+2 
+
+
+9 
+
+
+8 
+
+
+9 
+
+
+10 9 12 
+
+
+11 10 
+
+
+9 
+
+
+12 
+
+
+5 
+
+
+13 
+
+
+12 
+
+
+12 
+
+
+15 
+
+
+17 
+
+
+25 
+
+
+6 
+
+
+0 
+
+
+0 0 
+
+
+0 
+
+
+1 
+
+
+1 
+
+
+1 
+
+
+2 
+
+
+1 
+
+
+5 6 
+
+
+3 
+
+
+7 9 2 
+
+
+5 
+
+
+2 
+
+
+10 
+
+
+4 
+
+
+14 
+
+
+7 
+
+
+5 
+
+
+11 
+
+
+4 
+
+
+2 
+
+
+1 
+
+
+0 0 
+
+
+1 
+
+
+0 
+
+
+4 
+
+
+0 
+
+
+7 
+
+
+3 3 4 
+
+
+6 
+
+
+4 6 4 6 
+
+
+4 3 4 3 3 2 2 0 0 
+
+
+0% 
+
+
+20% 
+
+
+40% 
+
+
+60% 
+
+
+80% 
+
+
+100% 
+
+
+1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 
+
+
+opinion solution philosophical evaluation experience 
+
+
+fig. 2 exemplary demographic distribution of publications over speciﬁc facets (addressingresearch questions 1, 2, and 4) as taken from [28]. this ﬁgure illustrates on top the number ofpublications over time and per year depicting publication trends. the bottom part indicatesto the maturity of the result set by providing information about the research type facets.
+
+
+in the publications. a mature ﬁeld should for example not only contain solutionproposals, but also validation and evaluation research papers, and consequentlyexperience reports (figure 2). the question for the result set’s contribution aimsat working out the diﬀerent kinds of contribution type facets [40] and their respec-tive distribution in the publication population. for instance, does the result setcontain models, theories, lessons learned, or frameworks? the remaining questionsaddress further general aspects, such as observable streams in the result set. suchstreams can become obvious by certain trends or accumulations of publications,e.g., outstanding number of solution proposals and, at the same time, no theories.such a discussion can also be supported by applying further speciﬁc models, suchas the rigor-relevance model proposed by ivarsson and gorschek [16]. mainstreamscan also be brought to light by studying the contents of the paper in more de-tail, e.g., by introducing focus type facets [37], which can also direct the in-depthinvestigation of a systematic review.
+
+
+in summary, the standard research questions from table 1 aim at providing ademographic overview of the study. answering these questions shows how manypublications have been published over time, about which topics they are, and whichresults they provide. these questions already provide a big picture of a researchﬁeld, and they allow for getting a better understanding of the studies availablein that ﬁeld. finally, these questions also help scoping the study and preparingthe collection and selection procedures according to the overall study objectives.for example, an initial analysis of the demographic information helps checking thesuitability of research questions and adjusting them if necessary.
+
+
+on the pragmatic design of literature studies in software engineering7
+
+
+2.1.2 search strings
+
+
+once the scope of the study has been set, researchers need to reﬂect on propersearch strings, which also depend on the domain under investigation. depending onthe precision of the search strings, the queries may produce inappropriate results,too much overhead, or just an incomplete result set. therefore, search strings mustbe deﬁned with care [22], and search queries should always be tested prior to theactual search2. there exist some strategies to develop proper search strings, e.g.:
+
+
+snowballing one way to narrow down the search space in advance is to conducta preliminary investigation of the ﬁeld by relying on snowballing [22]. that is, theinvestigation starts by studying publications known in advance and by iterativelyextending the known literature set by following the references provided therein.this procedure helps providing an initial overview of the publication space andkey contributors, but very much depends on the expertise necessary to select anappropriate starting point (see also sect. 3). however, as reported by badampudiet al. [2], manual search strategies compared to automatic ones are capable ofproducing “competitive” results regarding result set precision while, at the sametime, avoiding vast overhead usually produced by automatic database searches.
+
+
+trail-and-error search one approach suitable to ﬁnd and test search queries isthe “trail-and-error search”. this approach relies on meta-search engines, e.g.,scopus or google scholar, and requires initial keywords or (partial) key phrasesthat are considered search query candidates for the “real” search. the purposeaims at iteratively narrowing down the list of potential candidates by checkingwhether:
+
+
+– a search query returns a (potentially) meaningful result set.– a keyword or a combination thereof returns hits (at all).– a search query is of suﬃcient precision; for instance, if searching a particulardomain, how many hits are not in the domain of interest?
+
+
+hence, a trail-and-error search serves two major purposes: first, it can be usedto initially test and develop search queries, e.g., by determining which keywordsmight (not) generate useful results. second, results from such test runs can beused to harvest reference publications to support manual search strategies (as forinstance exercised in [53]). although this approach can be seen as everything buta good scientiﬁc practice, it still helps taking the initial steps into the overallresearch design development—especially in domains in which few or no secondarystudies are present to provide structure to the ﬁeld of interest (as it for instancewas the case in [15]).
+
+
+2 note that the construction of search strings also depends on the planned search strategy(see sect. 2.2), since search stings for automated database searches have a diﬀerent “layout”than those used for a curiosity-driven or trail-and-error search, e.g., using google scholar.regardless of the search strategy, ﬁnding the proper key words is crucial. the most straight-forward approach to develop appropriate search strings is either to do a trail-and-error searchor to call in domain experts. alternatively, a preliminary study can be conducted to “test” theﬁeld of interest.
+
+
+8marco kuhrmann et al.
+
+
+2.1.3 inclusion and exclusion criteria
+
+
+depending on the study’s scope, result sets can contain a vast amount of poten-tially relevant publications. in the worst case, we experienced searches to yield inseveral thousands of hits. we doubt it should be questionable that several 10,000hits cannot be treated seriously within an acceptable timeframe3. therefore, re-searchers need to clean the dataset and to select the relevant studies. in order tomake these procedures rigorous and reproducible, inclusion and exclusion criterianeed to be deﬁned.
+
+
+table 2 exemplary (standard) inclusion (i) and exclusion (e) criteria for literature studies.
+
+
+no.criterion
+
+
+1ititle, keyword list, and abstract make explicit that the paper is related to [topic].2ithe paper presents [topic]-related contributions, e.g., [topic list].
+
+
+3ethe paper is not in english [or any other language of interest].4ethe paper is not in the domain [domain name(s)].5ethe paper is a tutorial-, workshop-, or poster summary only.6ethe paper relates to [topic] in its related work only.7ethe paper occurs multiple times in the result set.8ethe paper’s full text is not available for download.
+
+
+similar as with standard research questions (table 1), we experienced someinclusion and exclusion criteria to be useful in a broad spectrum of studies. thesestandard criteria listed in table 2 allow researchers to obtain an appropriate resultset and to deﬁne their requirements on the objective-dependent relevance of publi-cations retrieved. for instance, experience shows workshop- or tutorial summariescan contain a lot of relevant keywords, but might not necessarily advance the ac-tual body of knowledge. also, since contributions might occur multiple times ormight be out of scope, those have to be eliminated as soon as possible (criterion 7).another important criterion is the eighth, i.e., if the full text is not available, therespective publication is usually of little value (regarding possibilities to analyzethem and eventually draw proper conclusions). in context of a mapping study, thisissue can be compensated to a certain extent as those studies focus on an early,abstract-based analysis. however, when it comes to in-depth analyses, e.g., in asystematic review, the full text needs to be available.finally, kitchenham et al. [22] recommend aligning search strings with theresearch questions. we add to this the suggestion to also align the in-/exclusioncriteria with the research questions. this might result in a number of “duplicated”criteria, i.e., a paper could be relevant to topic a or to topic b if the literature studyaims at synthesizing knowledge thus requiring multiple topics to be addressed andanalyzed together. this furthermore allows for later replication why a speciﬁcpaper was in- or excluded to/from the study.
+
+
+3 as it is also criticized by staples and niazi [51]. in [28], however, we accepted this challenge.it took us about a year just to clean the data and perform the selection procedures. we donot recommend this for replication.
+
+
+on the pragmatic design of literature studies in software engineering9
+
+
+2.2 data collection and dataset cleaning
+
+
+once the study is designed, data can be collected. in that stage, the resultingdata needs to be analyzed, cleaned/harmonized, and prepared for the upcominginvestigations.
+
+
+2.2.1 data collection
+
+
+the data collection is usually conducted as an automated search using diﬀerentsources. automated data search, however, needs careful preparation and poten-tially extra test runs, as every data source has a slightly diﬀerent format of thequery strings, or constraints regarding the queries’ length and complexity (see alsothe discussion in [1,2,4,22]). in practice, we experienced the design of multiple andoverlapping query strings beneﬁcial. although the search procedure must be exe-cuted several times and produces some overhead, simple queries are usually betteraccepted by the search engines (see sect. 3 for a detailed discussion).
+
+
+appropriate data sources depending on the particular disciplines, several stan-dard databases or collections (so-called baskets4) are available. in the following,we give an exemplary discussion for software engineering. apart from speciﬁcconference- and workshop series (so-called restricted approach [22]), a literaturesearch should address the most common sources. that is, instead of searchingspeciﬁc proceedings of a conference, search queries should be designed to workwith entire digital libraries. for the more general ﬁeld of software engineering, thefollowing libraries can be considered as standard libraries (or subsets thereof ifopting for the restricted approach):
+
+
+– ieee digital library (xplore)– acm digital library– springerlink– sciencedirect (elsevier)– wiley interscience– iet (also accessible via ieee)
+
+
+however, these libraries have their “specialties”, notably, regarding the searchquery construction. another point to take care of when using such digital librariesis the continuous indexing, i.e., indexes will “evolve” over time, which makes it
+
+
+checking the result set before conducting the data collection, we recommend tohave a set of reference publications available. one criterion we found useful forchecking the appropriateness of a search is if the result set contains the expectedreference publications (see also, e.g., [58]). if one expects a particular publicationin the result set, e.g., arising from a preliminary search, but it is not contained inthat set, the revision of the search might be recommendable. options to identify
+
+
+1&subarticlenbr=346
+
+
+10marco kuhrmann et al.
+
+
+primary search and backup search primary searches should always be conductedusing aforementioned (or comparable) standard libraries. however, for several rea-sons, those libraries do not always contain all relevant publications. for example,contributions relevant to the ﬁeld might result from ph.d. theses that are notpublished in/not indexed by the standard libraries.therefore, we experienced it beneﬁcial to complement the primary search witha backup search utilizing meta-search engines to complete the result set. however,using a meta-search engine must be done carefully. besides the standard meta-search engines5, such as dblp or scopus, google scholar is often used to getresults quickly. however, the quality of search results obtained from such enginesalso depends on search preferences and even trends and, thus, searches might bemuch less repeatable than compared to standard libraries. also, the results mightalso provoke duplicates and introduce extra threats to the validity of a literaturestudy. a ph.d. thesis, for example, can be written in a cumulative manner whereparts of it exist separately as peer-reviewed publications already present in theresult set of the primary search. hence, it is important that the results obtained viameta-search engines are not included into the main result set without crosscheck.to this end, hits produced by such engines should be included in an own category,and such searches should be discussed as part of the threats to validity to increasethe transparency.
+
+
+(data) export practices data obtained from a data source must be stored in away in which it can be used for further analyses. this part can become timeconsuming since diﬀerent databases provide diﬀerent export formats, which lateron need to be joined and integrated. therefore, data should be exported in at leasttwo formats:
+
+
+– a literature management tool of choice, such as bibtex
+
+
+– as plain or (better) comma-separated (csv) text ﬁles
+
+
+these formats have the advantage that they are easy to process and convert into
+
+
+2.2.2 dataset cleaning
+
+
+cleaning a result set is a demanding, time-consuming task. usually, we ﬁnd twotypes of papers to be removed from the result set (cf. table 2):
+
+
+1. contributions that are out of scope, and2. duplicates.
+
+
+duplicates are easy to ﬁnd and eliminate, yet it is hard to decide which of theduplicates should be eliminated. it often happens that one publication is listedin multiple literature databases (e.g., for cross-indexing reasons). in such cases,it needs to be decided which paper to consider for inclusion into the result set.a pragmatic approach is to include the results from the database that providesthe paper for download and to remove the other occurrences; this needs, however,
+
+
+5 note: apart from serving the backup search, meta-search engines can also be a usefulinstrument in studies that also include (continuous) updates, e.g., to monitor the developmentof a ﬁeld over time [23].
+
+
+on the pragmatic design of literature studies in software engineering11
+
+
+fig. 3 example of a word cloud from [28] for visually inspecting the result set. “outliers” tobe used for excluding further papers from the result set are highlighted.
+
+
+to be deﬁned in the exclusion criteria for the sake of transparency. another casefor a duplicate is a conference paper, followed by a journal article, e.g., a specialissue paper. in such cases, it must be decided whether the original or the extendedpublication should be selected for inclusion. a criterion could be to always selectthe higher-valued publication, i.e., journal over conference, as journal articles areexpected to have a higher maturity [37] and level of detail.publications that are out of scope are, on the other hand, easy to remove, yetthey are often hard to identify if part of a large result set. since the result setmight have been created from an automatic search, even out-of-scope publicationsthat met at least one selection criterion could be present. those publications needto be found manually and removed in the cleaning procedures.
+
+
+scoping via word clouds to support the identiﬁcation of out-of-scope-papers,we experienced word clouds (tag clouds) to be a useful tool. word clouds canbe automatically created using keyword lists or abstracts. a word cloud is aninstrument to visualize the (quantiﬁed) occurrence of a word/term in relation toother terms. they can be easily created using several publicly available tools6,e.g., wordl or tagcrowd7.word clouds can serve two purposes: first, word clouds can be used to analyzethe appropriateness of a result set. a word cloud, which is based on the keywords,can be analyzed to work out whether the contained publications’ keywords matchthe expectations (figure 3). unexpected and/or “wrong” keywords can be easilydetected and used to clean the result set. depending on the quality, a considerableshare of non-ﬁtting papers can be removed; remaining papers (in a reduced set)are then removed during the selection phase (sect. 2.3).however, word clouds have to be used with care: even though there is researchthat shows word clouds providing improvement concerning the clustering and sum-marizing of descriptive information, such as [36,44,29,48,46], there is still the risk
+
+
+6 note: some of the tools have limitations regarding the amount of text they can process.furthermore, the tools oﬀer diﬀerent features, such as thresholds, visualization and exportmechanisms. those points need to be evaluated prior to usage.7 both tools are available at: http://www.wordle.net and http://tagcrowd.com/
+
+
+12marco kuhrmann et al.
+
+
+of eliminating relevant papers; for instance, because those papers might rely ona rarely used terminology. therefore, eliminating papers based on word cloudsonly might threaten the validity of a study why we recommend that the use ofword clouds must be planned with care and in detail in advance, and resultingcandidates for removal require careful inspection.as a second purpose to be served, a word cloud can support the later analysisof a result set during, for example, the concept classiﬁcation conducted as partof a mapping study. for instance, in our study on method engineering [27], weanalyzed the ﬁnal word cloud to get a better understanding about which researchtype facets to expect from the publication set (e.g., how to interpret terms like“case study” as used in the respective community). the result of the word cloudand the result of the classiﬁcation conducted in the study can then be comparedto analyze the subjective authors’ self-classiﬁcation and the more objective onefrom the reviewers’ classiﬁcation. in another example [24], we used a word cloudto support the development of a focus type facet [37] and, furthermore, to conducta cluster analysis.
+
+
+merging and reducing the integrated dataset depending on the particular searchstrategy—especially the search query construction approach—researchers have todeal with multiple (isolated) datasets. this is especially true if the work during thedata collection is distributed among multiple researchers. to prepare the selection,the individual result sets need to be integrated into a holistic one. this integrationconstitutes a challenging task:
+
+
+– if a literature database was queried multiple times (e.g., for the search stringconstruction), the individual results need to be joined.
+
+
+– every literature database provides a slightly diﬀerent export format and/orstructure, e.g., csv ﬁles obtained from springer and from acm have a diﬀerentstructure. these diﬀerences need to be reconciled.
+
+
+– if duplicates were removed on a per-database basis, the integrated result setmay still contain cross-database duplicates. the integrated dataset must thenbe cleaned again by identifying and removing duplicates.
+
+
+– if the individual datasets were yet not investigated for duplicates, the respectivecleaning procedures must be performed now.
+
+
+the aforementioned steps can be (partially) automated [23]. nevertheless, the in-clusion and exclusion criteria selected for the study should be consulted to supportthe compilation of the integrated dataset as well. we experienced the followingprocedure (figure 4) to be best suited for the stepwise integration:
+
+
+1. integrate and clean the data on a per-database level, i.e., if a database wasqueried multiple times, integrate the obtained sub-result-sets ﬁrst.
+
+
+2. integrate all sub-result-sets into the integrated dataset and repeat the cleaning.
+
+
+eventually, we create an integrated dataset. appendix b provides an exampleillustrating and explaining the minimal required data. please note that the step ofintegrating and reducing the data is crucial and, therefore, needs to be documentedcarefully. the particular steps of the applied procedures are valuable informationfor other researchers to reproduce the overall study. furthermore, the outcomeof these steps forms the input for the rest of the study. hence, researchers mustensure that no relevant publication is lost during this step.
+
+
+on the pragmatic design of literature studies in software engineering13
+
+
+result set 1.1literaturedatabase 1
+
+
+result set 1.2
+
+
+...
+
+
+result set 2.1literaturedatabase 2
+
+
+result set 2.2
+
+
+...
+
+
+further literaturedatabases...
+
+
+result set 1 
+
+
+(integrated)
+
+
+result set 2 
+
+
+(integrated)
+
+
+integrated result set
+
+
+remove multipleoccurences
+
+
+remove multipleoccurences
+
+
+integrated literaturedatabase; cleanedfrom duplicates
+
+
+fig.4 exemplary proce-dure of stepwise integrat-ingandcleaninglitera-ture databases. in each in-tegrationstep,reporting-relevant information needsto be recorded.
+
+
+step-wise dataset completion once an integrated data set is obtained, it shouldbe analyzed for (suﬃcient) completeness. depending on the database and theindividual publications, some information might be missing, e.g., abstracts or key-words. this information needs to be collected and integrated, however, the stepbears some pitfalls:
+
+
+– there are abstract-free publications, e.g., magazine articles, of which the re-spective literature databases provide parts of the introduction section as ab-stract substitute. such cases require a manual inspection and researchers needto discuss how to treat them.
+
+
+– there are publications without (electronically available) keywords. these arepublications that have no keywords at all, or publications that may well havedeﬁned keywords, but those were not listed in the exported data structure. forthose publications, it must be deﬁned how to treat them.
+
+
+– for technical reasons, some literature databases do not provide options toexport the abstracts. in such cases, manual work is required to get the abstractand integrate it into the dataset.
+
+
+– pieces of required metadata might be missing, e.g., the publication year, pub-lication vehicle (conference, journal, etc.). this information needs to be com-pleted.
+
+
+apart from this essential information, another aspect needs to be taken into ac-count: the representation of the authors. literature databases do not have a uni-form representation of the author lists; for instance, authors might have varyingabrams” versus “abrams, j. j.”). if researchers plan for a study, for example,to conduct some analyses on the author lists, such as by creating collaborationnetworks, cliques, and mainstreams, the author information must be available ina uniform way. as dataset completion can be extremely ﬁdgety work, it should beperformed iteratively and under continuous quality assurance:
+
+
+1. complete the abstracts2. complete the keywords3. complete all other required metadata4. ensure consistency in the author lists
+
+
+dataset structure: a template to support all aforementioned steps, a deﬁneddata structure needs to be in place. the particular data structure depends on thespeciﬁc study. however, we recommend minimal data structure shown in table 8
+
+
+14marco kuhrmann et al.
+
+
+(appendix b) as it emerges from our previously conducted studies. the tableillustrates the recommended minimal data structure to organize the result set.this table serves the basic purposes and can be extended respecting the actualstudy’s needs, such as extra columns for classiﬁcations for mapping studies.
+
+
+2.3 study selection
+
+
+in the study selection phase, the prepared dataset is analyzed for publicationsrelevant for the actual study, i.e., researchers systematically select the relevantpapers from the search results (this phase relates to the (primary) study selectionin [22]). since result sets can comprise several hundreds or even thousands ofpapers, this phase requires special attention and, thus, careful planning.
+
+
+2.3.1 plan: deﬁning the study selection procedure
+
+
+many factors inﬂuence the actual study selection (e.g., number of researchers, de-gree of distribution, familiarity with the topic, etc.). in case of multiple researchersconducting the study, we consider the following aspects of the study selection nec-essary to be planned and agreed on in advance:
+
+
+– schedule for the study selection including workshops, regular meetings/callsfor discussing intermediate selection/classiﬁcation results, etc.
+
+
+– technical infrastructure (tools, data storage, ﬁle formats, etc.)– the criteria upon which researchers decide the relevance of a publication– the procedure to infer an agreement and the voting procedure (if applicable)
+
+
+the last step, the voting, assumes that various researchers vote for in-/exclusionof a publication independently. the ﬁnal decision for including the publicationinto the ﬁnal result set then depends on the result of the voting. there are manypractices that can be included into the voting procedure (e.g., veto rights) whilewe believe that this also much depends on the research context, e.g., researchers’experience, expertise, but also their personal preferences to conduct the study (see
+
+
+2.3.2 kick-oﬀ: setting up the selection approach
+
+
+assuming a study within a group of multiple researchers, the study selection startswith a kick-oﬀmeeting in which the inclusion and exclusion criteria are recalled(table 2), the selection/voting procedure is discussed, and a schedule for subse-quent meetings is deﬁned. in the following, every participating reviewer gets a copyof the cleaned result set, which is rated individually. that is, the study selectionprocedures are initiated.
+
+
+2.3.3 voting procedure
+
+
+voting is essentially a headcount procedure in which a team of researchers worksout a decision whether a particular paper is considered relevant for the study ornot, i.e., to eliminate those papers from the result set that are considered irrelevant.
+
+
+on the pragmatic design of literature studies in software engineering15
+
+
+the relevance can be determined by diﬀerent measures, which need to be deﬁnedin advance (e.g., title, abstract, and full text). potential routes towards a decisionare majority votes or relative ratings. the actual classiﬁcation can be carried outin a group of researchers or individually, iteratively, round-based or in workshops.in the following, we focus on an individual, traditional round-based classiﬁcation.
+
+
+majority voting the voting is a headcount that aims to bring in objectivity intothe study selection. although there are in-/exclusion criteria, the ﬁnal applicationof the criteria to the publications to be selected is in the hands of individualsthus including individual interpretations of a publication. the reason why werecommend including multiple researchers in this procedure is to overcome theinherent threat arising from this subjectivity. hence, we also consider a majorityvote to be the standard procedure as it is the most straightforward approach:every reviewer is provided with the integrated result set and reviews the itemsindividually according to deﬁned criteria, e.g., title and/or abstract. if a reviewerconsiders a publication relevant, 1 point is given, 0 otherwise. for n reviewers andm publications, the procedure results in an n × m voting matrix, which helps toselect the relevant papers. the (ﬁnal) selection is then based upon the agreements,such as a threshold or agreement statistics (e.g., cohen’s or fleiss’ κ). for example,if three reviewers participate, the voting procedure could be organized as shownin figure 5: two reviewers start individually. to get a paper included in the setof relevant papers, 2 points are required (threshold approach). two reviewers cancome up with the following results: 2 points = paper is relevant, 0 points = paperis irrelevant, and 1 point = paper is not yet decided. in the next step, the thirdreviewer8 is called in and is presented a reduced list that only contains the papersyet not decided. the third reviewer then conducts the voting to ﬁnally decideabout the papers’ relevance.
+
+
+a
+
+
+b
+
+
+c
+
+
+d
+
+
+e
+
+
+f
+
+
+g
+
+
+0
+
+
+1
+
+
+0
+
+
+0
+
+
+0
+
+
+1
+
+
+1
+
+
+0
+
+
+0
+
+
+0
+
+
+0
+
+
+1
+
+
+0
+
+
+1
+
+
+b
+
+
+e
+
+
+f
+
+
+0
+
+
+1
+
+
+1
+
+
+paper reviewer 1 reviewer 2
+
+
+out
+
+
+out
+
+
+in
+
+
+reviewer 3
+
+
+0
+
+
+1
+
+
+0
+
+
+0
+
+
+0
+
+
+1
+
+
+1
+
+
+0
+
+
+0
+
+
+0
+
+
+0
+
+
+1
+
+
+0
+
+
+1
+
+
+0
+
+
+1
+
+
+1
+
+
+out
+
+
+integrated vote(threshold = 2)
+
+
+infig.5 overviewofthestandardmajorityvotingprocedure for a 3-reviewerteam.
+
+
+alternative approaches instead of calling in a third reviewer to conduct a fullyindependent review, a voting workshop can be organized. in such a workshop,all reviewers involved in the selection process discuss and decide the non-decided
+
+
+8 please note that a reviewer can be an internal reviewer (e.g., a co-author) as well as anexternal researcher or expert not involved at all in the design in case of unknown domains.
+
+
+16marco kuhrmann et al.
+
+
+a
+
+
+b
+
+
+c
+
+
+d
+
+
+e
+
+
+f
+
+
+g
+
+
+0
+
+
+1
+
+
+1
+
+
+0
+
+
+paper
+
+
+reviewer 1
+
+
+integrated vote(threshold = 2)
+
+
+a
+
+
+c
+
+
+e
+
+
+g
+
+
+b
+
+
+d
+
+
+e
+
+
+f
+
+
+g
+
+
+a
+
+
+b
+
+
+c
+
+
+e
+
+
+f
+
+
+a
+
+
+c
+
+
+d
+
+
+g
+
+
+b
+
+
+d
+
+
+f
+
+
+0
+
+
+0
+
+
+0
+
+
+0
+
+
+0
+
+
+0
+
+
+0
+
+
+0
+
+
+0
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+reviewer 2reviewer 3reviewer 4reviewer 5
+
+
+0
+
+
+0
+
+
+0
+
+
+1
+
+
+1
+
+
+out
+
+
+in
+
+
+fig.6 paperselectionbased on overlapping pa-persubsets(areviewerevaluatesonlysubsetofpapers,usuallyjustonerun required to ﬁnd theselection).
+
+
+papers. we applied this approach for instance in [34,28]. yet another approachis to provide reviewers with overlapping subsets of the whole result set, e.g., toincrementally collect three votes in just one run (figure 6).
+
+
+scaling so far, we performed the majority voting procedure with 2 reviewers in theworkshop model, 3 and 4 reviewers, and two 2-person review teams (see sect. 3).however, as we talk about simply summing up points, the approach can be scaledto an even larger number of reviewers. a paper’s relevance is then simply deﬁnedby a functionrelevance : r+× z →{0, 1, ?}(1)
+
+
+that is used to determine the relevance of a paper pj in relation to a threshold th,and to (de-)select papers or marking them for later decision:
+
+
+relevance(rating(pj), th) =
+
+
+
+
+
+
+
+
+1if rating(pj) > th0if rating(pj) < thtodecideif rating(pj) = th(2)
+
+
+the actual threshold th needs to be deﬁned during the initialization of the selectionis then deﬁned by the number of points that a paper received from n reviewersinvolved in the process:
+
+
+rating(pj) =
+
+
+nx
+
+
+i=1ri(pj)(3)
+
+
+regardless of the number of stages and reviewers involved, rating statistics need tobe carefully documented in order to be able to reproduce which paper came in inwhich stage and to make explicit the inter-rater agreement. furthermore, we alsosuggest to document according to which criteria a paper was included or excludedafter all, which can require extending the data structure of the result set to keepthis information.
+
+
+relative rating the relative ratings approach9 as illustrated in figure 7 is similarto the majority voting where all reviewers are asked to vote a result set, but with a
+
+
+9 so far, we did not yet apply this method to a complete study, but partially applied itduring sample-based result set testing and evaluation (cf. sect. 3). as this approach is quitecomplex compared to the majority vote, it requires suﬃcient tool support.
+
+
+on the pragmatic design of literature studies in software engineering17
+
+
+a
+
+
+b
+
+
+c
+
+
+d
+
+
+e
+
+
+f
+
+
+g
+
+
+2
+
+
+3
+
+
+paperreviewer 1
+
+
+integrated vote(threshold: mode = 4)reviewer 2reviewer 3
+
+
+5
+
+
+5
+
+
+1
+
+
+3
+
+
+4
+
+
+out
+
+
+in
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+2
+
+
+2
+
+
+2
+
+
+2
+
+
+2
+
+
+2
+
+
+2
+
+
+3
+
+
+3
+
+
+3
+
+
+3
+
+
+3
+
+
+3
+
+
+3
+
+
+4
+
+
+4
+
+
+4
+
+
+4
+
+
+4
+
+
+4
+
+
+4
+
+
+5
+
+
+5
+
+
+5
+
+
+5
+
+
+5
+
+
+5
+
+
+5
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+2
+
+
+2
+
+
+2
+
+
+2
+
+
+2
+
+
+2
+
+
+2
+
+
+3
+
+
+3
+
+
+3
+
+
+3
+
+
+3
+
+
+3
+
+
+3
+
+
+4
+
+
+4
+
+
+4
+
+
+4
+
+
+4
+
+
+4
+
+
+4
+
+
+5
+
+
+5
+
+
+5
+
+
+5
+
+
+5
+
+
+5
+
+
+5
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+2
+
+
+2
+
+
+2
+
+
+2
+
+
+2
+
+
+2
+
+
+2
+
+
+3
+
+
+3
+
+
+3
+
+
+3
+
+
+3
+
+
+3
+
+
+3
+
+
+4
+
+
+4
+
+
+4
+
+
+4
+
+
+4
+
+
+4
+
+
+4
+
+
+5
+
+
+5
+
+
+5
+
+
+5
+
+
+5
+
+
+5
+
+
+5
+
+
+out
+
+
+in
+
+
+in
+
+
+discuss...
+
+
+discuss...
+
+
+fig.7 paperselectionbasedonrelativevotes(ﬁnal selection is, in thisexample, made using themodevalue,whilethe“neutral” element 3 servesas marker for papers to bediscussed).
+
+
+diﬀerence in the applied metric: instead of a simple “yes/no” (1/0) metric, in thisapproach, we use likert scales and thresholds. the basic underlying procedureremains the same: each reviewer is provided with the integrated result set andrates a paper, but on a scale, such as a 5-point likert scale:
+
+
+– 5 points: paper is highly relevant (must be included)– 4 points: paper is (somewhat) relevant– 3 points: neutral/no opinion– 2 points: paper is not relevant– 1 point: paper is absolutely irrelevant
+
+
+based on the individual ratings, relevance can be determined, e.g., using the meanvalue or the mode, and precision can be determined, e.g., using standard deviationsor distance metrics. the inclusion criterion is then a selected value on the usedscale, e.g., 4 (or better). critical is the handling of papers that end up with theneutral value. these papers require extra handling.
+
+
+balancing votes how reliable is this way of selecting papers? in the simple case,which is the majority vote, a democratic headcount is used to in-/exclude a paper.however, this procedure has some ﬂaws. for instance, given a situation in whichtwo reviewers ended up in a stalemate. a third reviewer is then called in to makethe decision; and now scale this up to 7 reviewers: the 7th reviewer makes theﬁnal decision by outvoting 3 others. to overcome such situations, workshops canbe performed to discuss critical papers (which can be unrealistic if, for instance,250 papers need to be discussed), thresholds can be deﬁned, or weights can beintroduced, e.g., senior reviewer votes count twice. however, the basic problemremains: what is the level of agreement, i.e., the reliability of the selection? as aﬁrst step to determine the reliability, the inter-rater reliability can be calculated,e.g., using cohen’s κ [6] for two reviewers or, more general, fleiss’ κ [11] for morethan two reviewers10. furthermore, the basic agreement can be visualized (andpartially automated) as shown in figure 10 (appendix b).yet, the headcount is a fairly simple, but absolute metric. in some cases, weexperienced the need for a more diﬀerentiated vote, which can be implemented,e.g., using relative votes with likert scales. however, the more diﬀerentiating scaleintroduces a new challenge: how to ﬁnd a ﬁnal and consolidated rating? approach-ing a consolidated rating via the mean or the mode might fail, because they are
+
+
+10 please note that inter-rater reliability calculations also depend on the scales applied, e.g.,weighted κ values when using ordinal data (cf. [22,56]).
+
+
+18marco kuhrmann et al.
+
+
+easy to trick or because they might be even not applicable; consider, for example,the mode of {0, 0, 1, 1}, and what a resulting mean of 0.5 even implies in relationto a th ∈z (cf. eq. 1). again, a simple solution could be to introduce rater-speciﬁcweights. furthermore, simple weighting methods, such as, the 3-point-method canbe applied, with vj = {vr1pj, ..., vrnpj } being the set of n reviewer votes for a paperpj:
+
+
+rating(pj) =min(vj) + 4 · ¯vj + max(vj)
+
+
+6
+
+
+(4)
+
+
+the extended weighted rating from eq. 4 can be used in the determination of therelevance in eq. 2.
+
+
+2.3.4 the gathering: integrate and finalize the paper selection
+
+
+having all individual ratings conducted, the study’s moderator (kitchenham et al.[22] speak of a team leader) collects all individual ratings and starts the integrationof the results. the basic task is to, initially, integrate the individual ratings to workout the current state of selected and/or undecided papers (see also color-coding infigure 10 that is based on eq. 2 and eq. 3). depending on the approach deﬁned inthe initialization of the selection procedure (sect. 2.3.1), the moderator preparesthe dataset for extra review iterations and/or organizes required workshops. in thefollowing, the selection procedure is iterated until all papers are ﬁnally decided.once all papers are decided, the moderator draws a baseline and preparesthe ﬁnal selection of papers, i.e., a cleaned list that only contains those papersconsidered relevant for the study, and he ﬁnally prepares the clearing work.
+
+
+2.3.5 class dismissed: analyze the result set and report
+
+
+when the selection is done, the moderator concludes the selection process andprepares the handover to the actual analysis. this includes some standard tasksas well as some optional tasks depending on the eventually targeted study. inparticular, the moderator has to prepare the study selection report and the result-ing literature database. the literature database must at least contain all papersthat were selected as relevant to the study. the report comprises some statistics,such as, databases, results per database from search, and elimination statistics (anexample is shown in table 3).depending on the intended study type, just in this step, the moderator canalso provide some extra data to support the later analyses. for example, if ap-plicable, the inter-rater agreement helps identify those publications that form theheart of the result set. furthermore, several outputs can be generated from theresult set that help ﬁnding a starting point, e.g., exports of the keyword lists andabstracts and word clouds generated thereof, and, associated with more eﬀort,
+
+
+2.4 concluding and handover to data analysis
+
+
+the last step consists in initiating the actual data analysis, which is dictated bythe research questions and eventually the type of secondary study. from the afore-mentioned described steps, the outcomes listed in table 4 have to be assembled
+
+
+on the pragmatic design of literature studies in software engineering19
+
+
+table 3 exemplary search and selection report (excerpt from [28]).
+
+
+stepieeeacm. . .total
+
+
+step 1: searchs1 and (c1 or c2)71543. . .3,185. . .. . .. . .. . .. . .s8 and c2114105. . .8,374
+
+
+step 2: removing duplicatesduplicates per database1,486566. . .16,643duplicates across all databases916551. . .5,315
+
+
+step 3: in-depth filteringapplying ﬁlters f1 and f2578–. . .1,562unﬁltered–551. . .1,610
+
+
+result set (search process)578551. . .3,172
+
+
+step 4: votingfinal result set28365. . .635
+
+
+and shipped to the in-depth analyses. these deliverables can be properly inte-grated with the research protocols as, for instance, recommended by kitchenhamet al. [22].
+
+
+table 4 artifacts to be created in the early stages of literature studies to be shipped to thein-depth data analysis.
+
+
+referenceoutcomes and content to be delivered
+
+
+sect. 2.1.2search terms and resulting search queries (generic terms and queries, as well asdatabase-speciﬁc queries)sect. 2.1.3in-/exclusion criteria used in the studysect. 2.2.1list of selected and queried databases, and raw result sets (e.g., csv ﬁles)sect. 2.2.2cleaned and integrated data sets (including all support instruments used)sect. 2.3.1a documented study selection approach, including team setup, selection proce-dures, and so forthsect. 2.3.4decided data set (ﬁnal result), statistics of the selection, further complementingreport data
+
+
+3 example studies and lessons learned
+
+
+the guideline presented in this article emerges from various conducted systematicreviews and mapping studies. in this section, we provide an overview of the previ-ously contributed studies and discuss how we applied the discussed practices andprocedures so far. table 5 provides an overview of the referred studies and relatesthe studies to the respective methods and techniques.
+
+
+20marco kuhrmann et al.
+
+
+table 5 overview of the diﬀerent studies utilizing the presented practices.
+
+
+ref.title
+
+
+type (r/m)
+
+
+preliminary study
+
+
+trail-and-error search
+
+
+snowballing
+
+
+search string (1/n)
+
+
+majority voting
+
+
+relative rating (s/f)
+
+
+workshops
+
+
+inter-rater agreement (s/f)
+
+
+multiple researcher teams
+
+
+word clouds
+
+
+social network analysis
+
+
+rigor-relevance model [16]
+
+
+[27]a mapping study on the feasibility ofmethod engineering
+
+
+m(n)(3)
+
+
+[34]where do we stand in requirementsengineering improvement today? firstresults from a mapping study
+
+
+m(n)(3)(f)
+
+
+[18]criteria for software process tailoring:a systematic review
+
+
+r(n)(3)
+
+
+[26]systematic software process develop-ment: where do we stand today?
+
+
+r(1)(3)
+
+
+[28]software process improvement: whereis the evidence?
+
+
+m(n)(2)(s)(s)
+
+
+[23]software process improvement: a sys-tematic mapping study on the state ofthe art $
+
+
+m(n)(2)(s)
+
+
+[24]how does software process improve-ment address global software engineer-ing?
+
+
+m/r#(2)
+
+
+[17]on the role of software quality man-agement in software process improve-ment
+
+
+m/r#(2)
+
+
+[25]towardsartifactmodelsaspro-cess interfaces in distributed softwareprojects
+
+
+m/r(n)(2)
+
+
+[53]is water-scrum-fall reality? on theuse of agile and traditional develop-ment practices
+
+
+r(1)(2)(2)
+
+
+[15]on the use of safety certiﬁcation prac-tices in autonomous field robot soft-ware development: a systematic map-ping study
+
+
+m(n)(3)
+
+
+[43]valuecreationbyagileprojects:methodology or mystery?
+
+
+m(n)(3)
+
+
+[7]a systematic mapping study on em-pirical evaluation of software require-ments speciﬁcations techniques
+
+
+m(n)(4)
+
+
+[14]a systematic literature review on ag-ile requirements engineering practicesand challenges
+
+
+r(n)(3)
+
+
+search string (1/n): the study uses 1 large or n smaller search stringsrelative rating (s/f): relative rating of the full result set or on samples thereof(∗): * number of search strings, or number of reviewers involved$: study update for [28]; #: detailed study using the dataset from [23]
+
+
+on the pragmatic design of literature studies in software engineering21
+
+
+3.1 selected examples and lessons learned
+
+
+over the last years of working on literature studies, we collected a number oflessons learned, which we brieﬂy summarize below. furthermore, in order to il-lustrate the lessons learned with examples, in this section, we relate the lessonslearned to the studies from table 5 and provide some examples. moreover, thepractices listed in table 5, in general, can be considered self-contained buildingblocks, i.e., they can be combined in diﬀerent ways. however, in our experience,some combinations of practices showed especially beneﬁcial. those are presentedin appendix a as a blueprint. we also have to note that there might exist de-pendencies and/or constraints providing arguments in favor or against applyingcertain practices in respect of a particular context (see also [58]). for example, ifa preliminary study was already conducted to ﬁnd the study’s scope and a set ofreference publications, the “trail-and-error” search approach will not add to thestudy. another example is the combination of selection strategies, i.e., the com-bination of majority votes, relative ratings, and voting/rating workshops. here,setting up workshops (“expensive” due to required human resources) should bepreferably scheduled for the late selection phases when the amount of publicationsthis section is organized according to the stages of this guideline (cf. figure 1).
+
+
+3.1.1 basic planning
+
+
+regarding the general planning activities associated with a literature study, weconsider the following lessons learned the most important.
+
+
+make a cunning plan that cannot fail given the eﬀort, duration, and the in-volvement of various researchers, a literature study should be built upon a concreteplan of which the research protocol [22] is key. we experienced that involving allresearchers at the beginning is crucial to establish a shared understanding of:
+
+
+– the basic terms, concepts, and their synergies, in the ﬁeld of interest, and– the way the classiﬁcation criteria should be interpreted and applied.if classifying the relevance or other concepts based on a pre-deﬁned scheme, thoseconcepts need to be clariﬁed at the beginning.
+
+
+watch out! the technical infrastructure matters one of the most important ad-ministrative tasks is to deﬁne the technical infrastructure to be used for the study.the two most important aspects are:
+
+
+– use a version control system (vcs).– don’t mix up microsoft excel and openoﬃce.org/libreoﬃce.the vcs is crucial to create baselines of the study, e.g., raw data or tentativeresult sets. furthermore, a vcs allows for distributed collaborative and concur-rent work, and it ensures that results are not accidentally overwritten. the secondaspect is caused by practical experience: in several studies, some researchers justtook the pre-conﬁgured microsoft excel ﬁle (see appendix b) and worked on itwith openoﬃce.org/libreoﬃce, so that many scripts and auto-formatting con-ﬁgurations did not further work, or that other researchers could simply not open itanymore with the respectively other tool (e.g., as happened in [28]). fixing thosesituations is time-intensive and avoidable.
+
+
+22marco kuhrmann et al.
+
+
+3.1.2 search strings and search engines
+
+
+regarding the construction of proper search strings, we consider the followinglessons learned the most important ones.
+
+
+one search string or multiple ones? applying the introduced search strategiesmay result in more than one search string, which then can be customized for thediﬀerent search engines. a practical problem remains: the length and complexity ofthe search strings, and the ability or limitations of literature databases to processsearch queries of and above a certain complexity (as observed when trying toreplicate [47]). that is, the major question is which alternative is better: oneintegrated long search string or multiple shorter ones, as exemplarily shown intable 6.
+
+
+table 6 exemplary search strings for an automated database search (excerpt from [28]).
+
+
+search stringaddresses. . .
+
+
+s1(life-cycle or lifecycle or life cycle) and (managementor administration or development or description orauthoring or deployment)
+
+
+process management: gen-eral life cycle
+
+
+. . .. . .
+
+
+s8(feasibility or experience) and (study or report)reported knowledge and em-pirical research
+
+
+an integrated search string has the advantage of (relative) high precision. fur-thermore, it allows for capturing the entire domain in only one query. however,many literature databases, such as ieee xplore, have some limitations regardinglength and complexity. furthermore, the syntax of the search queries diﬀers fromdatabase to database, thus, requiring database-speciﬁc instances of the query any-way. in contrast, multiple shorter search queries bypass database limitations byproviding simpler structures (also recommended by [22]) and, furthermore, thosestrings are easier to adapt to speciﬁc database requirements. on the other hand, inorder to ensure search precision, multiple search strings require more eﬀort in theirdesign. for instance, to get a maximum of publications, multiple search strings re-quire some overlap to avoid “losses at the borders”. this, however, may causesome overhead in the result set and multiply occurring publications that have tobe identiﬁed and removed later on. furthermore, due to the simpler structure,such search strings are prone to attract unwanted publications [58] thus requiringextra context selectors and ﬁlter constructs [28].
+
+
+don’t trust old result sets when it comes to updating or replicating a literaturestudy, one problem is the literature database as such. for example, in a studentstudy activity, we aimed at replicating and updating a previously conducted slr[47] of which we had the full research protocol available. the replication packagealso included text ﬁles containing the database-speciﬁc search strings. in an initialtest run, we encountered the following to happen: ieee xplore rejected the search
+
+
+on the pragmatic design of literature studies in software engineering23
+
+
+query stating it was too complex having more than 50 terms. transferring the(general master) search string to scopus (to test if it will trigger any papers at all)and conﬁguring the search properly (limiting the venues and publishers etc.), wefound 215 instead of 125 papers matching the search criteria. so far, we couldn’tsuﬃciently elaborate what happened exactly, but argue this being one of the eﬀectscoming along with continuously updating indexes (see also brereton et al. [4], whomention indexing of current digital libraries inappropriate). in short, over thetime, search queries age and literature databases evolve. there is no guaranteethat a result set obtained at one point in time will be re-constructible some timelater. there is no mitigation strategy for this problem, except to increase thetransparency of the data collection by reporting a timestamp for the searches tosupport the reproducibility and thereby the validity. therefore, search queries aswell as raw result sets (sect. 2.2) should be stored—at least to reproduce theﬁndings from the raw data.
+
+
+3.1.3 data collection and cleaning
+
+
+regarding the data collection and cleaning, we consider the following lessonslearned the most important ones.
+
+
+find the right scope in some studies, we saw an explicit and intentional limi-tation of the search; for instance, instead of searching a whole library, authorsof a study limited themselves to particular conferences or journals [47]. such anapproach promises the advantage of having a more focused result set by avoid-ing overhead [22]. however, this may come possibly at the price of informationloss, because many relevant publications might not be found. such procedure isof course possible, but not recommended; yet, if conducted that way, it should beexplicitly mentioned in the threats to validity to increase the transparency and re-producibility. finally, if the ultimate goal is a systematic mapping study, however,this approach cannot be applied, as the limitation of the search scope hampers theoverall result set quality and also the quality and reliability of the conclusions.
+
+
+what publication type to include? besides the used search engines, researchersneed to clarify what types of publications can/cannot be included into the resultset. we consider, for example, including textbooks and edited chapters as a viableoption in case the study is about the analysis of deﬁnitions, e.g., to understand themeaning of a particular concept as used by authors in a ﬁeld. the choice of certainbooks can and should be justiﬁed based on their popularity in a community; forexample by including well-established textbooks as used for teaching, or booksthat have a high number of citations in empirical papers in the area. mastertheses in turn should be avoided given their missing peer-review process. involvingph.d. theses, however, depends on various contextual characteristics; for instance,whether they passed a peer-review process or whether they are cumulative ones(which might, of course, lead to duplicates in the result set given that the content
+
+
+how valid is the paper selection process? in the previous sections, we describeddiﬀerent voting procedures that can be applied. with every voting procedure comes
+
+
+24marco kuhrmann et al.
+
+
+diﬀerent ways of increasing the validity of the methods applied and the resultsobtained. the least common denominator of all procedures, however, is the inter-rater agreement [22]. we postulate the use of inter-rater agreements especiallyif used in a multi-staged voting procedure as they serve as a constructive qualityassurance measure between the stages; for example, to clarify misconceptions, mis-interpretations of research questions, misinterpretations of classiﬁcation schemes,and diﬀerent understanding of the relevance of publications. besides the valueof inter-rater agreements for constructive quality assurance, it also increases thetransparency to the reader and, therefore, the conclusion validity. however, suchan agreement makes only sense if the voting procedure is not conducted itera-tively over incomplete result sets whereby it is impossible to use the agreement asa means to improve the classiﬁcation between stages (if not used in a training/testphase). hence, there is a trade-oﬀregarding the purpose and the eﬀort of usingthe inter-rater agreement, which needs to be clariﬁed in advance.
+
+
+how much is enough? as a matter of fact, there is no meaningful metric thatcould be used to indicate whether the result set is suﬃciently large or not, let alonebecause the size of a dataset provides no indicator to the quality of its content [57,58,2]. for example, in [18] and [15], we performed the data search, but then cappedthe result sets to include only the ﬁrst 50 hits per query result. is this enough?what is the risk of loosing relevant papers? as there is no common ground, sucha decision must be taken on a per-study basis. yet, it needs to be ensured thatthe result set of papers obtained is of high quality, i.e., representative for the ﬁeldof investigation and the research questions formulated. this means to ensure anaccurate result set and a detailed and validated review protocol including a searchstring potentially adapted to the particularities of the search engines, and detailedinclusion and exclusion criteria.
+
+
+3.1.4 preparing the handover
+
+
+although a study selection might be completed, more activities can be carried outbefore entering the in-depth analysis. the ﬁnal dataset provides already data thatcan be used early in the overall literature study process to help researches ﬁndingappropriate points to start with the analysis. from our so far conducted studies,we consider the following lessons learned helpful.
+
+
+exporting keyword lists, abstracts, and word clouds from the result set, key-word lists and abstracts can be easily harvested and prepared to support thebeginning of the analysis. we can create, for example, word clouds from theselists to get a quick visual inspection where a striking keyword could indicate to aset of publications to start with. however, what seems easy to generate and usecan eventually turn out to be diﬃcult or even misleading: several tools for wordcloud generation have limitations regarding the amount of text they can process.a solution is to perform a keyword coding, which serves three purposes (as usedin [28]): ﬁrst, the list of keywords is shortened; second, the used terminology isharmonized (e.g., “small-to-medium-sized companies” and “small and medium en-terprises” are coded to “sme”); third, the keyword coding can be considered aﬁrst step towards full coding, which is normally performed in the context of a
+
+
+on the pragmatic design of literature studies in software engineering25
+
+
+mapping study to work out the classiﬁcation schemas. if a keyword (and/or ab-stract) coding would be performed, the outcomes of the activities would comprisethe respective keyword lists, abstract lists, the mapping ﬁles containing the codesand all synonyms, and optionally generated visuals.
+
+
+utilizing social network analysis as a means for pre-selection a social networkis a graph that provides an overview of subjects and their relationships (see for in-stance [12,49,54]). right in the early stages, even before the actual study begins,a social network graph can be generated from the result set. such a graph canserve multiple purposes. for instance, a social network graph highlights coopera-tion cliques, i.e., authors that collaborate and contribute a considerable share ofthe result set, thus, forming the “community leaders”. when it eventually comesto begin with the result set analysis, researchers can face the problem to ﬁnd aproper starting point. potentially identiﬁed clusters can provide some guidancethrough the result set. another option is to look for domain-shaping key contri-butions, which are potentially highlighted by a citation network11. beyond theanalysis preparation, a social network is also a supportive means within a study.for example, in [27], we used a collaboration network to study if a found trend inthe publication space is just because of the result set’s background noise. there-fore, we generated the social network to identify the key contributors and createda sub-map, which was based on the respective publications only, and comparedwhether the general trends diﬀered.
+
+
+4 related work and discussion
+
+
+this article complements a number of existing guidelines and initiatives for con-ducting literature studies. in this section, we provide an overview of related workincluding approaches, methods, experiences, and tools to support literature stud-ies and position our contribution in context of the current publication landscape.table 7 summarizes the body of knowledge in existing guidelines we found particu-larly relevant and adds how our contribution at hand deviates (i.e., adapts/extends)from existing contributions.
+
+
+approaches we deliberately use the term “approaches” to subsume all the diﬀer-ent processes and methods utilized in literature studies. one prominent approachin context of literature studies is the systematic review process as initiated for soft-ware engineering by kitchenham [19] and continuously improved, e.g., kitchenhamand charters [21], eventually leading to a consolidated guideline [22], as well asthe systematic mapping study made popular for software engineering by petersenet al. [40] (updated in [41]).these general guidelines, which—despite of their value to provide a commonstructure and consistent terminology—have been experienced as too generic fordirect practical application [41,51]. they still serve as an umbrella and a multi-tude on ﬁne-grained methods and models, and advice and best practices can be
+
+
+11 this approach needs to be considered with care, as for instance newer publications mayhave a high-quality contribution, but don’t have a high citation count (e.g., compared to a10-year old publication). therefore, citation networks only deliver initial indication and trendsshouldn’t be taken for granted.
+
+
+26marco kuhrmann et al.
+
+
+table 7 relation of the present guideline with further established guidelines.
+
+
+ref.key contributionsadaptation/extension
+
+
+[22]kitchenham et al. provide a well elaboratedoverview of the systematic literature study pro-cesses. to this end, they introduce a conceptualdescription of what to do in a systematic reviewor in a systematic mapping study, and an ex-planation of why these steps should be carriedout. the aim is to provide a generalized viewon what to do while concrete advice of how tooperationalize the respective steps in a speciﬁccontext is out of scope.
+
+
+our guideline emphasizes the operationalization of theparticular steps in the data collection and study selec-tion phase, and the guide provides examples and crit-ical discussion of lessons we learned. furthermore, ourguideline describes activities as building blocks and of-fers exemplary workﬂow templates for literature studiesof diﬀerent complexity and size.
+
+
+[41]peterson et al. propose a guideline, which ex-tends their original one [40] grounded in ev-idence obtained from analyzing 52 mappingstudies and comparing the guidelines usedtherein. the guideline provides a checklist of ac-tivities and refers to articles that used those toselect data for the study. it further proposes amore detailed classiﬁcation schema (comparedto [40,55]) and comprises small examples forillustration.
+
+
+our guideline has a diﬀerent scope compared to [41] aswe focus on the relatively unexplored early stages only.that is, our guideline focuses on the data collection andstudy selection process, whereas we pay little attentionto the data extraction and analysis which we believe tobe already well elaborated. yet, our guideline providesa more detailed perspective, e.g., on the diﬀerent prac-tices and how to combine them, how to utilize techniquessuch as word clouds or social networks to aid the selec-tion process (both not mentioned in [41]). therefore, ourguideline is a pragmatic complementation of the studyidentiﬁcation phase from [41].
+
+
+[58]zhang et al. describe a “quasi-gold standard”to ﬁnd an eﬀective study selection strategy.among other things, zhang et al. deﬁne asearch process to achieve high sensitivity andprecision of the searches.
+
+
+similar to zhang et al., our guideline recommends utiliz-ing diﬀerent search engines. yet, our guideline providesmore details regarding actual practices to analyze andclean the result (sub-)sets obtained from diﬀerent searchruns, and we also provide recommendations to develop anintegrated result set to be evaluated in the actual studyselection process. therefore, our guideline complements[58] and provides recommendations to ﬁll gaps, such asmissing information concerning the steps required to getfrom step 4 (conduct automated search) to step 5 (eval-uate search performance).
+
+
+[55]the work by wieringa et al. has become repre-sentative for developing classiﬁcation schemasbased on a well elaborated reference (see also[40,37] or [41]).
+
+
+in the present guideline, we explicitly do not aim to sup-port schema development. however, when providing adata structure template, we leave room for classiﬁca-tion schemas. furthermore, grounded in our experience,we also propose considering free metadata to be col-lected, since we found strict classiﬁcation schemas notwell-applicable in all setups.
+
+
+[16]the rigor-relevance model by ivarsson et al.provides a scale-based approach to determinethe relevance to industry and the rigorousnessof the research conducted. hence, this modelcan support the paper selection process.
+
+
+in our guideline, we utilize the rigor-relevance model ex-actly as proposed as an explicit extra dimension to sup-port the classiﬁcation, because we experienced it to beof particularly high value. we therefore recommend touse a combination of “standard schemas” (e.g., [55,16,40,37]) complemented with study-speciﬁc schemas, e.g.,those developed from free metadata.
+
+
+embodied by the guidelines. for example, a challenge in literature studies is thedevelopment of proper classiﬁcation schemas. in literature, we ﬁnd, for instance,the research type facet classiﬁcation schema developed by wieringa et al. [55] andthe contribution type facet schema as illustrated by petersen et al. [40] (adopted
+
+
+on the pragmatic design of literature studies in software engineering27
+
+
+from shaw’s work [50]) serving as generic classiﬁcation patterns for studies [41].another perspective is provided by paternoster et al. [37], who utilize a focus typefacet and a pertinence facet. furthermore, paternoster et al. [37] include a modelfor determining rigor and relevance of the involved studies (based on a model pro-posed by ivarsson and gorschek [16]) to support the determination of the resultset’s reliability. however, petersen et al. [41] mention those classiﬁcation schemascritical. the reason is that such schemas, as the one by wieringa et al. [55], leaveroom for interpretation. as a matter of fact, we can ﬁnd “tailored” variants ofthis schema in a number of studies (see also wohlin et at. [57]). it also remains achallenge to construct a schema in a proper and eﬃcient manner, and a numberof strategies are available for this purpose [39]. for instance, in our study [28],we used the focus type facet concept ﬁnding the described construction procedurefrom [37] inappropriate for the following reasons: if one has to deal with a verylarge number of papers, a manual coding-based schema construction is too costly.moreover, it is challenging to clearly deﬁne the elements of such a schema, asindicated by portillo-rodr´ıguez et al. [42]. this is because not all papers havesuﬃcient information in title, keywords, and abstracts to conduct a proper andﬁne-grained classiﬁcation [4], and if the purpose of the study is to capture an entiredomain, developing a precise classiﬁcation is close to impossible, as many publi-cations address multiple topics, which makes a unique classiﬁcation hard or evenimpossible. therefore, in previous work [28], we started collecting “free” metadatainstead of providing a big picture of the domain, but leaving the full classiﬁcationto the ﬁne-grained analyses of selected topics. as outcome, in [23,24] we used themetadata to generate heat maps (as also done in [38]) to work out trends worthfurther investigation.constructing a classiﬁcation schema requires data to apply the schema. in thisrespect, petersen et al. [41] found 15 ways to collect and identify relevant studies.data search is mainly done using manual and database searches, and snowballing.yet, it is currently subject to discussion which of the practices (or combinationsthereof) result in datasets of suﬃcient quality and what is considered a suﬃcientdataset after all [57]. ali and petersen [1] review strategies to select studies insystematic reviews and formulate a selection process. they conclude that a good-enough sample could be obtained by following a less inclusive but more eﬃcientstrategy. zhang et al. [58] present a “quasi-gold standard” to identify relevantstudies and badampudi et al. [2] show that snowballing also leads to an appropriateresult set. that is, all the diﬀerent search strategies used so far produce suﬃcientdatasets. up to now, however, little has been reported on the complementaryuse of the diﬀerent search strategies, costs and beneﬁts associated with such acombination. in the present article, similar to dyb˚a et al. [8], we stress this aspectby presenting the combined use, and we also demonstrate how a search can becomplemented by further techniques, such as social network analysis [49,54] orword clouds [28,24], to support pre-selection, analysis scoping, and dataset/resultvisualization.the search and selection procedures also include the deﬁnition and use of in-clusion and exclusion criteria. however, petersen et al. [41] found only ﬁve outof 10 guidelines explicitly addressing this topic, but there was so far no attemptto craft a set of standard in-/exclusion criteria. similarly to standard researchquestions, standard data collection workﬂows, and standard study selection pro-cedures, we have proposed a set of standard inclusion and exclusion criteria to
+
+
+28marco kuhrmann et al.
+
+
+support a quick start of the study and to lay the foundation for the developmentof further study-speciﬁc criteria.
+
+
+experiences regarding the (generic) guidelines used by empirical software engi-neering researchers, petersen et al. [41] found and compared in total 10 guidelinesused, whereas the (more general) ones by kitchenham and charters [21] and pe-terson et al. [40] were identiﬁed as the most frequently used. furthermore, theirﬁndings include identiﬁed gaps in the individual guidelines, such as missing practi-cal advice on how to do self-evaluation, justiﬁcation and motivation of the researchquestion chosen regarding the demographic overview of a planned study, or miss-ing shared practices from personal accounts of designing systematic reviews andmapping studies by following speciﬁc guidelines. petersen et al. [41] add to a se-ries of meta-studies that aim to monitor the guidelines’ application and to collectlessons learned and best practices is a required step to consolidate experience. forinstance, kitchenham and brereton [20] analyzed 68 studies and found that thetime required to conduct a systematic review and diﬃculties regarding quality as-sessment are problematic. this ﬁnding provides extra arguments for sophisticatedtool support. in their study, authors also found current digital libraries not appro-priate for broad literature searches. this is also supported by brereton et al. [4],who speciﬁcally found the indexing of those digital libraries inadequate and alsomention that the quality of paper abstracts is too poor, e.g., to judge upon therelevance of a paper based on its abstract only. this provides a rationale for dif-ferent search and selection strategies [1,2,58]. a more general discussion is raisedby staples and niazi [51], who generally recommend using guidelines, but alsomention a need to optimize the process as such (e.g., narrowly deﬁned researchquestions, improved selection procedures, and improved data extraction) to reducethe eﬀort needed to conduct such a study. however, exemplary research questionsto start a literature study are only provided by petersen et al. [41] as part of theanalysis of other studies, thus, being focused to the respective study subjects—the presented list of quoted research questions does not serve the generalization.dyb˚a et al. [8] consider “normal” meta-analytic approaches to be of limited usefor software engineering only and, hence, report their experience from applyingdiverse study types in a systematic review; a mixed-method approach similar tothe practices reported in the present article. riaz et al. [45] provide a diﬀerentperspective in their report and mention experts and novices having a diﬀerentperception of the systematic review process and its challenges. the present articlealso addresses this point by providing examples, reusable assets like research ques-tions or in-/exclusion criteria, and a detailed elaboration on selected practices anda demonstration of their use. such challenges are also addressed by fabbri et al.[10], who provide an experienced-based guideline that comes as integrated processwith the purpose of externalizing tacit knowledge about the process and its im-plementation. in contrast to fabbri et al. [10], the present article is not supposedto be a self-contained comprehensive guideline covering the process of conductinga literature study as a whole. instead, we focus on the early stages and providea limited, but interlinked set of practices illustrated by examples and reusablebuilding blocks, which we also compile into reference workﬂows to follow.
+
+
+tools the body of knowledge in software engineering is growing and, thus, lit-erature studies are likely to grow in size and complexity as well. tool support
+
+
+on the pragmatic design of literature studies in software engineering29
+
+
+has therefore become crucial to collect, manage, and evaluate data. however, thequestion of what can be considered as proper tool support has puzzled researchersfor years [13,52]. a group around marshall conducted research on tool support forliterature studies [30,31,32,33]. among others, they provided a feature analysis todeﬁne basic requirements [32], and in [5], authors found a strong need to providesupport for planning and teamwork when conducting a literature study. in [33],the same author group concluded a recommended list of requirements, which wasgenerated based on 13 semi-structured interviews. yet, the requirements list onlyprovides a high-level overview of features that opens a fairly large design space thatshould be carefully considered when designing tools. the challenges coming alongwith this large design space were explicitly addressed in [52] in which we, basedon a shared set of requirements, independently developed two tools—both real-izations with diﬀerent features emphasized and implementing diﬀerent work andcollaboration patterns. over the years, few tools dedicated to support researchersperforming systematic reviews have been proposed; notable examples are slurp[3], sesra [35], and start [9]. these tools were analyzed in [32], yet those are notranked with ﬂying colors. still, the classic spreadsheet application (quite often) incombination with so-called reference managers (e.g., endnote, mendeley, papers,and zotero) seem to build the standard tooling for literature studies.
+
+
+summary of related works the present article contributes to the body of knowl-edge by stressing the need for more concrete advice to complement the genericguidelines, and by oﬀering an experience-based guideline especially to perform thesteps in the early stages. although for instance petersen et al. [41] provide a com-prehensive selection of practices used for these stages, a streamlined approach topresenting, explaining, and linking these steps to each other is not in scope of theircontribution. in a nutshell, most of the available guidelines are focused on whata design should accomplish rather than on how and why a particular step shouldbe executed in a cost-eﬀective way. for example, we found no guideline explainingwhat pieces of information are worthwhile including and what justiﬁed particularconﬁgurations of descriptive data pieces to be taken care of by the researchers.our recommended minimal data structure (table 8) can be directly used by re-searchers facing this question. furthermore, no guideline so far discussed in detailthe ways to run a voting procedure. we provided an operationalized descriptionon how to do this in a systematic way, along with a discussion on a research teammodel, a scaling/vote calculation schema and a demonstration of a potential tech-nical realization based on the suggested minimal data structure (figure 10). basedon our reported experience, we also provide a description of the work deliverablesthat are produced during a literature study process and the dependencies amongthe deliverables (sect. 2.4), and we shared our lessons learned regarding the issuescoming along with handling search engines, which are barely discussed in availableguidelines.
+
+
+5 conclusion
+
+
+systematic literature studies have become a powerful means to elaborate and struc-ture the state of reported knowledge. especially in the software engineering com-munity, they have received much attention in recent years. despite their relevance
+
+
+30marco kuhrmann et al.
+
+
+to the community and ﬁrst valuable proposals of guidelines, they are diﬃcult toconduct, require a lot of eﬀort and depend on experiences and expertise of the re-searchers involved. especially the latter decides often over the success of a study,depending on aspects such as
+
+
+– appropriateness of the research questions and value to the community,– accuracy of the design, or– reproducibility of the data collection.
+
+
+when conducting literature studies, there are various challenges all concerningthe initial stages of the data collection rather than the particularities of the lateranalytical phase, and there are challenges that concern the organization of such astudy.in this article, we reported on our experiences made in the course of variousliterature studies and contributed an experience-based guideline that puts strongemphasis on tackling some practical challenges. our aim was to speciﬁcally sup-port young scholars facing their ﬁrst literature study and to provide them with apragmatic and easy-to-enact guideline. to this end, we collected and structuredour experiences, and we also shared our experiences in utilizing diﬀerent tools tosupport the data collection, the dataset cleaning, or the study selection procedures.furthermore, we provided some generalized blueprint-style workﬂows to follow in aparticular study, also increase the eﬃciency in the way study designs are reportedin papers within the space limitations given for conference submissions so that theused approaches don’t have to be justiﬁed from scratch all the time drowning thepresentation of the results out.while compiling this guideline, we also realized again the need for ﬁne-grainedguidelines and, moreover, the need for a sophisticated tool support. as a matterof fact, all our studies were conducted utilizing fairly simple tools, such as spread-sheets or plain text ﬁles to feed further external tools, e.g., word cloud generators.however, having conducted the data collection, research teams have rich data avail-able, which could be used for extensive tool-support. yet, comprehensive tools arenot yet publicly available or, if at all, in their early stages of their development asfor instance [52]. this indicates to a strong need to (1) increasing the eﬀort spenton developing applicable procedures and ﬁne-grained reference workﬂows from theavailable knowledge and experience, and (2) to put eﬀort into the developmentof tools to support literature studies. these tools need to support the collectionof data, their storage and organization, the management of in-/exclusion criteria,support to implement workﬂows for paper selection and classiﬁcation, which alsoincludes the management of classiﬁcation schemas, and, eventually, supportingthe connection to further tools, e.g., word cloud generators, statistics software,and social network analysis tools.
+
+
+acknowledgements
+
+
+we want to thank roel wieringa for fruitful discussions on previous versions ofthis article and all our students, especially those who contributed to our previouslyconducted literature studies over the past years. finally, we are grateful for theconstructive feedback provided by the anonymous reviewers of this article whohelped improving it substantially.
+
+
+on the pragmatic design of literature studies in software engineering31
+
+
+a study workﬂow templates
+
+
+in this appendix, we provide selected workﬂow templates, which we inferred from experiences(table 5) for simple reuse in research method descriptions of scientiﬁc papers. the providedtemplates can be used to inspire or shorten the description of research methods, which es-pecially in conference papers consumes much precious space. for each model in subsequentsections, we provide a brief context description, an exemplary workﬂow, and textual descrip-tion.
+
+
+a.1 template 1: 2 researcher workshop model with snowballing
+
+
+context: this model addresses smaller literature studies in which just two researchers collab-orate, thus, having no option to implement more comprehensive study selection procedures,such as majority votes. our experience shows this model to be well-applicable in settings withup to approximately 50 papers, two senior or one senior and one junior researcher, and indistributed settings. apart from an initial research objective and/or a set of research questionsand a (small) set of reference publications, no extra entry conditions need to be fulﬁlled.
+
+
+workﬂow: figure 8 illustrates the basic workﬂow for this model including some notes em-phasizing the most relevant points to be considered.
+
+
+select reference 
+
+
+studies (papers)
+
+
+carry out 
+
+
+snowballing
+
+
+define queriesdefine data sourcesdefine inclusion and 
+
+
+exclusion criteria
+
+
+carry out data 
+
+
+collection
+
+
+clean result set
+
+
+rating workshop
+
+
+perform kick-off 
+
+
+meeting 
+
+
+perform individual 
+
+
+rating
+
+
+integrate individual 
+
+
+ratings
+
+
+(call in 2 reviewers)
+
+
+[consensus=no]
+
+
+keywording on 
+
+
+studies obtained from 
+
+
+snowballing
+
+
+(decide on those studiesthat are not yet voted inor out; in the workshop,1st: discuss paper basedon metadata, 2: inspectthe whole paper)
+
+
+(discuss in-/exclusion criteriaand agree upon schedule)
+
+
+(integrate the individual data sets and analyze the results; identify the undecided studies and prepare a closing or rating workshop)
+
+
+(conduct automated data search based on the queries developed from the snowballing outcomes)
+
+
+(analyze the snowballing results to generate "formal" keyword lists for the search query construction)
+
+
+(define and test the searchqueries; run tests and inspect the results: are the reference papers in the result?)
+
+
+(define the in-/exclusion criteria; use standard criteria and revise them with study-specific criteria)
+
+
+[consensus=yes]
+
+
+(handover to the main study)
+
+
+fig. 8 exemplary workﬂow for the 2 researcher workshop model with a snowballing-basedpreliminary study.
+
+
+workﬂow description: the 2 researcher workshop model with snowballing is implemented
+
+
+32marco kuhrmann et al.
+
+
+as follows: right in the beginning of the study, a snowballing-based preliminary study is con-ducted. for this pre-study, a set of reference papers is selected to lay the foundation for an(incremental) snowballing search. when the snowballing is done, the obtained papers are ana-lyzed for keywords, which are used to construct the search queries for an automated databasesearch. as the last preparation steps, the data sources of interest are selected and the inclusionand exclusion criteria are deﬁned.datasets. the kick-oﬀmeeting is—on the one hand—closing the data collection and cleaningphase and—on the other hand—starts the study selection phase. in the kick-oﬀmeeting, bothresearchers reﬂect on all the criteria, inspect and prepare the dataset for the rating, and agreeon a schedule. according to the procedure illustrated in figure 5, each researcher gets a copyof the dataset and carries out the individual rating. when the rating is done, both datasetsare integrated and checked for consensus. in a rating workshop (or multiple workshops), bothresearchers iterate through the dataset discussing all items that are not yet decided to ﬁnd anagreement. when the concluding integration is done, the study selection phase is closed andthe result set is transferred to the main study (sect. 2.4). for handing over the result set, acopy of the fully rated result set is created for archiving, and the actual result set is reduced,i.e., those dataset items that were rated as irrelevant for the main study are removed from thedataset so that only relevant data ﬁnds its way into the analysis.
+
+
+a.2 template 2: 3 researcher voting-only model
+
+
+context: this model addresses literature studies in which three researchers collaborate andimplement a voting-based study selection procedure. our experience shows this model to bewell-applicable in the majority of all literature study settings. this model supports mixed anddistributed teams, whereas at least one senior researcher has to be involved to guide the studyproject. our standard implementation of the 3 researcher voting-only model follows the 2+1approach (figure 5, p. 15), i.e., the voting procedure to select relevant papers is organized bytwo researchers carrying out the full voting independently and calling in a third researcher tomake the ﬁnal decisions. in order to set up a study following this model, research objectivesand questions, keyword lists and accordingly derived search queries have to be in place; op-tionally, a (small) set of reference publications is available.
+
+
+workﬂow: figure 9 illustrates the basic workﬂow for this model including some notes em-phasizing the most relevant points to be considered.
+
+
+workﬂow description: the 3 researcher voting-only model is implemented as follows:after deﬁning the search queries, data sources of interest, and the required inclusion and ex-in the kick-oﬀmeeting, the team of researchers nominates two researchers who will con-duct the initial rating. according to the procedure illustrated in figure 5, each of the twoselected researchers gets a copy of the integrated dataset for carrying out the individual rat-ing. when both researchers have rated the dataset, one of them integrates both and analyzesthe integrated result set for the agreement. those dataset items that are not yet decided areselected and exported in a reduced dataset, which is given to the third reviewer. the thirdreviewer then performs a rating on the reduced dataset and, eventually, integrates the outcomewith the full dataset. after performing this third rating, the dataset is now fully decided andcan be prepared to be transferred to the main analysis (sect. 2.4). if using a tool-supportedapproach as, for instance, shown in figure 10, the diﬀerent stages can be supported by simplecalculation, scripts, and conditional formatting (color coding).
+
+
+b recommended data structure
+
+
+in this section, we present a recommendation of a data structure to store data obtained by amanual/automatic literature search. table 8 presents this recommended data structure, whichemerges from several literature studies (table 5), and the table explains the meaning of the
+
+
+on the pragmatic design of literature studies in software engineering33
+
+
+perform kick-off 
+
+
+meeting 
+
+
+perform individual 
+
+
+rating
+
+
+integrate individual 
+
+
+ratings
+
+
+[consensus=yes]
+
+
+[consensus=no]
+
+
+(call in reviewer 3)
+
+
+define queriesdefine data sourcesdefine inclusion and 
+
+
+exclusion criteria
+
+
+carry out data 
+
+
+collection
+
+
+(conduct automated data search based on the queries in the defined data sources)
+
+
+(define and test the searchqueries; run tests and inspect the results: are the expected papers in the result?)
+
+
+(define the in-/exclusion criteria; use standard criteria and revise them with study-specific criteria)
+
+
+clean result set
+
+
+(call in 2 reviewers)
+
+
+(discuss in-/exclusion criteria, decide which 2 reviewers do the initial selection, and agree upon schedule)
+
+
+(handover to the main study)
+
+
+fig. 9 exemplary workﬂow for a data collection and study selection approach for 3 reviewersusing a voting-only approach.
+
+
+diﬀerent ﬁelds. note: we consider the presented data structure to be minimal, i.e., speciﬁcstudies will require further data ﬁelds. however, due to the absence of comprehensive andmature tools to support mapping studies, the normal would be to set up a simple spreadsheet.examples of such spreadsheets (figure 10) can be obtained from http://goo.gl/pbylsn.
+
+
+fig. 10 example of a color-coded voting spreadsheet. the sheet shows diﬀerent combinationsof a 3-person majority vote (2 reviewers + 1 extra reviewer for ﬁnal decisions).
+
+
+the data structure as presented in table 8 only contains a minimal set of data, whichneeds to be extended according to the study’s scope. for systematic mapping studies, thefollowing extra data should be contained:
+
+
+– generic/reused classiﬁcation schemas, such as research/contribution type facet (wieringaet al. [55], petersen et al. [40])
+
+
+– study-speciﬁc classiﬁcation schemas, such as focus type facets (paternoster et al. [37]) orrigor/relevance models (ivarsson and gorschek [16])
+
+
+– in-/exclusion criteria to document, why a paper was in-/excluded (cf. table 2)
+
+
+furthermore, grounded in our experience from [28], we also recommend adding “dynamicmetadata” to the data structure (as already mentioned in table 8). such metadata can be
+
+
+34marco kuhrmann et al.
+
+
+table 8 recommended minimal data structure.
+
+
+fieldcardinalitydescription
+
+
+no.1the overall publication number in the integrated dataset.db-no.1the database-speciﬁc number if a paper from the individual lit-erature database to allow for linking an entry to the originatingdataset.title1title of the publication.authors1, 1..nauthors of the publication; either integrated in one cell andseparated by special characters (e.g., “;”), or converted into aone-author-per-cell pattern, i.e. there are n columns to representthe author list.keywords1list of keywords separated by special characters (e.g., “,” or“;”).abstract1abstract of the paper.year1year of publication (note: e.g., for journals, there might be mul-tiple dates, such as accepted, online available, preprint, pub-lished, etc.—it is required to deﬁne which of these is the onethat makes it into the dataset).publisher/database1which database created this item? in case of cross-indexing,publisher and originating database can diﬀer, e.g., ieee xplorealso lists iet papers.source/venue1which source or venue published this paper? in case ofa conference, this ﬁeld should contain the conference nameand/acronym, in case of a journal, the name/acronym of thejournal should be contained, and so forth.publicationvehicle1..nfor every publication vehicle, an individual column should bepresent, e.g., journal, magazine, conference, workshop, book,chapter, misc, and so forth. experience shows individualcolumns beneﬁcial for later analyses.generalcomments1provide some space for general comments.
+
+
+metadataclasses(optional)
+
+
+0..nit was shown beneﬁcial to provide some space for metadata, forexample, this is a survey, a literature review, this deals withagile, and so forth. the number of metadata is not limited andcan be extended during analysis. furthermore, metadata shouldallow for categorization, that is, one column per metadata classshould be provided.
+
+
+added on-the-ﬂy and can support the enhancement of the dataset. from our experience [23],we recommend to collect metadata at least from the dimensions study and context.the dimension study covers the overall research approach followed in a particular paper,e.g., is a particular paper a primary study, a replication, or even a secondary study, and itcan even contain the research methods used, such as interview research or grounded theoryanalyses. metadata from this category supports a more detailed classiﬁcation and analysisof papers regarding the research and contribution type facets. the dimension context aimsat collecting as much context information from the selected papers as possible, such as thesoftware engineering lifecycle phase addressed by a paper (e.g., design, coding, test), the orga-nizational context in which the research was conducted (e.g., smes, global players etc.), andthe application domain of a paper (e.g., automotive software or software for the healthcaredomain).
+

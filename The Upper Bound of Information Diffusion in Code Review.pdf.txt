@@ -1,0 +1,1260 @@
+
+empirical software engineering manuscript no.(will be inserted by the editor)
+
+
+the upper bound of information diffusion in codereview
+
+
+michael dorner · daniel mendez ·krzysztof wnuk · ehsan zabardast ·jacek czerwonka
+
+
+the date of receipt and acceptance should be inserted later
+
+
+abstractbackground: code review, the discussion around a code change among humans,forms a communication network that enables its participants to exchange andspread information. although reported by qualitative studies, our understandingof the capability of code review as a communication network is still limited.objective:in this article, we report on a first step towards understanding andevaluating the capability of code review as a communication network by quantify-ing how fast and how far information can spread through code review: the upperbound of information diffusion in code review.method:in an in-silico experiment, we simulate an artificial information diffu-sion within large (microsoft), mid-sized (spotify), and small code review systems(trivago) modelled as communication networks. we then measure the minimaltopological and temporal distances between the participants to quantify how farand how fast information can spread in code review.results:an average code review participants in the small and mid-sized codereview systems can spread information to between 72 % and 85 % of all code re-view participants within four weeks independently of network size and tooling; forthe large code review systems, we found an absolute boundary of about 11 000reachable participants. on average (median), information can spread between twoparticipants in code review in less than five hops and less than five days.conclusion: we found evidence that the communication network emerging fromcode review scales well and spreads information fast and broadly, corroborating thefindings of prior qualitative work. the study lays the foundation for understandingand improving code review as a communication network.
+
+
+michael dorner · krzysztof wnuk · ehsan zabardastblekinge institute of technology, karlskrona, sweden
+
+
+daniel mendezblekinge institute of technology, karlskrona, sweden and fortiss, m¨unchen, germany
+
+
+jacek czerwonkamicrosoft, seattle, usa
+
+
+arxiv:2306.08980v3  [cs.se]  5 jan 2024
+
+
+2michael dorner et al.
+
+
+keywords code review · simulation · information diffusion · communicationnetwork
+
+
+1 introduction
+
+
+modern software systems are often too large, too complex, and evolve too fast fora single developer to oversee all parts of the software and, thus, to understand allimplications of a change. therefore, most software projects rely on code review tofoster discussions on changes and their impacts before they are merged into thecode bases to assure and maintain the quality of the software system. all availableand required information about a change can become evident, transparent, andexplicit through those discussions and can be shared among the participants. thediscussion participants can leverage this information for their own work and passit on in the following code reviews; the information diffuses through the commu-nication network that emerges from code review.five qualitative studies have so far reported on the transition of code reviewfrom a more waterfall-like procedure used for detecting bugs in formal, heavyweightcode inspections as done in the 1980s towards a more informal, tool-supported, andlightweight communication network for developers to provide and receive relevantand context-specific information for the code change (bacchelli and bird 2013;available qualitative studies strengthen already our confidence in the motiva-tion for and expectation towards modern code review as a communication net-work. however, there is still little to no research that has quantified and measuredthe actual capability of code review as a communication network. in this article,we report on our experiment results that complement and corroborate those fiveavailable qualitative studies.the objective of our study is to make a first step towards better understandingand evaluating code review as a communication network by quantifying how farand how fast information can spread among the participants in code review.in detail, we address the following two research questions:
+
+
+rq 1how far can information spread through code review?
+
+
+rq 2how fast can information spread through code review?
+
+
+we address those two research questions in an in-silico experiment that simu-lates an artificial information diffusion in code review networks at three indus-try cases of different sizes and different code review tools: microsoft, spotify,and trivago. the simulated information diffusion within the communication net-works identifies all minimal time-respecting paths reflecting information diffusingthrough the communication network under best-case assumptions. the partici-pants along those minimal time-respecting paths describe how far information canspread among code review participants (rq 1), and the minimal topological andtemporal distances between participants describe how fast information spreads(rq 2). both measures together allow us to better understand the upper boundof information diffusion in code review.the main contribution of our study is an in-silico experiment to simulate in-formation diffusion within three industrial code review systems to provide a quan-titative assessment of code review as a communication network under best-case
+
+
+the upper bound of information diffusion in code review3
+
+
+assumptions. beyond this main contribution, we also synthesize qualitative find-ings from prior work regarding the expectations and motivations towards codereview as motivation for our work and provide an extensive and thoroughly engi-neered replication package.for this article, we define code review as the informal and asynchronous discus-sion around a code change among humans. this means older results from formalcode inspections and pair programming as an informal but synchronous discussionaround a code change among usually two developers are beyond the scope of ourstudy.in our study, we focus on code review in an industrial context. although codereview is nearly omnipresent in open source as well and the results are not neces-sarily contradicting, we strongly believe that results and findings from open source,such as rigby and storey (2011); pascarella et al. (2018) and rigby et al. (2008),are not directly transferable to industrial settings without further considerations.the mechanics and incentives in open source differ, and so do the organizationalstructure, liability, and commitment (barcomb et al. 2020).the remainder of this paper is structured as follows: in section 2, we providean overview of the state of the art on the expectation towards code review, measur-ing information exchange in code review, information diffusion, and simulation asempirical research method. section 3 describes our simulation model (section 3.1)and its empirical parametrization (section 3.2) in detail. after we report and dis-cuss the simulation results in sections 4 and 5, we discuss the limitations of ourwork in section 6 and close our article with a conclusion and outlook on futurework in section 7.
+
+
+2 background and related work
+
+
+badampudi et al. (2023) identified different research themes on code review in alarge systematic mapping study where the authors analyzed 244 primary studiesuntil 2021 (inclusive). they further assessed the practitioners’ perceptions on therelevance of those code review research themes through a survey of 25 practitioners.68% of the practitioners from the survey mentioned the importance of conductingresearch on a more differentiated view of improvements through code review goingbeyond finding defects. our research aims to fill that gap.in the following, we elaborate on background and related work with specialattention to synthesizing existing qualitative studies. we explore, in particular,the expectations towards code review in industry before laying the foundationfor our simulation study by discussing measurements in information exchange,information diffusion, and, more generally, simulations as an empirical researchmethod.
+
+
+2.1 expectations towards code review in industry
+
+
+although nazir et al. (2020) report on preliminary results of a systematic map-ping study on the expected benefits of code review, we could not reconstruct howand why the proposed themes—in particular those for knowledge sharing—map
+
+
+4michael dorner et al.
+
+
+the referenced work. moreover, the study does not distinguish between the expec-tations towards code review in an open-source and an industrial setting which,as we argued, are not necessarily comparable due to the differences in incentives,organizational structure, liability, and commitment.in this section, we, therefore, concentrate on discussing and synthesizing fivequalitative studies which have investigated the motivations and expectations to-wards code review in an industrial context: bacchelli and bird (2013); baum et al.table 1 summarizes the findings among the five prior qualitative work andtheir definition.in a mixed-method approach, bacchelli and bird (2013) explored the expec-tations, outcomes, and challenges of modern code review at microsoft. from an-alyzing code review comments and interviews with developers and managers atmicrosoft, this seminal study identifies ten different motivations for and expec-tations towards code review and concludes that although finding defects is a keymotivation for code review, only a small portion of the code review commentswere defect-related and “mainly cover small, low-level issues”. the six motiva-tions listed in table 1 are discussed in detail, the other four motivations are notdiscussed further in the paper. not all motivations are explicitly defined and, inour opinion, are not necessarily mutually exclusive. in particular, exploring the re-lationship between knowledge sharing and the other expectations further was notin the scope of the study. the study thus recommends studying the socio-technicaleffects of and investigating if and how learning increases as a result of code review.the study by baum et al. (2016) reports on ten effects (seven desired and threeundesired effects) of code review using grounded theory as part of an interviewstudy with 24 software engineering professionals from 19 companies. the studyreports seven findings as desired code review effects. thereby, the study implicitlyconfirms the reported motivations from bacchelli and bird (2013) although theauthors do not discuss the relation to existing evidence explicitly. a frequencyor weighting of the findings is not reported and we may, thus, assume an arbi-trary ordering. through the explicit separation between learning for the authorand learning for the reviewer, the study also finds a mutual knowledge transfer,a mutual information exchange, which also supports the notion of bidirectionalknowledge transfer as stated in bacchelli and bird (2013).in two surveys among developers from both an industrial and an open-sourcecontext, bosu et al. (2017) contrasted industrial code review at microsoft with codereview at different open-source projects. the primary motivations reported aremaintainability, knowledge-sharing, functional defects, community building, minorerrors, and others. they found a significant difference in the primary purposes ofcode review (“rq 1: why are code review important”) between those two contexts:open-source developers focus more on knowledge-sharing while developers in opensource reported maintainability as a primary expectation towards code review.eliminating functional defects was only the third most important reason for codereviews in both surveys, which further corroborates the findings by bacchelli andbird (2013). however, both studies, bacchelli and bird (2013) and bosu et al.(2017), surveyed the same company: microsoft. this limits more generalizableconclusions from the authors’ findings on our side. although we also rely on thecode review system from microsoft, we added two further industrial code review
+
+
+the upper bound of information diffusion in code review5
+
+
+table 1: expectations towards code review reported in bacchelli and bird (2013);
+
+
+identifierexpectationdefinition
+
+
+bacchelli and bird (2013)1finding defectswithout explicit definition, presum-ably comments or changes on correct-ness or defects in alignment with the
+
+
+bacchelli and bird (2013)2
+
+
+bacchelli and bird (2013)2code improvements“comments or changes about codein terms of readability, commenting,consistency, dead code removal, etc.,[without comments or changes] on cor-rectness or defects”
+
+
+bacchelli and bird (2013)3alternative solutions“changes and comments on improv-ing the submitted code by adopting anidea that leads to a better implemen-tation”
+
+
+bacchelli and bird (2013)4team awareness andtransparencywithout explicit definition, improvedinformation flow across team bound-aries
+
+
+bacchelli and bird (2013)5share code ownershipwithout explicit definition
+
+
+bacchelli and bird (2013)6knowledgesharing(or learning)without explicit definition
+
+
+baum et al. (2016)1finding defectsimproved external code quality
+
+
+baum et al. (2016)2better code qualityimproved internal code quality
+
+
+baum et al. (2016)3finding better solu-tionsfinding new or better solutions
+
+
+baum et al. (2016)4sense of mutual re-sponsibilityimprovedcollectivecodeownershipand solidarity
+
+
+baum et al. (2016)5compliancetoqaguidelinescompliance to standards or regulatorynorms
+
+
+baum et al. (2016)6learning (reviewer)learning for the author of the codechange
+
+
+baum et al. (2016)7learning (author)learning for the reviewer of the codechange
+
+
+bosu et al. (2017)1maintainability“legibility,testability,adherencetostyle guidelines, adherence to appli-cation integrity, and conformance toproject requirements”
+
+
+bosu et al. (2017)2knowledge sharing“code review facilitates multiple typesof knowledge sharing.”, “code reviewinteractions help both authors and re-viewers learn how to solve problems[...]”
+
+
+bosu et al. (2017)3functional defectseliminating“logicalerrors,cornercases, security issues, or general incom-patibility problems”
+
+
+bosu et al. (2017)4community buildingwithout further definition
+
+
+bosu et al. (2017)5minor errors, typoswithout further definition
+
+
+sadowski et al. (2018)1accident preventionavoiding the introduction of bugs, de-fects, or other quality-related issues
+
+
+sadowski et al. (2018)2gatekeeping“establishmentormaintenanceofboundaries around source code, designchoices, or other artifacts”
+
+
+sadowski et al. (2018)3maintaining norms“organization preference for a discre-tionary choice, e.g., formatting or apiusage patterns”
+
+
+sadowski et al. (2018)4educationlearning and teaching from code re-view
+
+
+cunha et al. (2021)1code-related aspectswithout explicit definition
+
+
+cunha et al. (2021)2share knowledge onthe team or project &team
+
+
+without explicit definition
+
+
+cunha et al. (2021)3sharingknowledgebetweendifferentsenioritylevelsorroles
+
+
+without explicit definition
+
+
+6michael dorner et al.
+
+
+systems, trivago and spotify. this allows us to broaden our perspective on codereview in industry.in the context of a mixed-methods study, sadowski et al. (2018) conducted aninterview study to investigate the motivations for code review at google. in moredetail, the authors conducted interviews with 12 employees working for googlefrom one month to ten years (with a median of five years). four key themesemerged: education (learning and teaching from code review), maintaining norms(organization preference for a discretionary choice, e.g., formatting or api usagepatterns), gatekeeping (establishment or maintenance of boundaries around sourcecode, design choices, or other artifacts1), and accident prevention (reducing intro-duction of bugs, defects, or other quality-related issues). the authors explain thatthese expectations can map over those found previously at microsoft in bacchelliand bird (2013) and bosu et al. (2017). unfortunately, the exact mapping is notpresented in the article. the authors emphasize that the main focus at google,as explained by their participants, is on education as well as code readability andunderstandability. why, as stated in the manuscript, this focus contradicts thefinding by rigby and bird (2013) that code review has changed from a defect-finding activity to a group problem-solving activity is not discussed further.cunha et al. (2021) report a qualitative survey with 106 practitioners regardingtheir experiences with modern code review. the paper presents its findings aroundthree codes from the open coding: “code-related aspects”, “share knowledge onthe team or project”, and “share knowledge between different seniority levels androles”. although details on the practitioners’ affiliations are not reported, thesurveyed practitioners are affiliated with companies based in brazil and (in a“smaller” yet unreported proportion) in south africa, sweden, ireland, spain, andfrance. this broadens the geographical perspective on the expectations towardscode review since baum et al. (2016) surveyed companies based in germany, theczech republic, and the usa, bacchelli and bird (2013), bosu et al. (2017),sadowski et al. (2018) report on companies based in the usa (microsoft andgoogle).all three studies have in common that the use of the terms knowledge sharing,transfer, spreading, or learning is neither consistent among (and partially evenwithin) those prior works nor thoroughly defined. this is likely rooted in the com-plex nature of knowledge and the different epistemological stances. furthermore,it remains unclear to what extent knowledge transfer differs from all other expec-tations. for example, knowledge must be transferred when an alternative solutionis proposed or a defect is made explicit through a code review.for the synthesis from prior work on the expectations towards code review, wemade the following decisions:
+
+
+– information over knowledge—we consistently use information instead of knowl-edge for the synthesis of the prior work and throughout this study. we, thereby,concur with pascarella et al. (2018). although not equivalent, information en-codes knowledge since knowledge is the meaning that may be derived frominformation through interpretation. this means that we may see information
+
+
+1 upon our request during this study, the authors clarified that gatekeeping refers to requir-ing a code review from a project owner in order to check in code within a project from someoneoutside or requiring someone with certification in a particular language to review some codein that language.
+
+
+the upper bound of information diffusion in code review7
+
+
+as a superset of knowledge. hence, not all information is necessarily knowl-edge, but all knowledge is information. this allows us to subsume differentstances, definitions, and notions of knowledge without an epistemological re-flection upon the various definitions of knowledge. furthermore, we can refrainfrom delineating the notion of knowledge from the notion of truth, the latterbeing too often an inherent connotation of knowledge. we may well postulatethat not everything communicated is true. opinions, expectations, misunder-standings, or best guesses are also part of any engineering and developmentprocess and do not meet knowledge and, consequently, truth by all definitions.
+
+
+– information exchange, sharing, spreading, or transfer—we consider informationsharing, spreading, or transfer as synonyms for communication, which is theexchange of information. we will discuss and derive our definition of commu-nication, the exchange of information, in section 3.1.1 in detail.
+
+
+– improvements over benefits—the term benefit implies that there is a positiveoutcome from a particular action, decision, or situation—from code review.since code review does not happen in the void, we prefer the term improvementto emphasize the context of code review.
+
+
+all qualitative studies reported the finding that code review is expected to ex-change information. in our synthesis, we distinguish between information exchangeas the root cause for the expected improvements on the one side and the expectedimprovements through the information exchange on the other side. we may as-sume that all reported and expected improvements are caused by the informationexchange through code review: none of improvements would be possible withoutexchanging information among the code review participants. figure 1 presentsour synthesis of expectations and motivations towards code review reflecting thisdistinction.in detail, we found the expected improvements through information exchangein code review either to be related to code or to collaboration. we grouped the find-ings related to code into functional (identification of defects) and non-functionalcode improvement. the latter contains three groups of improvements: (1) alter-native solutions and their discussions, (2) higher maintainability, and (3) compli-ance with norms and regulations. the compliance is not limited to regulations(e.g., from regulatory environments such as medical or automotive software de-velopment) but also includes organizational norms and practices directed at code.closely related to the organizational norms and practices is the second group ofexpected improvements through information exchange in code review, which is col-laboration. this also includes team awareness, a sense of shared code ownership,and community building.
+
+
+2.2 measuring information exchange
+
+
+to the best of our knowledge (or information), there are only two cases so far toquantify knowledge sharing in code review.the first case of measuring knowledge sharing (or information exchange) incode review was provided by rigby and bird (2013). the authors extended theexpertise measure proposed by mockus and herbsleb (2002). the study contraststhe number of files a developer has modified with the number of files the developer
+
+
+8michael dorner et al.
+
+
+focus of our study
+
+
+information exchangeimprovements
+
+
+code
+
+
+functional
+
+
+non-functional
+
+
+higher maintainability
+
+
+alternative solutions
+
+
+compliance with norms & regulations
+
+
+collaboration
+
+
+causeeffect
+
+
+bacchelli and bird (2013)1
+
+
+baum et al. (2016)1
+
+
+sadowski et al. (2018)1
+
+
+bosu et al. (2017)3
+
+
+bacchelli and bird (2013)3
+
+
+baum et al. (2016)3
+
+
+cunha et al. (2021)1
+
+
+bacchelli and bird (2013)2
+
+
+baum et al. (2016)2
+
+
+cunha et al. (2021)1
+
+
+bosu et al. (2017)1
+
+
+baum et al. (2016)5
+
+
+sadowski et al. (2018)2
+
+
+sadowski et al. (2018)3
+
+
+cunha et al. (2021)1
+
+
+bacchelli and bird (2013)4
+
+
+bacchelli and bird (2013)5
+
+
+baum et al. (2016)4
+
+
+bosu et al. (2017)4
+
+
+bacchelli and bird (2013)6
+
+
+baum et al. (2016)6
+
+
+baum et al. (2016)7
+
+
+sadowski et al. (2018)4
+
+
+cunha et al. (2021)2
+
+
+cunha et al. (2021)3
+
+
+bosu et al. (2017)2
+
+
+fig. 1: synthesis of expectations towards code review reported by bacchelli andbird (2013); baum et al. (2016); bosu et al. (2017); sadowski et al. (2018); cunhaet al. (2021): we consider information exchange the cause for the expected im-provements from code review. in this study, we aim to provide a quantitativecounterpart on information exchange as qualitatively-reported expectation to-wards code review.
+
+
+the upper bound of information diffusion in code review9
+
+
+knows about (submitted files ∪reviewed files) and found a substantial increase inthe number of files a developer knows about exclusively through code review.the second case of measuring knowledge spreading (or information exchange) ispresented by sadowski et al. (2018), the case study at google discussed previously.the study reports (a) the number of comments per change a change author receivesover tenure at google and (b) the median number of files edited, reviewed, andboth—as suggested by rigby and bird (2013). the study finds that the more seniora code change author is, the fewer code comments he or she gets. the authors“postulate that this decrease in commenting results from reviewers needing to askfewer questions as they build familiarity with the codebase and corroborates thehypothesis that the educational aspect of code review may pay off over time.”in its second measurement, the study reproduces the measurements of rigby andbird (2013) but reports it over tenure months at google. the plot shows thatreviewed and edited files are distinct sets to a large degree.however, we found the following limitations in the measurement applied toprior work:
+
+
+– we are unaware of empirical evidence that exposure to files in code reviewwould reliably lead to improved developer fluency.
+
+
+– findings likebacchelli and bird (2013)4(team awareness and transparency)and bacchelli and bird (2013)5 (share code ownership) cannot be measured.
+
+
+– the explanatory power of both measurements is limited since the authors setarbitrary boundaries: rigby and bird (2013) excluded changes and reviewsthat contain more than ten files, and sadowski et al. (2018) limited the tenureto 18 months and aggregated the tenure by three months.
+
+
+for our approach, therefore, we need to subsume all notions of knowledgeby using the broader concept of information and its exchange since informationencodes knowledge of all types, including meta-information, such as the social tiesbetween developers. this subsumption was also used in dorner et al. (2022) tovalidate the used simulation model which then showed the importance of time formeasuring and analyzing information diffusion.
+
+
+2.3 information diffusion
+
+
+information diffusion, the spread of information among humans, has been re-searched in different disciplines and for encodings of information, for example,tweets (anger and kittl 2011), memes (leskovec et al. 2009), blog posts (goetzet al. 2009), or e-mail chain letters (liben-nowell and kleinberg 2008).however, information in code review is more fine-grained and significantlyharder to identify and trace than forwarded tweets, memes, blog posts, or e-mails.therefore, dorner et al. (2022) proposed and validated a simulation model for in-formation diffusion tailored to code review without tracing identifiable informationbut focussing on the communication network emerging from code review. in detail,we modelled the code review network emerging from code review as time-varyinghypergraph, where the nodes are code review participants and the (hyper)edgesare code reviews that connect the participants over time. for more details, werefer the reader to section 3.1 as we reuse the simulation model from dorner et al.(2022) in this study.
+
+
+10michael dorner et al.
+
+
+table 2: a comparison of in-vivo, in-vitro, in-virtuo, and in-silico experiments.
+
+
+as computer(software) modelotherwise
+
+
+experiment
+
+
+in-vivoin-vitroin-virtuoin-silico
+
+
+actornaturalnaturalnaturalmodelled
+
+
+behaviournaturalnaturalnaturalmodelled
+
+
+contextnaturalmodelledmodelledmodelled
+
+
+2.4 simulations as empirical research method
+
+
+we conduct our study as an in-silico experiment, in which we simulate an artificialinformation diffusion and measure the resulting traces generated by the spread ofthe information. given the rarity of simulations in the empirical software engineer-ing community, we motivate the explicit choice of that as our (empirical) researchmethod.generally speaking, an in-silico experiment is an experiment performed in acomputer simulation (on silicon). in contrast to other types of experiments (seetable 2), all parts of the experiment, i.e., the actors, their behaviours, and thecontext (borrowed from stol and fitzgerald (2018)), are modelled explicitly ascomputer (software) model. in-vitro experiments model the context other thanusing a computer model.those more traditional experiments in software engineering would have beentoo complex, too expensive, too lengthy, or simply not possible or accessible oth-erwise. following m¨uller and pfahl (2008) “simulation models are like virtuallaboratories where hypotheses about observed problems can be tested, and cor-rective policies can be experimented with before they are implemented in the realsystem.” those attributes match the objectives and setting of our research.simulation models have been applied in different research fields of softwareengineering, e.g., process engineering, risk management, and quality assurance(m¨uller and pfahl 2008).the role of simulations as an empirical method is, however, still often subjectto some form of prejudice but also subject to ongoing more philosophical debates.stol and fitzgerald (2018), for example, positioned computer simulations in theirabc framework in a non-empirical setting because, as the authors argue: “whilevariables can be modelled and manipulated based on the rules that are definedwithin the computer simulation, the researcher does not make any new empiricalobservations of the behavior of outside actors in a real-world setting (whetherthese are human participants or systems)” (stol and fitzgerald 2018). withoutdiscussing the role of simulations in the empirical software engineering communityto the extent they might deserve, however, we still argue for their suitability asan evidence-based (empirical) approach in our context where observations wouldotherwise not be possible (or, at least, not realistic).we consider computer simulations as an empirical research method, the same asdone in other disciplines and inter-disciplines (where, for instance, climate simula-tions are the first-class citizens in the set of research methods). empirical researchmethods are “research approaches to gather observations and evidence from the
+
+
+the upper bound of information diffusion in code review11
+
+
+real world”(stol and fitzgerald 2018) and same as in other empirical researchmethods, in simulation models, we build the models based on real-world observa-tions and make conclusions based on the empirical observations along the execution(in our case, of the simulations). these simulations are abstractions from the realworld—same as the (often implicit) theoretical models underlying quasi-controlled(in-vitro) experiments. simulations and their underlying models further abstractfrom (and make explicit) complex system and make observations and evidencepossible in situations where more traditional experiments are rendered infeasible(e.g., too expensive, dangerous, too long, or not accessible) or simply impossibleat all; for instance, observations when exploring the capabilities of real-world com-munication networks with thousands of developers as done in the simulation studypresented in the manuscript at hands.needless to elaborate, a certain abstraction from the real world is inherent toall empirical research methods, either in the form of explicit models or implicitassumptions. like every measurement, the models we create come with certain ac-curacy and precision—with a certain quality. however, we may still argue that thequality of a research method does not necessarily decide upon whether it qualifiesas empiricism or not but rather the underlying constructs and their (evidence-based) sources. to avoid surreal models and ensure the quality of a model, how-ever, the modelling itself needs to be guided by quality assurance in verificationand validation, and the sample used needs to be realistic; both would, in turn, bein tune with the underlying arguments by available positionings such as the oneby stol and fitzgerald (2018). to increase the transparency in the quality of oursimulations, we further disclose all developed software components as a replica-tion package, also including the industrial communication networks we used as asample.
+
+
+3 experimental design
+
+
+in this section, we describe the design of our in-silico experiment that evaluatesand quantifies how far (rq 1) and how fast (rq 2) information can diffuse in codereview.the underlying idea of our experiment is simple: we create communication net-works emerging from code reviews and then measure the minimal paths betweenthe code review participants. the cardinality of reachable participants indicateshow far (rq 1) information can spread, and distances between participants indi-cate how fast (rq 2) information can spread in code review. since we used minimalpaths and created the communication networks under best-case assumptions, theresults describe the upper bound of information diffusion in code review.yet, since communication, and, therefore, information diffusion, is (1) inher-ently a time-dependent process that is (2) not necessarily bilateral—often morethan two participants exchange information in a code review—, traditional graphsare not capable of rendering information diffusion without dramatically overesti-mating information diffusion (dorner et al. 2022). therefore, we use time-varyinghypergraphs to model the communication network and measure the shortest pathsof all vertices within those networks. since a hypergraph is a generalization of atraditional graph, traditional graph algorithms (i.e., dijkstra’s algorithm) for de-termining minimal-path distance can be used.
+
+
+12michael dorner et al.
+
+
+the connotation of minimal is two-fold in time-varying hypergraphs: a distancein time-varying hypergraphs between two vertices has not only a topological butalso a temporal perspective. this allows us to measure not only the topologicallyminimal but also the temporally distance between vertices. both distance typesresult in the same set of reachable participants, which we use for answering rq 1.since all models are abstractions and, accordingly, simplifications of reality, thequality of an in-silico experiment highly depends on the quality of the simulationmodel and its parametrization. therefore, we provide a more elaborate descriptionof our simulation model, which was originally proposed and partially validated indorner et al. (2022), in section 3.1 and its parametrization of its computer modelby empirical code review data (section 3.2).
+
+
+3.1 simulation model
+
+
+in general, a simulation model consists of two components: (1) the conceptualmodel describing our derivations and assumptions and (2) the computer modelas the implementation of the conceptual model. the following two subsectionsdescribe each component in detail.
+
+
+3.1.1 conceptual model
+
+
+in the following, we describe the conceptual model of communication network fromcode review discussions and information diffusion in code review.
+
+
+communication network communication, the purposeful, intentional, and activeexchange of information among humans, does not happen in the void. it requiresa channel to exchange information. a communication channel is a conduit for ex-changing information among communication participants. those channels are
+
+
+1. multiplexing—a channel connects all communication participants sending andreceiving information.
+
+
+2. reciprocal—the sender of information also receives information and the receiveralso sends information. the information exchange converges. this can be inthe form of feedback, queries, or acknowledgments. pure broadcasting withoutany form of feedback does not satisfy our definition of communication.
+
+
+3. concurrent—although a human can only feed into and consume from one chan-nel at a time, multiple concurrent channels are usually used.
+
+
+4. time-dependent—channels are not available all the time; after the informationis transmitted, the channels are closed.
+
+
+channels group and structure the information for the communication partic-ipants over time and content. over time, the set of all communication channelsforms a communication network among the communication participants.in the context of our study on information diffusion, a communication channelis a discussion in a merge (or pull) request. a channel for a code review on amerge request begins with the initial submission and ends with the merge in caseof an acceptance or a rejection. all participants of the review of the merge requestfeed information into the channel and, thereby, are connected through this channel
+
+
+the upper bound of information diffusion in code review13
+
+
+and exchange information they communicate. after the code review is completedand the discussion has converged, the channel is closed and archived, and nonew information becomes explicit and could emerge. however, a closed channelis usually not deleted but archived and is still available for passive informationgathering. we do not intend to model this passive absorption of information fromarchived channels by retrospection with our model. for this line of research, werecommend the work by pascarella et al. (2018) as further reading.from the previous postulates on channel-based communication, we derive ourmathematical model: each communication medium forms an undirected, time-varying hypergraph in which hyperedges represent communication channels. thosehyperedges are available over time and make the hypergraph time-dependent. ad-ditionally, we allow parallel hyperedges2—although unlikely, multiple parallel com-munication channels can emerge between the same participants at the same timebut in different contexts.such an undirected, time-varying hypergraph reflects all four basic attributesof channel-based communication:
+
+
+– multiplexing—since a single hyperedge connects multiple vertices,– concurrent—since (multi-)hypergraphs allow parallel hyperedges,– reciprocal—since the hypergraph is undirected, information is exchanged inboth directions, and
+
+
+– time-dependent—since the hypergraph is time-varying.
+
+
+in detail, we define the channel-based communication model for informationdiffusion in an observation window t to be an undirected time-varying hypergraph
+
+
+h = (v, e, ρ, ξ, ψ)
+
+
+where
+
+
+– v is the set of all human participants in the communication as vertices– e is a multiset (parallel edges are permitted) of all communication channels ashyperedges,
+
+
+– ρ is the hyperedge presence function indicating whether a communication channelis active at a given time,
+
+
+– ξ: e × t →t, called latency function, indicating the duration to exchange in-formation among communication participants within a communication channel(hyperedge),
+
+
+– ψ: v × t →{0, 1}, called vertex presence function, indicating whether a givenvertex is available at a given time.
+
+
+information diffusion the time-respecting routes through the communication net-work are potential information diffusion, the spread of information. to estimate theupper bound of information diffusion and, thereby, answer both of our researchquestions, we measure the distances between the participants under best-case as-sumptions.for information diffusion in code review, we made the following assumptions:
+
+
+2 this makes the hypergraph formally a multi-hypergraph ouvrard (2020). however, weconsider the difference between a hypergraph and a multi-hypergraph as marginal since it isgrounded in set theory. sets do not allow multiple instances of the elements. therefore, insteadof a set of hyperedges, we use a multiset of hyperedges that allows multiple instances of thehyperedge.
+
+
+14michael dorner et al.
+
+
+– channel-based—information can only be exchanged along the information chan-nels that emerged from code review. the information exchange is consideredto be completed when the channel is closed.
+
+
+– perfect caching—all code review participants can remember and cache all in-formation in all code reviews they participate in within the considered timeframe.
+
+
+– perfect diffusion—all participants instantly pass on information at any occasionin all available communication channels in code review.
+
+
+– information diffusion only in code review—for this simulation, we assume thatinformation gained from discussions in code review diffuses only through codereview.
+
+
+– information availability—to have a common starting point and make the resultscomparable, the information to be diffused in the network is already availableto the participant, which is the origin of the information diffusion process.
+
+
+our assumptions make the results of the information diffusion a best-case sce-nario. although the assumptions do not likely result in actual, real-world infor-mation diffusion, they serve well the scope of our study, namely to quantify theupper bound of information diffusion.the possible routes through the communication network describe how informa-tion can spread through a communication network. those routes are time-sensitive:a piece of information gained from a communication channel (i.e., a code reviewdiscussion) can be shared and exchanged in all subsequent communication chan-nels but not in prior, closed communication channels.mathematically, those routes are time-respecting walks, so-called journeys, ina time-varying hypergraph representing the communication network. a journey isa sequence of tuples
+
+
+j = {(e1, t1), (e2, t2), . . . , (ek, tk), }
+
+
+such that {e1, e2, . . . , ek} is a walk in h with ρ(ei, ti) = 1 and ti+1 > ti + ξ(ei, ti)for all i < k.we define j ∗h the set of all possible journeys in a time-varying graph h andj ∗(u,v) ∈j ∗h the journeys between vertices u and v. if j ∗(u,v) ̸= ∅, u can reach v,or in short notation u ⇝v.3 given a vertex u, the set {v ∈v : u ⇝v} is calledhorizon of vertex u.the notion of length of a journey in time-varying hypergraphs is two-fold: eachjourney has a topological distance (measured in number of hops) and temporaldistance (measured in time). this gives rise to two distinct definitions of distancein a time-varying graph h:
+
+
+– the topological distance from a vertex u to a vertex v at time t is defined bythis journey is the shortest.
+
+
+3 in general, journeys are not symmetric and transitive—regardless of whether the hyper-graph is directed or undirected: u ⇝v ̸⇔v ⇝u.
+
+
+the upper bound of information diffusion in code review15
+
+
+– the temporal distance from a vertex u to a vertex v at time t is defined byˆdu,t(v) = min{ψ(ek) + ξ(ek) −ξ(e1)}.4 this journey is the fastest.5
+
+
+with this conceptual model and its mathematical background, we are now ableto answer both research questions by measuring two characteristics of all possibleroutes through the communication network:
+
+
+– the distribution of the horizon of each participant in a communication networkrepresents how far information can spread (rq 1).
+
+
+– the distribution of all shortest and fastest journeys between all participantsin a communication network answers how fast information can spread in codereview (rq 2). we measure how fast information can spread in code review interms of the topological distance (minimal number of code review required tospread information between two code review participants) and the temporaldistance (minimal timespan to spread information between two code reviewparticipants).
+
+
+those measurements within code review communication networks will resultin the upper bound of information diffusion in code review.
+
+
+3.1.2 computer model
+
+
+since our mathematical model is not trivial and lacks performant tool support fortime-varying hypergraphs, we dedicate this section to the computer model, theimplementation of the mathematical model described previously.time-varying hypergraphs are a novel concept and we can, therefore, not relyon existing toolings. we implemented the time-hypergraph as an equivalent bipar-tite graph: the hypergraph vertices and hyperedges become two sets of verticesof the bipartite graph. the vertices of those disjoint sets are connected if a hyper-graph edge is part of the hyperedge. figure 2 shows a graphical description of theequivalence of hypergraphs and bipartite graphs.we use a modified dijkstra’s algorithm to find the minimal journeys for eachvertex (participant) in the time-varying hypergraph. dijkstra’s algorithm is asymp-totically the fastest known single-source shortest-path algorithm for arbitrary di-rected graphs with unbounded non-negative weights. in contrast to its originalform, our implementation finds both shortest (a topological distance) and fastest(a temporal distance) journeys in time-varying hypergraphs.6
+
+
+since dijkstra’s algorithm can be seen as a generalization of a breadth-firstsearch for unweighted graphs, we can identify not only the minimal paths but alsothe horizon of each participant in the communication network in one computation.the algorithm is integrated into our computer model and implemented inpython. for more implementation details and performance considerations, we re-fer the reader to our replication package, including its documentation (dorner andbauer 2023; dorner 2023). because both time-varying hypergraphs as the data
+
+
+4 in our case, ψ(ek) is always 0.5 for the interested reader, we would like to add that if the temporal distance is not definedfor a relative time but for an absolute time ˆdu,t(v) = min{ψ(ek)+ξ(ek)}, the journey is calledforemost. for this line of research, the foremost journeys are not used.6 for future applications, our implementation of dikstra’s algorithm also can find any fore-most journey.
+
+
+16michael dorner et al.
+
+
+v1
+
+
+v2
+
+
+v3
+
+
+v4
+
+
+v5
+
+
+v6e1
+
+
+e2
+
+
+e3
+
+
+e4
+
+
+(a) an example time-varying hypergraphwhose so-called hyperedges (denoted by e□)can link any arbitrary number of vertices (de-noted by v□): for example, hyperedge e3 con-nects three vertices. the horizon and minimalpaths of vertex depend highly on the tem-poral order of the hyperedges: for example,the horizon of v1 contains all vertices if thetemporal availabilities of the hyperedges aree1 < e2 < e4 < e3, but none if e1 > e2 ≥e3.
+
+
+v1
+
+
+v2
+
+
+v3
+
+
+v4
+
+
+v5
+
+
+v6
+
+
+e1
+
+
+e2
+
+
+e3
+
+
+e4
+
+
+vertices
+
+
+hyperedges
+
+
+(b) any hypergraph can be transformed intoan equivalent bipartite graph: the hyper-edges and the vertices from the time-varyinghypergraph from (a) become the two distinctsets of vertices of a bipartite graph.
+
+
+fig. 2: an example hypergraph (a) and its bipartite-graph equivalent (b).
+
+
+model and the extended dijkstra’s algorithm are novel, we ensure the computa-tional model accurately represents the underlying mathematical model and thecorrectness of our dijkstra implementation and its results through the followingquality assurance measures:
+
+
+– code walk-throughs—we independently conducted code walk-throughs throughthe simulation code with three python and graph experts.
+
+
+– comprehensive test setup—the simulation code has a test coverage of over 99 %.– code readability and documentation—we provide comprehensive documentationon the usage and design decisions to enable broad use and further development.we followed the standard python programming style guidelines pep8 to ensureconsistency and readability.
+
+
+– publicly available and open source—the model parameterization and simula-tion code dorner and bauer (2023) as well as the results dorner (2023) forreplications and reproductions are publicly available.
+
+
+3.2 model parametrization
+
+
+instead of a theoretical or probabilistic parametrization, we parametrize our sim-ulation model with empirical code review systems from three industrial partners:microsoft, spotify, and trivago.
+
+
+the upper bound of information diffusion in code review17
+
+
+in the following, we describe our sampling strategy for selecting suitable codereview systems in industry and the code review data extraction for parametrizingour simulation model.
+
+
+3.2.1 sampling
+
+
+communication networks do not emerge in the void. they form around softwaredevelopment. as motivated in the introduction, we focus in our study on industrialsoftware development since we believe that results found in open-source projectscannot be directly transferred due to the differences in governance structures,incentives, and economic mechanics. also, previous qualitative work, which weaim to complement with our work (see section 2.1), considers industrial softwaredevelopment only.we use a maximum variation sampling to select suitable code review communi-cation networks in an industrial context. a maximum (or maximum heterogene-ity) variation sampling is a non-probabilistic, purposive sampling technique thatchooses a sample to maximize the range of perspectives investigated in the studyin order to identify important shared patterns that cut across cases and derivetheir significance from having emerged out of heterogeneity (teddlie 2009).we aim for representativeness on two specific dimensions:
+
+
+– code review system size—to avoid a bias introduced by network effects, we re-quired communication networks emerging from different sizes of code review.the size of a communication network can be measured in terms of number (hy-per)edges (corresponding to number of code reviews) or vertices (correspondingto number of participants). in our sample, we use a small (trivago), mid-sized(spotify), and large (microsoft) code review system (see table 3). the sizeclassification in small, mid-sized, and large code review systems is arguablyarbitrary and relative to the code review systems in our sample rather thanfollowing a general norm that, to the best of our knowledge, does not exist.
+
+
+– code review tool—in particular, since baum et al. (2016) suggested code reviewtool in use as a main factor shaping code review in industry, we aim to minimizethe code review tool bias for the results and require our sample to contain adiverse set of code review tools. our sample contains three different code reviewtools: bitbucket, github, and codeflow.
+
+
+in alignment with the qualitative prior work, we explicitly excluded the dif-ferent manifestations in code review practices as a sampling dimension. to ensurethat the results are comparable within and among the selected contexts and toease the data extraction, we restrict our population to having a single, centralcode review tool in use. this means our population is any industrial software de-velopment company with a single, centralized code review tool. like any purposivesampling technique, the maximum variation sampling does not require a samplingframe (baltes and ralph 2022).from this population, we drew a sample of three industrial cases: microsoft,spotify, and trivago. table 3 provides an overview of our sample of code reviewsystems and the dimension of representativeness. in more detail, we describe thecases in our sample in the following subsections.
+
+
+18michael dorner et al.
+
+
+table 3: our sample of code review systems with respect to the two dimensions ofrepresentativeness: code review system size and tooling.
+
+
+code review system sizetooling
+
+
+classificationcode reviewsparticipants
+
+
+trivagosmall2442364bitbucketspotifymid-sized22 5041730githubmicrosoftlarge309 74037 103codeflow
+
+
+microsoft microsoft is a multinational enterprise that produces computer software,consumer electronics, personal computers, and related services and is based in theusa. we extracted the data from microsoft’s internal code review tool codeflow(bosu et al. 2015) run by azure devops service. although not microsoft’s onlycode review tool, it covers the vast majority of the company’s code review activity.the dataset contains 37 103 code review participants and 309 740 code reviewswithin the observation window between 2020-02-03 and 2020-03-02.
+
+
+spotify spotify is a multinational enterprise based in sweden that develops a multi-media streaming platform. we extracted all internal pull requests and their relatedcomments within the observation window between 2020-02-03 and 2020-03-02 fromspotify’s github enterprise instance, the central tool for software development atspotify. the dataset contains 1730 code review participants and 22 504 code re-views.
+
+
+trivago trivago is a german company developing an accommodation search en-gine. as a code review tool, trivago used bitbucket during the observation windowbetween 2019-11-04 and 2019-12-01. the dataset contains 364 code review partic-ipants and 2442 code reviews.
+
+
+3.2.2 data collection
+
+
+we extract all human interactions with the code review discussions within fourconsecutive calendar weeks from the single, central code review tools in each in-dustrial context.we define a code review interaction as any non-trivial contribution to the codereview discussion: creating, editing, approving or closing, and commenting ona code review. for this study, we do not consider other (tool-specific) types ofdiscussion contributions, for example, emojis or likes to a contribution to a codereview.the beginning and end of those four-week timeframes differ and are arbitrary,but share the common attributes: all timeframes
+
+
+– start on a monday and end on a sunday,– have no significant discontinuities by public holidays such as christmas,– are pre-pandemic to avoid introduced noise from introduced work-from-homepolicies, pandemic-related restrictions, or interferences in the software devel-opment.
+
+
+the upper bound of information diffusion in code review19
+
+
+observation window (four weeks)collected during
+
+
+microsoft2020-02-03 to 2020-03-02may 2020spotify2020-02-03 to 2020-03-02march 2023trivago2019-11-04 to 2019-12-01december 2022
+
+
+table 4: observation window and the data collection timeframe among our cases.
+
+
+table 4 lists the timeframes (each four weeks) and when the data was collected.all non-human code-review participants and interactions (i.e., bots or auto-mated tasks contributing to the code-review discussions) are excluded. we strictlyanonymized all participants and removed all identifiable personal information toprotect the privacy of all individuals.all data and results are publicly available (dorner 2023).
+
+
+4 results
+
+
+this section presents the results of our simulation as described in section 3 and isstructured around our two research questions.both research questions cover different perspectives on code review as a com-munication network: in rq 1, we use a vertex-centric perspective by measuring thereachable participants (vertices) for each participant (vertex). for rq 2, we use ahyperedge-centric perspective by measuring the topological and temporal lengthsof paths through the communication network that emerges from code review.
+
+
+4.1 how far can information diffuse through code review (rq 1)?
+
+
+as described in section 3.1.1, we answer rq 1 by measuring the number of reach-able participants for each participant in the communication network that emergesfrom code review. the number of reachable participants is the cardinality of eachparticipant’s horizon. in the following, we call the number of reachable participantsinformation diffusion range.to make the different code review system sizes comparable, we normalize theinformation diffusion range to the number of code review participants in a codereview system. mathematically, we define the normalized information diffusionrange for all code review participants u ∈v by
+
+
+|{v ∈v : u ⇝v}|
+
+
+|v |.
+
+
+figure 3 plots the empirical cumulative distribution functions (ecdf) visual-izing the distributions of the information diffusion range per participant after fourweeks each resulting from our simulation.we found the upper bound of the relative information diffusion range at trivago’s
+
+
+code review system. in detail, a code review participants at trivago can reach 85 %of its network at maximum. 30 % of the code review participants can reach be-tween 81 % and 85 %, while an average (median) code review participant can reachbetween 72 % and 85 % of all participants within the network. the code review
+
+
+20michael dorner et al.
+
+
+00.10.20.30.40.50.60.70.80.91
+
+
+0
+
+
+0.1
+
+
+0.2
+
+
+0.3
+
+
+0.4
+
+
+0.5
+
+
+0.6
+
+
+0.7
+
+
+0.8
+
+
+0.9
+
+
+1
+
+
+[0.67, 0.85]
+
+
+[0.72, 0.85]
+
+
+[0.81, 0.85]
+
+
+[0.83, 0.85]
+
+
+normalized information diffusion range after four weeks
+
+
+cumulative distribution
+
+
+trivagospotifymicrosoft
+
+
+fig. 3: cumulative distribution of information diffusion range per participant.the smallest y value for a given x among all three distributions indicates theupper bound of information diffusion with respect to how many participants canbe reached (rq 1). for example, 30 % of all participants at trivago can reachbetween 0 % and 67 % and 70 % of the participants reach between 67 % and 85 %of all participants.
+
+
+table 5: cumulative distribution of normalized information diffusion range percode review system.
+
+
+0.700.500.300.10max
+
+
+trivago0.67 to 0.850.72 to 0.850.81 to 0.850.83 to 0.850.85spotify0.58 to 0.850.72 to 0.850.79 to 0.850.83 to 0.850.85microsoft0.01 to 0.710.30 to 0.710.50 to 0.710.61 to 0.710.71
+
+
+system at spotify generates an almost identical distribution of reachable partic-ipants. table 5 lists the ranges of horizons possible for the p-percentiles 0.7, 0.5,0.3 and 0.1.
+
+
+simulation result 1
+
+
+the code review networks at trivago and spotify describe almost identicallythe upper bound of the normalized information diffusion range: half of theparticipants at trivago and spotify can reach between 72 % and 85 % of allparticipants within four weeks under best-case assumptions.
+
+
+figure 3
+
+
+the upper bound of information diffusion in code review21
+
+
+table 6: cumulative distribution of information diffusion range per participantsystem.
+
+
+0.700.500.300.10max
+
+
+trivago245 to 310266 to 310296 to 310309 to 310310spotify1026 to 14721260 to 14721386 to 14721447 to 14721472microsoft808 to 26 21611 645 to 26 21618 887 to 26 21622 983 to 26 21626 216
+
+
+if we consider the absolute information diffusion range for each code insteadreview participant u ∈v defined by
+
+
+|{v ∈v : u ⇝v}|,
+
+
+code review participants at microsoft’s code review system can reach by far themost participants. although the relative information diffusion range at microsoft’scode review system is significantly smaller, microsoft’s code review system sets theupper bound for the absolute information diffusion range. in detail, the code reviewsystem at microsoft can spread information up to 26 216 participants (71 % of thetotal network size), half of the code review participants can reach 11 645 or moreother participants. table 6 lists the ranges of the top percentiles.
+
+
+simulation result 2
+
+
+the code review network at microsoft describes the upper bound of the ab-solute information diffusion range: half of the participants at microsoft canreach between 11 645 and 26 216 participants within four weeks under best-case assumptions.
+
+
+table 6
+
+
+4.2 how fast can information diffuse through code review (rq 2)?
+
+
+as described in section 3.1.1, we answer rq 2 by measuring the distances betweenthe code review participants. we recall that the notion of distance in time-varyinghypergraphs is two-fold: each time-respecting path (journey) has a topologicaldistance (the minimal number of hops of all journeys) and temporal distance (mea-sured in time of all journeys).therefore, we align the answers to rq 2 with those two types of distances.
+
+
+4.2.1 topological distances in code review
+
+
+figure 4 depicts the cumulative distribution of topological distances between codereview participants among the sampled cases.the code review system at trivago contains the most distances among ourthree cases. the average (median) distance between two participants at trivago isthree, at spotify four, and at microsoft eight hops. 60 % of all distances at trivago
+
+
+22michael dorner et al.
+
+
+0510152025303540
+
+
+0
+
+
+0.1
+
+
+0.2
+
+
+0.3
+
+
+0.4
+
+
+0.5
+
+
+0.6
+
+
+0.7
+
+
+0.8
+
+
+0.9
+
+
+1
+
+
+topological distance
+
+
+cumulative distribution
+
+
+trivagospotifymicrosoft
+
+
+fig. 4: the cumulative distribution of topological distances between participantsin code review systems. the topological distance is the minimal number of codereviews (hops) required to spread information from one code review participantto another.
+
+
+and spotify are shorter or equal to five code reviews. the maximum distance percase is 14 for trivago, 20 for spotify, and 38 for microsoft.
+
+
+simulation result 3
+
+
+trivago’s code review system describes the upper bound on how fast informa-tion can spread through code review: about 75 % of all distances in trivago’scode review system between code review participants are shorter than fivecode reviews.
+
+
+figure 4
+
+
+4.2.2 temporal distances in code review
+
+
+the other type of distance in time-varying hypergraphs is the temporal distance.the fastest time-varying path is the path between two code review participantswith the minimal (relative) temporal distance between two code review partici-pants describes the minimal timespan to spread information from one participantto another. due to our observation window, the temporal distance cannot exceedfour weeks in our measurement. figure 5 depicts the cumulative distribution of therelative temporal distances between the code review participants in our sample.the average (median) temporal distance between two code review participantsat trivago or spotify is less than seven days, while a code review participant a
+
+
+the upper bound of information diffusion in code review23
+
+
+7142128
+
+
+0
+
+
+0.1
+
+
+0.2
+
+
+0.3
+
+
+0.4
+
+
+0.5
+
+
+0.6
+
+
+0.7
+
+
+0.8
+
+
+0.9
+
+
+1
+
+
+temporal distance (in days)
+
+
+cumulative distribution
+
+
+trivagospotifymicrosoft
+
+
+fig. 5: the cumulative distribution of minimal temporal distances between par-ticipants in code review systems. the temporal distance is the minimal durationrequired to spread information from one participant to another.
+
+
+microsoft takes more than 14 days, which is still in the observation window of fourweeks.
+
+
+simulation result 4
+
+
+trivago’s code review system describes the upper bound on how fast infor-mation can spread through code review concerning the relative temporal dis-tance: the average (median) temporal distance between two code review par-ticipants at trivago are five days.
+
+
+figure 5
+
+
+5 discussion
+
+
+both research questions cover two different and complementary perspectives oncommunication networks that emerge from code review. rq 1 captures a vertex-centric perspective on code review focusing on the participants as nodes in thecommunication network and their horizon. rq 2 captures a (hyper)edge-centricperspective focussing on the length of minimal paths through the networks, repre-senting the code reviews as communication channels connecting the participants.also, for this section, we group our discussion around the two research questions.
+
+
+24michael dorner et al.
+
+
+5.1 how far can information diffuse through code review (rq 1)?
+
+
+we found a relative upper bound on how far information can spread through codereview for small and mid-sized code review systems and an absolute upper boundfor large code review systems (see simulation results 1 and 2).although the code review systems at trivago describes the upper bound onhow far information can spread through code review (rq 1), the code reviewsystem at spotify has an almost identical distributions of normalized informationdiffusion range—despite a different tooling and different total network size. bothcode review systems define the upper bound of how far information can spreadrelative to the network size (see simulation result 1). we consider that as a firstindicator that the choice of tooling is secondary. however, although the similaritybetween the small and mid-sized code review system is striking, this study was notdesigned to examine patterns among the code review systems. thus, we cannotexclude a random correlation.microsoft’s code review system as largest code review system, however, de-scribes the absolute upper bound on how far information can spread (see simula-tion result 2).we are surprised by those two results as we expected a significantly smallerrelative and absolute upper bound that is more guided by the organizational orsoftware architectural boundaries. although neither organizational nor softwarearchitectural information is available for this study, we assume an informationdiffusion beyond organizational or software architectural boundaries among allcases because all information diffusion ranges are magnitudes larger than reason-able team sizes. although this study does not evaluate the expected improve-ments of code review but focuses on the underlying expected cause of informationexchange through code review (see figure 1), this finding corroborates the ex-pectation bacchelli and bird (2013)4towards team awareness and transparency:information can leave the organizational boundaries in code review leading toimproved collaboration.
+
+
+5.2 how fast can information diffuse through code review (rq 2)?
+
+
+although we found both the topological and temporal distances to be minimalin trivago’s code review system (see simulation results 3 and 4), the temporaldistances we measured at spotify and microsoft are remarkable given their codereview sizes on almost a logarithmic scale: the average (median) distance at spo-tify’s code review system is shorter than five code reviews (topological distance)and shorter than seven days (temporal distance); the average (median) distanceat microsoft’s code review system is shorter than seven code reviews (topologicaldistance) and shorter than about 14 days (temporal distance).the step-like characteristics among all cases, but more prominent in trivago’sand microsoft’s code review system, indicate a common day-night and workdayrhythm of the two participants connected by the fastest time-respecting path.although the developers’ locations are not available to us and the investigationis out of the scope of our study, we speculate that information diffusion in thecode review systems at trivago and microsoft stays mostly in the same timezone.however, spotify’s code review system describes a less distinct pattern where
+
+
+the upper bound of information diffusion in code review25
+
+
+the steps are less clear. therefore, we assume an information diffusion beyondtimezones at spotify’s code review system.
+
+
+6 limitations
+
+
+in outlining the limitations of our study, it is crucial to acknowledge potentialthreats to validity. this section highlights key constraints, both internal and ex-ternal, providing context for the interpretation of our findings and suggestingavenues for future research.
+
+
+6.1 best-case assumptions
+
+
+as already discussed in section 3.1.1, our assumptions regarding the informationdiffusion make the results a best-case scenario that is unlikely to achieve in reality:information is unlikely to spread on every occasion or to all code review partic-ipants. information diffusion depends on the capability of human participants tobuffer, filter, and consolidate information from their minds. since we are unawareof any prior work on those capabilities, the results remain a theoretical upperbound of information diffusion but are no information diffusion in code review.
+
+
+6.2 non-human code review activities
+
+
+although we excluded all code review bots from the network, effects of bot activ-ities on the communication network still remain:first, we found evidence that participants (at least partially) automated thecode review handling. bots disguised as human participants can distort the resultssince those bots connect more code reviews and, therefore, people than humans do.after removing all known and explicitly labeled bots, we found 14 accounts thatcontributed to more than 500 code reviews during our observation window of fourweeks. all of those were in microsoft’s code review systems. assuming 20 workdayswithin our observation windows and 8 hours a day, 500 code reviews within fourweeks means about three code reviews per hour on average (mean). the maximumnumber of contributed code reviews is 8249 which then corresponds to about 50code reviews per hour on average (mean). we consider that code review load ispossible but highly unlikely. we did not remove the questionable accounts for thefollowing reasons:
+
+
+– we are unaware of empirical studies reporting the upper bound of a code reviewload in industry. existing prior work on workload-aware code review participantselection does not report a distribution of code review involvement, normalizethe code review size to the number of involved files, or is based on open sourceprojects (al-zubaidi et al. 2020; armstrong et al. 2017; chouchen et al. 2021;strand et al. 2020). any threshold would be, therefore, arbitrary.
+
+
+– we cannot distinguish between bot activity (for example, a one-time cleaningscript of the code review) and an actual human within such a questionableaccount.
+
+
+26michael dorner et al.
+
+
+an in-depth inspection was not possible as it would require a complete de-anonymization of the accounts and analysis of the content of the code reviews ofthose which is not covered by the study’s non-disclosure agreement.second, bots can provide assistance for or enforcing code review guidelinesby selecting and informing a set of code review participants. those bot activitiesshape the network drastically and is not covered by our work.in the foreseeable future, llm-based bots may become code review partici-pants. on the one hand, they produce code that is required to be reviewed bya human as long as machines cannot be held liable and accountable and theycan provide feedback and share important contextual information. however, thisincreased bot activities may increase the workload of the human reviewers andeven slow down the communication through code review (wessel et al. 2021). thepromising work by r¨oseler et al. (2023) can lay the foundation for understandingthe impact of bots on communication, coordination, and collaboration.thus, excluding those code review activities would not reflect the informationdiffusion in code review anymore in the near future. however, since all the observa-tion windows for all code review systems were located before the rise of llms, weare convinced that excluding bot accounts is appropriate. future work is needed toinvestigate the impact of non-human code review from a communication networkperspective.
+
+
+6.3 observation window
+
+
+as for any continuous, real-world process, we only can make assumptions aboutwindowed observations of that phenomenon. at the border of our observationwindows, we have to live with some blur and uncertainty: the communicationchannel may have started before or ended after our observed time window. figure 6demonstrates the problem of the observation window for an ongoing system. achannel is either
+
+
+– unbounded (observation window does not include start or end of the channel)– bounded (observation window contains start and end of the channel)– left-bounded (observation window contains start but no end of the channel)– right-bounded (observation window contains end but not start of the channel)
+
+
+in particular, in communication channels (code reviews) that are right-boundedor unbound, we may miss participants that contributed to the discussion and,therefore, can spread information. left-bounded and bounded communication chan-nels do not contribute to this uncertainty since we know all participants within theobservation window. in figure 7, we see the distributions of the communications-channel bounds.although the observation windows of four weeks are arbitrary and, therefore,all distances longer than four weeks are not captured, we consider the observationwindow as sufficiently large enough to capture the information diffusion throughcode review: all code review networks reached a plateau regarding how far infor-mation can spread through code review. figure 8 is a comprehensive overview ofour simulation results depicting the distributions of reachable code review partic-ipants over time as color-coded inter-percentile ranges for all three code reviewsystems.
+
+
+the upper bound of information diffusion in code review27
+
+
+observation window
+
+
+left-boundedright-bounded
+
+
+unbounded
+
+
+bounded
+
+
+fig. 6: the impact of observation windows on data completeness: the concurrentcode reviews as communication channels may have started before or ended afterthe observed time window. due to the cut, the communication channels may cut attheir start (right-bound) or at their end (left-bound), or the channel is completelycontained (bound) or not contained (unbound) in the observation window.
+
+
+trivagospotifymicrosoft0
+
+
+0.2
+
+
+0.4
+
+
+0.6
+
+
+0.8
+
+
+1
+
+
+bounded
+
+
+left-bounded
+
+
+right-bounded
+
+
+unbounded
+
+
+fig. 7: share of bounded, left-bounded, right-bounded, and unbounded communi-cation channels among all cases.
+
+
+we observe that the code review systems at trivago and spotify reach a plateauafter two, the code review system at microsoft after three weeks on how far in-formation can spread. that means a larger observation window and, therefore,longer topological and temporal distances would likely not impact the informationdiffusion and the number of reachable participants significantly.not only the size of the observation window but also its positioning in timecan affect our results. larger discontinuities (e.g., holidays for large parts of thestaff, vacation seasons over summer) and external interferences (e.g., the pandemic,large-scale outages of the development infrastructure, etc.) with the software de-velopment will affect code review, and, thus, impact our results. we void suchnoise that would have impacted our results by carefully selecting pre-pandemicobservation windows with no significant discontinuities by public holidays such aschristmas (see section 3.2.2). therefore, we believe that the positioning of thetimeframes in time for code review as a continuous endeavour has no significantinfluence on the results. however, we are not able to provide empirical evidence
+
+
+28michael dorner et al.
+
+
+0
+
+
+100
+
+
+200
+
+
+300
+
+
+trivago
+
+
+0
+
+
+0.2
+
+
+0.4
+
+
+0.6
+
+
+0.8
+
+
+1
+
+
+0
+
+
+500
+
+
+1,000
+
+
+1,500
+
+
+spotify
+
+
+0
+
+
+0.2
+
+
+0.4
+
+
+0.6
+
+
+0.8
+
+
+1
+
+
+0
+
+
+10,000
+
+
+20,000
+
+
+30,000
+
+
+week 1week 2week 3week 4
+
+
+microsoft
+
+
+0
+
+
+0.2
+
+
+0.4
+
+
+0.6
+
+
+0.8
+
+
+1
+
+
+fig. 8: the information diffusion range absolute (left y-axis) and relative to thenetwork size (right y-axis) distribution per participant in the observation window offour weeks (x-axis). the distribution is presented as a color-coded intra-percentilerange with the median in white.
+
+
+to validated this claim (i.e., the observation window covers a typical, presenta-tive month) beyond the assessment of our industry partners when selecting thetimeframe.
+
+
+6.4 generalization
+
+
+the generalization of our results highly depends on our sampling strategy. in gen-eral, our study is affected by an availability bias: companies are hesitant to sharecode review data since the code review system—as any communication tool—maycontain confidential and personally identifiable information of their developers.however, we used a maximum variation sampling to select suitable code review
+
+
+the upper bound of information diffusion in code review29
+
+
+systems in an industrial context and aimed for representativeness on code reviewsystem size and tooling.the size classification of code review systems is arbitrary and relative to oursample. on the lower bound, we classified a code review system with 364 partic-ipants to be small, although there are code review systems that are significantlysmaller. on the upper bound, however, our sample includes arguably one of thelargest code review systems nowadays with more than 37 103 participants.our sampling contains three code review tools: github (via pull/merge re-quests) at spotify, bitbucket (via merge requests) at trivago, and codeflow asan internally developed tool at microsoft. this, however, does not cover the toollandscape extensively: in particular, we miss gerrit, phabricator, and gitlab fromthe broadly available tools. we believe that missing phabricator and gitlab doesnot introduce a bias: the future of phabricator is unknown since the companyrunning the developed, phacility, ended all operations (priestley 2021) and thecode review (via merge requests) in gitlab is, in our opinion, equivalent to thatin github. gerrit as a popular and dedicated code review tool, however, withits voting system, could lead to other communication networks and, therefore, todifferent information diffusion results.we explicitly excluded the practices as sampling dimensions although they havea direct impact on the resulting communication network: code review guidelines,code ownership, or other selection criteria define who is invited to and has asay in a code review discussion and, therefore, prescribe and limit the availablecommunication channels for the information sharing. those guidelines vary amongbut also within companies.
+
+
+7 conclusion
+
+
+with this study, we make a first quantitative step towards understanding andevaluating code review as a communication network at scale. through our infor-mation diffusion simulation based on communication networks emerging from codereview systems at microsoft, spotify, and trivago, we found an upper bound ofinformation diffusion in code review:on average (median), information can spread between 72 % and 85 % of allparticipants for small and mid-sized code review systems or between 30 % and 71 %of all participants for large code review systems (microsoft); which correspondsto an absolute range between 11 645 and 26 216 code review participants. thisdescribes the upper bound on how far information can spread in code reviewthe average (median) distance between two code review participants is shorterthan three code reviews or five days at small code review systems (trivago). theaverage distance in mid-sized (spotify) and large (microsoft) code review systemsrange between four and seven code reviews or seven and fourteen days—consideringthe sizes on an exponential-like scale a significant finding. this describes the upperbound on how fast information can spread in code review.our findings align with findings from the prior qualitative research: all fiverelevant prior studies reported information exchange among code review partic-ipants as a key expectation towards code review. our findings (indicating thatthe communication network that emerges from code review is capable of diffusing
+
+
+30michael dorner et al.
+
+
+information fast and far) corroborate the qualitatively reported information ex-change as an expectation towards code review, which we consider the foundationfor all other reported and expected benefits of code review. although we arguethat given the sheer magnitude of information diffusion possible through code,information must cross organizational boundaries and, therefore, code review en-ables collaboration in companies at scale, future work is required to investigateand establish a thorough connection between our work and an improved collab-oration at scale, another qualitatively reported expectation towards code review.this applies to code-related expected improvements, too.although our sample of code review systems limits the generalizability of ourfindings, we conclude for researchers and practitioners alike:
+
+
+– the larger the better. because code review is a communication network thatcan scale with the information diffusion among its participants, companies mayunify and centralize their code review systems—independently of (monolithic)code repositories (potvin and levenberg 2016).
+
+
+– tooling is secondary. we did not find any evidence that the choice of toolingplays a crucial role in information diffusion through code review.
+
+
+– the role of bots rethought. although bots can provide assistance for se-lecting and informing a set of code review participants optimal with respectto information diffusion, bots tend to introduce noise in the communicationchannels (wessel et al. 2021) that may slow down the communication throughcode review. the promising work by r¨oseler et al. (2023) can lay the foun-dation for understanding the impact of bots on communication, coordination,and collaboration.
+
+
+our comprehensive replication package enables researchers to fully reproduceour results, and replicate our study using other code review systems to parametrizeour simulation model.the need for replication applies in particular to open source. not only becausebosu et al. (2017) already reported a significantly large difference in the primarymotivation for code review in an industrial and open-source context, we believethat findings from an industrial or open-source context are not easily transferrable:the mechanics and incentives in open source differ, and so do the organizationalstructure, liability, and commitment (barcomb et al. 2020).we also invite to enhance our simulation. in particular, implementing diffusionprobabilities could broaden our understanding from information diffusion beyondthe best case assumptions.so far, we have explicitly excluded the underlying code review practices assampling dimension, which most likely significantly impact the resulting commu-nication networks emerging from code review and, therefore, the information dif-fusion in code review. future work could map practices to information diffusionto indicate the reasonable cost-benefit ratio of code review.in this study, we focused on the upper bound of information diffusion andanswered the research questions regarding how far and how fast information canspread through code review. our research design does not aim to investigate howfast and how far information actually spreads through code review; it remains anestimation of the upper bound of information diffusion in code review. in futurework, we will measure (rather than simulate) the actual information diffusionthrough code review. therefore, we will develop a measurement system to follow
+
+
+the upper bound of information diffusion in code review31
+
+
+the traces in the communication networks that emerges from code review. codereview tools like github provide a foundation for those investigations.
+
+
+code and data availability
+
+
+the code and data that support the findings of this study are openly available onzenodo via dorner (2023) and dorner and bauer (2023).
+
+
+acknowledgement
+
+
+we thank andreas bauer for his valuable feedback on the technical aspects of thesimulation. we are very grateful for the support from our industry partners, inparticular, from andy grunwald, simon br¨uggen, and marcin floryan. we alsothank the anonymous reviewers for their careful reading of our manuscript andtheir many insightful comments and helpful suggestions.this work was supported by the kks foundation through the sert project(research profile grant 2018/010) at blekinge institute of technology.
+
+
+contribution statement
+
+
+michael dorner: conceptualization, data curation, methodology, software, for-mal analysis, investigation, writing - original draft, visualization, supervisiondaniel mendez: conceptualization, funding acquisition, writing - review & edit-ing, supervision krzysztof wnuk: conceptualization, writing - review & editingehsan zabardast: data curation, writing - review & editing jacek czerwonka:data curation, writing - review & editing andreas bauer: software, validationandy grunwald: data curation simon br¨uggen: data curation
+
+
+conflict of interest
+
+
+the authors declared that they have no conflict of interest.
+

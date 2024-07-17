@@ -1,0 +1,1395 @@
+
+arspi-iet page 1 
+
+
+from pragmatic to systematic software process  improvement: an evaluated approach 
+
+
+marco kuhrmann1,2, daniel méndez fernández2 
+
+
+1university of southern denmark, the mærsk mc-kinney møller institute, 5230 odense, denmark 
+
+
+e-mail: kuhrmann@mmmi.sdu.dk  
+
+
+2technische universität münchen, faculty of informatics, 85748 garching, germany 
+
+
+e-mail: mendezfe@in.tum.de  
+
+
+correspondence to: marco kuhrmann, kuhrmann@mmmi.sdu.dk  
+
+
+abstract 
+
+
+software processes improvement (spi) is a challenging task, as many different stakeholders, project settings, and contexts and goals need to be considered. spi projects are often operated in a complex and volatile envi-ronment and, thus, require a sound management that is resource-intensive requiring many stakeholders to con-tribute to the process assessment, analysis, design, realisation, and deployment. although there exist many valu-able spi approaches, none address the needs of both process engineers and project managers. this article pre-sents an artefact-based software process improvement & management approach (arspi) that closes this gap. arspi was developed and tested across several spi projects in large organisations in germany and eastern eu-rope. the approach further encompasses a template for initiating, performing, and managing spi projects by defining a set of 5 key artefacts and 24 support artefacts. we present arspi and discus results of its validation indicating arspi to be a helpful instrument to set up and steer spi projects. 
+
+
+keywords 
+
+
+software process improvement, software process management, artefact orientation 
+
+
+1 introduction 
+
+
+software processes comprise many process assets, which need to be designed, implemented, quality assured, and managed in the context of an organisation-wide software process management (spm; [27]). software pro-cess improvement (spi; [12]) aims at the systematic analysis, re-/design, and evaluation of a particular process. as part of spm, it forms an important step for organisations of all sizes to succeed in the market [11]. however, spi is costly and improved processes need time to be disseminated, making the impact of spi hard to measure and justify [4], [6], [8]. therefore, and because of the associated costs, many software managers are reluctant to conduct spi [6], or companies give up spi at all [10]. niazi et al. [28] mention the importance of an effective strategy to successfully implement spi, what is especially true for the management of a process’s evolution after its initial deployment, i.e. changes must be tracked [29] and the evolution of external standards must be considered in the process maintenance [23]. furthermore, a sound project organisation, i.e. allocating resources, defining deliverables, or tracking progress, is crucial to set up a systematic spi [3]. 
+
+
+from the perspective of a process engineer, we still miss a guidance to conduct a flexible but systematic spi project going beyond purely assessment-driven approaches, like cmmi [5] or iso/iec 15504 [14]. that is, we need support for process engineers to systematically organise and perform spi projects in the context of an spm strategy, while leaving open the way of conducting particular improvements.  
+
+
+in this article, we contribute a model for an artefact-based software process improvement & management (arspi). the model emerges from initial pragmatically conducted improvement activities [18]. based on our experiences across several spi projects in large organisations in germany, we inferred and systematised our approach, which we applied and validated in practice in germany and eastern europe. our approach relies on the principle of artefact orientation [25]. that is, by concentrating on the key artefacts to be created in spi pro-jects, we abstract from actual spi activities. we thus give process engineers the freedom to apply methods ap-propriate for their particular situation while being able to clearly define the interfaces to supporting activities, 
+
+
+arspi-iet page 2 
+
+
+e.g., quality management. arspi defines a template that process engineers can use to set up and manage spi projects.  
+
+
+the remainder of this article is organised as follows. in section 2, we discuss related work, which gaps are left open, and how we intent to close those gaps. in section 3, we introduce our approach in detail, before giving a concluding summary in section 4. 
+
+
+2 related work 
+
+
+in this article, we present an spi method that, compared to existing models, follows an alternative approach. instead of focussing on assessments or specific improvement procedures, our model is based on the principle of artefact orientation [25]. according to frailey [9], relying on artefacts is advantageous as artefacts ease, inter alia, the creation of a common terminology. in a study on the perception of artefact-based software processes [20] and in an experiment on the perception of process modelling [21], we further found indicators supporting frailey’s conclusion. reviewing available and well-disseminated spi models, e.g., cmmi [5], iso/iec 15504 [14], and iso/iec 12207 [13], we find, however, that the focus in current approaches lies on providing compre-hensive descriptions of principles and procedures rather than on providing precise artefact models. furthermore, these models are often criticised to be too voluminous, too complex, or to result in processes that might lead to an improvement alien to the organisation [2], [26], [32]. in response to this shortcoming, tailored variants of these models aim at better addressing small and very small companies, e.g., iso/iec 29110 [15]. those ap-proaches, however, remain normative and they usually focus on process assessments only. even the recently published standard iso/iec 33014 [16] focuses on activities without precisely defining the required artefacts. apart from the standards, several method proposals were made that rely on best practices and standards empha-sising needs of small companies. processus [11], bg-spi [1], lappi [31], and bootstrap [24], are representatives of such methods. these proposals comprise activity-based guidelines providing detailed proce-dures process engineers should follow (e.g., [11], [1], and [31]), or they aim to simplify process assessments and relationships are not provided. activity-based approaches therefore encounter problems in practice: what if the described order of activities does not meet the needs of the actual context? a missing description of the expected outcomes hampers learning curves of process engineers, limits the comparability of spi projects, and thereby limits the opportunities to create reusable assets for enhancing improvement processes, which are all aspects investigated in the context of spi success factors (e.g., melzer and stellis [33]) and human aspects in 
+
+
+our proposed approach precisely defines the artefacts allowing for creating a model of the expected results that can be tested, e.g., for completeness and consistency. furthermore, an artefact-based approach allows for bridg-ing the gap between single spi project instances and organisation-wide spi programs to provide spi projects with a stable environment as, for instance, recommended by rainer and hall [30]. artefact models remain sta-ble and only the respective methods for the artefact creation need to be adapted for the respective context, which allows for, e.g., a flexible tailoring of improvement endeavours as considered crucial by melzer and stellis [33]. the subsequently presented arspi1 model provides scalable and adaptable spi project- and artefact templates [17] supporting process engineers to set up and organise spi projects. arspi defines a method-agnostic, but general structure (the embodiment with particular methods is out of scope) that process engineers can use in combination with their preferred methods as, e.g., previously contributed for the re improvement domain [26]. this article is based on previously published material: we first presented arspi as method proposal [19], gave a brief overview of the key concepts, and provided two practical examples. the full arspi model, i.e. all uml models, tailoring profiles, and so forth, are documented in our complementing technical report [17], and the overall construction procedure of arspi can be depicted from [18]. in this article, we extend the presentation of arspi by providing more details and background, and we provide information on the validation of arspi in academia and practice.  
+
+
+                                                             
+
+
+
+
+
+arspi-iet page 3 
+
+
+3 a model for artefact-based software process improvement & management 
+
+
+we introduce arspi by describing the artefact model in section 3.1, and the life cycle model in section 3.2. we concentrate on an overview and present selected concepts. further details can be depicted from [17]. an over-view of the overall evaluation strategy and a discussion on selected results is given in section 3.3. 
+
+
+the arspi model is an artefact-based approach to organise spi projects. its nature puts emphasis on the arte-facts being produced and used in spi projects – it thereby focuses on the “what” rather than dictating which methods to apply in which sequence. hence, arspi defines a comprehensive, but flexible model that addresses spi projects as well as organisation-wide spm.  
+
+
+ 
+
+
+figure 1 overview of the arspi model. 
+
+
+arspi consists of three parts (figure 1): 
+
+
+• spi projects: arspi characterises spi projects by defining 5 mandatory key artefacts (table 1), 24 com-plementing support artefacts (table 2), life cycle phases to which the artefacts are assigned for the project organisation, and a process model, which remains rudimentary due to the artefact-based nature of arspi. 
+
+
+• organisation-wide spm: an organisation-wide spm implements the spi strategy, owns the software processes, initiates particular improvement endeavours, and deploys process releases. for this, arspi de-fines artefacts and processes to (1) define interfaces between the organisation-wide spm and particular spi projects, and (2) to establish the necessary management and administration processes. 
+
+
+• software projects: spi primarily targets software projects where (improved) processes are applied and that serve as major source to gather experiences and the data necessary to conduct further improvements. 
+
+
+the arspi model provides a framework, which supports companies in implementing spm including organisa-tion-wide improvement programs, particular improvement projects, and the management of processes. by defin-ing interfaces and fine-grained artefact structures, arspi bounds the different parts of spm together and pro-vides a unified perspective. 
+
+
+3.1 the arspi artefact model 
+
+
+we describe the artefact model of arspi in more detail by defining the key artefacts. furthermore, we provide the essence of how the artefacts are designed and how particular artefacts materialise in projects. 
+
+
+as described in [18], arspi defines 5 key artefacts (table 1), which have to be created in every spi project. 24 support artefacts, created in response to particular project requirements, e.g., assessment and quality assurance 
+
+
+life cycle phases 
+
+
+software process improvement (spi) - artefacts 
+
+
+project and quality management 
+
+
+software process management (spm) 
+
+
+configuration, change, and release management 
+
+
+software project 
+
+
+analysis 
+
+
+conceptualisation 
+
+
+realisation 
+
+
+deployment 
+
+
+spi key artefacts support artefacts 
+
+
+… 
+
+
+project- and quality management 
+
+
+software process improvement (spi) - processes 
+
+
+process 
+
+
+requirements 
+
+
+conceptual 
+
+
+process design 
+
+
+technical 
+
+
+process design 
+
+
+process life 
+
+
+cycle support 
+
+
+process release 
+
+
+vision 
+
+
+measurement plan 
+
+
+training plan 
+
+
+project plan 
+
+
+process assessment 
+
+
+arspi-iet page 4 
+
+
+artefacts, accompany these key artefacts. table 2 lists selected support artefacts and provides a brief description. the complete list of support artefacts can the depicted from [17]. 
+
+
+table 1 overview of the arspi key artefacts. 
+
+
+id artefact description spi project life cycle phase 
+
+
+prq the process requirements artefact contains all requirements regarding the process. to collect all relevant requirements, the prq defines the following top-level structure: • goals 
+
+
+• stakeholders and roles 
+
+
+• requirements 
+
+
+• overall process draft 
+
+
+• technical infrastructure 
+
+
+• basic conditions 
+
+
+analysis 
+
+
+cpd the conceptual process design contains all designs of a process without paying attention to any technical realisation. it refines all process-related requirements and transfers them into concrete processes and process parts. it defines the following top-level structure: • goals (shared with prq) 
+
+
+• principles 
+
+
+• planned adaptations: organisation and roles, artefacts, and processes 
+
+
+• additional requirements: tailoring, process documentation, and supporting material 
+
+
+• requirements tracing (shared with prq and tpd) 
+
+
+conceptualisation 
+
+
+tpd the technical process design refines the cpd regarding a concrete technical realisation and tool/tool infrastructure to be used for its realisation: • (refinement of the cpd structure, cf. figure 2) 
+
+
+• logical and physical model organisation 
+
+
+realisation 
+
+
+plc the process life cycle support comprehends all information, agreements, and definition regarding complementing processes supporting the deployment, training, and further development of a concrete process as well as its evaluation and measurement: • training 
+
+
+• deployment and further development 
+
+
+• measurement and evaluation 
+
+
+• change management 
+
+
+created early in the analysis phase, at latest in the deployment phase 
+
+
+pr a process release is a concrete process package that is shipped and deployed. the results produced in the spi project dynamically define the pr’s structure. 
+
+
+deployment 
+
+
+table 2 selection of the arspi support artefacts. 
+
+
+artefact description 
+
+
+user evaluation plan while the measurement plan of a process aims at measuring the process performance in gen-eral, a user evaluation plan aims to evaluate the actual use of a process. in contrast to “classic” kpi-based measuring, the user evaluation is more of a qualitative nature. 
+
+
+training material training material consists of material to train the process consumers. the training material is specific for certain user groups/stakeholders and for particular process releases. usually, train-ing material is explicitly defined for stakeholder groups and, therefore, provides different per-spectives and information at different levels of abstraction. 
+
+
+spl-delta report if the considered process is based on a software process line (spl), a delta report is helpful to analyse deviations from the spl base process to support long-term development (having the spl’s evolution in mind), and to support compliance assessments. 
+
+
+arspi’s artefact model defines the structure of the particular artefacts. a comprehensive set of associations connects the artefacts with each other to allow for refinements and tracing, e.g., which requirements are how designed and realised. figure 2 shows an example of the uml model in which the conceptual process design and technical process design, and their relationships are illustrated. 
+
+
+arspi-iet page 5 
+
+
+ 
+
+
+figure 2 excerpt of the arspi model: the cpd and tpd artefacts, and their associations. 
+
+
+the uml model comprehends all elements identified during the construction procedure of arspi [18], and integrates them into a harmonised and consistent model. hence, the model allows for setting up basic quality assurance measures, e.g., completeness, and, by instrumenting the relationships, for checking consistency of the results. furthermore, we decided to use uml as modelling language to serve several realisation options. in the simple case, the artefact aggregation structure can be easily transformed into a document structure, e.g., a word template, which process engineers can use to document process requirements. likewise, the artefact model can also be instrumented in tools (e.g., for design and enactment). depending on the actual context and the used (project) infrastructure, arspi artefacts can thereby materialise as documents or computable data of correspond-ing tools. therefore, arspi provides a structured collection of concepts that can be tailored according to the respective context. 
+
+
+3.2 the arspi life cycle model 
+
+
+we briefly describe the life cycle model of spi projects and the overall organisation model, show how arspi integrates spi and spm, and we provide insights into the implementation of arspi. 
+
+
+emische version nur für unterrichtszwecke
+
+
+merzielle entwicklung ist strengstens untersagt
+
+
+akademische version nur für unterrichtszweckekommerzielle entwicklung ist strengstens untersagt
+
+
+akademische version nur für unterrickommerzielle entwicklung ist strengs
+
+
+akademische version nur für unterrichtszweckekommerzielle entwicklung ist strengstens untersagt
+
+
+akademische version nur für unterrichtszweckekommerzielle entwicklung ist strengstens untersagt
+
+
+akademische version nur für ukommerzielle entwicklung ist s
+
+
+akademische version nur für unterrichtszweckekommerzielle entwicklung ist strengstens untersagt
+
+
+akademische version nur für unterrichtszweckekommerzielle entwicklung ist strengstens untersagt
+
+
+akademische version nukommerzielle entwicklu
+
+
+akademische version nur für unterrichtszweckekommerzielle entwicklung ist strengstens untersagt
+
+
+akademische version nur für unterrichtszweckekommerzielle entwicklung ist strengstens untersagt
+
+
+akademische verkommerzielle ent
+
+
+akademisckommerzie
+
+
+cpd-tpdge data [   ]
+
+
+process conceptualization and design
+
+
+artifact to artifact dependencies
+
+
+artifact to role dependencies
+
+
+artifact to process part dependencies
+
+
+birds-eye perspective
+
+
+milestones
+
+
+milestone to artifact dependencies
+
+
+milestone to process part 
+
+
+dependencies
+
+
+role to process part dependencies
+
+
+artifact model
+
+
+additional requirements
+
+
+«spidocument»
+
+
+conceptual process design
+
+
+requirements tracing
+
+
+grouping and categorizationnew role
+
+
+planned adaptations
+
+
+principles
+
+
+process documentation model
+
+
+supporting material model
+
+
+customized artifact
+
+
+new artifact
+
+
+removed artifact
+
+
+new process part
+
+
+customized process part
+
+
+removed processpart
+
+
+customized role
+
+
+removed role
+
+
+overall process
+
+
+tailoring model
+
+
+artifact dependencies
+
+
+organization and role model
+
+
+process model
+
+
+process realization
+
+
+process documentation model realization
+
+
+supporting material model realization
+
+
+artifact model realization
+
+
+process model realization
+
+
+tailoring model realization
+
+
+organization and role model realization
+
+
+«spidocument»
+
+
+technical process design
+
+
+metamodel adaptations
+
+
+tailoring configuration
+
+
+variability operations
+
+
+logical and physical
+
+
+model organization
+
+
+integrated
+
+
+organization model
+
+
+integrated role model
+
+
+integrated 
+
+
+artifact model
+
+
+integrated 
+
+
+process model
+
+
+tailoring modules
+
+
+requirements
+
+
+goals
+
+
+1
+
+
+0..1
+
+
+0..*
+
+
+0..1
+
+
+0..*
+
+
+0..1
+
+
+1
+
+
+0..*
+
+
+0..*
+
+
+0..1
+
+
+0..*
+
+
+1
+
+
+0..*
+
+
+0..*
+
+
+0..*
+
+
+0..*
+
+
+0..*
+
+
+0..*
+
+
+0..1
+
+
+0..*
+
+
+0..*
+
+
+0..*
+
+
+0..*
+
+
+0..*
+
+
+0..*
+
+
+0..*
+
+
+0..*
+
+
+0..*
+
+
+0..*
+
+
+0..*
+
+
+0..*
+
+
+0..*
+
+
+0..1
+
+
+has requirement tracing
+
+
+1
+
+
+0..*
+
+
+refines
+
+
+refines
+
+
+refines
+
+
+refines
+
+
+refines
+
+
+refines
+
+
+0..*
+
+
+0..*
+
+
+1..*
+
+
+0..*
+
+
+1..*1..*
+
+
+arspi-iet page 6 
+
+
+ 
+
+
+figure 3 the arspi life cycle and organisation model (simplified view). 
+
+
+figure 3 presents a simplified view of the life cycle model, which binds together an organisation-wide spm and specific spi projects. the main life cycle is visualised by the solid lines, examples of internal information flow are visualised by the dotted lines. spi projects are always embedded into an organisational context, which pro-vides a vision as part of the overall process-related strategy, and handles configuration-, release-, and change management of a process that is subject to continuous improvement. furthermore, the organisation initiates spi projects.  
+
+
+3.2.1 organisation point of view 
+
+
+an spi project starts with a project assignment (e.g., a contract) from the process-owning organisation, and is iteratively performed by the process engineers. based on the plan-do-check-act cycle [7], iterations comprise up to four phases. the goal is to deploy one process release per iteration. process releases and process life cycle support documentation are shipped to the organisation that includes a release in the release management (combined with a configuration management), and, eventually, publishes a release as new actual process for use in projects. a change management is enabled for the new process release, and, together with a quality management, collects required changes for further improvement cycles. the process life cycle support arte-fact comprises all procedures necessary to establish necessary management tasks (table 1). the quality man-agement also manages the vision representing the overall improvement goals, e.g., a certain cmmi level. a vision, a set of changes, and an actual process as reference are the basic inputs to initiate improvement cycles. 
+
+
+example. this example is extracted from a long-term industry project (table 3, study 5). the example boils down more then 5 years of cooperation in which the organisation-wide standard software process of a german government agency was improved in several iterations. the agency adopted the v-modell xt to implement the contracting and development processes, i.e. the process is part of the v-modell xt process line [23]. the agen-cy’s process variant is derived from the “v-modell xt bund”, which itself is a variant of the generic “v-modell xt reference model”. figure 4 illustrates how the different parties interface, and how organisation-internal and external triggers affecting spi projects demand for a mature process management. 
+
+
+analysis conceptualisation realisation deployment 
+
+
+track/ control initiate 
+
+
+ship 
+
+
+organisation-wide software process management (spm) 
+
+
+manage the company-wide process:   change management   release management   configuration management 
+
+
+company-wide quality management 
+
+
+changes 
+
+
+collect 
+
+
+manage 
+
+
+cause 
+
+
+vision 
+
+
+assessments 
+
+
+user evaluation, etc. cause 
+
+
+project management 
+
+
+assignment actual process process to  be improved 
+
+
+publish for use 
+
+
+process release 
+
+
+process life cycle support 
+
+
+becomes new 
+
+
+deploy and include 
+
+
+software process improvement (spi) project 
+
+
+cause 
+
+
+arspi-iet page 7 
+
+
+ 
+
+
+figure 4 arspi in an organisation-wide spm.  
+
+
+the agency (figure 4, left side) has its own feedback and improvement cycles. hence, it internally triggers the process’s evolution. software developers and project managers report problems or propose improvements, which are managed in an icescrum2 system. the portfolio management and quality management units owning the process bundle change requests and (new) requirements to direct another iteration in the improvement pro-sions, an internal beta version, a public release candidate, and eventually the process release (pr). currently, this agency deploys one major pr per year. 
+
+
+while the agency is in full control of its own process variant and directs the improvement, the variant as such is based on an externally managed reference process, which has its own life cycle in which the process is main-tained. a new “v-modell xt bund” pr thus causes an update trigger generating a change request in the agen-cy’s change management system. in the next iteration, externally caused change requests become improvement requirements. arspi provides the agency with information of how the process variant was derived from the reference process (e.g., in the design artefacts, in the spldeltareport artefact, etc.) and, thus, helps to deter-mine the changes of the reference process and how these changes affect the own variant (e.g., changed process assets and transitively affected ones). due to the fine-grained artefact model, affected artefacts can be identified, and respective work packages to adopt changes can be defined. as figure 4 also shows, the “v-modell xt bund” itself is a variant of the “v-modell xt reference model” and, thus, has the same situation of internally and externally triggered evolution.  
+
+
+3.2.2 spi project point of view 
+
+
+having defined the project assignment, the spi project is initiated following the life cycle phases (figure 1, figure 3, and table 1). each phase produces at least one key artefact, which contains and structures the analysis results, the process designs, life cycle support documentation, and releases. based on a vision, a set of changes, and an actual process, process engineers start to elaborate the requirements relevant for the actual improvement cycle, and they assemble them in the process requirements. based on the requirements, the process designs are created. arspi proposes a two-staged design process (reflected by the artefacts conceptual process design and technical process design) to separate conceptualisation and (technical) realisation. however, as spi projects can be performed on a small scale, conceptual- and technical process design can be integrated into a unified process design artefact. finally, the process release is created, packaged, and shipped to the organisation. based on the key artefacts, several optional artefacts are created in the spi project, e.g., plans, assessments, and process-supporting tools. 
+
+
+                                                             
+
+
+2 icescrum web site: http://www.icescrum.org/ 
+
+
+pr 
+
+
+plc 
+
+
+publish/ deploy 
+
+
+agency 
+
+
+project- and portfolio  management unit 
+
+
+quality management unit 
+
+
+change management 
+
+
+release management 
+
+
+configuration management 
+
+
+quality management 
+
+
+project management 
+
+
+external researchers 
+
+
+spi project 
+
+
+changes 
+
+
+actual process 
+
+
+assignment 
+
+
+software process line (external reference model) 
+
+
+v-modell xt bund v-modell xt ref. model 
+
+
+rel. and conf. mngt. 
+
+
+rel. and conf. mngt. 
+
+
+update 
+
+
+update 
+
+
+v-modell xt bund 
+
+
+v-modell xt ref. model 
+
+
+improve 
+
+
+improve 
+
+
+variant of 
+
+
+variant of 
+
+
+1 
+
+
+2 
+
+
+2 
+
+
+1 2 
+
+
+implemented with subversion 
+
+
+implemented with icescrum 
+
+
+arspi-iet page 8 
+
+
+example. this example is extracted from an improvement project in eastern europe in which a new process was defined supporting project management and development processes (cf. table 3, study 2). to ground the process in a proven platform, it was an intensively customised variant of the german v-modell xt. the spi project (figure 5) was conducted in 2012/2013, was executed in three iterations, and took about 12 months. 
+
+
+ 
+
+
+figure 5 example spi project structure. 
+
+
+in the following, we exemplarily describe the project set up and the first two iterations. as arspi relies on an iterative/incremental approach, the first two iterations give an understanding of the tasks, which are then refined and repeated. 
+
+
+• spi project set up: the set up serves the tailoring of the artefact model for a particular spi project. few experience-based questions (e.g., for the context, pre-knowledge, and training strategies) need to be an-swered to support the determination of the relevant artefacts and their representation. for instance, figure 5 shows the artefact type process design, which is a simplified artefact that integrates the conceptual- and technical process design artefacts addressing small spi projects. finally, the overall project approach is defined, e.g., by defining milestones, and by creating the project-related manuals such as for project- or quality management procedures. 
+
+
+• iteration 1: as shown in figure 5, the first step consists of conducting the analysis leading to the artefact process requirements. after the first analyses, the process design and the process release (as demonstra-tor) are created. the figure shows the first iteration to be shortened, as it does not contain a deployment phase. in this project, the selected approach contained a prototyping work package in which the basic re-quirements should be analysed and prototypically implemented. that is, only a demonstrator should be de-livered as process release, which was then evaluated by the process owners. 
+
+
+• iteration 2: in the second iteration, the process design is refined in response to the client’s evaluation and the change requests. in figure 5, we show the evolution of the process design. furthermore, the second it-eration should produce a full process release for initial deployment and validation purposes. in a 4-day workshop, we prepared the delivery and evaluation, and performed the initial training for early adopters. 
+
+
+this example shows how arspi is adopted to a particular spi project. in the beginning of the project, after de-termining the project context, the artefact model is adapted to the specific needs, e.g., artefacts are merged or simplified and optional support artefacts that are considered relevant are selected for creation (e.g., training concept, training plan, and training material). furthermore, based on the life cycle model, a concrete project approach is defined by, e.g., defining milestones, planning iterations, and defining the life cycle phases that are needed for the iterations. as the arspi model precisely defines the artefacts, their structure, and the dependen-cies, process engineers get a set of consistent and complete artefacts for planning and monitoring the spi pro-jects while preserving the necessary degree of flexibility in the way of working. 
+
+
+3.3 validating arspi 
+
+
+we developed an evaluation strategy to validate arspi from different angles. a detailed description of the eval-uation strategy and the conducted case studies can be taken from [18]. the backbone of the evaluation strategy is a combination of different empirical instruments applied in academic (internal) as well as in industry-hosted (external) settings. the internal validation aims at creating settings to (1) validate arspi in controlled environ-
+
+
+dur.: 6 weeks 
+
+
+iteration 1: 3 months iteration 2: 5 months iteration 3 
+
+
+process requirements (powerpoint) 
+
+
+training material 
+
+
+process release (demonstrator) 
+
+
+process design (word doc.) 
+
+
+accepted: v0.84 
+
+
+dur.: 4 weeks 
+
+
+workshop and 
+
+
+review (on-site) process design (word doc.) 
+
+
+accepted: v0.9 
+
+
+changes etc. 
+
+
+process release (release 0.9) 
+
+
+workshop, review, 
+
+
+trainings (on-site) 
+
+
+dur.: 2  weeks 
+
+
+dur.: 3.5  
+
+
+months 
+
+
+after 5 month  break ! external validation 
+
+
+project set up 
+
+
+1. define the context 
+
+
+2. tailor the arspi artefact  model 
+
+
+3. define project approach (organising,  planning,…), and define, e.g.,  iterations and milestones (based on the  artefact model) 
+
+
+deployment analysis conceptualisation/ 
+
+
+realisation analysis conceptualisation/ 
+
+
+realisation 
+
+
+arspi-iet page 9 
+
+
+ments, (2) to analyse the model’s consistency and completeness, and to (3) develop/refine the instruments to be used in the external validation. furthermore, the internal validation paves the way for independent replication studies. the external validation aims at providing insights into practical settings regarding benefits and short-comings to prepare dissemination and further investigations. as our approach was developed based on our ex-periences to systematise the pragmatic approaches in the past [18], the conducted case studies thereby aim at investigating whether and to which extent arspi generally supports process engineers in conducting a systemat-ic spi. 
+
+
+3.3.1 overview of conducted studies and outcomes 
+
+
+in table 3, we give an overview of the overall strategy implemented so far (studies that were recently added to the evaluation from [18] are marked with “new”). we summarise the instruments, context, a brief study descrip-tion, and outcomes.  
+
+
+table 3 overview of the elements of the validation strategy. 
+
+
+no. validation outcomes 
+
+
+ inst i/e ctx description 
+
+
+process 
+
+
+templates 
+
+
+tool 
+
+
+training 
+
+
+1 exp i u this quasi-experiment was conducted in a course on soft-ware process modelling [22], and aimed at investigating the feasibility of an artefact-based spi approach in general. the whole experiment is described in [21]. 
+
+
+x    
+
+
+2 cs e i in this industry-hosted case study, a new process should be developed, which aimed to define management and devel-opment procedures. the new process was based on the v-modell xt. as no case existed in advance, the case study could not be conducted in a comparative manner. however, in order to set up a continuous improvement and manage-ment, the process was evaluated using interviews to create reference values for further evaluation. a detailed descrip-tion can be depicted from [18] and section 3.2.2. 
+
+
+x x  x 
+
+
+3new cs i u in this investigation, the release 0.9 of arspi was analysed for completeness. the overall goal was to define require-ments for arspi’s further improvement based on the experi-ences gathered so far and using cmmi as external refer-ence. 
+
+
+x  x  
+
+
+4new cs e i in this case study, arspi was evaluated from the perspective of the process owner who is responsible for his company’s spm. we combined elements from experimentation and case study research to evaluate arspi in a real-world set-ting, and to provide a controlled environment to gather de-tailed insights into the execution of the project. for this, two industry partners defined the requirements and acted as clients in the project. a student performed the spi activities. the objective was to tailor the scrum process respecting the predefined requirements. we as developers of arspi moni-tored the project and performed a continuous evaluation regarding, e.g., product and process quality. 
+
+
+x  x  
+
+
+5 cs e i this study is a long-term industry case study in which the organisation-wide software process is subject to continuous improvement. in this particular setting, the arspi model is applied to spi projects as well as to the organisation-wide quality- and process management. a description of this setting can be depicted from [18] and section 3.2.1. 
+
+
+x x x x 
+
+
+arspi-iet page 10 
+
+
+no. validation outcomes 
+
+
+ inst i/e ctx description 
+
+
+process 
+
+
+templates 
+
+
+tool 
+
+
+training 
+
+
+6 int e i during the construction of the arspi model, we conducted interviews with external partners from industry and academ-ia, who are experienced in spi. the interviews aimed at investigating the completeness of the constructed model, and to figure out improvement potential. a description of the interview and its outcomes can be depicted from [18]. 
+
+
+x    
+
+
+legend:  inst – instrument: exp = experiment, cs = case study, int = interview; i/e – internal/external validation: i = internal, e = external; ctx – context: u = university/academic, i = industry 
+
+
+3.3.2 summary of conclusions 
+
+
+so far, we developed arspi in an inductive manner complemented with continuous validation and evaluation activities serving its improvement. from the initially conducted studies, we could extract the following findings: 
+
+
+• process consumers, e.g., process owners or tool developers, benefit from an artefact-based spi approach as the artefact-based approach allows for, e.g., a precise definition of process entities for tool support or pro-cess enactment [21]. a major finding was that we can rate the success of an spi project by rating the out-come, i.e. we imply a notion of spi quality in relation to the quality of the outcome while abstracting from the way of producing the outcome – which is the fundamental principle of artefact orientation. 
+
+
+• process engineers benefit from an artefact-based spi approach by being provided with a clearly structured model serving as reference to design/improve processes [18], [21]. for example, in study 2 (table 3), the evaluation of release 0.9 of the developed process indicated to gaps, which could be directly aligned to change requests; process owners mentioned missing artefacts and 5 missing artefacts could be identified. as figured out in [21], we can rate the quality of spi projects by rating the outcomes. 
+
+
+• experts consider arspi useful, as, for instance, it helps to structure spi projects, and to reflect on spi activ-ities [18]. a major finding was the flexibility of the arspi model that allows for tailoring and applying arspi in different contexts, e.g., large and small, and short- and long-term spi projects/programs. 
+
+
+however, the number and character of the conducted case studies limit our initial findings. for instance, so far, completed case studies mainly address stakeholders related to process management, and, thus, project managers and software developers were not in scope as primary study subjects. however, in a complementing study [20], we could find indication to benefits for these stakeholder groups as well. 
+
+
+3.3.3 exemplary results 
+
+
+in the studies 3 and 4 (table 3), we aimed at conducting a comparative in-depth analysis of arspi compared to previously used approaches. in the following, we provide insight into the industry-hosted study 4 in which we conducted a completely monitored case study. two industry partners were personally invited to participate in the case study and were asked to rate the arspi approach in relation to their experiences.  
+
+
+figure 6 illustrates the final rating of the experts as an exemplarily evaluation of arspi (the ratings are based questionnaires and interviews, values are on an 8-point likert scale). expert 1 has experienced 6 medium- to large-sized spi projects, mainly in the context of public administration. expert 2 has conducted about 50 spi and spi-related projects in different industry contexts.  
+
+
+figure 6 shows that especially expert 2 rates the approach significantly better than the previously experienced ones. he stated that although there were some limitations by the study’s setting, the arspi approach worked “better that everything else compared to what happens in practice right now.” the evaluation of expert 1 shows a different picture. expert 1 also rates structuredness, knowledge transfer, and explicit analysis and design pro-cedures “good” (5 to 6). however, based on his experiences, he gave a low rating for the other criteria resulting from “the way the process engineer applied the model in this case study.”  
+
+
+arspi-iet page 11 
+
+
+ 
+
+
+ 
+
+
+figure 6 comparative expert evaluation form study 4 (expert 1: left, expert 2: right). 
+
+
+from these evaluations, we draw the conclusion that, on the one hand, arspi is considered a useful instrument, which, on the other hand, needs to be extended by more guidance to further improve process engineer support. the observations made in this case study also comply with our arguments for a better education of process en-gineers [22], and also support the need for a comprehensive set of spi success factors, which are subject to current spi-related research. however, as these aspects were not in the focus of the conducted study, the respec-tive findings call for further investigations. 
+
+
+4 conclusion 
+
+
+in this paper, we presented a model for artefact-based software process improvement & management (called arspi), which emerged from several spi projects. due to the complexity of the spi projects and the context, we experienced the demand for a systematic approach that allows for structuring spi projects, creating reusable process assets, and for checking process requirements, designs, and realisations for consistency. therefore, we extracted best practices and spi artefacts to develop an approach to set up, organise, and perform spi projects. the approach allows for defining a structure for spi project outcomes and gives process engineers the freedom to select concrete methods to analyse, design, and implement processes in relation to the particular situation. our approach thereby provides a reference to organise and manage systematic spi projects/programs while the underlying artefact-based approach does not restrict the actual spi endeavour by normative, solution-driven ways of working that might be alien with the organisational culture. 
+
+
+an evaluation strategy combining internal validation in academic and external evaluation in industry context served the determination of strengths and weaknesses. the results from our studies indicate that arspi serves as useful reference defining a structured guidance to systematically set up problem-driven spi projects.  
+
+
+a major threat to the external validity and, thus, to the ability to generalise is that, besides inferring our ap-proach from experiences, we applied the approach in four industry projects, and conducted so far two case stud-ies. a threat inherent to case study research is that the boundaries between the project characteristics and the phenomena are unclear whereby it might remain unknown whether certain effects are directly caused by apply-ing arspi or by other unknown side-effects, e.g., a generally more structured way of working. our investiga-tions lay, however, a first and necessary basis to further investigate the effects of applying arspi under realistic conditions. with the instruments and the published material, we also lay the foundation for future replications. these are necessary to get in-depth insights into the benefits and limitations of applying arspi in practice and we postulate that those replications need to be conducted independently. this is also necessary to answer the question whether the success of arspi results from us applying the concepts. to manifest our results, we there-fore need further studies whereas we laid with our contributions at hands the necessary foundation.  
+
+
+0 1 2 3 4 5 6 7 
+
+
+structuredness 
+
+
+(systematic 
+
+
+approach) 
+
+
+problemorientation (stakeholder goals) 
+
+
+transparent and 
+
+
+reproducible 
+
+
+decisions 
+
+
+analysis and design 
+
+
+lead to designed 
+
+
+results 
+
+
+efficiency (compared 
+
+
+to previous 
+
+
+experience) 
+
+
+sufficient information 
+
+
+flow/knowledge 
+
+
+transfer 
+
+
+arspi previous 
+
+
+0 1 2 3 4 5 6 7 
+
+
+structuredness 
+
+
+(systematic 
+
+
+approach) 
+
+
+problemorientation (stakeholder goals) 
+
+
+transparent and 
+
+
+reproducible 
+
+
+decisions 
+
+
+analysis and design 
+
+
+lead to designed 
+
+
+results 
+
+
+efficiency (compared 
+
+
+to previous 
+
+
+experience) 
+
+
+sufficient information 
+
+
+flow/knowledge 
+
+
+transfer 
+
+
+arspi previous 
+
+
+arspi-iet page 12 
+
+
+4.1 impact and implications 
+
+
+the arspi model provides a blueprint for setting up and organising spi projects. the model, its documentation, and templates are available online. arspi is focused on the artefacts needed by process engineers to analyse process requirements, to design and implement processes, and to ship processes and establish a continuous im-provement. since arspi is focused on artefacts, process engineers can directly apply the model to structure spi activities. 
+
+
+researchers and practitioners as well get with our contribution already insights into benefits and shortcomings in spi in general and in artefact-based spi in particular. as we created an experimental setting in which spi activities can be analysed, compared, and evaluated, we actively contributed to the dissemination into academia and practice and support to the replications of our studies and to further expand our knowledge on the broad spectrum of spi knowledge.  
+
+
+4.2 future work 
+
+
+arspi still needs a continuous validation to foster its improvement. beyond an initial eclipse process frame-work-based implementation of arspi, we are also working on implementations using other frameworks and on the development of further supporting material, e.g. checklists, evaluation questionnaires, etc. findings from the conducted studies become part of the next iteration of arspi, e.g., findings from recent studies 3 and 4 (sec-tion 3.3.3) define improvement requirements. furthermore, arspi is under analysis for integration opportunities with existing standards, e.g., the iso/iec 33014 [16]. in addition to the practical dissemination, we also plan to extend the process-engineering lab [21] to systematically analyse and understand findings from practical stud-ies. those different steps serve the dissemination of our approach and, especially, the continuous, joint evalua-tion of arspi to which we cordially invite researchers and practitioners. 
+
+
+acknowledgements 
+
+
+we owe special thanks to sarah beecham and ita richardson for the fruitful discussion on spi methods. fur-thermore, we thank jens calamé for reviewing the article manuscript. 
+
+
+5 references 
+
+
+ 
+
+
+[1] aysolmaz, b., demirörs, o.: ‘a detailed software process improvement methodology: bg-spi’, proc. european conf. system & software process improvement and innovation, roskilde, denmark, june 2011, pp. 97–108 
+
+
+[2] beecham, s.: ‘a requirements-based software process maturity model’. phd thesis, department of computer science, university of hertfordshire, uk, 2003 
+
+
+[3] uct focused software process improvement, rovaniemi, finnland, december 2002, pp. 4–18  
+
+
+[4] boria, j. l.: ‘a framework for understanding software process improvement’s return on investment’, proc. portland int. conf. on management and technology innovation in technology management, portland, usa, july 1997, pp. 847–851  
+
+
+[5] cmmi product team, ‘cmmi for development, version 1.3’ (software engineering institute, carne-gie mellon university, 2010) 
+
+
+[6] coleman, g., o’connor, r.: ‘investigating software process in practice: a grounded theory perspec-tive’, journal of systems and software, 2008, 81, (5), pp. 772–784  
+
+
+[7] 
+
+
+[8] eberlein, a., jiang, l.: ‘description of a process development methodology’, software  process: im-provement and practice, 2007, 12, (1), pp. 101–118  
+
+
+[9] redondo beach, usa, october 1991, pp. 113–121 
+
+
+[10] communications of  the acm, 2005, 48, (11), 93–96   
+
+
+arspi-iet page 13 
+
+
+[11] ware process: improvement and practice, 2000, 5, (1), pp. 45–54  
+
+
+[12] humphrey, w. s.: ‘managing the software process’ (addison wesley, 1989) 
+
+
+[13] iso, ‘iso/iec 12207:2008: systems and software engineering – software life cycle processes’ (inter-national organization for standardization, 2008) 
+
+
+[14] iso, ‘iso/iec 15504-4:2004: software process assessment - part 4: guidance on use for process im-provement and process capability determination’ (international organization for standardization, 2004) 
+
+
+[15] iso, ‘iso/iec 29110:2011: systems and software life cycle profiles and guidelines for very small entities (vses)’ (international organization for standardization, 2011) 
+
+
+[16] iso, ‘iso/iec 33014:2013: information technology – process assessment – guide for process im-provement’ (international organization for standardization, 2013) 
+
+
+[17] kuhrmann, m.: ‘arspi: an artifact model for software process improvement and management’ (technische universität münchen, 2013) 
+
+
+[18] kuhrmann, m.: ‘crafting a software process improvement approach – a retrospective systematiza-tion’, journal of software: evolution and process, 2015, 27, (2), pp. 114–145 
+
+
+[19] kuhrmann, m., beecham, s.: ‘artifact-based software process improvement and management: a 119–123 
+
+
+[20] kuhrmann, m., lange, c., schnackenburg, a.: ‘a survey on the application of the v-modell xt in german government agencies’, proc. european conf. system & software process improvement and innovation, roskilde, denmark, june 2011, pp. 49–60 
+
+
+[21] kuhrmann, m., méndez fernández, d., knapp, a.: ‘a first investigation about the perceived value of process engineering and process consumption’, proc. int. conf. product focused software process improvement, paphos, cypros, june 2013, pp. 138–152 
+
+
+[22] conf. on software engineering, san francisco, usa, may 2013, pp. 1138–1147 
+
+
+[23] kuhrmann, m., méndez fernández, d., ternité, t.: ‘realizing software process lines: insights and 119 
+
+
+[24] kuvaja, p.: ‘bootstrap 3.0 – a spice conformant software process assessment methodology’, soft-ware quality journal, 1999, 8, (1), pp. 7–19 
+
+
+[25] orientation: fundamentals and lessons learned in requirements engineering’, proc. int. conf. on model driven engineering languages and systems, oslo, norway, october 2010, pp. 183–197 
+
+
+[26] mendéz fernández, d., wieringa, r.: ‘improving requirements engineering by artefact orientation’, 122 
+
+
+[27] (springer, 2012) 
+
+
+[28] niazi, m., wilson, d., zowghi, d.: ‘a maturity model for the implementation of spi’, journal of sys-tems and software, 2003, 74, (2), pp. 155–172 
+
+
+[29] ocampo, a., münch, j.: ‘rationale modeling for software process evolution’, journal on software process: improvement and practice, 2009, 14, (2), pp. 85–105 
+
+
+[30] rainer, a., hall, t.: ‘an analysis of some ‘core studies’ of software process improvement’, software process: improvement and practice, 2002, 6, (4), pp. 169–187  
+
+
+[31] technique to practical process modeling and improvement target identification’, journal of software: evolution and process, 2012, 25, (9), pp. 915–933 
+
+
+[32] why organizations do not adopt cmmi’, journal of systems and software, 2007, 80, (6), pp. 883–895 
+
+
+[33] stelzer, d., mellis, w.: ‘success factors of organizational change in software process improvement’, software process: improvement and practice, 1998, 4, (4), pp. 227–250  
+
+
+arspi-iet page 14 
+
+
+[34] human aspects on software process improvement: qualitative research findings and comparison to pre-vious studies’, proc. int. conf. on evaluation & assessment in software engineering, ciudad real, spain, may 2012, pp. 121–125  
+
