@@ -3,7 +3,7 @@ from json import loads, dumps
 
 
 class ResultsRanker:
-    def __init__(self, cutoff_number=3):
+    def __init__(self, cutoff_number=5):
         self.cutoff_number = cutoff_number
 
     def get_results(self, results):
@@ -19,9 +19,10 @@ class ResultsRanker:
 
 
 class RRFResultsRanker(ResultsRanker):
-    def __init__(self, k=60, cutoff_number=3):
+    def __init__(self, k=60, cutoff_number=5):
         super().__init__(cutoff_number)
         self.k = k
+        self.length_weight = 0.01
 
     def rank(self, results: list[Document]):
 
@@ -33,7 +34,7 @@ class RRFResultsRanker(ResultsRanker):
             if doc_key not in fused_scores.keys():
                 fused_scores[doc_key] = 0
 
-            fused_scores[doc_key] += 1 / (rank + self.k)
+            fused_scores[doc_key] += (1 / (rank + self.k)) * (1 + self.length_weight * len(doc.page_content))
 
 
         reranked_results = [

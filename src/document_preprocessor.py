@@ -70,3 +70,44 @@ def filter_text(paragraphs: list[str]) -> list[str]:
 
 
     return filtered_paragraphs
+
+
+
+# rag_model = RAGModel(type='step-back')
+# answer, retrieved_docs = rag_model.query("Is requirement 'System should be fast' a good requirement?")
+# print("\n\nAnswer:\n\n", answer)
+# print("\n\nRetrieved Documents:\n\n", retrieved_docs)
+
+# FILE1 = 'data/first_batch/Rapid quality assurance with Requirements Smells.pdf'
+# # FILE2 = 'data/Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf'
+
+
+# pdf = pdfplumber.open(FILE1)
+# page = pdf.pages[6]
+# table = page.extract_table()
+# text = page.extract_text()
+# lines = page.extract_text_lines()
+# for line in lines: 
+#     print(line)
+
+
+# page = pdf.pages[5]
+# table = page.extract_table()
+# text = page.extract_text()
+# lines = page.extract_text_lines()
+# for line in lines: 
+#     print(line)
+
+# document = pymupdf.open(FILE1)
+# paragraphs = []
+# doc_len = len(document)
+# page = document.load_page(6)
+
+# blocks = page.get_text("blocks")
+# for block in blocks: print(block, '\n\n' )
+
+# textpage = page.get_textpage
+# print("textpage: ", textpage)
+
+# text = page.get_textbox()
+# print("text: ", text)

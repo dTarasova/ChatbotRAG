@@ -11,5 +11,3 @@ def get_openai_answer(question: str) -> str:
     # print("\n\nAnswer without RAG : ")
     # print(result)
     return result.content
-
-get_openai_answer("Is the requirement 'System should be secure' good?")

@@ -10,7 +10,7 @@ class Retriever:
     def __init__(self, type='basic', persist_directory='chroma_db', ranker_type = 'rrf' ):
         self.embedding_model = OpenAIEmbeddings()
         self.vector_store = Chroma(persist_directory=persist_directory, embedding_function=self.embedding_model)
-        self.retriever = self.vector_store.as_retriever()
+        self.retriever = self.vector_store.as_retriever(search_type="mmr", search_kwargs={"k": 5})
         self.type = type
         self.ranker = self.create_ranker(ranker_type)
 
@@ -50,7 +50,7 @@ class Retriever:
         context = additional_info
         for doc in docs:
             context_str = doc.page_content
-            source_str = doc.metadata["title"]
+            source_str = doc.metadata.get("source") or doc.metadata.get("title") or ""
             context += f"Context: {context_str}\n Source: {source_str}\n\n"
         return context
         
