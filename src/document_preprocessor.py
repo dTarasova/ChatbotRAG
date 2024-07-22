@@ -1,8 +1,11 @@
 
 import pymupdf
 import re
-
-def process_pdf(input_pdf_path: str, output_pdf_path: str) -> str:
+#
+def process_pdf(input_pdf_path: str, output_pdf_path: str = "") -> str:
+    if not output_pdf_path or output_pdf_path == "":
+        filename = input_pdf_path.split("/")[-1]
+        output_pdf_path = "data/processed_texts/input" + (filename.replace(".pdf", ".txt"))
     text = extract_paragraphs_from_pdf(input_pdf_path)
     wo_ref_paragraphs = remove_ref_paragraphs(text)
     cleaned_paragraphs = filter_text(wo_ref_paragraphs)
