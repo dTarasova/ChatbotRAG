@@ -8,7 +8,7 @@ import os
 import pandas as pd
 
 
-FILE_PATH = "data/napire_data/napire_best.csv"
+FILE_PATH = "data/napire_data/napire_best2.csv"
 
 class StructuredDataRetriever:
     def __init__(self, data_source=FILE_PATH):

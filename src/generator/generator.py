@@ -4,7 +4,8 @@ from langchain.prompts import ChatPromptTemplate
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from langchain_core.prompts import HumanMessagePromptTemplate
 
-
+#todo: adjust prompts so that concrete values are not shown
+#todo: rely more on the context in textual data prompts
 class Generator:
     def __init__(self):
         self.llm = ChatOpenAI(temperature=0)
