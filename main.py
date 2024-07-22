@@ -17,7 +17,7 @@ try:
     while True:
         print(colored("\nHow can I help you? For the end of the conversation please press Ctrl+c", "blue"))
         question = input()
-        rag_model = RAGModel(type='step-back')
+        rag_model = RAGModel(text_retriever_type='step-back')
         print_context = True
         answer, context = rag_model.query(question)
         print(colored(("\n\nAnswer:\n\n"), "blue"))
@@ -25,19 +25,6 @@ try:
         if print_context:
             print(colored("\n\nContext:\n\n", "blue"))
             print(context)
-
-        openai_answer = get_openai_answer(question)
-        print(colored("\n\n Regular OpenAI without context: \n\n", "blue"))
-        print(openai_answer)
-
-
-        rag2_model = RAGModel(type='structured_data')
-        answer2, context2 = rag2_model.query(question)
-        print(colored("\n\nAnswer with data from NAPiRE:\n\n", "blue") )
-        print(answer2)
-
-        # print("\n\nNAPiRE Context:\n\n")
-        # print(context2)
 
 except KeyboardInterrupt:
     pass
