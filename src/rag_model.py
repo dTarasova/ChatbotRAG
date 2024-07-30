@@ -48,7 +48,7 @@ class RAGModel:
         with open('results.json', 'w') as f:
             json.dump(results, f, indent=4)
 
-        return combined_answer, combined_context
+        return combined_answer, combined_context, results
 
     
     # def query_combined(self, question):
