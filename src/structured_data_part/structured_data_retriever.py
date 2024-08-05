@@ -17,9 +17,6 @@ class StructuredDataRetriever:
         self.agent = self.create_agent()
 
     def preprocess_data(self):
-        # folder_path = "data/napire_data"
-        # docs = [file for file in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, file))]
-        # print(docs)
         df = pd.read_csv(self.data_source, header=0)
         # with open(self.data_source, 'rb') as rawdata:
         #     result = chardet.detect(rawdata.read(100000))
@@ -51,12 +48,3 @@ Use the provided DataFrame (df) to answer the question. Ensure that you incorpor
         answer = context["output"]
         return answer
     
-    
-    # def generate_answer():
-       
-
-    #     llm = ChatOpenAI(temperature=0)
-    #     messages = [("human", question), ("system", template)]
-    #     result = llm.invoke(messages)
-    #     result.content
-   

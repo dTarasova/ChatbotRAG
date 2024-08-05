@@ -8,6 +8,4 @@ def get_openai_answer(question: str) -> str:
     llm = ChatOpenAI(temperature=0)
     messages = [("human", question), ("system", template_wo_rag)]
     result = llm.invoke(messages)
-    # print("\n\nAnswer without RAG : ")
-    # print(result)
     return result.content

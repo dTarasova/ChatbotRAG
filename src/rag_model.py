@@ -16,21 +16,24 @@ class RAGModel:
     def query(self, question):
         question_lowered = question.lower()
         results = []
-        text_data_answer, text_data_context = self.query_text(question_lowered)
+        
         results.append({
             "question": question,
         })
+        text_data_answer, text_data_context = self.query_text(question_lowered)
         results.append({
             "model": "text_data",
             "context": text_data_context,
             "answer": text_data_answer
         })
+
         structured_data_answer, structured_data_context = self.query_structured(question_lowered)  
         results.append({
             "model": "structured_data",
             "context": structured_data_context,
             "answer": structured_data_answer
         })
+        
         combined_answer, combined_context = self.query_combined(question_lowered, text_data_context, structured_data_context)
         results.append({
             "model": "combined",

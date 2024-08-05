@@ -11,35 +11,12 @@ from src.wo_rag import get_openai_answer
 from src.structured_data_part.data_preprocessing import improve_csv_quality
 from termcolor import colored
 import streamlit as st
-import json 
+import json
 
-st.title("Requirements Engineering Chatbot")
+from streamlit_incorporation import setup_streamlit, test_final_version 
 
-st.write("This chatbot is designed to help you with your questions about Requirements Engineering. Please ask your question below.")
-
-question = st.text_input("Question")
-
-if st.button("Ask"):
-    rag_model = RAGModel(text_retriever_type='step-back')
-    answer, context, results = rag_model.query(question)
-    col1, col2, col3 = st.columns(3)
-    # results = json.load(open('results.json'))
-    # todo align results and context
-    # todo adjust the database agent. why it not foun d relevant columns? 
-    col1.header(f"Answer with: {results[1]['model']}")
-    col1.write(results[1]['answer'])
-    col1.header(f"Context:")
-    col1.write(results[1]['context'])
-
-    col2.header(f"Answer with: {results[2]['model']}")
-    col2.write(results[2]['answer'])
-    col2.header(f"Context:")
-    col2.write(results[2]['context'])
-
-    col3.header(f"Answer with: {results[3]['model']}")
-    col3.write(results[3]['answer'])
-    col3.header(f"Context:")
-    col3.write(results[3]['context'])
+setup_streamlit()
+test_final_version()
 
 # try:
 #     while True:

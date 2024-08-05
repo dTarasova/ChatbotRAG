@@ -10,7 +10,7 @@ class Generator:
     def __init__(self):
         self.llm = ChatOpenAI(temperature=0)
 
-    def generate_answer(self, question, context, prompt_type='text_data'):
+    def generate_answer(self, question, context, prompt_type='combined'):
         prompt = self.get_prompt(question, context, prompt_type)
         chain = prompt | self.llm | StrOutputParser()
         result = chain.invoke({"question": question})
@@ -40,22 +40,6 @@ class Generator:
                 AIMessage( content=f" ### Context ###: {context}")
             ]
         )
-        return prompt
-
-    def get_step_back_prompt(self, question, context):
-        # TODO: find a way to transfer it
-        step_back_question = "What is the purpose of the requirement?"
-        template = f""" ### Instruction ### You are an expert in Requirements Engineering.
-                            Answer the following question with detailed and accurate information. Explain reasoning behind the.
-                            Use the provided context to enhance your response, but if the context does not add value,
-                            you may disregard it. Ensure that your answer directly addresses the user's question.
-
-                            ### Context ###: {context}
-                            ### Steb-back question ###: {step_back_question}
-
-                            ### Question ### : {question}"""
-
-        prompt = ChatPromptTemplate.from_template(template)
         return prompt
 
     def get_structured_data_prompt(self, question, context):
