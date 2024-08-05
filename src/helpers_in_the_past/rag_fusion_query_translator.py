@@ -9,8 +9,8 @@ https://towardsdatascience.com/forget-rag-the-future-is-rag-fusion-1147298d8ad1
 """
 
 
-import prompts
-import retriever_generator as retriever_generator
+import helpers_in_the_past.prompts as prompts
+import helpers_in_the_past.retriever_generator as retriever_generator
 from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI
 from langchain.load import dumps, loads

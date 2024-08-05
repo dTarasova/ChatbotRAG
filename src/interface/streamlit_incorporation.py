@@ -1,6 +1,6 @@
 import streamlit as st
 
-from src.rag_model import RAGModel
+from rag.rag_model import RAGModel
 from src.wo_rag import get_openai_answer
 
 

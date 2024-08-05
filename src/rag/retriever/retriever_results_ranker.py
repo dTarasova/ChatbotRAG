@@ -1,6 +1,4 @@
 from langchain_core.documents.base import Document
-from json import loads, dumps
-
 
 class ResultsRanker:
     def __init__(self, cutoff_number=5):

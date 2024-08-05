@@ -2,7 +2,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.load import dumps, loads
-from retriever_generator import get_retriever
+from helpers_in_the_past.retriever_generator import get_retriever
 from operator import itemgetter
 from langchain_openai import ChatOpenAI
 from langchain_core.runnables import RunnablePassthrough

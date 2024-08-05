@@ -1,5 +1,5 @@
-import prompts
-import retriever_generator as retriever_generator
+import helpers_in_the_past.prompts as prompts
+import helpers_in_the_past.retriever_generator as retriever_generator
 from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI
 from langchain.load import dumps, loads

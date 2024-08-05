@@ -1,10 +1,10 @@
 
 
 import json
-from src.retriever.retriever import Retriever
-from src.generator.generator import Generator
-from src.structured_data_part.structured_data_retriever import StructuredDataRetriever
+from src.rag.retriever.structured_data_loading.structured_data_retriever import StructuredDataRetriever
+from src.rag.retriever.retriever import Retriever
 from src.wo_rag import get_openai_answer
+from src.rag.generator.generator import Generator
 
 
 class RAGModel:

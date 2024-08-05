@@ -1,0 +1,5 @@
+What are the main challenges in requirements engineering?
+What are the main techniques of requirements elicitation?
+How to support maintainability of requirements?
+What are the architectural constraints in re?
+Give me a template for a textual use case - not improved

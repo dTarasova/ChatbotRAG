@@ -2,8 +2,9 @@ from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 from  langchain_core.documents.base import Document
 
-from src.retriever.retriever_results_ranker import RRFResultsRanker, ResultsRanker
-from src.query_translation.query_translator import query_translator
+from src.rag.retriever.query_translation import query_translator
+from src.rag.retriever.retriever_results_ranker import RRFResultsRanker, ResultsRanker
+
 
 class Retriever:
 
