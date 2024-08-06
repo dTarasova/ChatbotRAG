@@ -23,6 +23,34 @@ class Generator:
             return self.get_structured_data_prompt(question, context)
         elif prompt_type == 'combined':
             return self.get_combined_prompt(question, context)
+        
+    def generate_summary(self, context, question):
+        prompt = ChatPromptTemplate.from_messages(
+        [
+            SystemMessage(
+                content=(
+                    """	
+                    ### Instruction ###
+                    You are the best summarizer. Given the context, summarize it to answer the question directly. 
+                    Provide a concise and accurate summary without adding any additional information.
+                    """
+                )
+            ),
+            AIMessage(content=f"### Context ###\n{context}\n"),
+            AIMessage(content=f"### Question ###\n{question}\n")
+        ]
+    )
+    
+    # Create the chain and invoke it
+        try:
+            chain = prompt | self.llm | StrOutputParser()
+            result = chain.invoke({})
+        except Exception as e:
+            raise RuntimeError(f"Error generating summary: {e}")
+        
+        # Return the result
+        return result
+
 
     def get_text_data_prompt(self, question, context):
 

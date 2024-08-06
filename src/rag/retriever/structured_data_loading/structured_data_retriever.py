@@ -5,7 +5,7 @@ from langchain.prompts import ChatPromptTemplate
 import pandas as pd
 
 
-FILE_PATH = "data/napire_data/napire_best2.csv"
+FILE_PATH = "data/napire_data/napire_for_agent.csv"
 
 class StructuredDataRetriever:
     def __init__(self, data_source=FILE_PATH):
@@ -32,7 +32,7 @@ class StructuredDataRetriever:
             ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k"),
             self.df,
             verbose=True,
-            agent_type=AgentType.OPENAI_FUNCTIONS ,
+            agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION ,
             allow_dangerous_code=True
         )
         return agent

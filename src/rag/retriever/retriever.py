@@ -2,7 +2,7 @@ from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 from  langchain_core.documents.base import Document
 
-from src.rag.retriever.query_translation import query_translator
+from src.rag.retriever.query_translation.query_translator import QueryTranslator
 from src.rag.retriever.retriever_results_ranker import RRFResultsRanker, ResultsRanker
 
 
@@ -36,7 +36,7 @@ class Retriever:
         docs = self.retrieve_docs(query)
         additional_info = ""
         if self.type == 'step-back':
-            self.query_translator = query_translator(type='step-back')
+            self.query_translator = QueryTranslator(type='step-back')
             adjusted_query = self.query_translator.translate_query(query)
             documents_stepback_query =  self.retriever.invoke(adjusted_query)
             documents_stepback_query.extend(docs)

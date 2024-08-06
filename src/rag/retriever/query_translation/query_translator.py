@@ -3,7 +3,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain.prompts import ChatPromptTemplate
 
-class query_translator:
+class QueryTranslator:
     def __init__(self, type):
         self.type = type
     

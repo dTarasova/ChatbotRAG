@@ -3,7 +3,6 @@
 import json
 from src.rag.retriever.structured_data_loading.structured_data_retriever import StructuredDataRetriever
 from src.rag.retriever.retriever import Retriever
-from src.wo_rag import get_openai_answer
 from src.rag.generator.generator import Generator
 
 
@@ -13,73 +12,49 @@ class RAGModel:
         self.retriever_structured_data = StructuredDataRetriever()
         self.generator = Generator()
 
-    def query(self, question):
-        question_lowered = question.lower()
-        results = []
-        
-        results.append({
+    def get_context(self, question: str) -> tuple:
+        context_from_text_data = self.retriever_text_data.retrieve_context(question)
+        context_from_structured_data = self.retriever_structured_data.retrieve_context(question)
+        return context_from_text_data, context_from_structured_data
+    
+    def query(self, question: str, query_types=['combined'] ) -> dict:
+        results = {
             "question": question,
-        })
-        text_data_answer, text_data_context = self.query_text(question_lowered)
-        results.append({
-            "model": "text_data",
-            "context": text_data_context,
-            "answer": text_data_answer
-        })
+            "answers": []
+        }
+        question_lowered = question.lower()
+        context_from_text_data, context_from_structured_data = self.get_context(question_lowered)
+        for query_type in query_types:
+            if query_type == 'text_data':
+                answer_from_text_data =  self.generator.generate_answer(question, context_from_text_data, prompt_type='text_data')
+                results["answers"].append(self.create_result_entry("text_data", context_from_text_data, answer_from_text_data))
+            elif query_type == 'structured_data':
+                answer_from_structured_data = self.generator.generate_answer(question, context_from_structured_data, prompt_type='structured_data')
+                results["answers"].append(self.create_result_entry("structured_data", context_from_structured_data, answer_from_structured_data))
+            elif query_type == 'combined':
+                combined_context = "Context from general knowledge: \n" + context_from_text_data + "\n\n Context from real practical data: \n" + context_from_structured_data
+                answer_from_combined = self.generator.generate_answer(question, combined_context, prompt_type='combined')
+                results["answers"].append(self.create_result_entry("combined", combined_context, answer_from_combined))
+            elif query_type == 'summariser':
+                summarized_context_from_text_data = self.generator.generate_summary(context_from_text_data, question_lowered)
+                summarized_context_from_structured_data = self.generator.generate_summary(context_from_structured_data, question_lowered)
+                combined_summarized_context = "Context from general knowledge: \n" + summarized_context_from_text_data + "\n\n Context from real practical data: \n" + summarized_context_from_structured_data
+                answer_from_summarized = self.generator.generate_answer(question, combined_summarized_context, prompt_type='combined')
+                results["answers"].append(self.create_result_entry("summarised", combined_summarized_context, answer_from_summarized))
 
-        structured_data_answer, structured_data_context = self.query_structured(question_lowered)  
-        results.append({
-            "model": "structured_data",
-            "context": structured_data_context,
-            "answer": structured_data_answer
-        })
-        
-        combined_answer, combined_context = self.query_combined(question_lowered, text_data_context, structured_data_context)
-        results.append({
-            "model": "combined",
-            "context": combined_context,
-            "answer": combined_answer
-        })
-
-        openai_answer = get_openai_answer(question)
-        results.append({    
-            "model": "openai",
-            "context": "",
-            "answer": openai_answer
-        })
-
-        with open('results.json', 'w') as f:
+        with open('results.json', 'a') as f:
             json.dump(results, f, indent=4)
 
-        return combined_answer, combined_context, results
+        return results
+    
 
-    
-    # def query_combined(self, question):
-    #     question_lowered = question.lower()
-    #     context_from_text_data = self.retriever_text_data.retrieve_context(question_lowered)
-    #     context_from_structured_data = self.retriever_structured_data.retrieve_context(question_lowered)
-    #     combined_context = "Context from general knowledge: \n" + context_from_text_data + "\n\n Context from real practical data: \n" + context_from_structured_data
-    #     answer = self.generator.generate_answer(question_lowered, combined_context)
-    #     return answer, retrieved_context
-    
-    def query_text(self, question):
-        retrieved_context = self.retriever_text_data.retrieve_context(question)
-        answer = self.generator.generate_answer(question, retrieved_context, prompt_type='text_data')
-        return answer, retrieved_context
-    
-    def query_structured(self, question):
-        retrieved_context = self.retriever_structured_data.retrieve_context(question)
-        answer = self.generator.generate_answer(question, retrieved_context, prompt_type='structured_data')
-        return answer, retrieved_context
-    
-    def query_combined(self, question, context_text_data, context_structured_data):
-        combined_context = "Context from general knowledge: \n" + context_text_data + "\n\n Context from real practical data: \n" + context_structured_data
-        answer = self.generator.generate_answer(question, combined_context, prompt_type='combined')
-        return answer, combined_context
-    
-    
-    #TODO: Implement a function that select what is the most relevant context to use for the answer generation
-    #TODO: Research dependencies between size of the context and quality of the answers
+    def create_result_entry(self, model, context, answer):
+        return {
+            "model": model,
+            "context": context,
+            "answer": answer
+        }
+
 
 
 if __name__ == "__main__":
