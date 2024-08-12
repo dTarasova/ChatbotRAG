@@ -9,7 +9,8 @@ import chromadb
 import pymupdf
 from  langchain_core.documents.base import Document
 
-from retriever.unstructured_data_loading.pdf_preprocessor import process_pdf
+from src.rag.retriever.unstructured_data_loading.pdf_preprocessor import process_pdf
+
 
 PATH_DOCUMENTS = 'data/first_batch'
 PERSIST_DIRECTORY = 'chroma_db'

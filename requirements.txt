@@ -13,3 +13,4 @@ chardet
 huggingface_hub 
 pdfplumber
 streamlit
+ragas # metrics for rag evaluation
