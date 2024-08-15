@@ -2,6 +2,7 @@ from langchain_core.prompts import ChatPromptTemplate, FewShotChatMessagePromptT
 from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain.prompts import ChatPromptTemplate
+from src.llm_settings import MODEL, TEMPERATURE
 
 class QueryTranslator:
     def __init__(self, type):
@@ -52,7 +53,7 @@ def step_back_translate(query):
         ]
     )
 
-    chain = prompt | ChatOpenAI(temperature=0) | StrOutputParser()
+    chain = prompt | ChatOpenAI(model=MODEL, temperature=TEMPERATURE) | StrOutputParser()
 
     result =  chain.invoke({"query": query})
     print('\n\nresult of step back translation: ', result)

@@ -4,6 +4,9 @@ from langchain_openai import ChatOpenAI, OpenAI
 from langchain.prompts import ChatPromptTemplate
 import pandas as pd
 
+from src.llm_settings import MODEL, TEMPERATURE
+
+
 
 FILE_PATH = "data/napire_data/napire_for_agent.csv"
 
@@ -29,7 +32,7 @@ class StructuredDataRetriever:
 
     def create_agent(self):
         agent = create_pandas_dataframe_agent(
-            ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k"),
+            ChatOpenAI(model=MODEL, temperature=TEMPERATURE),
             self.df,
             verbose=True,
             agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION ,

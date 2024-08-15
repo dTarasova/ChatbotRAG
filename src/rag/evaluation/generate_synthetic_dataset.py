@@ -5,8 +5,14 @@ from langchain_community.document_loaders import DirectoryLoader, TextLoader
 
 from src.rag.retriever.unstructured_data_loading.document_loader import get_db
 import os
+from src.llm_settings import MODEL, TEMPERATURE
 
+### try to create yourself? 
 
+### increase chunk size in db and use documents already from there. Just select random documents - 2-4 per file and create a final dataset of 100 questions.
+### Use their schema for the testset generation. https://github.com/explodinggradients/ragas/tree/main/src/ragas/testset
+### possibly complicate the set of questions as they have it inside the testset generator.
+#todo : first focus on what needs to be done for the evaluation. Or - even test the current model on the created dataset
 DIRECTORY_PATH = "data/processed_texts_txt"
 
 
@@ -45,7 +51,7 @@ def generate(documents=None):
     if documents is None: 
         documents = get_documents()
 
-    generator_llm = ChatOpenAI(model="gpt-3.5-turbo-16k")
+    generator_llm = ChatOpenAI(model = MODEL, temperature=TEMPERATURE)
     critic_llm = ChatOpenAI(model="gpt-4")
     embeddings = OpenAIEmbeddings()
 
