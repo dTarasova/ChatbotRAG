@@ -1,10 +1,16 @@
 
 
+from enum import Enum
 import json
 from src.rag.retriever.structured_data_loading.structured_data_retriever import StructuredDataRetriever
 from src.rag.retriever.retriever import Retriever
 from src.rag.generator.generator import Generator
 
+class RAGTypes(Enum):
+    TEXT_DATA = 'text_data'
+    STRUCTURED_DATA = 'structured_data'
+    COMBINED = 'combined'
+    SUMMARISER = 'summariser'
 
 class RAGModel:
     def __init__(self, text_retriever_type='basic'):
@@ -17,7 +23,7 @@ class RAGModel:
         context_from_structured_data = self.retriever_structured_data.retrieve_context(question)
         return context_from_text_data, context_from_structured_data
     
-    def query(self, question: str, query_types=['combined'] ) -> dict:
+    def query(self, question: str, query_types=[RAGTypes.COMBINED] ) -> dict:
         results = {
             "question": question,
             "answers": []
@@ -25,22 +31,23 @@ class RAGModel:
         question_lowered = question.lower()
         context_from_text_data, context_from_structured_data = self.get_context(question_lowered)
         for query_type in query_types:
-            if query_type == 'text_data':
+            
+            if query_type == RAGTypes.TEXT_DATA:
                 answer_from_text_data =  self.generator.generate_answer(question, context_from_text_data, prompt_type='text_data')
-                results["answers"].append(self.create_result_entry("text_data", context_from_text_data, answer_from_text_data))
-            elif query_type == 'structured_data':
+                results["answers"].append(self.create_result_entry(query_type.value, context_from_text_data, answer_from_text_data))
+            elif query_type == RAGTypes.STRUCTURED_DATA:
                 answer_from_structured_data = self.generator.generate_answer(question, context_from_structured_data, prompt_type='structured_data')
-                results["answers"].append(self.create_result_entry("structured_data", context_from_structured_data, answer_from_structured_data))
-            elif query_type == 'combined':
+                results["answers"].append(self.create_result_entry(query_type.value, context_from_structured_data, answer_from_structured_data))
+            elif query_type == RAGTypes.COMBINED:
                 combined_context = "Context from general knowledge: \n" + context_from_text_data + "\n\n Context from real practical data: \n" + context_from_structured_data
                 answer_from_combined = self.generator.generate_answer(question, combined_context, prompt_type='combined')
-                results["answers"].append(self.create_result_entry("combined", combined_context, answer_from_combined))
-            elif query_type == 'summariser':
+                results["answers"].append(self.create_result_entry(query_type.value, combined_context, answer_from_combined))
+            elif query_type == RAGTypes.SUMMARISER:
                 summarized_context_from_text_data = self.generator.generate_summary(context_from_text_data, question_lowered)
                 summarized_context_from_structured_data = self.generator.generate_summary(context_from_structured_data, question_lowered)
                 combined_summarized_context = "Context from general knowledge: \n" + summarized_context_from_text_data + "\n\n Context from real practical data: \n" + summarized_context_from_structured_data
                 answer_from_summarized = self.generator.generate_answer(question, combined_summarized_context, prompt_type='combined')
-                results["answers"].append(self.create_result_entry("summarised", combined_summarized_context, answer_from_summarized))
+                results["answers"].append(self.create_result_entry(query_type.value, combined_summarized_context, answer_from_summarized))
 
         with open('results.json', 'a') as f:
             json.dump(results, f, indent=4)

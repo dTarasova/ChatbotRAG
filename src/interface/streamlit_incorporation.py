@@ -2,6 +2,7 @@ import streamlit as st
 
 from src.rag.rag_model import RAGModel
 from src.wo_rag import get_openai_answer
+from src.rag.rag_model import RAGTypes
 
 
 def setup_streamlit():
@@ -21,23 +22,29 @@ def test_final_version():
     question = st.text_input("Question")
        
     if st.button("Ask"):
-        rag_model = RAGModel(text_retriever_type='step-back')
-        answer, context, results = rag_model.query(question)
-        col1, col2 = st.columns(2)
+        try:
+            rag_model = RAGModel(text_retriever_type='step-back')
+            results = rag_model.query(question, query_types=[RAGTypes.TEXT_DATA, RAGTypes.STRUCTURED_DATA, RAGTypes.COMBINED, RAGTypes.SUMMARISER]).get('answers')
 
-        answerGPT = get_openai_answer(question)
-        
+            col1, col2 = st.columns(2)
 
-        with col1:
-            st.header(f"Answer with chatGPT:")
-            st.write(answerGPT)
+            answerGPT = get_openai_answer(question)
+            
 
-        with col2:
-            st.header(f"Answer with RAG Model:")
-            st.write(answer)
-            st.header(f"Context:")  
-            st.write(context)
-       
+            with col1:
+                st.header(f"Answer with chatGPT:")
+                st.write(answerGPT)
+
+            with col2:
+                st.header(f"Answer with RAG Model:")
+                answer = results[0].get('answer')
+                st.write(answer)
+                st.header(f"Context:") 
+                context = results[3].get('context')
+                st.write(context)
+        except Exception as e:
+            st.write("Sorry, I could not find an answer to your question. Please try again later.")
+            st.write(e)       
 
 def test_3types_of_text():
     st.write("This chatbot is designed to help you with your questions about Requirements Engineering. Please ask your question below.")

@@ -35,7 +35,7 @@ class StructuredDataRetriever:
             ChatOpenAI(model=MODEL, temperature=TEMPERATURE),
             self.df,
             verbose=True,
-            agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION ,
+            agent_type=AgentType.OPENAI_FUNCTIONS ,
             allow_dangerous_code=True
         )
         return agent
