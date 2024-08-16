@@ -8,17 +8,19 @@ from langchain_openai import OpenAIEmbeddings
 import chromadb
 import pymupdf
 from  langchain_core.documents.base import Document
+from langchain_community.vectorstores import FAISS
 
 from src.rag.retriever.unstructured_data_loading.pdf_preprocessor import process_pdf
 
 
 PATH_DOCUMENTS = 'data/first_batch'
-PERSIST_DIRECTORY = 'chroma_db'
+FAISS_DIRECTORY = 'faiss_db'
 EXAMPLE_FILE_PATH = 'data/first_batch/Rapid quality assurance with Requirements Smells.pdf'
 
 def create_db(path_to_documents: str = PATH_DOCUMENTS) -> Chroma:
-    vector_store = chromadb.PersistentClient(path=PERSIST_DIRECTORY)
+    vector_store = FAISS(embedding_function=OpenAIEmbeddings())
     add_docs_from_folder(path_to_documents)
+    FAISS.save_local(vector_store, FAISS_DIRECTORY)
     return vector_store
 
 
@@ -26,7 +28,7 @@ def create_db(path_to_documents: str = PATH_DOCUMENTS) -> Chroma:
 def get_db():
     # vector_store = Chroma(persist_directory=PERSIST_DIRECTORY, embedding_function=OpenAIEmbeddings())
     # result = vector_store.search("artefact-oriented re", search_type="similarity")
-    vector_store = chromadb.PersistentClient(path=PERSIST_DIRECTORY)
+    vector_store = FAISS.load_local(FAISS_DIRECTORY)
     collections = vector_store.list_collections()
     if collections.count == 0:
         print("There are no collections in db")
@@ -38,8 +40,11 @@ def get_db():
 
 def add_doc_todb(doc_path):
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=500, chunk_overlap=50)
+        chunk_size=300, chunk_overlap=50)
 
+    # loader = PyMuPDFLoader(doc_path)
+
+    # pages = loader.load_and_split(text_splitter=text_splitter)
     head, tail = os.path.split(doc_path)
 
     processed_pdf = process_pdf(doc_path, tail+'.txt')
@@ -61,24 +66,3 @@ def add_docs_from_folder(folder_path):
         doc_path = os.path.join(folder_path, doc)
         add_doc_todb(doc_path)
 
-
-"""For more refined document adding 
-from langchain.docstore.document import Document
-
-new_doc =  Document(
-    page_content="Wareconn is the best web platform for warranty maintenance.",
-    metadata={
-        "source": "wareconn.com",
-        "page": 1
-    }
-)
-
-
-Expertiment 1.
-number of items in the collection: 1964
-number of items in the collection: 2526
-Still one collection
-
-TODO: Experiment 2 
-Added a filtering function for text, so that it doesn't include content 
-"""
