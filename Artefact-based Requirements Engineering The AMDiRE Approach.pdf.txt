@@ -1,0 +1,2088 @@
+
+noname manuscript no.(will be inserted by the editor)
+
+
+artefact-based requirements engineering:the amdire approach
+
+
+d. m´endez fern´andez · b. penzenstadler
+
+
+received: date / accepted: date
+
+
+abstract the various inﬂuences in the processes and application domainsmake requirements engineering (re) inherently complex and diﬃcult to im-plement. in general, we have two options for establishing an re approach:we can either establish an activity-based re approach or we can establish anartefact-based one where project participants concentrate on the re artefactsrather than on the way of creating them. while a number of activity-basedre approaches have been proposed in recent years, we have gained much em-pirical evidence and experiences about the advantages of the artefact-basedparadigm for re. however, artefact orientation is still a young paradigm withvarious interpretations and practical manifestations whereby we need a clearunderstanding of its basic concepts and a consolidated and evaluated view onthe paradigm.in this article, we contribute an artefact-based approach to re (amdire)that emerges from six years of experiences in fundamental and evidence-basedresearch. to this end, we ﬁrst discuss the basic notion of artefact orientationand its evolution in recent years. we brieﬂy introduce a set of artefact-basedre models we developed in industrial research cooperations for diﬀerent ap-plication domains, show their empirical evaluations, and their disseminationinto academia and practice, eventually leading to the amdire approach. weconclude with a discussion of experiences we made during the developmentand diﬀerent industrial evaluations, and lessons learnt.
+
+
+keywords requirements engineering · artefact orientation · empiricalevaluation
+
+
+daniel m´endez fern´andeztechnische universit¨at m¨unchen, garchingtel.: +49-89-28917056e-mail: mendezfe@in.tum.de
+
+
+birgit penzenstadleruniversity of california, irvinee-mail: bpenzens@uci.edu
+
+
+arxiv:1611.10024v1  [cs.se]  30 nov 2016
+
+
+2d. m´endez fern´andez, b. penzenstadler
+
+
+1 introduction
+
+
+requirements engineering (re) is an important success factor for softwareand systems development projects as precise requirements are critical deter-minants of quality [9]. although the discipline is known to be crucial for thesuccess of every project, we still observe companies struggling with their reprocess. many of these companies have unclear roles and responsibilities buta detailedly deﬁned process that is obligatory for all projects. re is too oftenperformed mindlessly or even faked [50], without awareness of the reasons whya process step should (or should not) be executed, and without awareness ofhow to structure and specify the results [45].a major reason for this circumstance is that many things are not clear fromthe beginning of a project, which makes the discipline inherently complex andvolatile. the need for ﬂexibility is additionally hardened by potentially largeamounts of requirements [57], which are too often insuﬃciently structuredin spreadsheets. the eﬀects of this circumstance can be often observed inincomplete and inconsistent requirements, and, ﬁnally, in failed projects.the chaos report from the standish group [66] states that 44 % of the rea-sons for failed projects have their origin in insuﬃcient re. as the report takesonly a limited view into re itself and is also known to have serious ﬂaws in itsdesign negatively aﬀecting the validity of the results [18], we launched a seriesof empirical investigations on practical problems in re and how those prob-lems manifest themselves in the whole software development process [40, 44].we discovered that the missing awareness of what should be done in re man-ifests in irreproducible, incomplete, and inconsistent artefacts without clearterminology, all together seen to be the major reason for time overruns, costoverruns, and eventually for failed projects [40, 43]. a solution to these prob-lems is to establish a company-wide re reference model that should support
+
+
+1. ﬂexibility in the way of working to cope with the various inﬂuences inindividual project environments, and
+
+
+2. the reproducible creation of resilient and detailed speciﬁcation documents.in zave’s classiﬁcation of research eﬀorts in re, this addresses the twoproblems of integrating multiple views and representations, and obtaining com-plete, consistent, and unambiguous speciﬁcations [74, p.317].there are two basic paradigms for the establishment of such an re ref-erence model: activity orientation and artefact orientation. activity orienta-tion means to deﬁne the reference model by means of detailed interconnectedprocedures that dictate which methods to combine and use in which projectsituation [67]. the underlying idea is to deﬁne a situation-speciﬁc process by aset of small steps, i.e. methods to be performed in a particular order to createcertain artefacts as outcome (see also [8, 68]). in contrast, artefact orientationestablishes a blueprint of the created re results, their contents, and their de-pendencies [41]. that is, we abstract from the way of creating the results bythe use of particular methods and modelling notations and specify what hasto be done rather than dictating how to do something.
+
+
+the amdire approach3
+
+
+in our experience, the focus on re artefacts strongly supports achievingthe goals of a ﬂexible process that still leads to detailed and, to some extent,(semantically) accurate re speciﬁcations [41, 42]. our process-agnostic focuson what should be created in a project in contrast to how to do somethingallows us to abstract from the variability in the processes, because the actualcreation of artefacts by the use of particular methods in a particular sequenceis reduced to the created artefacts, their contents, and their dependencies, alldeﬁned in the artefact-based reference model of a company [41, 42].
+
+
+problem statement. although we have made ﬁrst steps into the direction ofgathering a common understanding about artefact orientation [41, 45, 42], theparadigm is still young and it comes too often with various interpretationsand manifestations in practice. in fact, little is yet known about how to es-tablish an artefact-based re approach in practice, which basic concepts haveto be taken into account during this establishment, and what beneﬁts as wellas shortcomings the paradigm brings. this is, however, crucial to steer fur-ther evidence-based research within the various research communities and toincrease the awareness of the basic principles for the practical application ofthe paradigm.
+
+
+objectives. in this article, we aim at providing a consolidated and empiricallyevaluated view on artefact-based requirements engineering.
+
+
+contribution. to provide a consolidated view on artefact-based requirementsengineering, we contribute a domain-independent, artefact-based re approach(the amdire approach), which emerged from six years of experiences in fun-damental and evidence-based research. our contributions are intended to servemore than one purpose:
+
+
+1. we introduce the basic concepts of artefact orientation in re that wehave established in fundamental research devoted to this area to lay aterminological and conceptual foundation.
+
+
+2. we introduce our 6 years of research projects and resulting artefact-basedre approaches to support a common understanding of the various con-cepts and diﬀerent interpretations of artefact orientation disseminated intoacademia and practice.
+
+
+3. we contribute an artefact-based approach to re, which uses a tailorableartefact model for domain-independent re (amdire) as its backbone,and which consolidates our previously developed and evaluated approaches.
+
+
+4. we share our experiences in the development of artefact-based re ap-proaches, lessons learnt, and conducted empirical evaluations in industrialcontexts. the evaluations also show the practical implications that thediﬀerent interpretations of artefact orientation have in practice.
+
+
+with our contributions, we aim at supporting researchers as well as prac-titioners: researchers can directly build their fundamental, educational, andevidence-based work upon our artefact model and our experiences to steer
+
+
+4d. m´endez fern´andez, b. penzenstadler
+
+
+their research in a problem-driven manner. practitioners can directly applyour model in their own socio-economic contexts with the awareness of thebeneﬁts and shortcomings of the incorporated concepts.
+
+
+delimitations. instead of preaching the use of one paradigm while neglectingpotential beneﬁts of the other, it is our intention to clarify the notion of artefactorientation in re, draw an outline of its practical application, and discuss thelessons we learnt in recent years. we therefore also discuss the evolution ofthe paradigm from our experience, and contribute a consolidated approachas a result of various industrial research cooperations. we do not intent topropagate the dogmatic application of artefact orientation for all domains,nor do we claim its valid advantages to hold for all purposes. in fact, we agreewith tell and babar [67] that, on the long run, we can make use of the beneﬁtsof both paradigms while limiting their shortcomings.
+
+
+research method. our contribution at hand, in particular the amdire ap-proach, emerges from a series of diﬀerent artefact-based re reference mod-els developed in diﬀerent research cooperations. for each development in aspeciﬁc socio-economic context, we followed the principles of empirical designscience [70, 72], i.e. we applied scientiﬁc methods in practical contexts to estab-lish an artefact-based re approach in response to company-speciﬁc problemsand goals (see also sect. 5.1 where we discuss our general experiences in theconstruction of those models as well as the procedure we followed). in eachproject, we started with a problem analysis (see, e.g., [43]) to infer a set ofimprovement goals, before developing particular artefact models via technicalaction research workshops [71] with our partners from industry. we ﬁnally con-ducted case study research to evaluate each of the developed artefact modelsw.r.t. the previously determined improvement goals and investigated to whatextent we solved the discovered problems. this allowed us to get a deeper un-derstanding on the various characteristics artefact-based approaches can havein dependency to various goals, and what implications those characteristicshave when applying the models in practical environments. in fig. 1, we depictthe procedure on the left side.in a second step, we consolidated the results of the various developmentand evaluation procedures and synthesised the key concepts of the createdartefact models into the amdire approach, which forms the main contribu-tion of this article (see the middle side of fig. 1). so far, we see the resultingamdire approach to be successful, because up to now the concepts fromwhich we inferred amdire have resulted in successful (evaluated) re refer-bisa approach in table 2, sect. 3.2).some of the former models and their empirical evaluations have been pub-lished earlier [41, 42]. this article presents the consolidation of our work andthe actual resulting amdire model on the basis of its development over time.in contrast to the empirical evaluations of our previous artefact modelswhere we conducted comparative case studies to evaluate to what extent the
+
+
+the amdire approach5
+
+
+evaluation
+
+
+external evaluation
+
+
+dissemination
+
+
+context-speciﬁc design scienceconsolidation
+
+
+problem analyses
+
+
+design
+
+
+evaluation research 
+
+
+synthesis
+
+
+amdire
+
+
+artefact model 1
+
+
+case study 1
+
+
+artefact model n
+
+
+case study n
+
+
+operationalisation
+
+
+models, templates, tools
+
+
+internal evaluation
+
+
+case study 
+
+
+fig. 1: the applied research method.
+
+
+developments lead to an improvement of previously used activity-based reapproaches, we do not provide such evaluation for amdire in this paper.the reason is that we reached the point where it yet has to be shown whetherour approach can be used by others if we are not involved at all, thus, we needan external evaluation independently carried out by unbiased researchers andpractitioners not involved in the development of amdire. for this reason, wemake our contribution and its operationalisation (e.g. relating models, tools,and evaluation templates) openly accessible [37] and disseminate our resultsfrom 6 years of research with the article at hand. this lays the foundation forthe ﬁnal external evaluation, depicted on the right side of fig. 1.
+
+
+outline. the remainder of the article is as follows. in sect. 2, we discuss thework directly related to our contributions, and the gaps we intend to close. weconclude with a discussion of the fundamentals in artefact orientation and theterminology we use in context of this article. in sect. 3, we then introduce thebackground of artefact orientation resulting from our fundamental, conceptual,and empirical work in this area, i.e. introduce the previously developed artefactmodels and give a ﬁrst introduction into the diﬀerent case studies we conductedwith those models. after discussing the synthesis of the models in sect. 3.3,we present the amdire approach in detail in sect. 4. in sect. 5, we ﬁnallydiscuss our experiences, our evaluations, and the lessons learnt, and concludewith sect. 6.
+
+
+2 fundamentals and related work
+
+
+we ﬁrst discuss the areas of activity orientation and then the fundamentals inartefact orientation as well as the terminology used in context of this article.
+
+
+2.1 form activity orientation to artefact orientation
+
+
+activity orientation is based on the idea of providing an re reference modelas an ordered set of activities and methods, each deﬁning procedures and
+
+
+6d. m´endez fern´andez, b. penzenstadler
+
+
+techniques for a particular purpose [48], from which project participants canselect the appropriate one to design their project-speciﬁc re process. eachactivity, e.g. how to apply use cases [17], is performed by a particular role thatcreates the corresponding artefact type, e.g. the requirements speciﬁcation.each of those techniques is then placed into a particular sequence of applicationand used to specify the re results [6].at the organisational level, these activity oriented re reference models areintegrated into activity-based software process models that, for example, relyon the software & systems process engineering meta-model (spem) [49], suchas the rational uniﬁed process (rup) [33]. approaches that provide meansto systematically select and combine methods at project level are addressed,in turn, by the research area of situational method engineering [8, 68]. thisarea can be complemented by (content-centric) decision support systems [56],which contribute approaches to select, classify, and rate a set of alternativesin the choice of methods (and description techniques) according to projectparameters.although the importance of a well-deﬁned artefact model is recognisedin the area of activity orientation [19], the deﬁnition of artefacts, their con-tents, and especially their dependencies is not in scope of available approaches.braun et al. [6] discovered that only 50% of the analysed approaches includean artefact description at all, while the other 50% reduce the artefacts to anoutcome of self-contained and interconnected methods that produce the arte-facts. a ﬁrst contribution that addresses the incorporation of artefacts intothose activity-centric software processes is made by silva and oliveira [64]who propose a concept of meta-modeling to deﬁne an artefact layer and aprocess layer for a better organisation of software artefact authoring. theyillustrate their approach with a use case speciﬁcation outline, but do not yetprovide a complete artefact model or reference implementation that wouldprovide insights into strengths and weaknesses [34].considering the absence of strong empirical work in the area of activityorientation [51] and, thus, following a purely argumentative line of reasoning,activity-oriented approaches still have diﬃculties to overcome the problem ofproviding a means to support a ﬂexible re process that guides the creation ofconsistent re artefacts. in contrast, when following the principles of artefactorientation, we are supposed to deﬁne an re reference model by deﬁning theartefacts, their contents, and their dependencies rather than dictating the wayof creating the artefacts, thus, supporting ﬂexibility in the process and thecreation of detailed, consistent re artefacts. first evidence for the beneﬁts ofartefact orientation is provided by industrial case studies that evaluate boththe basic idea of artefact orientation is, however, not new. first artefactmodels have been proposed as part of checklists and templates for re, forexample, with the volere requirements speciﬁcation templates [60] or theieee recommended practice for software requirements speciﬁcations (ieeestd. 830-1998) [26]. those templates provided a ﬁrst, common understandingon the general contents to be considered in re artefacts in the form of generic
+
+
+the amdire approach7
+
+
+tables of content, but they did not consider the dependencies within and be-tween the contents. the latter is, however, important to support syntacticallyconsistent result structures.first content-related dependencies resulting from reﬁnement and decom-position in the modelling concepts are provided by berenbach et al. [2, chp. 2].these cover the basic concepts previously developed in a research co-operationbetween siemens corporate research and technische universit¨at m¨unchen(tum) [21] (see also sect. 3). they provide an re artefact model and namethe key components for measurable re artefacts, include a ﬁrst process guide-line, and suggest practices for their elaboration.this and similar artefact models enable an understanding about how tostructure re artefacts and how the contents relate to each other. however,those models are limited to general content descriptions rather than providingclear deﬁnitions of the modelling concepts used, for example, to create usecase models. thus, they still do not support syntactically consistent resultstructures.this non-exhaustive list of artefact-based approaches already shows thatwe, as a research community, have developed diﬀerent views on artefact modelsdepending on their intended purpose. more structure-oriented artefact models,like the one provided by berenbach et al. [2, chp. 2], allow for a clear processintegration, since a simpliﬁed view on the contents of the artefacts can be in-tegrated with process elements like milestones. more content-oriented artefactmodels, like the one provided by schaetz et al. [63], focus on (tool-supported)seamless modelling, although a process integration becomes diﬃcult due tothe increased complexity in the models [62].a meta model for our proposed paradigm is provided in [41]. over the years,we have instantiated this meta model for diﬀerent domains of applicationswhere the resulting artefact models have been evaluated and disseminatedto practice. a discussion of those models is provided in sect. 3. the modelshad all diﬀerent contents, but they all relied on the same notion of artefactorientation that we introduce in the following.
+
+
+2.2 fundamentals and terminology used in artefact orientation
+
+
+in the following, we introduce the basic concepts and the terminology usedfor artefact-based re as it results from our previous work [41, 42] and as itshall be used in context of this article. the most important terms are listedin table 1.each artefact captures two views: a structure view and a content view. thestructure view captures for each artefact type (e.g., requirements speciﬁcation)the content items to be considered (e.g., use case model). for each content item,we deﬁne the content view via the modelling concepts, e.g., the elements and(content) relations of a use case model and diﬀerent description techniquesthat can be used to instantiate these concepts and form the representation ofan artefact. the structure model is used to couple the contents to the elements
+
+
+8d. m´endez fern´andez, b. penzenstadler
+
+
+table 1: terminology used in this article.
+
+
+termdescription
+
+
+projectsoftware development eﬀort aimed at the construction of a (soft-ware) system through the application (execution) of a develop-ment process model (see also [23]).
+
+
+requirementsengineering refer-ence model
+
+
+standardised organisational blueprint that includes the descrip-tion of the generic process (deﬁnition) to follow, the artefacts tobe generated, as well as roles involved (see also [23, 30]).
+
+
+processa process is a series of actions that produce something or thatlead to a particular result [46].
+
+
+artefactdeliverable of major interest that abstracts from contents of aspeciﬁcation document. it is used as input, output, or as anintermediate result of a process step (see also [41]).
+
+
+artefact modelmodel that deﬁnes a family of artefacts and their dependencies.
+
+
+methodan information systems development method is likely to includea series of phases with subphases, each having expected outputs(or artefacts); a series of techniques; a series of tools; a trainingscheme and some underlying philosophy [1, p. 44].
+
+
+necessary to deﬁne a process, i.e., to roles, methods, and milestones. regardingthe methods and description techniques for creating the contents (e.g. umlor natural text), we leave open which one to choose, as long as the contentsand relationships proposed by the artefact model are speciﬁed.
+
+
+organisational level (artefact-based re reference model)
+
+
+artefact model
+
+
+structurecontentrole model
+
+
+process model
+
+
+project level
+
+
+create requirements specification
+
+
+...
+
+
+business information systems‘ analysis
+
+
+change management
+
+
+(out of scope)
+
+
+system vision accepted
+
+
+requirements specificationcompleted
+
+
+customise to project environment
+
+
+engineering activity
+
+
+management activity
+
+
+milestone
+
+
+legend
+
+
+...
+
+
+...
+
+
+create business specification
+
+
+business vision accepted
+
+
+business specificationcompleted
+
+
+...
+
+
+bisa approved
+
+
+bisa completed
+
+
+meta modelre reference model
+
+
+structurecontent
+
+
+project-speciﬁc 
+
+
+exemplars
+
+
+instance ofinstance of
+
+
+!
+
+
+produkt.projektbezeichnung - produkt.name 
+
+
+zuletzt geändert: 27.10.2010 13:28 3/20 
+
+
+ 
+
+
+content 
+
+
+ 
+
+
+
+
+
+
+
+
+                            
+
+
+   
+
+
+ 
+
+
+ 
+
+
+travel ordering system 
+
+
+requirements specification 
+
+
+version: 0.1 
+
+
+project name <name> 
+
+
+project lead <name> 
+
+
+responsible <name> 
+
+
+created on <date> 
+
+
+last changed  
+
+
+x in process 
+
+
+ submitted 
+
+
+state 
+
+
+ completed 
+
+
+document file  
+
+
+v-modell xt version vmrelease 1.3with bisa extension 
+
+
+illustrative
+
+
+meta modelre reference model
+
+
+structurecontent
+
+
+project-speciﬁc 
+
+
+exemplars
+
+
+instance ofinstance of
+
+
+!
+
+
+produkt.projektbezeichnung - produkt.name 
+
+
+zuletzt geändert: 27.10.2010 13:28 3/20 
+
+
+ 
+
+
+content 
+
+
+ 
+
+
+
+
+
+
+
+
+                            
+
+
+   
+
+
+ 
+
+
+ 
+
+
+travel ordering system 
+
+
+requirements specification 
+
+
+version: 0.1 
+
+
+project name <name> 
+
+
+project lead <name> 
+
+
+responsible <name> 
+
+
+created on <date> 
+
+
+last changed  
+
+
+x in process 
+
+
+ submitted 
+
+
+state 
+
+
+ completed 
+
+
+document file  
+
+
+v-modell xt version vmrelease 1.3with bisa extension 
+
+
+illustrative
+
+
+meta modelre reference model
+
+
+structurecontent
+
+
+project-speciﬁc 
+
+
+exemplars
+
+
+instance ofinstance of
+
+
+!
+
+
+produkt.projektbezeichnung - produkt.name 
+
+
+zuletzt geändert: 27.10.2010 13:28 3/20 
+
+
+ 
+
+
+content 
+
+
+ 
+
+
+
+
+
+
+
+
+                            
+
+
+   
+
+
+ 
+
+
+ 
+
+
+travel ordering system 
+
+
+requirements specification 
+
+
+version: 0.1 
+
+
+project name <name> 
+
+
+project lead <name> 
+
+
+responsible <name> 
+
+
+created on <date> 
+
+
+last changed  
+
+
+x in process 
+
+
+ submitted 
+
+
+state 
+
+
+ completed 
+
+
+document file  
+
+
+v-modell xt version vmrelease 1.3with bisa extension 
+
+
+illustrative
+
+
+representation(language & methods)
+
+
+packages,document hiararchy
+
+
+concept models, ontologies, checklists, ...
+
+
+models, diagrams, natural text, ...
+
+
+fig. 2: principles of artefact orientation.
+
+
+same as for activity-oriented approaches, we consider a guiding backbonenecessary for artefact-based approaches, which is constituted by the artefactmodels (see fig. 2, left side). however, instead of deﬁning the artefact-based
+
+
+the amdire approach9
+
+
+requirements engineering approach on the basis of interconnected phases, ac-tivities and methods, we deﬁne the approach on the basis of the artefacts andtheir dependencies. we deﬁne roles and responsibilities for the artefacts to becreated as well as the milestones, which deﬁne until when to complete, qualityassure, and deliver an artefact. this reference model at the organisational levelthereby allows to ﬂexibly guide re at the project level as the way of creatingthe artefacts is left open to the project participants.
+
+
+3 our artefact-based re approaches and their synthesis
+
+
+the backgrounds of amdire are various fundamental and conceptual ap-proaches from our previous research. after evaluating and disseminating thoseapproaches into practice during the past 6 years, we synthesise those experi-ences in the amdire approach. figure 3 illustrates an overview of our previ-ously developed approaches.
+
+
+dissemination
+
+
+artefact-based requirements engineering 
+
+
+2004
+
+
+rereference model (rem)
+
+
+2006
+
+
+remses for embedded systems
+
+
+bisa for business inf. systems
+
+
+generalisation& synthesis
+
+
+2009
+
+
+generic re contentmodel for teaching
+
+
+2011
+
+
+empirical studies
+
+
+siemens case study 
+
+
+2010
+
+
+capgemini tspilot studies 
+
+
+2012
+
+
+capgemini tscompanystandard
+
+
+meta model for artefact orientation 
+
+
+aramisre model
+
+
+cassidian & bmwcase study
+
+
+amdire
+
+
+harmonisation
+
+
+lufthansacase study
+
+
+wacker chemiere reference model
+
+
+daimler powertrainreference model
+
+
+20122013
+
+
+re ﬁeld study
+
+
+consolidation
+
+
+wackercase study
+
+
+amdireresourcespubliclyavailable online
+
+
+fig. 3: background: development of artefact-based re approaches.
+
+
+the ﬁgure is organised into 3 layers. the upper layer shows the developedapproaches to re, followed by the second layer that illustrates major empiricalevaluations of those approaches. the positive and negative results gatheredfrom those evaluations served to steer the subsequent development. finally, thethird layer illustrates the dissemination of results (and intermediate results)into academia and practice.in the following, we brieﬂy introduce the development, evaluation, anddissemination of our artefact-based re approaches, before summarising thosethat serve as a basis for the amdire approach.
+
+
+10d. m´endez fern´andez, b. penzenstadler
+
+
+3.1 overview of development of artefact-based re approaches at tum
+
+
+before devoting our research to re, we, as a research group, investigated theparadigm of artefact orientation in the area of software process models startingfrom 2004, as depicted in fig. 3. in 2006, we ﬁrst transferred the basic conceptsof artefact orientation to re. this eﬀort resulted in our ﬁrst reference modelfor artefact-based requirements engineering: the requirements engineering ref-erence model (rem) [21, 63]. rem resulted from a research co-operationbetween the technische universit¨at m¨unchen (tum) and siemens corporateresearch. the model deﬁnes the structure of goals, requirements and speciﬁ-cations within a proposed taxonomy-based guideline and informally describesdependencies between the elements of the guideline based on proposed reﬁne-ment principles. although rem was not intended to capture details of partic-ular application domains, the approach provided a ﬁrst consolidated view onthe previously existing guidelines and checklists available to re, such as thevolere requirements speciﬁcation templates [60], the ieee recommendedpractice for software requirements speciﬁcations (ieee std. 830-1998) [26], ormore practical guidelines such as the one of wiegers [69].a ﬁrst domain-speciﬁc artefact-based approach was developed under theremses project [7]1, a research collaboration with partners from academiaand industry including bosch and daimler. this project resulted in an arte-fact model for re in the automotive domain with a strong focus on contentsnecessary to specify embedded reactive systems [53]. the reference model isbased on two key concepts: support for abstraction levels and coverage of threecontent categories. the structure supports requirements engineers in determin-ing which type of model they should use and what kind of abstractions theyshould consider in a particular project.in parallel to this development, we worked on another artefact-based reapproach for business information systems analysis (bisa) [39, 38] as part of abilateral research co-operation between the tum and capgemini technologyservices, the german branch of the capgemini group for custom softwaredevelopment. the resulting bisa approach is a model-based re approachthat consists of (1) an artefact abstraction model with horizontal abstractionand modelling views, (2) a concept model that deﬁnes the possible notions forproducing the models, and ﬁnally (3) a method description that deﬁnes theactivities and tasks of the re process. after two years of development andevaluation in 16 pilot projects the approach became the company standard forre.the evaluations of both approaches showed beneﬁts as well as shortcom-ings. in contrast to the remses approach, the bisa approach proved tobetter support the speciﬁcation of detailed results due to the detailed conceptmodel, but needed training and coaching. also, the method descriptions inbisa increased the complexity unnecessarily.
+
+
+1 remses guide available at http://www.remses.org
+
+
+the amdire approach11
+
+
+the subsequent consolidation thus included three steps. first, we inte-grated the artefact-based approaches into our previously developed softwareprocess models [39] to address a broader audience and to steer further eval-uations. second, we generalised and synthesised our approaches to establisha meta model for artefact orientation. third, we conducted additional casestudies where we applied the consolidated approach in diﬀerent socio-economiccontexts to test the external validity.the meta model for artefact orientation [41] uniﬁes the diﬀerent views wehad so far on artefact models, including a coarse-grained view on the structureof artefact models as given in development process models and a detailedcontent view as given in model-based development where we detailed the topicswith concrete concept models (successfully introduced by bisa). the coarseview aimed at supporting a ﬂexible process deﬁnition, while the concept modelaimed at oﬀering guidance for the creation of detailed results. both viewsresult in our understanding on the constructs necessary to deﬁne an artefact,as discussed in sect. 2.2.the ﬁrst case study of the consolidated approach was performed with astreet traﬃc management business unit from siemens [42]. in this case study,we empirically analysed the diﬀerent beneﬁts and shortcomings of our artefact-based re approach, but remained aware that the empirical evidence was lim-ited to the particular, sensitive context of our study. the case study, however,was the ﬁrst one to evaluate the available paradigms to construct re referencemodels in a comparative manner by directly comparing our approach with thepreviously used activity-based one, followed by another study at the deutschelufthansa (dlh).the results in those studies showed us that the views captured in the metamodel artefact orientation were valuable to, on the one hand, deﬁne a ﬂexibleprocess on the basis of a coarse structure model, and, on the other hand,to guide the creation of detailed results due to the detailed content model.however, the results also indicated that the complexity in the content modelimplies a higher learning curve2 in the application of the approach in contrastto applying activity-based approaches.the subsequently conducted project automotive, railway and avionics inmulti-core systems (aramis)3, a german publicly funded research projectwhere 40 partners from academia and industry worked on an integrated ap-proach for developing cyber physical systems scenarios, resulted in an artefact-based re approach [52] with a less complex content model. subsequent casestudies at bmw and cassidian [54] followed the same study design as deﬁnedfor the study at siemens and strengthened our conﬁdence on the general ben-eﬁts of artefact orientation, but also that the complexity in the given contentmodel, although necessary to support a high level of detail in the results, ham-
+
+
+2 we understand learning curve in the sense of being related to the power law of practice,such that continued application will lead to learning, as deﬁned and described in [58, p. 3/4].3 http://www.projekt-aramis.de/
+
+
+12d. m´endez fern´andez, b. penzenstadler
+
+
+pers its easy applicability. the investigation of these phenomena is in scope ofcurrent investigations as part of a family of studies [55].finally, after preliminary evaluation on an automatic cashier system [3],the ﬁrst empirical study on amdire has been completed at wacker chemiethe applicability for constructing a re model in the context of agile meth-ods [73]. further studies to contribute to the family of studies [55] are cur-rently in progress. for dissemination, a set of resources — cheat sheet, magicdraw plugin, example speciﬁcations, and evaluation template — is availableonline [37].
+
+
+3.2 summary of approaches and their characteristics
+
+
+table 2 summarises those artefact-based re approaches, which serve as a basisfor the amdire approach. we take into account their structuring into basiccomponents as well as their contents.
+
+
+table 2: list of approaches with their evaluations and characteristics.
+
+
+approach componentscharacteristicevaluationreferences
+
+
+remartefactmodelstructure modeln/amodel [21],tool [63]
+
+
+remsesartefactmodelandmodellingtechniques
+
+
+checklistsandmod-ellingtechniquesforembedded systems
+
+
+daimler,boschmodel&eval. [53],http://www.remses.org
+
+
+aramisgenericcon-tent modeldomain-independentstructuremodelforcyber-physical systemsandpartialconceptmodel (for tooling)
+
+
+bmw,cassidianmodel&eval. [52],http://www.projekt-aramis.de/
+
+
+bisaartefactmodel,pro-cess elements,customisa-tionap-proach,
+
+
+structuremodelandconcept model for thepurpose of process in-tegration
+
+
+capgemini(n/a),siemens
+
+
+model [39, 38],evaluation(siemens) [42]
+
+
+while the ﬁrst artefact-based approaches served as initial guidelines, theyprovided only limited guidance for the content creation as their focus was theestablishment of a basic structure model and the inclusion of checklists forthe content creation. the bisa approach furthermore incorporated a detailedconcept model. this allowed us to support the creation of detailed resultsas the artefact model made explicit the concepts of an application domain.the structure model additionally supported the process integration, i.e. thecoupling of the content items to milestones or roles. other components which
+
+
+the amdire approach13
+
+
+turned out to be necessary for application in project environments were acustomisation approach as well as tool support relying on the concept modelfrom which we inferred uml proﬁles. further information can be found in [41,38].
+
+
+3.3 synthesis of established concepts
+
+
+as discussed in our research method in the introduction (page 4), we synthe-sised the established concepts to develop the amdire approach. to this end,we considered the basic components provided by bisa and the content itemsprovided by aramis, which serve as a lessons-learnt-based set of contentitems relevant for diﬀerent application domains.in order to ensure the applicability of amdire, we made use of the processelements and the customisation approach of bisa that both rely on a structuremodel. this idea of a plain structure model, in turn, results from aramis, andlogically groups modelling concepts constituted by the bisa concept model.as amdire is intended to be broadly applicable across application do-mains, we aggregated, where possible and reasonable, those elements that spec-ify same or similar concepts for diﬀerent domains into one content item. forinstance, amdire includes an element domain model that includes businessprocess modelling as well as the operational context with hardware and soft-ware - the ﬁrst is relevant to business information systems, the latter for thedomain of embedded reactive systems.in summary, the resulting artefact-based approach shall allow for the spec-iﬁcation of detailed results (supported by the detailed concept model) and, atthe same time, be easy to use (supported by a simpliﬁed structure model).both views and relating process elements are introduced in the following sec-tion.
+
+
+4 the amdire approach
+
+
+in the following, we describe the amdire approach resulting from the con-solidation of the fundamental, conceptual, as well as empirical contributionsintroduced in the previous section. we ﬁrst introduce the basic components ofthe approach and give an overview of the artefact types, the role model and theprocess model, as well as further constructs used to operationalise amdirein individual socio-economic contexts. we then introduce the artefact modelin detail.
+
+
+4.1 artefact types, roles, and milestones of amdire
+
+
+figure 4 shows the basic components that build up the amdire artefact-based re approach. those components result from our understanding of the
+
+
+14d. m´endez fern´andez, b. penzenstadler
+
+
+artefact-based paradigm as introduced in sect. 2.2 and lessons learnt intro-duced in sect. 3.
+
+
+artefact-based re reference model (basic components)
+
+
+structuremodel
+
+
+artefact model
+
+
+contentmodel
+
+
+role model
+
+
+process model
+
+
+tool supportcustomisation approach
+
+
+meta modelre reference model
+
+
+structurecontent
+
+
+project-speciﬁc 
+
+
+exemplars
+
+
+instance ofinstance of
+
+
+!
+
+
+produkt.projektbezeichnung - produkt.name 
+
+
+zuletzt geändert: 27.10.2010 13:28 3/20 
+
+
+ 
+
+
+content 
+
+
+ 
+
+
+
+
+
+
+
+
+                            
+
+
+   
+
+
+ 
+
+
+ 
+
+
+travel ordering system 
+
+
+requirements specification 
+
+
+version: 0.1 
+
+
+project name <name> 
+
+
+project lead <name> 
+
+
+responsible <name> 
+
+
+created on <date> 
+
+
+last changed  
+
+
+x in process 
+
+
+ submitted 
+
+
+state 
+
+
+ completed 
+
+
+document file  
+
+
+v-modell xt version vmrelease 1.3with bisa extension 
+
+
+illustrative
+
+
+meta modelre reference model
+
+
+structurecontent
+
+
+project-speciﬁc 
+
+
+exemplars
+
+
+instance ofinstance of
+
+
+!
+
+
+produkt.projektbezeichnung - produkt.name 
+
+
+zuletzt geändert: 27.10.2010 13:28 3/20 
+
+
+ 
+
+
+content 
+
+
+ 
+
+
+
+
+
+
+
+
+                            
+
+
+   
+
+
+ 
+
+
+ 
+
+
+travel ordering system 
+
+
+requirements specification 
+
+
+version: 0.1 
+
+
+project name <name> 
+
+
+project lead <name> 
+
+
+responsible <name> 
+
+
+created on <date> 
+
+
+last changed  
+
+
+x in process 
+
+
+ submitted 
+
+
+state 
+
+
+ completed 
+
+
+document file  
+
+
+v-modell xt version vmrelease 1.3with bisa extension 
+
+
+illustrative
+
+
+meta modelre reference model
+
+
+structurecontent
+
+
+project-speciﬁc 
+
+
+exemplars
+
+
+instance ofinstance of
+
+
+!
+
+
+produkt.projektbezeichnung - produkt.name 
+
+
+zuletzt geändert: 27.10.2010 13:28 3/20 
+
+
+ 
+
+
+content 
+
+
+ 
+
+
+
+
+
+
+
+
+                            
+
+
+   
+
+
+ 
+
+
+ 
+
+
+travel ordering system 
+
+
+requirements specification 
+
+
+version: 0.1 
+
+
+project name <name> 
+
+
+project lead <name> 
+
+
+responsible <name> 
+
+
+created on <date> 
+
+
+last changed  
+
+
+x in process 
+
+
+ submitted 
+
+
+state 
+
+
+ completed 
+
+
+document file  
+
+
+v-modell xt version vmrelease 1.3with bisa extension 
+
+
+illustrative
+
+
+organisational level
+
+
+process integration
+
+
+project level
+
+
+static tailoring
+
+
+dynamic tailoring
+
+
+...
+
+
+project scope deﬁned
+
+
+system speciﬁcationaccepted
+
+
+...
+
+
+business analyst
+
+
+...
+
+
+requirements engineer
+
+
+context 
+
+
+speciﬁcation
+
+
+requirements 
+
+
+speciﬁcation
+
+
+system 
+
+
+speciﬁcation
+
+
+fig. 4: overview of the amdire components.
+
+
+the artefact model represents the backbone of the approach and encom-passes concepts used to specify the contents of the artefacts. this model con-sists of two basic sub-models: the content model and the structure model.the content model abstracts from the modelling concepts used for a partic-ular family of systems and only scopes the type of information needed. thestructure model gives a logical structuring to those concepts and is used forthe integration with the role model and the process model.we distinguish in total three artefact types (figs. 4 and 5):
+
+
+1. the context speciﬁcation deﬁnes the context of the system under considera-tion including a speciﬁcation of the overall project scope, the stakeholders,rules, goals, and constraints as well as a speciﬁcation of the domain model.the latter comprises, for example, business processes to be supported with-out, however, deﬁning how the system is intended to be used in context ofthose processes.
+
+
+2. the requirements speciﬁcation comprises the requirements on the systemunder consideration taking a black-box view on the system, i.e. we specifyrequirements from a user’s perspective without constraining the internalrealisation of the system.
+
+
+3. the system speciﬁcation ﬁnally comprises a glass-box view on the internalrealisation of a system including a logical component architecture and aspeciﬁcation of the behaviour realisation with, e.g., functions and inter-
+
+
+the amdire approach15
+
+
+faces. while we consider the context and the requirements speciﬁcation toaddress the problem space, the system speciﬁcation addresses the solutionspace and is the interface to tie in with the design phase.
+
+
+figure 5 shows the artefact types in relation to roles and responsibilities(left side) and in relation to milestones (right side) which we use to integratethe model into a process.
+
+
+role modelprocess model
+
+
+project scope deﬁned
+
+
+system speciﬁcationaccepted
+
+
+business 
+
+
+analyst
+
+
+requirements
+
+
+engineer
+
+
+system 
+
+
+architect
+
+
+architectureoverviewdeﬁned
+
+
+requirementsspeciﬁcationaccepted
+
+
+system visiondeﬁned
+
+
+contextspeciﬁcationaccepted
+
+
+context speciﬁcation
+
+
+system speciﬁcation
+
+
+requirements speciﬁcation
+
+
+fig. 5: overview of artefacts types, roles, and milestones.
+
+
+for each artefact type, we deﬁne one particular role, which has the respon-sibility for an artefact type, independent of other potentially supporting rolesprovided by the software process model (e.g., quality manager), and indepen-dent of whether same persons are assigned to diﬀerent roles in a project.
+
+
+1. the business analyst has the responsibility for the context speciﬁcationand is expected to have the necessary domain knowledge, e.g. regardingthe business processes, typical stakeholders, or constraints and rules.
+
+
+2. the requirements engineer has the responsibility for the requirementsspeciﬁcation and serves also as a mediator between the business analystand the system architect.
+
+
+3. the system architect has the responsibility for the system speciﬁcationand is expected to have technical knowledge. in dependency to the appli-cation domain, we can further distinguish between a role for the logicalarchitecture and a role for the technical architecture (e.g. in the area ofbusiness information systems).
+
+
+for each artefact type, we furthermore deﬁne two milestones. the ﬁrst mile-stone deﬁnes the point in time in which the ﬁrst content item is deﬁned, thus,reﬂecting a certain maturity of the content in the artefact as the ﬁrst content
+
+
+16d. m´endez fern´andez, b. penzenstadler
+
+
+items serve the purpose of a summary for subsequent contents. for instance,the system vision in the requirements speciﬁcation comprises an overview ofthe major use cases; its deﬁnition and agreement indicate that the use cases aresuﬃciently deﬁned to be further reﬁned and modelled and, thus, allowing, forexample, for ﬁrst cost estimations based on function points. the second mile-stone of each artefact indicates the point in time when an artefact is ﬁnalised,respectively formally accepted.those milestones serve the purpose of a process integration and instan-tiation as they give us the opportunity to formally embed the artefacts intoproject-speciﬁc decisions. these decisions are to be taken at a speciﬁc pointin time, such as when to conduct ﬁrst cost estimations, when changes in therequirements should be formally deﬁned via change requests, or when to takethe contents in the speciﬁcations for a project classiﬁcation and customisation(tailoring).
+
+
+4.2 amdire artefact model
+
+
+in the following, we introduce the reﬁnement principles over the three levels ofabstraction by giving an overview of the content-related dependencies betweenthe artefact types. afterwards, we outline the content model.the artefact model is speciﬁed using the following notational aspects ofuml class diagrams:
+
+
+– we denote the hierarchical structuring of the structure model with pack-ages.
+
+
+– for the deﬁnition of the content model, we use a class diagram.– for content items that are crucial for only a speciﬁc application domain,but irrelevant for another, we use the stereotype <<domain>>, such asbusiness process models being crucial for the domain of business informa-tion systems, but irrelevant for the domain of embedded reactive systems.
+
+
+4.2.1 reﬁnement principles and artefact dependencies
+
+
+figure 6 organises the three artefact types in a top-down hierarchy reﬂected inthe three previously introduced levels of abstraction (see also fig. 5) and showsthe reﬁnement principles we use when modelling requirements and systemproperties. for reasons of complexity, we intentionally refrain from a completeoverview of the artefact model and instead focus on selected concept types tointroduce the content-related dependencies.in the context speciﬁcation, we capture behaviour in form of stakehold-ers performing selected processes. we specify, for example, a business processmodel that dictates functional behaviour by a set of process steps interrelatedin a causal manner.in the requirements speciﬁcation, we select those steps to be supportedby a system and specify how the system is intended to be used in interaction
+
+
+the amdire approach17
+
+
+fig. 6: reﬁnement and realisation principles in amdire (completerelations are visible in the detailed subﬁgures in the appendix).
+
+
+with the user groups. the content-related dependencies between both artefacttypes is given as follows:
+
+
+– actors to which we refer in usage models (e.g. in use case models spec-iﬁed via uml activity diagrams) realise either user groups or externalsystems.
+
+
+18d. m´endez fern´andez, b. penzenstadler
+
+
+– data objects to which we refer to specify which information is used asinput or output to our system from a black-box perspective realise selectedbusiness objects.
+
+
+– actions to which we refer when specifying external system behaviour (e.g.via usage models) realise selected process steps by either deﬁning actionsan actor performs or actions a system shall automatise.
+
+
+in the system speciﬁcation, we then specify how the system will realise thefunctional external behaviour within a component architecture and its internalbehaviour. to this end, we deﬁne the following content-related dependencies:
+
+
+– system functions, which are provided by components, realise user-visiblefunctions, i.e. those system actions in an usage model speciﬁed in therequirements speciﬁcation. same holds for the system interfaces, whichrealise the identiﬁed (typed) interfaces. the realisation dependencies arelimited to the external interfaces and functions as we enrich the systemspeciﬁcation during design activities with additional internal functions andinterfaces between the components of a (logical and/or technical) compo-nent architecture.
+
+
+– data elements, which are allocated to speciﬁc components and which areprocessed by system functions over their typed interfaces, realise the dataobjects speciﬁed in the requirements speciﬁcation.
+
+
+– states realise the modes in a requirements speciﬁcation and form systembehaviour by interrelating the diﬀerent states of a system via state ma-chines. similar as it is the case for the transition from the context to therequirements being of interest for business information systems, the tran-sition at hand is of interest when addressing the domain of embeddedreactive systems where we identify the relevant states during requirementsengineering (reﬂected in modes).
+
+
+reﬁnement of quality-related properties further elements relevant for thetransition between two levels of abstraction (not shown in fig. 6) are those weuse to specify quality and quality requirements as part of more general non-functional requirements. in our understanding, non-functional requirementscover system-related quality aspects as well as requirements on properties ofthe development project speciﬁed, e.g., via process requirements [22]. qualityis a multifaceted topic with diﬀerent views of the term quality [20, 32], and nocommonly accepted deﬁnition [22]. to avoid ambiguities and to be precise withwhat we consider as quality, we explicitly refer to a quality deﬁnition model.due to the focus we have in re on specifying activities with business processesand use cases, we rely on the activity-based quality deﬁnition model [16, 15]by tum, which is based on early eﬀorts of boehm et al. [5] and mccall etal. [11].the basic idea in this model is to deﬁne quality via a set of system prop-erties and their associations to activities carried out during the use of thesystem [15]. for amdire, this means that we deﬁne quality via (1) abstract
+
+
+the amdire approach19
+
+
+goals [14] over diﬀerent levels of abstraction to motivate the reﬁnement of be-haviour. this behaviour is speciﬁed via (2) generic scenarios that deﬁne whichnon-functional activities the system shall support (e.g., activities the adminis-trator carries out), and, ﬁnally, reﬁne those scenarios to (3) assessable qualityrequirements, which then are used to motivate design decision in a componentarchitecture. consequently, we do not follow a strict separation of concerns re-garding quality, but see the notion of quality to aﬀect and deﬁne behaviouralproperties of a system and structural properties as well.
+
+
+4.2.2 amdire content model
+
+
+the amdire content model is structured into three artefact types that en-compass over 70 elements and various relations. for the sake of clarity, weprovide a simpliﬁed view on the content model while detailed informationof all content items and the underlying concept model are provided in ap-pendix a. figure 7 illustrates the content model and shows a sketch for eachcontent item. for reasons of reducing complexity, we likewise depict only asubset of the dependencies between the content items (for the complete list,see appendix a). as introduced in the previous sections, amdire relies on areﬁnement notion for functional as well as non-functional modelling concepts.starting at the top, in the context speciﬁcation, the project scope deﬁnesthe relevant problem to be addressed by a project and the primary scope. thestakeholder model is used to capture the most relevant stakeholders and therelationships and are used as a central deﬁnition of key reporting lines andone important rationale for requirements and goals. goals are speciﬁed, e.g.,in a graph form, and serve as a means to steer the speciﬁcation of a businessprocess model in the domain model. the domain model provides informationon the operational environment.in the requirements speciﬁcation, the system vision deﬁnes the basic ideaof the system under consideration and the stakeholders of a project agree on asystem scope (major features and use cases) as well as its boundaries speciﬁedvia a context diagram or a rich picture. to capture functional behaviour inthe usage model, we deﬁne for each identiﬁed use case how future users intendto use the system in interaction.a service model is used as a complementarymeans to deﬁne which services the system shall oﬀer – in contrast to a usecase model not necessarily deﬁning the relation to actors but, instead, thecausal relations between the services. we further use the system-supportedactions in a use case model, e.g., speciﬁed via uml activity diagrams, toselect candidates for user-visible system functions, which we structure andreﬁne in a functional hierarchy. this hierarchy builds the point of entry intothe system speciﬁcation.in the system speciﬁcation, we ﬁnally allocate the functions of a func-tional hierarchy to components, deﬁne their syntactic interfaces and theirinternal behaviour with, for example, automata. this behaviour speciﬁcationalso serves the identiﬁcation of the (typed) entities deﬁned in relation to eachother in a data model.
+
+
+20d. m´endez fern´andez, b. penzenstadler
+
+
+context layer
+
+
+system layer
+
+
+requirements layer
+
+
+stakeholder modelobjectives 
+
+
+& goals
+
+
+constraints 
+
+
+& rules!
+
+
+!
+
+
+!
+
+
+!
+
+
+!
+
+
+data model
+
+
+e
+
+
+a
+
+
+aa
+
+
+e
+
+
+system vision
+
+
+functional 
+
+
+hierarchy
+
+
+architecture overview
+
+
+system
+
+
+function model
+
+
+fun 1
+
+
+fun 2
+
+
+component model
+
+
+cc
+
+
+data model
+
+
+e
+
+
+a
+
+
+aa
+
+
+e
+
+
+behaviour model
+
+
+business cases
+
+
+deployment requirements
+
+
+  
+
+
+system constraints
+
+
+  
+
+
+domain model
+
+
+service modelusage model
+
+
+quality requirements
+
+
+  
+
+
+risk list
+
+
+  
+
+
+project scope
+
+
+  
+
+
+process requirements
+
+
+  
+
+
+glossary
+
+
+  
+
+
+glossary
+
+
+  
+
+
+glossary
+
+
+  
+
+
+fig. 7: overview of amdire content model in a simpliﬁed manner.
+
+
+4.2.3 customisation approach and tool support
+
+
+the operationalisation of amdire in a particular socio-economic context isdone by two means. in a tailoring approach, amdire is customised over twolevels of abstraction:
+
+
+1. organisational level: at the organisational level, we consider the company-speciﬁc customisation of amdire, i.e. the process integration into an in-
+
+
+the amdire approach21
+
+
+dividual organisational reference software process model such as rup (ora company-speciﬁc derivate).
+
+
+2. project level: at the project level, we consider the instantiation of amdire(initial artefact creation and decision for speciﬁc content items, assignmentof roles and deﬁnition of milestones), which is known as static tailoring,and the dynamic tailoring during project execution. the latter considersthe situation-aware creation of content items in dependency to project-speciﬁc situation that aﬀect the need to create particular items and onesthat aﬀect the possibility to create particular items. an exemplary setof project inﬂuences and their dependency to re artefacts can be foundin [43].
+
+
+both customisation at organisational level and at project level are intro-duced in [38]. in order to further operationalise amdire, we rely on toolsupport. this is currently prototypically realised with an extension of the
+
+
+fig. 8: screenshot of model-based tool support at the example of a contextdiagram.
+
+
+model-based case tool magicdraw 4 by deﬁning an uml proﬁle based onthe content model provided by amdire (see fig. 8). the tool extension isavailable online [37].
+
+
+4 http://www.nomagic.com
+
+
+22d. m´endez fern´andez, b. penzenstadler
+
+
+4.2.4 example application
+
+
+this section shows an illustrative excerpt of example models for a ﬁctitiousautomatic teller machine (atm). the example was developed for a require-ments engineering lecture at technische universit¨at m¨unchen following theartefact model of amdire and using the tool extension depicted in the previ-ous section. the complete example models can be obtained together with thetool extension from our online resources [37].figure 9 shows the exemplary system vision, the stakeholder model, thegoal model, and a scenario from one of the use cases created. the system
+
+
+stakeholder model
+
+
+usage model
+
+
+objectives & goals
+
+
+system vision
+
+
+fig. 9: illustrative excerpts of the atm example
+
+
+vision is the agreed-on vision of the atm that denotes the system border andthe most central features, like withdrawal and transaction. the stakeholdermodel includes business stakeholders and user groups in various hierarchies.the goal model includes business goals like higher customer satisfaction, usagegoals like visually handicapped should be able to use atm, and system goals
+
+
+the amdire approach23
+
+
+like high protection against fraud. the activity diagram illustrates the scenarioof a user withdrawing money from the atm.
+
+
+5 experiences, evaluations, and lessons learnt
+
+
+we have developed a number of artefact models, conducted case studies withdiﬀerent companies, and gained diﬀerent experiences. in the following, weﬁrst discuss the experiences we gained throughout the construction of artefactmodels. furthermore, we discuss the industrial evaluations we performed. thisshall give a picture of beneﬁts and shortcoming in the construction and theapplication of the various notions in artefact-based re. we ﬁnally concludewith a discussion of general lessons learnt in the construction and applicationof artefact orientation in industrially hosted environments.
+
+
+5.1 experiences in the construction of artefact-based re approaches
+
+
+over the last years, we have performed a series of diﬀerent research coop-erations in the ﬁeld of artefact-based re improvement where we developedcompany-speciﬁc artefact-based re approaches.the research approach that has proven feasible for us throughout a numberof projects is to follow a problem-driven exploration where we apply conceptsof empirical design science [70, 24] to build a company-speciﬁc re approachas part of an re improvement endeavour. figure 10 illustrates this researchapproach, separating two basic phases: the actual problem investigation, andthe design and validation phase.
+
+
+re improvement problem investigation
+
+
+design and validation of improvement transfer 
+
+
+artefact-based re improvement design and validation
+
+
+investigation of reartefacts
+
+
+investigation of stakeholdersand goals
+
+
+stakeholder & 
+
+
+goal elaboration
+
+
+goals
+
+
+&
+
+
+metrics
+
+
+art.-based 
+
+
+re analysis
+
+
+reporting & 
+
+
+decision analysisreport
+
+
+kick-oﬀ
+
+
+conceptualisation
+
+
+art.-based re
+
+
+construction
+
+
+art.-based re
+
+
+re-designedre conceptmodel
+
+
+implementedre approach
+
+
+design of process 
+
+
+integration
+
+
+evaluation in pilot
+
+
+evaluationreport
+
+
+artefact-based re reference model ("bisa")
+
+
+artefact meta model
+
+
+project planning 
+
+
+& decision
+
+
+validation
+
+
+training design
+
+
+releaserelease planning
+
+
+treatment design & design validation
+
+
+fig. 10: procedure for constructing artefact-based re approaches.
+
+
+brieﬂy summarised, we begin with a kickoﬀwhere the most importantstakeholders for the artefact model and their roles are identiﬁed, followed bysemi-structured interviews with these. subsequently, we review requirements
+
+
+24d. m´endez fern´andez, b. penzenstadler
+
+
+documents that have been produced by the company according to their cur-rent reference model and/or practice and compare these to our content model(gap analysis). the diﬀerences found in that comparison are discussed witha representative set of stakeholders in a workshop where we ask for reasonsfor speciﬁc elements we had expected but were not being documented and forextra elements that were documented but not present in our concept model.this allows for a ﬁrst evaluation where our reference model should deviate forthe later elaboration of the to-be model.on this basis, we develop an artefact model that is tailored to the needsof the company by performing a series of action research workshops, and weperform a pilot study and/or a comparative case study to evaluate whetherthe artefact model brings the desired improvement for their requirements engi-neering practice. a detailed explanation of our approach to construct artefactmodels is provided in [45].apart from the methodological experiences we made when building upvarious artefact models (introduced in [45]), for example, regarding the useof action research workshops to support knowledge transfer [71], we gainedexperience in structuring artefact models at a more syntactic layer.in [41], we already discussed ﬁrst experiences regarding the notion of arte-fact orientation and inferred a meta model for the paradigm. we discussedthat we need to consider diﬀerent views on artefact models depending oncompany-speciﬁc objectives. those objectives aﬀect the way artefact modelsare structured (e.g. by deﬁning a detailed concept model via a data model orby deﬁning the content model via a checklist). the models can have diﬀer-ent levels of detail according to how much detail the company wants in themodel, leading to more complexity, which aﬀects ease of use. consequently,an increased level of detail requires a higher learning curve by the applyingcompany. this trade-oﬀbetween higher level of detail and ease of use has tobe addressed.in table 2 (sect. 3.2), we selected previously developed artefact-based reapproaches and their characteristics. in table 3, we structure diﬀerent ap-proaches in a similar way and summarise the main objectives of the companyand their eﬀects on the establishment of the artefact models, as well as theeﬀort spent in their development (in person months).top to bottom in table 3, we can see
+
+
+– an increase in the details the artefact model incorporates by its underlyingcontent models. those range from detailed data models in case of the bisaapproach to support seamless modelling to artefact models that incorporatechecklists and selected concepts to clarify the notion of selected contents(e.g., use cases).
+
+
+– a decrease of the eﬀort spent in the construction of those models. takinginto account our own learning curve during the construction of those mod-els, we still have eﬀorts that diﬀer by a factor of 18. apart from light-weightversus heavy-weight models, this is mainly due to the up-front budgetingand time framing for the projects.
+
+
+the amdire approach25
+
+
+table 3: artefact models, their objective and resulting characteristics.
+
+
+approachobjectivescharacteristics & eﬀort
+
+
+#a bisa / quasarrequirements(capgemini ts)
+
+
+processintegrationandseamless modellingstructuremodelandcontentmodel deﬁned via a data modeland conformance constraints, 112pm
+
+
+#b genericcon-tentmodel(aramis)
+
+
+commonterminologyacrossthe40projectpartnersandaconceptmodel for tool support andguidance
+
+
+structure model and implementedconcept model / uml proﬁle, 20pm
+
+
+#c artefactmodelforwackerchemie
+
+
+template-oriented checklistto integrate re artefactsinto quality assurance
+
+
+structure model and templates, de-tailed concept model for use casesand the relation to test cases, andprocess elements, 8 pm
+
+
+#d powertrainartefactmodel(daimler)
+
+
+clarifying the notion of re-quirements contentsstructure model and detailed con-cept model without roles, mile-stones or other process elements, 6pm
+
+
+the simpler models developed in context of daimler (# d) and wackerchemie (#c) follow a similar objective where we established the artefact-basedre approach to clarify the basic re concepts and corresponding terminol-ogy. those models serve the purpose of giving a quick overview of elementarymodelling concepts such as use case models, their allocation to requirements-speciﬁc artefacts and their dependencies to surrounding development phases.at wacker, the process integration could explain the additional 2 pm. dur-ing this integration, we deﬁned roles and responsibilities, a quality assuranceof following those objectives can be observed, however, especially in the waythe artefact models were created. in scope were the structure models to de-ﬁne which content items were of general interest. for each content item, weprovided a brief guidance in form of a checklist and only speciﬁed the con-cept model in detail where necessary (e.g. for the use case model to deﬁne thedependency to testing).in contrast, the objectives followed by the two more detailed models (#aand #b) were mainly to support seamless modelling and tool support. theimplication for the artefact model was that the content models were speciﬁedin full via a data model to deﬁne which concepts and relations have to be con-sidered during the artefact creation. both concept models were also enrichedby a structure model to ease the process integration.the eﬀort in the detailed models mostly arose from:
+
+
+1. terminological and conceptual discussions at workshops, frequent actionresearch workshops to realise the concepts, and a longer review and re-lease process at the partners’ sites as the approaches had not anymore thecharacter of being a checklist.
+
+
+26d. m´endez fern´andez, b. penzenstadler
+
+
+2. the development of training and coaching material as well as tool support.3. the supervision of pilot projects and coaching during those pilot studies.4. more general, a missing willingness to organisational change we could ob-serve in the projects as project participants were confronted with complexmodels and needed a longer learning curve to understand the basic conceptsand tailoring mechanisms.
+
+
+5.2 evaluations: results from industrial case studies
+
+
+we performed a series of evaluations with the previously developed artefactmodels on which amdire relies. we complement this evaluation with a casestudy where we directly used amdire as a reference model to establisha company-speciﬁc artefact-based re approach following the principles de-scribed in the previous sect. 5.1.
+
+
+5.2.1 summary of previously conducted comparative case studies
+
+
+we have performed three comparative, industrial case studies that we brieﬂydiscuss with regard to their results. these studies each evaluated an artefact-based approach in direct comparison to the formerly used activity-based ap-proach and were performed with partners at siemens, bmw, and cassidian.table 4 provides the type of studies and their major results.in the following, we summarise those previously published case study de-signs and results relevant to the context of the article while details on the studydesigns and the full results can be taken from references listed in table 4.
+
+
+table 4: comparative industrial case studies.
+
+
+studyapproach partner results
+
+
+traﬃclightsmanagmentsys-tem
+
+
+#asiemens(2011)improvement of, inter alia, syntactic con-sistency and completeness, ease of use, ef-fectivity, structuredness and ease percep-tion [42]
+
+
+intelligentinfo-tainment systems(iis)
+
+
+#bbmw(2012)improvement of eﬀectivity, productivity,and adequacy [54, 52]
+
+
+unmannedair-craftsystem(uas)
+
+
+#bcassidian(2012)improvement of ease of use, eﬀectivity,unambiguousness and adequacy [54, 52]
+
+
+5.2.2 case study designs overview
+
+
+as shown in table 3 and in sect. 3 introducing the previously developedmodels, we initiated our case studies with smaller studies at capgemini ts
+
+
+the amdire approach27
+
+
+where we evaluated the approach in 12 internal pilot projects. as those studiesremain unpublished due to a non-disclosure agreement, and because we aimedat increasing the external validity, we applied our approach #a in nothersocio-economic contexts. after this evaluation, we continued the developmentof our artefact models leading to approach #b which, again, we evaluated totest its sensitivity in a socio-economic context.overall, we conducted three case studies where we evaluated two approaches(see table 4). we evaluated approach #a at siemens and approach #b atcassidian and at bmw. the objectives of the case studies were deﬁned, atthe time of conducting the studies, according to the improvement goals of theprojects. that is, in dependency to the deﬁned goals, we formulated the re-search questions and the evaluation criteria. however, the overall study designremained the same for all studies to allow for a comparability of the results.in each study, we conducted a series of workshops with our industry part-ners and speciﬁed the requirements for a selected subsystem following theestablished artefact-based re approach. we then conducted an assessmentworkshop with interviews where the subject evaluated the created re arte-facts as well as the way of working in direct comparison to the artefacts and theprocess dictated by the (activity-based) re reference model previously usedin the same context. for the assessment, we intentionally conducted one inter-view session with all involved participants to enable joint discussions amongthe participants and to get a ﬁnal agreement on the ratings (without checkingthe inter-rater consistency). in all case studies, we involved a requirements en-gineer (in case of siemens represented by the role of a product manager) andthe overall project lead responsible for broader project management activities.the rating was conducted by answering a questionnaire with a series ofopen and closed questions. the closed questions aimed at rating single crite-rion, such as ease of use on a likert scale while the open questions servedto justify the ratings. the choice of the criteria was performed in discussionwith the project participants according to the (improvement) goals and canbe taken from the kiviat diagrams in subsequent result sections.
+
+
+5.2.3 case study results overview
+
+
+in the following, we summarise the results from the previously conducted casestudies relevant to the context of this article.figure 11(a) shows the results from the internal rating at siemens. wecomplemented the internal rating with an external one where we called in aneutral person not involved in the re workshops to support a more unbi-ased evaluation. the results of the external rating are shown in fig. 11(b).both evaluations consider the process when applying the artefact-based reapproach as well as the quality in the created artefacts. although some crite-ria had a low consistency between the internal and external rating (e.g., thetraceability), the application of the detailed artefact model resulted in generalin a better support of creating syntactically consistent and testable results in
+
+
+28d. m´endez fern´andez, b. penzenstadler
+
+
+direct comparison to the previously used re reference model. the ease of use,however, was rated worse. details on the the full results can be taken from [42].
+
+
+(a) internal rating
+
+
+(b) external rating
+
+
+fig. 11: results from the case study with siemens.
+
+
+the replication studies at cassidian and bmw revealed that the detailedconcept model used to establish the tool infrastructure (see table 3) againsupported the syntactic consistency and completeness in the created artefacts.for both case study systems, we received positive feedback on the artefact-based approach and the evaluation results showed, in contrast to the studyat siemens, improvement in various aspects in the process for creating theartefacts, most importantly, the eﬀectivity and ease of use. our explanationfor the diﬀerent rating is that the model developed at capgemini ts has
+
+
+the amdire approach29
+
+
+a far more comprehensive concept model capturing all particularities of theappellation domain, which, in turn, implies a stronger learning curve.an overview of the rating of the closed questions from our automotivepartner bmw is depicted in fig. 12(a) and 12(b) and from our avionics partnercassidian in fig. 12(c) and 12(d). for reasons of illustration, the centre of thekiviat diagram is labelled again with the value of zero instead of one, sinceotherwise the data points would overlap in the center.
+
+
+(a) applicability evaluation at bmw(b) artefact evaluation at bmw
+
+
+(c) applicability evaluation at cassidian(d) artefact evaluation at cassidian
+
+
+fig. 12: results from the aramis case studies with bmw and cassidian.
+
+
+both partners seem to perceive the aramis artefact model as improve-ment in comparison to their previous reference model. the business units atboth companies have also incorporated the artefact model into their stan-dard. on ﬁrst glance, the rating was more critical for both their own and thearamis model by the automotive partner. when analysing the answers tothe open questions (the rationale for their ratings), we found that some of thereasons given for a speciﬁc rating were quite similar, but rated rather diﬀer-ently. for example, for traceability, both stated that their own reference modelprovided the possibility to link requirements, but did not provide the possi-bility to document a rationale. at the same time, their rating of 1 at bmwversus the higher rating of 5 at cassidian for the criterion traceability shows
+
+
+30d. m´endez fern´andez, b. penzenstadler
+
+
+a considerable diﬀerence in perceiving the importance of an artefact-basedreference model providing the possibility to document a rationale.details on the design and the results of the case studies conducted atcassidian and bmw can be taken from [54, 52].
+
+
+5.2.4 amdire case study
+
+
+apart from the previously conducted and published case studies where weevaluated the models on which amdire relies, we conducted one industrialstudy where we directly made use of amdire. in contrast to the previouslyconducted comparative case studies, however, we used amdire as a referencemodel to build a company-speciﬁc artefact model following the procedure il-lustrated in sect. 5.1 and published in detail in [45].the case study took place at wacker chemie, a company working in thechemical business with quarters in munich. the department with which weworked focuses on the engineering of development processes for standard aswell as custom software development in the company-speciﬁc operation pro-cesses and their production sites. the goal during the development of theartefact-based re reference model was to support traceability and testabilityof the re artefacts. after a series of analysis workshops and workshops to con-struct the artefact model (see [45]), we prepare the evaluation in three pilotprojects, which considered internal developments in the company. for reasonsof conﬁdentiality, we omit details of the projects and the involved subjectsand remain on an abstract description. as a preparation of the evaluation inthe pilot projects, we created a short presentation as internal training mate-rial and document templates for the new artefacts to be applied in the pilotprojects.the projects covered both standard software development for sap andcustom software development. as project participants served in total 8 em-ployees of which for each project one project lead and one developer werecomplemented by two process engineers involved in the development of theartefact-based re reference model. those latter two process engineers servedas coaches to train in a one-day workshop the people for applying the newartefact-based re reference model developed on basis of amdire. the studydesign was the same as the one from previously conducted case studies. thatis, we conducted workshops to create requirements speciﬁcations followingthe artefact-based re approach and concluded with an assessment where theproject participants rated the new re approach in direct comparison to theapproach previously used in same environment (for previous releases). for theassessment, the project participants were provided again a questionnaire. thisquestionnaire was similar to the one we used in the previous studies, with mi-nor modiﬁcations in wording. for each criteria we used in the rating, we askeda closed question where the participants should rate their agreement to a state-ment on a likert-scale from 0 to 6 followed by an open question where theparticipant could give a rationale for their rating. table 5 gives a condensedview on the closed questions.
+
+
+the amdire approach31
+
+
+table 5: questionnaire for the assessment (condensed)
+
+
+criteriastatement
+
+
+flexibilitythe re reference model allows for ﬂexibility.ease of usethe re reference model is easy to understand.eﬀectivitythe re reference model leads to the desired results.eﬃciencyi perceived the eﬃciency in the process as high.customisationthe re reference model is tailorable according toproject-speciﬁc situations of the company.process integrationthe re reference model is integrated into further de-velopment activities (e.g., testing) and within the lineorganisation.structuredness artefactsthe speciﬁcation documents are well-suited to be un-derstood respecting their structure by people not beinginvolved into the elaboration of the speciﬁcationssyntactic artefact qualitythe re reference model supports a high syntactic qual-ity in the created re artefacts w.r.t. consistency andcompleteness.traceability in artefactthe re reference model supports traceability withinre (e.g., through rationales) and between re and fur-ther disciplines.semantic artefact qualitythe re reference model supports semantically consis-tent and complete results.testability of artefactsthe re reference model supports testable re artefacts.
+
+
+in the following, we summarise the case study results followed by informalfeedback given during the evaluation.
+
+
+case study results figure 13 summarises the results from the case study andshows with a solid red line the rating given to the artefact-based re referencemodel and with a dashed blue line the rating given for the previously usedreference model where the re artefacts were underrepresented.the goals of improving the support of traceability and testability werereached and the participants positively rated also other aspects in the arte-facts created according to the new reference model. for instance, they saw anincreased structuredness in the re artefacts and rated the process integrationto be better than in the previous model as the artefact-based nature clearlydeﬁned, for example, roles and responsibilities.however, the ease of use was slightly worse than in the previous model,where the feedback indicated the higher level of detail in the reference modelto be the main reason. further feedback that supported this was that partic-ipants needed more detailed training as well as comprehensive tool support(going beyond the document templates) to better support the learning curvein applying the new reference model.
+
+
+discussion our case study at wacker supports our claimed general beneﬁts ofthe artefact-based approach. one remarkable feedback provided by the projectparticipants was, however, the strong need to support the application of themodel with tool environments, and detailed training material as, otherwise,the ease of use in the model is strongly hampered. this observation is in tune
+
+
+32d. m´endez fern´andez, b. penzenstadler
+
+
+0"
+
+
+1"
+
+
+2"
+
+
+3"
+
+
+4"
+
+
+5"
+
+
+6"
+
+
+flexibility"
+
+
+ease"of"use"
+
+
+eﬀec9vity"
+
+
+eﬃciency"
+
+
+customisa9on"
+
+
+process"integra9on"stucturedness"artefacts"
+
+
+syntac9c"quality"
+
+
+traceability"artefacts"
+
+
+seman9c"quality"
+
+
+testability"
+
+
+artib"re"
+
+
+previous"apr."
+
+
+fig. 13: results from case study at wacker.
+
+
+with the previously conducted case studies where the aramis model resultedto be better rated than the bisa model due to:
+
+
+1. providing a less complex structure model that does not focus too much onparticularities of single application domains, while
+
+
+2. hiding the remaining complexity of the underlying concept model with itsa directly applicable tool environment.although the amdire approach covers both characteristics, we have nowreached the point where we need to conduct external evaluations by unbiasedresearchers and practitioners not involved in the development of amdire (seealso the research method in the introduction on page 4). this will also show towhat extent amdire can be used by others and what exact eﬀects this willhave on aspects negatively rated at wacker (relating to the learning curve).to this end, we make publicly accessible the tools, the models, and theexamples as well as the evaluation templates related to amdire [37] andencourage researchers and practitioners to critically discuss and evaluate ourapproach in external contexts.the article at hand thus builds the ﬁrst step in the dissemination of ourresearch results not only into practical environments with isolated problemsand goals, but also back into the research community.
+
+
+the amdire approach33
+
+
+5.3 lessons learnt
+
+
+throughout the past six years of collaborating with industrial partners on im-proving their requirements engineering practices, we have collected a numberof lessons learnt, which we summarise in the following.
+
+
+tradeoﬀbetween high level of detail and usability. regarding more generallessons learnt in the ﬁeld of artefact orientation, we have observed more de-tailed artefact models to increase the quality of the results as they can givedetailed guidance on the concepts to use when specifying the contents. atthe same time, however, those more detailed models constrain the ease of useas they implicate a higher learning curve. obviously, simpler artefact mod-els have the opposite eﬀect. whereas they are easy to apply and understand,they cannot give detailed guidance on creating detailed, syntactically consis-tent contents. the only mitigation we see to this problem so far is to explicitlypoint out this tradeoﬀas early as possible and in case of focussing on detailedconcept models providing tool support right from the beginning.
+
+
+terminology. in every workshop we have held, the longest time was usuallyspent on terminology discussions. either there were diﬀerent terms availableand the discussion was which one of them should be given preference, for ex-ample context versus environment. or there was one term but diﬀerent stake-holders had diﬀerent interpretations of the concept it represented, for examplefunction. these discussions are time-consuming but unavoidable and crucialto make sure the artefact model will be accepted by all stakeholders later on.the mitigation strategy we followed was to explicitly reserve a time slot earlyon to establish a list of most important terms and deﬁnitions that have to beagreed on.
+
+
+maintainability. furthermore, we noticed the maintenance of established arte-fact models to be challenging. once detailed models are established, it is diﬃ-cult to integrate new concepts due to the complex content-related dependen-cies. we are not aware of any real mitigation to this point, but we suggest thatevery single modiﬁcation of the model should be justiﬁed, carefully planned,well documented, and explicitly evaluated in an own pilot project to detectpotential inconsistencies arising from the modiﬁcation in the model as earlyas possible.
+
+
+incorporate down-to-earth informality. the biggest lesson learnt, although notsurprising in itself but only in its extent, is the down-to-earth informalitythat is residing in the daily business of software systems development. thisis in contrast to the high quality requirements and constraints that have tobe adhered to by the ﬁnal products. there is a high demand for easy to useapproaches. the more details a concept model has, the more should be investedin pilot studies, coaching material, and guidelines (reﬂected, e.g., in the eﬀortspent for the development of the approach at capgemini ts).
+
+
+34d. m´endez fern´andez, b. penzenstadler
+
+
+support learning curves. one of the quality characteristics that has alwaysbeen rated worse for the new artefact-based approaches compared to the pre-viously residing approaches is eﬃciency. our assumption is that this is notonly due to the higher simplicity of the previous models but also that the pre-vious approaches are what the developers are accustomed to. consequently,anything that is diﬀerent from what they are used to will initially require aslightly higher eﬀort and might therefore easily leave the impression of de-creased eﬃciency. as a matter of fact, this strongly relates to a learning curvethat is always implied by new approaches [65]. we encountered two meansto support learning curves: continuous pilot studies and training and coach-ing. the ﬁrst includes a smooth integration of developed approaches via pilotphases, which we use to get additional feedback from the project environments,and extends to long-term studies to investigate the beneﬁts of improvementguidance, which we believe to build an essential building block for not onlyintroducing a new approach but for establishing it in a long run taking intoaccount the diﬀerent organisational cultures. unfortunately, the writing of ahandbook or the development of course material and trainings is often ne-glected. in that case the developers are likely to be resistant against innova-tions.
+
+
+tackle distrust right from the beginning. in projects, we have often encoun-tered a certain distrust against new approaches. the willingness to change israther low and a commonly known problem [40], i.e., the willingness to changeresults from the initial eﬀort required to even try a diﬀerent way of working,but also from general beliefs, experiences, expectations, emotions and desires.there is no universal silver-bullet to tackle this problem as, more generallyspeaking, the success of any improvement endeavour also depends on socialskills [61, chp. 10] and eventually on politics [47]. we experienced, however,the deep involvement of diﬀerent stakeholders (especially from project settings)right from the beginning of an improvement project and an honest communi-cation are the most important aspects to tackle distrust (see also [45]).
+
+
+6 conclusion
+
+
+this article described the fundamentals in artefact-based requirements engi-neering and presented the amdire approach that emerged from six yearsof experience with developing artefact models and integrating them into thesurrounding requirements engineering processes of various socio-economic con-texts. furthermore, we presented our evaluations in diﬀerent industrial casestudies and their replications in diﬀerent companies as well as lessons learntfrom these collaborations.a subset of our case studies were performed as comparative studies thatevaluate the application of the artefact-based re approaches in direct com-parison to the activity-based approaches previously used in the same environ-
+
+
+the amdire approach35
+
+
+ment. we could show how artefact orientation supports for detailed, consistentresults while supporting the ﬂexibility in the process which is especially impor-tant to re. we also discussed, however, that we continuously need to make atrade-oﬀbetween a detailed content model to support high quality results, andthe resulting higher learning curve that aﬀects the ease of use of artefact-basedre.our work has been incorporated into the daily requirements engineeringpractices of the companies with whom we collaborated. we strongly believethat this approach of carrying research into practice, adapting it to the busi-ness context, and establishing it in collaboration with the practitioners is asustainable way of promoting the use of current research results. we hope tocarry this work further into the requirements engineering community to en-courage the application of artefact-based approaches and to give an exampleof an artefact model that can be used in a variety of application domains.researchers can already build their fundamental, educational, and evidence-based work upon our contributions. our empirical results already give the op-portunity to steer their requirements engineering research in a problem-drivenmanner. practitioners can furthermore directly apply our model in their ownsocio-economic contexts with the awareness of the beneﬁts and shortcomingsof the incorporated concepts. we thus laid the ﬁrst fundamental, conceptual,and empirical basis for artefact-based re research. however, we do not claimthat our approach suits every situation and that our empirical results allowfor perpetually valid generalisations as we always focused with our action re-search case studies on speciﬁc socio-economic contexts. in fact, the researcharea needs further investigation and the case studies need further independentreplications. the reason for independent replications is that if we go to an-other company and help them improve their requirements engineering usingour model (which is the only reason for a company to hire us), this probably bi-ases the results towards our model as companies get free consulting during theprocess. therefore, we need an external third party to perform the validation.consequently, we encourage researchers and practitioners to critically discussour approach and to join us in the empirical evaluations of artefact-based re.
+
+
+future work. we are encouraging further replications of our comparativestudies in diﬀerent application domains and development contexts. anotherobjective for future work is to further facilitate the dissemination and empir-ical evaluation of our approach. we have developed a ﬁrst prototype for toolsupport as a proﬁle with a respective template in magicdraw that is freelyavailable [37]. we use our tools as an additional means for the disseminationand for continuous evaluations in pilot projects to gather more information anduser feedback while preparing the development of a more elaborated stand-alone tool.
+
+
+36d. m´endez fern´andez, b. penzenstadler
+
+
+a amdire content model
+
+
+the following appendix deﬁnes the content model of amdire in detail giving for eachcontent item a deﬁnition of the used concepts.the artefact model is speciﬁed using the following notational aspects of uml classdiagrams:
+
+
+– we denote the hierarchical structuring of the structure model with packages.– for the deﬁnition of the content model, we use a class diagram.– for content items that are crucial for only a speciﬁc application domain, but irrelevantfor another, we use the stereotype <<domain>>, such as business process models beingcrucial for the domain of business information systems, but irrelevant for the domain ofembedded reactive systems.
+
+
+a.1 context speciﬁcation
+
+
+the context speciﬁcation is depicted in fig. 14. it contains the project scope, the constraintsand rules, the stakeholder model, the business case, the objectives and goals, the domainmodel, and the glossary.
+
+
+fig. 14: the amdire context speciﬁcation.
+
+
+the amdire approach37
+
+
+a description of the content items is provided in table 6.
+
+
+table 6: content items in the context speciﬁcation.
+
+
+contentitemexempl.notationdescription
+
+
+project scopenaturaltextcontent item of the context speciﬁcation that consists of aproblem description and a statement of intent, i.e. a con-clusion of the objectives of a potentially resulting project.constraintsand rulesnatural text,graphsrestrictions that can inﬂuence each other either in form ofsupport or a conﬂict. we distinguish constraints as not ne-gotiable restrictions in the domain and rule, often referredas conditional standard procedures [27]stakeholdermodeluml actorhierarchy,tables
+
+
+stakeholders comprehend individuals, groups, or institu-tions having the responsibility for requirements and a majorinterest in the project [13], while user groups are a spe-cialisation of stakeholders with a particular proﬁciency andinvolvement in interaction with the system [31].businesscasenaturaltextdescribed and detailed using the additional elements ofcost, value, and risk. the business case satisﬁes the state-ment of intent from the project scope and rationalises thegoals in the content item objectives and goalsobjectivesand goalsgoal graphs(e.g.kaos)
+
+
+each goal, whether it is a business goal, a usage goal, ora system goal, is issued by a stakeholder. goals satisfy thestatement of intent [35], they build a hierarchy, and theycan inﬂuence each other in terms of conﬂicts, constraints, orsupport. each usage goal is related to a business goal andeach system goal to a usage goal. furthermore, system goalsdemand one or more quality attributes [4].domainmodeluml activitydiagrams orbmpn
+
+
+the external systems, that interact with the system un-der development, compose the domain model. for businessinformation systems, the domain model is extended with abusiness process model represented in various types of ac-tivities that need and produce business objects. a businessprocess model is a collection of all instances of the activitiesand their (causal) relations, performed by roles in order toproduce some outcome of value [36]. the activities can bedeﬁned as an abstract business process, a business task(business use case), or an atomic process step – the latterrepresents single atomic steps performed by a user group.glossarystructuredtextthis content item contains all important terms for the sys-tem under consideration and the respective project manage-ment, including their abbreviation, synonyms, and descrip-tion. it shows up as well in requirements speciﬁcation andthe system speciﬁcation as more terms are added over thecourse of the project.
+
+
+38d. m´endez fern´andez, b. penzenstadler
+
+
+a.2 requirements speciﬁcation
+
+
+fig. 15: the amdire requirements speciﬁcation.
+
+
+the requirements speciﬁcation is depicted in fig. 15. it contains the systemvision, the usage model, the data model, the service model, the functionalhierarchy, the quality requirements, the deployment requirements, the sys-tem constraints, the process requirements, and the risk list. a descriptionof the content items is provided in table 7.
+
+
+the amdire approach39
+
+
+table 7: content items in the requirements speciﬁcation.
+
+
+contentitemexempl.notationdescription
+
+
+systemvi-sionrichpic-turethe system vision comprehends the system context of thesystem under consideration, which is intended to realisea number of features. a feature is, in our understanding,a prominent or distinctive user-recognisable aspects, qual-ity, or characteristics of a system that is related to a spe-ciﬁc set of requirements, whose realisation enable the fea-ture [12, 31]. in addition to features, we specify an use caseoverview, i.e. a (potentially) graphical overview of the usecases speciﬁed in full in the usage model.usage modelstructuredtext,uml activitydiagrams
+
+
+this content item details the use case overview of the sys-tem vision in its use cases. we distinguish services anduse cases. both concepts are means to describe (black box)system behaviour. use cases describe sequences of interac-tion between actors (realising user groups) and the systemas a whole. more precisely, a use case represents a collectionof interaction scenarios, each deﬁning a set of interrelatedactions that either are executed by an actor or by the sys-tem under consideration [14]. for each use case, there isat least one functional scenario in which actors partici-pate. a scenario inherits from a requirement (not a wholeuse case) and each scenario is detailed into actions, whichcan be actor actions or system actions each processingdata objects. functional scenarios are triggered by events.furthermore, we include generic scenarios, which serve forthe satisfaction of quality requirements as they provide ameans to specify generic interactions between actors anda system not necessarily motivated by business processes,such as maintenance activities an administrator performs.servicemodelgraphsthis content item is relevant for the domain of business in-formation systems and speciﬁes services with a collabora-tion contract and a deﬁned quality of service. services de-scribe a logical representation of a use case, not necessarilyinvolving actors or concrete sequences of interaction. a ser-vice represents user-visible functions that the system shalloﬀer and is described via input/output-relations [25, 59],i.e., the mapping of (typed) inputs and outputs, both rep-resented as information system objects. the quality of ser-vice is described using service parameters (correspondingto metrics from the quality requirements) that have par-ticular service levels. if a collaboration contract speciﬁes aset of service (calls) as part of a causal relation, we use sce-narios within the functional scenarios of the usage model.data modelmboxumlclassdiagrams
+
+
+the data model contains all objects processed as part offunctions and interaction scenarios.
+
+
+40d. m´endez fern´andez, b. penzenstadler
+
+
+functionalhierarchygraphs,i/o-tablesthe user-visible functions equal the services from the bis-speciﬁc service model and realise the system actions fromthe usage model. functions are organised in a hierarchyto build the transition to the system speciﬁcation as theydescribe a logical representation of a system action and of-fered by typed interfaces. when a function is triggered, wecan optionally deﬁne modes, which we use in the systemspeciﬁcation for the deﬁnition of detailed behaviour mod-els. services, in turn, describe a complementary logical rep-resentation of a use case, not necessarily involving actorsor concrete sequences of interaction. they furthermore oﬀerinterfaces, which are typed according to the data objectsof the data model.qualityrequirementsnaturaltextquality requirements are assessed by measurements thatcan be either a normative reference (e.g. a gui style guide)or a metric. quality requirements constrain system actionsand can be satisﬁed by generic scenarios. we make use ofquality deﬁnition models as by deissenb¨ock et al. [16].deploymentrequirementsnaturaltextdeployment requirements describe demands towards thedeployment procedure, constraining the process design ofthe deployment, and the technical environment during ini-tial launch of the system or speciﬁc parts of it.systemconstraintsnaturaltextthe system’s constraints describe logical and technical re-strictions on a system’s architecture, its functionality bymeans of single atomic actions, and its quality by meansof assessable system quality requirements. we consider con-cepts that describe the transition to logical and technicalarchitecture layers acc. to [69]. hence, we see a system as agrey box rather than as a glass box, since we restrict sys-tems’ internals, but do not consider their logical structure byinteracting components, interface speciﬁcations, and func-tions.processrequirementsnaturaltextprocess requirements constrain the content and / or struc-ture of selected artefact types and the process model, i.e.,the deﬁnition of the milestones regarding time schedules,used infrastructure like mandatory tools, and compliance toselected standards and software process models.risk listnaturaltextthe risk list includes a description of all risks that arerelated to project-speciﬁc requirements. the conceptualisa-tion of requirements risks is considered on the basis of anartefact model [28, 29]. the requirements risks are impliedby the various types of requirements and we use the risklist as an interface to risk management. each risk is causedby a risk factor. a risk trend is composed by all riskfactors.
+
+
+the amdire approach41
+
+
+a.3 system speciﬁcation
+
+
+the system speciﬁcation is depicted in fig. 16. it contains the function model,the component model, the behaviour model, the state model, and the datamodel. a description of the content items is provided in table 8.
+
+
+fig. 16: the amdire system speciﬁcation.
+
+
+table 8: content items in the system speciﬁcation.
+
+
+contentitemexempl.notationdescription
+
+
+architectureoverviewcomponentdiagramthearchitectureoverviewincludesthecomponentoverview of the components as well as the major func-tions that summarize the functional hierarchy.functionmodelgraphs,tablesthe system functions oﬀered by the system interface re-alise the user-visible functions from the functional hier-archy. the system interface encompasses the ports detailedin the component model.
+
+
+42d. m´endez fern´andez, b. penzenstadler
+
+
+componentmodelcomponentdiagramthe component model describes the logical component ar-chitecture in detail including ports (building typed inter-faces) and channels over which components communicate.components can be decomposed into more further sub-components [10].behaviourmodelautomatathe behaviour of components is speciﬁed with by events,states and state transitions. the resulting state machinesspecify the behaviour and the used data elements of the datamodel.data modeluml classdiagram,dictionary
+
+
+we specify data elements of a certain type and their rela-tions as they result from the behaviour model. to this end,data elements reﬁne data objects from the requirementsspeciﬁcation and have a particular data type.
+
+
+the amdire approach43
+

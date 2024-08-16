@@ -12,8 +12,8 @@ from  langchain_core.documents.base import Document
 from src.rag.retriever.unstructured_data_loading.pdf_preprocessor import process_pdf
 
 
-PATH_DOCUMENTS = 'data/first_batch'
-PERSIST_DIRECTORY = 'chroma_db'
+PATH_DOCUMENTS = 'data/processed_pdfs'
+PERSIST_DIRECTORY = 'chroma_db_larger'
 EXAMPLE_FILE_PATH = 'data/first_batch/Rapid quality assurance with Requirements Smells.pdf'
 
 def create_db(path_to_documents: str = PATH_DOCUMENTS) -> Chroma:
@@ -38,7 +38,9 @@ def get_db():
 
 def add_doc_todb(doc_path):
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=500, chunk_overlap=50)
+        chunk_size=500, chunk_overlap=50,
+        strip_whitespace=True,
+        separators=["\n\n", "\n", ".", " ", ""])
 
     head, tail = os.path.split(doc_path)
 
@@ -61,24 +63,3 @@ def add_docs_from_folder(folder_path):
         doc_path = os.path.join(folder_path, doc)
         add_doc_todb(doc_path)
 
-
-"""For more refined document adding 
-from langchain.docstore.document import Document
-
-new_doc =  Document(
-    page_content="Wareconn is the best web platform for warranty maintenance.",
-    metadata={
-        "source": "wareconn.com",
-        "page": 1
-    }
-)
-
-
-Expertiment 1.
-number of items in the collection: 1964
-number of items in the collection: 2526
-Still one collection
-
-TODO: Experiment 2 
-Added a filtering function for text, so that it doesn't include content 
-"""

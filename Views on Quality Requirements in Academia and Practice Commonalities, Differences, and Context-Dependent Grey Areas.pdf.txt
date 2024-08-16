@@ -1,0 +1,1299 @@
+
+views on quality requirements in academia andpractice: commonalities, diﬀerences, andcontext-dependent grey areas
+
+
+andreas vogelsanga, jonas eckhardtb, daniel mendezc, moritz bergerd
+
+
+atechnische universit¨at berlin, germanybtableau software, germanycblekinge institute of technology, sweden, and fortiss gmbh, germanyduniversit¨at bonn, germany
+
+
+abstract
+
+
+context: quality requirements (qrs) are a topic of constant discussions bothin industry and academia. debates entwine around the deﬁnition of qualityrequirements, the way how to handle them, or their importance for projectsuccess. while many academic endeavors contribute to the body of knowledgeabout qrs, practitioners may have diﬀerent views.in fact, we still lack aconsistent body of knowledge on qrs since much of the discussion around thistopic is still dominated by observations that are strongly context-dependent.this holds for both academic and practitioners’ views. our assumption is that,in consequence, those views may diﬀer.objective: we report on a study to better understand the extent to whichavailable research statements on quality requirements, as found in exemplarypeer-reviewed and frequently cited publications, are reﬂected in the perceptionof practitioners. our goal is to analyze diﬀerences, commonalities, and context-dependent grey areas in the views of academics and practitioners to allow adiscussion on potential misconceptions (on either sides) and opportunities forfuture research.method: we conducted a survey with 109 practitioners to assess whether theyagree with research statements about qrs reﬂected in the literature. based ona statistical model, we evaluate the impact of a set of context factors to theperception of research statements.results: our results show that a majority of the statements is well respected
+
+
+email addresses: andreas.vogelsang@tu-berlin.de (andreas vogelsang),jonaseckhardt@googlemail.com (jonas eckhardt), daniel.mendez@bth.se (daniel mendez),moritz.berger@imbie.uni-bonn.de (moritz berger)1this is the accepted manuscript of:vogelsang, a., eckhardt, j, mendez, d., berger, m. (2020): views on quality requirementsin academia and practice: commonalities, diﬀerences, and context-dependent grey areas.this work is licensed under a creative commons attribution-noncommercial-noderivatives
+
+
+arxiv:2002.02793v1  [cs.se]  7 feb 2020
+
+
+by practitioners; however, not all of them. when examining the diﬀerent groupsand backgrounds of respondents, we noticed interesting deviations of perceptionswithin diﬀerent groups that may lead to new research questions.conclusions: our results help identifying prevalent context-dependent diﬀer-ences about how academics and practitioners view qrs and pinpointing state-ments where further research might be useful.
+
+
+keywords:quality requirements, non-functional requirements, contextfactors, requirements engineering, survey, empirical study
+
+
+1. introduction
+
+
+requirements engineering (re) constitutes an important success factor intoday’s software development projects and is often understood as a determinantof productivity and (product) quality [1]. despite its importance, the disciplineremains diﬃcult to investigate due to its inherent complexity and its dependencyto the various inﬂuences by the particularities of industrial sectors, domains, andindividual project environments. this holds especially for quality requirements(qr), what they are, and how they should be handled in practice.qualityrequirements are often considered separately to functional requirements in re-search [2, 3] and practice [4, 5, 6, 7] alike as they tend to be treated diﬀerentlyalong their elicitation, documentation, and validation. yet, there is still no com-mon agreement about what quality requirements exactly are [8] despite the factthat there is even an iso standard [9] with a deﬁnition. the discourse aboutquality requirements is still dominated even by the question how to diﬀerentiatethem from functional requirements [10, 8].in empirically-informed work [11, 12], we pointed out that conceptual con-tributions to re are still heavily steered by conventional wisdom rather thanby empirical observations. in fact, we still do not exploit the full potential ofempirical software engineering principles in re to reveal robust theories in tunewith practical problems. it is per se diﬃcult to provide proper empirical ﬁguresthat could demonstrate, for instance, how theoretical concepts are reﬂected inindustrial practices or, the other way around, how industry practitioners’ ex-periences, observations, and opinions can ﬁnd their way back into academiccontributions. this existing gap between academia and industry holds espe-cially for fuzzy notions as the ones reﬂected by quality requirements. while itis certainly not our intention to marginalise existing empirical work in re, it isreasonable to say that much of the existing body of knowledge in re remainsstill a collection of either isolated, loosely connected hypotheses (e.g., empir-ical insights from a case study in a very speciﬁc context) or hypotheses thatremain too universal (i.e., completely neglecting the context regardless whetherintentional or not). conclusions are thus either hardly generalizable or easilyfalsiﬁable (in a speciﬁc context). examples for existing isolated, yet empiricallygrounded, observations are:
+
+
+• qrs are mainly elicited by architects [4]
+
+
+2
+
+
+• functional requirements are often labeled as qrs [13]
+
+
+• testing qrs is impossible [5]
+
+
+motivated by this overall situation, we want to better understand the extentto which available research statements on quality requirements2 are consistentwith the perceptions held by practitioners.in particular, we aim at understanding the extent to which the views andperceptions held by practitioners are corroborated by those of academics. moreprecisely, we want to understand how well research statements frequently re-ferred to in academic works are perceived by practitioners in their respectivecontext. questions we opt for answering are:
+
+
+• what is the agreement of practitioners with existing research statementsabout qrs?
+
+
+• which context factors (e.g., industrial sector, company size, experience)inﬂuence the agreement of practitioners with research statements aboutqrs?
+
+
+• can we assign a speciﬁc perception of qrs to stereotypical groups ofpractitioners?
+
+
+our hope is that an increased understanding of the practitioners’ beliefs andviews helps us identifying diﬀerences, commonalities, and context-dependentgrey areas and pinpoint to existing (and regularly cited) statements where fur-ther context-dependent research would be useful.the paper makes the following contributions:
+
+
+1. we deﬁne a set of 21 research statements about quality requirements froma total of 17 exemplary and commonly cited research papers from the reresearch community.
+
+
+2. we survey practitioners from several application domains and businesscontexts regarding their agreement with the previously identiﬁed state-ments about quality requirements. the survey results suggest that prac-titioners hold strong, and diverse opinions, and that some results inspiremore passion and dissension than others.
+
+
+3. we provide a statistical model that allows evaluating the impact of speciﬁccontext factors on the perception of research statements. the results ofthe evaluation show that the perception of some research statements is
+
+
+2please note that in our study, we intentionally exclude all non-functional properties thatdo not address system-speciﬁc properties, such as process-related requirements. hence, weintentionally use the term “quality requirements” instead of “non-functional requirements” tomake explicit that we exclusively focus on non-functional characteristics of a system underconsideration. see also section 2 for further information., as found in academic peer-reviewedand frequently cited publication
+
+
+3
+
+
+homogeneous across diﬀerent development contexts while the perceptionof others strongly depends on the context.
+
+
+4. we provide a detailed discussion of the results and contrast them with theoriginal studies from which the statements emerged.
+
+
+our intention is not to criticize selected academic manuscripts but to increaseour understanding on (1) how much practitioners’ views diﬀer with respect totheir daily working context, and (2) what we, the research community, canlearn from it. our vision is to contribute to reducing the gap between industrialpractice and problems, and academic contributions and solution proposals.relation to previous publications: in the past, we have conducted anumber of studies in which we investigated the perception [14] and use [13, 15] ofquality requirements by practitioners. the research questions, results, and theunderlying data presented in this article are original in the sense that they havenot been addressed in a previous analysis and consequently in a publication.the only commonality between the study at hand and one of our previous pub-lications [14] is that the data underlying these studies have been collected usingthe same questionnaire (but diﬀerent parts of it). more speciﬁcally, we designeda questionnaire on personal experiences to understand whether quality require-ments and functional requirements are handled diﬀerently in practice. thatmeans, our previous study [14] and the study presented in this article share thesame subject population but the analyzed questions are completely disjoint. inour 2017 paper [14], we analyzed the answers to questions in questionnaire sec-tions 3–6, while in the article at hand, we analyze the questions from section 7of the questionnaire. the full questionnaire is part of our additional materialpackage disclosed in our replication package [16].
+
+
+2. background
+
+
+in this section, we provide background and related work on qr classiﬁcationsand on the implications of qrs on software development.
+
+
+2.1. qr/nfr researchthe term quality requirement and the closely related term non-functionalrequirement (nfr) are subject to constant discussions and even misunder-standings in academia and practice. in fact, there seems to be an agreementin academia that the term “non-functional requirements” should be generallyavoided when characterizing requirements. in his seminal paper, glinz [8] per-forms a comprehensive review on the existing deﬁnitions related to the term“non-functional requirement”. he highlights three problems: (1) a deﬁnitionproblem, i.e., nfr deﬁnitions have discrepancies in the used terminology andconcepts, (2) a classiﬁcation problem, i.e., the deﬁnitions provide very diﬀerentsub-classiﬁcations of nfrs, and (3) a representation problem, i.e., the notion ofnfrs is representation-dependent. similarly, pohl [17] discusses the misleading
+
+
+4
+
+
+requirement
+
+
+project 
+
+
+requirement
+
+
+product 
+
+
+requirement
+
+
+process 
+
+
+requirement
+
+
+attributefunctional 
+
+
+requirement
+
+
+constraint
+
+
+performance
+
+
+requirement
+
+
+specific quality
+
+
+requirement
+
+
+“non-functional requirement”
+
+
+figure 1: requirements taxonomy according to glinz [8].
+
+
+use of the term “non-functional” and argues to use, instead, “quality require-ments” for product-related nfrs that are not constraints. in this manuscript,we also rely on this distinction and use “quality requirement” when particu-larly referring to product-related non-functional properties. glinz proposes arequirements classiﬁcation without even using the term nfr at all. however,he also recognizes the prevalent use of the term nfr and deﬁnes it as a “re-quirement that is an attribute of or a constraint on a system” (see figure 1).as stated earlier, in our work, we are interested in product-related (quality) re-quirements. in the taxonomy of glinz, our characterization covers performancerequirements and speciﬁc quality requirements. however, instead of using glinz’sterm attribute, we follow the suggestion of pohl [17] and use the term qualityrequirements throughout this manuscript. broy [10] takes a completely diﬀerentview towards categorizing requirements. he points out that there is no precisedeﬁnition of both terms functional and non-functional, and he avoids both inhis taxonomy. he argues that a requirements categorization should rather dif-ferentiate whether a requirement relates to the system’s interface, its internalarchitecture, its internal state, or whether it prescribes representational aspects.despite the observation that recent academic taxonomies seem to avoid us-ing the term “non-functional”, too, the term is still widely used in practiceand also in scientiﬁc papers, mostly in the sense of everything besides the func-tional requirements. eckhardt et al [13] analyzed 11 requirements speciﬁcationsfrom industrial environments with a particular focus on requirements labeledas “quality” or “non-functional”. they found that most requirements speciﬁ-cations separate quality requirements from functional requirements in the doc-umentations. however, when analyzing the quality requirements in detail, theyfound that many requirements labeled as qr describe system behavior and,thus, could as well be labeled as functional requirements. jung et al. [18] per-formed a study on the adequacy of the quality characteristics deﬁned in theiso/iec 9126 standard [19]. they asked 75 study subjects to rate a given soft-
+
+
+5
+
+
+ware product in terms of a number of quality sub-characteristics deﬁned in thestandard. afterwards, they clustered the sub-characteristics based on correla-tion between the given answers. their results reveal ambiguities in the way thatiso/iec 9126 is structured in terms of characteristics and sub-characteristics.for example, their results imply that four speciﬁc sub-characteristics actuallymeasure the same intrinsic concept, which is a mixed concept of maintainabilityand portability.one may argue that discussing requirements categorization is an academicgimmick. however, there is empirical evidence that the categorization inﬂuenceshow requirements are elicited, documented, and validated in practice [4, 5, 6, 7].in an earlier work [14], we found that the development process for requirementsof the two classes strongly diﬀers (e.g., in testing). we obtained these ﬁndingsbased on a survey with practitioners to which we will also refer in the workpresented here. we further found that many reasons are based on assumptionsrather than on evidence. as a matter of fact, up to now, there does not exista commonly accepted approach for the qr-speciﬁc elicitation, documentation,and analysis [5, 7]; qrs are usually described vaguely [5, 4], remain often notquantiﬁed [7], and as a result remain diﬃcult to analyze and test [4, 5, 7].furthermore, qrs are often retroﬁtted in the development process or pursuedin parallel with, but separately from, functional requirements [6] and, thus, areimplicitly managed with little or no consequence analysis [7]. this limited focuson qrs can result in the long run in high maintenance costs [7].all these studies indicate, so far, that qrs are not well integrated in practi-cal software development processes and furthermore that several problems areevident with qrs. in this paper, our goal is to analyze the discrepancy betweenperceptions of qrs in academia and practice.
+
+
+2.2. research about perception of research statements in software engineeringin our work presented here, we want to analyze the perception of practi-tioners on statements in research about quality requirements. we call thosestatements research statements. analyzing the appraisal of practitioners withrespect to some normative statements has been targeted by a number of otherauthors as well.devanbu et al. [20], for instance, report on a case study on the prior beliefs ofdevelopers at microsoft, and the relationship of these beliefs to actual empiricaldata on the projects in which these developers work.their results suggestthat programmers do indeed have very strong beliefs on certain topics, thattheir beliefs are primarily formed based on personal experience rather than onﬁndings in empirical research, and that beliefs can vary with each project, but donot necessarily correspond with actual evidence in that project. they concludethat more eﬀort should be taken to disseminate empirical ﬁndings and thatmore research is needed on the relation between belief and evidence in softwarepractice.rainer et al. [21] used content analysis to analyze a group discussion aboutsoftware process improvement (spi) between developers within one companyand compare the respondents opinion with four research papers on spi. the
+
+
+6
+
+
+main ﬁnding from this analysis is that there is an apparent contradiction be-tween developers saying that they want evidence, and what developers willaccept as evidence. this main ﬁnding is related to issues such as hierarchies ofknowledge, the value of empirical evidence to practitioners, local expertise, anincremental approach to improvement that may develop familiarity with thoseimprovements, and diﬀerences between developers and managers with regardsto their interest in the process. a serious implication follows from the mainﬁnding: even if researchers could demonstrate a strong, reliable relationshipbetween software process improvement and organisational performance, therewould still be the problem of convincing practitioners that the evidence appliesto their particular situation.the work at hand is inspired by the work of devanbu et al. [20], as it isthe ﬁrst work to raise the question of the discrepancy between evidence andbelief in software engineering and its empirical investigation. our work followstheir line of reasoning but concentrates on research statements related to qrs.in addition, we perform an in-depth analysis of the inﬂuence of several contextfactors on the practitioners’ perceptions in order to uncover research statementsthat may be valid in certain contexts only. to the best of our knowledge, thepaper at hands is the ﬁrst attempt to empirically investigate research statementsabout qrs and their perception in practice.
+
+
+3. study design
+
+
+our overall goal is to analyze the extent to which practitioners agree withstatements on quality requirements emerging from academic research. by in-vestigating potential mismatches between academic statements, perceptions ofpractitioners, and the speciﬁc context of practitioners, we hope to be able toidentify research gaps for speciﬁc contexts, potential misconceptions that raisethe need for further investigations, or statements that are only true in certaincontexts. our study consisted of the following steps:
+
+
+1. identify research statements.we identiﬁed and extracted a set of research statements about qualityrequirements by browsing the literature from relevant journals and con-ferences.
+
+
+2. collect feedback via a survey.we integrated all found research statements into an online survey whererespondents from industry should state their general agreement with thestatements. we sent out the survey to a broad spectrum of practitionersthat work with requirements in general.
+
+
+3. analyze the data.given the responses, we applied a statistical model on each research state-ment that relates the level of agreement to speciﬁc context factors (de-scribed in section 3.3). the model allows calculating probabilities of a
+
+
+7
+
+
+higher agreement or disagreement given a respondent characterized bysome context factors.
+
+
+given these steps, our study approach is a form of qualitative survey [22].qualitative surveys particularly study diversity (not distribution) in a popula-tion in a cross-sectional manner. they do not aim at establishing frequencies,means, or other parameters but at determining the diversity of some topic of in-terest within a given population. this type of survey does not count the numberof people with the same characteristic (value of variable) but it establishes themeaningful variation (relevant dimensions and values) within that population.although this type of survey is coined as qualitative survey, it has to be notedthat we use a statistical (i.e., quantitative) model to analyze the answers of thesurvey (see section 3.4).
+
+
+3.1. identiﬁcation of research statements
+
+
+in the context of our study, a research statement is an assertion about qual-ity requirements that has been stated in a high-quality, scientiﬁc publication.research statements usually correspond to observations that single researchers(the authors of the papers) made in a speciﬁc context, even if it is not necessar-ily made explicit in the papers. hence, research statements do not necessarilyneed to be true or commonly accepted by the whole community, but we expectthat the research statements considered in our study to show a certain degree ofscientiﬁc rigor proven by the peer-review process and by a considerable numberof citations.our goal is to use a number of research statements as a vehicle to assessthe diﬀerences and commonalities between the perception of academics andpractitioners on the topic of quality requirements. to this end, we identiﬁedresearch statements on qrs by analyzing existing empirical studies concerningnon-functional requirements or quality requirements. this process was not in-tended to be systematic in the sense of conducting a secondary study such asa systematic literature review, because we did not aim for a complete coverageof all research statements. instead, we analyzed the relevant literature knownto us to extract an exemplary set of research statements covering diﬀerent retopic areas. the selection of the research statements was, in that sense, op-portunistic. most statements were identiﬁed in the introduction and conclusionsections of the considered papers. we further validated and discussed the re-search statements in the team of authors to strengthen our conﬁdence that thestatements are reﬂected correctly. in total, we extracted 21 research statementsabout quality requirements. please further note that although the extractedstatements are based on publications, they are not necessarily taken verbatimand they do not necessarily reﬂect the authors’ opinions. finally, at a laterphase of the study, we compared the identiﬁed research statements also againstrecent publications that we found in major venues on requirements engineeringand software engineering (in particular, the conferences re, refsq, esem,and icse) in the time between 2010 and 2016. more speciﬁcally, we analyzed
+
+
+8
+
+
+all publications categorized as concerning quality requirements in another litera-ture study [23] and looked for statements that either support or oppose researchstatements from our initial list of research statements. table 1 summarizes theresearch statements we consider for this study and adds further publicationssupporting or opposing the statements. for a better overview, we clustered theresearch statements according to the diﬀerent re activities.
+
+
+3.2. subject selection
+
+
+with our study, we targeted at practitioners who work with requirements.this includes practitioners who write requirements (e.g., requirements engi-neers), practitioners whose work is based on requirements (e.g., developers ortesters), and practitioners who manage projects or requirements. for invitingpractitioners to participate, we did not select a speciﬁc closed group of practi-tioners but, instead, contacted as many practitioners as possible via the authors’personal contacts from previous collaborations, via public mailing lists such asre-online, and via social networks. our survey was further conducted anony-mously. since we were not able to exactly control who is answering the survey,it was especially important to follow kitchenham and pﬂeeger’s [37] advice onthe need to understand whether the respondents had enough knowledge to an-swer the questions in an appropriate manner. for this, we excluded data fromrespondents who answered that they do not use requirements speciﬁcations atall or respondents who stated that they did not know how requirements arehandled in their company. we oﬀered respondents the chance to leave an emailaddress if they were interested in the results of the survey.
+
+
+3.3. data collection
+
+
+we integrated the survey questions of this paper into a larger survey aboutgeneral qr practices using the enterprise feedback suite efs survey fromquestback. we published the results of this larger study in a previous paper [14].however, in the previously published paper, we did not report on the resultsor discuss any of the questions from this study. we started our data collectionon february 4th, 2016 and closed the survey on february 22nd, 2016. in thefollowing, we introduce the main elements of our instrument used.the fullinstrument is part of our additional material package disclosed in our replicationpackage [16].
+
+
+3.3.1. subject matter clariﬁcationin the survey questionnaire, we wanted to ensure that all respondents have asimilar understanding about the subject matter. therefore, we ﬁrst introduced acommon terminology (“with nfrs, we refer to those requirements that addressquality characteristics of a product or system (like availability or performance)”)and further narrowed down the scope via speciﬁc questions on a set of speciﬁcquality characteristics.in the survey, we intentionally used the term “non-functional requirements” when referring to “quality requirements” (excludingprocess and project requirements as well as constraints), because the term nfr
+
+
+9
+
+
+table 1: identiﬁed research statements considered in our study with publications supporting(pro) and opposing (con) the statements.
+
+
+idresearch statementprocon
+
+
+general
+
+
+g1the application domain strongly inﬂuences the rel-evance of individual types of qrs.[13, 24]
+
+
+g2many qrs describe functional aspects of a system.[13][25]
+
+
+g3qrs are sometimes ignored.[5]
+
+
+g4architects do not share a common terminology fortypes of qrs.[4, 26,27][28]
+
+
+g5only few qrs deal with architectural aspects.[13][29, 30]
+
+
+elicitation
+
+
+e1in requirements elicitation, the focus is on frs,not on qrs.[5,4,31, 24,32, 27]
+
+
+e2many qrs remain undiscovered.[5, 24,27]
+
+
+e3qrs are mainly elicited by architects.[4, 28][29, 26]
+
+
+speciﬁcation
+
+
+s1qrs are often not documented.[4, 24][28, 26]
+
+
+s2the documentation of qrs is not always precise.[4,7,33, 25]
+
+
+s3qrs are often described in too vague terms.[5, 25]
+
+
+s4thedocumentationofqrsusuallybecomesdesynchronized.[4, 34,27]
+
+
+s5functional requirements are often labeled as qrs.[13, 35,24]
+
+
+s6qrs are often speciﬁed by referencing a standardor a legislative text.[13, 28]
+
+
+testing
+
+
+t1only few types of qrs are validated at the end ofthe project.[4][28]
+
+
+t2qrs are satisﬁed at the end of the project.[4, 35,36]
+
+
+t3most qr types are diﬃcult to test properly.[5,7,33, 27]
+
+
+t4testing qrs is time-consuming.[5]
+
+
+t5testing qrs is impossible.[5]
+
+
+mgmt.
+
+
+m1 qrs are often not suﬃciently prioritized.[5, 31][28]
+
+
+m2 software architects do not use a speciﬁc tool forqr management.[4]
+
+
+10
+
+
+is widely used in practice (see also section 2.1). in the remainder of this paper,we will exclusively use the term “quality requirements”.
+
+
+3.3.2. demographics and context factorswe collected demographic data from the respondents to be able to interpretand triangulate the data with respect to diﬀerent contexts of the respondents.the elicitation of demographic data included the following context factors:
+
+
+• role in project: free text answers that we afterwards categorized tothe project roles manager, requirements engineer, architect, test engineer,developer, and other.
+
+
+• experience: choice between less than 3 years of experience in dealingwith requirements (novice) and more than 3 years of experience (senior).
+
+
+• company size: choice between less than 250 employees (small com-pany), between 250 and 2,000 employees (medium company), and morethan 2,000 employees (large company).
+
+
+• typical project size: choice between less than 10 employees (smallprojects), between 10 and 50 employees (medium projects), and morethan 50 employees (large projects).
+
+
+• geographical team distribution: choice between all team membersin one location, team members distributed over several locations in onecountry, and team members distributed over several locations in severalcountries.
+
+
+• development process paradigm: choice between rather agile, mixed,rather plan-driven.
+
+
+• industrial sector: free text answers that we afterwards categorized tothe sectors telecommunication, automotive, automation, avionics, ﬁnance,healthcare, public, and other.
+
+
+• system type: choice between embedded systems, business informationsystems, consumer software, and hybrid systems.
+
+
+• role of requirements speciﬁcations in the company: choice be-tween create and use for in-house development, create and an externalcompany is responsible for the development, use as a subcontractor fore.g. development or testing, and don’t use.
+
+
+• documentation of qrs: choice between yes (qrs are documented)and no (qrs are not documented).
+
+
+to better understand the participant’s focus and project context, we addi-tionally asked the respondents to evaluate the importance of diﬀerent types ofqrs in their projects. the respondents were asked to assess the importance
+
+
+11
+
+
+of quality factors taken from iso/iec 25010 [9] for their typical projects ona 5-point likert scale with the values “very important”, “important”, “mod-erately important”, “slightly important”, “not important”. we added anothervalue “don’t know” that allows respondents to skip the answer if they can ordo not want to answer the question. the quality factors that we asked for werefunctional suitability, performance/eﬃciency, compatibility, usability, reliability,security, maintainability, and portability.
+
+
+3.3.3. research statement agreementfinally, we presented all research statements to the respondents and askedthem to state their agreement with the research statement: “please consideryour experiences: to which degree do you agree with the following statements?”the research statements were presented in an arbitrary order that was diﬀerentfor all respondents.the respondents could express their agreement on a 5-point likert scale with the values “strongly agree”, “agree”, “neither agreenor disagree”, “disagree”, “strongly disagree”. we added another value “don’tknow” to allow respondents to express that they have no opinion about or cannotanswer the question.the last category was included to address the diversebackground of respondents—not all respondents will understand all researchstatements.
+
+
+3.4. data analysisto asses the relation between the agreement with the research statementsand the context factors, we set up a regression model that we applied to allthe research statements. for this purpose, the collected data has to be codedappropriately. the following representation focuses on one research statementto the research statement of respondent i from 1 (strongly agree) to 5 (stronglydisagree), xi is the vector of context factors, and n is the number of respon-dents. each context factor contained in xi is coded according to its scale. forthe binary context factors, we use usual dummy variables (i.e., auxiliary vari-ables taking the value 0 or 1). they are experience [0: novice, 1: senior] anddocumentation of qrs [0: no, 1:yes]. for the categorical context factors, weuse an eﬀect coding scheme, where the eﬀect of the last category is ﬁxed, re-spectively. the coding of two examples with three categories is company size[(1,0): small, (0,1): medium, (-1,-1): large] and development process paradigm[(1,0): rather agile, (0,1): mixed, (-1,-1): plan-driven]. for the other categori-cal context factors it works in the same way. for simplicity, the answers on theimportance of quality factors were treated as numeric variables in the model.in the regression model, the response to the research statement is treatedas an ordinal variable, that is, one explicitly uses the ordering of the variable.an important class of ordinal regression models is the class of cumulative mod-els [38], [39]. the most prominent one is the proportional odds model, which isapplied here. the basic form of the model is given by
+
+
+logp(yi ≤r|xi)
+
+
+p(yi > r|xi)
+
+
+= θr + x⊤i β,r = 1, . . . , 4 ,(1)
+
+
+12
+
+
+where θr are category speciﬁc threshold parameters and β is the vector of regres-sion coeﬃcients (estimated impact of the context factors) that is independent ofthe category r. consistent estimates of the regression coeﬃcients are obtainedby maximizing the log-likelihood function by means of the fisher scoring algo-rithm [40]. estimation was carried out by the statistical software r [41] usingfunction vglm() of the add-on package vgam [42], [43].
+
+
+3.4.1. interpretation of the parametersin equation (1) the threshold parameters θr deﬁne the general preference forthe categories of a research statement (the general level of agreement) and theparameters β determine the shifting of the agreement distribution by the contextfactors. in detail, let us consider two respondents with context factors x1 andx2 and the corresponding cumulative odds γ(r|x1) = p(y ≤r|x1)/p(y > r|x1)and γ(r|x2) = p(y ≤r|x2)/p(y > r|x2).simple derivation shows that theproportion of the cumulative odds for the two respondents is given by
+
+
+γ(r|x1)γ(r|x2) = exp (x1 −x2)⊤β,
+
+
+and therefore does not depend on the category r. consequently, the interpre-tation of parameters does not depend on the category. more concise, exp(βj)represents the factor by which all the cumulative odds p(y ≤r|x)/p(y > r|x)change if context factor xj increases by one unit, while all the other contextfactors remain constant. for binary context factors, exp(βj) corresponds to thediﬀerence between the two groups, for example, senior compared to novice. forcategorical variables with eﬀect coding, exp(βjk) corresponds to the diﬀerencebetween group k and a “middle group”, respectively. accordingly, each estimatehas to be interpreted as the eﬀect of one group compared to a “middle eﬀect”.if exp(βj) is positive, the distribution is shifted to the left, which meansmore agreement. on the other hand, if exp(βj) is negative, the distribution isshifted to the right, which corresponds to less agreement.
+
+
+3.4.2. hypothesis testsstandard errors to examine the signiﬁcance of each context factor can be ob-tained by asymptotic theory. for a detailed description on inference techniques,see [40] and [44]. it is well known that the covariance of the estimates ˆβ isasymptotically given by the expected fisher matrix [40]. this allows us to usewald tests [45] for the null hypotheses h0 : βj = 0 against h1 : βj ̸= 0. a waldtest is a classical approach to hypothesis testing of coeﬃcients in a regressionmodel. the test provides a p-value and a test statistic for diﬀerences in thecoeﬃcients for diﬀerent context factors. small sample sizes for certain contextfactors may lead to larger conﬁdence intervals when the wald test is applied andthus increase the likelihood of p-values above the signiﬁcance level. in section 4,we give the results of the wald tests based on signiﬁcance (type i error) levelα = 0.05.
+
+
+13
+
+
+3.5. validity proceduresto strengthen the conﬁdence in our results, we performed a few validityprocedures in advance. to ensure that our respondents are really practitionerswe explicitly stated that the survey is aimed at addressing practitioners in theintroductory text of the survey. in addition, we removed those respondents fromthe population that stated that they do not deal with requirements.to lower the threat of biased answers of our respondents, we conducted thesurvey anonymously and asked additional questions to characterize the contextof the respondents.to lower the threat that respondents misunderstand or misinterpret par-ticular questions in the questionnaire, we conducted a pilot phase with threepractitioners in which we tested and improved the instrument used, but also toevaluate the envisioned data analysis techniques based on the pilot data (whichwe deleted again prior to starting the survey).
+
+
+4. study results
+
+
+in total, 283 people followed the link to our online survey, 172 started thesurvey (61%), and 109 completed it (39%). from these 109 respondents, weexcluded 6 as they matched our exclusion criteria (no knowledge about how re-quirements are handled in their company). the survey answers are also availableas .csv ﬁle in our additional replication package [16].after reporting the demographics, we provide the following results:
+
+
+1. an overview of the general agreement for each research statement (sec-tion 4.2 and especially figure 3).
+
+
+2. an overview of the signiﬁcant context factors for each research statement(section 4.3 and especially table 2).
+
+
+3. a visual overview of the signiﬁcant impacts on research statements foreach context factor (section 4.4 and especially figures 4 and 5).
+
+
+4. an aggregated view of the research statements with respect to consensusand mean agreement (section 4.5 and especially figure 6).
+
+
+4.1. demographicsfigure 2 shows an overview over our study population. the ﬁgures showthat our respondents cover a wide spectrum of context factors.
+
+
+4.2. general agreement with research statementsfigure 3 provides an overview of the answer distribution for each researchstatement. for each statement, on the left side, distribution from strongly agreeover neutral (centered) to strongly disagree is shown from dark gray to light gray.on the right side, the total number of respondents who answered the questionis shown (the dark gray bar indicates the percentage of don’t know answers).on average, 99 (median of 101) respondents answered each question, with aminimum of 87 (s4) and maximum of 103 (g3, s1, s3, t2).
+
+
+14
+
+
+architect
+
+
+development
+
+
+other
+
+
+project management
+
+
+re
+
+
+test
+
+
+na
+
+
+05101520
+
+
+number of participants
+
+
+(a) roles
+
+
+automation
+
+
+automotive
+
+
+avionics/aerospace
+
+
+finance
+
+
+healthcare
+
+
+other
+
+
+public
+
+
+railway
+
+
+telecommunication
+
+
+na
+
+
+05101520
+
+
+number of participants
+
+
+(b) sector
+
+
+1−249
+
+
+250−1999
+
+
+> 2000
+
+
+0204060
+
+
+number of participants
+
+
+(c) company size
+
+
+1−10
+
+
+11−50
+
+
+51 or more
+
+
+don't know
+
+
+010203040
+
+
+number of participants
+
+
+(d) project size
+
+
+agile
+
+
+mixed
+
+
+plan−driven
+
+
+don't know
+
+
+010203040
+
+
+number of participants
+
+
+(e) process paradigm
+
+
+< 1 year
+
+
+1−3 years
+
+
+> 3 years
+
+
+0255075100
+
+
+number of participants
+
+
+(f) experience
+
+
+embedded systems
+
+
+business information systems
+
+
+consumer software
+
+
+hybrid systems
+
+
+0102030
+
+
+number of participants
+
+
+(g) type of system
+
+
+not distributed
+
+
+loc. distributed
+
+
+glob. distributed
+
+
+0204060
+
+
+number of participants
+
+
+(h) geographical distribution
+
+
+figure 2: overview of study population15
+
+
+figure 3: distribution of answers for all research statements. left: from strongly agree (darkgray) to strongly disagree (light gray). additionally, the total percentage of agreement (anddisagreement) is shown and the left (right) side of the plot. right: the number of total answersin gray and the number of don’t know answers in dark gray.
+
+
+16
+
+
+4.3. impact of context factors to the level of agreement
+
+
+table 2 shows an overview of the signiﬁcant context factors and the cor-responding estimated regression coeﬃcients for each research statement. thetable only contains context factors for which the regression model indicates astatistically signiﬁcant impact to the level of agreement (p-value: p < 0.05). arow in this table can be read as follows: for the research statement stated inthe ﬁrst column (e.g., g1), respondents belonging to one of the groups listedin the second column tend to agree more with this statement (e.g., respondentsusing an agile process paradigm, respondents who stated that maintainabilityis important, and respondents working in medium size projects). respondentsbelonging to one of the groups listed in the right-hand side column tend todisagree more with this statement (e.g., respondents working in small projectsor respondents who stated that portability is important). the change factorexp(βj) provided in brackets after each context factor represents the factor bywhich the probability to agree or disagree more changes if this context factorchanges (see also section 3.4.1).
+
+
+4.4. context factor analysis
+
+
+to better understand the inﬂuence of context factors on agreement or dis-agreement, we also report the results of our regression model along the signiﬁ-cant context factors. in particular, we create a graph that contains all researchstatements (g1-5, e1-3,s1-6, t1-5, m1-2) as nodes and all context factors thatshow at least one signiﬁcant inﬂuence in our regression model as nodes. for eachcontext factor that shows a correlation with agreement or disagreement with aresearch statement, we add an edge to the graph, colored in green (positive) andred (negative), respectively. moreover, we weight the width of each edge withthe value of the regression coeﬃcient. since the whole graph with all statementsand context factors is rather large, figures 4 and 5 show the subgraphs for eachgroup of context factors.3
+
+
+for example, in figure 4a, the relationship between the role of a participantand the research statements is shown: testers tend to disagree more with re-search statements m1, e2, t4 and tend to agree more with research statementg5.
+
+
+4.5. summary and categorization of results
+
+
+in figure 6, we have plotted the research statements with respect to theirmean level of agreement4 and their consensus value, which is a measure of dis-persion for answers on likert scales [46]. we divide this plot into four areas: weconsider statements with a high level of agreement and high level of consensus
+
+
+3the gephi ﬁle of the whole graph is part of our additional material package [16].4we are aware that using the mean as a measure for central tendency of likert (i.e., ordinal)scales is something to be careful with. therefore, we refrain from interpreting the mean valueitself but use the value only to order the statements with respect to their level of agreement.in addition, we have labeled the statements also with respect to their median value.
+
+
+17
+
+
+table 2: relation between context factors and level of agreement for each research state-ment. the change factor (given in brackets) indicates the factor by which the agreement/disagreement changes if this context factor is changed by one unit, while all the others remainconstant.
+
+
+rstendency to agree moretendency to disagree more
+
+
+g1agile process paradigm (5.1), maintainabil-ity important (4.0), medium projects (3.1)portability important (2.1), small projects(6.8)g2--g3consumer sw (53.1), automation sector(15.9), medium projects (2.8)compatibility important (2.4), usability im-portant (3.1), small projects (5.6), embed-ded systems (13.7)g4healthcare sector (11.5), non-distributedproject (5.2),small projects (4.6)
+
+
+g5automotive sector (15.2),testers (8.3),managers (3.9), nat.distributed projects(3.3), compatibility important (2.3)
+
+
+requirements engineers (4.5), small compa-nies (4.5)
+
+
+e1performance/eﬃciency important (3.7)managers (5.3), nat.distributed projects(6.8), railway sector (75.8)e2healthcaresector(9.0),smallcompa-nies (7.7), performance/eﬃciency impor-tant (2.8), medium projects (2.8), maintain-ability important (2.8)
+
+
+funct.suitability important (2.7), relia-bility important (3.4), small projects (6.6),testers (6.9), avionics sector (26.7), rail-way sector (41.2)e3architects (24.9), healthcare sector (7.3),automotive sector (6.6), inhouse dev. (3.2),performance/eﬃciency important (3.2)
+
+
+requirements engineers (4.0)
+
+
+s1architects (7.6)medium companies (3.5), embedded sys-tems (6.8), railway sector (70.9)s2--s3automation sector (15.8)automotive sector (6.2), documented qrs(29.0)s4developers (104.2), telecommunication sec-tor (24.8), performance/eﬃciency impor-tant (3.3)
+
+
+portability important (2.2), reliability im-portant (5.0), business information systems(5.7), requirements engineers (6.8), funct.suitability important (8.7), automation sec-tor (22.0), railway sector (69.6)s5agile process paradigm (6.7), embeddedsystems (5.7), architects (4.4), mixed pro-cess paradigm (1.9)
+
+
+portabilityimportant(2.0),plan-drivenprocess paradigm (4.4), business informa-tion systems (6.6)s6performance/eﬃciency important (3.2)-
+
+
+t1healthcare sector (12.4), automotive sector(12.2), business information systems (4.6)portability important (2.3), consumer sw(66.7), railway sector (261.6)t2-telecommunication sector (9.3)t3automotive sector (6.6), managers (6.4),business information system (5.3), agileprocess paradigm (3.5)
+
+
+non-distributed projects (6.9), finance sec-tor (14.5), seniors (17.7)
+
+
+t4avionicssector(59.4),agileprocessparadigm (8.3), architects (8.3)portability important (2.6), testers (6.8)
+
+
+t5non-distributed projects (6.6), inhouse dev.(3.1), security important (3.1)small companies (7.6), seniors (27.6)
+
+
+m1architects (5.7)usability important (2.5), testers (13.0), se-niors (17.8)m2consumer sw (120.7), reliability impor-tant (14.5), medium companies (8.0)small companies (96.9)
+
+
+18
+
+
+tester
+
+
+requirements engineer
+
+
+project manager
+
+
+developer
+
+
+architect
+
+
+m1
+
+
+t4t3s5
+
+
+s4
+
+
+s1
+
+
+e3
+
+
+e2
+
+
+e1
+
+
+g5
+
+
+(a) role
+
+
+agileplan-driven
+
+
+t4
+
+
+t3
+
+
+s5
+
+
+g1
+
+
+(b) agility
+
+
+small company
+
+
+m2
+
+
+t5
+
+
+s1
+
+
+e2
+
+
+g5
+
+
+medium company
+
+
+(c) company size
+
+
+senior
+
+
+m1t5
+
+
+t3
+
+
+(d) experience
+
+
+qrs documented
+
+
+s3
+
+
+(e)qrdocu-mentation
+
+
+e1
+
+
+g5
+
+
+g4
+
+
+t3
+
+
+t5
+
+
+one location
+
+
+multiple locations one country
+
+
+(f) company distribution
+
+
+consumer software
+
+
+business information systems
+
+
+embedded system
+
+
+m2t3t1
+
+
+s5s4
+
+
+s1g3
+
+
+(g) domain
+
+
+figure 4: context factor analysis (1/2): the research statements are depicted as gray nodesand the context factors as colored nodes. edges indicate a tendency to agree more (green) orto disagree more (red). the width of the arrow indicates the value of the regression coeﬃcient.
+
+
+as commonalities (between academic statements and practitioners’ perception).in contrast, we consider statements with a low level of agreement and high levelof consensus as diﬀerences (between academic statements and practitioners’perception). research statements with a low level of consensus are more inter-esting for research. if the general level of agreement is high but there is alsolow consensus in the answers, there is a need for follow-up studies to investigatewhy the statements may not be true in certain areas (i.e., why some speciﬁcrespondents disagreed with the statements). if the general level of agreement islow and there is also a low level of consensus in the answers, there is a need forinvestigating the context of the original studies in more detail. it might be thecase that the statement has been stated in a particular context that does notgeneralize to other contexts.in table 3, we list the four categories with the belonging statements. in thetable, we list only the statements with a non-neutral median agreement.
+
+
+4.5.1. commonalitieswe identiﬁed six statements with a generally high level of agreement amongthe participating practitioners. those statements include g1 (“the applica-tion domain strongly inﬂuences the relevance of individual types of qrs”), t4(“testing qrs is time-consuming”), m1 (“qrs are often not suﬃciently priori-tized”), s2 (“the documentation of qrs is not always precise”), m2 (“softwarearchitects do not use a speciﬁc tool for qr management”), and g3 (“manyqrs describe functional aspects of a system”). these statements are not onlycommonly agreed between academics and practitioners with a high level of con-
+
+
+19
+
+
+medium projectsmall project
+
+
+e2
+
+
+g4g3
+
+
+g1
+
+
+(a) project size
+
+
+e3t5
+
+
+inhouse development
+
+
+(b) srs role
+
+
+g1
+
+
+g3
+
+
+g5
+
+
+e1
+
+
+e2
+
+
+e3
+
+
+s4
+
+
+s5
+
+
+s6
+
+
+t1t4
+
+
+t5m1
+
+
+m2
+
+
+functional suitability important
+
+
+performance / efficiency important
+
+
+compatibility important
+
+
+usability important
+
+
+reliability important
+
+
+security important
+
+
+maintainability important
+
+
+portability important
+
+
+(c) qr importance
+
+
+g3
+
+
+g4
+
+
+g5
+
+
+e1
+
+
+e2
+
+
+e3
+
+
+s1
+
+
+s3
+
+
+s4
+
+
+t1
+
+
+t2
+
+
+t3
+
+
+t4
+
+
+automation
+
+
+automotive
+
+
+avionics
+
+
+finance
+
+
+healthcare
+
+
+railway
+
+
+telecommunication
+
+
+(d) sector
+
+
+figure 5: context factor analysis (2/2): the research statements are depicted as gray nodesand the context factors as colored nodes. edges indicate a tendency to agree more (green) orto disagree more (red). the width of the arrow indicates the value of the regression coeﬃcient.
+
+
+20
+
+
+g
+
+
+g
+
+
+g
+
+
+g2
+
+
+s5
+
+
+s6g5
+
+
+g1
+
+
+e1
+
+
+s3
+
+
+m1
+
+
+g3
+
+
+t3
+
+
+t4
+
+
+t5
+
+
+e2
+
+
+g4e3
+
+
+s1
+
+
+s2s4
+
+
+t2m2
+
+
+t1
+
+
+commonalities
+
+
+need for contextualization
+
+
+differences
+
+
+need for follow−up studies0.55
+
+
+0.60
+
+
+0.65
+
+
+0.70
+
+
+0.75
+
+
+strongly disagreedisagreeneutralagreestrongly agree
+
+
+mean agreement
+
+
+consensus
+
+
+median
+
+
+gdisagreeneutralagree
+
+
+figure 6: classiﬁcation of research statements into four areas based on consensus and meanagreement.
+
+
+sensus, but they seem also to be commonly agreed within the academic researchcommunity itself as we found only one publication that argues against one ofthese statements (m1). for all other statements, we only found publicationssupporting the statements (see table 1).
+
+
+4.5.2. diﬀerenceswe identiﬁed two statements with a low level of agreement and a high level ofconsensus, i.e., these statements are rejected by practitioners in general. thisarea includes t5 (“testing qrs is impossible”) and s5 (“functional require-ments are often labeled as qrs”). the general disagreement with statement s5is interesting since we found three independent publications [13, 35, 24] wherethis statement was issued (see table 1).one explanation we have for the strong disagreement with statement t5is, not surprisingly, its universal nature. it is reasonable to assume that ourrespondents have encountered at least one situation where this statement doesnot hold, especially when considering quality requirements for which testingprocedures have, in fact, been adopted in one form or the other; for instance,because of their functional nature that allows for the direct adoption of existingtesting procedures (e.g., performance-related requirements), but also becauseother qr classes are often in scope of dedicated engineering activities (e.g.,usability-related requirements being in scope of, for example, prototypes and
+
+
+21
+
+
+table 3: summary of research statements and categories
+
+
+commonalitiesg1: the application domain strongly inﬂuences the relevance of individual typesof qrst4: testing qrs is time-consumingm1: qrs are often not suﬃciently prioritizeds2: the documentation of qrs is not always precisem2: software architects do not use a speciﬁc tool for qr managementg3: qrs are sometimes ignored
+
+
+diﬀerencest5: testing qrs is impossibles5: functional requirements are often labeled as qrs
+
+
+need for follow-up studiess3: qrs are often described in too vague termst1: only few types of qrs are validated at the end of the projectt3: most qr types are diﬃcult to test properlye1: in requirements elicitation, the focus is on frs, not on qrse2: many qrs remain undiscovered
+
+
+need for contextualizationg5: only few qrs deal with architectural aspects
+
+
+mock-ups).
+
+
+4.5.3. need for follow-up studiesstatements for which we identiﬁed the need to conduct follow-up studies arethose with a high-level of agreement while, at the same time, showing a low levelof consensus among the responding practitioners. for example, the statemente1 (“in requirements elicitation, the focus is on frs, not on nfrs”) has a highlevel of agreement in general but a low level of consensus. in terms of relatedpublications, this statement has a strong standing with six papers supporting thestatement and none opposing it (see table 1). however, respondents from therailway sector, for instance, have strongly objected this statement (see table 2).therefore, it may be interesting to investigate this domain in more detail toﬁnd out why the statement seems not to be true in that domain. we see similartrends for statements s3, t3, and e2. for all of these statements, we found onlypublications supporting the statements, however, table 1 shows certain groupsof practitioners who disagree with the statements (e.g., automotive sector fors3, senior developers for t3, or railway sector for e1 and e2).
+
+
+4.5.4. need for contextualizationwe identiﬁed only statement g5 (“only few nfrs deal with architecturalaspects”) in this particular area. it is the only statement with a low level ofagreement between practitioners in general but also with a low level of consensus
+
+
+22
+
+
+in the answers. that could mean that the statement was stated in a speciﬁccontext where it may be true but in many other contexts, the statement isperceived as not true. this is in tune with the balanced number of supportingand opposing publications related to this statement (see table 1).
+
+
+5. discussion
+
+
+in the following, we discuss the results that we found particularly interestingand contrast them with the original studies where they were stated.please note that we do not discuss the results of every research statementin detail as this would be purely speculative. hence, the presented discussioncan only serve as starting point for further studies examining the discussedaspects because our study does not provide any data on the speciﬁc reasonswhy practitioners agree or disagree with a research statement.
+
+
+5.1. in elicitation, priority is on frs, not on qrs
+
+
+most of our respondents conﬁrmed that in requirements elicitation, the focusis on frs, not on qrs (e1). respondents from the railway domain and fromlarge, distributed projects are an exception. they tend to disagree more withthis statement. nevertheless, most respondents conﬁrmed that qrs are at leastdocumented in the end. they disagreed with the statement that qrs are notdocumented at all (s1).this is also in line with observations from anothersurvey, where 88% of respondents answered that they document qrs [14]. as aresult of this lower priority of qrs in the elicitation, our respondents stated thatmany qrs remain undiscovered (e2) and only few types of qrs are validatedat the end of a project (t1). interestingly, respondents from the railway sectorwho stated that the elicitation focuses not necessarily on frs only also disagreedwith the negative consequences of undiscovered and not validated qrs. furtherstudies are neccessary to disover a possible causal relation between these eﬀects.in general, practitioners seem to focus on frs in requirements elicitation andhandle qrs with lower priority.
+
+
+5.2. diﬀerent roles have diverging opinions about qrs
+
+
+as shown in figure 4a, respondents with diﬀerent roles have diﬀerent opin-ions (regarding agreement/disagreement) on the research statements. speciﬁ-cally, requirements engineers and architects seem to disagree on the responsi-bility of qr elicitation. while architects overly agreed that qr elicitation ismainly done by them (e3), requirements engineers tend to disagree with thisstatement. a similar divergence is between requirements engineers and devel-opers when it comes to documentation of qrs (s4). it seems that developersperceive qr documentation more often as not in sync with the current stateof the system, while requirements engineers do not perceive this threat as thatstrong.
+
+
+23
+
+
+testing qrs is perceived as time-consuming especially by architects. testers,on the other hand, overly disagreed with the statement t4 (testing qrs is time-consuming). this seems an interesting point for further research on speciﬁc teststhat architects have in mind.the statement that only few qrs deal with architectural aspects (g5) isinteresting since the architects themselves do not have a strong opinion for oragainst that statement while all other roles have. testers and managers agreemore with the statement while requirements engineers disagree more.
+
+
+5.3. are qrs really non-functional?
+
+
+research statements g2 and s5 belong to the statements with which therespondents disagreed most (39% and 59% disagreement).both statementsaddress the confusion about the classiﬁcation of requirements. g2 states thatmany qrs describe functional aspects of a system and s5 states that functionalrequirements are often labeled as qrs, which sounds counterintuitive. one ex-planation to us is that this could be the reason why respondents had a tendencyto disagree with these. the statements originate from a paper where the authorsinvestigated requirements speciﬁcations from industry [13]. in the documentsthey analyzed, they found a considerable number of requirements that were la-beled as qr but that actually described functionality. the disagreement withthe statements shows that the results of that study are controversial. therefore,we need more studies that investigate the eﬀects of blurry classiﬁcation rules.
+
+
+5.4. testing qrs is hard but not impossible
+
+
+in general, our respondents were not as pessimistic about the possibility totest qrs as the original study suggests. in fact, 86% disagreed with the respec-tive statement t5 (testing qrs is impossible). this shows that our respondentsat least seem to have some ideas how to test qrs. especially experienced re-spondents overly disagreed with this statement.similarly, respondents fromlarge companies strongly disagreed. it would be interesting to see what impactthe company size has on testing procedures. respondents that tend to agreemore with the impossibility of testing qrs worked in non-distributed projectsor considered security as an important quality attribute for their systems. thismay indicate to that we are still lacking good testing mechanisms for security.on the other hand, our respondents support the statement that testing qrsis diﬃcult (t3) and time-consuming (t4). 55% agreed or even strongly agreedthat testing qrs is diﬃcult. only 8% disagreed with the statement that testingqrs is time-consuming, while 18% even strongly agreed with it.especiallyin the avionics and automotive industry, testing seems to be a big issue sincerespondents of these industries overly agreed with t3 and t4. also, respondentswho stated that they work with an agile process paradigm agreed signiﬁcantlystronger with the diﬃculty and necessary eﬀort to test qrs. the only groupof respondents that tend to disagree more with the statement that testing istime-consuming are the testers themselves. it seems that testers have a moreoptimistic perception towards testing qrs.
+
+
+24
+
+
+in the original publication of statements t4 and t5, the authors stated areﬁned version of the statements.they said “[. . . ]when expressed in non-measurable terms [qr] testing is time-consuming or even impossible” [5]. inour survey, this premise about a measurable speciﬁcation of qrs does not playa speciﬁc role for a stronger agreement. the context factors that correlate witha strong agreement to statements t4 and t5 do not correlate with the researchstatements that relate to a precise documentation of qrs (e.g., s2, s3).
+
+
+5.5. diﬀerent domains, diﬀerent problems
+
+
+for a number of research statements, the industry sector of the respon-dents is strongly correlated with the participant’s agreement to the statement.this is further corroborated by research statement g1 (the application do-main strongly inﬂuences the relevance of individual types of qrs.) showing thestrongest agreement among the respondents. this means that the perceived im-portance, the handling, and the problems associated with qrs strongly dependon the industry sector. for instance, while respondents from the healthcareand automotive sector strongly agreed with a number of research statements(see figure 4g), the respondents from the railway sector strongly disagreed witha number of research statements: research statement t1 (only few types ofqrs are validated at the end of the project.) seems to be strongly accepted inthe healthcare and automotive domain but not in the railway domain. simi-larly, research statement e2 (many qrs remain undiscovered) was well receivedby respondents from healthcare but opposed by respondents from avionics orrailway. this could indicate to the diﬀerent relevance of qrs in the respectivedomains. railway, healthcare, and automotive may provide interesting domainsfor conducting further case studies on the handling of qrs because respondentsfrom these areas had strong positive or negative feelings about the researchstatements.
+
+
+5.6. qrs and architecture: a love-hate relationship
+
+
+many publications stress the importance of qrs for architectural decisions.the participant’s answers support this relation. the statement that only fewqrs deal with architectural aspects (g5) was rejected by the majority of respon-dents (56%), especially by respondents from small companies and by require-ments engineers. on the other hand, there were also some groups of respondentsthat signiﬁcantly agreed more with this statement, namely respondents from theautomotive industry, testers, and managers. it would be interesting to investi-gate what these groups see in qrs besides architectural aspects. in the originalpublication of that statement [13], the authors reported that they identiﬁeda large number of requirements that they found in qr sections of industrialrequirements documents as functional requirements.despite this important relation between qrs and architecture, the respon-dents mostly agreed with a lack of common terminology between architectsregarding qrs (g4) and also with the statement that there is no speciﬁc tool
+
+
+25
+
+
+support for managing qrs (m2). yet, these issues do not seem to be that preva-lent in small projects or companies as respondents from these groups disagreedmore with statements g4 and m2.
+
+
+5.7. the perceived importance of quality attributes shapes the opinionin the results, the agreement tendency also correlates with the perceivedimportance of qr types for the systems that the respondents develop.respondents who considered performance/eﬃciency as an important qualityin their systems also had a distinct opinion about elicitation and speciﬁcation ofqrs. for example, these respondents overly agreed with the statement that inelicitation, the focus is on frs and not on qrs (e1). on the other hand, theyalso tend to agree more with the statement that many qrs remain undiscov-ered (e2). additionally, respondents disagreed that qrs are mainly elicited byarchitects (e3). the authors of another study on a similar topic mention thatcompanies have specialized teams focusing on performance or reliability [14].this could indicate that qr elicitation is mainly done by these specializedteams. a downside of that could be that the documentation of qrs becomesdesynchronized to which our respondents with focus on performance also agreedoverly (s4).the opinion of respondents who considered portability as an important qual-ity in their systems deviated several times from the average opinion of all re-spondents. they overly disagreed with the inﬂuence of the application domain(g1).interestingly, people who considered maintainability as an importantquality attribute overly agreed with the inﬂuence of the application domain.the study of jung et al. [18] provide indication that portability and maintain-ability actually measure the same intrinsic concept. however, this study wasonly performed in the context of one speciﬁc system. our study indicates thatthere may still be a diﬀerence between the two characteristics in some appli-cation domains. regarding speciﬁcation of qrs, respondents who consideredportability as an important quality overly disagreed with the statement thatfunctional requirements are often labeled as qrs (s5) and with the possibledesynchronization of qr documentation (s4). in testing, they disagreed thattesting is time-consuming and that only few types are validated at the end ofa project. this could indicate that testing of systems with a high demand ofportability is actually in a good shape.
+
+
+5.8. experience fosters optimismwhen focusing on the group of respondents that are already experienced intheir ﬁeld (more than 3 years of experience), we see that these disagree morewith some of the negative statements about qrs. for example, seniors are notso pessimistic about the possibility of testing qrs (t5), the diﬃculty of testingqrs (t3), and the insuﬃcient prioritization of qrs (m1). these results mayindicate that testing and prioritizing qrs is hard and need practice to be doneproperly.on the other hand, this may also indicate that we currently lacksuﬃcient methods and tools for these activities, which seniors may compensatewith experience and best practices.
+
+
+26
+
+
+a second interpretation of these results is that the diﬀerent perceptions aredue to a changing perception of related risks. novices may still strive for per-fection (e.g., 100% test coverage) and therefore perceive testing and prioritizingqrs as overly hard. seniors, on the other hand, may have experienced that smalldeviations from a perfect solution can be compensated and, thus, perceive someof the challenges related to qrs as less dramatic.
+
+
+5.9. scale changes the view on qrs
+
+
+working in small projects and small companies is diﬀerent from workingin large and distributed projects.our results show that this diﬀerence alsocorrelates with the perception of some qr statements. as for the project size,we found three statements (g1, g3, and e2) with which respondents in smallprojects overly disagreed while respondents from medium and large projectsoverly agreed. in small projects, the inﬂuence of the application domain on therelevance of qr types is perceived less strong compared to larger projects (g1).additionally, it seems that some problems related to qrs get more serious inlarger projects. respondents from medium and large projects overly agreed thatmany qrs remain undiscovered (e2) and that qrs are sometimes ignored (g3),while respondents from small projects overly disagreed with these statements.interestingly, the eﬀects of diﬀerences in project size are not in tune withthose of diﬀerences in company size. for company size, only research statementm2 shows a tendency that respondents of small companies disagreed strongerwith the statement that architects do not use a speciﬁc tool for qr managementwhile respondents from medium and large companies overly agreed with thisstatement. for statement e2 (many qrs remain undiscovered), we even gota counterintuitive result since respondents from small projects overly disagreedwith the statement, while respondents from small companies overly agreed withit. this means that undiscovered qrs are not so much of a problem in smallprojects, however, they are in small companies.
+
+
+6. threats to validity
+
+
+our results and conclusions are subject to a number of threats that wediscuss in the following:
+
+
+6.1. identiﬁcation of research statements
+
+
+the identiﬁcation of the research statements as described in section 3.1 hasnot been done as part of a systematic literature study.one of the authorsbrowsed through the papers of major recent requirements engineering and soft-ware engineering venues to identify papers on quality requirements ﬁrst andthen extract statements from them. since we validated and discussed the ex-tracted statements in the team of authors, we are conﬁdent that the analyzedstatements ﬁt the study purpose; however, we do not claim that the list ofresearch statements is complete or representative for all views in the research
+
+
+27
+
+
+community.in fact, we have to assume that there are other research state-ments on qrs that we have not addressed in our study. therefore, we refrainfrom making any statements about the completeness of research statements onqrs in general. nevertheless, we argue that this does not invalidate the resultswe gathered from the research statements in scope. it is reasonable to doubtthat respondents would have answered diﬀerently if there were more researchstatements.
+
+
+6.2. participant selection
+
+
+one limitation in the study is the missing lack of control over the respondentsgiven that we distributed the survey invitation over various networks. apartfrom the ultimately unknown response rate, this means that we cannot controlhow representative the responses are. despite the applied validity proceduresdescribed in section 3.5, we cannot guarantee that all the views taken reallyresult from practitioners.when looking at the distribution of context factors, we see that some con-text factors are only represented by a low number of respondents (e.g., railwaydomain, junior engineers, or consumer software). this does not invalidate thesigniﬁcance verdicts of the wald test because smaller sample sizes may lead tolarger conﬁdence intervals and, thus, increase the likelihood of non-signiﬁcantresults.however, small sample sizes, on the other hand, may decrease thestatistical power of our results. lower statistical power indicates a lower proba-bility that an eﬀect is actually true when the wald test says it is signiﬁcant. inother words, the small sample sizes for some context factors do not threaten thevalidity of the observed signiﬁcances but increase the chance that these signiﬁ-cant results do not indicate a true eﬀect because the few respondents with thatspeciﬁc context factor may not be representative for all subjects in that group.
+
+
+6.3. survey research
+
+
+further threats to the validity result from the nature of survey research. wecannot control on which basis the respondents provide their answers and therespondents might be biased. secondly, there is the possibility that respondentshave misinterpreted some of the questions or even the concept of qrs. someof the research statements that we found in the literature are formulated veryfuzzy (e.g., only few qrs deal with architectural aspects; how many are few?what are aspects?). therefore, respondents may have interpreted the state-ments diﬀerently. thus, respondents could select “don’t know” if they couldnot understand a statement. however, this option was selected in a few casesonly (see also figure 3).our interpretation is that the respondents had anopinion on most of the statements in their exact wording.
+
+
+6.4. data collection
+
+
+in the questionnaire, we characterized some context factors by speciﬁc bound-aries (e.g., large companies are those with more than 2,000 employees, seniorsare those respondents with more than 3 years of experience).we set these
+
+
+28
+
+
+boundaries based on what we believe is reasonable and what has been also usedin other studies. however, the results may change if we would have set theboundaries diﬀerently.
+
+
+6.5. statistical model
+
+
+the regression model applied here is well tailored to the analysis of the re-search statements measured on a likert scale, as it exploits the ordinal structureof the answers. an attractive property is the simple interpretation of its pa-rameters, which results from the proportional odds assumption. however, oneshould be aware that this implies a strong assumption on the underlying datagenerating process; that is, it assumes that the interpretation of parameterson the other hand, an extended version of the model that we used in which all(or part of) the parameters are category-speciﬁc makes the parameters hard tointerpret and in the presence of only 103 respondents yields unreliable estimates.
+
+
+6.6. limitations in the generalization
+
+
+related to the threats described above and as it is often the case with survey-based research, the ability to generalize is diﬃcult due to the size of the sampleand due to the diversity of the answers given. the lack of related studies withexplicit context factors similar to those captured in our survey further rendersgeneralization by analogy very diﬃcult, if not impossible. however, while gener-alization of certain assessments of statements (i.e., the opinions and experiencesmade by practitioners) were not part of our overall objectives, we still arguethat we can generalize from our results at least to a few selected context factorswhere our respondents commonly agreed in their assessments. more precisely,we are conﬁdent in that the assessments of the research statements for whichwe have a high level of agreement and a high level of consensus among the re-spondents (see the upper right corner in figure 6) could be generalized, withcaution, to those context factors that seemed to play a role. one such exampleis statement g1. on the other hand, those statements with a rather low consen-sus indicate that we need, at least, more detailed investigations on the contextfactors to have a more diﬀerentiated view that would allow for generalizations(e.g., g2).
+
+
+7. conclusions
+
+
+in our study, we aim at assessing the perception of research statements aboutquality requirements in the view of practitioners. we want to identify potentialresearch gaps for speciﬁc contexts, potential diﬀerences that raise the need forfurther investigations, or statements that are only true in certain contexts. tothis end, we identiﬁed 21 exemplary research statements as reported in aca-demic literature and surveyed practitioners about their general agreement withthe statements. we were not only interested in whether practitioners agree ordisagree with the statements but also whether context factors have an inﬂuence
+
+
+29
+
+
+on the perception. this shall allow us to pinpoint to research statements whereadditional research might be useful.our results are based on an online survey yielding 103 responses from prac-titioners having a broad spectrum of diﬀerent backgrounds. we analyzed theresponses by means of a statistical regression model that calculates the factorby which the probability to agree or disagree more changes if a context fac-tor changes. our results show that a majority of the statements is also wellrespected by practitioners; however, not all of them. when examining the dif-ferent groups and backgrounds of respondents, we noticed interesting deviationsof perceptions within diﬀerent groups that may lead to new research questions.especially the perceptions of respondents with diﬀerent roles may explain whycommunication and clariﬁcation problems about qrs may occur in practice.most respondents perceive testing qrs as time-consuming and diﬃcult, es-pecially in agile contexts and in the automotive and avionics sector. testersthemselves have a more positive view on testing qrs. they overly disagreedwith the more pessimistic statements about problems related to qrs. we addi-tionally conclude from our results that it is not reasonable to speak about qrsin general because diﬀerent types of qrs have very diﬀerent characteristics andrelated challenges. the importance of speciﬁc types of qrs strongly inﬂuencedtheir perception on how to elicit, document, test, and mange qrs.overall, however, we need to diﬀerentiate in our ﬁndings between state-ments to which practitioners commonly agreed with a high level of consensusand statements where the consensus is lower (see figure 6). while the ﬁrstcategory of statements allows for a certain generalization of our ﬁndings, thelatter is especially interesting for additional research as it highlights the needfor better contextualisation. as future work, we therefore motivate and planourselves for further investigations in this direction. in particular, we arguefor the need for further replications considering more context factors as well astriangulations in the inquiry methods going beyond survey research. especiallycase study research is of particular interest to further explore the perceptionsof practitioners on the research statements with respect to the particularities oftheir context.finally, one hope we associate with our work is also that other researchers areencouraged to describe more explicitly the context in which they conduct theirempirical studies, and that they discuss the conditions and possible limitationsof their statements. otherwise, their conclusions might just contribute further tothe existing leprechauns that still dominate requirements engineering research.
+
+
+acknowledgements
+
+
+we thank the respondents of our survey for sharing their opinion with us.we furthermore thank wolfgang b¨ohm, kevin schlieper and tobias m¨uhlbauerfor piloting the study and jan s¨urmeli for feedback on earlier versions of thismanuscript.
+
+
+30
+

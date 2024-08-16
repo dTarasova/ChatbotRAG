@@ -1,0 +1,696 @@
+
+1
+
+
+the human side of software engineering teams:an investigation of contemporary challenges
+
+
+marco hoffmann, daniel mendez, fabian fagerholm and anton luckhardt
+
+
+abstract—context: there have been numerous recent calls for research on the human side of software engineering and its impact on variousfactors such as productivity, developer happiness and project success. an analysis of which challenges in software engineering teamsare most frequent is still missing. as teams are more international, it is more frequent that their members have different human valuesas well as different communication habits. additionally, virtual team setups (working geographically separated, remote communicationusing digital tools and frequently changing team members) are increasingly prevalent.objective: we aim to provide a starting point for a theory about contemporary human challenges in teams and their causes in softwareengineering. to do so, we look to establish a reusable set of challenges and start out by investigating the effect of team virtualization.virtual teams often use digital communication and consist of members with different nationalities that may have more divergent humanvalues due to cultural differences compared to single nationality teams.method: we designed a survey instrument and asked respondents to assess the frequency and criticality of a set of challenges,separated in context ”within teams” as well as ”between teams and clients”, compiled from previous empirical work, blog posts, andpilot survey feedback. for the team challenges, we asked if mitigation measures were already in place to tackle the challenge.respondents were also asked to provide information about their team setup. the survey included the personal value questionnaire tomeasure schwartz human values. finally, respondents were asked if there were additional challenges at their workplace. the surveywas ﬁrst piloted and then distributed to professionals working in software engineering teams via social networking sites and personalbusiness networks.result: in this article, we report on the results obtained from 192 respondents. we present a set of challenges that takes the surveyfeedback into account and introduce two categories of challenges; ”interpersonal” and ”intrapersonal”. we found no evidence for linksbetween human values and challenges. we found some signiﬁcant links between the number of distinct nationalities in a team andcertain challenges, with less frequent and critical challenges occurring if 2-3 different nationalities were present compared to a teamhaving members of just one nationality or more than three. a higher degree of virtualization seems to increase the frequency of somehuman challenges, which warrants further research about how to improve working processes when teams work from remote or in adistributed fashion.conclusion: we present a set of human challenges in software engineering that can be used for further research on causes andmitigation measures, which serves as our starting point for a theory about causes of contemporary human challenges in softwareengineering teams. we report on evidence that a higher degree of virtualization of teams leads to an increase of certain challenges.this warrants further research to gather more evidence and test countermeasures, such as whether the employment of virtual realitysoftware incorporating facial expressions and movements can help establish a less detached way of communication.
+
+
+index terms—software engineering, human challenges, virtual teams, human values, diversity, survey research
+
+
+!
+
+
+1introductions
+
+
+oftware engineering is a complex activity with manychallenges: tasks are often novel and require to inter-pret and understand concepts from various ﬁelds, possiblypresented by non-technical people. solutions need to becreatively adapted to different stakeholder requirements.workers from interdisciplinary ﬁelds have to come togetherto build a product, synchronizing their different points ofview in the process. in parallel to this cognitively demand-ing task, the involved need to exercise human social skills:they need to communicate and understand each other. theyshould feel safe, appreciated and supported and not be
+
+
+•m. hoffmann was with qualityminds gmbh, germany, at the time ofwriting.e-mail: marco@acureus.com
+
+
+•d. mendez is with the blekinge institute of technology, sweden and fortissgmbh, germany. f. fagerholm is with aalto university, finland and theblekinge institute of technology, sweden. a. luckhardt is afﬁliated withthe technical university of munich and fortiss gmbh, germany.
+
+
+additionally constrained by social challenges; not only in theinterest of their own well-being, but also because a happydeveloper is better at solving problems [1].there have been numerous calls for more research onthe human side of software engineering [2], [3], [4]. as ofnow, multiple and diverse human challenge areas have beenidentiﬁed: improving communication [5], aiming for morediversity in teams [6], [7], fears or conﬁdence issues [8],team culture and how team members treat each other [9], toname a few. the ﬁndings so far provide great insights aboutwhich areas could matter most and how social challengesin software engineering should be tackled. however, whatis still missing is a comprehensive list of most frequentchallenges. these challenges should be expressed in a levelof detail that is not too deep, so that it does not apply tospeciﬁc cases only, but also not too abstract, so that it allowspin-pointing of possible improvements. given such a listof frequent challenges and possible causes – why do thesechallenges occur in that environment? – could be explored.
+
+
+©2022 ieee. personal use of this material is permitted. permission from ieee must be obtained for all other uses, in any current or future media, includingreprinting/republishing this material for advertising or promotional purposes, creating new collective works, for resale or redistribution to servers or lists, or reuse of anycopyrighted component of this work in other works.
+
+
+arxiv:2104.03712v3  [cs.se]  31 jan 2022
+
+
+2
+
+
+we assume that understanding the causes will greatly helpin ﬁnding mitigations. it is our vision to establish a solid listof most relevant human-focused triples (causes, challenge,mitigations) that is continually strengthened, extended, andreﬁned.in this article, we report on the ﬁrst step towards thisvision. using survey research, we asked 192 professionalsabout the frequency, criticality, and mitigation strategies re-garding our initial catalogue of human challenges, contextu-alized twofold: in the context of challenges within softwareengineering teams, which is the primary focus of this report,but also in the context of challenges occurring betweenteams and clients of the team. we compiled the list fromchallenges recorded by the naming the pain in require-ments engineering initiative (short: napire), which consti-tutes a comprehensive requirements engineering study onpractices and challenges experienced in practical environ-ments [10] 1, as well as from grey literature, such as blogposts. we examined possible inﬂuences on the occurrenceand perceived criticality of these challenges. we focused onaspects related to global, multinational teams: they oftenwork in virtual teams and they often have many nation-alities [11]. a virtual team refers to teams whose workersare geographically distributed and use digital means tocommunicate [12]. geographical distance often implies tem-poral distance, and thus phases of unavailability of certainteam members. this leads to three categories of possibleinﬂuences: degree of team virtualization, nation count (asa proxy for potential cultural clashes) and human values.furthermore, we used the feedback to reﬁne the initial listand categorize it. this reﬁned list can serve as a future basisfor research. finally, the survey respondents reported onmitigation strategies already in place. this could, in thecurrent state, serve as an inspiration for fellow softwareengineers.
+
+
+1.1contribution
+
+
+summarising, these are our contributions and key ﬁndings:
+
+
+1) a set of relevant human challenges in software engi-neering teams, as well as a reﬁned set of challengesintroducing two categories: challenges that arise be-tween colleagues (interpersonal), and challenges thatexist between an individual and their work only (in-trapersonal).
+
+
+2) insights into how different virtualization aspects ofteams inﬂuence these challenges - a stronger degree ofvirtualization may lead to more frequent and criticalchallenges.
+
+
+3) evidence for a possible link between the degree ofmulti-nationality of a team and our set of challenges.the sweet spot seems to be between 2-5 nationalities.
+
+
+4) indicators that correlations between ﬁne-grained hu-man values as deﬁned by schwartz [13] and challengeoccurrence and criticality in software development areweak.
+
+
+5) a list of aggregated reported mitigation measures al-ready in place in professional environments for eachteam challenge (see appendix b).
+
+
+
+
+
+to increase the transparency and reproducibility of ourstudy, we further disclose the whole response dataset, thelist of modiﬁcations done to create our reﬁned challenges,as well as descriptions for the reﬁned challenges as part ofan open data and material set (see appendix c).using the who, what, how sociotechnical framework bystorey at al. [14], we position this work as follows:
+
+
+• who beneﬁts from this work?
+
+
+– researchers. the revised problem catalogue plus prob-lem descriptions can be used in further surveys.we report on some interesting links that could beinteresting for further research.
+
+
+– human. we collected a list of mitigation measures inplace for this ﬁrst set of relevant human challenges,which can be used by professionals as a reference forpotential improvements in their own environment.
+
+
+• what is the main research contribution type?
+
+
+– descriptive. this article is a ﬁrst step in ﬁndingout which human challenges are most frequent insoftware engineering, and which social and humanaspects have an impact on them.
+
+
+• how is the research conducted?
+
+
+– respondent. we used survey research to gather ourdata.
+
+
+1.2outline
+
+
+the article is organised as follows. in section 2, we describerelated work. section 3 introduces the study design, elab-orates on the research questions and the data collection aswell as the analysis procedures. in section 4, we report onour study results, before concluding our article in section 5.
+
+
+2related work
+
+
+challenges in software engineering teams are widely re-searched. culturally induced problems were the most fre-quent problem type reported in interviews with softwareprofessionals [15]. cultural distance may lead to misun-derstanding and misinterpretations about things that weresaid and done in a project, as reported by many case stud-ies investigating chinese professionals [16], [17], [18], [19],irish teams outsourcing parts of their workforce to othercountries [20], [21] and other teams of various culture back-grounds [22], [23]. misunderstandings and conversationaldominance of speciﬁc interlocutors due to varying levels oflanguage proﬁciency can however be managed to a degreeif they are recognised, e.g. by using humour or giving lessdominant team members dedicated speaking slots [24], [25],[26]. some authors advise to keep human value distance lowto avoid problems [27], [28]. others advocate to overcomepotential problems in a more productive way: multiculturaland diverse teams can perform especially outstandingly[6], [7] e.g. if the team tries to actively understand thedifferences between its members [11], [29] - a prospect wewant to support and enable.globally distributed teams face some additional chal-lenges: if teams in different places are sized differently,there might be a disbalance in perceived power poten-tially leading to dissatisfaction in the smaller team, or to
+
+
+3
+
+
+resentment of the smaller team in the larger team [26]. itis harder to develop a relationship of trust and maintain acertain communication frequency [12], [26]. communicationis often poorer as important cues such as facial expressionsare taken away or lack detail when digital means are used[12]. if the language proﬁciency varies, preferences for usedmedia might differ (with proﬁcient speakers resorting toverbal communication, while less proﬁcient speakers stickto text-based communication) and result in the emergenceof isolated social groups [30].the impact of certain factors on various performancemetrics of teams has some solid groundwork. almomaniet al. conducted an empirical study examining the linkbetween human factors and software process improvement(spi) in small and medium malaysian teams [31]. theyidentiﬁed eleven human factors and asked professionals torate each factor’s relevance regarding spi. the three mostrelevant factors were leadership involvement, employee in-volvement and support from senior management. however,the eleven factors seem too coarse and too open to interpre-tation - support from management can refer to technical,emotional or ﬁnancial support. maybe it refers to accessibleknowledge - could it be solved with more documentation?our challenge set is more ﬁne-grained; thus we expect itto be easier to employ countermeasures if a challenge ofthe set has been identiﬁed. in a recent systematic literaturereview, wagner and ruhe aggregated evidence about factorsthat impact the productivity in software development [9].they found many human factors that have an impact onproductivity, grouped into ﬁve categories: ”corporate cul-ture”, ”team culture”, ”capabilities and experience”, ”en-vironment” and ”project”. while the existence of evidencefor a link between human factors and software engineeringproductivity and successful software projects is reassuring,the authors do not comprehensively conclude which factorsare most relevant and what could be done to improve thechances of success. although the review itself is from 2018,the most recent paper that was reviewed seems to be from2008 — and more than half are older than 2000. we believethat we can contribute with a problem analysis that is up todate for a ﬁeld that moves very quickly.in a recent study, storey et al. investigated the linkbetween developer satisfaction and various factors, withperceived productivity turning out to be one of the most rel-evant in their data [32]. they identiﬁed 30 factors that mayhave an impact on developer satisfaction, and an additional15 technical and human challenges. for the satisfactionfactors, they asked about the importance of each factor, aswell as how satisﬁed they were with each factor. a goodmanager, high perceived productivity and rewards wereconsidered the three most important factors. for the chal-lenges, respondents had to rate the impact of the presenceof each challenge, with poor software architecture, legacycode and the task of ﬁnding relevant information being mostimpactful.spichkova et al. propose some interesting ideas to en-gineer human factors into software reliability engineering[33]. they suggest to examine human factors such as per-sons’ backgrounds or similarities between persons into testprioritisation, as similar persons potentially make similarmistakes. for requirements engineering, they argue that the
+
+
+detection of inconsistency types may depend on a person’slearning style. having diversity in the group of peoplevalidating requirements may lead to better inconsistencydetection.the gap we have identiﬁed is a lack of a holistic theoryabout which attributes of a software engineering team causewhich kind of human challenges that hamper a team’sability to perform well, and how the overcoming of thesechallenges can be supported. virtual team settings anddifference in personal values are often identiﬁed as triggersfor challenges, however, it is not yet clear what kind ofchallenges are affected. in order to build that theory, webelieve it is necessary to ﬁrst identify a set of challenges thathave the right level of detail: if a challenge is described toovaguely, it might be affected by many causes, and mitigationwill be difﬁcult. if it is too ﬁne-grained, the challenge mayonly apply to very speciﬁc team setups and contexts, and itloses generality and may be subject to changes in workinghabits too quickly. using this set of challenges, causes needto be examined and mitigation measures tested. we intendto take a step towards closing this gap by contributing thisset of human challenges along with an overview of mitiga-tion measures already in place in the ﬁeld. additionally, weprovide evidence about the impact of a ﬁrst set of causeson the occurrence of these challenges. future studies andsurveys can build up on that to ﬁnd out which aspects in ateam matter most.
+
+
+2.1human valuesone of our research objectives was to examine the linkbetween human values and the perception of human chal-lenges in the team. while different human value models putemphasis on different aspects in their attempt to measurehuman values, they all return a quantiﬁcation of what isimportant to humans, expressed by multiple dimensions,contextualized by cultural inﬂuences. if a link betweenthese values and se challenges could be found, this wouldbe an important step towards identifying good practisesfor working together in culturally diverse teams, whoseindividuals may react very differently to certain situations.examples of available models for human values are theglobe culture dimensions [34], the lewis model [35] andthe hofstede model [36]. we used the schwartz humanvalues [13] measured by the 57-item portrait value ques-tionnaire (pvq-57rr), which has been validated with rep-resentative samples from several countries [13]. the modelwas suggested in a recent call to consider human valuesin software engineering [3]. we hypothesize that globallycooperating teams are culturally more diverse – with teamsin multiple countries – and will likely work as virtual teamsand remote, since high-frequent travel between locationsis not feasible. the links between these two traits andchallenge occurrence and perception are thus of particularinterest to us. however, models such as the globe dimen-sions or the hofstede model are only valid at a nationallevel and were not designed for use at an individual level[37], [38]. the pvq-57rr asks respondents to indicate howsimilar a person description is to themselves, measuring 19different human value dimensions:
+
+
+• self-direction thought—freedom to cultivate one’sown ideas and abilities.
+
+
+4
+
+
+• self-directionaction—freedom to determine oneown’s actions.
+
+
+• tradition—maintaining and preserving cultural, familyor religious traditions.
+
+
+• stimulation—excitement, novelty and change.
+
+
+• hedonism—pleasure and sensuous gratiﬁcation.
+
+
+• achievement—success according to social standards.
+
+
+• power dominance—power through exercising controlover people.
+
+
+• power resources—power through control of materialand social resources.
+
+
+• face—maintaining one’s public image and avoidinghumiliation.
+
+
+• security personal—safety in one’s immediate environ-ment.
+
+
+• security societal—safety and stability in the widersociety.
+
+
+• conformity-rules—compliance with rules, laws andformal obligations.
+
+
+• conformity-interpersonal—avoidance of upsetting orharming other people.
+
+
+• humility—recognizing one’s insigniﬁcance in thelarger scheme of things.
+
+
+• universalism-nature—preservation of the natural en-vironment.
+
+
+• universalism-concern—commitment to equality, jus-tice and protection for all people.
+
+
+• universalism-tolerance—acceptance and understand-ing of those who are different from oneself.
+
+
+• benevolence-care—devotion to the welfare of the ownsocial circle or group.
+
+
+• benevolence-dependability—beingareliableandtrustworthy member of a group or society.
+
+
+3study design
+
+
+we used online survey research to reach a wide varietyof people working in software engineering teams. in thefollowing, we introduce the study design relevant to theanalysis present in this article.
+
+
+3.1research questions
+
+
+our objective is to build a catalogue of human challengeswith a reasonable level of detail. in order to rate the impactof each challenge, we asked the respondents about thefrequency and criticality (i.e. how bad the challenge is) ofeach challenge in their team. to this end, we formulatedresearch questions to guide the design of the study:
+
+
+• rq1. what human challenges occur in se teams?
+
+
+– rq1.1. how frequent are these challenges?– rq1.2. how critical are these challenges?
+
+
+• rq2. do individuals’ values inﬂuence frequency andcriticality of challenges within a team?
+
+
+• rq3. does national diversity inﬂuence frequency andcriticality of challenges within a team?
+
+
+• rq4. does the degree of team virtualization inﬂuencefrequency and criticality of challenges within a team?
+
+
+3.2instrument
+
+
+the overall instrument used constitutes in total 260 ques-tions as a maximum used to collect data about the demo-graphics of the respondent [rq3], characteristics of theirteam [rq4], and their human values as measured by theschwartz personal value questionnaire (pvq) [rq2] [13].then, the respondent was asked to report on the frequencyand criticality of challenges that can happen in a team andbetween team and clients [rq1]. additionally, we askedif there were mitigation measures in place for the teamchallenges and if yes, which ones. finally, at the end ofthe survey, the respondent could provide feedback aboutthe listed challenges as well as general feedback about thesurvey and leave their email address if they wanted toreceive a notiﬁcation of the survey results.
+
+
+3.2.1demographicsthe demographic section contained 14 questions. in q1, weasked about which gender pronouns the respondent wantedto be addressed with because the pvq used in the humanvalues section (refer to 3.2.2) is adapted to different personalpronouns. q2-q6 are questions aimed at ﬁnding out aboutthe national diversity of the team: most important to us wasthe nationality of the respondent. q3 was asked because ifthey had lived in a country for a very long time already, theyhad probably adapted to the local customs and habits andthe original nationality could maybe not be as important.we were also interested in team sizes because in smallerteams, personal differences might have a stronger effect asthe teams are more cohesive, with members having moreinteractions, being more committed to their team and moreacquainted with their team members [39], [40].six questions in q7 ask about the degree of virtualizationof the team. we differentiated between ”offshore” and ”re-mote” - we deﬁne remote work as work that is done at homeor any other place that is not a facility of the employer, whileoffshore refers to teams that work in different countries.virtualization of a team can be expressed in multiple ways,with likely different implications for each dimension andnot all of them necessarily holding true for a virtual team.each question could either be answered with ”yes” or ”no”(see table 1).finally, q9 determined whether questions about clientchallenges were displayed to respondents (refer to section3.2.4).
+
+
+table 1: demographic questions. sc = single choice.
+
+
+no.questiontype
+
+
+q1how do you want to be addressed?scq2in which country are you working?openq3for how many years have you beenworking in se in this country?open
+
+
+q4what are your nationalities?openq5how many people do you work with?openq6what are the nationalities of your teamcolleagues?open
+
+
+5
+
+
+q7.1are you part of an offshore team?scq7.2do you work with offshore teams?scq7.3do you regularly work from remote?scq7.4are your team members geographicallydispersed?sc
+
+
+q7.5does your team regularly collaborate viacommunication technology?sc
+
+
+q7.6is your team occasionally recomposed?sc
+
+
+q8how would you describe your role?openq9do you have direct interaction withclients?sc
+
+
+3.2.2human values
+
+
+to measure human values values as deﬁned by schwartz[13], we used the portrait value questionnaire with 57 items(pvq-57rr) [13] (see also section 2.1). the instrument wasavailable with both male and female pronouns and wasdisplayed according to the pronoun preference asked in thedemographics section. the instrument asks multiple ques-tions per human value dimension in different wordings andalso provides a method to check whether the responses perdimension are coherent. if they are incoherent, the responsescan be marked as implausible and be discarded.
+
+
+3.2.3team challenges
+
+
+we aim to iteratively create a list of human challenges insoftware engineering by incorporating feedback collected inthis and subsequent surveys. to create a starting point forthis survey to build upon, we compiled a list of 33 humanchallenges with a focus on challenges happening ”within acompany”, i.e. problems occurring in teams or in individu-als in the context of a team (see table 2). we used challengesthat came up in research about requirements engineering:t1-t20 and t29-t30 were taken from the napire data[10]. napire (naming the pain in requirements engineer-ing) constitutes an initiative by the empirical requirementsengineering research community that operates a globallydistributed family of survey replications maintained to un-derstand the status quo in practices as well as challengesand their causes and effects in requirements engineering.details (including publications and open data sets) on theinitiative can be taken from the website www.napire.org.even more so with agile approaches, requirements engineer-ing is an intertwined part of software engineering and, thus,many of the reported challenges also apply to other phasesin software engineering. the unique features of softwareengineering work — breaking down required solutions intomanageable small problems, reaching a shared understand-ing of complex problems in the team, and constant necessarysynchronization about the project and task progress andfeasibility — are shared by requirements engineering. wethus believe this is a reasonable initial list for softwareengineering challenges. these challenges were then ﬁlteredfor human-caused challenges as part of a bachelor thesis[41] and extended by reading grey literature, primarilyblog posts, about typical challenges in software engineeringteams. t21-t28 were compiled from these [42], [43], [44],[45]. t31-t33 were added as result from feedback gatheredduring the pilot run of the survey. the challenges were
+
+
+then reviewed by the fourth author of this article (who wasthe main author of [41]) whether they can be considered a”human” challenge.for this initial list, we aimed to minimize bias and thusincluded challenges that may seem more technical than”human”, such as ”missing documentation of the project”.these are, however, still tasks carried out by humans. also,that way, comparability with the results of the napire datais enabled.to answer rq1, for each of those challenges, we askedabout:
+
+
+• the frequency of it occurring on a 5-point likert scale,ranging from ”never” to ”very often”
+
+
+• if the challenge happened more often than ”never”,we asked about the criticality of the challenge; thedanger of it affecting the project’s success. for thiswe employed a 4-point likert scale ranging from ”notproblematic” to ”highly problematic”.
+
+
+• whether there were mitigation measures in place toprevent this challenge. this was a simple optional yesor no question.
+
+
+• if there was a measure in place, respondents were askedto describe it using free text.additionally, respondents were informed that the context ofthe questions was ”challenges within software engineeringteams” at the top of the page. in total, a maximum of 132questions was asked in this section.
+
+
+table 2: team challenges
+
+
+no.team challenge
+
+
+t1lack of experiencet2lack of qualiﬁcationt3lack of teamwork skillst4lack of leadershipt5communication plan is neglectedt6business needs are neglectedt7demotivationt8gold platingt9missing willingness to adapt to new softwaret10missing willingness to adapt to new infrastructuret11missing willingness to adapt to new processest12insufﬁcient collaborationt13insufﬁcient analysis at the beginning of a taskt14subjective interpretations of taskst15work is not solution-orientedt16language barrierst17conﬂicts of interests at management levelt18missing documentation of the projectt19information is not made known to the teamt20misunderstandings in communicationt21certain people dominating discussionst22missing respect in the workplacet23missing acceptance of alternative lifestylest24harassmentt25slow decision makingt26conﬂicting working styles
+
+
+6
+
+
+t27people getting angry in discussionst28people crying in discussionst29frequently changing team memberst30people not reporting problems in timet31over-conﬁdencet32pressure from client forwarded to se teamt33exaggerated seeking of project problems
+
+
+3.2.4client challengeswe additionally compiled a list of 27 challenges that happen ina context between representatives of the company and externalentities, i.e. clients (see table 3). we used the same proceduresas for the team problems. c1-c21 and c24 were taken from thenapire data [10], c22 was added as a reverse situation to c21and the remaining challenges were added as result from feed-back gathered during the pilot run of the survey. the challengeswere only presented to the respondent if they reported theywere working with clients before. for each of these challenges,we asked about the frequency and the criticality as describedin 3.2.3. we did not ask for mitigation measures for the clientchallenges as to not extend the survey any longer than it alreadywas.additionally, respondents were informed that the context ofthe questions was ”challenges between teams and clients” atthe top of the page. overall, a maximum of 54 questions wasdisplayed.
+
+
+table 3: client challenges
+
+
+no.client challenge
+
+
+c1lack of communicationc2client does not know what they wantc3lack of interest in the project by the clientc4missing it project experience at client sidec5missing technical knowledge at client sidec6exaggerated quality expectation of the clientc7conﬂicts of interests at client sidec8client unable to specify functional requirementsc9client unable to specify non-functional reqsc10unclear roles and responsibilities at client sidec11lack of prioritization by clientc12weak management at client sidec13insufﬁcient collaborationc14insufﬁcient analysis at the beginning of the projectc15no direct communication with clientc16communication plan is neglectedc17subjective interpretations of tasksc18work is not solution-orientedc19language barriersc20misinterpretationsc21missing respect towards the client from the teamc22missing respect towards the team from the clientc23delays due to dependencies to client’s third partiesc24people not reporting problems in timec25over-conﬁdencec26communication of problems to client restrictedc27exaggerated seeking of project problems
+
+
+3.3data collection
+
+
+before the execution of the main survey, we ran a pilot surveywith afﬁliated researchers and software engineers from ger-many and sweden. 11 out of 20 people completed the surveyand provided feedback about the wording of questions andchallenges. as a result, we:
+
+
+• added six additional team challenges
+
+
+• added three additional client challenges
+
+
+• polished the wordings or added clariﬁcations to decreaseambiguities
+
+
+• added a condition that respondents were only askedabout the criticality of a challenge if they reported thechallenge’s frequency to be more than ”never”
+
+
+• added a request to share the survey to colleagues andfriends working in software engineering teamsthe target population of the survey were people working insoftware engineering without any restrictions to their role. themain survey was distributed via three different channels thatlooked promising in regard to response rates. the samplingmethod was convenience sampling. we used different surveylinks for each channel to get distinct response statistics. ourgoal was to reach a culturally diverse set of people working insoftware engineering, as to avoid too many people sharing thesame human value set. the targets of the channels were:
+
+
+1) the professional network of the research group and qual-ityminds’ business network, consisting of software engi-neers working in a variety of domains such as automotive,the ﬁnancial industry and tool manufacturers (chn1).
+
+
+2) platforms that offer to present surveys to their users inexchange for ﬁlling out surveys of other users (chn2):
+
+
+3) uncontrolled propagation via social media (chn3). weposted this survey link on twitter, facebook and chat com-munities. additionally, we sent it to software engineerssampled from the linkedin search.thesurveystartedon28.08.2019andwasstoppedon24.11.2019, thus running for almost three months. we moni-tored how many people clicked the link and how many peoplestarted (i.e. they began ﬁlling out information) and how manypeople completed the survey. we then removed any answersthat were of low quality. an answer was considered low qualityif either the respondent wrote in the feedback ﬁeld that theyﬁlled out the survey carelessly, if any section of the team orclient challenges had half or more items unanswered, or if theyeither failed the quality check provided with the pvq-57rr: asit has several questions worded differently for each dimensionit measures, it can detect implausible responses if the responsescontradict themselves.136 (about 70%) of the respondents additionally left their emailaddress to be notiﬁed about the research results, which furtherstrengthens our conﬁdence in the relevance of the researchdirection for professionals.the most unsatisfactory approach was the survey exchangeplatforms, which had many response sets that were skippedthrough without providing answers to the questions (see table4). linkedin worked very well with 149 out of 166 response setssuitable for inclusion. some people showed great interest andcontacted us to reiterate the importance of research on humanaspects in software engineering even though we ”cold called”them.
+
+
+table 4: response statistics
+
+
+no.clickedstartedcompletedincluded
+
+
+chn167412424chn249322819chn3326232166149
+
+
+total442305218192
+
+
+4study resultsin the following, we report on the results of the survey: thecontext of the respondents, the frequency and criticality of ourinitial challenge set, whether there exists a link between humanvalues and challenge occurrence, and the link between nationaldiversity in the team and challenge occurrences. we concludethe report of the survey results by analysing the impact ofteam virtualization. finally, we introduce the revised challengecatalogue based on the feedback from the survey.
+
+
+7
+
+
+fig. 1: respondent characteristics.
+
+
+4.1demographicsto better understand the context of the respondents, we askedthem to report on their role in the team; either by selecting oneof predeﬁned roles (see fig. 1) or by describing it in a text ﬁeld.most of the respondents reported to be mainly a developer.28 respondents used the comment ﬁeld to explain that theyassume multiple roles depending on the current need.slightly more than half of the respondents had been workingless than 5 years in the industry. around 20% replied thatthey had been working in software engineering for more than10 years. around 40% of the respondents reported to havedirect interaction with clients. we also asked participants toreport on their nationality as well as the nationalities presentin their teams [rq3]. in total, our respondents had 49 dif-ferent nationalities. 19 of them had a dual citizenship. oursample contained predominantly european nationalities, with134 (69.8%) european nationals, 41 (21.4%) asian nationals,and 17 (8.9%) respondents from other regions (see fig. 2). 145respondents (75.5%) worked in germany at the time of thesurvey. 31 respondents were working in teams with only asingle nationality present. most respondents reported to workin very multinational teams, having ﬁve or more nationalities.
+
+
+4.2challenge evaluationin order to understand which challenges matter most and toanswer rq1, we asked respondents to rate the criticality (ona 4-point scale) and frequency (on a 5-point scale) of a set ofchallenges. we mapped the scales to values of 0-3 for criticality(not problematic = 0, somewhat problematic = 1, problematic = 2,highly problematic = 3) and 0-4 for frequency (never = 0, rarely= 1, sometimes = 2, often = 3, very often = 4), and then calculatedthe mean and median of all responses for each challenge.to rank the challenges, we introduced the property impact,which is deﬁned as the product of the normalized frequencyand normalized criticality to remove the different weightingintroduced by different scales: a challenge that occurs oftenand is critical has a high impact. for the team challenges, we
+
+
+fig. 2: nationality distribution of the respondents, binnedin regions and continents.
+
+
+also asked whether there were mitigation measures in place toprevent the challenge. by far the most impactful team challengewas insufﬁcient analysis at the beginning of a task, followed by lackof leadership. from there on, impact scores were close together.least important was people crying in discussions, followed byharassment and missing acceptance of alternative lifestyles. corre-lation between frequency and criticality was 0.48. an overviewof the team challenge results can be found in table 5.for insufﬁcient analysis at the beginning of a task, respondentsreported the following mitigation measures:
+
+
+• dedicated meetings for reviews, retrospection, as wellas ”pre-grooming” that allow special time slots for teammembers to ask about areas they have insufﬁcient knowl-edge about
+
+
+• introduction of formal speciﬁcation processes, to providea framework to specify a minimum amount of informationto task assignees
+
+
+• team commitment to clean planning, including intensecommunication with all stakeholders from the start
+
+
+• agile approaches such as scrumfor lack of leadership, respondents reported the following:
+
+
+• coachings for personnel in leading roles, as well asleaders-to-be
+
+
+• fostering of leaders in-house with senior guidance
+
+
+• dedicated feedback sessions and retrospectives
+
+
+• the employment of software to measure ofﬁce/teammood, and frequent supervision of these reports by theleadera list of aggregated mitigation measures for each team problemcan be found in appendix b, while the full data about reportedmitigations can be found browsing the link to the data reposi-tory in appendix c.
+
+
+for the client challenges, the most impactful challenge waslack of interest in the project by the client, client does not know
+
+
+8
+
+
+table 5: team problems, ranked by impact. ± denotes standard deviation. mitigation refers to the percentage ofrespondents that reported any mitigation measure to support this challenge was in place.
+
+
+no.problemfrequencycriticalityimpactmitigatedmeanmedianmeanmedian%
+
+
+t13insufﬁcient analysis at the beginning of a task2.43±1.0222.07±0.8420.2520.463t4lack of leadership2.21±1.1121.91±0.9520.2100.389t18missing documentation of the project2.59±1.0631.59±0.8320.2060.489t7demotivation2.04±1.1721.92±0.9720.1960.368t19information is not made known to the team2.06±1.1221.86±0.9420.1920.384t3lack of teamwork skills1.98±1.0321.89±0.9520.1870.459t20misunderstandings in communication2.05±1.0121.82±0.8920.1860.392t5communication plan is neglected2.15±1.0921.73±0.8920.1850.407t12insufﬁcient collaboration1.87±1.1121.97±0.9520.1840.475t14subjective interpretations of tasks2.24±1.0921.63±0.8820.1830.328t25slow decision making1.95±1.1721.80±0.8720.1760.258t1lack of experience2.29±0.9821.51±0.8720.1720.568t17conﬂicts of interests at management level1.77±1.2621.85±0.9720.1640.133t30people not reporting problems in time1.68±1.0621.93±0.8920.1620.331t21certain people dominating discussions2.24±1.1721.40±0.9710.1570.210t15work is not solution-oriented1.78±1.1021.73±0.9520.1540.383t8gold plating1.98±1.1421.49±1.0510.1480.380t6business needs are neglected1.64±1.0821.76±0.9220.1450.372t2lack of qualiﬁcation1.82±1.0521.59±0.9320.1440.581t31over-conﬁdence1.83±1.0321.54±0.9420.1410.157t11missing willingness to adapt to new processes1.85±1.1221.47±0.8810.1360.307t9missing willingness to adapt to new software1.71±1.0721.37±0.8510.1170.268t32pressure from client being forwarded to se team1.68±1.1321.39±0.8910.1160.316t10missing willingness to adapt to new infrastructure1.68±1.1321.35±0.8610.1140.298t22missing respect in the workplace1.14±1.1111.66±1.0620.0950.371t29frequently changing team members1.17±1.1011.62±0.9220.0940.266t26conﬂicting working styles1.72±1.0321.09±0.8310.0940.227t27people getting angry in discussions1.28±1.0011.38±1.0310.0880.301t33exaggerated seeking of project problems1.32±1.0411.31±0.8710.0860.182t16language barriers1.19±1.0211.20±0.8510.0710.427t23missing acceptance of alternative lifestyles0.93±1.1411.21±0.9910.0560.339t24harassment0.37±0.7201.58±1.2220.0290.474t28people crying in discussions0.23±0.5701.20±1.1710.0140.198
+
+
+what they want and no direct communication with client. clientchallenges with the least impact were misinterpretation andlack of communication. the correlation between frequency andcriticality was 0.46. all results can be found in table 6.
+
+
+4.3personal values
+
+
+rq2 aimed at exploring whether the values of an individualhad any impact on the reported frequency or criticality onthe challenges of our challenge set. for use with correlationanalyses, schwartz describes steps to calculate centered humanvalues [13] for the 19 human value dimensions (see section3.2.2): first, the mean of the items for the respective valuedimensions is taken. then, the mean of all items is calculated.finally, the overall mean is subtracted from the mean of eachdimension. we then calculated the pearson correlation coefﬁ-cient between the human value dimensions and the frequencyand criticality of each challenge. all correlations were weakwith no correlation concerning the frequency exceeding 0.27,and no correlation concerning the criticality exceeding 0.34.additionally, as correlating 33 challenges with 19 human valuesresults in many (627) tests, we applied the holm–bonferronimethod [46] to adjust the p-values and found none to bestatistically signiﬁcant (alpha=0.05).we then aggregated the 19 values into the four ”higher order”values self-transcendence, self-enhancement, openness to changeand conservation that were also described by schwartz [13], butthe resulting correlations were even weaker (no frequency cor-
+
+
+fig. 3: team challenges, displaying frequency on the hor-izontal axis, criticality on the vertical axis and percentageof respondents having mitigation measures in place in thesample as color coded.
+
+
+9
+
+
+table 6: client problems, ranked by impact. (± denotes standard deviation)
+
+
+no.problemfrequencycriticalityimpactmeanmedianmeanmedian
+
+
+c3lack of interest in the project by the client2.52±0.9622.17±0.8420.273c2client does not know what they want2.26±0.9922.28±0.8320.258c15no direct communication with client2.32±0.9321.97±0.8520.228c9client unable to specify measurable non-functional reqs2.33±1.0921.85 ±0.8720.216c14insufﬁcient analysis at the beginning of the project2.00±1.0421.92±0.9420.192c25over-conﬁdence2.06±1.0021.87±0.8920.192c24people not reporting problems in time2.17±1.1621.77±0.9120.192c21missing respect towards the client from the team2.04±0.9521.85±0.8520.189c10unclear roles and responsibilities at client side2.29±1.1321.60±0.8620.183c5missing technical knowledge at client side2.34±1.212.51.51±0.9810.177c8client unable to specify functional requirements2.01±1.0421.70±0.9820.171c12weak management at client side2.19±1.1321.56±0.8420.171c7conﬂicts of interests at client side2.07±1.0521.57±1.0220.163c6exaggerated quality expectation of the client2.53±1.1631.28±0.8810.162c11lack of prioritization by client2.01±1.1421.53±0.9320.154c17subjective interpretations of tasks1.88±0.9621.63±0.8320.153c13insufﬁcient collaboration2.04±1.1621.46±0.9920.149c18work is not solution-oriented1.91±1.0221.55±0.8520.148c4missing it project experience at client side1.58±1.0221.72±1.0120.136c27exaggerated seeking of project problems1.65±1.3421.51±0.9110.124c26management restricting communication of problems to client1.78±1.1221.38±0.9510.123c19language barriers1.53±1.0711.58±0.9720.121c16communication plan is neglected1.29±1.0111.59±0.9820.102c23delays due to dependencies to client’s third parties1.26±1.0411.60±0.9620.100c22missing respect towards the team from the client1.19±1.1011.52±1.011.50.091c1lack of communication1.32±1.0411.31±0.8710.086c20misinterpretations1.00±0.9611.28±0.9310.064
+
+
+fig. 4: client challenges, displaying frequency on the hori-zontal axis and criticality on the vertical axis.
+
+
+relation exceeding 0.22 and no criticality correlation exceeding0.26), none of which were statistically signiﬁcant.therefore and to answer rq2, we report that we found noevidence regarding the link between an individual’s humanvalues and the occurrence of human challenges in softwareengineering teams.
+
+
+4.4nation count in teamswe additionally examined whether the presence of multiplenationalities in the team had an inﬂuence on the frequency andcriticality of the team challenges.
+
+
+fig. 5: the median scores of all challenges relative to thenationality count in the team. for nation counts of twoand three, frequency drops by 0.5, for criticality, it drops awhole level, from 2 (problematic) to 1 (somewhat problematic).
+
+
+31 respondents worked in teams having just one nationality,while 148 worked in teams with more than one nationality.13 respondents did not answer this question. for each nationcount, we calculated the median of all challenge medians of therespondents that reported this nation count for both frequencyand criticality up until a nation count of 6. for a nation count of7 and higher, there were very few respondents for each count,so those were binned. as shown in fig. 5, there was a drop inreported frequency and criticality for a nation count of 2 and3.we used this insight to create three bins: a bin with respon-dents having a single-nationality team (n=31), a bin with 2-3nationalities (n=44), and a bin with four and more nationalities
+
+
+10
+
+
+(n=104).first, we compared the 2-3 group with the single nationalitygroup and checked for statistically signiﬁcant (alpha=0.05)differences to single challenges. none of the challenges weresigniﬁcantly more critical or more frequent in the 2-3-group.however, the following challenges were signiﬁcantly morefrequent for the single-nationality teams:
+
+
+• t3 lack of teamwork skills(freq: +0.5883, p=0.0149)
+
+
+• t12 insufﬁcient collaboration(freq: +0.5652, p=0.0405)
+
+
+• t23 missing acceptance of alternative lifestyles(freq: +0.7394, p=0.0115)the following challenges were signiﬁcantly more critical:
+
+
+• t3 lack of teamwork skills(crit: +0.6656, p=0.0112)
+
+
+• t9 missing willingness to adapt to new software(crit: +0.6923, p=0.0031)
+
+
+• t10 missing willingness to adapt to new infrastructure(crit: +0.7495, p=0.0008)
+
+
+• t11 missing willingness to adapt to new processes(crit: +0.735, p=0.002)
+
+
+• t12 insufﬁcient collaboration(crit: +0.5733, p=0.0338)
+
+
+• t15 work is not solution-oriented(crit: +0.6494, p=0.0168)
+
+
+• t17 conﬂicts of interest at management level(crit: +0.6786, p=0.0236)
+
+
+• t28 people crying in discussions(crit: +1.0714, p=0.008)
+
+
+• t33 exaggerated seeking of project problems(crit: +0.6737, p=0.0076)secondly, we compared the 2-3 group with the group havingfour or more nationalities. again, no challenge was signiﬁcantlymore critical or more frequent for the 2-3-group. the followingchallenges were signiﬁcantly more frequent for the 4+ group:
+
+
+• t2 lack of qualiﬁcation(freq: +0.5541, p=0.0025)
+
+
+• t3 lack of teamwork skills(freq: +0.6986, p=0.0001)
+
+
+• t12 insufﬁcient collaboration(freq: +0.4126, p=0.0294)
+
+
+• t29 frequently changing team members(freq: +0.3831, p=0.0483)
+
+
+• t31 over-conﬁdence(freq: +0.3672, p=0.0434)the following challenges were signiﬁcantly more critical for the4+ group:
+
+
+• t1 lack of experience(crit: +0.3311, p=0.0363)
+
+
+• t2 lack of qualiﬁcation(crit: +0.4, p=0.0243)
+
+
+• t3 lack of teamwork skills(crit: +0.6595, p=0.0005)
+
+
+• t4 lack of leadership(crit: +0.3652, p=0.0362)
+
+
+• t5 communication plan is neglected(crit: +0.3749, p=0.0365)
+
+
+• t7 demotivation(crit: +0.3904, p=0.0354)
+
+
+• t8 gold plating(crit: +0.7778, p=0.0001)
+
+
+• t9 missing willingness to adapt to new software(crit: +0.4337, p=0.0103)
+
+
+• t10 missing willingness to adapt to new infrastructure(crit: +0.5016, p=0.0026)
+
+
+• t11 missing willingness to adapt to new processes(crit: +0.447, p=0.0063)
+
+
+• t12 insufﬁcient collaboration(crit: +0.3986, p=0.0347)
+
+
+• t24 harassment(crit: +1.0667, p=0.0039)
+
+
+• t28 people crying in discussions(crit: +1.2143, p=0.0029)this ﬁnding indicates there seems to be a ”sweet spot” ofnationality diversity in our data. however, the count aloneis a very raw dimension with limited explanatory power. webelieve further investigation is necessary to understand theseeffects. to answer rq3, there seems to be evidence that thedegree of multinationality has an impact on the frequency aswell as the criticality of some challenges.
+
+
+4.5team virtualitywe asked six questions to assess the work contexts of respon-dents in regard to degree of team virtualization (see table 1 andfig. 6). each question could either be answered with ”yes” or”no”.
+
+
+fig. 6: team virtualization characteristics of the surveyrespondents.
+
+
+to answer rq4, we split the sample for each virtualizationcharacteristic and performed an independent t-test for eachteam challenge, using an alpha of 0.05 as a cutoff value forthe p-values. the data looked normally distributed for allcriticality values and for most frequency items, which wasconﬁrmed by a shapiro-wilk test [47]. the use of a t-test isacceptable for data that is not normally distributed accordingto the central limit theorem if the sample size is sufﬁcient(>30 per group) [48]. for those challenge frequencies theshapiro-wilk test returned an ambiguous outcome to (t1,t21, t22, t27), we checked whether there was a differencein statistical signiﬁcance using a mann–whitney u test [49]instead of a t-test. this would make t27 statistically signiﬁcantregarding increased frequency for working with an offshoreteam (p=0.0479) and working in a geographically dispersed team(p=0.0497). however, given that they do not show up in thet-test and the p value is very close to the threshold of 0.05, wechose to omit these occurrences.
+
+
+being part of an offshore team does not seem to have an effecton the frequency of any challenge. however, t26 ”conﬂictingworking styles” is regarded as less critical (crit: -0.496, p=0.0319).it is noteworthy that this is the only case where virtualizationhad a positive impact on a challenge according to the data.working with an offshore team was associated with a small,but signiﬁcant increase in the frequency of the challenges
+
+
+• t6 business needs are neglected(freq: +0.342, p=0.0376)
+
+
+• t29 frequently changing team members(freq: +0.350, p=0.0328)it did not have a statistically signiﬁcant effect on the criticalityof any challenge.working from remote also led to a small increase of t29(freq: +0.366, p=0.0307). there was no signiﬁcant effect on thecriticality of any challenge.working in a geographically dispersed team was associatedwith an increase of the frequency of
+
+
+11
+
+
+• t6 business needs are neglected(freq: +0.405, p=0.0111)
+
+
+• t17 conﬂicts of interest at management level(freq: +0.418, p=0.0231)
+
+
+• t32 pressure from client forwarded to se team level(freq: +0.397, p=0.0181)
+
+
+• t33 exaggerated seeking of project challenges level(freq: +0.372, p=0.0016)additionally, t1 ”lack of experience” (crit: +0.285, p=0.0271) wasconsidered more critical.using digital communication led to more frequent occurrenceof
+
+
+• t16 language barriers(freq: +0.422, p=0.0161)
+
+
+• t29 frequently changing team members(freq: +0.458, p=0.0159)
+
+
+• t32 insufﬁcient collaboration(freq: +0.398, p=0.0437)there was no signiﬁcant effect on criticality.finally, working in teams that are occasionally recomposedwas associated with an increase in the frequency of
+
+
+• t15 work is not solution-oriented(freq: +0.366, p=0.0408)
+
+
+• t22 missing respect in the workplace(freq: +0.634, p=0.0398)
+
+
+• t24 harassment(freq: +0.220, p=0.0176)
+
+
+• t25 slow decision making(freq: +0.404, p=0.0322)
+
+
+• t27 people getting angry in discussions(freq: +0.396, p=0.0132)
+
+
+• t29 frequently changing team members(freq: +0.929, p=0.0001)
+
+
+• t30 people not reporting problems in time(freq: +0.368, p=0.0305)no statistically signiﬁcant effect on criticality was observed.to answer rq4, yes, the degree of virtualization seems to havean impact on human challenges in the team. increasing thedegree of virtualization of a team may increase the frequencyof some human challenges, but only affected the criticality forone challenge and only for geographically dispersed teams.
+
+
+4.6challenge cataloguein the survey, in addition to checking frequency and criticalityon an initial set of challenges, we collected feedback in orderto create a relevant, up-to-date contemporary set of problems,ranging from suggestions to improve the wordings or reduceambiguity as well as additional challenges that respondents feltwere not covered by the survey challenge set. the survey hadthree optional open text ﬁelds at the end to collect feedback:additional team challenges, additional client challenges, andgeneral feedback about the survey. 74 respondents contributedfeedback about additional team challenges that they felt werenot covered sufﬁciently.the feedback was analyzed by a member of the research groupand split into challenges; either existing ones from the set ifapplicable or new ones if the match did not seem close enough.then, a second colleague was tasked to match the feedbackto the combined set of initial challenge codes plus the newones discovered by the ﬁrst member. in a second step, thesechallenges were aggregated or discarded if they did not seemto address the human side of the challenge well enough, orthey were too close to existing challenges and thus redundant.the detailed list of changes to the initial challenge set can befound in the public repository (see appendix c); the revisedchallenges are shown in table 7.respondents also reported that the existing challenges werein part ambiguous. some challenges were very speciﬁc, while
+
+
+others were more abstract. for our revised challenge catalogue,we aggregated challenges and leveled the abstraction grade. weremoved challenges that are difﬁcult to diagnose, are close tobeing an organizational matter rather than a human challenge,or do not affect the actual software engineering work. addition-ally, we plan to better describe how that kind of challenge mightexpress itself in practise. for future surveys, we hope to reducemisinterpretations of the challenges, reduce survey length andbe able to more exactly map the state of human challengesin software engineering. to limit the scope, our reﬁned set ofchallenges focuses on challenges within the company (teamchallenges) and omits challenges happening in the contextbetween the company and external entities (client challenges).aggregating the challenges, we split the challenges into twocategories (see table 7):
+
+
+• interpersonal. this category contains challenges that occurwhen people interact with each other. these challengeshappen between colleagues (and are witnessed by thechallenge reporter) or from colleagues to the respondent.they include problematic demeanour, clashes in the waypeople communicate, or general stances of individuals thatprevent collaboration.
+
+
+• intrapersonal. this category contains burdens of any sorton an individual that may impact the work they do in anegative way. this category comprises all reported chal-lenges that are an emotional state of an individual, or astance they have towards a project, way of working orprocess.
+
+
+table 7: revised team challenge set
+
+
+no.challenge
+
+
+inter-personal challenges
+
+
+1“not my job”-mentality2different communication preferences3destructive competition4lack of conﬁdence5over-conﬁdence6lack of empathy7pressure8people not reporting problems in time9frequently changing team members10aggressive discussion styles11misunderstandings12discussions are not solution-oriented13reluctance to change working habits14team is not kept up-to-date15lack of mentors16missing team cohesion17different needs of staff not respected18negativity19harassment20missing appreciation21lack of mediation in conﬂicts
+
+
+intra-personal challenges
+
+
+1bad work-life-balance2work is not solution-oriented3tasks insufﬁciently analyzed4task is not well deﬁned or explained5lack of knowledge6gold plating
+
+
+12
+
+
+7demotivation
+
+
+the categorization allows to examine how certain measures atwork affect an area of a challenge as a whole and puts someof the challenges into more speciﬁc context. if a measure isexpected to only affect one area of challenges, the unnecessaryother category can also be excluded to make surveys morecompact.a list of descriptions of the new challenge set can be found on-line in the repository linked in appendix c. by explaining eachproblem, we additionally hope to decrease misunderstandingsand conveying the scope of each individual challenge.
+
+
+5discussionin this article, we summarised our ﬁndings from our surveyconducted among 192 software development professionals. ourresearch focus was ﬁnding out which human challenges areconsidered most frequent and critical in software engineering.we examined the links between team virtualization, human val-ues and nationalities and the occurrence and reported criticalityof challenges.based on the feedback of the survey, we reﬁned the challengeset and proposed two categories.our initial research questions were answered as followed:
+
+
+• rq1. we evaluated our initial challenge set. (see table5). we introduced a reﬁned challenge set based on thefeedback of the survey (see table 7).
+
+
+• rq2. we found no signiﬁcant evidence that human valuesas deﬁned by schwartz [13] have an impact on the reportedchallenge frequency and criticality.
+
+
+• rq3. we found evidence that there seems to be a connec-tion between nationality and challenges, with the sweetspot being teams with 2-4 nationalities.
+
+
+• rq4. we found evidence that a higher degree of team vir-tualization leads to a higher frequency of some challenges.for the team challenges, insufﬁcient analysis at the beginning ofa task was the most critical challenge. this makes sense as itcan lead to multiple consecutive problems: time, staff, andresources may not be correctly allocated. required expertisemight be missing in the team. costs can explode beyondassumptions. however, it is not yet clear what causes thischallenge. it could be a problem of the software engineeringprocess, which should explicitly reserve time to analyse tasksbefore work on it begins. it could also be due to people notvoicing concerns or not having the opportunity to do so. totackle this, it should be ensured there is an explicit time andplace to discuss tasks in depth with stakeholders and peoplethat will work on the task, to ensure everyone is synchronizedwell - a central tenet of scaling agile frameworks [50].other relevant team challenges (see fig. 3 and table 5) stemmedfrom a multitude of causes: own emotional states such as”demotivation” (t7), behaviour of superiors expressed as ”lead-ership” (t4), but also synchronisation issues such as ”insufﬁcientanalysis of tasks” (t13) or ”information not made known to the team”(t19). none of these challenges can be linked to a commonroot. this indicates that human challenges are a broad andcomplex problems. finding out how to support the overcomingof these challenges will likely require detailed investigation foreach challenge individually. challenges related to intolerancewere among the least relevant challenges for se profession-als: ”harassment” (t24), ”people crying” (t28) and ”missingacceptance of alternative lifestyles” (t23) were among the leastfrequent challenges. this seems to be a good sign for the state ofminority inclusion in software engineering. also, surprisingly,”language barriers” (t16) are not reported to be a big challenge- while ”misunderstandings in communication” (t20) ranked 7thin impact. misunderstandings thus seem to occur on a higherlevel than simple syntactical language mistakes. as a misunder-standing can be highly problematic, with consequences ranging
+
+
+from a task incorrectly implemented to a personal relationshipat work being negatively affected, that certainly highlights theneed for in-depth analysis of communication issues in softwareengineering.the most relevant challenges between clients and se teams(see fig. 4 and table 6) do seem to share a common root:synchronisation between the client and the team is indirect andnot frequent enough. the worst reported challenge was ”lackof interest in the project by the client”. this comes as a surpriseas the client is paying for the project and most likely doeshave an interest in getting what they envision. it could be thatthe feeling that there is a lack of interest, as well as the 2nd(”client does not know what they want” (c2)) and 3rd (”no directcommunication with client” (c15)) most relevant challenges areintertwined. the client might not be uninterested in the project,but is not aware of the process, a lack of proactivity on their sideor of misunderstandings that are going on. if communicationis not direct, but forwarded or potentially reworded by anotherteam, there could be more misunderstandings. further researchshould examine whether direct, frequent communication be-tween the clients and the se team could improve the ﬁrst ﬁverelevant challenges.we found that human values of the respondent had no signif-icant effect on the reported frequency or criticality. we assumethat the effect size is small and a larger sample size is needed.it could also be that the instrument used was inadequatefor the context, and a different mapping of human values isbetter suited. important cultural context may also be lost whenvalues are reduced to numbers [51]. ultimately, supportingteams or teaming up people based on human values may notbe desirable in practical settings due to privacy concerns anddiscriminatory effects.teams with 2-3 nationalities among the team members had lessfrequent and critical challenges than teams with just a singlenation in our data. interestingly, half of the less critical chal-lenges have to do with ”missing willingness to adapt”. maybethe exposure to different nationalities leads to more acceptanceof different stances on procedures, thus disagreement is seenas less critical to the project’s success. however, the advantagedisappeared and challenges became more frequent and criticalwith teams with more than ﬁve nationalities. teams with manynationalities are probably more likely virtual teams or consistof subcontracted subteams: in our data, 76% of the 2-3 nationcounts bin was geographically dispersed, but 96% of the 4+nationalities bin. in this case, the reason for a higher frequencyand perceived criticality of problems might be related to theorganisational structure of the team rather than the fact thatthere are many nationalities.most aspects of team virtualization added to the frequencyof challenges. only one challenge was more critical: lack ofexperience in case of geographically dispersed teams. it couldbe that less experienced workers may need more active super-vision that is hard to maintain if colleagues are not physicallyavailable. for workers in offshore teams, the criticality wasless severe when it came to conﬂicting working styles. maybethat is because offshore teams tend to be used to outsourceimplementation rather than design, so the task merely needs tobe done in whatever way.an interpretation as to why the frequency rises in cases ofmany virtualization aspects could be this: remote work, geo-graphically dispersed teams and digital communication reducepersonal interactions and may lead to weaker personal bondsbetween colleagues or, in case of re-composition of the team,bonds that are regularly broken, thus social roles have to be re-learnt frequently (possibly contributing to t25 and t30). thiscould lead to less understanding of each other and the socialstructure of a team, in turn leading to less loyalty towards thecompany (contributing to t6, t29) or colleagues (t22, t24, t27).interestingly, the use of digital communication seemed to con-tribute to the frequency of language barriers. intuitively, using
+
+
+13
+
+
+text based communication should decrease the frequency as theinvolved can look up words and acoustic understanding is nota challenge. however, maybe bad connections – still commonas of 2020 – contribute to people not understanding each otherclearly, which in combination with unusual pronunciation orwordings may contribute to a feeling of the language being abarrier.
+
+
+5.1limitations
+
+
+most of the response sets came from linkedin users. asthe linkedin search prioritizes local people, many of the re-spondents (75.5%) were working in germany. as europe’sworkforce differs greatly regarding engagement, happiness andproductivity (with germany having only few highly engagedworkers) [52], it can be assumed that the frequency and critical-ity of challenges could change if the focus would lie on a dif-ferent country. the nationalities were predominantly european(69.8%), some from asia (21.4%), but only few from america,africa and other regions. older software engineers that are lesslikely to use social media may be underrepresented. 24 of theresponses were from members of the qualityminds companynetwork, which might have introduced a bias regarding theindustry context, as the company at the time of the surveyprimarily operated in the ﬁnancial sector.the initial challenge set came largely from the napire dataset[10], which had requirement engineers as a target group. also,some respondents reported the challenges to be ambiguous orunclear. this became more obvious in the analysis of the dataand the feedback: the initial catalogue contained problems thatare not strictly enough a human challenge, such as ”missingdocumentation of the project”. some challenges were too opento interpretation or too similar - a small explanation for eachchallenge with examples of how it may manifest can help withgetting the scope of the challenge across. the reﬁnement of thechallenge catalogue is prone to subjectivity of the two codersand represents our point of view on the matter. however, thedata set is disclosed - other researchers are invited to review it.some of the challenges have a u-shaped relationship, i.e. de-pending on the subjective thresholds of the observer, reducingthe symptoms of a challenge could create another challenge: aworker who wants to make an effort to reduce their perceiveddemotivation could end up being perceived as over-conﬁdentor indulging in gold plating. colleagues that want to get ev-eryone on board and establish an atmosphere of collaborationcould be regarded as not working in a solution-oriented way.special care has to be taken when scores for these problems areaggregated, as effects may cancel themselves out and appearunproblematic even though the individual challenge scoreswould be high.the questions regarding the degree of virtualization only al-lowed for binary yes/no answers. different degrees and nu-ances of virtualization aspects could not be expressed, e.g. thedegrees of an offshore relation can be investigated using moreﬁne-grained dimensions as described in the taxonomy for gseby ˇsmite et al [53].the survey did not ask for religion, organizational culture,processes used in the company and so on. these aspects thatplay a large role in the context of a work situation may inﬂu-ence challenges strongly and contribute to a lack of identiﬁedlinks i.e. for the human values. in future research, we plan toincorporate agile vs plan-driven processes and identify whetherand how they contribute to challenge occurrences.we did run a pilot survey to reduce the risk of the questions be-ing ambiguous, however, the anonymous nature of the surveyprevented us from reaching out to participants to validate theanswers.finally, we realised the notion of criticality was not explainedsufﬁciently well, and not separated clearly enough from fre-quency. both scores were correlated with a correlation of 0.48
+
+
+for the team challenges. respondents were unsure whether theyshould report on criticality as it happened in their circum-stances, or judge ”how critical it was if it happened frequently”.for future research, we will focus solely on frequency plus theconcrete implications of a challenge that is not overcome, andabandon the concept of a ”general badness”.
+
+
+6conclusionwe have introduced a compact, reﬁned set of human challengestailored to software engineering teams. this set addresses thequestions of what human challenges occur in se teams (rq1).we found that individuals’ values do not largely inﬂuence thefrequency and criticality of challenges within a team (rq2).however, diversity in nationalities (rq3) and a higher degreeof team virtualization (rq4) do seem to have an inﬂuence inthe form of more frequent and critical challenges.we see various ways of employing the set of human chal-lenges. additional links can be examined for whether theyhave an impact on the occurrence of challenges: agile versustraditional ways of organizing teams, using different meansof communication or the existence of special roles such asmentors and mediators in the company. speciﬁc tools could betested for their impact on speciﬁc challenges or their categories:tools that allow feedback for employees, easy collaboration ordocumentation. the proposed set can also be used to probethe condition of teams and compare them with each other. ifteams report a lot of challenges or differ greatly in their reports,mitigation strategies should be considered or could be sharedacross teams. in this survey, we have collected mitigation strate-gies for each challenge of the initial set from the respondents.they can be found in appendix b.while we found evidence that having multiple nations in ateam makes some challenges less frequent, we did not ﬁnd anysigniﬁcant links between human values and challenges. futureresearch should investigate which implications of differentnationalities produce these results. an in-depth analysis couldlook at whether there are speciﬁc nationalities that work welltogether. what do they share, what sets them apart? it couldalso be that companies that have a diverse workforce are moreopen and tolerant to begin with, contributing to a better workatmosphere, in turn resulting in less frequent challenges.finally, in our data, degree of virtualization including digitalcommunication seemed to have an impact on many of thechallenges. in our future research, we will examine this on adeeper level: are there any means of communication or speciﬁctools that have a positive impact on our list of challenges? isthere a difference between text-based communication and beingable to see the coworkers’ faces? the following constitute moredetailed hypotheses that we plan to investigate in our futureresearch:
+
+
+• h1. video and audio-only both lead to more interpersonalchallenges compared to in-person meetings.
+
+
+• h2. text-based communication leads to more interpersonalchallenges than audio communication.
+
+
+• h3. audio-based communication leads to more interper-sonal challenges than communication with both video andaudio communication.
+
+
+• h4. the challenge increase stemming from offshore teamsetups, working remotely and being geographically dis-persed can be explained by the increased use of digitalcommunication.
+
+
+• h5. recomposing teams often leads to more inter-personalchallenges.
+
+
+• h6. having more than one nationality in the team leads toless interpersonal challenges.
+
+
+• h7. having more interpersonal challenges lead to moreintrapersonal challenges.h1-h5 are based on our ﬁndings described in section 4.5. forh1-h3, we speculate that some problems occur as a result
+
+
+14
+
+
+of taking away non-textual cues such as intonation or facialexpressions [54]. h6 is a result of our ﬁndings of section 4.4.finally, we suspect that the presence of many challenges in theworking environment or between colleagues have a negativeimpact and thus lead to an increase of intrapersonal challengesdue to stress contagion effects [55].software engineering is a human activity. faced with crises likeclimate change and pandemics, affecting both the way we liveand the way we work, research on human challenges in thecontext of new working styles seems more relevant than ever.
+

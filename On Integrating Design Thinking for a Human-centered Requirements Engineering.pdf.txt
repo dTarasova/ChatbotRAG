@@ -1,0 +1,366 @@
+
+ieee software, manuscript id 1 
+
+
+ 
+
+
+on integrating design thinking for a  
+
+
+human-centered requirements engineering 
+
+
+jennifer hehn, daniel mendez, falk uebernickel, walter brenner, manfred broy 
+
+
+abstract— in this position paper, we elaborate on the possibilities and needs to integrate design thinking into requirements engineering. we draw from our research and project experiences to compare what is understood as design thinking and requirements engineering considering their involved artifacts. we suggest three approaches for tailoring and integrating design thinking and requirements engineering with complementary synergies and point at open challenges for research and practice. 
+
+
+index terms— design thinking, requirements engineering 
+
+
+——————————   u   —————————— 
+
+
+1 introduction
+
+
+equirements engineers often face the challenge of discovering and satisfying the fuzzy needs and vol-
+
+
+atile requirements of the various stakeholders involved. design thinking, as a human-centered, rapid-prototypy-ing method for innovative design, is one promising ap-proach to address this challenge [1], [2].  we postulate that we need an effective integration of design thinking and requirements engineering. however, little is known how an integration could be realized considering a holistic view, also due to existing misconceptions: in de-sign thinking, we pretend too often that problem-solving ends with understanding the problem and building a non-technical prototype, leaving open the seamless transition into software development endeavors. in requirements engineering, we pretend too often that software require-ments are somehow “just there” and simply need to be elic-ited, missing the potential of fully exploring the problem space. one difficulty to be taken into account is that, like with other “agile” approaches, design thinking can ap-pear as a set of single methods, tools, or even as a holistic approach [3]. requirements engineering, in turn, is an en-gineering discipline encompassing various principles, tools, and even more methods – all to be selected depend-ing on given project situations and software process mod-els [4]. to make effective use of the full potential of design thinking, we first need a better understanding of what it is and how it relates to requirements engineering, in which situations it might be suitable, and how it could be properly integrated.  for years, we accompanied and researched organizations that adopted design thinking in their industrial settings. in this position paper, we share our experiences and out-line synergies and differences between design thinking 
+
+
+and requirements engineering with a model of artifacts that emerges from industrial adoptions. we recommend three integration strategies before concluding with open questions for research and practice. 
+
+
+2 design thinking in a nutshell 
+
+
+design thinking is a structured problem-solving approach to develop innovative products, services, and business models. it builds upon the exploration of human needs, non-technical prototyping, iterative problem reframing, and interdisciplinary teamwork. design thinking is pri-marily intended to be applied in “wicked” project settings which are characterized by volatile and partially unidenti-fied/hidden requirements [5]. our own scope and experi-ences are centered in the development of software-inten-sive products in industrial projects as well as in practical courses at the university of st.gallen [6]. there, we employ an iterative and multi-disciplinary approach widely known as the design thinking “double diamond” shown in fig. 1. 
+
+
+  
+
+
+xxxx-xxxx/0x/$xx.00 © 200x ieee        published by the ieee computer society 
+
+
+———————————————— 
+
+
+• jennifer hehn is with the institute of information management, university 
+
+
+
+
+
+• daniel mendez is with the blekinge institute of technology and with fortiss 
+
+
+gmbh, e-mail: daniel.mendez@bth.se. 
+
+
+• falk uebernickel is with the hasso-plattner institute at the university of 
+
+
+potsdam, germany and the university of st.gallen, switzerland, e-mail: falk.uebernickel@hpi.de. 
+
+
+• walter brenner is with the institute of information management, univer-
+
+
+
+
+
+• manfred broy is with the technical university of munich (tum). e-mail: 
+
+
+broy@in.tum.de. 
+
+
+r 
+
+
+       fig. 1. design thinking double diamond  
+
+
+2  ieee software 
+
+
+ 
+
+
+we distinguish the problem space from the solution space, each with exploratory (diverging) and defining (converg-ing) activities. the problem space contains methods to cap-ture the problem in a human-centric, empathic manner. the phases define and needfinding explore the user and business environment, while synthesis condenses the gath-ered information to potential opportunities for the discov-ered needs. the solution space contains methods to de-velop ideas, build prototypes, and systematically test them. iterations are carried out wherever necessary in the pro-cess. prototypes evolve from rudimentary, and often pa-per-based, low-fidelity prototypes to more sophisticated, technical ones at later stages. the ability to conduct this stepwise improvement of assumptions, ideas, and proto-types fundamentally relies on an open communication en-vironment which is leveraged by harnessing selected tools and techniques like the ones summarized in our online ma-terial compendium (www.dt4re.org).  
+
+
+3 cross comparison of design thinking and 
+
+
+requirements engineering 
+
+
+3.1 two complementary approaches 
+
+
+to compare both approaches, it needs to be clear what is being achieved through design thinking and what through requirements engineering and how the output can be transformed into an actual product. based on our experiences as practitioners who train companies in de-sign thinking and requirements engineering [7], [8], we created a blueprint of relevant artifacts from both ap-proaches (fig. 2). the artifacts describe the produced work results and their dependencies and, thus, abstract from complex development processes, which are barely compa-rable across projects [9].  our model structures the artifacts according to why a sys-tem is needed (context layer), which (user-level) require-ments and features are necessary (requirements layer), and how the system is to be realized (system layer). the full model consists of 40 artifacts: 16 attributed to design thinking, 16 to requirements engineering, and 8 to both (for details, see web extra).  we see various commonalities between design thinking and requirements engineering, at least if the latter is un-derstood as an iterative approach. the differences should be seen as complementary activities. design thinking ex-pands the toolbox for requirements engineering by em-phasizing artifacts describing the relevance of the system vision (context layer). they complement the more technical-oriented requirements engineering artifacts with a hu-man-centered perspective [10]. and, requirements engi-neering expands the toolbox of design thinking. the tech-nical realization of the functionalities is not within the scope of design thinking and is rather attributed to the ar-tifacts produced in requirements engineering (require-ments and system layer). based on our model we suggest the following:  use design thinking to guide your requirements elicita-tion. the design thinking process model (fig. 1) can help to produce relevant context artifacts for a comprehensive understanding of the problem. use the high-fidelity 
+
+
+       
+
+
+fig. 2. combined artifact model of design thinking and re-
+
+
+quirements engineering 
+
+
+ 
+
+
+hehn et al.:  design thinking for a human-centered requirements engineering 3 
+
+
+ 
+
+
+prototype to visualize the system vision including key functionalities and the general form of user interaction. in addition, the prototype serves usability-driven demonstra-tion purposes to customers rather than technical-driven feasibility studies. embrace the learning curve of design thinking to in-form implementation. from an implementation point of view, understanding how ideas and functionalities have emerged, helps to design the solution vision in the in-tended form. for example, field study results and insights can inform use cases and scenarios – typically defined in requirements engineering (or user stories when working in a more agile way).  define your content-focus. depending on what a team needs to learn more about, each approach emphasizes a different content. if you need to understand the user and business context in detail, concentrate on design thinking artifacts; if you focus on the technical perspective and fea-sibility questions, concentrate on the requirements engi-neering artifacts at the requirements and system layers. teams may jump back and forth between both approaches, if new questions come up in one or the other area. find the right balance. a balance needs to be found be-tween creative and corporate requirements. experienced practitioners are able to observe different demands and adapt the approach accordingly. the differences in design thinking and requirements engineering are therefore a great chance to customize projects along the way.  
+
+
+3.2 three integration strategies  we have identified three valuable strategies to customize projects based on different ways to integrate design think-ing into requirements engineering: (1) run desin thinking prior to performing requirements engineering practices (upfront), (2) infuse the existing requirements engineering process with selected design thinking tools and artifacts (infused), or (3) integrate design thinking into require-ments engineering practices on an ongoing basis (continu-ous). tab. 1 provides an overview when and how each strategy can be operationalized best. to choose the right strategy consider your objective and project context.  use the upfront strategy, when you are facing a high level of uncertainty about the problem and the solution. applying design thinking helps to understand the problem deeply and define the overall concept of an idea.  use targeted infusions to support existing requirements en-gineering activities, for example, if you already have a so-lution idea, but still need to sharpen it or if you want to clarify fuzzy requirements. applying requirements engi-neering helps to focus on details or features of an idea. use continuous design thinking, when integrating design thinking principles into your requirements engineering routine, for example as part of an organizational change program. instantiate roles (human-centric requirements engineers) and use the design thinking principles as a longterm strategy.  we have also found the maturity level of design thinking in an organization as an influencing factor. while 
+
+
+requirements engineering is typically a common practice, design thinking is still relatively new. thus, the decision to integrate both approaches also depends on the level of courage, given time, and dedicated resources. as a rough guideline, the infusion strategy provides a reasonable starting point as it applies focused design thinking inter-ventions within established practices. while the upfront strategy also keeps existing procedures, it requires more time and resources. finally, the continuous strategy de-mands for management commitment to foster mindset change in an organization or department. 
+
+
+4 open challenges 
+
+
+we summarized three strategies to effectively connect de-sign thinking and requirements engineering. applying design thinking in an upfront manner or a way in which it co-exists with engineering activities is what we typically encounter in practice. a fully integrated and continuous design thinking is, however, what we need to facilitate seamless transitions into engineering activities (and back). we showed one such integration at an artifact level which raises us to the next level of challenges for research and practice. this is also because we cannot yet unfold a com-plete picture of how principles, work results, and methods as found in design thinking and other software engineer-ing practices (beyond requirements engineering) exactly relate to each other.  at a conceptual level, we still need to better understand two major aspects: 1) which principles in design thinking can also be found in other more holistic human-centered software engineering disciplines and how do these differ? 2) what are their boundary objects? this becomes apparent in our artifact model: what are the same or similar artifacts with which purposes? when are they interchangeable? same holds when reflecting upon the methods used to cre-ate the artifacts: which methods in design thinking can be used for other software engineering disciplines? how do these methods differ and how can they be integrated? how can milestones be effectively defined, for instance, as inter-faces between different software process models? finally, we also need to reflect upon project roles. what seems triv-ial at first becomes challenging when considering compe-tencies and responsibilities. how can, for instance, multi-disciplinary design thinking teams be integrated with tra-ditional roles such as the one of a requirements engineer or a business analyst? how do existing responsibilities have to be modified when co-existing and collaborating? further questions arise when putting an integration into action at the project level: what are typical project situa-tions which influence the choice of a strategy? how do these situations and the class of systems influence the choice of a strategy and/or single methods? how can these situations be characterized and assessed (with which con-fidence)? the latter is essential to eventually build a holis-tic approach tailorable to the needs of individual software project settings and, thus, ready for adoption in industry. 
+
+
+4         ieee software 
+
+
+ 
+
+
+table 1 
+
+
+strategies for integrating design thinking (dt) and requirements engineering (re) 
+
+
+ upfront design thinking  infused design thinking continuous design thinking 
+
+
+character-
+
+
+istics 
+
+
+- used at an early project stage to provide clarity for unclear 
+
+
+user needs and to define a solution vision 
+
+
+- uses dt as guiding process  
+
+
+- requires setup of a (mini-)project 
+
+
+- used within an existing re process to gain new ideas or clarify 
+
+
+fuzzy requirements 
+
+
+- uses dt as toolbox in re 
+
+
+- requires setup up of focused workshops 
+
+
+- continuous usage of dt and re elements to realize end-2-end 
+
+
+view from user need to solution vision to functional solution  
+
+
+- uses dt as guiding mindset 
+
+
+- combines upfront and infused strategy and setup of new role  
+
+
+outcome 
+
+
+- clear solution vision in form of a mockup  
+
+
+- comprehensive set of dt artifacts (fig. 2) as basis to perform 
+
+
+further re activities 
+
+
+- outcome is situation-dependent (e.g. (new) features, user re-
+
+
+quirements, test with users – all along re process) 
+
+
+- selected set of dt artifacts (fig. 2) 
+
+
+- software requirements specification based on and tracebale to 
+
+
+customer needs 
+
+
+- comprehensive set of dt and re artifacts as shown in fig.2 
+
+
+duration - approximately 3-12 weeks  - approximately ca. 1-10 days - more than 6 months 
+
+
+key  
+
+
+roles 
+
+
+- dt team (4-6) from different areas of expertise  
+
+
+- extended team of experts and project sponsor: offers internal 
+
+
+expertise and defines initial design challenge 
+
+
+- dt coach: provides process guidance 
+
+
+- workshops participants (5-20) from different areas of expertise  
+
+
+- dt coach: provides process guidance 
+
+
+- requirements engineer as mediator between dt team and 
+
+
+software development team 
+
+
+- see upfront and infused strategies 
+
+
+- human-centric requirements engineer: new role incorporat-
+
+
+ing dt expertise as well as re expertise and mediating be-tween both schools of thoughts. 
+
+
+benefits 
+
+
+- full potential of dt is leveraged while no changes to re are 
+
+
+necessary 
+
+
+- solution concept has traceable links to user customer needs  
+
+
+- deep context understanding is achieved  
+
+
+- only minimal changes in existing re practices are required 
+
+
+- resource- and time-friendly  
+
+
+- low adoption hurdle for dt  
+
+
+- seamless integration incl. development-critical artifacts 
+
+
+- human-centred mindset throughout entire project  
+
+
+- precise and traceable (user) requirements through continuous 
+
+
+identification of new requirements and testing  
+
+
+challenges 
+
+
+- resource- and time-intense 
+
+
+- lost implicit knowledge when handing-over prototype 
+
+
+- no to little attention on development-critical artifacts  
+
+
+- risk of neglecting problem context  
+
+
+- missing sustainable impact of dt  
+
+
+- no to little attention on development-critical artifacts 
+
+
+- commitment-, resource- and time-intense  
+
+
+- highly team-dependent  
+
+
+- requires organizational mind-shift and support 
+
+
+case 
+
+
+example 
+
+
+the international alpha insurance company wanted to develop a new service for their new target group of “young profession-als”. a project team from five different business functions (mar-keting, it, actuary, product manager, claims) with 40% capac-ity followed the dt process in an iterative manner for three months. the solution vision resulted in a tested medium-fidelity prototype for a digital on-demand insurance that could be acti-vated and deactivated based on the user’s preferences. the dt team handed over the prototype to the implementation team for further specification, testing, development, and market intro-duction. transferred artifacts included a project documentation with 20 field studies, 2 personas, 5 opportunity areas, and 6 low-fidelity prototypes with learnings about failures. the final solu-tion vision (in form of a mockup) specified key features and their usability. the implementation team performed tests to validate these features, their usability, and their service model. 
+
+
+beta enterprises is an international electronics group that wanted to evaluate the possibilities of smartphone applications for container ships in a marine context. the main goal was to define requirements from a user point of view and to foster cre-ativity for solution finding. in a highly regulated environment, a dt infusion was chosen to support the ongoing re activities with selected tools from needfinding and prototyping. five dt infusion sessions (1-2 days) were conducted within five months. produced artifacts included field studies for precise user re-quirements (it was the first time the team had gotten in close contact with marine captains) and tested medium-fidelity pro-totypes to sharpen service and usage models. according to the workshop participants having direct user contact raised their confidence level in the success of the intended solution. initial concerns about not being able to find interview partners in a highly sensitive b2b setting turned out as unjustified. 
+
+
+gamma energy is a large energy provider with subsidiaries worldwide. a diverse project team applied an upfront dt ap-proach to explore the potential of platforms in the utility sector. the outcome was a solution vision for a digital home improve-ment platform to advance lead generation. to ensure a human-centered mindset throughout specification and development, a new role was instantiated to use selected dt tools to enhance the prototype and fill the backlog with new features. produced dt artifacts included high-fidelity prototypes with usability- and feature-oriented test feedback and new solution ideas. for development scrum became the guiding framework that ena-bled the entire project team to work in sprints. during develop-ment dt prototypes were used as boundary objects to enhance communication with relevant internal stakeholders and to foster a human-centred mindset within the team.  
+
+
+hehn et al.:  design thinking for a human-centered requirements engineering 5 
+
+
+   
+
+
+ 
+
+
+5 conclusion 
+
+
+we have drawn from our experiences to discuss how de-sign thinking can be used effectively for requirements en-gineering. both approaches aim at discovering goals and requirements. while both, design thinking and require-ments engineering, are very distinct when it comes to the underlying philosophies, many artifacts are complemen-tary or even overlapping. yet, while in requirements engi-neering, the measurements of success are often the docu-mented requirements as a foundation for development and quality assurance, in design thinking, we follow a philos-ophy of domain understanding and the learning curve leading to it – regardless the surrounding processes. we showed different combination strategies depending on the project context before we laid out a roadmap for future re-search and practice. with this manuscript, we hope to fos-ter an important and overdue discussion and we cordially invite researchers and practitioners to join this endeavour with their own ideas of integrating design thinking for a human-centered approach to requirements engineering.   
+
