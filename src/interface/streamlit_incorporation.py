@@ -8,12 +8,16 @@ import streamlit as st
 from st_pages import add_page_title, get_nav_from_toml
 
 def setup_streamlit():
-    st.set_page_config(layout="wide")
-
-    sections = st.sidebar.toggle("Sections", value=True, key="use_sections")
+    
+    st.set_page_config(
+        page_title="Requirements Engineering Chatbot",
+        page_icon="🤖",
+        layout="centered",
+        initial_sidebar_state="auto",
+    )
 
     nav = get_nav_from_toml(
-        "src/interface/.streamlit/pages_sections.toml" if sections else "src/interface/.streamlit/pages.toml"
+        "src/interface/.streamlit/pages.toml"
     )
 
     # st.logo("logo.png")
@@ -23,30 +27,6 @@ def setup_streamlit():
     add_page_title(pg)
 
     pg.run()
-
-# def setup_streamlit():
-#     st.set_page_config(
-#         page_title="Requirements Engineering Chatbot",
-#         page_icon="🤖",
-#         layout="centered",
-#         initial_sidebar_state="auto",
-#     )
-
-#     # Optional -- adds the title and icon to the current page
-#     add_page_title()
-
-#     # Specify what pages should be shown in the sidebar, and what their titles 
-#     # and icons should be
-#     show_pages(
-#     [
-#         Page("src/interface/final_version.py", "Home", "🏠"),
-#         Page("src/interface/test_button_version.py", "Page 2", ":books:"),
-#     ]
-#     )
-
-
-#     st.write("This chatbot is designed to help you with your questions about Requirements Engineering. Please ask your question below.")
-
 
 
 # def test_final_version():

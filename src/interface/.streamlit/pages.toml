@@ -1,4 +1,9 @@
 [[pages]]
-path = "src/interface/example_one.py"
-name = "st-pages"
+path = "src/interface/final_version.py"
+name = "Final version"
+icon = "🤖"
+
+[[pages]]
+path = "src/interface/test_button_version.py"
+name = "Test version"
 icon = "📄"

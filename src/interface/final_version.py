@@ -4,6 +4,10 @@ from src.rag.rag_model import RAGModel
 from src.wo_rag import get_openai_answer
 from src.rag.rag_model import RAGTypes
 
+
+
+st.write("This chatbot is designed to help you with your questions about Requirements Engineering. Please ask your question below.")
+
 question = st.text_input("Question")
        
 if st.button("Ask"):
