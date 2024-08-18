@@ -1,0 +1,15 @@
+[[pages]]
+path = "src/interface/example_one.py"
+name = "st-pages"
+icon = "📄"
+
+
+[[pages]]
+path = "src/interface/final_version.py"
+name = "st-pages"
+icon = "📄"
+
+[[pages]]
+path = "src/interface/test_button_version.py"
+name = "st-pages"
+icon = "📄"

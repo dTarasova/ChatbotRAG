@@ -1,0 +1,4 @@
+[[pages]]
+path = "src/interface/example_one.py"
+name = "st-pages"
+icon = "📄"

@@ -14,3 +14,4 @@ huggingface_hub
 pdfplumber
 streamlit
 ragas # metrics for rag evaluation
+st_pages # for interface
