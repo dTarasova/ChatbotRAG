@@ -1,13 +1,14 @@
 from termcolor import colored
 
-from src.rag.evaluation.generate_synthetic_dataset import generate, get_documents
+from src.rag.evaluation.generate_test_set import get_contexts
 from src.rag.rag_model import RAGModel
 from src.interface.streamlit_incorporation import setup_streamlit, test_final_version 
 
+# get_contexts()
 #evaluate()
 # generate()
-# setup_streamlit()
-# test_final_version()
+setup_streamlit()
+test_final_version()
 # TODO: adjust prompts so that it relies more on the context not the general knowledge
 # try:
 #     while True:

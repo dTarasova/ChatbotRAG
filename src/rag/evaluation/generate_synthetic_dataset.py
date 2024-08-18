@@ -3,7 +3,7 @@ from ragas.testset.evolutions import simple, reasoning, multi_context
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
 
-from src.rag.retriever.unstructured_data_loading.document_loader import get_db
+from src.rag.retriever.unstructured_data_loading.documents_extractor import get_db
 import os
 from src.llm_settings import MODEL, TEMPERATURE
 

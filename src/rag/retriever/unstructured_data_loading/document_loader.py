@@ -16,25 +16,11 @@ PATH_DOCUMENTS = 'data/processed_pdfs'
 PERSIST_DIRECTORY = 'chroma_db_larger'
 EXAMPLE_FILE_PATH = 'data/first_batch/Rapid quality assurance with Requirements Smells.pdf'
 
+
 def create_db(path_to_documents: str = PATH_DOCUMENTS) -> Chroma:
     vector_store = chromadb.PersistentClient(path=PERSIST_DIRECTORY)
     add_docs_from_folder(path_to_documents)
     return vector_store
-
-
-
-def get_db():
-    # vector_store = Chroma(persist_directory=PERSIST_DIRECTORY, embedding_function=OpenAIEmbeddings())
-    # result = vector_store.search("artefact-oriented re", search_type="similarity")
-    vector_store = chromadb.PersistentClient(path=PERSIST_DIRECTORY)
-    collections = vector_store.list_collections()
-    if collections.count == 0:
-        print("There are no collections in db")
-    for collection in collections:
-        print("\n\nnumber of items in the collection: " + str(collection.count()))
-        # print(collection.peek(limit=1))
-    return vector_store
-
 
 def add_doc_todb(doc_path):
     text_splitter = RecursiveCharacterTextSplitter(
