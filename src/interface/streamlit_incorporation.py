@@ -13,6 +13,10 @@ def setup_streamlit():
         initial_sidebar_state="auto",
     )
 
+    st.sidebar.title("Final Version")
+    st.sidebar
+
+
     st.write("This chatbot is designed to help you with your questions about Requirements Engineering. Please ask your question below.")
 
 
