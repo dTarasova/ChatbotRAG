@@ -55,53 +55,122 @@ class Generator:
 
     def get_text_data_prompt(self, question, context):
 
+        # prompt = ChatPromptTemplate.from_messages(
+        #     [
+        #         SystemMessage(
+        #             content=(
+        #               """### Instruction ### You are an expert in Requirements Engineering.
+        #                     Answer the following question with detailed and accurate information. Explain reasoning behind the.
+        #                     Use the provided context to enhance your response, but if the context does not add value,
+        #                     you may disregard it. Ensure that your answer directly addresses the user's question. """
+        #             )
+        #         ),
+        #         HumanMessage(f" ### Question ### : {question}"),
+        #         AIMessage( content=f" ### Context ###: {context}")
+        #     ]
+        # )
+
         prompt = ChatPromptTemplate.from_messages(
             [
                 SystemMessage(
                     content=(
-                      """### Instruction ### You are an expert in Requirements Engineering.
-                            Answer the following question with detailed and accurate information. Explain reasoning behind the.
-                            Use the provided context to enhance your response, but if the context does not add value,
-                            you may disregard it. Ensure that your answer directly addresses the user's question. """
+                      """### Instruction ### 
+                      You are an expert in Requirements Engineering.
+                            Using the information contained in the context, 
+                            give a comprehensive answer to the question. 
+                            Respond only to the question asked, response should be concise and relevant to the question.
+                            If the answer cannot be deduced from the context, do not give an answer."""
                     )
                 ),
-                HumanMessage(f" ### Question ### : {question}"),
-                AIMessage( content=f" ### Context ###: {context}")
+                HumanMessage(content=f"""
+                                    ### Context ###: {context}, 
+                                    ---
+                                    Now here is the question you need to answer: 
+
+                                    Question : {question}
+                                    """)
             ]
         )
         return prompt
 
     def get_structured_data_prompt(self, question, context):
 
+        # prompt = ChatPromptTemplate.from_messages(
+        #     [
+        #         SystemMessage(
+        #             content=( """	
+        #               ### Instruction ### You are an expert in Requirements Engineering.
+        # Given the statistical information from the provided data frame (df), answer the following question with detailed and accurate information.
+        #  Ensure that your explanation is clear and understandable. Use ratios instead of concrete values in your response.
+
+        # Start your answer with the line "According to the data, ..."""
+        #             )
+        #         ),
+        #         HumanMessage(f" ### Question ### : {question}"),
+        #         AIMessage( content=f" ### Context ###: {context}")
+        #     ]
+        # )
+
         prompt = ChatPromptTemplate.from_messages(
             [
                 SystemMessage(
-                    content=( """	
-                      ### Instruction ### You are an expert in Requirements Engineering.
-        Given the statistical information from the provided data frame (df), answer the following question with detailed and accurate information.
-         Ensure that your explanation is clear and understandable. Use ratios instead of concrete values in your response.
-
-        Start your answer with the line "According to the data, ..."""
+                    content=(
+                      """### Instruction ### 
+                      You are an expert in Requirements Engineering.
+                            Using the information contained in the context about df data, 
+                            give a comprehensive answer to the question. 
+                            Respond only to the question asked, response should be concise and relevant to the question.
+                            Use ratios instead of concrete values in your response
+                            If the answer cannot be deduced from the context, do not give an answer.
+                            Start your answer with the line "According to the practical data, ..."""
                     )
                 ),
-                HumanMessage(f" ### Question ### : {question}"),
-                AIMessage( content=f" ### Context ###: {context}")
+                HumanMessage(content=f"""
+                                    ### Context ###: {context}, 
+                                    ---
+                                    Now here is the question you need to answer: 
+
+                                    Question : {question}
+                                    """)
             ]
         )
         return prompt
     
     def get_combined_prompt(self, question, context):
+        # prompt = ChatPromptTemplate.from_messages(
+        #     [
+        #         SystemMessage(
+        #             content=(
+        #               """### Instruction ### You are an expert in Requirements Engineering.
+        #                     Answer the following question with detailed and accurate information. Explain reasoning behind the answer.
+        #                     Select the most relevant parts of the provided context and use it to enhance your response. Ensure that your answer directly addresses the user's question. """
+        #             )
+        #         ),
+        #         HumanMessage(f" ### Question ### : {question}"),
+        #         AIMessage( content=f" ### Context ###: {context}")
+        #     ]
+        # )
+
         prompt = ChatPromptTemplate.from_messages(
             [
                 SystemMessage(
                     content=(
-                      """### Instruction ### You are an expert in Requirements Engineering.
-                            Answer the following question with detailed and accurate information. Explain reasoning behind the answer.
-                            Select the most relevant parts of the provided context and use it to enhance your response. Ensure that your answer directly addresses the user's question. """
+                      """### Instruction ### 
+                            You are an expert in Requirements Engineering.
+                            Using the information contained in the context, 
+                            give a comprehensive answer to the question. 
+                            Respond only to the question asked, response should be concise and relevant to the question.
+                            If the answer cannot be deduced from the context, do not give an answer."""
                     )
                 ),
-                HumanMessage(f" ### Question ### : {question}"),
-                AIMessage( content=f" ### Context ###: {context}")
+                HumanMessage(content=f"""
+                                    ### Context ###: {context}, 
+                                    ---
+                                    Now here is the question you need to answer: 
+
+                                    Question : {question}
+                                    """)
             ]
         )
+
         return prompt

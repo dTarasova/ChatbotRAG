@@ -3,6 +3,7 @@ from src.rag.rag_model import RAGModel
 from src.wo_rag import get_openai_answer
 from src.rag.rag_model import RAGTypes
 
+# todo: doesn't work button reflection(
 # Initialize session state for counters if not already done
 if 'counterGPT' not in st.session_state:
     st.session_state.counterGPT = 0
@@ -34,28 +35,29 @@ if st.button("Ask"):
         with col2:
             st.header(f"Answer with RAG Model:")
             buttonRAG = st.button("Answer with RAG Model is better", key="rag_button")
-            answer = results[0].get('answer')
+            answer = results[2].get('answer')
             st.write(answer)
             st.header(f"Context:")
-            context = results[3].get('context')
+            context = results[2].get('context')
             st.write(context)
 
         # Update counters based on button clicks
-        if buttonGPT:
-            st.session_state.counterGPT += 1
-        if buttonRAG:
-            st.session_state.counterRAG += 1
+        if buttonGPT or buttonRAG: 
+            if buttonGPT:
+                st.session_state.counterGPT += 1
+            if buttonRAG:
+                st.session_state.counterRAG += 1
 
-        # Write evaluation results to the file
-        with open("evaluation.txt", "a") as file:
-            file.write(f"Name: {name}\n")
-            file.write(f"Question: {question}\n")
-            file.write(f"Answer with chatGPT: {answerGPT}\n")
-            file.write(f"Answer with RAG Model: {answer}\n")
-            file.write(f"Context: {context}\n")
-            file.write(f"Counter GPT: {st.session_state.counterGPT}\n")
-            file.write(f"Counter RAG: {st.session_state.counterRAG}\n")
-            file.write("\n")
+            # Write evaluation results to the file
+            with open("evaluation.txt", "a") as file:
+                file.write(f"Name: {name}\n")
+                file.write(f"Question: {question}\n")
+                file.write(f"Answer with chatGPT: {answerGPT}\n")
+                file.write(f"Answer with RAG Model: {answer}\n")
+                file.write(f"Context: {context}\n")
+                file.write(f"Counter GPT: {st.session_state.counterGPT}\n")
+                file.write(f"Counter RAG: {st.session_state.counterRAG}\n")
+                file.write("\n")
 
     except Exception as e:
         st.write("Sorry, I could not find an answer to your question. Please try again later.")

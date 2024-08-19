@@ -42,7 +42,17 @@ class StructuredDataRetriever:
     
     def retrieve_context(self, question: str):
         extended_question = f"""
-Use the provided DataFrame (df) to answer the question. Ensure that you incorporate up to 10 relevant columns that could add value to your response. Exclude any values such as 'not shown', 'not answered', and similar entries. Here is the question: {question}
+Use the provided DataFrame (df) to answer the question. 
+Ensure that you incorporate up to 10 relevant columns 
+that could add value to your response. 
+
+ 
+
+If the answer cannot be deduced from the df, do not give an answer.
+Exclude any values such as 'not shown', 'not answered' in the final answer. 
+
+Here is the question: {question}. 
+
 """
         context = self.agent.invoke(extended_question)
         answer = context["output"]
