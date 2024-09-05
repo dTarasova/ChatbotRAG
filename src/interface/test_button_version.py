@@ -21,8 +21,8 @@ question = st.text_input("Question")
 if st.button("Ask"):
     try:
         rag_model = RAGModel(text_retriever_type='step-back')
-        results = rag_model.query(question, query_types=[RAGTypes.TEXT_DATA, RAGTypes.STRUCTURED_DATA, RAGTypes.COMBINED, RAGTypes.SUMMARISER]).get('answers')
-
+        # results = rag_model.query(question, query_types=[RAGTypes.TEXT_DATA, RAGTypes.STRUCTURED_DATA, RAGTypes.COMBINED, RAGTypes.SUMMARISER]).get('answers')
+        results = rag_model.query(question, query_types=[RAGTypes.TEXT_DATA]).get('answers')
         col1, col2 = st.columns(2)
 
         answerGPT = get_openai_answer(question)
@@ -35,28 +35,50 @@ if st.button("Ask"):
         with col2:
             st.header(f"Answer with RAG Model:")
             buttonRAG = st.button("Answer with RAG Model is better", key="rag_button")
-            answer = results[2].get('answer')
+            answer = results[0].get('answer')
             st.write(answer)
             st.header(f"Context:")
-            context = results[2].get('context')
+            context = results[0].get('context')
             st.write(context)
 
-        # Update counters based on button clicks
-        if buttonGPT or buttonRAG: 
-            if buttonGPT:
-                st.session_state.counterGPT += 1
-            if buttonRAG:
-                st.session_state.counterRAG += 1
+        # # Update counters based on button clicks
+        # if buttonGPT or buttonRAG: 
+        #     if buttonGPT:
+        #         st.session_state.counterGPT += 1
+        #     if buttonRAG:
+        #         st.session_state.counterRAG += 1
 
-            # Write evaluation results to the file
+        #     # Write evaluation results to the file
+        #     with open("evaluation.txt", "a") as file:
+        #         file.write(f"Name: {name}\n")
+        #         file.write(f"Question: {question}\n")
+        #         file.write(f"Answer with chatGPT: {answerGPT}\n")
+        #         file.write(f"Answer with RAG Model: {answer}\n")
+        #         file.write(f"Context: {context}\n")
+        #         file.write(f"Counter GPT: {st.session_state.counterGPT}\n")
+        #         file.write(f"Counter RAG: {st.session_state.counterRAG}\n")
+        #         file.write("\n")
+
+        # Update counters based on button clicks
+        if buttonGPT:
+            st.session_state.counterGPT += 1
             with open("evaluation.txt", "a") as file:
                 file.write(f"Name: {name}\n")
                 file.write(f"Question: {question}\n")
                 file.write(f"Answer with chatGPT: {answerGPT}\n")
                 file.write(f"Answer with RAG Model: {answer}\n")
                 file.write(f"Context: {context}\n")
-                file.write(f"Counter GPT: {st.session_state.counterGPT}\n")
-                file.write(f"Counter RAG: {st.session_state.counterRAG}\n")
+                file.write(f"Won: GPT\n")
+                file.write("\n")
+        if buttonRAG:
+            st.session_state.counterRAG += 1
+            with open("evaluation.txt", "a") as file:
+                file.write(f"Name: {name}\n")
+                file.write(f"Question: {question}\n")
+                file.write(f"Answer with chatGPT: {answerGPT}\n")
+                file.write(f"Answer with RAG Model: {answer}\n")
+                file.write(f"Context: {context}\n")
+                file.write(f"Won: RAG\n")
                 file.write("\n")
 
     except Exception as e:

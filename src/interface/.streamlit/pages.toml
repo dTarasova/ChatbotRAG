@@ -7,3 +7,8 @@ icon = "🤖"
 path = "src/interface/test_button_version.py"
 name = "Test version"
 icon = "📄"
+
+[[pages]]
+path = "src/interface/statefulness_check.py"
+name = "Statefulness"
+icon = "📄"
