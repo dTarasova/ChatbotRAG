@@ -1,3 +1,9 @@
 Counter: 1
 Counter: 2
 Counter: 3
+Counter1: 1
+Counter1: 1
+Counter1: 2
+Counter2: 1
+Counter1: 3
+Counter2: 2

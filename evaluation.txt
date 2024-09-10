@@ -136,3 +136,5 @@ The perception of practitioners regarding the usefulness of requirements smell d
 Counter GPT: 0
 Counter RAG: 0
 
+Counter1: 1
+Counter1: 2

@@ -2,15 +2,27 @@ import streamlit as st
 
 st.header("Counter")
 
-if 'counter' not in st.session_state:
-    st.session_state.counter = 0
+if 'counter1' not in st.session_state:
+    st.session_state.counter1 = 0
+if 'counter2' not in st.session_state:
+    st.session_state.counter2 = 0
 
-button = st.button('Increment')
+col1, col2 = st.columns(2)
+with col1:
+    button1 = st.button('Increment1')
+with col2:
+    button2 = st.button('Increment2')
 
-if button:
-    st.session_state.counter += 1
-    with open("test_buttons.txt", "a") as file:
-                file.write(f"Counter: {st.session_state.counter}\n")
+if button1:
+    st.session_state.counter1 += 1
+    with open("evaluation.txt", "a") as file:
+                file.write(f"Counter1: {st.session_state.counter1}\n")
+if button2:
+    st.session_state.counter2 += 1
+    with open("evaluation.txt", "a") as file:
+                file.write(f"Counter2: {st.session_state.counter2}\n")
 
-
-st.write('Counter = ', st.session_state.counter)
+with col1:
+    st.write('Counter1 = ', st.session_state.counter1)
+with col2:
+    st.write('Counter2 = ', st.session_state.counter2)
