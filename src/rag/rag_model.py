@@ -19,8 +19,10 @@ class RAGModel:
         self.generator = Generator()
 
     def get_context(self, question: str) -> tuple:
+        #TODO: always retrieve context from both sources - fix
         context_from_text_data = self.retriever_text_data.retrieve_context(question)
-        context_from_structured_data = self.retriever_structured_data.retrieve_context(question)
+        #context_from_structured_data = self.retriever_structured_data.retrieve_context(question)
+        context_from_structured_data = "Context from structured data is not available yet."
         return context_from_text_data, context_from_structured_data
     
     def query(self, question: str, query_types=[RAGTypes.COMBINED] ) -> dict:
