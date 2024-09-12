@@ -1,3 +1,4 @@
+import json
 import streamlit as st
 import random
 import os
@@ -7,15 +8,44 @@ from src.rag.rag_model import RAGModel, RAGTypes
 from src.wo_rag import get_openai_answer
 
 # Function to write the question, answers, and user's choice to a file
+# def log_choice(question, answerGPT, answerRAG, user_choice, selected_model):
+#     filename = "model_comparisons.txt"
+#     with open(filename, "a") as f:
+#         f.write(f"Question: {question}\n")
+#         f.write(f"Answer GPT: {answerGPT}\n")
+#         f.write(f"Answer RAG: {answerRAG}\n")
+#         f.write(f"User Choice: {selected_model}\n")
+#         f.write(f"Timestamp: {datetime.datetime.now()}\n")
+#         f.write("-" * 40 + "\n")
+
 def log_choice(question, answerGPT, answerRAG, user_choice, selected_model):
-    filename = "model_comparisons.txt"
-    with open(filename, "a") as f:
-        f.write(f"Question: {question}\n")
-        f.write(f"Answer GPT: {answerGPT}\n")
-        f.write(f"Answer RAG: {answerRAG}\n")
-        f.write(f"User Choice: {selected_model}\n")
-        f.write(f"Timestamp: {datetime.datetime.now()}\n")
-        f.write("-" * 40 + "\n")
+    log_entry = {
+        "timestamp": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        "question": question,
+        "answers": {
+            "GPT": answerGPT,
+            "RAG": answerRAG
+        },
+        "user_choice": {
+            "selected_model": selected_model,
+            "chosen_answer": user_choice
+        }
+    }
+
+    filename = "model_comparisons.json"
+    
+    # Check if file exists and is non-empty
+    if os.path.exists(filename) and os.path.getsize(filename) > 0:
+        # Append the new entry to the existing JSON data
+        with open(filename, "r+") as f:
+            file_data = json.load(f)
+            file_data.append(log_entry)  # Append new data
+            f.seek(0)  # Move the cursor to the start of the file to overwrite
+            json.dump(file_data, f, indent=4)
+    else:
+        # Create a new JSON file with the first log entry
+        with open(filename, "w") as f:
+            json.dump([log_entry], f, indent=4)
 
 # Function to get answers from two different models
 def get_model_answers(question):
