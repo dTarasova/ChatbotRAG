@@ -7,17 +7,6 @@ import datetime
 from src.rag.rag_model import RAGModel, RAGTypes
 from src.wo_rag import get_openai_answer
 
-# Function to write the question, answers, and user's choice to a file
-# def log_choice(question, answerGPT, answerRAG, user_choice, selected_model):
-#     filename = "model_comparisons.txt"
-#     with open(filename, "a") as f:
-#         f.write(f"Question: {question}\n")
-#         f.write(f"Answer GPT: {answerGPT}\n")
-#         f.write(f"Answer RAG: {answerRAG}\n")
-#         f.write(f"User Choice: {selected_model}\n")
-#         f.write(f"Timestamp: {datetime.datetime.now()}\n")
-#         f.write("-" * 40 + "\n")
-
 def log_choice(question, answerGPT, answerRAG, user_choice, selected_model):
     log_entry = {
         "timestamp": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
