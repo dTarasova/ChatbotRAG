@@ -1,12 +1,9 @@
 from termcolor import colored
 
 from src.rag.evaluation.generate_test_set import get_contexts
-from src.rag.rag_model import RAGModel
+from src.rag.rag_model import RAGModel, RAGTypes
 from src.interface.streamlit_incorporation import setup_streamlit 
 
-# get_contexts()
-#evaluate()
-# generate()
 setup_streamlit()
 #test_final_version()
 # TODO: adjust prompts so that it relies more on the context not the general knowledge
@@ -16,9 +13,11 @@ setup_streamlit()
 #         question = input()
 #         rag_model = RAGModel(text_retriever_type='step-back')
 #         print_context = True
-#         query_types=[RAGTypes.TEXT_DATA, RAGTypes.STRUCTURED_DATA, RAGTypes.COMBINED, RAGTypes.SUMMARISER])
+#         query_types=[RAGTypes.TEXT_DATA, RAGTypes.STRUCTURED_DATA, RAGTypes.COMBINED, RAGTypes.SUMMARISER]
 #         results = rag_model.query(question, query_types)
 #         print(results)
+#         answer = results["models"][RAGTypes.COMBINED.name]["answer"]
+#         context = results["models"][RAGTypes.COMBINED.name]["context"]
 #         # print(colored(("\n\nAnswer:\n\n"), "blue"))
 #         # print((results["answers"][0]["answer"]))    
 #         # if print_context:
