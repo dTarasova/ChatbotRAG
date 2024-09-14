@@ -8,3 +8,8 @@ path = "src/interface/usability_testing.py"
 name = "Usability testing"
 icon = "🤖"
 
+[[pages]]
+path = "src/interface/compare_full_answers.py"
+name = "Compare All Models"
+icon = "🤖"
+

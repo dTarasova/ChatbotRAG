@@ -3,97 +3,110 @@ import streamlit as st
 import random
 import os
 import datetime
+import streamlit as st
+import json
+import os
+from typing import Dict, Any
+import pandas as pd
 
 from src.rag.rag_model import RAGModel, RAGTypes
 from src.wo_rag import get_openai_answer
 
-def log_choice(question, answerGPT, answerRAG, user_choice, selected_model):
-    log_entry = {
-        "timestamp": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        "question": question,
-        "answers": {
-            "GPT": answerGPT,
-            "RAG": answerRAG
-        },
-        "user_choice": {
-            "selected_model": selected_model
-        }
-    }
+FILEPATH = "stramlit answers.json"
 
-    filename = "model_comparisons.json"
+# Load the results from results.json
+def load_results():
+    if not os.path.exists(FILEPATH):
+        with open(FILEPATH, 'w') as f:
+            json.dump([], f)  # Create an empty array to start with
+    with open(FILEPATH, 'r') as f:
+        try:
+            data = json.load(f)
+        except json.JSONDecodeError:
+            data = []
+    return data
+
+
+# # Save the results back to results.json
+# def save_results(results: Dict[str, Any]):
+#     with open('results.json', 'a') as f:
+#         json.dump(results, f, indent=4)
+
+# Load questions from evaluation_questions.txt
+def load_questions() -> list[str]:
+    # questions_gathered = []
+    with open('evaluation_questions.txt', 'r') as f:
+    #     for line in f:
+    #         questions_gathered.append(json.loads(line.strip()))
+        questions_gathered = [line.strip() for line in f.readlines()]
+    return questions_gathered
+
+# Display results in a 5-column layout
+def display_results(question: str, model_results: Dict[str, Any]):
+    st.write(f"## Question: {question}")
+    cols = st.columns(5)
     
-    # Check if file exists and is non-empty
-    if os.path.exists(filename) and os.path.getsize(filename) > 0:
-        # Append the new entry to the existing JSON data
-        with open(filename, "r+") as f:
-            file_data = json.load(f)
-            file_data.append(log_entry)  # Append new data
-            f.seek(0)  # Move the cursor to the start of the file to overwrite
-            json.dump(file_data, f, indent=4)
-    else:
-        # Create a new JSON file with the first log entry
-        with open(filename, "w") as f:
-            json.dump([log_entry], f, indent=4)
+    # Iterate over the models and their results with enumerate to track the index
+    for i, (model_name, data) in enumerate(model_results.items()):
+        # Use index `i` to access the appropriate column
+        with cols[i]:
+            # Column 1: Model name
+            st.write(f"### Model: {model_name}")
 
-# Function to get answers from two different models
-def get_model_answers(question):
-    rag_model = RAGModel(text_retriever_type='step-back')
-    results = rag_model.query(question, query_types=[RAGTypes.COMBINED])
-    answerRAG = results["models"][RAGTypes.COMBINED.name]["answer"]
-    # context = results["models"][RAGTypes.COMBINED.name]["context"]
-    answerGPT = get_openai_answer(question)
-    # answerRAG = results[0].get('answer')
-    return answerGPT, answerRAG
+            # Display evaluation data if available
+            if "evaluation" in data:
+                completeness = data["evaluation"].get("completeness", "N/A")
+                relevance = data["evaluation"].get("relevance", "N/A")
+                st.write(f"**Completeness**: {completeness}")
+                st.write(f"**Relevance**: {relevance}")
+            else:
+                st.write("No Evaluation Data")
 
-# Initialize session state variables if not present
-if "questions" not in st.session_state:
-    st.session_state.questions = []
-if "logging" not in st.session_state:
-    st.session_state.logging = {}
-
-st.title("Compare RAG Chatbot and ChatGPT Answers")
-
-# Text input for the user to enter a question
-question = st.text_input("Enter a question to compare answers:")
-
-if question and question not in st.session_state.questions:
-    # Get answers from the models
-    answerGPT, answerRAG = get_model_answers(question)
-    
-    # Randomize the order of the answers
-    answers = [(answerGPT, 'GPT'), (answerRAG, 'RAG')]
-    random.shuffle(answers)
-    
-    # Store the question and answers in session state
-    st.session_state.questions.append(question)
-    st.session_state.logging[question] = answers
-
-# Check if the question exists in session state
-if question and question in st.session_state.logging:
-     # Show radio buttons for selecting the better answer
-    choice = st.radio("Which answer is better?", ("Answer 1 (Left)", "Answer 2 (Right)"))
-
-    # Button to submit the choice
-    if st.button("Submit your choice"):
-        # Determine the model based on randomized display order
-        if choice == "Answer 1 (Left)":
-            user_choice = st.session_state.logging[question][0][0]
-            selected_model = st.session_state.logging[question][0][1]
-        else:
-            user_choice = st.session_state.logging[question][1][0]
-            selected_model = st.session_state.logging[question][1][1]
+            # Display the answer and context
+            st.write(f"**Answer**: {data.get('answer', 'No Answer')}")
+            st.write(f"**Context**: {data.get('context', 'No Context')}")
         
-        # Log the choice to a file
-        log_choice(question, st.session_state.logging[question][0][0], st.session_state.logging[question][1][0], user_choice, selected_model)
-        
-        st.success(f"Your choice has been logged! You selected: {selected_model}")
+
+
+
+st.title("Evaluation Results Viewer")
     
-    # Display the answers side by side
-    col1, col2 = st.columns(4)
-    with col1:
-        st.subheader("Answer 1 (Left)")
-        st.write(st.session_state.logging[question][0][0])
-    with col2:
-        st.subheader("Answer 2 (Right)")
-        st.write(st.session_state.logging[question][1][0])
+# Load results and questions
+results = load_results()
+questions = load_questions()
+st.write(f"Loaded {len(questions)} questions and {len(results)} results.")
+
+
+if "question_number" not in st.session_state:
+    st.session_state.question_number = 0
+if st.button("Next Question"):
+    st.session_state.question_number += 1
+    if st.session_state.question_number >= len(questions):
+        st.session_state.question_number = 0
+
+question = questions[st.session_state.question_number]
+st.write(f"Current question: {question}")
+st.write(f"Question number: {st.session_state.question_number}")
+
+question_asked = any(item['question'] == question for item in results)
+if question_asked:
+    found_item = next((item for item in results if item['question'] == question), None)
+    model_results = found_item["models"]
+    st.write("Results already exist for this question.")
     
+else:
+    # Query the RAG model if the answer doesn't exist
+    st.write("Querying the RAG model...")
+    rag_model = RAGModel()
+    result = rag_model.query(question=question, query_types=[RAGTypes.TEXT_DATA, RAGTypes.STRUCTURED_DATA, RAGTypes.COMBINED, RAGTypes.SUMMARISER])
+    model_results = result["models"]
+    
+    # Add the result to the results dictionary
+    results[question] = result
+    
+    # Save updated results
+    # save_results(results)
+
+# Display the results in a 5-column format
+display_results(question, model_results)
+

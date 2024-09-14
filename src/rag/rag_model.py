@@ -1,5 +1,6 @@
 from enum import Enum
 import json
+import os
 from src.rag.retriever.evaluation.evaluator import Evaluator
 from src.rag.retriever.structured_data_loading.structured_data_retriever import StructuredDataRetriever
 from src.rag.retriever.retriever import Retriever
@@ -155,11 +156,27 @@ class RAGModel:
 
     def save_results_to_file(self, results: dict, filename: str):
         """Saves results to a JSON file."""
-        try:
-            with open(filename, 'a') as f:
-                json.dump(results, f, indent=4)
-        except IOError as e:
-            print(f"Error saving results to file: {str(e)}")
+        if not os.path.exists(filename):
+            with open(filename, 'w') as f:
+                json.dump([], f)  # Create an empty array to start with
+
+        # Read the existing data from the file
+        with open(filename, 'r') as f:
+            try:
+                data = json.load(f)
+            except json.JSONDecodeError:
+                data = []
+
+        # Ensure data is a list
+        if not isinstance(data, list):
+            data = []
+
+        # Append the new results
+        data.append(results)
+
+        # Write the updated data back to the file
+        with open(filename, 'w') as f:
+            json.dump(data, f, indent=4)
 
 
 if __name__ == "__main__":

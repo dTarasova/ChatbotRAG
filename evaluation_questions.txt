@@ -1,0 +1,21 @@
+Give me a template for a textual use case.
+Do you have a checklist for e.g. security requirements?
+What are functional and non-functional requirements?
+Generate user stories from the following requirement.
+Who are the people/stakeholders to involve in elicitation?
+Where can I find the template for requirement document A?
+What techniques can be used for requirements validation?
+How to structure big projects?
+How does this requirement contribute to the project?
+How much time do I need to spend for RE?
+Are any requirements that conflict with or are inconsistent with the following requirement?
+How to deal with running out of time in the requirements phase?
+What are the benefits of using focus groups for elicitation?
+How to deal with incomplete requirements?
+What is the level of detail for a requirement that I must provide as role A?
+How can I improve the following requirement?
+How to prioritize all requirements my team proposed in order to deliver the most value quicker?
+What are the common requirements for a xxx system?
+Please reformulate this requirement to make it more clear.
+How do I handle conflicting requirements from different stakeholders?
+Can you provide examples of user stories?

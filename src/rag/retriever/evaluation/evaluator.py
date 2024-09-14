@@ -24,7 +24,7 @@ class Evaluator:
         # Send the prompt to OpenAI's API
         llm = ChatOpenAI(model=MODEL, temperature=TEMPERATURE)
         messages=[
-                ("system", "You are an evaluator AI that assesses answers based on correctness and relevance, providing scores from 0 to 10."),
+                ("system", "You are an evaluator AI that assesses answers based on completeness and relevance, providing scores from 0 to 10."),
                 ("user", prompt)
             ]
         result = llm.invoke(messages)
