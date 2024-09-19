@@ -13,8 +13,8 @@ setup_streamlit()
 #         question = input()
 #         rag_model = RAGModel(text_retriever_type='step-back')
 #         print_context = True
-#         #query_types=[RAGTypes.TEXT_DATA, RAGTypes.STRUCTURED_DATA, RAGTypes.COMBINED, RAGTypes.SUMMARISER]
-#         query_types=[RAGTypes.STRUCTURED_DATA]
+#         query_types=[RAGTypes.TEXT_DATA, RAGTypes.STRUCTURED_DATA, RAGTypes.COMBINED, RAGTypes.SUMMARISER]
+#         #query_types=[RAGTypes.STRUCTURED_DATA]
 #         results = rag_model.query(question, query_types)
 #         print(results)
 #         answer = results["models"][RAGTypes.STRUCTURED_DATA.name]["answer"]
@@ -30,7 +30,7 @@ setup_streamlit()
 # except KeyboardInterrupt:
 #     pass
 
-
+#############################################################################
 
 # import json
 # import streamlit as st
@@ -68,8 +68,13 @@ setup_streamlit()
 # results = load_results()
 # questions = load_questions()
 # number = 0
-# question = questions[number]
+# search_question = questions[number]
+# found_item = next((item for item in results if item['question'] == search_question), None)
+# if found_item:
+#     print("Found")
 
+
+########################################################################################
 
 # if question in results:
 #     model_results = results[question]["models"]
@@ -134,3 +139,5 @@ setup_streamlit()
 #     st.session_state.question_number += 1
 #     if st.session_state.question_number >= len(questions):
 #         st.session_state.question_number = 0
+
+

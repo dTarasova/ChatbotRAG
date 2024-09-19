@@ -12,7 +12,7 @@ import pandas as pd
 from src.rag.rag_model import RAGModel, RAGTypes
 from src.wo_rag import get_openai_answer
 
-FILEPATH = "stramlit answers.json"
+FILEPATH = "results.json"
 
 # Load the results from results.json
 def load_results():
@@ -76,6 +76,7 @@ results = load_results()
 questions = load_questions()
 st.write(f"Loaded {len(questions)} questions and {len(results)} results.")
 
+# found_item = next((item for item in results if item['question'] == question), None)
 
 if "question_number" not in st.session_state:
     st.session_state.question_number = 0
@@ -88,9 +89,8 @@ question = questions[st.session_state.question_number]
 st.write(f"Current question: {question}")
 st.write(f"Question number: {st.session_state.question_number}")
 
-question_asked = any(item['question'] == question for item in results)
-if question_asked:
-    found_item = next((item for item in results if item['question'] == question), None)
+found_item = next((item for item in results if item['question'] == question), None)
+if found_item:
     model_results = found_item["models"]
     st.write("Results already exist for this question.")
     
@@ -102,7 +102,7 @@ else:
     model_results = result["models"]
     
     # Add the result to the results dictionary
-    results[question] = result
+    # results[question] = result
     
     # Save updated results
     # save_results(results)
