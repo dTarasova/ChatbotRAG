@@ -42,14 +42,11 @@ class StructuredDataRetriever:
     
     def retrieve_context(self, question: str):
         extended_question = f"""
-Use the provided DataFrame (df) to answer the question. 
-Ensure that you incorporate up to 10 relevant columns 
-that could add value to your response. 
+Use the provided DataFrame (df) to answer the question, 
+incorporating up to 10 relevant columns to add value. Summarize the data without giving specific rows or exact values.
 
- 
-
-If the answer cannot be deduced from the df, do not give an answer.
-Exclude any values such as 'not shown', 'not answered' in the final answer. 
+If the answer cannot be deduced, reply: 'Sorry, the DataFrame doesn't provide enough information.' 
+Exclude placeholder values like 'not shown' or 'not answered.'
 
 Here is the question: {question}. 
 

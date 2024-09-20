@@ -32,8 +32,8 @@ class Generator:
                 content=(
                     """	
                     ### Instruction ###
-                    You are the best summarizer. Given the context, summarize it to answer the question directly. 
-                    Provide a concise and accurate summary without adding any additional information.
+                    You are an expert text analyst and researcher. Please produce an extractive summary of the following context
+                    relevant to the question.
                     """
                 )
             ),
@@ -72,14 +72,27 @@ class Generator:
 
         prompt = ChatPromptTemplate.from_messages(
             [
+                # SystemMessage(
+                #     content=(
+                    #   """### Instruction ### 
+                    #   You are an expert in Requirements Engineering.
+                    #         Using the information contained in the context, 
+                    #         give a comprehensive elaborate structured answer to the question. 
+                    #         Respond only to the question asked, response should be concise and relevant to the question.
+                    #         If the answer cannot be deduced from the context, do not give an answer."""
+                #     )
+                # ),
                 SystemMessage(
                     content=(
                       """### Instruction ### 
                       You are an expert in Requirements Engineering.
-                            Using the information contained in the context, 
-                            give a comprehensive answer to the question. 
-                            Respond only to the question asked, response should be concise and relevant to the question.
-                            If the answer cannot be deduced from the context, do not give an answer."""
+                    Using the following context, provide a structured and well-organized response that directly addresses the query. 
+                    Ensure that the response incorporates the key information from the context without introducing irrelevant or unsupported details. 
+                    The answer should be clear, concise, and formatted as follows:
+
+                    Introduction: Briefly summarize the main point of the response.
+                    Details: Provide supporting information or evidence from the context to back up the response.
+                    Conclusion: Conclude by summarizing the key takeaway based on the context."""
                     )
                 ),
                 HumanMessage(content=f"""
@@ -155,12 +168,21 @@ class Generator:
             [
                 SystemMessage(
                     content=(
-                      """### Instruction ### 
-                            You are an expert in Requirements Engineering.
-                            Using the information contained in the context, 
-                            give a comprehensive answer to the question. 
-                            Respond only to the question asked, response should be concise and relevant to the question.
-                            If the answer cannot be deduced from the context, do not give an answer."""
+                    #   """### Instruction ### 
+                    #         You are an expert in Requirements Engineering.
+                    #         Using the information contained in the context, 
+                    #         give a comprehensive elaborate structured answer to the question. 
+                    #         Respond only to the question asked, response should be concise and relevant to the question.
+                    #         If the answer cannot be deduced from the context, do not give an answer."""
+                                          """### Instruction ### 
+                      You are an expert in Requirements Engineering.
+                    Using the following context, provide a structured and well-organized response that directly addresses the query. 
+                    Ensure that the response incorporates the key information from the context without introducing irrelevant or unsupported details. 
+                    The answer should be clear, concise, and formatted as follows:
+
+                    Introduction: Briefly summarize the main point of the response.
+                    Details: Provide supporting information or evidence from the context to back up the response.
+                    Conclusion: Conclude by summarizing the key takeaway based on the context."""
                     )
                 ),
                 HumanMessage(content=f"""
