@@ -45,7 +45,8 @@ class StructuredDataRetriever:
 Use the provided DataFrame (df) to answer the question, 
 incorporating up to 10 relevant columns to add value. Summarize the data without giving specific rows or exact values.
 
-If the answer cannot be deduced, reply: 'Sorry, the DataFrame doesn't provide enough information.' 
+If the answer cannot be deduced from the df, reply: 'Sorry, the DataFrame doesn't provide enough information.' 
+Avoid any information not deducible from the DataFrame.
 Exclude placeholder values like 'not shown' or 'not answered.'
 
 Here is the question: {question}. 
