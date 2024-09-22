@@ -1,10 +1,14 @@
-from termcolor import colored
 
+
+from src.rag.retriever.unstructured_data_loading.document_loader import DocumentDatabase
 from src.rag.evaluation.generate_test_set import get_contexts
 from src.rag.rag_model import RAGModel, RAGTypes
 from src.interface.streamlit_incorporation import setup_streamlit 
+from termcolor import colored
 
-setup_streamlit()
+# setup_streamlit()
+
+
 #test_final_version()
 # TODO: adjust prompts so that it relies more on the context not the general knowledge
 # try:
@@ -30,6 +34,17 @@ setup_streamlit()
 # except KeyboardInterrupt:
 #     pass
 
+#################
+PATH_AMDIRE_NAPIRE_DOCS = 'data/just_amdire_and_napire_papers'
+path_amdire_and_napire_db = 'knowledge_bases/amdire_and_napire'
+
+# Add all documents from a folder to one or more vector stores
+PATH_AMDIRE_NAPIRE_DOCS = 'data/just amdire and napire papers'
+vector_store_amdire_napire = DocumentDatabase(path_to_documents=PATH_AMDIRE_NAPIRE_DOCS, path_to_db_directory=path_amdire_and_napire_db).get_vectorstore()
+for collection in vector_store_amdire_napire._collection:
+    print(f"Collection: {collection}")
+    print(f"Number of documents in collection: {(vector_store_amdire_napire._collection.count())}")
+# add_documents_from_folder(PATH_REQUIREMENTS_DOCS, [vector_store_requirements, vector_store_software4KMU])
 #############################################################################
 
 # import json
@@ -74,70 +89,5 @@ setup_streamlit()
 #     print("Found")
 
 
-########################################################################################
-
-# if question in results:
-#     model_results = results[question]["models"]
-#     print("Results already exist for this question.")
-# else:
-#     # Query the RAG model if the answer doesn't exist
-#     print("Querying the RAG model...")
-#     rag_model = RAGModel()
-#     result = rag_model.query(question=question, query_types=[RAGTypes.TEXT_DATA, RAGTypes.STRUCTURED_DATA, RAGTypes.COMBINED, RAGTypes.SUMMARISER])
-#     model_results = result["models"]
-    
-#     # Add the result to the results dictionary
-#     results[question] = result
-    
-#     # Save updated results
-#     save_results(results)
-
-# # Display results in a 5-column layout
-# def display_results(question: str, model_results: Dict[str, Any], question_number: int):
-#     st.write(f"## Question: {question}")
-#     cols = st.columns(5)
-#     # Iterate over the models and their results
-#     for model_name, data, i in enumerate(model_results.items()):
-        
-        
-#         # Column 1: Model name
-#         cols[i].write(f"### Model: {model_name}")
-        
-#         if "evaluation" in data:
-#             correctness = data["evaluation"].get("correctness", "N/A")
-#             relevance = data["evaluation"].get("relevance", "N/A")
-#             cols[i].write(f"**Correctness**: {correctness}")
-#             cols[i].write(f"**Relevance**: {relevance}")
-#         else:
-#             cols[i].write("No Evaluation Data")
-        
-
-#         cols[i].write(f"**Answer**: {data.get('answer', 'No Answer')}")
-
-#         cols[i].write(f"**Context**: {data.get('context', 'No Context')}")
-        
-
-
-
-# # st.title("Evaluation Results Viewer")
-    
-# Load results and questions
-
-# st.write(f"Loaded {len(questions)} questions and {len(results)} results.")
-
-
-# # if "question_number" not in st.session_state:
-# #     st.session_state.question_number = 0
-
-
-
-
-# # Display the results in a 5-column format
-# display_results(question, model_results)
-
-# if st.button("Next Question"):
-#     st.session_state.question_number += 1
-#     if st.session_state.question_number >= len(questions):
-#         st.session_state.question_number = 0
 
 

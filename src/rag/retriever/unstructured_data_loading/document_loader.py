@@ -12,40 +12,56 @@ from  langchain_core.documents.base import Document
 from src.rag.retriever.unstructured_data_loading.pdf_preprocessor import process_pdf
 
 
-PATH_DOCUMENTS = 'data/processed_pdfs'
-PERSIST_DIRECTORY = 'chroma_db_larger'
+PATH_DOCUMENTS = 'data/just amdire and napire papers'
+PERSIST_DIRECTORY = 'knowledge_bases/amdire_and_napire'
 EXAMPLE_FILE_PATH = 'data/first_batch/Rapid quality assurance with Requirements Smells.pdf'
 
+class DocumentDatabase:
+    def __init__(self, path_to_documents='data/just amdire and napire papers', path_to_db_directory='knowledge_bases/amdire_and_napire'):
+        self.path_to_documents = path_to_documents
+        self.path_to_db_directory = path_to_db_directory
+        self.vector_store = Chroma(persist_directory=path_to_db_directory, embedding_function=OpenAIEmbeddings())
 
-def create_db(path_to_documents: str = PATH_DOCUMENTS) -> Chroma:
-    vector_store = chromadb.PersistentClient(path=PERSIST_DIRECTORY)
-    add_docs_from_folder(path_to_documents)
-    return vector_store
+    def create_db(self) -> Chroma:
+        """Create and return the vector store client."""
+        # self.vector_store = chromadb.PersistentClient(path=self.path_to_db_directory)
+        self.add_docs_from_folder(self.path_to_documents)
+        return self.vector_store
+     
+    def get_vectorstore(self) -> Chroma:
+        return self.vector_store
 
-def add_doc_todb(doc_path):
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=500, chunk_overlap=50,
-        strip_whitespace=True,
-        separators=["\n\n", "\n", ".", " ", ""])
+    def add_doc_todb(self, doc_path: str):
+        """Process and add a document to the vector store."""
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=400, chunk_overlap=50,
+            strip_whitespace=True,
+            separators=["\n\n", "\n", ".", " ", ""]
+        )
 
-    head, tail = os.path.split(doc_path)
+        head, tail = os.path.split(doc_path)
+        processed_pdf = process_pdf(doc_path, tail+'.txt')
 
-    processed_pdf = process_pdf(doc_path, tail+'.txt')
+        pages = text_splitter.split_text(processed_pdf)
+        documents = [Document(page_content=page, metadata={"source": tail}) for page in pages]
 
-    pages = text_splitter.split_text(processed_pdf)
+        if not self.vector_store:
+            self.vector_store = Chroma(persist_directory=self.path_to_db_directory, embedding_function=OpenAIEmbeddings())
 
-    documents = [Document(page_content=page, metadata={"source": tail}) for page in pages]
+        self.vector_store.add_documents(documents)
+        print(f"Document {doc_path} added to db")
 
-    vector_store = Chroma(persist_directory=PERSIST_DIRECTORY,
-                          embedding_function=OpenAIEmbeddings())
-    vector_store.add_documents(documents)
-    print("Document " + doc_path + " added to db")
+    def add_docs_from_folder(self, folder_path: str):
+        """Add all documents from a folder to the vector store."""
+        docs = [file for file in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, file))]
+
+        for doc in docs:
+            doc_path = os.path.join(folder_path, doc)
+            self.add_doc_todb(doc_path)
 
 
-def add_docs_from_folder(folder_path):
-    docs = [file for file in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, file))]
-
-    for doc in docs:
-        doc_path = os.path.join(folder_path, doc)
-        add_doc_todb(doc_path)
+# Example usage
+if __name__ == "__main__":
+    db = DocumentDatabase()
+    db.create_db()
 
