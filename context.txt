@@ -1,0 +1,517 @@
+Query: can you generate user stories from the following requirement?
+Context: of a structured and fully described requirements document, requirements are typically written down via user stories involving free form or with some constraints [43]. for this reason, the approach is focused on the user story format
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: table 3. way to extract the words from the user story. 
+
+
+type of word user story skeleton 
+
+
+verbs as a [user], i [want to], [so that]. 
+
+
+nouns as a [user], i [want to], [so that]. 
+
+
+ to extract the words, we developed a software framework
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: automatically analyzing user stories that describes features and functional requirements of the software to be built. our approach extracts the relevant verb (action) of the user story that indicates a potential behavior be considered when thinking about security. in some cases, the nouns of the user story can also indicate situations where certain security features should be considered
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: .g.,for describing functional requirements)?challenge 4: how can these new concepts be effectively integrated in a seamless manner?
+Source: Towards Artefact-based Requirements Engineering for Data-Centric Systems.pdf
+
+Context: prototyping
+
+
+   
+
+
+interviews
+
+
+scenarios
+
+
+observation
+
+
+  
+
+
+ 
+
+
+  
+
+
+          
+
+
+   
+
+
+         
+
+
+  
+
+
+ 
+
+
+  
+
+
+ 
+
+
+facilitated meetings 
+
+
+(including workshops)
+
+
+0.73
+
+
+0.67
+
+
+0.58
+
+
+0.41
+
+
+0.29
+
+
+0.000.100.200.300.400.500.600.700.800.901.00
+
+
+fig. 4. how do you elicit requirements? (n = 228)
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Query: how to perform elicitation?
+Context: in re survey research, there have been investigations of techniques and methods and investigationsof general practices. we will discuss the most relevant ones in the following.contributions that investigate techniques and methods analyse, for example, selected require-ments phases and which techniques are suitable to support typical tasks in those phases
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Query: how to prioritize all requirements my team proposed in order to deliver the most value quicker?
+Context: . the newly created require-ments undergo the initial triage in a state called m0. next, upon consideredviable and suﬃciently justiﬁed, the requirement candidates are prioritized ina project prioritization state (similar to backlog prioritization), called m1. fi-nally, the prioritized requirements are hand-shaken with the developer teamsin a state called m2 [18]
+Source: Causality in Requirements Artifacts Prevalence, Detection, and Impact.pdf
+
+Context: . hence, fixing requirements during a sprint as, for example, emphasised in scrum seems important to address these causes. yet, overall the effects can be small: “if parties are on board that things are changing then the project won’t have problems in term of budget, timeline etc. because everybody knows these are flexible as long as targets are moving. it will cause stress for dev team though.”
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Context: method (0.38%) difficulties in value creation (0.38%) define priorities (0.38%) model evaluation metric choice (0.38%) 
+
+
+balancing risks and benefits (0.38%) estimation issues (0.38%) 
+
+
+incomplete/incorrect requirements (1.91%) end to end process (0.38%) 
+
+
+scope definition (1.91%) 
+
+
+accuracy checking (0.38%) defining/documenting requirements (2.29%)
+Source: Status Quo and Problems of Requirements Engineering for Machine Learning Results from an International Survey.pdf
+
+Context: during requirements engineering (supporting early work by sommerville et al. [58]). interviewsand facilitated meetings are probably the easiest ways to collect many viewpoints. prototyping andscenarios are ways to represent the system. there it depends on the number of people a requirementsengineer shows them, how many viewpoints they get
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: approach be applied? agile methods are characterized by having iterative structures that should allow early delivery, continual improvement, and rapid and flexible response to change [5]. hence, we envision that our approach is used just before a user story is defined as “ready” for codifying.  
+
+
+c. overview of our approach 
+
+
+we propose our approach in two defined phases: (1)
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Query: why do i need re in agile environments?
+Context: . this should also hold for the re process. therefore, we are interested in whether agile projects perform continuous improvement and what is their motivation. finally, after gathering an understanding about the state of the practice, we want to understand how important various potential problems for re are in agile projects and what are their causes and effects.
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Context: . answers for other included “test-driven analysis for tdd projects”, “rerun test suites”, “we discuss with users and decide the best approach” and “team-based discussion before change”. therefore, besides looking at requirements and code, the test suites and direct discussions with stakeholders seem important for impact analyses in agile projects.
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Context: fig. 7. is your requirements engineering continuously improved? 
+
+
+hence, continuous improvement in general as well as in re is widespread in agile 
+
+
+projects in practice. the motivation is intrinsic based on a perceived improved efficiency and because it is postulated by agile process models. 
+
+
+4.5   problems in agile re (rq 4)
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Context: . these concerns become even more challenging in agile development contexts, where lightweight documentation is typically involved. the goal of this paper is to design and evaluate an approach to support reviewing security-related aspects in agile requirements specifications of web applications
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: . they state the possibilities for a quality assuranceof the created re artefacts to be the biggest motivation to establish a company-wide re standard. whendeﬁning such a standard, they rated agility to be the most important aspect the standard should support.
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Query: how to document a requirement?
+Context: c 1requirements elicitationactivityc 2requirements documentationactivityc 3requirements change managementactivityc 4requirements test alignmentactivityc 5requirements standard applicationactivityc 6requirements standard definitionactivityc 7requirements engineering improvementactivityc 8requirements engineeractorc 9test engineeractorc 10requirements elicitation techniquetechnologyc 11requirements
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: process step
+
+
+use caseis service
+
+
+functional requirement
+
+
+objective
+
+
+principle
+
+
+business goal
+
+
+process owner
+
+
+user group
+
+
+process-related goal
+
+
+it-related goal
+
+
+actor
+
+
+architectural constraint
+
+
+system quality requirement
+
+
+business object
+
+
+information object
+
+
+information system object
+
+
+business unit
+
+
+business domain
+
+
+system overview
+
+
+legend
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: fig. 1. how do you elicit requirements? 
+
+
+next, we asked about the documentation of the most frequent type of requirements:
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Context: . the requirements engineer talks to the product managerabout the requirement and about its meaning and documentsit in a ﬁle. however, the requirements engineer might ﬁrstrewrite the requirement to express it using a requirementstemplate (constrained natural language)
+Source: Artefacts in software engineering a fundamental positioning.pdf
+
+Context: . obviously, if the requirements are to be precisely specified, the structure, syntax and semantics of requirements documentation, that capture various aspects, have to be described, too.
+Source: A Meta Model for Artefact-Orientation Fundamentals and Lessons Learned in Requirements Engineering.pdf
+
+Query: how to document a requirement?
+Context: c 1requirements elicitationactivityc 2requirements documentationactivityc 3requirements change managementactivityc 4requirements test alignmentactivityc 5requirements standard applicationactivityc 6requirements standard definitionactivityc 7requirements engineering improvementactivityc 8requirements engineeractorc 9test engineeractorc 10requirements elicitation techniquetechnologyc 11requirements
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: process step
+
+
+use caseis service
+
+
+functional requirement
+
+
+objective
+
+
+principle
+
+
+business goal
+
+
+process owner
+
+
+user group
+
+
+process-related goal
+
+
+it-related goal
+
+
+actor
+
+
+architectural constraint
+
+
+system quality requirement
+
+
+business object
+
+
+information object
+
+
+information system object
+
+
+business unit
+
+
+business domain
+
+
+system overview
+
+
+legend
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: fig. 1. how do you elicit requirements? 
+
+
+next, we asked about the documentation of the most frequent type of requirements:
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Context: . the requirements engineer talks to the product managerabout the requirement and about its meaning and documentsit in a ﬁle. however, the requirements engineer might ﬁrstrewrite the requirement to express it using a requirementstemplate (constrained natural language)
+Source: Artefacts in software engineering a fundamental positioning.pdf
+
+Context: . obviously, if the requirements are to be precisely specified, the structure, syntax and semantics of requirements documentation, that capture various aspects, have to be described, too.
+Source: A Meta Model for Artefact-Orientation Fundamentals and Lessons Learned in Requirements Engineering.pdf
+
+Query: how can i identify relevant stakeholders?
+Context: step 1.as the ﬁrst step, we select the projects to participate in the ﬁeld study from a set of (project)candidates. to identify candidates, our project partner provides us with a list of projects and correspondingcontact persons, which we contact by email. each project is represented by one person, who either is assignedas the project lead or as the chief analysts of the project
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Context: . usually,project repositories (e.g. in version management or ﬁle systemsor also project tracking systems such as jira) give a goodoverview, but sometimes artifacts are also transferred directlybetween stakeholders. the elicited artifacts are then brokendown into their entities. good candidates for entities are ﬁeldsor self-containing sections in the artifacts.2. elicit stakeholders
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Context: fig. 1. research approach.
+
+
+table 1description of the practitioners included in this study (interviews).
+
+
+participantsroletype
+
+
+p1senior engineercontributorp2senior engineerstakeholderp2senior engineerstakeholderp3specialist engineerstakeholderp4it product ownermanagementp5experienced engineerstakeholderp6senior engineerstakeholderp7senior engineercontributorp8senior engineerstakeholder
+Source: An investigation of causes and effects of trust in Boundary Artefacts.pdf
+
+Context: .starting at the top, in the context speciﬁcation, the project scope deﬁnesthe relevant problem to be addressed by a project and the primary scope. thestakeholder model is used to capture the most relevant stakeholders and therelationships and are used as a central deﬁnition of key reporting lines andone important rationale for requirements and goals. goals are speciﬁed, e.g
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: during requirements engineering (supporting early work by sommerville et al. [58]). interviewsand facilitated meetings are probably the easiest ways to collect many viewpoints. prototyping andscenarios are ways to represent the system. there it depends on the number of people a requirementsengineer shows them, how many viewpoints they get
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Query: how to document a requirement ?
+Context: c 1requirements elicitationactivityc 2requirements documentationactivityc 3requirements change managementactivityc 4requirements test alignmentactivityc 5requirements standard applicationactivityc 6requirements standard definitionactivityc 7requirements engineering improvementactivityc 8requirements engineeractorc 9test engineeractorc 10requirements elicitation techniquetechnologyc 11requirements
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: process step
+
+
+use caseis service
+
+
+functional requirement
+
+
+objective
+
+
+principle
+
+
+business goal
+
+
+process owner
+
+
+user group
+
+
+process-related goal
+
+
+it-related goal
+
+
+actor
+
+
+architectural constraint
+
+
+system quality requirement
+
+
+business object
+
+
+information object
+
+
+information system object
+
+
+business unit
+
+
+business domain
+
+
+system overview
+
+
+legend
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: fig. 1. how do you elicit requirements? 
+
+
+next, we asked about the documentation of the most frequent type of requirements:
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Context: . obviously, if the requirements are to be precisely specified, the structure, syntax and semantics of requirements documentation, that capture various aspects, have to be described, too.
+Source: A Meta Model for Artefact-Orientation Fundamentals and Lessons Learned in Requirements Engineering.pdf
+
+Context: fig. 5. how do you align the software test with the requirements? 
+
+
+4.4   re improvement (rq 3)
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Query: how to document a requirement ?
+Context: c 1requirements elicitationactivityc 2requirements documentationactivityc 3requirements change managementactivityc 4requirements test alignmentactivityc 5requirements standard applicationactivityc 6requirements standard definitionactivityc 7requirements engineering improvementactivityc 8requirements engineeractorc 9test engineeractorc 10requirements elicitation techniquetechnologyc 11requirements
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: process step
+
+
+use caseis service
+
+
+functional requirement
+
+
+objective
+
+
+principle
+
+
+business goal
+
+
+process owner
+
+
+user group
+
+
+process-related goal
+
+
+it-related goal
+
+
+actor
+
+
+architectural constraint
+
+
+system quality requirement
+
+
+business object
+
+
+information object
+
+
+information system object
+
+
+business unit
+
+
+business domain
+
+
+system overview
+
+
+legend
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: fig. 1. how do you elicit requirements? 
+
+
+next, we asked about the documentation of the most frequent type of requirements:
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Context: . obviously, if the requirements are to be precisely specified, the structure, syntax and semantics of requirements documentation, that capture various aspects, have to be described, too.
+Source: A Meta Model for Artefact-Orientation Fundamentals and Lessons Learned in Requirements Engineering.pdf
+
+Context: fig. 5. how do you align the software test with the requirements? 
+
+
+4.4   re improvement (rq 3)
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Query: how to document a requirement ?
+Context: fig. 1. how do you elicit requirements? 
+
+
+next, we asked about the documentation of the most frequent type of requirements:
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Context: 3.4.2. qualitative analysis of expert interviews (step 2)we address rq 2 by analysing why the requirements are documented in a certain way. for this, weperform the interviews and use a mixed approach to distill project parameters that relate to the degree ofcompleteness in the artefacts (see step 2 in the data collection procedure of section 3.3)
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Context: . obviously, if the requirements are to be precisely specified, the structure, syntax and semantics of requirements documentation, that capture various aspects, have to be described, too.
+Source: A Meta Model for Artefact-Orientation Fundamentals and Lessons Learned in Requirements Engineering.pdf
+
+Context: • requirements elicitation• requirements documentation• requirements change and alignment• requirements engineering standards• requirements engineering improvement
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: fig. 5. how do you align the software test with the requirements? 
+
+
+4.4   re improvement (rq 3)
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+

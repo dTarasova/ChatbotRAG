@@ -53,7 +53,9 @@ def save_paragraphs_to_txt(paragraphs, file_path) -> str:
 
 def filter_text(paragraphs: list[str]) -> list[str]:
     # Define the pattern to match unwanted lines
-    pattern = re.compile(r'(.*\..*){4,}')
+    content_pattern = re.compile(r'(.*\..*){4,}')
+    numeric_only_pattern = re.compile(r'^\s*[\d\.\s]+$')  # Matches paragraphs made up only of numbers, spaces, and periods
+    image_titles_pattern = re.compile(r'fig\.\s?\d+', re.IGNORECASE)  # Matches image titles like "fig. 4"
 
     filtered_paragraphs = []
 
@@ -62,14 +64,16 @@ def filter_text(paragraphs: list[str]) -> list[str]:
         lines = p.split('\n')
 
         # Filter out lines that match the pattern
-        filtered_lines = [line for line in lines if not pattern.match(line)]
+        filtered_lines = [
+            line for line in lines 
+            if not (numeric_only_pattern.match(line) or 
+                    image_titles_pattern.search(line)
+                    or content_pattern.match(line))
+        ]
 
-        # Join the filtered lines back into a single string
-        # filtered_text.extend(filtered_lines)
-
-        filtered_text = '\n' + ''.join(filtered_lines)
-
-        filtered_paragraphs.extend([filtered_text])
+        if filtered_lines:
+            filtered_text = '\n'.join(filtered_lines)
+            filtered_paragraphs.extend([filtered_text])
 
 
     return filtered_paragraphs

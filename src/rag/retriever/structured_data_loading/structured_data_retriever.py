@@ -41,15 +41,38 @@ class StructuredDataRetriever:
         return agent
     
     def retrieve_context(self, question: str):
+#         extended_question = f"""
+# Use only the provided DataFrame (df) to answer the question, 
+# incorporating up to 10 relevant columns to add value. Summarize the data without giving specific rows or exact values.
+
+# If the answer cannot be deduced from the df, reply: 'Sorry, the DataFrame doesn't provide enough information.' 
+# Avoid any information not deducible from the DataFrame.
+# Exclude placeholder values like 'not shown' or 'not answered.'
+
+# Here is the question: {question}. 
+
+
+# """
+# Use only the provided DataFrame (df) to answer the question below.
+
+# Instructions:
+
+# Summarize relevant information utilizing up to 10 columns.
+# Do not mention specific rows or exact values.
+# If the DataFrame doesn’t provide enough information, reply with: ‘Sorry, the DataFrame doesn’t provide enough information.’
+# Exclude placeholders like ‘not shown’ or ‘not answered.’
+
+# todo add later After identifying relevant columns, run python functions to summarize their values.
         extended_question = f"""
-Use only the provided DataFrame (df) to answer the question, 
-incorporating up to 10 relevant columns to add value. Summarize the data without giving specific rows or exact values.
+### Instruction### Use only the provided DataFrame (df) to answer the question below. Follow these guidelines:
 
-If the answer cannot be deduced from the df, reply: 'Sorry, the DataFrame doesn't provide enough information.' 
-Avoid any information not deducible from the DataFrame.
-Exclude placeholder values like 'not shown' or 'not answered.'
+Summarize relevant information utilizing up to 10 columns.
+Include statistical summaries, general descriptions of column values as needed.
+Do not mention specific rows or exact data points.
+If the DataFrame doesn’t provide enough information, reply with: ‘Sorry, the DataFrame doesn’t provide enough information.’
+Exclude placeholders like ‘not shown’ or ‘not answered.’
 
-Here is the question: {question}. 
+###Question###: {question}. 
 
 """
         context = self.agent.invoke(extended_question)

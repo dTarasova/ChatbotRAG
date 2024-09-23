@@ -32,8 +32,8 @@ class Generator:
                 content=(
                     """	
                     ### Instruction ###
-                    You are an expert text analyst and researcher. Please produce an extractive summary of the following context
-                    relevant to the question.
+You are an expert text analyst and researcher. Your task is to produce 
+an extractive summary of the provided context that is relevant to the accompanying question.
                     """
                 )
             ),
@@ -174,15 +174,22 @@ class Generator:
                     #         give a comprehensive elaborate structured answer to the question. 
                     #         Respond only to the question asked, response should be concise and relevant to the question.
                     #         If the answer cannot be deduced from the context, do not give an answer."""
-                                          """### Instruction ### 
-                    You are an expert in Requirements Engineering. 
-                    Using the provided information, deliver a structured and well-organized response 
-                    to the query. Incorporate key details without introducing irrelevant information 
-                    or unnecessary references to the source. 
-                    The answer should be clear, concise, and structured as follows:
+#                                           """### Instruction ### 
+#                     You are an expert in Requirements Engineering. 
+#                     Using the provided information, deliver a structured and well-organized response 
+#                     to the query. Incorporate key details without introducing irrelevant information 
+#                     or unnecessary references to the source. 
+#                     The answer should be clear, concise, and structured as follows:
 
-                   Answer: Give short presise answer to the question.
-Details: Present supporting information from the given details in a structured way, include explanations, examples."""
+#                    Answer: Give short presise answer to the question.
+# Details: Present supporting information from the given details in a structured way, include explanations, examples."""
+
+"""### Instruction ###
+As an expert in Requirements Engineering, your task is to generate a well-structured and organized response to the given query using the provided context. Your response should seamlessly integrate key information from the context. Refrain from using explicit phrases that reference the context itself. Follow the specific format outlined below:
+
+**Answer**: Deliver a clear and direct answer to the question.
+**Details**: Present structured supporting information drawn from the context, including relevant explanations or examples.
+"""
                     )
                 ),
                 HumanMessage(content=f"""

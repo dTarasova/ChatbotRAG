@@ -44,16 +44,30 @@ class Retriever:
             additional_info += f"Step-back query: {adjusted_query}\n\n"
         
         ranked_docs = self.rank_results(docs)
-        context = self.create_context(ranked_docs, additional_info=additional_info)
+        context = self.create_context(docs = ranked_docs, query=query, additional_info=additional_info)
         return context
 
-    def create_context(self, docs: list[Document], additional_info: str = "") -> str:
-        context = additional_info
-        for doc in docs:
-            context_str = doc.page_content
-            source_str = doc.metadata.get("source") or doc.metadata.get("title") or ""
-            context += f"Context: {context_str}\n Source: {source_str}\n\n"
-        return context
+    # def create_context(self, docs: list[Document], additional_info: str = "") -> str:
+    #     context = additional_info
+    #     for doc in docs:
+    #         context_str = doc.page_content
+    #         source_str = doc.metadata.get("source") or doc.metadata.get("title") or ""
+    #         context += f"Context: {context_str}\n Source: {source_str}\n\n"
+    #     return context
+
+    def create_context(self, docs: list[Document], query: str, additional_info: str = "") -> str:
+        context_to_return = additional_info  # This will store the context without sources
+        with open("context.txt", "a", encoding="utf-8") as file:
+            # Write the query and context to the file
+            file.write(f"Query: {query}\n")
+            for doc in docs:
+                context_str = doc.page_content
+                source_str = doc.metadata.get("source") or doc.metadata.get("title") or ""
+                context_to_return += f"{context_str}\n\n"  # Only context returned
+                # Append context and source to the file
+                file.write(f"Context: {context_str}\n")
+                file.write(f"Source: {source_str}\n\n")
+        return context_to_return
         
 
     
