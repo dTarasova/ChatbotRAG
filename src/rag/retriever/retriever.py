@@ -8,9 +8,9 @@ from src.rag.retriever.retriever_results_ranker import RRFResultsRanker, Results
 
 class Retriever:
 
-    def __init__(self, type='basic', persist_directory='chroma_db_larger', ranker_type = 'rrf' ):
+    def __init__(self, type='step-back', path_to_db_directory='knowledge_bases/amdire_and_napire', ranker_type = 'rrf' ):
         self.embedding_model = OpenAIEmbeddings()
-        self.vector_store = Chroma(persist_directory=persist_directory, embedding_function=self.embedding_model)
+        self.vector_store = Chroma(persist_directory=path_to_db_directory, embedding_function=self.embedding_model)
         self.retriever = self.vector_store.as_retriever(search_type="mmr", search_kwargs={"k": 5})
         self.type = type
         self.ranker = self.create_ranker(ranker_type)

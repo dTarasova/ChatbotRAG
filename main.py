@@ -6,7 +6,7 @@ from src.rag.rag_model import RAGModel, RAGTypes
 from src.interface.streamlit_incorporation import setup_streamlit 
 from termcolor import colored
 
-# setup_streamlit()
+setup_streamlit()
 
 
 #test_final_version()
@@ -34,16 +34,16 @@ from termcolor import colored
 # except KeyboardInterrupt:
 #     pass
 
-#################
-PATH_AMDIRE_NAPIRE_DOCS = 'data/just_amdire_and_napire_papers'
-path_amdire_and_napire_db = 'knowledge_bases/amdire_and_napire'
+# #################
+# PATH_AMDIRE_NAPIRE_DOCS = 'data/just_amdire_and_napire_papers'
+# path_amdire_and_napire_db = 'knowledge_bases/all_requirements_papers'
 
-# Add all documents from a folder to one or more vector stores
-PATH_AMDIRE_NAPIRE_DOCS = 'data/just amdire and napire papers'
-vector_store_amdire_napire = DocumentDatabase(path_to_documents=PATH_AMDIRE_NAPIRE_DOCS, path_to_db_directory=path_amdire_and_napire_db).get_vectorstore()
-for collection in vector_store_amdire_napire._collection:
-    print(f"Collection: {collection}")
-    print(f"Number of documents in collection: {(vector_store_amdire_napire._collection.count())}")
+# # Add all documents from a folder to one or more vector stores
+# PATH_AMDIRE_NAPIRE_DOCS = 'data/just amdire and napire papers'
+# vector_store_amdire_napire = DocumentDatabase(path_to_documents=PATH_AMDIRE_NAPIRE_DOCS, path_to_db_directory=path_amdire_and_napire_db).get_vectorstore()
+# for collection in vector_store_amdire_napire._collection:
+#     print(f"Collection: {collection}")
+#     print(f"Number of documents in collection: {(vector_store_amdire_napire._collection.count())}")
 # add_documents_from_folder(PATH_REQUIREMENTS_DOCS, [vector_store_requirements, vector_store_software4KMU])
 #############################################################################
 

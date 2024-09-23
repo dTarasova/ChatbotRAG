@@ -16,8 +16,8 @@ class RAGTypes(Enum):
     SUMMARISER = 'summariser'
 
 class RAGModel:
-    def __init__(self, text_retriever_type: str = 'basic'):
-        self.retriever_text_data = Retriever(text_retriever_type)
+    def __init__(self, text_retriever_type: str = 'step-back', path_to_db_directory: str = 'knowledge_bases/amdire_and_napire'):
+        self.retriever_text_data = Retriever(path_to_db_directory = path_to_db_directory, type = text_retriever_type)
         self.retriever_structured_data = StructuredDataRetriever()
         self.generator = Generator()
         self.evaluator = Evaluator()
