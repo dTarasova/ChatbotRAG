@@ -14,7 +14,10 @@ from src.llm_settings import MODEL, TEMPERATURE
 def get_openai_answer(question: str) -> str:
     template_wo_rag = """ ### Instruction ###: You are an expert in Requirements Engineering.
     give a comprehensive structured answer to the question.  
-   Respond only to the question asked, response should be concise and relevant to the question.
+   The answer should be clear, concise, and structured as follows:
+
+    Answer: Give short presise answer to the question.
+Details: Present supporting information from the given details, include explanations, examples.
     """ 
     llm = ChatOpenAI(model=MODEL, temperature=TEMPERATURE)
     messages = [("human", question), ("system", template_wo_rag)]

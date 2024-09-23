@@ -1,7 +1,3 @@
-[[pages]]
-path = "src/interface/compare_with_context.py"
-name = "Compare with Context"
-icon = "🤖"
 
 [[pages]]
 path = "src/interface/usability_testing.py"

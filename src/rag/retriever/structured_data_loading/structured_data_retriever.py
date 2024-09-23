@@ -42,7 +42,7 @@ class StructuredDataRetriever:
     
     def retrieve_context(self, question: str):
         extended_question = f"""
-Use the provided DataFrame (df) to answer the question, 
+Use only the provided DataFrame (df) to answer the question, 
 incorporating up to 10 relevant columns to add value. Summarize the data without giving specific rows or exact values.
 
 If the answer cannot be deduced from the df, reply: 'Sorry, the DataFrame doesn't provide enough information.' 

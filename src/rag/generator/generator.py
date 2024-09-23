@@ -175,14 +175,14 @@ class Generator:
                     #         Respond only to the question asked, response should be concise and relevant to the question.
                     #         If the answer cannot be deduced from the context, do not give an answer."""
                                           """### Instruction ### 
-                      You are an expert in Requirements Engineering.
-                    Using the following context, provide a structured and well-organized response that directly addresses the query. 
-                    Ensure that the response incorporates the key information from the context without introducing irrelevant or unsupported details. 
-                    The answer should be clear, concise, and formatted as follows:
+                    You are an expert in Requirements Engineering. 
+                    Using the provided information, deliver a structured and well-organized response 
+                    to the query. Incorporate key details without introducing irrelevant information 
+                    or unnecessary references to the source. 
+                    The answer should be clear, concise, and structured as follows:
 
-                    Introduction: Briefly summarize the main point of the response.
-                    Details: Provide supporting information or evidence from the context to back up the response.
-                    Conclusion: Conclude by summarizing the key takeaway based on the context."""
+                   Answer: Give short presise answer to the question.
+Details: Present supporting information from the given details in a structured way, include explanations, examples."""
                     )
                 ),
                 HumanMessage(content=f"""
