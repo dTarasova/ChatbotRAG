@@ -71,8 +71,9 @@ if question and question not in st.session_state.questions:
 # Check if the question exists in session state
 if question and question in st.session_state.logging:
      # Show radio buttons for selecting the better answer
-    choice = st.radio("Which answer is better?", ("Answer 1 (Left)", "Answer 2 (Right)"))
-
+    choice = st.radio("Which of these answers is correct?", ("Answer 1 (Left)", "Answer 2 (Right)", "Neither", "Both"))
+    choice2 = st.radio("If you would have to pick, which one would you prefer?", ("Answer 1 (Left)", "Answer 2 (Right)"))
+    text_area = st.text_area("Please provide a reason for your choice")
     # Button to submit the choice
     if st.button("Submit your choice"):
         # Determine the model based on randomized display order

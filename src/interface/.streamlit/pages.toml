@@ -1,7 +1,12 @@
 
 [[pages]]
-path = "src/interface/usability_testing.py"
-name = "Usability testing"
+path = "src/interface/usability_evaluation.py"
+name = "Usability Evaluation"
+icon = "🤖"
+
+[[pages]]
+path = "src/interface/correctness_evaluation.py"
+name = "Corretness Evaluation"
 icon = "🤖"
 
 [[pages]]

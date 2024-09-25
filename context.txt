@@ -515,3 +515,67 @@ Context: fig. 5. how do you align the software test with the requirements?
 4.4   re improvement (rq 3)
 Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
 
+Query: how to perform elicitation?
+Context: in re survey research, there have been investigations of techniques and methods and investigationsof general practices. we will discuss the most relevant ones in the following.contributions that investigate techniques and methods analyse, for example, selected require-ments phases and which techniques are suitable to support typical tasks in those phases
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: . usually,project repositories (e.g. in version management or ﬁle systemsor also project tracking systems such as jira) give a goodoverview, but sometimes artifacts are also transferred directlybetween stakeholders. the elicited artifacts are then brokendown into their entities. good candidates for entities are ﬁeldsor self-containing sections in the artifacts.2. elicit stakeholders
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Context: in guidelines derived from a systematic literature review of empirical studies on elicitationtechniques, dieste and juristo [17] state that especially unstructured interviews are more effectiveand output more complete information than introspective techniques or sorting techniques.marvin et al
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: ments elicitation techniques (interviews, prototyping, scenarios, workshops, and observation). comparing the results to the elicitation techniques reported for traditional re [29], an observable difference is that requirements workshops are slightly less commonly used in ml contexts
+Source: Status Quo and Problems of Requirements Engineering for Machine Learning Results from an International Survey.pdf
+
+Context: to identify potentially missing topics, we asked the participants directly for 4 different categories: (1) guidance for specific domains, (2), methods and tools for their daily work, (3) templates for the work, and (4) overall process and approaches
+Source: Investigating the Practical Relevance of Requirements Engineering.pdf
+
+Query: how to perform elicitation?
+Context: in re survey research, there have been investigations of techniques and methods and investigationsof general practices. we will discuss the most relevant ones in the following.contributions that investigate techniques and methods analyse, for example, selected require-ments phases and which techniques are suitable to support typical tasks in those phases
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: . usually,project repositories (e.g. in version management or ﬁle systemsor also project tracking systems such as jira) give a goodoverview, but sometimes artifacts are also transferred directlybetween stakeholders. the elicited artifacts are then brokendown into their entities. good candidates for entities are ﬁeldsor self-containing sections in the artifacts.2. elicit stakeholders
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Context: in guidelines derived from a systematic literature review of empirical studies on elicitationtechniques, dieste and juristo [17] state that especially unstructured interviews are more effectiveand output more complete information than introspective techniques or sorting techniques.marvin et al
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: ments elicitation techniques (interviews, prototyping, scenarios, workshops, and observation). comparing the results to the elicitation techniques reported for traditional re [29], an observable difference is that requirements workshops are slightly less commonly used in ml contexts
+Source: Status Quo and Problems of Requirements Engineering for Machine Learning Results from an International Survey.pdf
+
+Context: to identify potentially missing topics, we asked the participants directly for 4 different categories: (1) guidance for specific domains, (2), methods and tools for their daily work, (3) templates for the work, and (4) overall process and approaches
+Source: Investigating the Practical Relevance of Requirements Engineering.pdf
+
+Query: how to perform elicitation?
+Context: in re survey research, there have been investigations of techniques and methods and investigationsof general practices. we will discuss the most relevant ones in the following.contributions that investigate techniques and methods analyse, for example, selected require-ments phases and which techniques are suitable to support typical tasks in those phases
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: . usually,project repositories (e.g. in version management or ﬁle systemsor also project tracking systems such as jira) give a goodoverview, but sometimes artifacts are also transferred directlybetween stakeholders. the elicited artifacts are then brokendown into their entities. good candidates for entities are ﬁeldsor self-containing sections in the artifacts.2. elicit stakeholders
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Context: in guidelines derived from a systematic literature review of empirical studies on elicitationtechniques, dieste and juristo [17] state that especially unstructured interviews are more effectiveand output more complete information than introspective techniques or sorting techniques.marvin et al
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: ments elicitation techniques (interviews, prototyping, scenarios, workshops, and observation). comparing the results to the elicitation techniques reported for traditional re [29], an observable difference is that requirements workshops are slightly less commonly used in ml contexts
+Source: Status Quo and Problems of Requirements Engineering for Machine Learning Results from an International Survey.pdf
+
+Context: to identify potentially missing topics, we asked the participants directly for 4 different categories: (1) guidance for specific domains, (2), methods and tools for their daily work, (3) templates for the work, and (4) overall process and approaches
+Source: Investigating the Practical Relevance of Requirements Engineering.pdf
+
+Query: how to perform elicitation?
+Context: in re survey research, there have been investigations of techniques and methods and investigationsof general practices. we will discuss the most relevant ones in the following.contributions that investigate techniques and methods analyse, for example, selected require-ments phases and which techniques are suitable to support typical tasks in those phases
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: . usually,project repositories (e.g. in version management or ﬁle systemsor also project tracking systems such as jira) give a goodoverview, but sometimes artifacts are also transferred directlybetween stakeholders. the elicited artifacts are then brokendown into their entities. good candidates for entities are ﬁeldsor self-containing sections in the artifacts.2. elicit stakeholders
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Context: in guidelines derived from a systematic literature review of empirical studies on elicitationtechniques, dieste and juristo [17] state that especially unstructured interviews are more effectiveand output more complete information than introspective techniques or sorting techniques.marvin et al
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: ments elicitation techniques (interviews, prototyping, scenarios, workshops, and observation). comparing the results to the elicitation techniques reported for traditional re [29], an observable difference is that requirements workshops are slightly less commonly used in ml contexts
+Source: Status Quo and Problems of Requirements Engineering for Machine Learning Results from an International Survey.pdf
+
+Context: to identify potentially missing topics, we asked the participants directly for 4 different categories: (1) guidance for specific domains, (2), methods and tools for their daily work, (3) templates for the work, and (4) overall process and approaches
+Source: Investigating the Practical Relevance of Requirements Engineering.pdf
+
