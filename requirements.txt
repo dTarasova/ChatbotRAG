@@ -15,3 +15,8 @@ pdfplumber
 streamlit
 ragas # metrics for rag evaluation
 st_pages # for interface
+requests
+beautifulsoup4
+urllib3
+pdfkit
+wkhtmltopdf 
