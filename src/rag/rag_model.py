@@ -70,7 +70,7 @@ class RAGModel:
         openai_answer = get_openai_answer(question)
 
         openai_evaluation = self.get_evaluation(question, openai_answer)
-        results["models"]["OpenAI"] = {
+        results["models"]["gpt"] = {
             "answer": openai_answer,
             "context": None,
             "evaluation": openai_evaluation

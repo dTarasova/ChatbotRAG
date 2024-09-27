@@ -633,3 +633,217 @@ Source: Improving Requirements Engineering by Artefact Orientation.pdf
 Context: . 2) and which logically structures thepractical problem solving task shown in fig. 1. during problem investigation,the design scientists ask who the stakeholders are and what goals they have,what problematic phenomena there exist and what their eﬀects are, and whatthis means for the goal contribution. all these questions are of empirical natureand no treatment design is done.
 Source: Improving Requirements Engineering by Artefact Orientation.pdf
 
+Query: how to perform elicitation?
+Context: in re survey research, there have been investigations of techniques and methods and investigationsof general practices. we will discuss the most relevant ones in the following.contributions that investigate techniques and methods analyse, for example, selected require-ments phases and which techniques are suitable to support typical tasks in those phases
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: . usually,project repositories (e.g. in version management or ﬁle systemsor also project tracking systems such as jira) give a goodoverview, but sometimes artifacts are also transferred directlybetween stakeholders. the elicited artifacts are then brokendown into their entities. good candidates for entities are ﬁeldsor self-containing sections in the artifacts.2. elicit stakeholders
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Context: in guidelines derived from a systematic literature review of empirical studies on elicitationtechniques, dieste and juristo [17] state that especially unstructured interviews are more effectiveand output more complete information than introspective techniques or sorting techniques.marvin et al
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: .comparing the confidence intervals, we can also generalise that interviews, facilitated meetingsand prototyping are the three top techniques. their intervals overlap so that we cannot distinguishthem in general. they are, however, significantly more used than scenarios and observations whichagain overlap
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: ments elicitation techniques (interviews, prototyping, scenarios, workshops, and observation). comparing the results to the elicitation techniques reported for traditional re [29], an observable difference is that requirements workshops are slightly less commonly used in ml contexts
+Source: Status Quo and Problems of Requirements Engineering for Machine Learning Results from an International Survey.pdf
+
+Query:  what are the main challenges in requirements engineering?
+Context: incomplete and/or hidden re- quirements 
+
+
+communication flaws between project team and customer 
+
+
+moving targets (changing goals, business processes, and/or re- quirements) 
+
+
+underspecified requirements that are too abstract 
+
+
+timeboxing/not enough time in general 
+
+
+stakeholders with difficulties in separating requirements from known solution designs 
+
+
+insufficient support by cus- tomer
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Context: previous napire evidence the ﬁrst napire run with data from 58 respondentsfrom germany [28] provided a very similar picture of the top problems as we foundhere. the by far most cited problem in both was surveys incomplete / hiddenrequirements. moving targets, time boxing and underspeciﬁed requirements are tooabstract being in the top 5 in both surveys. diﬃculty of separating requirements
+Source: Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf
+
+Context: .themost often mentioned problem in this ranking are incom-plete and/or hidden requirements.also mentioned oftenare time boxing/not enough time and inconsistent require-ments.the most frequent answer for how those selectedproblems manifest themselves in the process was change re-quests and additional eﬀort (e.g. for meetings)
+Source: Naming the Pain in Requirements Engineering  Design of a Global Family of Surveys and First Results from Germany.pdf
+
+Context: . manag- ing customer expectations [18], aligning requirements with data [35, 42], changing requirements [25], and selecting proper metrics [44] were previously reported as difficulties, which emphasizes the importance of effective communication and technical expertise to bridge the gap between aspirations and technological feasibility.
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Context: [organization] lack of re- sources and references 
+
+
+faced by practitioners, such as difficulties in problem and business 
+
+
+understanding, difficulties in managing expectations, unclear re- 
+
+
+quirements, and lack of domain expert availability and engagement.  
+
+
+overall, when comparing re practices and challenges
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Query:  what are the main challenges in requirements engineering?
+Context: incomplete and/or hidden re- quirements 
+
+
+communication flaws between project team and customer 
+
+
+moving targets (changing goals, business processes, and/or re- quirements) 
+
+
+underspecified requirements that are too abstract 
+
+
+timeboxing/not enough time in general 
+
+
+stakeholders with difficulties in separating requirements from known solution designs 
+
+
+insufficient support by cus- tomer
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Context: previous napire evidence the ﬁrst napire run with data from 58 respondentsfrom germany [28] provided a very similar picture of the top problems as we foundhere. the by far most cited problem in both was surveys incomplete / hiddenrequirements. moving targets, time boxing and underspeciﬁed requirements are tooabstract being in the top 5 in both surveys. diﬃculty of separating requirements
+Source: Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf
+
+Context: . manag- ing customer expectations [18], aligning requirements with data [35, 42], changing requirements [25], and selecting proper metrics [44] were previously reported as difficulties, which emphasizes the importance of effective communication and technical expertise to bridge the gap between aspirations and technological feasibility.
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Context: [organization] lack of re- sources and references 
+
+
+faced by practitioners, such as difficulties in problem and business 
+
+
+understanding, difficulties in managing expectations, unclear re- 
+
+
+quirements, and lack of domain expert availability and engagement.  
+
+
+overall, when comparing re practices and challenges
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Context: poses various challenges from the viewpoint of software engineer- ing (se) [33]. some examples include covering additional quality properties such as fairness and explainability, dealing with a high degree of iterative experimentation, and mismatched assumptions in customers and multidisciplinary teams [29, 36]
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Query: how to perform elicitation?
+Context: in re survey research, there have been investigations of techniques and methods and investigationsof general practices. we will discuss the most relevant ones in the following.contributions that investigate techniques and methods analyse, for example, selected require-ments phases and which techniques are suitable to support typical tasks in those phases
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: . usually,project repositories (e.g. in version management or ﬁle systemsor also project tracking systems such as jira) give a goodoverview, but sometimes artifacts are also transferred directlybetween stakeholders. the elicited artifacts are then brokendown into their entities. good candidates for entities are ﬁeldsor self-containing sections in the artifacts.2. elicit stakeholders
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Context: in guidelines derived from a systematic literature review of empirical studies on elicitationtechniques, dieste and juristo [17] state that especially unstructured interviews are more effectiveand output more complete information than introspective techniques or sorting techniques.marvin et al
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: .comparing the confidence intervals, we can also generalise that interviews, facilitated meetingsand prototyping are the three top techniques. their intervals overlap so that we cannot distinguishthem in general. they are, however, significantly more used than scenarios and observations whichagain overlap
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: ments elicitation techniques (interviews, prototyping, scenarios, workshops, and observation). comparing the results to the elicitation techniques reported for traditional re [29], an observable difference is that requirements workshops are slightly less commonly used in ml contexts
+Source: Status Quo and Problems of Requirements Engineering for Machine Learning Results from an International Survey.pdf
+
+Query: how to perform elicitation?
+Context: in re survey research, there have been investigations of techniques and methods and investigationsof general practices. we will discuss the most relevant ones in the following.contributions that investigate techniques and methods analyse, for example, selected require-ments phases and which techniques are suitable to support typical tasks in those phases
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: . usually,project repositories (e.g. in version management or ﬁle systemsor also project tracking systems such as jira) give a goodoverview, but sometimes artifacts are also transferred directlybetween stakeholders. the elicited artifacts are then brokendown into their entities. good candidates for entities are ﬁeldsor self-containing sections in the artifacts.2. elicit stakeholders
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Context: in guidelines derived from a systematic literature review of empirical studies on elicitationtechniques, dieste and juristo [17] state that especially unstructured interviews are more effectiveand output more complete information than introspective techniques or sorting techniques.marvin et al
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: .comparing the confidence intervals, we can also generalise that interviews, facilitated meetingsand prototyping are the three top techniques. their intervals overlap so that we cannot distinguishthem in general. they are, however, significantly more used than scenarios and observations whichagain overlap
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: ments elicitation techniques (interviews, prototyping, scenarios, workshops, and observation). comparing the results to the elicitation techniques reported for traditional re [29], an observable difference is that requirements workshops are slightly less commonly used in ml contexts
+Source: Status Quo and Problems of Requirements Engineering for Machine Learning Results from an International Survey.pdf
+
+Query: what helps in requirements engineerign
+Context: . one explanation we have is that theyare most interested in requirements engineering and that many companies do not explicitly deﬁne the roleof a requirements engineer, but see re-related tasks as consulting (potentially run as an own project). ingeneral, the invitation list was more balanced between consultants and other software domains
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Context: part of software engineering. misunderstandings and defects in requirements-related artifacts can easily lead to design flaws and cause severe and costly problems [24]. agile requirements engineering relies on lightweight documentation and face-to-face collaborations between customers and developers [9]
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: literature suggests that requirements engineering (re) can help to address
+Source: Status Quo and Problems of Requirements Engineering for Machine Learning Results from an International Survey.pdf
+
+Context: . the requirements engineer talks to the product managerabout the requirement and about its meaning and documentsit in a ﬁle. however, the requirements engineer might ﬁrstrewrite the requirement to express it using a requirementstemplate (constrained natural language)
+Source: Artefacts in software engineering a fundamental positioning.pdf
+
+Context: . at the same time, requirements engineering is highly volatile andinherently complex due to the involvement of interdisciplinary stakeholders and uncertainty aboutmany aspects that are not clear at the beginning of a project
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Query: ambiguent requirement how to deal
+Context: .a major reason for this circumstance is that many things are not clear fromthe beginning of a project, which makes the discipline inherently complex andvolatile. the need for ﬂexibility is additionally hardened by potentially largeamounts of requirements [57], which are too often insuﬃciently structuredin spreadsheets
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: unclear requirements 
+
+
+(3.67 %) 
+
+
+lack of resources and unclear goals (5.50 %) 
+
+
+infrastructure (0.92 %) 
+
+
+lack of 
+
+
+time (3.67 %) 
+
+
+   references (1.83 %) 
+
+
+business/domain 
+
+
+understanding (12.84 %) 
+
+
+computational 
+
+
+constraints (0.92 %) 
+
+
+low client/domain expert 
+
+
+availability/engagement (11.93 %) 
+
+
+problem understanding 
+
+
+(24.77 %)
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Context: 1. checking on the qualiﬁcation and experience of its team members, providingtraining if needed, in particular, on avoiding abstract speciﬁcations. this couldalso be supported by including and training re standards that put emphasison the way requirements should be elicited and speciﬁed.
+Source: Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf
+
+Context: . to guidethe semi-structured interview, we developed a protocol. theprotocol contained, among demographic questions, one promptper type of requirements quality. the types of requirementsquality were derived from montgomery et al. [9] and covered,among others, ambiguity, completeness, and traceability.data extraction
+Source: Measuring the Fitness-for-Purpose of Requirements An initial Model of Activities and Attributes.pdf
+
+Context: code weak communication: “the communication to customer is done not by technicians, but by lawyers.”code too ambitious time planning: “delivery date is known before requirements are clear.”code implicit requirements not made explicit: “referencing common sense as a requirement basis
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+

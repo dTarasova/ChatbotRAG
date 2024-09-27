@@ -7,7 +7,7 @@ import datetime
 from src.rag.rag_model import RAGModel, RAGTypes
 from src.wo_rag import get_openai_answer
 
-def log_choice(question, answerGPT, answerRAG, user_choice, selected_model):
+def log_choice(question, answerGPT, answerRAG, correct_model, preferred_model, choice_explanation):
     log_entry = {
         "timestamp": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         "question": question,
@@ -16,7 +16,9 @@ def log_choice(question, answerGPT, answerRAG, user_choice, selected_model):
             "RAG": answerRAG
         },
         "user_choice": {
-            "selected_model": selected_model
+            "correct_model": correct_model,
+            "preferred_model": preferred_model,
+            "choice_explanation": choice_explanation
         }
     }
 
@@ -37,10 +39,12 @@ def log_choice(question, answerGPT, answerRAG, user_choice, selected_model):
 
 # Function to get answers from two different models
 def get_model_answers(question):
-    rag_model = RAGModel(text_retriever_type='step-back')
-    results = rag_model.query(question, query_types=[RAGTypes.SUMMARISER])
-    answerRAG = results["models"][RAGTypes.SUMMARISER.name]["answer"]
-    # context = results["models"][RAGTypes.COMBINED.name]["context"]
+    # rag_model = RAGModel(text_retriever_type='step-back')
+    # results = rag_model.query(question, query_types=[RAGTypes.SUMMARISER])
+    # answerRAG = results["models"][RAGTypes.SUMMARISER.name]["answer"]
+    # answerGPT = results["models"]["gpt"]["answer"]
+    # # context = results["models"][RAGTypes.COMBINED.name]["context"]
+    answerRAG = "RAG answer"
     answerGPT = get_openai_answer(question)
     # answerRAG = results[0].get('answer')
     return answerGPT, answerRAG
@@ -71,23 +75,39 @@ if question and question not in st.session_state.questions:
 # Check if the question exists in session state
 if question and question in st.session_state.logging:
      # Show radio buttons for selecting the better answer
-    choice = st.radio("Which of these answers is correct?", ("Answer 1 (Left)", "Answer 2 (Right)", "Neither", "Both"))
-    choice2 = st.radio("If you would have to pick, which one would you prefer?", ("Answer 1 (Left)", "Answer 2 (Right)"))
-    text_area = st.text_area("Please provide a reason for your choice")
+    correctness_choice = st.radio("Which of these answers is correct?", ("Answer 1 (Left)", "Answer 2 (Right)", "Neither", "Both"))
+    preferred_choice = st.radio("If you would have to pick, which one would you prefer? Rely on depth of the expertise and explainability for choosing", ("Answer 1 (Left)", "Answer 2 (Right)"))
+    choice_explanation = st.text_area("Please provide a reason for your choice")
     # Button to submit the choice
     if st.button("Submit your choice"):
         # Determine the model based on randomized display order
-        if choice == "Answer 1 (Left)":
-            user_choice = st.session_state.logging[question][0][0]
-            selected_model = st.session_state.logging[question][0][1]
+        if preferred_choice == "Answer 1 (Left)":
+            #user_preferred_choice = st.session_state.logging[question][0][0]
+            preferred_model = st.session_state.logging[question][0][1]
         else:
-            user_choice = st.session_state.logging[question][1][0]
-            selected_model = st.session_state.logging[question][1][1]
+            #user_preferred_choice = st.session_state.logging[question][1][0]
+            preferred_model = st.session_state.logging[question][1][1]
+        
+        if correctness_choice == "Answer 1 (Left)":
+            correct_model = st.session_state.logging[question][0][1]
+        elif correctness_choice == "Answer 2 (Right)":
+            correct_model = st.session_state.logging[question][1][1]
+        elif correctness_choice == "Both":
+            correct_model = "Both"
+        else:
+            correct_model = "Neither"
+
+        if st.session_state.logging[question][0][1] == "RAG":
+            answerRAG = st.session_state.logging[question][0][0]
+            answerGPT = st.session_state.logging[question][1][0]
+        else:
+            answerGPT = st.session_state.logging[question][0][0]
+            answerRAG = st.session_state.logging[question][1][0]
         
         # Log the choice to a file
-        log_choice(question, st.session_state.logging[question][0][0], st.session_state.logging[question][1][0], user_choice, selected_model)
+        log_choice(question=question, answerGPT=answerGPT, answerRAG=answerRAG, correct_model = correct_model, preferred_model= preferred_model, choice_explanation=choice_explanation)
         
-        st.success(f"Your choice has been logged! You selected: {selected_model}")
+        st.success(f"Your choice has been logged! You selected: {preferred_model}")
     
     # Display the answers side by side
     col1, col2 = st.columns(2)
@@ -98,4 +118,4 @@ if question and question in st.session_state.logging:
         st.subheader("Answer 2 (Right)")
         st.write(st.session_state.logging[question][1][0])
     
-   
+   # todo check if it is rerenders every time i pick a choice without submitting it 

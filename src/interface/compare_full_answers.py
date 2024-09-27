@@ -1,50 +1,16 @@
-import json
 import streamlit as st
-import random
-import os
-import datetime
-import streamlit as st
-import json
-import os
 from typing import Dict, Any
-import pandas as pd
 
+from src.interface.helper_functions import load_questions, load_results
 from src.rag.rag_model import RAGModel, RAGTypes
-from src.wo_rag import get_openai_answer
 
-FILEPATH = "results.json"
-
-# Load the results from results.json
-def load_results():
-    if not os.path.exists(FILEPATH):
-        with open(FILEPATH, 'w') as f:
-            json.dump([], f)  # Create an empty array to start with
-    with open(FILEPATH, 'r') as f:
-        try:
-            data = json.load(f)
-        except json.JSONDecodeError:
-            data = []
-    return data
-
-
-# # Save the results back to results.json
-# def save_results(results: Dict[str, Any]):
-#     with open('results.json', 'a') as f:
-#         json.dump(results, f, indent=4)
-
-# Load questions from evaluation_questions.txt
-def load_questions() -> list[str]:
-    # questions_gathered = []
-    with open('evaluation_questions.txt', 'r') as f:
-    #     for line in f:
-    #         questions_gathered.append(json.loads(line.strip()))
-        questions_gathered = [line.strip() for line in f.readlines()]
-    return questions_gathered
 
 # Display results in a 5-column layout
 def display_results(question: str, model_results: Dict[str, Any]):
     st.write(f"## Question: {question}")
-    cols = st.columns(5)
+    number_of_models = len(model_results)
+    st.write("model results ", number_of_models)
+    cols = st.columns(number_of_models)
     
     # Iterate over the models and their results with enumerate to track the index
     for i, (model_name, data) in enumerate(model_results.items()):
@@ -101,12 +67,6 @@ else:
     result = rag_model.query(question=question, query_types=[RAGTypes.TEXT_DATA, RAGTypes.STRUCTURED_DATA, RAGTypes.COMBINED, RAGTypes.SUMMARISER])
     model_results = result["models"]
     
-    # Add the result to the results dictionary
-    # results[question] = result
-    
-    # Save updated results
-    # save_results(results)
-
 # Display the results in a 5-column format
 display_results(question, model_results)
 
