@@ -1,5 +1,4 @@
 
-
 from src.rag.retriever.unstructured_data_loading.document_loader import DocumentDatabase
 from src.rag.evaluation.generate_test_set import get_contexts
 from src.rag.rag_model import RAGModel, RAGTypes
@@ -87,7 +86,5 @@ setup_streamlit()
 # found_item = next((item for item in results if item['question'] == search_question), None)
 # if found_item:
 #     print("Found")
-
-
 
 

@@ -579,3 +579,57 @@ Source: Status Quo and Problems of Requirements Engineering for Machine Learning
 Context: to identify potentially missing topics, we asked the participants directly for 4 different categories: (1) guidance for specific domains, (2), methods and tools for their daily work, (3) templates for the work, and (4) overall process and approaches
 Source: Investigating the Practical Relevance of Requirements Engineering.pdf
 
+Query: how can i identify relevant stakeholders to the project?
+Context: . 2) and which logically structures thepractical problem solving task shown in fig. 1. during problem investigation,the design scientists ask who the stakeholders are and what goals they have,what problematic phenomena there exist and what their eﬀects are, and whatthis means for the goal contribution. all these questions are of empirical natureand no treatment design is done.
+Source: Improving Requirements Engineering by Artefact Orientation.pdf
+
+Context: . typically, a stakeholder differentiates betweenstructures used to arrange information in containers (e.g.sections in a document), and structures used to express asso-ciated chunks of information (e.g. classes in a class diagram).stakeholders typically know several structure types as partof their individual knowledge. their knowledge inﬂuenceshow stakeholders perceive artefacts
+Source: Artefacts in software engineering a fundamental positioning.pdf
+
+Context: .3. elicit activities with an interface to re. a good op-portunity to ﬁnd out how re artifacts are used is to ask theelicited stakeholders how they use the requirements artifacts.this leads to certain, usually coarse-grained activities. thesecoarse-grained activities have to be broken down into smaller,until we can pinpoint to how a speciﬁc stakeholder interactswith the re artifact.4
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Context: step 1.as the ﬁrst step, we select the projects to participate in the ﬁeld study from a set of (project)candidates. to identify candidates, our project partner provides us with a list of projects and correspondingcontact persons, which we contact by email. each project is represented by one person, who either is assignedas the project lead or as the chief analysts of the project
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Context: stakeholders comprehend individuals, groups, or institu-tions having the responsibility for requirements and a majorinterest in the project [13], while user groups are a spe-cialisation of stakeholders with a particular proﬁciency andinvolvement in interaction with the system [31].businesscasenaturaltextdescribed and detailed using the additional elements ofcost, value, and risk
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Query: what are the benefits of using focus groups for elicitation?
+Context: to increase the reliability of the statements of the industryparticipants, and thus the internal validity, we perform agroup interview. through the interaction between the groupmembers, memories and experiences of the participants arestimulated. this way, they can produce insights that wouldbe less accessible without this technique
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: v. focus group results (rq1)
+
+
+we answer rq1 by summarizing the results of the focusgroup research. we report four challenges (ch1 - ch4) tocapture and reflect the elementary legal concepts in regulatoryre methods.
+
+
+a. ch1: detachment from legal interpretation practice
+Source: On Developing an Artifact-based Approach to Regulatory Requirements Engineering.pdf
+
+Context: one of the core activities in requirements engineering is eliciting the requirements from relevantstakeholders. to characterise the status quo, we want to understand what elicitation techniquesare employed in practice. in our theory from the first run, we expected practitioners, especiallyin large companies, to conduct workshops as the central technique to elicit requirements
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: spondents might still have had problems distinguishing between the relevance for their personal knowledge and interest and the usefulness to their daily work. a richer inves-tigation of such a differentiation would need, however, different forms of investigation that allows to better understand their preferences, motivations, and working context
+Source: Investigating the Practical Relevance of Requirements Engineering.pdf
+
+Context: . through the open questionsthe interviewees can express their opinion more freely. on theother side, the closed questions force them to agree on onestatement.to mitigate the threat of a bias toward the bisa speciﬁca-tion by the external reviewer, he is not involved in the studyprior to the actual assessment
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Query: how can i conduct effective stakeholder interviews?
+Context: . if the project candidate is selected, this personserves as the single point of contact during the study.when establishing the ﬁrst contact, we provide information about the study planned (its purpose anddesign) and propose an appointment for an open telephone interview of approximately one hour.thistelephone interview is not prepared with a set of particular questions, but serves to
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Context: .we utilised semi-structured interviews and one unstructured. theinterview questions (see fig. 2) were selected according to the roleof each practitioner who was interviewed, be it contributors or stake-holders (see table 1) within the quality assurance unit, except for thecontent management approach. thus, the inter-stakeholders differencesare not of relevance to our analysis
+Source: An investigation of causes and effects of trust in Boundary Artefacts.pdf
+
+Context: .3. elicit activities with an interface to re. a good op-portunity to ﬁnd out how re artifacts are used is to ask theelicited stakeholders how they use the requirements artifacts.this leads to certain, usually coarse-grained activities. thesecoarse-grained activities have to be broken down into smaller,until we can pinpoint to how a speciﬁc stakeholder interactswith the re artifact.4
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Context: qualitative analysis of expert interviews (rq 3). having investigated thedocuments in isolation, we conduct interviews with representatives from thecorresponding projects. those interviews aim at encouraging the participants toreﬂect on their current practice and help us to get a better understanding of theproject backgrounds
+Source: Improving Requirements Engineering by Artefact Orientation.pdf
+
+Context: . 2) and which logically structures thepractical problem solving task shown in fig. 1. during problem investigation,the design scientists ask who the stakeholders are and what goals they have,what problematic phenomena there exist and what their eﬀects are, and whatthis means for the goal contribution. all these questions are of empirical natureand no treatment design is done.
+Source: Improving Requirements Engineering by Artefact Orientation.pdf
+

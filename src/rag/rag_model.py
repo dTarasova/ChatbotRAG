@@ -16,11 +16,13 @@ class RAGTypes(Enum):
     SUMMARISER = 'summariser'
 
 class RAGModel:
-    def __init__(self, text_retriever_type: str = 'step-back', path_to_db_directory: str = 'knowledge_bases/amdire_and_napire'):
+    def __init__(self, text_retriever_type: str = 'step-back', path_to_db_directory: str = 'knowledge_bases/amdire_and_napire', evaluate_answers: bool = False):
         self.retriever_text_data = Retriever(path_to_db_directory = path_to_db_directory, type = text_retriever_type)
         self.retriever_structured_data = StructuredDataRetriever()
         self.generator = Generator()
-        self.evaluator = Evaluator()
+        self.evaluate_answers = evaluate_answers
+        if evaluate_answers:
+            self.evaluator = Evaluator()
 
     def get_context_from_text_data(self, question: str) -> Optional[str]:
         """
@@ -66,7 +68,8 @@ class RAGModel:
         context_from_structured_data = None
 
         openai_answer = get_openai_answer(question)
-        openai_evaluation = self.evaluator.get_answer_evaluation(question, openai_answer)
+
+        openai_evaluation = self.get_evaluation(question, openai_answer)
         results["models"]["OpenAI"] = {
             "answer": openai_answer,
             "context": None,
@@ -99,7 +102,7 @@ class RAGModel:
         if context_from_text_data:
             answer_from_text_data = self.generator.generate_answer(question, context_from_text_data, prompt_type='text_data')
             
-            evaluation = self.evaluator.get_answer_evaluation(question, answer_from_text_data)
+            evaluation = self.get_evaluation(question, answer_from_text_data)
             return {
                 "context": context_from_text_data,
                 "answer": answer_from_text_data,
@@ -111,7 +114,7 @@ class RAGModel:
         """Processes a structured data query and returns a dictionary with context and answer."""
         if context_from_structured_data:
             answer_from_structured_data = self.generator.generate_answer(question, context_from_structured_data, prompt_type='structured_data')
-            evaluation = self.evaluator.get_answer_evaluation(question, answer_from_structured_data)
+            evaluation = self.get_evaluation(question, answer_from_structured_data)
             return {
                 "context": context_from_structured_data,
                 "answer": answer_from_structured_data,
@@ -128,7 +131,7 @@ class RAGModel:
 
         combined_context = f"Context from general knowledge: \n{context_from_text_data}\n\nContext from real practical data: \n{context_from_structured_data}"
         answer_from_combined = self.generator.generate_answer(question, combined_context, prompt_type='combined')
-        evaluation = self.evaluator.get_answer_evaluation(question, answer_from_combined)
+        evaluation = self.get_evaluation(question, answer_from_combined)
         
         return {
             "context": combined_context,
@@ -147,7 +150,7 @@ class RAGModel:
         summarized_context_from_structured_data = self.generator.generate_summary(context_from_structured_data, question)
         combined_summarized_context = f"Context from general knowledge: \n{summarized_context_from_text_data}\n\nContext from real practical data: \n{summarized_context_from_structured_data}"
         answer_from_summarized = self.generator.generate_answer(question, combined_summarized_context, prompt_type='combined')
-        evaluation = self.evaluator.get_answer_evaluation(question, answer_from_summarized)
+        evaluation = self.get_evaluation(question, answer_from_summarized)
         return {
             "context": combined_summarized_context,
             "answer": answer_from_summarized,
@@ -177,6 +180,15 @@ class RAGModel:
         # Write the updated data back to the file
         with open(filename, 'w') as f:
             json.dump(data, f, indent=4)
+
+    def get_evaluation(self, question: str, answer: str) -> Dict[str, Any]: 
+        if self.evaluate_answers:
+            return self.evaluator.get_answer_evaluation(question, answer)
+        else: 
+            return {
+            "completeness": None,
+            "relevance": None
+        }
 
 
 if __name__ == "__main__":
