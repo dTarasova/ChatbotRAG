@@ -5,7 +5,7 @@ from src.rag.rag_model import RAGModel, RAGTypes
 from src.interface.streamlit_incorporation import setup_streamlit 
 from termcolor import colored
 
-setup_streamlit()
+#setup_streamlit()
 
 
 #test_final_version()
@@ -34,8 +34,17 @@ setup_streamlit()
 #     pass
 
 # #################
-# PATH_AMDIRE_NAPIRE_DOCS = 'data/just_amdire_and_napire_papers'
-# path_amdire_and_napire_db = 'knowledge_bases/all_requirements_papers'
+path_db = 'knowledge_bases/tester'
+path_data = 'data/software4kmu_helper'
+documentDatabase = DocumentDatabase(path_to_db_directory=path_db)
+# documentDatabase.add_docs_from_folder(path_data)
+# documentDatabase.print_vectorstore_collections()
+documents = documentDatabase.check_findings("Subjective Language refers to")
+documentDatabase.check_findings("such as almost always, significant and minimal.")
+# print(documents)
+
+
+
 
 # # Add all documents from a folder to one or more vector stores
 # PATH_AMDIRE_NAPIRE_DOCS = 'data/just amdire and napire papers'

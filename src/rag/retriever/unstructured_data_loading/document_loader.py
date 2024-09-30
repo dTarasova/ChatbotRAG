@@ -17,19 +17,31 @@ PERSIST_DIRECTORY = 'knowledge_bases/amdire_and_napire'
 EXAMPLE_FILE_PATH = 'data/first_batch/Rapid quality assurance with Requirements Smells.pdf'
 
 class DocumentDatabase:
-    def __init__(self, path_to_documents='data/just amdire and napire papers', path_to_db_directory='knowledge_bases/amdire_and_napire'):
-        self.path_to_documents = path_to_documents
+    def __init__(self, path_to_db_directory='knowledge_bases/amdire_and_napire'):
         self.path_to_db_directory = path_to_db_directory
         self.vector_store = Chroma(persist_directory=path_to_db_directory, embedding_function=OpenAIEmbeddings())
 
-    def create_db(self) -> Chroma:
+    def create_db(self, path_to_documents) -> Chroma:
         """Create and return the vector store client."""
         # self.vector_store = chromadb.PersistentClient(path=self.path_to_db_directory)
-        self.add_docs_from_folder(self.path_to_documents)
+        self.add_docs_from_folder(path_to_documents)
         return self.vector_store
      
     def get_vectorstore(self) -> Chroma:
         return self.vector_store
+    
+    def print_vectorstore_collections(self) -> None:
+        for collection in self.vector_store._collection:
+            print(f"Collection: {collection}")
+            print(f"Number of documents in collection: {(self.vector_store._collection.count())}")
+    
+    def check_findings(self, query: str) -> list[Document]:
+        """Retrieve documents based on a query."""
+        documents = self.vector_store.search(query, search_type="mmr", search_kwargs={"k": 5})
+        for doc in documents:
+            print(f"Document: {doc.metadata['source']}")
+            print(f"Content: {doc.page_content}")
+        return documents
 
     def add_doc_todb(self, doc_path: str):
         """Process and add a document to the vector store."""
@@ -62,6 +74,11 @@ class DocumentDatabase:
 
 # Example usage
 if __name__ == "__main__":
-    db = DocumentDatabase()
-    db.create_db()
+    path_db = 'knowledge_bases/amdire_napire_software4kmu'
+    path_data = 'data/software4kmu papers'
+    documentDatabase = DocumentDatabase(path_to_db_directory=path_db)
+    documentDatabase.add_docs_from_folder(path_data)
+    vector_store = documentDatabase.get_vectorstore()
+    documentDatabase.print_vectorstore_collections()
+    documents = documentDatabase.check_findings("Subjective Language refers to")
 

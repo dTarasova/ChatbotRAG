@@ -44,7 +44,8 @@ def save_text_to_txt(text: str, file_path: str):
 def save_paragraphs_to_txt(paragraphs, file_path) -> str:
     paragraphs_text = ''
     for paragraph in paragraphs:
-        paragraphs_text += paragraph + '\n\n'
+        # paragraphs_text += paragraph + '\n\n'
+        paragraphs_text += paragraph
     save_text_to_txt(paragraphs_text, file_path)
     return paragraphs_text
 
