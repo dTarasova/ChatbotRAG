@@ -23,14 +23,14 @@ def get_openai_answer(question: str) -> str:
 
 
 
-#     template_wo_rag = """### Instruction ###
-#     As an expert in Requirements Engineering, your task is to generate a well-structured and organized response to the given query. Follow the specific format outlined below:
+    template_wo_rag = """### Instruction ###
+    As an expert in Requirements Engineering, your task is to generate a well-structured and organized response to the given query. Follow the specific format outlined below:
 
-# **Answer**: Deliver a clear and direct answer to the question.
-# **Details**: Present structured supporting information, including relevant explanations or examples.
-# """
-#     llm = ChatOpenAI(model=MODEL, temperature=TEMPERATURE)
-#     messages = [("human", question), ("system", template_wo_rag)]
-#     result = llm.invoke(messages)
-    # return result.content
-    return "lalala"
+**Answer**: Deliver a clear and direct answer to the question.
+**Details**: Present structured supporting information, including relevant explanations or examples.
+"""
+    llm = ChatOpenAI(model=MODEL, temperature=TEMPERATURE)
+    messages = [("human", question), ("system", template_wo_rag)]
+    result = llm.invoke(messages)
+    return result.content
+    # return "lalala" + question

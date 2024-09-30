@@ -39,15 +39,16 @@ def log_choice(question, answerGPT, answerRAG, correct_model, preferred_model, c
 
 # Function to get answers from two different models
 def get_model_answers(question):
-    # rag_model = RAGModel(text_retriever_type='step-back')
-    # results = rag_model.query(question, query_types=[RAGTypes.SUMMARISER])
-    # answerRAG = results["models"][RAGTypes.SUMMARISER.name]["answer"]
-    # answerGPT = results["models"]["gpt"]["answer"]
-    # # context = results["models"][RAGTypes.COMBINED.name]["context"]
-    answerRAG = "RAG answer"
-    answerGPT = get_openai_answer(question)
+    rag_model = RAGModel(text_retriever_type='step-back')
+    results = rag_model.query(question, query_types=[RAGTypes.SUMMARISER])
+    answerRAG = results["models"][RAGTypes.SUMMARISER.name]["answer"]
+    answerGPT = results["models"]["gpt"]["answer"]
+    # context = results["models"][RAGTypes.COMBINED.name]["context"]
+    # answerRAG = "RAG answer" + question
+    # answerGPT = get_openai_answer(question)
     # answerRAG = results[0].get('answer')
     return answerGPT, answerRAG
+
 
 # Initialize session state variables if not present
 if "questions" not in st.session_state:
@@ -58,7 +59,7 @@ if "logging" not in st.session_state:
 st.title("Compare RAG Chatbot and ChatGPT Answers")
 
 # Text input for the user to enter a question
-question = st.text_input("Enter a question to compare answers:")
+question = st.text_input("Enter a question to compare answers:", key="key_question")
 
 if question and question not in st.session_state.questions:
     # Get answers from the models
@@ -77,7 +78,7 @@ if question and question in st.session_state.logging:
      # Show radio buttons for selecting the better answer
     correctness_choice = st.radio("Which of these answers is correct?", ("Answer 1 (Left)", "Answer 2 (Right)", "Neither", "Both"))
     preferred_choice = st.radio("If you would have to pick, which one would you prefer? Rely on depth of the expertise and explainability for choosing", ("Answer 1 (Left)", "Answer 2 (Right)"))
-    choice_explanation = st.text_area("Please provide a reason for your choice")
+    choice_explanation = st.text_area("Please provide a reason for your choice", key="key_explanation")
     # Button to submit the choice
     if st.button("Submit your choice"):
         # Determine the model based on randomized display order
@@ -104,10 +105,19 @@ if question and question in st.session_state.logging:
             answerGPT = st.session_state.logging[question][0][0]
             answerRAG = st.session_state.logging[question][1][0]
         
-        # Log the choice to a file
-        log_choice(question=question, answerGPT=answerGPT, answerRAG=answerRAG, correct_model = correct_model, preferred_model= preferred_model, choice_explanation=choice_explanation)
+        log_choice(
+            question=question,
+            answerGPT=answerGPT,
+            answerRAG=answerRAG,
+            correct_model=correct_model,
+            preferred_model=preferred_model,
+            choice_explanation=choice_explanation
+        )
         
         st.success(f"Your choice has been logged! You selected: {preferred_model}")
+
+
+
     
     # Display the answers side by side
     col1, col2 = st.columns(2)

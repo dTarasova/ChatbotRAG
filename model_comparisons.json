@@ -1,15 +1,80 @@
 [
     {
-        "timestamp": "2024-09-27 17:05:48",
-        "question": "1",
+        "timestamp": "2024-09-30 14:58:22",
+        "question": "How to perform elicitation?",
         "answers": {
-            "GPT": "lalala",
-            "RAG": "RAG answer"
+            "GPT": "lalalaHow to perform elicitation?",
+            "RAG": "RAG answerHow to perform elicitation?"
         },
         "user_choice": {
             "correct_model": "GPT",
             "preferred_model": "GPT",
-            "choice_explanation": "training 21"
+            "choice_explanation": ""
+        }
+    },
+    {
+        "timestamp": "2024-09-30 14:58:38",
+        "question": "How to perform elicitation?",
+        "answers": {
+            "GPT": "lalalaHow to perform elicitation?",
+            "RAG": "RAG answerHow to perform elicitation?"
+        },
+        "user_choice": {
+            "correct_model": "Neither",
+            "preferred_model": "GPT",
+            "choice_explanation": ""
+        }
+    },
+    {
+        "timestamp": "2024-09-30 15:00:21",
+        "question": "How to perform elicitation wotj iweo",
+        "answers": {
+            "GPT": "lalalaHow to perform elicitation wotj iweo",
+            "RAG": "RAG answerHow to perform elicitation wotj iweo"
+        },
+        "user_choice": {
+            "correct_model": "RAG",
+            "preferred_model": "RAG",
+            "choice_explanation": "sdfsf"
+        }
+    },
+    {
+        "timestamp": "2024-09-30 15:00:25",
+        "question": "How to perform elicitation wotj iweo",
+        "answers": {
+            "GPT": "lalalaHow to perform elicitation wotj iweo",
+            "RAG": "RAG answerHow to perform elicitation wotj iweo"
+        },
+        "user_choice": {
+            "correct_model": "Neither",
+            "preferred_model": "RAG",
+            "choice_explanation": "sdfsf"
+        }
+    },
+    {
+        "timestamp": "2024-09-30 15:00:41",
+        "question": "How to perform elicitation worstrterrettj iweo",
+        "answers": {
+            "GPT": "lalalaHow to perform elicitation worstrterrettj iweo",
+            "RAG": "RAG answerHow to perform elicitation worstrterrettj iweo"
+        },
+        "user_choice": {
+            "correct_model": "RAG",
+            "preferred_model": "RAG",
+            "choice_explanation": "sdfsfioiu\n"
+        }
+    },
+    {
+        "timestamp": "2024-09-30 15:12:39",
+        "question": "123",
+        "answers": {
+            "GPT": "lalala123",
+            "RAG": "RAG answer123"
+        },
+        "user_choice": {
+            "correct_model": "RAG",
+            "preferred_model": "RAG",
+            "choice_explanation": "qwe123"
         }
     }
 ]
