@@ -33,17 +33,22 @@ from termcolor import colored
 # except KeyboardInterrupt:
 #     pass
 
-# #################
-path_db = 'knowledge_bases/tester'
-path_data = 'data/software4kmu_helper'
-documentDatabase = DocumentDatabase(path_to_db_directory=path_db)
+# ############################################################################################################	
+
+# PATH_DB_AMDIRE_NAPIRE = 'knowledge_bases/amdire_napire'
+# PATH_DB_AMDIRE_NAPIRE_SOFTWARE4KMU = 'knowledge_bases/amdire_napire_software4kmu'
+# PATH_DB_ALL = 'knowledge_bases/all'
+
+# PATH_DATA_AMDIRE_NAPIRE = 'data/just amdire and napire papers'
+# PATH_DATA_SOFTWARE4KMU = 'data/software4kmu'
+# PATH_DATA_OTHER_REQUIREMENTS = 'data/not amdire and napire'
+
+# path_db = PATH_DB_ALL
+# path_data = PATH_DATA_OTHER_REQUIREMENTS
+# documentDatabase = DocumentDatabase(path_to_db_directory=path_db)
 # documentDatabase.add_docs_from_folder(path_data)
 # documentDatabase.print_vectorstore_collections()
-documents = documentDatabase.check_findings("Subjective Language refers to")
-documentDatabase.check_findings("such as almost always, significant and minimal.")
-# print(documents)
-
-
+# documents = documentDatabase.check_findings("how to improve requirement System should be fast")
 
 
 # # Add all documents from a folder to one or more vector stores

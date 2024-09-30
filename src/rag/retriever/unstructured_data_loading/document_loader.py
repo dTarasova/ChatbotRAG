@@ -39,8 +39,8 @@ class DocumentDatabase:
         """Retrieve documents based on a query."""
         documents = self.vector_store.search(query, search_type="mmr", search_kwargs={"k": 5})
         for doc in documents:
-            print(f"Document: {doc.metadata['source']}")
-            print(f"Content: {doc.page_content}")
+            print(f"Document: {doc.metadata['source']}\n")
+            print(f"Content: {doc.page_content}\n\n")
         return documents
 
     def add_doc_todb(self, doc_path: str):
@@ -82,3 +82,13 @@ if __name__ == "__main__":
     documentDatabase.print_vectorstore_collections()
     documents = documentDatabase.check_findings("Subjective Language refers to")
 
+
+# used folders
+# idea is to gradually add data to the existing databases to reduce embedding creation
+# PATH_DB_AMDIRE_NAPIRE = 'knowledge_bases/amdire_napire'
+# PATH_DB_AMDIRE_NAPIRE_SOFTWARE4KMU = 'knowledge_bases/amdire_napire_software4kmu'
+# PATH_DB_ALL = 'knowledge_bases/all'
+
+# PATH_DATA_AMDIRE_NAPIRE = 'data/just amdire and napire papers'
+# PATH_DATA_SOFTWARE4KMU = 'data/software4kmu'
+# PATH_DATA_OTHER_REQUIREMENTS = 'data/not amdire and napire'
