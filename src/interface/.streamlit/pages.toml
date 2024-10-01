@@ -14,3 +14,9 @@ path = "src/interface/compare_full_answers.py"
 name = "Compare All Models"
 icon = "🤖"
 
+[[pages]]
+path = "src/interface/compare_knowledge_bases.py"
+name = "Compare Knowledge Bases"
+icon = "🤖"
+
+

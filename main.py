@@ -5,7 +5,7 @@ from src.rag.rag_model import RAGModel, RAGTypes
 from src.interface.streamlit_incorporation import setup_streamlit 
 from termcolor import colored
 
-#setup_streamlit()
+setup_streamlit()
 
 
 #test_final_version()

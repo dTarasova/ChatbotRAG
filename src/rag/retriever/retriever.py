@@ -8,7 +8,7 @@ from src.rag.retriever.retriever_results_ranker import RRFResultsRanker, Results
 
 class Retriever:
 
-    def __init__(self, type='step-back', path_to_db_directory='knowledge_bases/amdire_and_napire', ranker_type = 'rrf' ):
+    def __init__(self, type='step-back', path_to_db_directory='knowledge_bases/amdire_napire_software4kmu', ranker_type = 'rrf' ):
         self.embedding_model = OpenAIEmbeddings()
         self.vector_store = Chroma(persist_directory=path_to_db_directory, embedding_function=self.embedding_model)
         self.retriever = self.vector_store.as_retriever(search_type="mmr", search_kwargs={"k": 5})
@@ -33,27 +33,26 @@ class Retriever:
         return documents
 
     def retrieve_context(self, query: str) -> str:
-        docs = self.retrieve_docs(query)
-        additional_info = ""
-        if self.type == 'step-back':
-            self.query_translator = QueryTranslator(type='step-back')
+        if self.type == 'expand':
+            self.query_translator = QueryTranslator(type='expand')
             adjusted_query = self.query_translator.translate_query(query)
-            documents_stepback_query =  self.retriever.invoke(adjusted_query)
-            documents_stepback_query.extend(docs)
-            docs = documents_stepback_query
-            additional_info += f"Step-back query: {adjusted_query}\n\n"
+            documents_expansion_query =  self.retriever.invoke(adjusted_query)
+            docs = documents_expansion_query
+            additional_info = f"Expansion query: {adjusted_query}\n\n"
+        else: 
+            docs = self.retrieve_docs(query)
+            additional_info = ""
+            if self.type == 'step-back':
+                self.query_translator = QueryTranslator(type='step-back')
+                adjusted_query = self.query_translator.translate_query(query)
+                documents_stepback_query =  self.retriever.invoke(adjusted_query)
+                documents_stepback_query.extend(docs)
+                docs = documents_stepback_query
+                additional_info += f"Step-back query: {adjusted_query}\n\n"
         
         ranked_docs = self.rank_results(docs)
         context = self.create_context(docs = ranked_docs, query=query, additional_info=additional_info)
         return context
-
-    # def create_context(self, docs: list[Document], additional_info: str = "") -> str:
-    #     context = additional_info
-    #     for doc in docs:
-    #         context_str = doc.page_content
-    #         source_str = doc.metadata.get("source") or doc.metadata.get("title") or ""
-    #         context += f"Context: {context_str}\n Source: {source_str}\n\n"
-    #     return context
 
     def create_context(self, docs: list[Document], query: str, additional_info: str = "") -> str:
         context_to_return = additional_info  # This will store the context without sources

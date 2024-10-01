@@ -6,6 +6,7 @@ import datetime
 
 from src.rag.rag_model import RAGModel, RAGTypes
 from src.wo_rag import get_openai_answer
+from src.interface.helper_functions import load_questions, load_results
 
 def log_choice(question, answerGPT, answerRAG, correct_model, preferred_model, choice_explanation):
     log_entry = {
@@ -61,9 +62,23 @@ st.title("Compare RAG Chatbot and ChatGPT Answers")
 # Text input for the user to enter a question
 question = st.text_input("Enter a question to compare answers:", key="key_question")
 
+results = load_results()
+
+
 if question and question not in st.session_state.questions:
     # Get answers from the models
-    answerGPT, answerRAG = get_model_answers(question)
+    found_item = next((item for item in results if item['question'] == question), None)
+    if found_item:
+        model_results = found_item["models"]
+        st.write("Results already exist for this question.")
+        answerRAG = model_results[RAGTypes.SUMMARISER.name]["answer"]
+        answerGPT = model_results["gpt"]["answer"]
+        
+    else:
+        # Query the RAG model if the answer doesn't exist
+        st.write("Querying the RAG model...")
+        
+        answerGPT, answerRAG = get_model_answers(question)
     
     # Randomize the order of the answers
     answers = [(answerGPT, 'GPT'), (answerRAG, 'RAG')]
