@@ -27,6 +27,8 @@ class QueryTranslator:
                 3. Generate multiple versions of the original query by combining these synonyms and alternative phrasings.
                 4. Evaluate the generated versions and select the most suitable expanded query.Please generate multiple query expansions and select the most suitable one to present as the final expanded query.
 
+                Provide as an output only expanded query. 
+                
                 Here is the original question for expansion:
 
                 """

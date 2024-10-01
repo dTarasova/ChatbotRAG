@@ -1,7 +1,7 @@
 import streamlit as st
 from typing import Dict, Any
 
-from src.interface.helper_functions import load_questions, load_results
+from src.interface.helper_functions import load_questions, load_results, normalize
 from src.rag.rag_model import RAGModel, RAGTypes
 
 
@@ -55,7 +55,7 @@ question = questions[st.session_state.question_number]
 st.write(f"Current question: {question}")
 st.write(f"Question number: {st.session_state.question_number}")
 
-found_item = next((item for item in results if item['question'] == question), None)
+found_item = next((item for item in results if normalize(item['question']) == normalize(question)), None)
 if found_item:
     model_results = found_item["models"]
     st.write("Results already exist for this question.")

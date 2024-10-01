@@ -4,8 +4,20 @@ from src.rag.evaluation.generate_test_set import get_contexts
 from src.rag.rag_model import RAGModel, RAGTypes
 from src.interface.streamlit_incorporation import setup_streamlit 
 from termcolor import colored
+import pandas as pd
 
 setup_streamlit()
+############################################################################################################
+# df = pd.read_csv('data/napire_data/napire_for_agent.csv')
+# print(df.shape)
+
+# df.columns = (df.columns.str.strip()
+#               .str.replace(' ', '_')
+#               .str.replace('(', '')
+#               .str.replace(')', ''))
+# print(df.shape)
+# df.to_csv('data/napire_data/napire_for_agent2.csv', index=False)
+###############################################################################
 
 
 #test_final_version()

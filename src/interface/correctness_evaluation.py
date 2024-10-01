@@ -6,7 +6,7 @@ import datetime
 
 from src.rag.rag_model import RAGModel, RAGTypes
 from src.wo_rag import get_openai_answer
-from src.interface.helper_functions import load_questions, load_results
+from src.interface.helper_functions import load_questions, load_results, normalize
 
 def log_choice(question, answerGPT, answerRAG, correct_model, preferred_model, choice_explanation):
     log_entry = {
@@ -67,7 +67,8 @@ results = load_results()
 
 if question and question not in st.session_state.questions:
     # Get answers from the models
-    found_item = next((item for item in results if item['question'] == question), None)
+    
+    found_item = next((item for item in results if normalize(item['question']) == normalize(question)), None)
     if found_item:
         model_results = found_item["models"]
         st.write("Results already exist for this question.")

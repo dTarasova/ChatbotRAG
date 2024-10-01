@@ -66,8 +66,7 @@ class StructuredDataRetriever:
         extended_question = f"""
 ### Instruction### Use only the provided DataFrame (df) to answer the question below. Follow these guidelines:
 
-Summarize relevant information utilizing up to 10 columns.
-Include statistical summaries, general descriptions of column values as needed.
+Summarize relevant information utilizing up to 10 columns and perform python functions to summarize their values.
 Do not mention specific rows or exact data points.
 If the DataFrame doesn’t provide enough information, reply with: ‘Sorry, the DataFrame doesn’t provide enough information.’
 Exclude placeholders like ‘not shown’ or ‘not answered.’
