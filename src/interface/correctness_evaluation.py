@@ -41,10 +41,11 @@ def log_choice(question, answerGPT, answerRAG, correct_model, preferred_model, c
 # Function to get answers from two different models
 def get_model_answers(question):
     rag_model = RAGModel(text_retriever_type='step-back')
-    results = rag_model.query(question, query_types=[RAGTypes.SUMMARISER])
+    results = rag_model.query(question, query_types=[RAGTypes.GPT, RAGTypes.SUMMARISER])
     answerRAG = results["models"][RAGTypes.SUMMARISER.name]["answer"]
-    answerGPT = results["models"]["gpt"]["answer"]
-    # context = results["models"][RAGTypes.COMBINED.name]["context"]
+    answerGPT = results["models"][RAGTypes.GPT.name]["answer"]
+    context = results["models"][RAGTypes.SUMMARISER.name]["context"]
+    print("context ", context)
     # answerRAG = "RAG answer" + question
     # answerGPT = get_openai_answer(question)
     # answerRAG = results[0].get('answer')

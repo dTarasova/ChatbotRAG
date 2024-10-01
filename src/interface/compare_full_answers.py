@@ -64,7 +64,7 @@ else:
     # Query the RAG model if the answer doesn't exist
     st.write("Querying the RAG model...")
     rag_model = RAGModel(evaluate_answers=True)
-    result = rag_model.query(question=question, query_types=[RAGTypes.TEXT_DATA, RAGTypes.STRUCTURED_DATA, RAGTypes.COMBINED, RAGTypes.SUMMARISER])
+    result = rag_model.query(question=question, query_types=[RAGTypes.GPT, RAGTypes.TEXT_DATA, RAGTypes.STRUCTURED_DATA, RAGTypes.COMBINED, RAGTypes.SUMMARISER])
     model_results = result["models"]
     
 # Display the results in a 5-column format

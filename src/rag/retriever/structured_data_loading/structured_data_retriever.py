@@ -36,6 +36,7 @@ class StructuredDataRetriever:
             self.df,
             verbose=True,
             agent_type=AgentType.OPENAI_FUNCTIONS ,
+            # agent_type="tool-calling",
             allow_dangerous_code=True
         )
         return agent
@@ -64,12 +65,15 @@ class StructuredDataRetriever:
 
 # todo add later After identifying relevant columns, run python functions to summarize their values.
         extended_question = f"""
-### Instruction### Use only the provided DataFrame (df) to answer the question below. Follow these guidelines:
+### Instruction### 
 
-Summarize relevant information utilizing up to 10 columns and perform python functions to summarize their values.
-Do not mention specific rows or exact data points.
-If the DataFrame doesn’t provide enough information, reply with: ‘Sorry, the DataFrame doesn’t provide enough information.’
-Exclude placeholders like ‘not shown’ or ‘not answered.’
+Use only the provided DataFrame (df) to respond to the question below. Follow these steps:
+
+Summarize the relevant information using up to 10 columns from the DataFrame.
+Perform necessary Python functions on the DataFrame to summarize the values (e.g., calculate averages, totals, sort, or any relevant statistical operations).
+Avoid referring to specific rows or exact data points in your response.
+If the DataFrame lacks sufficient information, return: 'Sorry, the DataFrame doesn’t provide enough information.'
+Exclude any placeholders or irrelevant entries such as 'not shown' or 'not answered.'
 
 ###Question###: {question}. 
 

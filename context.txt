@@ -2363,3 +2363,487 @@ characteristics.
 let us look at the above properties in a concrete example and refine a bad requirement together.
 Source: software4kmu learning nuggets.pdf
 
+Query: how to document a requirement ?
+Context: mitigation actions for incomplete/hidden requirements 
+improve the documentation and conduct more meetings with the developers to detect analysis defects. 
+hire or specialize a requirements analyst. 
+creating templates. 
+creation of a dor (definition of readiness) for the team. 
+invest more time in requirements specification, using scenarios and prototypes to gather requirements
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: different types and forms of requirements, including business, functional and non-functional, need to be carefully documented and 
+managed. 
+requirements can take different forms, such as natural language, structured formats or model-based approaches, each with its own 
+advantages and disadvantages.
+Source: software4kmu learning nuggets.pdf
+
+Context: students.
+6.1.3. data collection procedure
+we used a 6-step procedure to collect the data
+necessary for answering the research questions.
+1. collect requirements artifact(s) for each case. we
+retrieved the requirements artifacts to be ana-
+lyzed in each case. for one case, the require-
+ments were stored in microsoft word documents.
+for the other cases, this involved extracting the
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: 3. conduct structured elicitation by applying elicitation (and creativity) techniques​
+ such as interviews, questionnaires… (more on techniques below)
+4. document requirements, for example with the help of checklists and templates (e.g. volere or self-made)​
+5. structure and transfer to models in order to provide a more structured representation: what belongs where?​
+Source: software4kmu learning nuggets.pdf
+
+Context: requirements candidates into accepted requirements through vadalidation by the customers following the scope set out initially. this 
+may be done in an manner as simple as asking them to formally accept the requirements in a written form and extend to employing a 
+structured workshop with a walkthrough through all requirements and asking “why” questions (e.g. “why do you really need that
+Source: software4kmu learning nuggets.pdf
+
+Query: how to document a requirement ?
+Context: mitigation actions for incomplete/hidden requirements 
+improve the documentation and conduct more meetings with the developers to detect analysis defects. 
+hire or specialize a requirements analyst. 
+creating templates. 
+creation of a dor (definition of readiness) for the team. 
+invest more time in requirements specification, using scenarios and prototypes to gather requirements
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: one of the core activities in requirements engineering is eliciting the requirements from relevant
+stakeholders. to characterise the status quo, we want to understand what elicitation techniques
+are employed in practice. in our theory from the first run, we expected practitioners, especially
+in large companies, to conduct workshops as the central technique to elicit requirements. the
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: model of requirements-affected activities, we resorted to an
+inductive coding process [26]. the first and third authors
+jointly established the level of granularity of the codes that
+5https://www.descript.com/
+were applied to the textual descriptions and documented this
+process in a guideline. the first author then performed the
+coding process independently and, upon completion, verified
+Source: Measuring the Fitness-for-Purpose of Requirements An initial Model of Activities and Attributes.pdf
+
+Context: quirements is crucial. obviously, if the requirements are to be precisely specified, the 
+structure, syntax and semantics of requirements documentation, that capture various 
+aspects, have to be described, too.  
+typically, requirements are collected for a specific family of systems (like busi-
+ness information systems), so a systematic interpretation of the basic concepts that re-
+Source: A Meta Model for Artefact-Orientation Fundamentals and Lessons Learned in Requirements Engineering.pdf
+
+Context: instructions on how to describe use cases at munich re.
+data collection. following the process as described in
+sec. iii-b, the approach contained four phases: first, we
+received and analysed a full set of 51 requirements engineering
+artifacts that were created in the project, including use cases,
+business rules and others. in the ﬁrst, 90-minutes workshop
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Query: how to document a requirement ?
+Context: requirements candidates into accepted requirements through vadalidation by the customers following the scope set out initially. this 
+may be done in an manner as simple as asking them to formally accept the requirements in a written form and extend to employing a 
+structured workshop with a walkthrough through all requirements and asking “why” questions (e.g. “why do you really need that
+Source: software4kmu learning nuggets.pdf
+
+Context: mitigation actions for incomplete/hidden requirements 
+improve the documentation and conduct more meetings with the developers to detect analysis defects. 
+hire or specialize a requirements analyst. 
+creating templates. 
+creation of a dor (definition of readiness) for the team. 
+invest more time in requirements specification, using scenarios and prototypes to gather requirements
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: different types and forms of requirements, including business, functional and non-functional, need to be carefully documented and 
+managed. 
+requirements can take different forms, such as natural language, structured formats or model-based approaches, each with its own 
+advantages and disadvantages.
+Source: software4kmu learning nuggets.pdf
+
+Context: one of the core activities in requirements engineering is eliciting the requirements from relevant
+stakeholders. to characterise the status quo, we want to understand what elicitation techniques
+are employed in practice. in our theory from the first run, we expected practitioners, especially
+in large companies, to conduct workshops as the central technique to elicit requirements. the
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: (e.g. usability-, performance-, or security-related requirements)
+8. iteratively develop the system specification. in analogy to the 
+constant back and forth between the problem space and the 
+solution space introduced here, the elaboration and analysis of 
+requirements is an iterative process (regardless of the chosen 
+process model). in consequence, we may often go back to step
+Source: software4kmu learning nuggets.pdf
+
+Query: how to document a requirement ?
+Context: different types and forms of requirements, including business, functional and non-functional, need to be carefully documented and 
+managed. 
+requirements can take different forms, such as natural language, structured formats or model-based approaches, each with its own 
+advantages and disadvantages.
+Source: software4kmu learning nuggets.pdf
+
+Context: students.
+6.1.3. data collection procedure
+we used a 6-step procedure to collect the data
+necessary for answering the research questions.
+1. collect requirements artifact(s) for each case. we
+retrieved the requirements artifacts to be ana-
+lyzed in each case. for one case, the require-
+ments were stored in microsoft word documents.
+for the other cases, this involved extracting the
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: 3. conduct structured elicitation by applying elicitation (and creativity) techniques​
+ such as interviews, questionnaires… (more on techniques below)
+4. document requirements, for example with the help of checklists and templates (e.g. volere or self-made)​
+5. structure and transfer to models in order to provide a more structured representation: what belongs where?​
+Source: software4kmu learning nuggets.pdf
+
+Context: requirements candidates into accepted requirements through vadalidation by the customers following the scope set out initially. this 
+may be done in an manner as simple as asking them to formally accept the requirements in a written form and extend to employing a 
+structured workshop with a walkthrough through all requirements and asking “why” questions (e.g. “why do you really need that
+Source: software4kmu learning nuggets.pdf
+
+Context: 7.4.1 requirements workshop sessions 
+workshop design: we designed the requirements workshop sessions with a clear 
+agenda and objectives, and outlined the tasks that the participants performed during 
+the workshop, such as using perspecml v2 to specify the two ml-enabled systems 
+from scratch. this allowed to provide the input to respond to rq1.
+Source: Identifying Concerns When Specifying Machine Learning-Enabled Systems A Perspective-Based Approach.pdf
+
+Query: how to document a requirement?
+Context: mitigation actions for incomplete/hidden requirements 
+improve the documentation and conduct more meetings with the developers to detect analysis defects. 
+hire or specialize a requirements analyst. 
+creating templates. 
+creation of a dor (definition of readiness) for the team. 
+invest more time in requirements specification, using scenarios and prototypes to gather requirements
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: different types and forms of requirements, including business, functional and non-functional, need to be carefully documented and 
+managed. 
+requirements can take different forms, such as natural language, structured formats or model-based approaches, each with its own 
+advantages and disadvantages.
+Source: software4kmu learning nuggets.pdf
+
+Context: students.
+6.1.3. data collection procedure
+we used a 6-step procedure to collect the data
+necessary for answering the research questions.
+1. collect requirements artifact(s) for each case. we
+retrieved the requirements artifacts to be ana-
+lyzed in each case. for one case, the require-
+ments were stored in microsoft word documents.
+for the other cases, this involved extracting the
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: one of the core activities in requirements engineering is eliciting the requirements from relevant
+stakeholders. to characterise the status quo, we want to understand what elicitation techniques
+are employed in practice. in our theory from the first run, we expected practitioners, especially
+in large companies, to conduct workshops as the central technique to elicit requirements. the
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: requirements candidates into accepted requirements through vadalidation by the customers following the scope set out initially. this 
+may be done in an manner as simple as asking them to formally accept the requirements in a written form and extend to employing a 
+structured workshop with a walkthrough through all requirements and asking “why” questions (e.g. “why do you really need that
+Source: software4kmu learning nuggets.pdf
+
+Query: how to improve requirement system should be fast
+Context: mitigation actions for incomplete/hidden requirements 
+improve the documentation and conduct more meetings with the developers to detect analysis defects. 
+hire or specialize a requirements analyst. 
+creating templates. 
+creation of a dor (definition of readiness) for the team. 
+invest more time in requirements specification, using scenarios and prototypes to gather requirements
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: quiz
+what type of requirement is this? 
+1. "the system should be able to process 1000 transactions per second".
+2. "all user input should be validated to prevent incorrect data entry".
+3. "the system should allow users to search for products by category and filter the results by price, brand and customer reviews."
+Source: software4kmu learning nuggets.pdf
+
+Context: the structuring of requirement candidates helps handling overlaping requirements and duplicates between requirements effectively, and, on the other hand, it helps building a hierarchy of goals to 
+visualize their interdependencies facilitating conflict resolution, constraint detection and resource sharing. a more detailed explanation of goals is given in later learning nuggets.
+Source: software4kmu learning nuggets.pdf
+
+Context: reduce the burden on ﬁnancial and human resources in soft-
+ware projects. we suggest to achieve it through (1) making involve-
+ment of legal experts more eﬀective, (2) application of lightweight
+artefact-oriented modelling.
+help requirements engineers to better understand and navigate
+regulations to ensure completeness, validity and adaptivity in com-
+Source: Vision for an Artefact-based Approach to Regulatory Requirements Engineering.pdf
+
+Context: that we have not covered. similarly, for elicitation, they found assessing system feasibility to be
+most valuable. our results fit together in that they found that valuable techniques are to specify
+requirements quantitatively. we can also support nikula, sajaniemi and kälviäinen [49] that
+requirements documentation is often done textually (natural language).
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Query: how can i identify relevant stakeholders to the project?
+Context: stakeholder
+p3
+specialist engineer
+stakeholder
+p4
+it product owner
+management
+p5
+experienced engineer
+stakeholder
+p6
+senior engineer
+stakeholder
+p7
+senior engineer
+contributor
+p8
+senior engineer
+stakeholder
+p9
+engineer
+engineer invited for discussion
+p10
+expert engineer
+experienced engineer invited for discussion
+the interviews were conducted through microsoft teamstm and
+Source: An investigation of causes and effects of trust in Boundary Artefacts.pdf
+
+Context: get stakeholders involved​
+elicit contextual constraints by using the prototype in its real context​
+different types of prototyping​
+physical prototype (plastic, wood, 3d-printed)​
+wizard-of-oz: prospective functionality is conducted by a human​
+paper-and-pencil: hand-drawn sketches of screen designs​
+gui mockups: linked static screens, interactive wireframes​
+programmed vertical prototypes
+Source: software4kmu learning nuggets.pdf
+
+Context: or influence on the system under development
+a primary stakeholders interest is not necessarily the project 
+success (e.g. regulators)
+stakeholder models form the foundation for effective 
+requirement elicitation
+the stakeholders idenfied in the stakeholder model can be 
+grouped and analyzed via views and empirically concretized 
+through personas
+Source: software4kmu learning nuggets.pdf
+
+Context: requirements elicitation can be done in multiple techniques which are adapted according to the stakeholder characteristics.
+inhibition and distortion (e.g., by personal questions)
+example 2: questionnaire-based survey
+similar to interviews, but ​
+no possibility to interact​
+no possibility for inquiries​
+usually conducted individually​
+scales better than interviews​
+Source: software4kmu learning nuggets.pdf
+
+Context: interested in the quality of the software system, while product 
+managers also care about sustainability of the business model and 
+balancing costs and quality of the product. 
+in any case, capturing the stakeholders explicitly is important as 
+they are the source for various information with respect to the 
+operational context of a system and requirements (e.g. end users
+Source: software4kmu learning nuggets.pdf
+
+Query: can you generate user stories from the following requirement? requirement: "the mobile app should allow users to reset their passwords using either email or sms.
+Context: ia4. 
+passwords 
+treatment 
+must 
+include 
+complex passphrases, options to recover and 
+reset the password and default passwords not 
+allowed. 
+for each user story, the generated reading technique 
+focuses the reviewer to verify whether its security 
+specifications contain any of the defect types. this happens 
+when reviewers check the security specifications against the
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: example
+the system must provide a search function that allows users to find products by name or category.
+users must be able to export their data reports in csv format directly from their dashboard.
+example
+authorized users should be able to access advanced features depending on their preferences.
+Source: software4kmu learning nuggets.pdf
+
+Context: secure transactions by encrypting sensitive information and providing a confirmation email for each purchase. additionally, users 
+have the option to track their orders and view their purchase history. the platform also features a user-friendly interface with intuitive 
+navigation and responsive design for optimal viewing on various devices, including desktops, laptops, tablets, and smartphones.
+Source: software4kmu learning nuggets.pdf
+
+Context: we analyzed over 1,000 user stories containing roughly
+28,000 words. for rq 2.2, we met with an experienced
+scrum master and a long-term developer, who have
+worked on several projects for techdivision.
+6http://www.magento.com
+7http://www.typo3.org
+8https://atlassian.com/software/jira
+case d: university of stuttgart. the requirements of
+case d were created by 52 groups of three 2nd-year
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: user stories.
+with regards to whether a requirements engineering standard is mandatory or practised (see
+proposition p 26 stating that requirements engineering standards are neither practised nor
+mandatory is not supported by the data. quite to the contrary, it seems that the standards are
+practised in most organisations regardless whether they are mandatory or not. the two answers
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Query: what are the benefits of using focus groups for elicitation?
+Context: e. validity procedures
+to increase the reliability of the statements of the industry
+participants, and thus the internal validity, we perform a
+group interview. through the interaction between the group
+members, memories and experiences of the participants are
+stimulated. this way, they can produce insights that would
+be less accessible without this technique. furthermore, the
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: as the focus group participants were available, and the results
+of the previous session were analyzed. overall, the sessions
+took place over twelve months. as a result of the focus
+group sessions with the first group of legal researchers, we
+formulated four challenges. after that, we conducted another
+one-hour-long focus group with two other legal researchers
+Source: On Developing an Artifact-based Approach to Regulatory Requirements Engineering.pdf
+
+Context: its distribution among specific companies and (2) to improve the response rate. the responses
+were anonymous allowing our respondents to freely share their experiences made within their
+respective company.
+for each company, we invited one respondent as a representative of the company. in case of
+large companies involving several autonomous business units working each in a different industrial
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: prototyping, and facilitated meetings. scenarios are employed by about half of the 
+respondents, observations by less than a third.  
+we believe these answers fit very well to the expectations on agile projects. roles 
+like a product owner in scrum would use interviews to understand the overall product 
+requirements while the further elicitation is done in workshops with stakeholders and
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Context: results for the elicitation techniques are comparable for traditional 
+re [45]. this could be related to the fact that most practitioners 
+work in large companies, which typically have professionals ex- 
+perienced in conducting such workshops for traditional software 
+systems and have now extended these practices to ml-enabled 
+systems.
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Query: how can i conduct effective stakeholder interviews?
+Context: as the project lead or as the chief analysts of the project. if the project candidate is selected, this person
+serves as the single point of contact during the study.
+when establishing the ﬁrst contact, we provide information about the study planned (its purpose and
+design) and propose an appointment for an open telephone interview of approximately one hour.
+this
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Context: requirements elicitation can be done in multiple techniques which are adapted according to the stakeholder characteristics.
+inhibition and distortion (e.g., by personal questions)
+example 2: questionnaire-based survey
+similar to interviews, but ​
+no possibility to interact​
+no possibility for inquiries​
+usually conducted individually​
+scales better than interviews​
+Source: software4kmu learning nuggets.pdf
+
+Context: stakeholder
+p3
+specialist engineer
+stakeholder
+p4
+it product owner
+management
+p5
+experienced engineer
+stakeholder
+p6
+senior engineer
+stakeholder
+p7
+senior engineer
+contributor
+p8
+senior engineer
+stakeholder
+p9
+engineer
+engineer invited for discussion
+p10
+expert engineer
+experienced engineer invited for discussion
+the interviews were conducted through microsoft teamstm and
+Source: An investigation of causes and effects of trust in Boundary Artefacts.pdf
+
+Context: which modelling techniques and textual artefact templates could help to avoid
+potential problems.
+qualitative analysis of expert interviews (rq 3). having investigated the
+documents in isolation, we conduct interviews with representatives from the
+corresponding projects. those interviews aim at encouraging the participants to
+Source: Improving Requirements Engineering by Artefact Orientation.pdf
+
+Context: strong dependency on the knowledge about the customers and their domain. in particular, the less familiar
+customers are (e.g., in the ﬁrst development project for this customer), the higher the probability of deﬁning
+system success factors and also acceptance criteria.
+further parameters that the interviewees mentioned consider the stakeholders’ characteristics. the avail-
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Query: how do i write a good requirement statement?
+Context: syntactic minimality
+there are no unnecessary syntactic elements in the speciﬁcations.
+modularity
+the speciﬁcation is organised in modules, separated according to certain topics.
+traceability
+each requirement has a rationale.
+ease of perception
+the speciﬁcations are well-suited to be understood by people not involved into the process.
+rq 3
+unambiguity
+the requirements are stated unambiguously.
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: 5. singularity: it should define only one characteristic or constraint.
+6. feasibility: each requirement should be achievable within the constraints of the project.
+7. verifiability: it should be possible to verify that a requirement has been met.
+8. correctness: it should accurately reflect the need of stakeholder.
+9. conformity: each written requirement should follow the predefined structure.
+Source: software4kmu learning nuggets.pdf
+
+Context: and requires some practice to be effective. in essence, while structured language requirements maybe be a bit cumbersome to write 
+down and read (often resembling the user-friendly charme of an instruction manual to a tax declaration form), they offer the benefit of 
+clear structure and some basic quality criteria that make them easier to interpret (implement, and test).
+example
+Source: software4kmu learning nuggets.pdf
+
+Context: draft  
+title
+what makes a good requirement?
+was macht eine gute anforderung aus?
+tags
+requirements quality
+anforderungsqualität
+estimated duration
+10 min
+level
+external ressources
+international standards for systems and software 
+engineering
+requirements engineering quick check
+requirements smells
+dependencies
+next item
+id 1.1.1.9 - form of requirements  
+goals (teaching 
+perspective)
+Source: software4kmu learning nuggets.pdf
+
+Context: effective requirements accurately capture stakeholder needs, adhere to international standards, and are clear, unambiguous and 
+feasible within the project constraints, ensuring successful software development. 
+a comprehensive set of requirements should be complete, consistent and feasible. 
+[englisch] key takeaway
+german
+Source: software4kmu learning nuggets.pdf
+

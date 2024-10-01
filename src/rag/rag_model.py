@@ -10,6 +10,7 @@ from typing import List, Dict, Any, Optional
 from src.wo_rag import get_openai_answer
 
 class RAGTypes(Enum):
+    GPT = 'gpt'
     TEXT_DATA = 'text_data'
     STRUCTURED_DATA = 'structured_data'
     COMBINED = 'combined'
@@ -32,6 +33,7 @@ class RAGModel:
         :return: Context from text data
         """
         try:
+            print("getting context from text data")
             return self.retriever_text_data.retrieve_context(question)
         except Exception as e:
             return f"Error retrieving text data: {str(e)}"
@@ -44,11 +46,13 @@ class RAGModel:
         :return: Context from structured data
         """
         try:
+            print("getting context from structured data")
             return self.retriever_structured_data.retrieve_context(question)
         except Exception as e:
             return f"Error retrieving structured data: {str(e)}"
 
-    def query(self, question: str, query_types: List[RAGTypes] = [RAGTypes.COMBINED]) -> Dict[str, Any]:
+    def query(self, question: str, query_types: List[RAGTypes] = [RAGTypes.GPT, RAGTypes.SUMMARISER]) -> Dict[str, Any]:
+        print("querying rag model")
         """
         Queries the model with the given question and retrieves answers based on the query types.
         
@@ -67,17 +71,18 @@ class RAGModel:
         context_from_text_data = None
         context_from_structured_data = None
 
-        openai_answer = get_openai_answer(question)
-
-        openai_evaluation = self.get_evaluation(question, openai_answer)
-        results["models"]["gpt"] = {
-            "answer": openai_answer,
-            "context": None,
-            "evaluation": openai_evaluation
-
-        }
-
         for query_type in query_types:
+            print(f"Querying model: {query_type.name}")
+            if query_type == RAGTypes.GPT:
+                openai_answer = get_openai_answer(question)
+
+                openai_evaluation = self.get_evaluation(question, openai_answer)
+                results["models"][RAGTypes.GPT.name] = {
+                    "answer": openai_answer,
+                    "context": None,
+                    "evaluation": openai_evaluation
+
+                }
             if query_type == RAGTypes.TEXT_DATA and context_from_text_data is None:
                 context_from_text_data = self.get_context_from_text_data(question_lowered)
 
@@ -140,6 +145,7 @@ class RAGModel:
         }
 
     def process_summarized_query(self, question: str, context_from_text_data: Optional[str], context_from_structured_data: Optional[str]) -> Dict[str, Any]:
+        print("processing summarized query")	
         """Processes a summarized query and returns a dictionary with summarized context and answer."""
         if context_from_text_data is None:
             context_from_text_data = self.get_context_from_text_data(question)
@@ -147,8 +153,8 @@ class RAGModel:
             context_from_structured_data = self.get_context_from_structured_data(question)
 
         summarized_context_from_text_data = self.generator.generate_summary(context_from_text_data, question)
-        summarized_context_from_structured_data = self.generator.generate_summary(context_from_structured_data, question)
-        combined_summarized_context = f"Context from general knowledge: \n{summarized_context_from_text_data}\n\nContext from real practical data: \n{summarized_context_from_structured_data}"
+        summarized_context_from_structured_data = self.generator.generate_summary_structured(context_from_structured_data, question)
+        combined_summarized_context = f"Context from general knowledge: \n{summarized_context_from_text_data}\n\nContext from experience of companies doing requirements engineering: \n{summarized_context_from_structured_data}"
         answer_from_summarized = self.generator.generate_answer(question, combined_summarized_context, prompt_type='combined')
         evaluation = self.get_evaluation(question, answer_from_summarized)
         return {

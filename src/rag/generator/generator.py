@@ -28,17 +28,58 @@ class Generator:
     def generate_summary(self, context, question):
         prompt = ChatPromptTemplate.from_messages(
         [
+#             SystemMessage(
+#                 content=(
+#                     """	
+#                     ### Instruction ###
+# You are an expert text analyst and researcher. Select 5-10 most relevant sentences to the qusetion. Your task is to produce 
+# an extractive summary of the provided context that is relevant to the accompanying question.
+#                     """
+#                 )
+#             ),
             SystemMessage(
                 content=(
                     """	
                     ### Instruction ###
-You are an expert text analyst and researcher. Your task is to produce 
-an extractive summary of the provided context that is relevant to the accompanying question.
+You are a specialized assistant in extracting highly relevant information from large contexts.
+Your task is to retrieve the most important details that directly respond to the user's query.
+
+Focus only on information that is directly relevant.
+Omit any unrelated, redundant, or excessive details.
+Condense longer sections without losing key meaning or important facts.
                     """
                 )
             ),
             AIMessage(content=f"### Context ###\n{context}\n"),
             AIMessage(content=f"### Question ###\n{question}\n")
+        ]
+    )
+    
+    # Create the chain and invoke it
+        try:
+            chain = prompt | self.llm | StrOutputParser()
+            result = chain.invoke({})
+        except Exception as e:
+            raise RuntimeError(f"Error generating summary: {e}")
+        
+        # Return the result
+        return result
+
+    def generate_summary_structured(self, context, question):
+        prompt = ChatPromptTemplate.from_messages(
+        [
+            SystemMessage(
+                content=(
+                    """	
+                    ### Instruction ###
+You will be provided with a user query about requirements engineering and relevant context gathered from dataframe insights on how companies conduct requirements engineering in the real world.
+
+Your task is to select points from the context that are relevant to the user question. Please use approximate percentages instead of exact values when presenting the insights. If no relevant context is provided, say 'No relevant context found'.
+                    """
+                )
+            ),
+            AIMessage(content=f"### Context ###\n{context}\n"),
+            HumanMessage(content=f"### Question ###\n{question}\n")
         ]
     )
     
