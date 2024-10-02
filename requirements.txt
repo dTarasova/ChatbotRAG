@@ -20,3 +20,4 @@ beautifulsoup4
 urllib3
 pdfkit
 wkhtmltopdf 
+spellchecker
