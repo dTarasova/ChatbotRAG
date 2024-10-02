@@ -21,3 +21,4 @@ urllib3
 pdfkit
 wkhtmltopdf 
 spellchecker
+sqlite3 >= 3.35.0
