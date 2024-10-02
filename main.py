@@ -8,6 +8,9 @@
 
 
 from src.interface.streamlit_incorporation import setup_streamlit 
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 setup_streamlit()
 
 ############################################
