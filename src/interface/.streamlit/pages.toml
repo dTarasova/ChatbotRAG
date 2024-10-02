@@ -2,12 +2,12 @@
 [[pages]]
 path = "src/interface/usability_evaluation.py"
 name = "Usability Evaluation"
-icon = "🤖"
+icon = "👤"
 
 [[pages]]
 path = "src/interface/correctness_evaluation.py"
 name = "Corretness Evaluation"
-icon = "🤖"
+icon = "🎯"
 
 [[pages]]
 path = "src/interface/compare_full_answers.py"

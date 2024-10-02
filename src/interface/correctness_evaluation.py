@@ -2,6 +2,7 @@ import json
 import streamlit as st
 import random
 import os
+import time
 import datetime
 
 from src.rag.rag_model import RAGModel, RAGTypes
@@ -44,10 +45,11 @@ def get_model_answers(question):
     results = rag_model.query(question, query_types=[RAGTypes.GPT, RAGTypes.SUMMARISER])
     answerRAG = results["models"][RAGTypes.SUMMARISER.name]["answer"]
     answerGPT = results["models"][RAGTypes.GPT.name]["answer"]
-    context = results["models"][RAGTypes.SUMMARISER.name]["context"]
-    print("context ", context)
+    # context = results["models"][RAGTypes.SUMMARISER.name]["context"]
+    # print("context ", context)
+    # time.sleep(5)
     # answerRAG = "RAG answer" + question
-    # answerGPT = get_openai_answer(question)
+    # answerGPT = "GPT answer" + question
     # answerRAG = results[0].get('answer')
     return answerGPT, answerRAG
 
@@ -72,9 +74,9 @@ if question and question not in st.session_state.questions:
     found_item = next((item for item in results if normalize(item['question']) == normalize(question)), None)
     if found_item:
         model_results = found_item["models"]
-        st.write("Results already exist for this question.")
+        #st.write("Results already exist for this question.")
         answerRAG = model_results[RAGTypes.SUMMARISER.name]["answer"]
-        answerGPT = model_results["gpt"]["answer"]
+        answerGPT = model_results[RAGTypes.GPT.name]["answer"]
         
     else:
         # Query the RAG model if the answer doesn't exist
@@ -85,6 +87,7 @@ if question and question not in st.session_state.questions:
     # Randomize the order of the answers
     answers = [(answerGPT, 'GPT'), (answerRAG, 'RAG')]
     random.shuffle(answers)
+    # st.write(f"Shuffled Answers: {answers}")
     
     # Store the question and answers in session state
     st.session_state.questions.append(question)
@@ -96,8 +99,20 @@ if question and question in st.session_state.logging:
     correctness_choice = st.radio("Which of these answers is correct?", ("Answer 1 (Left)", "Answer 2 (Right)", "Neither", "Both"))
     preferred_choice = st.radio("If you would have to pick, which one would you prefer? Rely on depth of the expertise and explainability for choosing", ("Answer 1 (Left)", "Answer 2 (Right)"))
     choice_explanation = st.text_area("Please provide a reason for your choice", key="key_explanation")
+
+    submit_button = st.button("Submit your choice", key="key_submit")
+
+        # Display the answers side by side
+    col1, col2 = st.columns(2)
+    with col1:
+        st.subheader("Answer 1 (Left)")
+        st.write(st.session_state.logging[question][0][0])
+    with col2:
+        st.subheader("Answer 2 (Right)")
+        st.write(st.session_state.logging[question][1][0])
     # Button to submit the choice
-    if st.button("Submit your choice"):
+    if submit_button:
+        
         # Determine the model based on randomized display order
         if preferred_choice == "Answer 1 (Left)":
             #user_preferred_choice = st.session_state.logging[question][0][0]
@@ -105,7 +120,7 @@ if question and question in st.session_state.logging:
         else:
             #user_preferred_choice = st.session_state.logging[question][1][0]
             preferred_model = st.session_state.logging[question][1][1]
-        
+        st.write(f"User's preferred model: {preferred_model}")
         if correctness_choice == "Answer 1 (Left)":
             correct_model = st.session_state.logging[question][0][1]
         elif correctness_choice == "Answer 2 (Right)":
@@ -136,13 +151,6 @@ if question and question in st.session_state.logging:
 
 
     
-    # Display the answers side by side
-    col1, col2 = st.columns(2)
-    with col1:
-        st.subheader("Answer 1 (Left)")
-        st.write(st.session_state.logging[question][0][0])
-    with col2:
-        st.subheader("Answer 2 (Right)")
-        st.write(st.session_state.logging[question][1][0])
+
     
    # todo check if it is rerenders every time i pick a choice without submitting it 

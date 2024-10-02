@@ -80,5 +80,10 @@ Exclude any placeholders or irrelevant entries such as 'not shown' or 'not answe
 """
         context = self.agent.invoke(extended_question)
         answer = context["output"]
+        with open("context.txt", "a", encoding="utf-8") as file:
+            # Write the query and context to the file
+            file.write(f"Query: {question}\n")
+            file.write(f"Context: {answer}\n")
+            file.write(f"Source: napire data\n\n")
         return answer
     

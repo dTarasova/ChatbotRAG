@@ -18,7 +18,8 @@ def normalize(text):
     text = re.sub(r'[^\w\s]', '', text.lower()).strip()
     
     # Correct typos
-    corrected_words = [spell.correction(word) for word in text.split()]
+    # corrected_words = [spell.correction(word) for word in text.split()]
+    corrected_words = [word for word in text.split()]
     
     # Remove articles
     filtered_words = [word for word in corrected_words if word not in ARTICLES]

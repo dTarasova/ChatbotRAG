@@ -10,6 +10,7 @@ question = st.text_input("Question")
 if st.button("Ask"):
     try:
         # Initialize the RAG model
+        st.write("Processing the question...")
         rag_model = RAGModel(text_retriever_type='step-back')
         
         # Query the model
@@ -17,7 +18,7 @@ if st.button("Ask"):
         
         # Debug: print the entire results structure for checking
         # st.write("Results structure:", results)
-        
+
         # Access the answer from the model response
         answer = results["models"][RAGTypes.SUMMARISER.name]["answer"]
         context = results["models"][RAGTypes.SUMMARISER.name]["context"]
@@ -27,8 +28,8 @@ if st.button("Ask"):
         st.write(answer)
         
         # Optionally display the context
-        st.header("Context:")
-        st.write(context)
+        # st.header("Context:")
+        # st.write(context)
         
     except KeyError as ke:
         st.write("The expected key was not found in the response. Please check the structure of the model's output.")

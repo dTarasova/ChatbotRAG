@@ -1,12 +1,25 @@
 
-from src.rag.retriever.unstructured_data_loading.document_loader import DocumentDatabase
-from src.rag.evaluation.generate_test_set import get_contexts
-from src.rag.rag_model import RAGModel, RAGTypes
-from src.interface.streamlit_incorporation import setup_streamlit 
-from termcolor import colored
-import pandas as pd
+# from src.interface.helper_functions import load_questions
+# from src.rag.retriever.unstructured_data_loading.document_loader import DocumentDatabase
+# from src.rag.evaluation.generate_test_set import get_contexts
+# from src.rag.rag_model import RAGModel, RAGTypes
+# from termcolor import colored
+# import pandas as pd
 
+
+from src.interface.streamlit_incorporation import setup_streamlit 
 setup_streamlit()
+
+############################################
+
+# questions = load_questions()
+# rag_model = RAGModel(text_retriever_type='step-back')
+
+# for i, question in enumerate(questions):
+#     print(colored(f"Question: {question}", "blue"))
+#     results = rag_model.query(question, query_types=[RAGTypes.GPT, RAGTypes.TEXT_DATA, RAGTypes.STRUCTURED_DATA, RAGTypes.COMBINED, RAGTypes.SUMMARISER])
+#     print("Question # ", i, " processed. ")
+
 ############################################################################################################
 # df = pd.read_csv('data/napire_data/napire_for_agent.csv')
 # print(df.shape)
