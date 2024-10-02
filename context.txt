@@ -2326,3 +2326,227 @@ These percentages indicate the relative importance of various requirements categ
 Additionally, you may want to gather feedback on the reasons for satisfaction in requirements engineering to understand what aspects are valued by stakeholders, which can further guide prioritization.
 Source: napire data
 
+Query: how to document a requirement?
+Context: mitigation actions for incomplete/hidden requirements 
+improve the documentation and conduct more meetings with the developers to detect analysis defects. 
+hire or specialize a requirements analyst. 
+creating templates. 
+creation of a dor (definition of readiness) for the team. 
+invest more time in requirements specification, using scenarios and prototypes to gather requirements
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: different types and forms of requirements, including business, functional and non-functional, need to be carefully documented and 
+managed. 
+requirements can take different forms, such as natural language, structured formats or model-based approaches, each with its own 
+advantages and disadvantages.
+Source: software4kmu learning nuggets.pdf
+
+Context: students.
+6.1.3. data collection procedure
+we used a 6-step procedure to collect the data
+necessary for answering the research questions.
+1. collect requirements artifact(s) for each case. we
+retrieved the requirements artifacts to be ana-
+lyzed in each case. for one case, the require-
+ments were stored in microsoft word documents.
+for the other cases, this involved extracting the
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: one of the core activities in requirements engineering is eliciting the requirements from relevant
+stakeholders. to characterise the status quo, we want to understand what elicitation techniques
+are employed in practice. in our theory from the first run, we expected practitioners, especially
+in large companies, to conduct workshops as the central technique to elicit requirements. the
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: requirements candidates into accepted requirements through vadalidation by the customers following the scope set out initially. this 
+may be done in an manner as simple as asking them to formally accept the requirements in a written form and extend to employing a 
+structured workshop with a walkthrough through all requirements and asking “why” questions (e.g. “why do you really need that
+Source: software4kmu learning nuggets.pdf
+
+Query: how to document a requirement?
+Context: To document a requirement, the following approaches and insights can be derived from the DataFrame:
+
+1. **Compatibility Documentation**: The most common method is using non-quantified textual requirements, which was noted by multiple respondents.
+
+2. **Maintainability Documentation**: Various methods are employed, but specific details are not quantified in the summary.
+
+3. **Performance Efficiency Documentation**: Similar to maintainability, the methods are varied but not explicitly detailed.
+
+4. **Portability Documentation**: The documentation methods are not specified in the summary.
+
+5. **Reliability Documentation**: Various approaches are used, but specific methods are not highlighted.
+
+6. **Safety Documentation**: The methods for documenting safety requirements are not explicitly detailed.
+
+7. **Security Documentation**: Various methods are used, but specific documentation techniques are not provided.
+
+8. **Usability Documentation**: The approaches to documenting usability requirements are varied but not specified.
+
+9. **Documentation Granularity**: The level of detail in documentation varies, but specific insights are not provided.
+
+10. **Elicitation and Refinement**: On average, there is a tendency to elicit and refine requirements in several iterations, with a mean value indicating that this practice is common among respondents.
+
+Overall, while the DataFrame provides some insights into the methods of documenting requirements, specific details on each method are not fully quantified.
+Source: napire data
+
+Query: what is re
+Context: < 0.0001
+from our further hypotheses on re improvement, we could support that re is done systematically
+via an own business unit / role in the case of large companies with more than 2,000 employees and by
+project participants in the case of small and medium-sized companies. we could also corroborate that re
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Context: o ·
+m. nayebi · m. oivo · b. penzenstadler ·
+schekelmann · s. sen · r. spinola · a.
+tuzcu · j. l. de la vara · r. wieringa
+received: date / accepted: date
+abstract requirements engineering (re) has received much attention in re-
+search and practice due to its importance to software project success. its inter-
+disciplinary nature, the dependency to the customer, and its inherent uncertainty
+Source: Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf
+
+Context: a system (nuseibeh and easterbrook 2000) and, thus, re
+is an important factor for productivity and (product) qual-
+ity (damian and chisan 2006).
+an important step for companies towards re excellence
+consists in the establishment of an re reference process
+for a company-wide use among different projects. however,
+companies are facing the problem that the re process is
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: only a limited view into re itself and is also known to have serious ﬂaws in its
+design negatively aﬀecting the validity of the results [18], we launched a series
+of empirical investigations on practical problems in re and how those prob-
+lems manifest themselves in the whole software development process [40, 44].
+we discovered that the missing awareness of what should be done in re man-
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: stracts from the idealised execution of the re phase in a development
+project.
+it includes the description of the process (deﬁnition) to follow,
+the artefacts to be created, as well as roles involved [10]. synonyms used:
+re reference model, methodology [11] (taking a broader view)
+theory
+“a theory provides explanations and understanding in terms of basic con-
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Query: what is re
+Context: The relevant information regarding requirements engineering (re) from the DataFrame can be summarized as follows:
+
+1. **Compatibility (Co-existence, Interoperability)**: 
+   - Mean: 0.42
+   - Standard Deviation: 0.49
+   - Range: 0 to 1
+
+2. **Maintainability (Analysability, Modularity, Modifiability, Reusability, Testability)**: 
+   - Not specifically summarized due to lack of numerical data.
+
+3. **Performance Efficiency (Time Behaviour, Resource Utilisation, Capacity)**: 
+   - Not specifically summarized due to lack of numerical data.
+
+4. **Reliability (Availability, Fault Tolerance, Maturity, Recoverability)**: 
+   - Not specifically summarized due to lack of numerical data.
+
+5. **Security (Accountability, Authenticity, Confidentiality, Integrity, Non-repudiation)**: 
+   - Not specifically summarized due to lack of numerical data.
+
+6. **Usability (Accessibility, Appropriateness, Recognisability, Learnability, Operability, User Error Protection, User Interface Aesthetics)**: 
+   - Not specifically summarized due to lack of numerical data.
+
+7. **Satisfaction with Requirements Engineering**: 
+   - Count: 488 responses.
+
+8. **Reasons for Dissatisfaction in Requirements Engineering**: 
+   - Count: 180 responses.
+
+9. **Consequences of Dissatisfaction in Requirements Engineering**: 
+   - Not specifically summarized due to lack of numerical data.
+
+10. **Applied Changes in Requirements Engineering**: 
+    - Most common response: "NO" (26 occurrences).
+
+This summary provides insights into the aspects of requirements engineering as captured in the DataFrame, focusing on compatibility and the general satisfaction levels.
+Source: napire data
+
+Query: what is re
+Context: < 0.0001
+from our further hypotheses on re improvement, we could support that re is done systematically
+via an own business unit / role in the case of large companies with more than 2,000 employees and by
+project participants in the case of small and medium-sized companies. we could also corroborate that re
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Context: o ·
+m. nayebi · m. oivo · b. penzenstadler ·
+schekelmann · s. sen · r. spinola · a.
+tuzcu · j. l. de la vara · r. wieringa
+received: date / accepted: date
+abstract requirements engineering (re) has received much attention in re-
+search and practice due to its importance to software project success. its inter-
+disciplinary nature, the dependency to the customer, and its inherent uncertainty
+Source: Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf
+
+Context: a system (nuseibeh and easterbrook 2000) and, thus, re
+is an important factor for productivity and (product) qual-
+ity (damian and chisan 2006).
+an important step for companies towards re excellence
+consists in the establishment of an re reference process
+for a company-wide use among different projects. however,
+companies are facing the problem that the re process is
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: only a limited view into re itself and is also known to have serious ﬂaws in its
+design negatively aﬀecting the validity of the results [18], we launched a series
+of empirical investigations on practical problems in re and how those prob-
+lems manifest themselves in the whole software development process [40, 44].
+we discovered that the missing awareness of what should be done in re man-
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: stracts from the idealised execution of the re phase in a development
+project.
+it includes the description of the process (deﬁnition) to follow,
+the artefacts to be created, as well as roles involved [10]. synonyms used:
+re reference model, methodology [11] (taking a broader view)
+theory
+“a theory provides explanations and understanding in terms of basic con-
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Query: what is re
+Context: The relevant information regarding requirements engineering (re) from the DataFrame can be summarized as follows:
+
+1. **Compatibility (Co-existence, Interoperability)**: 
+   - Mean: 0.37
+   - Standard Deviation: 0.48
+   - Minimum: 0
+   - Maximum: 1
+
+2. **Maintainability (Analysability, Modularity, Modifiability, Reusability, Testability)**: 
+   - Not applicable (data not provided).
+
+3. **Performance Efficiency (Time Behaviour, Resource Utilisation, Capacity)**: 
+   - Not applicable (data not provided).
+
+4. **Reliability (Availability, Fault Tolerance, Maturity, Recoverability)**: 
+   - Not applicable (data not provided).
+
+5. **Security (Accountability, Authenticity, Confidentiality, Integrity, Non-repudiation)**: 
+   - Not applicable (data not provided).
+
+6. **Usability (Accessibility, Appropriateness, Recognisability, Learnability, Operability, User Error Protection, User Interface Aesthetics)**: 
+   - Not applicable (data not provided).
+
+7. **Satisfaction with Requirements Engineering**: 
+   - Count: 90 entries.
+
+8. **Reasons for Dissatisfaction in Requirements Engineering**: 
+   - Unique reasons: 90 different entries.
+
+9. **Consequences of Dissatisfaction in Requirements Engineering**: 
+   - Unique consequences: 90 different entries.
+
+10. **Necessary Changes in Requirements Engineering**: 
+    - Unique changes: 90 different entries.
+
+This summary indicates that while some quantitative data is available for compatibility, the other aspects of requirements engineering are qualitative and varied, with numerous unique entries for reasons, consequences, and necessary changes.
+Source: napire data
+

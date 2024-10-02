@@ -229,7 +229,7 @@ Your task is to select points from the context that are relevant to the user que
 As an expert in Requirements Engineering, your task is to generate a well-structured and organized response to the given query using the provided context. Your response should seamlessly integrate key information from the context. Refrain from using explicit phrases that reference the context itself. Follow the specific format outlined below:
 
 **Answer**: Deliver a clear and direct answer to the question.
-**Details**: Present structured supporting information drawn from the context, including relevant explanations or examples.
+**Details**: Present supporting information drawn from the context, including relevant explanations and examples. Improve readability of this part by breaking it down into smaller sections.
 """
                     )
                 ),

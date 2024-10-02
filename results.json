@@ -1594,5 +1594,31 @@
                 }
             }
         }
+    },
+    {
+        "question": "How to document a requirement?",
+        "models": {
+            "SUMMARISER": {
+                "context": "Context from general knowledge: \nTo document a requirement effectively, follow these steps:\n\n1. **Identify Requirement Types**: Recognize the different types of requirements (business, functional, non-functional) that need to be documented.\n\n2. **Choose Documentation Format**: Decide on the format for documentation, which can include natural language, structured formats, or model-based approaches.\n\n3. **Use Templates**: Create or utilize templates to ensure consistency and completeness in documentation.\n\n4. **Engage Stakeholders**: Elicit requirements from relevant stakeholders using techniques such as workshops or interviews to gather comprehensive input.\n\n5. **Record Artifacts**: Collect and store requirements artifacts systematically, such as in Microsoft Word documents or other suitable formats.\n\n6. **Validate Requirements**: Validate the documented requirements with stakeholders to ensure they meet the initial scope and expectations.\n\n7. **Iterate and Improve**: Continuously improve the documentation process by incorporating feedback and conducting regular meetings with developers to identify any hidden or incomplete requirements.\n\nContext from experience of companies doing requirements engineering: \nNo relevant context found.",
+                "answer": "**Answer**: To document a requirement effectively, follow a structured approach that encompasses identifying requirement types, choosing an appropriate documentation format, and engaging stakeholders.\n\n**Details**: \n\n1. **Identify Requirement Types**: Begin by recognizing the various types of requirements that need to be documented, including business, functional, and non-functional requirements. This classification helps in understanding the scope and focus of each requirement.\n\n2. **Choose Documentation Format**: Select a suitable format for documenting the requirements. This could range from natural language descriptions to structured formats or model-based approaches, depending on the complexity and needs of the project.\n\n3. **Use Templates**: Utilize or create templates to maintain consistency and ensure that all necessary information is captured. Templates can help streamline the documentation process and make it easier to review and update requirements.\n\n4. **Engage Stakeholders**: Actively involve relevant stakeholders in the requirements gathering process. Techniques such as workshops, interviews, and surveys can be employed to elicit comprehensive input, ensuring that the documented requirements reflect the needs and expectations of all parties involved.\n\n5. **Record Artifacts**: Systematically collect and store requirements artifacts in a structured manner. This could involve using tools like Microsoft Word or other documentation software to keep track of all requirements and their associated details.\n\n6. **Validate Requirements**: Once the requirements are documented, validate them with stakeholders to confirm that they align with the initial project scope and expectations. This step is crucial to ensure that all requirements are accurate and agreed upon.\n\n7. **Iterate and Improve**: Finally, adopt a continuous improvement approach by incorporating feedback from stakeholders and conducting regular meetings with developers. This helps in identifying any hidden or incomplete requirements and refining the documentation process over time. \n\nBy following these steps, you can create a comprehensive and effective requirements documentation that serves as a solid foundation for project development.",
+                "evaluation": {
+                    "completeness": null,
+                    "relevance": null
+                }
+            }
+        }
+    },
+    {
+        "question": "what is re",
+        "models": {
+            "SUMMARISER": {
+                "context": "Context from general knowledge: \nThe term \"re\" refers to \"requirements engineering,\" which is a critical process in software development that focuses on defining, documenting, and managing software requirements. It is essential for project success due to its interdisciplinary nature, dependency on customer input, and inherent uncertainties. Effective requirements engineering can significantly impact productivity and product quality.\n\nContext from experience of companies doing requirements engineering: \nNo relevant context found.",
+                "answer": "**Answer**: Requirements engineering (re) is a vital process in software development that involves defining, documenting, and managing the requirements of a software system.\n\n**Details**: This process is crucial for the success of projects as it encompasses several key aspects. Firstly, it is interdisciplinary, requiring collaboration among various stakeholders, including customers, developers, and project managers. Secondly, it heavily relies on input from customers to ensure that the final product meets their needs and expectations. Additionally, requirements engineering addresses inherent uncertainties in software projects, helping to clarify and refine requirements throughout the development lifecycle. By effectively managing these requirements, organizations can enhance productivity and improve the overall quality of the software product.",
+                "evaluation": {
+                    "completeness": null,
+                    "relevance": null
+                }
+            }
+        }
     }
 ]
