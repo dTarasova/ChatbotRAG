@@ -21,3 +21,4 @@ urllib3
 pdfkit
 wkhtmltopdf 
 spellchecker
+pysqlite3-binary

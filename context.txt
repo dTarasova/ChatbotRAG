@@ -2550,3 +2550,120 @@ Context: The relevant information regarding requirements engineering (re) from t
 This summary indicates that while some quantitative data is available for compatibility, the other aspects of requirements engineering are qualitative and varied, with numerous unique entries for reasons, consequences, and necessary changes.
 Source: napire data
 
+Query: what is re
+Context: < 0.0001
+from our further hypotheses on re improvement, we could support that re is done systematically
+via an own business unit / role in the case of large companies with more than 2,000 employees and by
+project participants in the case of small and medium-sized companies. we could also corroborate that re
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Context: o ·
+m. nayebi · m. oivo · b. penzenstadler ·
+schekelmann · s. sen · r. spinola · a.
+tuzcu · j. l. de la vara · r. wieringa
+received: date / accepted: date
+abstract requirements engineering (re) has received much attention in re-
+search and practice due to its importance to software project success. its inter-
+disciplinary nature, the dependency to the customer, and its inherent uncertainty
+Source: Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf
+
+Context: a system (nuseibeh and easterbrook 2000) and, thus, re
+is an important factor for productivity and (product) qual-
+ity (damian and chisan 2006).
+an important step for companies towards re excellence
+consists in the establishment of an re reference process
+for a company-wide use among different projects. however,
+companies are facing the problem that the re process is
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: only a limited view into re itself and is also known to have serious ﬂaws in its
+design negatively aﬀecting the validity of the results [18], we launched a series
+of empirical investigations on practical problems in re and how those prob-
+lems manifest themselves in the whole software development process [40, 44].
+we discovered that the missing awareness of what should be done in re man-
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: stracts from the idealised execution of the re phase in a development
+project.
+it includes the description of the process (deﬁnition) to follow,
+the artefacts to be created, as well as roles involved [10]. synonyms used:
+re reference model, methodology [11] (taking a broader view)
+theory
+“a theory provides explanations and understanding in terms of basic con-
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Query: what is re
+Context: The relevant information regarding requirements engineering (re) from the DataFrame can be summarized as follows:
+
+1. **We elicit and/or refine requirements in several iterations**: Approximately 69.9% of respondents indicated this practice.
+2. **We elicit and/or refine requirements in a specifically dedicated project phase**: About 30.7% of respondents reported this approach.
+3. **Requirements elicitation with Interviews**: Approximately 69.5% of respondents utilize interviews for requirements elicitation.
+4. **Requirements elicitation with Analysis of existing documents**: About 59.8% of respondents engage in this method.
+5. **Requirements elicitation with Risk analyses**: Only 19.7% of respondents use risk analyses for elicitation.
+6. **Requirements elicitation with Prototyping**: Approximately 48.2% of respondents apply prototyping.
+7. **Requirements elicitation with Workshops and focus groups**: About 56.8% of respondents participate in workshops and focus groups.
+8. **Requirements elicitation with Reuse databases and guidelines**: Only 17.4% of respondents utilize this method.
+9. **Requirements elicitation with Design Thinking / Lean Startup**: Approximately 19.9% of respondents employ this approach.
+10. **Requirements elicitation with External experts**: About 17.2% of respondents involve external experts in the process.
+
+This summary provides insights into the practices and methods used in requirements engineering as reflected in the DataFrame.
+Source: napire data
+
+Query: how i write a good requirement statement?
+Context: syntactic minimality
+there are no unnecessary syntactic elements in the speciﬁcations.
+modularity
+the speciﬁcation is organised in modules, separated according to certain topics.
+traceability
+each requirement has a rationale.
+ease of perception
+the speciﬁcations are well-suited to be understood by people not involved into the process.
+rq 3
+unambiguity
+the requirements are stated unambiguously.
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: and requires some practice to be effective. in essence, while structured language requirements maybe be a bit cumbersome to write 
+down and read (often resembling the user-friendly charme of an instruction manual to a tax declaration form), they offer the benefit of 
+clear structure and some basic quality criteria that make them easier to interpret (implement, and test).
+example
+Source: software4kmu learning nuggets.pdf
+
+Context: draft  
+title
+what makes a good requirement?
+was macht eine gute anforderung aus?
+tags
+requirements quality
+anforderungsqualität
+estimated duration
+10 min
+level
+external ressources
+international standards for systems and software 
+engineering
+requirements engineering quick check
+requirements smells
+dependencies
+next item
+id 1.1.1.9 - form of requirements  
+goals (teaching 
+perspective)
+Source: software4kmu learning nuggets.pdf
+
+Context: requirements candidates into accepted requirements through vadalidation by the customers following the scope set out initially. this 
+may be done in an manner as simple as asking them to formally accept the requirements in a written form and extend to employing a 
+structured workshop with a walkthrough through all requirements and asking “why” questions (e.g. “why do you really need that
+Source: software4kmu learning nuggets.pdf
+
+Context: 5. singularity: it should define only one characteristic or constraint.
+6. feasibility: each requirement should be achievable within the constraints of the project.
+7. verifiability: it should be possible to verify that a requirement has been met.
+8. correctness: it should accurately reflect the need of stakeholder.
+9. conformity: each written requirement should follow the predefined structure.
+Source: software4kmu learning nuggets.pdf
+
+Query: how i write a good requirement statement?
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
