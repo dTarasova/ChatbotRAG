@@ -16,7 +16,13 @@ class DocumentDatabase:
     def __init__(self, path_to_db_directory='knowledge_bases/amdire_napire_software4kmu'):
         self.path_to_db_directory = path_to_db_directory
         self.embeddings = OpenAIEmbeddings()
-        self.vector_store = None
+        if os.path.exists(self.path_to_db_directory):
+            self.vector_store = FAISS.load_local(
+                self.path_to_db_directory, self.embeddings, allow_dangerous_deserialization=True
+            )
+        else:
+            self.vector_store = None
+
 
     def create_db(self, path_to_documents) -> FAISS:
         """Create and return the FAISS vector store client."""
@@ -60,10 +66,12 @@ class DocumentDatabase:
         documents = [Document(page_content=page, metadata={"source": tail}) for page in pages]
 
         if self.vector_store is None:
-            index = faiss.IndexFlatL2(self.embeddings.dimension())
-            self.vector_store = FAISS(embedding_function=self.embeddings, index=index)
+            # index = faiss.IndexFlatL2(self.embeddings.dimension())
+            # self.vector_store = FAISS(embedding_function=self.embeddings, index=index)
+            self.vector_store = FAISS.from_documents(documents, self.embeddings)
 
-        self.vector_store.add_documents(documents)
+        else: 
+            self.vector_store.add_documents(documents)
         print(f"Document {doc_path} added to db")
 
     def add_docs_from_folder(self, folder_path: str):
@@ -73,6 +81,7 @@ class DocumentDatabase:
         for doc in docs:
             doc_path = os.path.join(folder_path, doc)
             self.add_doc_todb(doc_path)
+        self.vector_store.save_local(self.path_to_db_directory)
 
 
 # Example usage
@@ -83,4 +92,4 @@ if __name__ == "__main__":
     documentDatabase.add_docs_from_folder(path_data)
     vector_store = documentDatabase.get_vectorstore()
     documentDatabase.print_vectorstore_collections()
-    documents = documentDatabase.check_findings("Subjective Language refers to")
+    documents = documentDatabase.check_findings("RE is just writing down wants and needs")

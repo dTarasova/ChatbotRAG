@@ -1654,5 +1654,18 @@
                 }
             }
         }
+    },
+    {
+        "question": "33% of errors in the software development lifecycle are rooted in insufficient Requirements Engineering, and 36% of these errors lead to project failure.",
+        "models": {
+            "SUMMARISER": {
+                "context": "Context from general knowledge: \nErrors in requirements engineering significantly impact software development projects, with 33% of errors in the software development lifecycle stemming from insufficient requirements. Furthermore, 36% of these errors contribute to project failure. Common issues include incomplete, hidden, and unclear requirements, as well as communication problems among stakeholders. Effective requirements engineering is critical for project success.\n\nContext from experience of companies doing requirements engineering: \nNo relevant context found.",
+                "answer": "**Answer**: Insufficient requirements engineering is a significant contributor to errors in the software development lifecycle, with 33% of these errors originating from this area. Furthermore, 36% of the errors that arise from inadequate requirements ultimately result in project failure.\n\n**Details**: \n\n- **Impact of Insufficient Requirements**: The statistics indicate that a substantial portion of errors\u201433%\u2014can be traced back to insufficient requirements. This highlights the critical role that clear and comprehensive requirements play in the success of software projects.\n\n- **Consequences of Errors**: Among the errors caused by inadequate requirements, 36% lead to project failure. This underscores the importance of addressing requirements early in the development process to mitigate risks and enhance the likelihood of project success.\n\n- **Common Issues**: The types of issues that contribute to these errors include incomplete requirements, hidden requirements that stakeholders may not initially recognize, and unclear requirements that lead to misunderstandings. Additionally, communication problems among stakeholders can exacerbate these issues, making it essential to establish effective communication channels.\n\n- **Importance of Effective Requirements Engineering**: Given the significant impact of these errors, effective requirements engineering is crucial. It involves not only gathering and documenting requirements but also ensuring that all stakeholders have a shared understanding of the project goals and requirements. This proactive approach can help prevent misunderstandings and reduce the likelihood of project failure.",
+                "evaluation": {
+                    "completeness": null,
+                    "relevance": null
+                }
+            }
+        }
     }
 ]

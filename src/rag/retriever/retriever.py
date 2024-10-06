@@ -5,12 +5,18 @@ from  langchain_core.documents.base import Document
 from src.rag.retriever.query_translation.query_translator import QueryTranslator
 from src.rag.retriever.retriever_results_ranker import RRFResultsRanker, ResultsRanker
 
+from src.rag.retriever.unstructured_data_loading.document_loader_faiss import DocumentDatabase
+path_db = 'knowledge_bases/test_faiss'
+path_data = 'data/test_faiss'
 
 class Retriever:
 
     def __init__(self, type='step-back', path_to_db_directory='knowledge_bases/amdire_napire_software4kmu', ranker_type = 'rrf' ):
         self.embedding_model = OpenAIEmbeddings()
-        self.vector_store = Chroma(persist_directory=path_to_db_directory, embedding_function=self.embedding_model)
+        # self.vector_store = Chroma(persist_directory=path_to_db_directory, embedding_function=self.embedding_model)
+        documentDatabase = DocumentDatabase('knowledge_bases/test_faiss')
+        self.vector_store = documentDatabase.get_vectorstore()
+
         self.retriever = self.vector_store.as_retriever(search_type="mmr", search_kwargs={"k": 5})
         self.type = type
         self.ranker = self.create_ranker(ranker_type)

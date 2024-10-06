@@ -2667,3 +2667,48 @@ Query: how i write a good requirement statement?
 Context: Sorry, the DataFrame doesn’t provide enough information.
 Source: napire data
 
+Query: 33% of errors in the software development lifecycle are rooted in insufficient requirements engineering, and 36% of these errors lead to project failure.
+Context: requirements validation and verification – ensuring validity and quality of created requirements.
+impact on project success
+effective requirements engineering is critical to successful software development. research shows that 33% of errors in the software 
+development lifecycle are rooted in insufficient requirements engineering, and 36% of these errors lead to project failure.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: requirements engineering is therefore both inherently difficult and a critical determinent for success. common reasons for project 
+failure include nowaways incomplete, hidden and unclear requirements, and communication problems with customers. a lack of 
+common understanding between stakeholders is a major challenge, as illustrated in the following picture.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: managers, developers, testers and end users all bring unique perspectives that enrich the understanding and management of 
+requirements. consensus among all stakeholders should confirm the need to implement a particular requirement.
+misconception 7: “a perfect re guarantees a successful project”.
+Source: software4kmu-2-5.pdf
+
+Context: systems, improving overall quality.
+german
+risk management: early identification and management of requirements-related risks minimises disruptions and delays, promoting 
+smoother project execution.
+traceability and change management: clear requirements enable systematic change management and maintain the integrity of 
+the software system as requirements evolve.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: goals (teaching 
+perspective)
+to provide an understanding of the role and significance of requirements engineering in software 
+development
+content description 
+(teaching 
+perspective)
+introduction to the discipline of requirements engineering, focusing on its importance, impact and outcomes 
+for projects
+en
+de
+beginner  
+intermediate  
+expert
+Source: software4kmu-6-142-1-5.pdf
+
+Query: 33% of errors in the software development lifecycle are rooted in insufficient requirements engineering, and 36% of these errors lead to project failure.
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
