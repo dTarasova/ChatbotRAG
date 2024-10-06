@@ -8,9 +8,6 @@
 
 
 from src.interface.streamlit_incorporation import setup_streamlit 
-# __import__('pysqlite3')
-# import sys
-# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 setup_streamlit()
 
 ############################################
@@ -63,7 +60,7 @@ setup_streamlit()
 
 # ############################################################################################################	
 
-# PATH_DB_AMDIRE_NAPIRE = 'knowledge_bases/amdire_napire'
+# PATH_DB_AMDIRE_NAPIRE = 'knowledge_bases/amdire_napire_faiss'
 # PATH_DB_AMDIRE_NAPIRE_SOFTWARE4KMU = 'knowledge_bases/amdire_napire_software4kmu'
 # PATH_DB_ALL = 'knowledge_bases/all'
 
