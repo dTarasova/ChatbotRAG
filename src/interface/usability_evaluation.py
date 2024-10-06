@@ -28,8 +28,8 @@ if st.button("Ask"):
         st.write(answer)
         
         # Optionally display the context
-        # st.header("Context:")
-        # st.write(context)
+        st.header("Context:")
+        st.write(context)
         
     except KeyError as ke:
         st.write("The expected key was not found in the response. Please check the structure of the model's output.")

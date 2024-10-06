@@ -1,21 +1,18 @@
-from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 from  langchain_core.documents.base import Document
 
 from src.rag.retriever.query_translation.query_translator import QueryTranslator
 from src.rag.retriever.retriever_results_ranker import RRFResultsRanker, ResultsRanker
+from src.rag.retriever.unstructured_data_loading.document_database import create_document_database
+from src.custom_types import VectorStoreType
 
-from src.rag.retriever.unstructured_data_loading.document_loader_faiss import DocumentDatabase
-path_db = 'knowledge_bases/test_faiss'
-path_data = 'data/test_faiss'
-
+# amdire_napire_software4kmu_faiss
 class Retriever:
 
-    def __init__(self, type='step-back', path_to_db_directory='knowledge_bases/amdire_napire_software4kmu', ranker_type = 'rrf' ):
+    def __init__(self, type='step-back', path_to_db_directory='knowledge_bases/test_faiss', vector_store_type = VectorStoreType.FAISS, ranker_type = 'rrf' ):
         self.embedding_model = OpenAIEmbeddings()
-        # self.vector_store = Chroma(persist_directory=path_to_db_directory, embedding_function=self.embedding_model)
-        documentDatabase = DocumentDatabase('knowledge_bases/test_faiss')
-        self.vector_store = documentDatabase.get_vectorstore()
+        self.documentDatabase = create_document_database(vector_store_type, path_to_db_directory)
+        self.vector_store = self.documentDatabase.get_vectorstore()
 
         self.retriever = self.vector_store.as_retriever(search_type="mmr", search_kwargs={"k": 5})
         self.type = type
@@ -39,6 +36,9 @@ class Retriever:
         return documents
 
     def retrieve_context(self, query: str) -> str:
+        print("checking findings")
+        docs2 = self.documentDatabase.check_findings(query)
+
         if self.type == 'expand':
             self.query_translator = QueryTranslator(type='expand')
             adjusted_query = self.query_translator.translate_query(query)
@@ -73,23 +73,4 @@ class Retriever:
                 file.write(f"Context: {context_str}\n")
                 file.write(f"Source: {source_str}\n\n")
         return context_to_return
-        
-
-    
-    
-
-# TODO: idea for the future
-# def retrieve(self, query):
-#     # Parse the query
-#     parsed_query = self.parse_query(query)
-    
-#     # Expand the query (if applicable)
-#     expanded_query = self.expand_query(parsed_query)
-    
-#     # Match and score documents
-#     scored_docs = self.match_and_score(expanded_query)
-    
-#     # Rank and select top documents
-#     top_docs = self.rank_documents(scored_docs)
-    
-#     return top_docs
+       

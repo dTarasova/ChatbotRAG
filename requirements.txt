@@ -20,6 +20,6 @@ beautifulsoup4
 urllib3
 pdfkit
 wkhtmltopdf 
-spellchecker
 pysqlite3-binary
 faiss-cpu
+abc

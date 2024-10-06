@@ -5,10 +5,10 @@ import os
 FILEPATH = "results.json"
 
 import re
-from spellchecker import SpellChecker
+# from spellchecker import SpellChecker
 
 # Initialize the spell checker
-spell = SpellChecker()
+# spell = SpellChecker()
 
 # List of common articles to ignore
 ARTICLES = {'a', 'an', 'the'}

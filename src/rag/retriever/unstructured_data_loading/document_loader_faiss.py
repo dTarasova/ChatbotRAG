@@ -12,7 +12,7 @@ PATH_DOCUMENTS = 'data/just amdire and napire papers'
 PERSIST_DIRECTORY = 'knowledge_bases/amdire_and_napire'
 EXAMPLE_FILE_PATH = 'data/first_batch/Rapid quality assurance with Requirements Smells.pdf'
 
-class DocumentDatabase:
+class DocumentDatabaseFaiss:
     def __init__(self, path_to_db_directory='knowledge_bases/amdire_napire_software4kmu'):
         self.path_to_db_directory = path_to_db_directory
         self.embeddings = OpenAIEmbeddings()
@@ -88,7 +88,7 @@ class DocumentDatabase:
 if __name__ == "__main__":
     path_db = 'knowledge_bases/amdire_napire_software4kmu'
     path_data = 'data/software4kmu papers'
-    documentDatabase = DocumentDatabase(path_to_db_directory=path_db)
+    documentDatabase = DocumentDatabaseFaiss(path_to_db_directory=path_db)
     documentDatabase.add_docs_from_folder(path_data)
     vector_store = documentDatabase.get_vectorstore()
     documentDatabase.print_vectorstore_collections()

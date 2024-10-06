@@ -1,6 +1,7 @@
 from enum import Enum
 import json
 import os
+from src.custom_types import VectorStoreType
 from src.rag.retriever.evaluation.evaluator import Evaluator
 from src.rag.retriever.structured_data_loading.structured_data_retriever import StructuredDataRetriever
 from src.rag.retriever.retriever import Retriever
@@ -17,8 +18,8 @@ class RAGTypes(Enum):
     SUMMARISER = 'summariser'
 
 class RAGModel:
-    def __init__(self, text_retriever_type: str = 'step-back', path_to_db_directory: str = 'knowledge_bases/amdire_napire_software4kmu', evaluate_answers: bool = False):
-        self.retriever_text_data = Retriever(path_to_db_directory = path_to_db_directory, type = text_retriever_type)
+    def __init__(self, text_retriever_type: str = 'step-back', path_to_db_directory: str = 'knowledge_bases/test_faiss', evaluate_answers: bool = False, vector_store_type = VectorStoreType.FAISS):
+        self.retriever_text_data = Retriever(path_to_db_directory = path_to_db_directory, type = text_retriever_type, vector_store_type = vector_store_type)
         self.retriever_structured_data = StructuredDataRetriever()
         self.generator = Generator()
         self.evaluate_answers = evaluate_answers

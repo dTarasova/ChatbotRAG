@@ -11,16 +11,15 @@ from src.interface.streamlit_incorporation import setup_streamlit
 setup_streamlit()
 
 #################################
-# from src.rag.retriever.unstructured_data_loading.document_loader_faiss import DocumentDatabase
+# from src.rag.retriever.unstructured_data_loading.document_database import DocumentDatabaseFaiss
 # path_db = 'knowledge_bases/test_faiss'
 # path_data = 'data/test_faiss'
-# documentDatabase = DocumentDatabase(path_to_db_directory=path_db)
+# documentDatabase = DocumentDatabaseFaiss(path_to_db_directory=path_db)
 # # vector_store = documentDatabase.create_db(path_data)
 # documentDatabase.add_docs_from_folder(path_data)
 # vector_store = documentDatabase.get_vectorstore()
 # documentDatabase.print_vectorstore_collections()
-# documents = documentDatabase.check_findings("RE is just writing down wants and needs")
-# documents2 = documentDatabase.check_findings("33% of errors in the software development lifecycle are rooted in insufficient Requirements Engineering, and 36% of these errors lead to project failure.")
+# documents = documentDatabase.check_findings("Abbotts textual analysis technique")
 
 
 ############################################

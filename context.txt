@@ -2712,3 +2712,208 @@ Query: 33% of errors in the software development lifecycle are rooted in insuffi
 Context: Sorry, the DataFrame doesn’t provide enough information.
 Source: napire data
 
+Query: abbotts textual analysis technique
+Context: spectrum of approaches, their customization to specific project needs is essential for effective requirements gathering and 
+management. on this platform, we will therefore focus on the essence of re - focussing on what matters most - and show how it can be 
+used in different contexts.
+misconception 4: "requirements are static and immutable".
+Source: software4kmu-2-5.pdf
+
+Context: recognizing this difference is a critical determinant for success. jumping directly to solutions without understanding the problem first - 
+commonly referred to as solution orientation -- often results in a loss of time and effort, in the worst-case to a project failure. in more 
+details this question would be addressed in the later in the learning path
+Source: software4kmu-2-5.pdf
+
+Context: anforderungsanalyse - verstehen der anforderungen und erreichen eines konsenses zwischen den stakelholdern.
+anforderungsspezifikation - strukturierung, modellierung und dokumentation von anforderungen.
+ [german] description
+[german] goals and value 
+[german] content
+validierung und verifizierung von anforderungen - sicherstellung der gültigkeit und qualität der erstellten anforderungen.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: id 1.1.1.1 - frequently encountered misconceptions
+meta data
+englisch
+status
+draft  
+title
+frequently encountered misconceptions on 
+requirements engineering
+häufig anzutreffende missverständnisse über 
+requirements engineering
+tags
+estimated duration
+5 min
+level
+external ressources
+dependencies
+next item
+id 1.1.1.2 - what is requirements engineering?  
+goals (teaching 
+perspective)
+Source: software4kmu-2-5.pdf
+
+Context: allgemeinen als der prozess gesehen, in dem festgelegt wird, wie das produkt aussehen soll und welche eigenschaften es 
+haben soll. selbst wenn organisationen agilen prinzipien folgen, die nicht ausdrücklich vorschreiben, was als re-aktivitäten 
+angesehen wird, erstellen, priorisieren und verfolgen sie anforderungen als product backlog items oder user stories. in den folgenden
+Source: software4kmu-2-5.pdf
+
+Query: abbotts textual analysis technique
+Context: The analysis of the relevant columns from the DataFrame provides the following summary:
+
+1. **Compatibility (Co-existence, Interoperability)**:
+   - Mean: 0.37
+   - Standard Deviation: 0.49
+   - Minimum: 0
+   - Maximum: 1
+
+2. **Maintainability (Analysability, Modularity, Modifiability, Reusability, Testability)**:
+   - Data is not numerically summarized due to unique entries.
+
+3. **Performance Efficiency (Time Behaviour, Resource Utilisation, Capacity)**:
+   - Data is not numerically summarized due to unique entries.
+
+4. **Portability (Adaptability, Installability, Replaceability)**:
+   - Data is not numerically summarized due to unique entries.
+
+5. **Reliability (Availability, Fault Tolerance, Maturity, Recoverability)**:
+   - Data is not numerically summarized due to unique entries.
+
+6. **Security (Accountability, Authenticity, Confidentiality, Integrity, Non-repudiation)**:
+   - Data is not numerically summarized due to unique entries.
+
+7. **Safety (Freedom of Risk for Health or Disaster)**:
+   - Data is not numerically summarized due to unique entries.
+
+8. **Usability (Accessibility, Appropriateness, Recognisability, Learnability, Operability, User Error Protection, User Interface Aesthetics)**:
+   - Data is not numerically summarized due to unique entries.
+
+9. **Satisfaction with Requirements Engineering**:
+   - Count: 92 entries
+   - Unique responses: 92
+
+10. **Reasons for Dissatisfaction in Requirements Engineering**:
+    - Count: 92 entries
+    - Most common reason: "Project culture focuses only on development, neglecting requirements."
+
+This summary highlights the importance of compatibility in development, while also indicating a diverse range of unique responses in other areas, particularly regarding satisfaction and dissatisfaction with requirements engineering.
+Source: napire data
+
+Query: y abbotts textual analysis technique and analyze the system description for nouns
+Context: spectrum of approaches, their customization to specific project needs is essential for effective requirements gathering and 
+management. on this platform, we will therefore focus on the essence of re - focussing on what matters most - and show how it can be 
+used in different contexts.
+misconception 4: "requirements are static and immutable".
+Source: software4kmu-2-5.pdf
+
+Context: system specification that all stakeholders agree upon.
+elementary tasks include, but are not limited to:
+requirements elicitation – identifying all relevant stakeholders and their requirements.
+requirements analysis – understanding requirements and achieving consensus among stakeholders.
+requirements specification – structuring, modelling, documenting requirements.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: systems, improving overall quality.
+german
+risk management: early identification and management of requirements-related risks minimises disruptions and delays, promoting 
+smoother project execution.
+traceability and change management: clear requirements enable systematic change management and maintain the integrity of 
+the software system as requirements evolve.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: allgemeinen als der prozess gesehen, in dem festgelegt wird, wie das produkt aussehen soll und welche eigenschaften es 
+haben soll. selbst wenn organisationen agilen prinzipien folgen, die nicht ausdrücklich vorschreiben, was als re-aktivitäten 
+angesehen wird, erstellen, priorisieren und verfolgen sie anforderungen als product backlog items oder user stories. in den folgenden
+Source: software4kmu-2-5.pdf
+
+Context: [german] description
+[german] goals and value 
+[german] content
+engineering gibt. auch wenn re ein breites spektrum an ansätzen bietet, ist deren anpassung an die spezifischen projektbedürfnisse 
+für eine effektive anforderungserhebung und -verwaltung unerlässlich. auf dieser plattform werden wir uns daher auf das wesentliche
+Source: software4kmu-2-5.pdf
+
+Query: y abbotts textual analysis technique and analyze the system description for nouns
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
+Query: y abbotts textual analysis technique and analyze the system description for nouns
+Context: derive requirements from the system description
+at the beginning of product development, stakeholders often have an abstract idea of the system/service. let us explore together how 
+we get from an abstract idea to concrete requirements using the example of an online shopping platform.
+Source: software4kmu-6-142-6-10.pdf
+
+Context: for that purpose, we apply abbotts textual analysis technique and analyze the system description for nouns, verbs and adjectives (see 
+here for a full list of part of speech and their meaning). nouns describe objects relevant for our online shapping platform. verbs describe
+Source: software4kmu-6-142-6-10.pdf
+
+Context: goals (teaching 
+perspective)
+to clarify misconceptions and make a clear distinction between the myths and realities of requirements 
+engineering in order to provide an interesting introduction into the following topics.
+content description 
+(teaching 
+perspective)
+explore common misunderstandings in the field of requirements engineering, such as
+en
+de
+beginner  
+intermediate  
+expert
+Source: software4kmu-2-5.pdf
+
+Context: systems, improving overall quality.
+german
+risk management: early identification and management of requirements-related risks minimises disruptions and delays, promoting 
+smoother project execution.
+traceability and change management: clear requirements enable systematic change management and maintain the integrity of 
+the software system as requirements evolve.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: order tracking feature for users to monitor the status of their purchases.
+purchase history functionality for users to review past orders.
+user-friendly interface with intuitive navigation.
+responsive design for optimal viewing across devices.
+requirements in systems and software engineering cover stakeholder needs, constraints, capabilities and characteristics.
+Source: software4kmu-6-142-6-10.pdf
+
+Query: y abbotts textual analysis technique and analyze the system description for nouns
+Context: The analysis of the system description using Y Abbott's textual analysis technique reveals the following relevant information from the DataFrame:
+
+1. **Agile vs. Plan-driven Project**: 
+   - Categories: Plan-driven, Rather agile, Hybrid, Agile, Rather plan-driven.
+
+2. **Relationship with Customer**: 
+   - Categories: Very good, Good, Neutral, Bad, Very bad.
+
+3. **Who is Responsible for Requirements Elicitation**: 
+   - Roles: Business Analyst, Other, Nobody has the primary responsibility, Customer, Product Manager, Product Owner, Requirements Engineer, Project Lead / Project Manager, Scrum Master, Architect, Developer, Marketing.
+
+4. **Documentation Granularity**: 
+   - Descriptions: 
+     - "We document high-level requirements at beginning of the project and refine them to detailed requirements when needed."
+     - "We document detailed requirements at the beginning of the project."
+     - "Other (please specify)."
+
+5. **Goals**: 
+   - Values: 1, 0.
+
+6. **Quality Properties**: 
+   - Values: 0, 1.
+
+7. **Stakeholders**: 
+   - Values: 0, 1.
+
+8. **System Behaviour**: 
+   - Values: 0, 1.
+
+9. **User Interfaces**: 
+   - Values: 0, 1.
+
+10. **Non-functional Requirements Documentation Include Compatibility**: 
+    - Values: 1, 0.
+
+This summary provides insights into the project management approach, stakeholder roles, documentation practices, and the perceived quality and functionality of the system.
+Source: napire data
+
