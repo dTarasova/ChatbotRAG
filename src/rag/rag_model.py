@@ -18,7 +18,7 @@ class RAGTypes(Enum):
     SUMMARISER = 'summariser'
 
 class RAGModel:
-    def __init__(self, text_retriever_type: str = 'step-back', path_to_db_directory: str = 'knowledge_bases/test_faiss', evaluate_answers: bool = False, vector_store_type = VectorStoreType.FAISS):
+    def __init__(self, text_retriever_type: str = 'step-back', path_to_db_directory: str = 'knowledge_bases/amdire_napire_software4kmu_faiss', evaluate_answers: bool = False, vector_store_type = VectorStoreType.FAISS):
         self.retriever_text_data = Retriever(path_to_db_directory = path_to_db_directory, type = text_retriever_type, vector_store_type = vector_store_type)
         self.retriever_structured_data = StructuredDataRetriever()
         self.generator = Generator()

@@ -4,7 +4,7 @@ from typing import Dict, Any
 from src.interface.helper_functions import load_questions, load_results
 from src.rag.rag_model import RAGModel, RAGTypes
 PATH_DB_AMDIRE_NAPIRE = 'knowledge_bases/amdire_napire'
-PATH_DB_AMDIRE_NAPIRE_SOFTWARE4KMU = 'knowledge_bases/amdire_napire_software4kmu'
+PATH_DB_AMDIRE_NAPIRE_SOFTWARE4KMU = 'knowledge_bases/amdire_napire_software4kmu_chroma'
 PATH_DB_ALL = 'knowledge_bases/all'
 
 # Display results in a multi-column layout for comparison

@@ -12,14 +12,15 @@ setup_streamlit()
 
 #################################
 # from src.rag.retriever.unstructured_data_loading.document_database import DocumentDatabaseFaiss
-# path_db = 'knowledge_bases/test_faiss'
-# path_data = 'data/test_faiss'
+# path_db = 'knowledge_bases/amdire_napire_software4kmu_faiss'
+# path_data = 'data/amdire_napire_software4kmu'
 # documentDatabase = DocumentDatabaseFaiss(path_to_db_directory=path_db)
 # # vector_store = documentDatabase.create_db(path_data)
-# documentDatabase.add_docs_from_folder(path_data)
+# # # documentDatabase.add_docs_from_folder(path_data)
 # vector_store = documentDatabase.get_vectorstore()
 # documentDatabase.print_vectorstore_collections()
 # documents = documentDatabase.check_findings("Abbotts textual analysis technique")
+# documents2 = documentDatabase.check_findings("However, a first step towards the definition of an artefact-based methodology for a company-wide use consists in the precise definition of the artefacts and their relationsbeing of interest for a particular development process, in our case for RE")
 
 
 ############################################

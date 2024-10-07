@@ -2917,3 +2917,134 @@ Context: The analysis of the system description using Y Abbott's textual analysi
 This summary provides insights into the project management approach, stakeholder roles, documentation practices, and the perceived quality and functionality of the system.
 Source: napire data
 
+Query: abbotts textual analysis technique
+Context: recognizing this difference is a critical determinant for success. jumping directly to solutions without understanding the problem first - 
+commonly referred to as solution orientation -- often results in a loss of time and effort, in the worst-case to a project failure. in more 
+details this question would be addressed in the later in the learning path
+Source: software4kmu-2-5.pdf
+
+Context: for that purpose, we apply abbotts textual analysis technique and analyze the system description for nouns, verbs and adjectives (see 
+here for a full list of part of speech and their meaning). nouns describe objects relevant for our online shapping platform. verbs describe
+Source: software4kmu-6-142-6-10.pdf
+
+Context: anforderungsanalyse - verstehen der anforderungen und erreichen eines konsenses zwischen den stakelholdern.
+anforderungsspezifikation - strukturierung, modellierung und dokumentation von anforderungen.
+ [german] description
+[german] goals and value 
+[german] content
+validierung und verifizierung von anforderungen - sicherstellung der gültigkeit und qualität der erstellten anforderungen.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: requirements:
+browse functionality for users to navigate through product categories.
+examples: 
+1. constraint: the system shall comply with the payment card industry data security standard (pci dss) for handling 
+payment information.
+2. property: the system shall encrypt all sensitive user data (such as credit card information) to ensure pci dss compliance.
+german
+Source: software4kmu-6-142-6-10.pdf
+
+Context: uns gemeinsam am beispiel einer online-einkaufsplattform untersuchen, wie wir von einer abstrakten idee zu konkreten anforderungen 
+gelangen. 
+hierfür wenden wir abbotts textanalysetechnik an und analysieren die systembeschreibung auf nomen, verben und adjektive (siehe 
+hier für eine komplete liste von termen und deren bedeutung). nomen beschreiben relevante objekte für unsere online-
+Source: software4kmu-6-142-6-10.pdf
+
+Query: abbotts textual analysis technique
+Context: The analysis of the provided DataFrame reveals the following insights regarding Abbott's textual analysis technique:
+
+1. **Average Satisfaction**: The average satisfaction level with requirements engineering in the projects is approximately **1.79** on a scale where higher values indicate greater satisfaction. This suggests a general dissatisfaction among respondents.
+
+2. **Reasons for Dissatisfaction**: A variety of reasons were cited for dissatisfaction in requirements engineering, with a total of **92 unique reasons** identified. Some notable themes include:
+   - **Project Culture**: A focus solely on development without adequate attention to requirements and testing.
+   - **Customer Interaction**: Lack of direct contact with users and insufficient collaboration within the project team.
+   - **Time Pressure**: Challenges related to project planning, including time constraints and distributed responsibilities.
+   - **Specification Issues**: Problems arising from specifications being performed by suppliers, leading to omitted requirements that later result in operational issues.
+   - **Quality Concerns**: Insufficient time for detailed functional specifications, resulting in a focus on basic deliverables rather than product quality.
+
+These findings highlight significant areas for improvement in the requirements engineering process, particularly in fostering collaboration, managing time effectively, and ensuring clarity in specifications.
+Source: napire data
+
+Query: however, a first step towards the definition of an artefact-based methodology for a company-wide use consists in the precise definition of the artefacts and thei
+Context: and
+the
+initial
+(overall)
+system
+speciﬁcations.
+regarding the study objects, we distinguish between
+the company-wide process deﬁnition (re deﬁnition at
+organisational level) and the actual analysed projects
+that
+followed
+the
+process.
+the
+ﬁrst
+serves
+as
+a
+preparation of the study in order to get an understanding
+of the used terminology and the process. the study
+Source: Field Study on Requirements Engineering Artefacts and Patterns.pdf
+
+Context: no guidance on how to do it. existing literature in software
+engineering and ai&law points to the need to capture and
+reflect the elementary concepts and relationships from a legal
+perspective. nevertheless, to the best of our knowledge, there
+is no systematic approach to that available yet and our work
+presented here aims at closing this gap.
+iv. methodology overview
+Source: On Developing an Artifact-based Approach to Regulatory Requirements Engineering.pdf
+
+Context: instructions on how to describe use cases at munich re.
+data collection. following the process as described in
+sec. iii-b, the approach contained four phases: first, we
+received and analysed a full set of 51 requirements engineering
+artifacts that were created in the project, including use cases,
+business rules and others. in the ﬁrst, 90-minutes workshop
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Context: business information systems).
+for each artefact type, we furthermore deﬁne two milestones. the ﬁrst mile-
+stone deﬁnes the point in time in which the ﬁrst content item is deﬁned, thus,
+reﬂecting a certain maturity of the content in the artefact as the ﬁrst content
+d. m´
+endez fern´
+andez, b. penzenstadler
+items serve the purpose of a summary for subsequent contents. for instance,
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: those artefacts, however, remain underspeciﬁed, i.e. companies have to deﬁne
+those artefacts in personal responsibility without any guidance or blueprint. the
+guidance on the actual implementation of the improvement is, in general, not in
+scope of those approaches as they focus on comparable benchmarking and the
+adaptation of a company-speciﬁc re to that given norm by adding potentially
+Source: Improving Requirements Engineering by Artefact Orientation.pdf
+
+Query: however, a first step towards the definition of an artefact-based methodology for a company-wide use consists in the precise definition of the artefacts and thei
+Context: The summarized information from the DataFrame regarding the definition of artefacts and their methodology includes the following relevant columns:
+
+1. **Agile vs Plan-driven project**: This column categorizes the project management approach, with a total of 488 entries and 6 unique values. The most frequent category is "Hybrid," appearing 161 times.
+
+2. **Who Responsible for Requirements Elicitation**: This column identifies the roles responsible for requirements elicitation, with 12 unique roles and a total of 488 entries. The most common role is "Business Analyst," with 115 occurrences.
+
+3. **Documentation Granularity**: This column provides insights into the level of detail in documentation, but specific statistics were not calculated in the summary.
+
+4. **Goals**: This column outlines the objectives of the projects, but specific statistics were not calculated in the summary.
+
+5. **Quality properties**: This column addresses the quality attributes considered in the projects, but specific statistics were not calculated in the summary.
+
+6. **Stakeholders**: This column identifies the stakeholders involved in the projects, but specific statistics were not calculated in the summary.
+
+7. **System behaviour**: This column describes the expected behavior of the system, but specific statistics were not calculated in the summary.
+
+8. **User interfaces**: This column outlines the user interface considerations, but specific statistics were not calculated in the summary.
+
+9. **Requirements elicitation with Interviews**: This column indicates the use of interviews for requirements elicitation, with a mean value of approximately 0.69, suggesting that interviews are commonly used.
+
+10. **Requirements elicitation with Workshops and focus groups**: This column indicates the use of workshops and focus groups for requirements elicitation, with a mean value of approximately 0.57, suggesting that these methods are also frequently employed.
+
+Overall, the data provides insights into the project management approaches, roles involved in requirements elicitation, and the methods used for gathering requirements, which are essential for defining artefacts in a methodology.
+Source: napire data
+

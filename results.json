@@ -1706,5 +1706,31 @@
                 }
             }
         }
+    },
+    {
+        "question": "Abbotts textual analysis technique",
+        "models": {
+            "SUMMARISER": {
+                "context": "Context from general knowledge: \nAbbott's textual analysis technique involves analyzing a system description by identifying nouns, verbs, and adjectives. Nouns represent relevant objects for the online shopping platform, while verbs describe actions or processes related to the system. This method helps in understanding requirements and achieving consensus among stakeholders.\n\nContext from experience of companies doing requirements engineering: \nNo relevant context found.",
+                "answer": "**Answer**: Abbott's textual analysis technique is a method used to analyze system descriptions by focusing on the identification of nouns, verbs, and adjectives to extract requirements.\n\n**Details**:\n\n1. **Identification of Key Elements**:\n   - **Nouns**: In the context of an online shopping platform, nouns represent the relevant objects such as products, users, and orders. Identifying these elements helps in understanding what entities are involved in the system.\n   - **Verbs**: Verbs indicate the actions or processes that occur within the system, such as \"purchase,\" \"browse,\" or \"review.\" This identification is crucial for understanding how users will interact with the platform.\n   - **Adjectives**: Adjectives provide additional context and detail about the nouns, such as \"discounted\" products or \"registered\" users, which can influence the requirements and functionalities of the system.\n\n2. **Understanding Requirements**:\n   - By breaking down the system description into these components, stakeholders can gain a clearer understanding of the requirements. This clarity is essential for ensuring that all parties involved have a shared vision of the system's functionalities.\n\n3. **Achieving Consensus**:\n   - The technique facilitates discussions among stakeholders by providing a structured approach to analyzing the system. By focusing on specific elements, it helps in resolving ambiguities and aligning expectations, which is vital for successful requirements engineering.\n\nIn summary, Abbott's textual analysis technique is a valuable tool for dissecting system descriptions, enhancing clarity, and fostering agreement among stakeholders in the requirements engineering process.",
+                "evaluation": {
+                    "completeness": null,
+                    "relevance": null
+                }
+            }
+        }
+    },
+    {
+        "question": "However, a first step towards the definition of an artefact-based methodology for a company-wide use consists in the precise definition of the artefacts and thei",
+        "models": {
+            "SUMMARISER": {
+                "context": "Context from general knowledge: \nThe process for defining a company-wide methodology involves several key steps:\n\n1. **Preparation**: Understand the terminology and processes through company-wide process definition and analysis of specific projects.\n\n2. **Data Collection**: Follow a structured approach that includes:\n   - Analyzing requirements engineering artifacts (e.g., use cases, business rules).\n   - Conducting workshops to gather insights.\n\n3. **Milestones Definition**: Establish milestones for each artifact type to indicate content maturity, starting with the first content item that summarizes subsequent details.\n\n4. **Guidance Development**: Create guidance for defining and implementing artifacts, as existing literature lacks systematic approaches, leaving companies to define these independently.\n\nThis structured methodology aims to provide clarity and consistency across the organization.\n\nContext from experience of companies doing requirements engineering: \nNo relevant context found.",
+                "answer": "**Answer**: The first step towards defining an artifact-based methodology for company-wide use is to precisely define the artifacts and their roles within the organization.\n\n**Details**: \n\n1. **Understanding Artifacts**: Artifacts in requirements engineering are essential components that capture and communicate various aspects of a project. This includes documents like use cases, business rules, and other requirements engineering artifacts. A clear definition of these artifacts is crucial as it sets the foundation for how they will be utilized across the organization.\n\n2. **Establishing Clarity**: By precisely defining each artifact, organizations can ensure that all stakeholders have a common understanding of their purpose and content. This clarity helps in reducing ambiguity and miscommunication, which are common pitfalls in project management.\n\n3. **Guidance Development**: Once the artifacts are defined, the next step involves creating guidance on how to implement and utilize these artifacts effectively. This guidance should address the systematic approaches needed for each artifact type, ensuring that teams can consistently apply them in their projects.\n\n4. **Milestones and Maturity**: It is also important to establish milestones for each artifact type. These milestones will indicate the maturity of the content, helping teams to track progress and ensure that the artifacts evolve appropriately throughout the project lifecycle.\n\nBy focusing on these aspects, organizations can create a robust artifact-based methodology that enhances clarity and consistency in their requirements engineering processes.",
+                "evaluation": {
+                    "completeness": null,
+                    "relevance": null
+                }
+            }
+        }
     }
 ]

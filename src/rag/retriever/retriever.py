@@ -9,7 +9,7 @@ from src.custom_types import VectorStoreType
 # amdire_napire_software4kmu_faiss
 class Retriever:
 
-    def __init__(self, type='step-back', path_to_db_directory='knowledge_bases/test_faiss', vector_store_type = VectorStoreType.FAISS, ranker_type = 'rrf' ):
+    def __init__(self, path_to_db_directory: str, vector_store_type: VectorStoreType, type='step-back', ranker_type = 'rrf'  ):
         self.embedding_model = OpenAIEmbeddings()
         self.documentDatabase = create_document_database(vector_store_type, path_to_db_directory)
         self.vector_store = self.documentDatabase.get_vectorstore()
