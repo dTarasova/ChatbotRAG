@@ -1,0 +1,3123 @@
+Query: how do i write a good requirement statement?
+Context: syntactic minimality
+there are no unnecessary syntactic elements in the speciﬁcations.
+modularity
+the speciﬁcation is organised in modules, separated according to certain topics.
+traceability
+each requirement has a rationale.
+ease of perception
+the speciﬁcations are well-suited to be understood by people not involved into the process.
+rq 3
+unambiguity
+the requirements are stated unambiguously.
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: 5. singularity: it should define only one characteristic or constraint.
+6. feasibility: each requirement should be achievable within the constraints of the project.
+7. verifiability: it should be possible to verify that a requirement has been met.
+8. correctness: it should accurately reflect the need of stakeholder.
+9. conformity: each written requirement should follow the predefined structure.
+Source: software4kmu learning nuggets.pdf
+
+Context: and requires some practice to be effective. in essence, while structured language requirements maybe be a bit cumbersome to write 
+down and read (often resembling the user-friendly charme of an instruction manual to a tax declaration form), they offer the benefit of 
+clear structure and some basic quality criteria that make them easier to interpret (implement, and test).
+example
+Source: software4kmu learning nuggets.pdf
+
+Context: draft  
+title
+what makes a good requirement?
+was macht eine gute anforderung aus?
+tags
+requirements quality
+anforderungsqualität
+estimated duration
+10 min
+level
+external ressources
+international standards for systems and software 
+engineering
+requirements engineering quick check
+requirements smells
+dependencies
+next item
+id 1.1.1.9 - form of requirements  
+goals (teaching 
+perspective)
+Source: software4kmu learning nuggets.pdf
+
+Context: effective requirements accurately capture stakeholder needs, adhere to international standards, and are clear, unambiguous and 
+feasible within the project constraints, ensuring successful software development. 
+a comprehensive set of requirements should be complete, consistent and feasible. 
+[englisch] key takeaway
+german
+Source: software4kmu learning nuggets.pdf
+
+Query: how do i write a good requirement statement?
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
+Query: what is the level of detail for a requirement that i must provide as a business analyst?
+Context: 1. the business analyst has the responsibility for the context speciﬁcation
+and is expected to have the necessary domain knowledge, e.g. regarding
+the business processes, typical stakeholders, or constraints and rules.
+2. the requirements engineer has the responsibility for the requirements
+speciﬁcation and serves also as a mediator between the business analyst
+and the system architect.
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: degree of completeness in the content items within the business needs speciﬁcation. at the same time, one
+can observe an increasing degree of completeness in risk calculations and in the initial scope deﬁnitions.
+none of the interviewees showed awareness of having made an explicit decision about whether to follow
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Context: business value and to indicate the major goal to
+the team, similar to goals and goal modeling in
+traditional requirements engineering [50].
+answer to rq 2.2. in summary, the practitioners
+expressed that 65% of the discussed ﬁndings were
+relevant, as they lead to lengthy discussions and un-
+necessary iterations in estimation. they also saw the
+problem of legal binding, but in contrast to the prac-
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: methods. several studies have identified problems that could 
+result from the poorly detailed requirements specifications 
+[9][34]. these problems can result in overall project failure due 
+to incorrect or missing functionalities and/or quality 
+characteristics. according to eberlein and leite [15], there is a 
+need for agile methods to include techniques that make it
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: #
+acceptance criteria
+h
+#
+#
+acceptance test cases
+#
+#
+tracing: business needs to requirements
+#
+#
+h
+#
+tracing: requirements to system speciﬁcation
+#
+h
+#
+h
+#
+the analysis of the three artefact patterns shows diﬀerent tendencies in the artefacts. one cluster has
+more emphasis on the solution description, one on the functional description, and one on the problem
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Query: what is the level of detail for a requirement that i must provide as a business analyst?
+Context: The analysis of the DataFrame provides insights into the level of detail required for requirements as a business analyst. Here are the summarized findings:
+
+1. **Who is Responsible for Requirements Elicitation**: The most common role responsible for requirements elicitation is the Business Analyst, with 115 occurrences.
+
+2. **Documentation Granularity**: The DataFrame does not provide specific numerical values for documentation granularity, but it indicates that there are various approaches to documenting requirements.
+
+3. **Elicitation Methods**:
+   - **Requirements Elicitation with Interviews**: This method is utilized, but the specific frequency is not detailed in the summary.
+   - **Requirements Elicitation with Analysis of Existing Documents**: This method is also employed, though the exact frequency is not specified.
+   - **Requirements Elicitation with Risk Analyses**: This method is used, but again, the frequency is not detailed.
+   - **Requirements Elicitation with Prototyping**: This method is mentioned, but specific usage frequency is not provided.
+   - **Requirements Elicitation with Workshops and Focus Groups**: This method is included, but the frequency is not specified.
+   - **Requirements Elicitation with Reuse Databases and Guidelines**: This method has a mean usage of approximately 17.4%, indicating it is used by some analysts.
+
+Overall, the level of detail for requirements should include a combination of interviews, analysis of existing documents, and possibly prototyping and workshops, with a strong emphasis on documentation practices. The specific granularity of documentation is not quantified in the DataFrame, but it suggests a structured approach to requirements elicitation is essential.
+Source: napire data
+
+Query: do all stakeholders need to review the requirements?
+Context: never be able to formally verify that the requirements are complet. it's therefore vital to take a pragmatic perspective here and ensure 
+that each stakeholder agrees at least on the wording and essence of a requirement to ensure that it is consistent with all specified 
+characteristics.
+let us look at the above properties in a concrete example and refine a bad requirement together.
+Source: software4kmu learning nuggets.pdf
+
+Context: approaches and the expectations of legal stakeholders. for
+example, all applicable regulatory acts must be considered
+throughout the entire software development life cycle; yet,
+existing approaches usually focus on one specific regulatory
+act or process area only in isolation [7]. to be practically ap-
+plicable, regulatory re approaches should satisfy the demands
+Source: On Developing an Artifact-based Approach to Regulatory Requirements Engineering.pdf
+
+Context: only the industry participants and researchers were present
+while performing the process, only the industry participants
+will answer this part of the questionnaire. an exception is
+given by the assessment of the sustainability of the approach,
+which is analysed by the external reviewer (only he can
+analyse whether the process is reproducible on the basis of
+given speciﬁcations).
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: ments artifacts, however, need to involve all relevant
+stakeholders [65], who must manually read and un-
+derstand each requirements artifact. moreover, they
+are diﬃcult to perform. they require a high domain
+knowledge and expertise from the reviewers [65] and
+the quality of their outcome depends on the quality of
+the reviewer [75]. on top of all this, reviewers could
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: projects in brazil afterward. based on practitioners’ responses, we 
+conducted quantitative and qualitative analyses, providing insights 
+into (i) what role is typically in charge of requirements; (ii) how 
+requirements are typically elicited and documented; (iii) which non- 
+functional requirements typically play a major role; (iv) which re
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Query: do all stakeholders need to review the requirements?
+Context: The analysis of the DataFrame indicates that various stakeholders are involved in the requirements elicitation process. The most frequently responsible roles include:
+
+1. **Business Analyst**: 108 instances
+2. **Project Lead / Project Manager**: 73 instances
+3. **Requirements Engineer**: 63 instances
+4. **Product Owner**: 62 instances
+5. **Product Manager**: 41 instances
+6. **Customer**: 29 instances
+7. **Architect**: 19 instances
+8. **Other**: 18 instances
+9. **Developer**: 17 instances
+10. **Nobody has the primary responsibility**: 15 instances
+
+This distribution suggests that multiple stakeholders are indeed involved in reviewing the requirements, highlighting the collaborative nature of the requirements engineering process. Therefore, it can be concluded that all stakeholders should participate in reviewing the requirements to ensure comprehensive coverage and alignment with project goals.
+Source: napire data
+
+Query: how much time do i need to spend for re?
+Context: on an ordinal scale—i.e., the sign of the interval is important
+(more minutes of duration is bad, less minutes of duration is
+good). for example, if the dependent variable of an experiment
+investigating the activity of estimating effort is the estimated
+amount of hours [30], then this data point(i.e., pair of activity
+and attribute) was excluded as a higher or lower value of that
+Source: Measuring the Fitness-for-Purpose of Requirements An initial Model of Activities and Attributes.pdf
+
+Context: one researcher in each (average session time was 1 hour).
+d. threats to validity
+one important threat to validity emerges from the inter-
+disciplinary context where legal experts might, for example,
+have introduced bias. we have mitigated this threat in various
+ways. we based the discussions of focus groups on existing
+literature. we also considered concrete cases of regulatory re
+Source: On Developing an Artifact-based Approach to Regulatory Requirements Engineering.pdf
+
+Context: activities in terms of their attributes and summarizing the
+total benefit or drawback, a holistic decision on the benefit
+or harm of any treatment can be made. while we certainly
+do not suggest that any comparative study from here on
+out must necessarily consider all 24 activities simultaneously,
+the model of requirements-affected activities provides at least
+Source: Measuring the Fitness-for-Purpose of Requirements An initial Model of Activities and Attributes.pdf
+
+Context: time boxing / not enough time in general 
+21.42% 
+7.14% 
+* the probabilities were calculated based on the overall amount of 14 participants. 
+table 12.  most critical re problems in brazil. 
+# 
+re problems and issues 
+cited* 
+ranked #1* 
+no 
+% 
+no 
+% 
+communication flaws between the project team and 
+the customer 
+43.24% 
+12.16% 
+incomplete and/or hidden requirements 
+41.89% 
+16.22%
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: they exclusively
+investigated the relation of selected parts in the ieee software requirements speciﬁcation std. 830-1998 to
+general project failures (with a particular focus on defects like budget and time overrun). also, our data does
+not support their observation of a balance in the depth of speciﬁcations that are produced in the projects
+(see table 4 on page 15).
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Query: how much time do i need to spend for re?
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
+Query: how to perform elicitation?
+Context: ….​
+examples:
+interview
+questionnaire​
+creativity techniques: 
+document-based techniques: 
+supporting techniques: 
+important: the choice of technique depends on the source​
+the table below presents a more detailed overview of elicitation techniques, their requirements sources, and other supplementary information.
+examples:
+field observation
+apprenticing
+contextual inquiry​
+examples:
+brainstorming
+Source: software4kmu learning nuggets.pdf
+
+Context: first run, however, showed that other elicitation techniques are also widely in use [42]. therefore,
+we widened the choice of elicitation techniques as shown in table 9. to make it consistent with
+common terminology, we adopted the elicitation techniques as described in the swebok [7]. table 9
+also notes whether the corresponding proposition was supported in the first run or if it is a new
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: analysis procedure to get the answer to the research questions.  
+we executed three steps to collect the data necessary for 
+answering our research questions. first, we collected the 
+number of real defects found. based on this data it is possible 
+to evaluate the performance of the treatments in terms of 
+effectiveness. this metric is used to partially answer rq1.
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: are still not niche techniques.
+comparing the confidence intervals, we can also generalise that interviews, facilitated meetings
+and prototyping are the three top techniques. their intervals overlap so that we cannot distinguish
+them in general. they are, however, significantly more used than scenarios and observations which
+again overlap.
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: 3. conduct structured elicitation by applying elicitation (and creativity) techniques​
+ such as interviews, questionnaires… (more on techniques below)
+4. document requirements, for example with the help of checklists and templates (e.g. volere or self-made)​
+5. structure and transfer to models in order to provide a more structured representation: what belongs where?​
+Source: software4kmu learning nuggets.pdf
+
+Query: how to perform elicitation?
+Context: To perform requirements elicitation effectively, the following methods can be utilized based on their average usage in the provided DataFrame:
+
+1. **Elicit and/or Refine Requirements in Several Iterations**: 69.9%
+2. **Requirements Elicitation with Interviews**: 69.5%
+3. **Requirements Elicitation with Analysis of Existing Documents**: 59.8%
+4. **Requirements Elicitation with Workshops and Focus Groups**: 56.8%
+5. **Requirements Elicitation with Prototyping**: 48.2%
+6. **Requirements Elicitation with Observations**: 35.0%
+7. **Requirements Elicitation with Design Thinking / Lean Startup**: 19.9%
+8. **Requirements Elicitation with Risk Analyses**: 19.7%
+9. **Requirements Elicitation with Reuse Databases and Guidelines**: 17.4%
+10. **Requirements Elicitation with External Experts**: 17.2%
+
+These methods highlight the most effective approaches to gather and refine requirements in a project setting.
+Source: napire data
+
+Query: how to prioritize all requirements my team proposed in order to deliver the most value quicker?
+Context: be done." by focusing on the problem first and identifying solutions second, organizations can ensure that they meet the requirements 
+of stakeholders, consider all project limitations and scope, and choose the best possible solution. this approach helps to streamline the 
+process and achieve the desired outcomes more efficiently.
+types and forms of requirements
+Source: software4kmu learning nuggets.pdf
+
+Context: viable and suﬃciently justiﬁed, the requirement candidates are prioritized in
+a project prioritization state (similar to backlog prioritization), called m1. fi-
+nally, the prioritized requirements are hand-shaken with the developer teams
+in a state called m2 [18]. when a requirement is unclear at the m2 state, it
+is pushed back to m1 for re-prioritization. similarly, a requirement is pushed
+Source: Causality in Requirements Artifacts Prevalence, Detection, and Impact.pdf
+
+Context: the structuring of requirement candidates helps handling overlaping requirements and duplicates between requirements effectively, and, on the other hand, it helps building a hierarchy of goals to 
+visualize their interdependencies facilitating conflict resolution, constraint detection and resource sharing. a more detailed explanation of goals is given in later learning nuggets.
+Source: software4kmu learning nuggets.pdf
+
+Context: tive programming environments that can be used to process data and create ml 
+models, appear as the most used tool for documenting requirements. again, this 
+requirements overthinking (0.38%) 
+project (0.38%) 
+domain complexity (0.38%) strategic alignments (0.38%) 
+solution uniqueness (0.38%) 
+method (0.38%) 
+difficulties in value creation (0.38%) 
+define priorities (0.38%)
+Source: Status Quo and Problems of Requirements Engineering for Machine Learning Results from an International Survey.pdf
+
+Context: no. for the last question, we also needed to take
+the criticality into account. therefore, in case
+practitioners answered that they would resolve a
+ﬁnding, we also asked whether they would resolve
+it immediately, in a short time (i.e. within this
+project iteration) or in a long time (e.g. if it hap-
+pens again). in addition to these three questions,
+we took notes of qualitative feedback, such as
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Query: how to prioritize all requirements my team proposed in order to deliver the most value quicker?
+Context: To prioritize the requirements proposed by your team in order to deliver the most value quickly, you can consider the following summarized information based on the relevant columns from the DataFrame:
+
+1. **Usability**: 0.645 (high importance)
+2. **Performance Efficiency**: 0.559 (high importance)
+3. **Maintainability**: 0.548 (moderate importance)
+4. **Reliability**: 0.538 (moderate importance)
+5. **Security**: 0.409 (moderate importance)
+6. **Compatibility**: 0.376 (lower importance)
+7. **Safety**: 0.301 (lower importance)
+8. **Portability**: 0.129 (lowest importance)
+
+The values represent the average importance of each requirement category, with higher values indicating greater importance. 
+
+### Recommendations:
+- **Focus on Usability** and **Performance Efficiency** first, as they have the highest average importance scores.
+- Next, prioritize **Maintainability** and **Reliability**, which are also significant but slightly lower in importance.
+- Consider **Security** and **Compatibility** after addressing the higher priority requirements.
+- Lastly, **Safety** and **Portability** can be addressed as they have the lowest importance scores.
+
+By following this prioritization, your team can deliver the most valuable requirements more quickly.
+Source: napire data
+
+Query: can you generate user stories from the following requirement? requirement: "the mobile app should allow users to reset their passwords using either email or sms."
+Context: ia4. 
+passwords 
+treatment 
+must 
+include 
+complex passphrases, options to recover and 
+reset the password and default passwords not 
+allowed. 
+for each user story, the generated reading technique 
+focuses the reviewer to verify whether its security 
+specifications contain any of the defect types. this happens 
+when reviewers check the security specifications against the
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: secure transactions by encrypting sensitive information and providing a confirmation email for each purchase. additionally, users 
+have the option to track their orders and view their purchase history. the platform also features a user-friendly interface with intuitive 
+navigation and responsive design for optimal viewing on various devices, including desktops, laptops, tablets, and smartphones.
+Source: software4kmu learning nuggets.pdf
+
+Context: we analyzed over 1,000 user stories containing roughly
+28,000 words. for rq 2.2, we met with an experienced
+scrum master and a long-term developer, who have
+worked on several projects for techdivision.
+6http://www.magento.com
+7http://www.typo3.org
+8https://atlassian.com/software/jira
+case d: university of stuttgart. the requirements of
+case d were created by 52 groups of three 2nd-year
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: technique is used in the next section. 
+d. motivational example 
+in the following, we demonstrate the application of our 
+approach in an exemplary setting. table 7 shows a user story 
+and its set of security specifications with some defects 
+commonly applicable to any agile software project. 
+table 7.input of the approach as agile requirements specifications. 
+user story 
+security specification
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: second step requires a security token generated with a special application.
+if you haven't thought about your users needs in the 'problem space', and you just decide that 2fa is what you need for your 
+site, you might overlook the fact that your users usually order some groceries with an average cheque size of €30 which is paid
+Source: software4kmu learning nuggets.pdf
+
+Query: can you generate user stories from the following requirement? requirement: "the mobile app should allow users to reset their passwords using either email or sms."
+Context: To generate user stories from the requirement "the mobile app should allow users to reset their passwords using either email or SMS," we can summarize the relevant information from the DataFrame as follows:
+
+1. **Agile vs. Plan-driven Project**: The project approach can influence how user stories are structured. Agile methodologies often favor user stories that are concise and focused on user needs.
+
+2. **Who Responsible for Requirements Elicitation**: Identifying the role responsible for gathering requirements can help in understanding who will be involved in refining the user stories.
+
+3. **Documentation Granularity**: The level of detail in documentation can affect how user stories are written. More granular documentation may lead to more detailed user stories.
+
+4. **Goals**: The overarching goals of the project can guide the creation of user stories to ensure they align with project objectives.
+
+5. **Quality Properties**: Understanding the quality attributes desired (e.g., usability, security) can help in formulating user stories that meet these criteria.
+
+6. **Stakeholders**: Identifying stakeholders involved can help in tailoring user stories to meet their needs and expectations.
+
+7. **User Interfaces**: Insights into user interfaces can inform how user stories are framed, especially regarding user interactions.
+
+8. **Requirements Elicitation with Interviews**: This method can provide direct user feedback, which is valuable for crafting user stories.
+
+9. **Requirements Elicitation with Workshops and Focus Groups**: Collaborative sessions can yield rich insights for user stories.
+
+10. **Requirements Elicitation with Analysis of Existing Documents**: Reviewing existing documentation can help in understanding user needs and expectations.
+
+### User Stories
+Based on the requirement and the summarized information, the following user stories can be generated:
+
+1. **As a user**, I want to reset my password using my email, so that I can regain access to my account easily.
+2. **As a user**, I want to reset my password using SMS, so that I can quickly recover my account without needing to access my email.
+3. **As a project manager**, I want to ensure that the password reset feature is secure, so that user data is protected during the process.
+4. **As a business analyst**, I want to gather user feedback on the password reset process, so that we can improve usability and user satisfaction.
+5. **As a developer**, I want to document the password reset functionality clearly, so that it can be easily maintained and updated in the future.
+
+These user stories focus on the needs of the users and the goals of the project, ensuring that the development process aligns with user expectations and project objectives.
+Source: napire data
+
+Query: how to structure big projects?
+Context: to 20 person years as small-scale projects, from 20 to 120 person years as medium-scale projects, and above
+120 person years as large-scale projects. the analysed projects are labelled with numbers and it is also
+mentioned whether they are ﬁnished or still ongoing (in terms of further releases or increments). all of the
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Context: should effectively allow for:
+systematic control of changes and their impacts​
+assessment of planned changes (incl. their effort and risks)​
+structured decision of whether to implement change (or not)​
+reproducible implementation of change
+related tasks may well include:​
+impact analysis: what are the effects of the change?​
+versioning: which version of requirements and artefacts exist?​
+Source: software4kmu learning nuggets.pdf
+
+Context: practitioners who apply agile practices. the outcome is summarised in table 1 were we list the top 5 problems 
+and group them by company size. 
+table 1 top 5 problems of companies applying agile practices as reported in [7]. highlighted problems represent problems actually 
+in scope of agile practices. 
+small companies 
+(1-50) 
+medium-sized companies 
+(51-250) 
+large companies 
+(>251)
+Source: Supporting Requirements Engineering Research that Industry Needs The Naming the Pain in Requirements Engineering Initiative.pdf
+
+Context: a major part of the contribution is the analysis of the interrelations between these four parts. the
+discussion about which re execution strategy should be chosen with distinctive project parameters supports
+practical project decisions. we ﬁnally lay a ﬁrst foundation for the future elaboration of a tailoring approach,
+which customises re eﬀort according to individual project situations.
+context.
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Context: engineering as it very much depends on a plethora of project 
+characteristics, such as:
+do we develop a new system or do we replace an already 
+existing system?
+what is the information already documented an known?
+we we develop internally (in-house) or do we elaborate 
+requirements for external suppliers or do we develop 
+requirements as external suppliers for our customer?
+Source: software4kmu learning nuggets.pdf
+
+Query: how to structure big projects?
+Context: To effectively structure big projects, the following insights can be drawn from the summarized data:
+
+1. **Project Approach**:
+   - A significant number of projects lean towards agile methodologies, with 55 responses indicating a preference for a "rather agile" approach, followed by hybrid (51) and agile (43). This suggests flexibility and adaptability are key in project structuring.
+
+2. **Responsibility for Requirements Elicitation**:
+   - The role of the Business Analyst is prominent, with 48 responses indicating they are responsible for requirements elicitation. Other roles include Project Lead / Project Manager (33) and Product Owner (28), highlighting the importance of clear responsibility assignments.
+
+3. **Documentation Practices**:
+   - Most projects document high-level requirements initially and refine them as needed (142 responses). This iterative documentation approach is crucial for managing complexity in large projects.
+
+4. **Iterations in Requirements Elicitation**:
+   - A majority (141) of respondents indicate that they elicit and refine requirements in several iterations, emphasizing the need for ongoing engagement and adjustment throughout the project lifecycle.
+
+5. **Dedicated Project Phases**:
+   - While 61 respondents refine requirements in a specifically dedicated project phase, 134 do not, suggesting that flexibility in phases may be beneficial depending on project needs.
+
+6. **Elicitation Techniques**:
+   - Interviews (142), analysis of existing documents (115), and workshops (123) are commonly used techniques for requirements elicitation, indicating a diverse approach to gathering information.
+
+7. **Satisfaction with Requirements Engineering**:
+   - A high level of satisfaction is reported, with 164 respondents feeling satisfied with the requirements engineering process, which is essential for project success.
+
+8. **Reasons for Satisfaction**:
+   - Responses indicate that meeting customer needs and maintaining a high degree of satisfaction are critical factors contributing to positive outcomes in project management.
+
+In summary, structuring big projects effectively involves adopting agile methodologies, clearly defining roles and responsibilities, utilizing iterative documentation and elicitation techniques, and ensuring ongoing engagement with stakeholders to adapt to changing requirements.
+Source: napire data
+
+Query: how can we summarize the requirement? requirement: "the system should allow admins to generate weekly performance reports for all team members."
+Context: length of 8 characters.
+reporting: the system should generate monthly financial reports in pdf format detailing revenues, expenses and profit 
+margins.
+examples:
+scalability: the system should be scalable to accommodate a 50% increase in user traffic without performance degradation.
+Source: software4kmu learning nuggets.pdf
+
+Context: correction
+invitation
+synthesis & 
+reporting
+1. replication
+(netherlands)
+dissemination
+creation 
+distribution list
+invitation
+data analysis & 
+interpretation
+final reporting
+online 
+survey
+spreadsheet
+data analysis & 
+interpretation
+creation 
+distribution list
+invitation
+creation 
+distribution list
+baseline 
+report
+yearly 
+re community 
+report
+replication
+report
+survey
+results
+creation
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Context: and manage in atlassian jira8. user stories at tech-
+divison follow the common connextra format: as a
+[role], i want [feature], so that [reason]. we will
+also follow this terminology here.
+the systems under analysis consist of two online
+shopping portals, a customer-relationship system and
+a content-management system, all of which we cannot
+name for non-disclosure-agreement reasons. in total,
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: and easy to translate. the multidisciplinary team partially manages the
+artefact with the activities detailed in table 3.
+the management team also clear up the features that do not belong
+to the artefact and deprecate features that are no longer in use but keep
+there as historical data.
+in our investigation, we found that those function teams perceive
+Source: An investigation of causes and effects of trust in Boundary Artefacts.pdf
+
+Context: goals of requirements analysis
+the main goal of requirements analysis is the refinement and classification of the previously gathered requirement candidates to ensure they:
+reflect the needs/constraints of all stakeholders
+resolve potential conflicts
+enable traceability between needs/constraints and the requirement candidates
+Source: software4kmu learning nuggets.pdf
+
+Query: how can we summarize the requirement? requirement: "the system should allow admins to generate weekly performance reports for all team members."
+Context: To summarize the requirement "the system should allow admins to generate weekly performance reports for all team members," we can focus on the following aspects derived from the DataFrame:
+
+1. **Performance Efficiency**: The average score for performance efficiency is approximately 0.58, indicating a moderate level of importance placed on performance-related features.
+
+2. **Documentation Granularity**: This aspect is crucial for ensuring that the requirements for generating reports are well-documented, although specific details on granularity are not provided in the summary.
+
+3. **Goals**: The goals related to the project can provide insights into the intended outcomes, but specific values are not detailed in the summary.
+
+4. **Quality Properties**: This reflects the quality attributes expected from the system, which would include aspects relevant to report generation.
+
+5. **Usability**: The usability score is not explicitly detailed, but it is essential for ensuring that the report generation feature is user-friendly.
+
+6. **Requirements Elicitation Methods**: Various methods such as interviews, analysis of existing documents, and workshops are employed, indicating a comprehensive approach to gathering requirements.
+
+7. **Satisfaction with Requirements Engineering**: The majority of respondents (about 42%) reported being satisfied with the requirements engineering process, which is a positive indicator for the project's success.
+
+This summary highlights the importance of performance efficiency, documentation, and user satisfaction in the context of the requirement for generating performance reports.
+Source: napire data
+
+Query: what are the common requirements for an authentications system?
+Context: have to use a passkey to log in?
+clarity: is the requirements clear and unambiguous to the customer? can there be missunderstandings towards which 
+functionality requires a login?
+example
+requirement: the application must respond to user requests within 2 seconds.
+verification activities:
+define acceptance criteria: application responds within 2 seconds
+Source: software4kmu learning nuggets.pdf
+
+Context: identification & 
+authentication (ia) 
+ia1. users are associated with a well-defined 
+set of roles and privileges. 
+ia2. the digital identity of the sender of a 
+communication must be verified. 
+ia3. only those authorized are able to 
+authenticate and credentials are transported and 
+stored in a secure manner. 
+ia4. 
+passwords 
+treatment 
+must 
+include
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: user story 
+security specification 
+1. as a customer, i 
+want to be able to 
+export my personal 
+information so that i 
+can use it in other 
+systems. 
+1. the system shall ensure that there is no residual 
+data exposed. 
+2. the system shall store credentials securely using 
+the aes encryption algorithm. 
+3. the system shall use the rsa encryption 
+algorithm to protect all data all the time.
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: algorithm to protect all data all the time. 
+4. the system shall inactivate a session when it 
+exceeds certain periods of inactivity. 
+5. the system shall encrypt the roles and privileges 
+of the system. 
+with the user story in sight, the framework extracts the 
+relevant words and matches the related security properties. in 
+this case, the extracted words are “export” and “system”.
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: example
+the system has to be maintainable.
+the system shall be secure.
+example
+what makes the system maintainable?
+the documentation must be provided in english.
+the user documentation must be provided in easy language.
+how should the system be secured?
+user data must be encrypted following the recommendations of the bsi.
+data may only be transfered to authorized actors.
+german
+Source: software4kmu learning nuggets.pdf
+
+Query: what are the common requirements for an authentications system?
+Context: The common requirements for an authentication system, based on the summarized values from the DataFrame, include:
+
+1. **Security**: Emphasizing accountability, authenticity, confidentiality, integrity, and non-repudiation, with an average importance score of approximately **0.50**.
+2. **Usability**: Focusing on accessibility, appropriateness, recognizability, learnability, operability, user error protection, and user interface aesthetics, with an average importance score of approximately **0.63**.
+3. **Reliability**: Highlighting availability, fault tolerance, maturity, and recoverability, with an average importance score of approximately **0.59**.
+4. **Performance Efficiency**: Addressing time behavior, resource utilization, and capacity, with an average importance score of approximately **0.58**.
+5. **Maintainability**: Covering aspects like analysability, modularity, modifiability, reusability, and testability, with an average importance score of approximately **0.56**.
+
+These aspects collectively indicate the essential features that should be considered when developing an authentication system.
+Source: napire data
+
+Query: how to deal with incomplete requirements?
+Context: poor elicitation techniques, too abstract speciﬁcations, and missing completeness
+checks. based on this information, an organisation facing this or similar problems
+could take ﬁrst counter measures, such as:
+1. checking on the qualiﬁcation and experience of its team members, providing
+training if needed, in particular, on avoiding abstract speciﬁcations. this could
+Source: Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf
+
+Context: preventing incomplete/hidden requirements: 
+reflections on survey data from austria and brazil 
+marcos kalinowski1, michael felderer2, tayana conte3, rodrigo spínola4,         
+rafael prikladnicki5, dietmar winkler6 , daniel méndez fernández7, stefan wagner8 
+1 universidade federal fluminense, computing institute, av. milton tavares de souza s/n, 
+campus praia vermelha, 24210-346 niterói, brazil.
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: mitigation actions for incomplete/hidden requirements 
+improve the documentation and conduct more meetings with the developers to detect analysis defects. 
+hire or specialize a requirements analyst. 
+creating templates. 
+creation of a dor (definition of readiness) for the team. 
+invest more time in requirements specification, using scenarios and prototypes to gather requirements
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: never be able to formally verify that the requirements are complet. it's therefore vital to take a pragmatic perspective here and ensure 
+that each stakeholder agrees at least on the wording and essence of a requirement to ensure that it is consistent with all specified 
+characteristics.
+let us look at the above properties in a concrete example and refine a bad requirement together.
+Source: software4kmu learning nuggets.pdf
+
+Context: information, or constant updates are necessary to satisfy needs [6–8].
+as such inconsistencies occur, stakeholders’ usage can be under-
+mined, and the efficiency of these artefacts is reduced. for example,
+when a ba is mismanaged, learning across diverse groups becomes
+limited and integrating additional knowledge is difficult [9]. more-
+Source: An investigation of causes and effects of trust in Boundary Artefacts.pdf
+
+Query: how to deal with incomplete requirements?
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
+Query: who are the people/stakeholders to involve in elicitation?
+Context: potential processes and use cases) for which corresponding
+stakeholders are available. this way, the approach can be
+conducted entirely including the creation of the business and
+the requirements speciﬁcation. we deﬁne three main groups
+of participants as study subjects:
+1) industry participants: experts from industry responsible
+proceedings of ease 2011
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: ment, design, and development. therefore, it includes practitioners 
+in positions such as project leaders, requirements engineers, data 
+scientists, and developers. we used convenience sampling, sending 
+the survey link to professionals active in our partner companies, 
+and also distributed it openly on social media. 
+in this paper, we excluded participants who informed on the sur-
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Context: the ba) and availability during the period we performed the interviews.
+we had an intermediate step in our research where we conducted a
+workshop to present a draft of the findings, aiming for validation and
+additional data collection. during the workshop, we were cautious not
+to reveal participants’ names or the teams they belonged to, avoiding
+any discomfort.
+Source: An investigation of causes and effects of trust in Boundary Artefacts.pdf
+
+Context: 3) external reviewer: in order to achieve an unbiased assess-
+ment of the produced speciﬁcations an external reviewer
+(not involved in the actual process) will be called in.
+c. data collection procedures
+the collection of the data for the case study comprises the
+participation of the researchers in the re process as well as
+a concluding assessment of the performed process by internal
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: stakeholders, legacy system​
+neutral​
+neutral​
+involvement​
+reality​
+apprenticing​
+stakeholders, legacy system​
+neutral​
+individual​
+involvement​
+reality​
+contextual inquiry​
+stakeholders, legacy system​
+neutral​
+individual​
+involvement​
+reality​
+brainstorming​
+stakeholders​
+questioning​
+group​
+analytical​
+neutral​
+analogy technique​
+stakeholders​
+questioning​
+group​
+analytical​
+projecting​
+Source: software4kmu learning nuggets.pdf
+
+Query: who are the people/stakeholders to involve in elicitation?
+Context: The relevant stakeholders to involve in requirements elicitation include:
+
+1. Business Analyst
+2. Other
+3. Customer
+4. Product Manager
+5. Product Owner
+6. Requirements Engineer
+7. Project Lead / Project Manager
+8. Scrum Master
+9. Architect
+10. Developer
+
+These roles are identified as responsible for requirements elicitation or are stakeholders in the process.
+Source: napire data
+
+Query: please reformulate this requirement to make it more clear: requirement: "the system should be fast."
+Context: quiz
+what type of requirement is this? 
+1. "the system should be able to process 1000 transactions per second".
+2. "all user input should be validated to prevent incorrect data entry".
+3. "the system should allow users to search for products by category and filter the results by price, brand and customer reviews."
+Source: software4kmu learning nuggets.pdf
+
+Context: system privacy 
+system portability 
+others 
+percentage of answers 
+figure 8: critical non-functional requirements of ml- 
+enabled systems (n = 71) 
+requirements with data (p = 53.556 [53.197, 53.915]), resolving 
+conflicts (p = 42.346 [41.987, 42.706]), managing changing re- 
+quirements (p = 40.915 [40.574, 41.257]), selecting metrics (p = 
+[26.418, 27.021]). 
+customer  expectactions
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Context: the system vision in the requirements speciﬁcation comprises an overview of
+the major use cases; its deﬁnition and agreement indicate that the use cases are
+suﬃciently deﬁned to be further reﬁned and modelled and, thus, allowing, for
+example, for ﬁrst cost estimations based on function points. the second mile-
+stone of each artefact indicates the point in time when an artefact is ﬁnalised,
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: (6) system environment con-
+ditions speciﬁed
+part of the test cases is to describe the environment of the test as close as possible to the productive (end) system. thus, the engineer
+must understand under what conditions the system will operate, e.g., regarding amounts of productive data, temperature, workload.
+(7) inputs and outputs quali-
+tatively speciﬁed
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Context: 7. verifiability: it should be possible to verify that the system includes the specified menu bar with icons and labels, and that 
+contextual tooltips are provided with simple tests during the development phase.
+8. correctness: the stakeholder has formally agreed to the refined requirements and we may therefore assume that it accurately
+Source: software4kmu learning nuggets.pdf
+
+Query: please reformulate this requirement to make it more clear: requirement: "the system should be fast."
+Context: To reformulate the requirement "the system should be fast," we can clarify it by specifying measurable performance criteria. Here’s a clearer version:
+
+"The system should respond to user inputs within 2 seconds under normal operating conditions and handle at least 100 concurrent users without performance degradation."
+
+This reformulation provides specific expectations regarding response time and user load, making the requirement more actionable and testable.
+Source: napire data
+
+Query: what tools are available for requirements management?
+Context: for the other cases, this involved extracting the
+requirements from other systems, either a propri-
+etary requirements management tool (resulting
+in a list of html ﬁles), or the online task manage-
+ment system jira, which led to a set of comma-
+separated values ﬁles. for the student projects,
+the students handed in their ﬁnal artifacts either
+as a single pdf or as a pdf with the general
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: tive programming environments that can be used to process data and create ml 
+models, appear as the most used tool for documenting requirements. again, this 
+requirements overthinking (0.38%) 
+project (0.38%) 
+domain complexity (0.38%) strategic alignments (0.38%) 
+solution uniqueness (0.38%) 
+method (0.38%) 
+difficulties in value creation (0.38%) 
+define priorities (0.38%)
+Source: Status Quo and Problems of Requirements Engineering for Machine Learning Results from an International Survey.pdf
+
+Context: requirements analysis – understanding requirements and 
+achieving consensus among stakeholders.
+requirements specification – structuring, modelling, 
+documenting requirements.
+requirements validation and verification – ensuring validity and 
+quality of created requirements.
+requirements management – documenting, tracking, 
+prioritizing, and controlling changes to requirements.
+Source: software4kmu learning nuggets.pdf
+
+Context: the same instrument to non-agile projects. to this end, we formulate the following 
+four research questions, shown in table 1, to steer the design of our study. 
+table 1.  research questions. 
+rq 1  how are requirements elicited and documented? 
+rq 2  how are requirements changed and aligned with tests? 
+rq 3  why and how is re improved? 
+rq 4  what are common problems in agile re?
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Context: improve the analysis to be more detailed.  
+more frequent meetings with the customer to align expectations. 
+requirements reviews and frequent releases. 
+improving the quality of the requirements documentation, or improving elicitation methods. 
+developing requirements according to suggestions of the mps-sw reference model. 
+improvement of the artefacts; adoption of software inspections.
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Query: what tools are available for requirements management?
+Context: The DataFrame provides insights into various tools and methods used for requirements management. Here are the summarized tools based on the relevant columns:
+
+1. **Documentation Granularity**: 
+   - Options include detailed requirements, high-level requirements, and no documentation.
+
+2. **Elicitation Methods**:
+   - **Interviews**: Used for gathering requirements.
+   - **Analysis of Existing Documents**: A method for understanding current requirements.
+   - **Risk Analyses**: Employed to identify potential risks in requirements.
+   - **Prototyping**: Used to visualize requirements and gather feedback.
+   - **Workshops and Focus Groups**: Collaborative sessions for requirements gathering.
+   - **Reuse Databases and Guidelines**: Utilizing existing resources for requirements.
+   - **Design Thinking / Lean Startup**: Approaches for innovative requirements elicitation.
+
+These methods and tools highlight the various strategies employed in requirements management, emphasizing the importance of documentation and collaborative techniques.
+Source: napire data
+
+Query: how to deal with changing requirements?
+Context: it is important to recognise that requirements are dynamic and may change due to evolving stakeholder needs, changes in market 
+conditions and advances in technology. it is important to adapt these requirements in the later stages of a project, either by 
+reformulating, deleting or introducing new requirements. adopting this approach is essential to maintaining project responsiveness and
+Source: software4kmu learning nuggets.pdf
+
+Context: a further proposition: “organisations use continuous change management.” this new proposition
+could be explained by the continuous nature of change in agile development processes. both other
+answer options lie below the threshold although both ci include it.
+second, we asked how the respondents deal with changing requirements after the initial release.
+status quo in requirements engineering
+:25
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: of trust of their bas, and the proper management of the content is
+crucial for increasing this trust level. this management should include
+creating content based on stakeholders’ needs and monitoring changes.
+future research could explore and develop other ways for support-
+ing practitioners in creating and managing such artefacts in software
+development environments.
+Source: An investigation of causes and effects of trust in Boundary Artefacts.pdf
+
+Context: ing customer expectations [18], aligning requirements with data 
+[35, 42], changing requirements [25], and selecting proper metrics 
+[44] were previously reported as difficulties, which emphasizes the 
+importance of effective communication and technical expertise to 
+bridge the gap between aspirations and technological feasibility.
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Context: the
+most often mentioned problem in this ranking are incom-
+plete and/or hidden requirements.
+also mentioned often
+are time boxing/not enough time and inconsistent require-
+ments.
+the most frequent answer for how those selected
+problems manifest themselves in the process was change re-
+quests and additional eﬀort (e.g. for meetings). when asked
+Source: Naming the Pain in Requirements Engineering  Design of a Global Family of Surveys and First Results from Germany.pdf
+
+Query: how to deal with changing requirements?
+Context: To effectively deal with changing requirements, the following strategies and insights can be derived from the DataFrame:
+
+1. **Change Methods**:
+   - Teams often work with change requests and continuously update their requirements.
+   - Some teams do not update their requirements documentation after initial acceptance, relying instead on informal methods.
+   - Regular updates to the product backlog are common, indicating an agile approach to managing changes.
+
+2. **Common Problems**:
+   - Frequent issues include unclear requirements, communication flaws, and difficulties in managing stakeholder expectations.
+   - Problems often arise from cultural differences, lack of clarity in requirements, and insufficient time or resources to address changes.
+
+3. **Problem Causes**:
+   - Causes of issues related to changing requirements include:
+     - Inadequate specification from customers.
+     - Historical practices that resist change.
+     - Organizational constraints such as budget limitations and unwillingness to adapt processes.
+
+This summary highlights the importance of maintaining flexibility in requirements management, ensuring clear communication, and being responsive to stakeholder needs to effectively navigate changing requirements.
+Source: napire data
+
+Query: what techniques can be used for requirements validation?
+Context: requirements candidates into accepted requirements through vadalidation by the customers following the scope set out initially. this 
+may be done in an manner as simple as asking them to formally accept the requirements in a written form and extend to employing a 
+structured workshop with a walkthrough through all requirements and asking “why” questions (e.g. “why do you really need that
+Source: software4kmu learning nuggets.pdf
+
+Context: appropriate inspection methods (e.g., checklists or reading techniques), ideally 
+involving different stakeholders (e.g., users, designers, and testers) in the verification 
+and validation process. these counter measures represent a set of initial strategies 
+based on the experience of the study team, i.e., the authors.
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: quiz
+what type of requirement is this? 
+1. "the system should be able to process 1000 transactions per second".
+2. "all user input should be validated to prevent incorrect data entry".
+3. "the system should allow users to search for products by category and filter the results by price, brand and customer reviews."
+Source: software4kmu learning nuggets.pdf
+
+Context: scales better than interviews​
+typically done as online survey​
+there are also qualitative and quantitative questionnaires​
+example 3: prototying
+make requirements “come alive” by visualising or physically instantiating them​
+not exclusive to agile approaches​
+main goals​
+find new or missing requirements (exploring)​
+get feedback on innovative solutions (experimenting)​
+get stakeholders involved​
+Source: software4kmu learning nuggets.pdf
+
+Context: on requirements elicitation techniques, condori-fernandez et al. [12] a systematic mapping on em-
+pirical evaluation of software requirements specification techniques, inayat et al. [23] a systematic
+review on agile requirements engineering practices and challenges, barmi et al. [3] a systematic
+mapping on requirements specification and testing alignment, loniewski et al. [34] a systematic
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Query: what techniques can be used for requirements validation?
+Context: The techniques that can be used for requirements validation, based on the provided DataFrame, include:
+
+1. **Automatic checking used to validate or verify requirements**
+2. **Informal peer reviews used to validate or verify requirements**
+3. **Inspections (formal technical reviews using reading techniques or checklists) used to validate or verify requirements**
+4. **Simulations used to validate/verify requirements**
+5. **Walkthroughs used to validate/verify requirements**
+6. **We do not verify or validate our requirements**
+7. **Testers participate in requirements reviews to align testing with requirements**
+8. **We check the coverage of requirements with tests to align testing with requirements**
+9. **We define acceptance criteria and tests for requirements to align testing with requirements**
+10. **We derive tests from system models to align testing with requirements**
+
+Each of these techniques has been mentioned consistently across the dataset.
+Source: napire data
+
+Query: what are functional and non-functional requirements?
+Context: en
+de
+beginner  
+intermediate  
+expert  
+in this learning nugget we will get an overview of the different types of requirements such as business, functional, and non-functional 
+requirements.
+in this learning nugget you will...
+learn about key project development documents and their purpose.
+understand the different types of requirements.
+ [englisch] description
+[englisch] goals and value
+Source: software4kmu learning nuggets.pdf
+
+Context: incomplete and/or hidden re- 
+quirements 
+communication flaws between 
+project team and customer 
+moving targets (changing goals, 
+business processes, and/or re- 
+quirements) 
+underspecified requirements 
+that are too abstract 
+timeboxing/not enough time 
+in general 
+stakeholders with difficulties in 
+separating requirements from 
+known solution designs 
+insufficient support by cus- 
+tomer
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Context: engineering as it very much depends on a plethora of project 
+characteristics, such as:
+do we develop a new system or do we replace an already 
+existing system?
+what is the information already documented an known?
+we we develop internally (in-house) or do we elaborate 
+requirements for external suppliers or do we develop 
+requirements as external suppliers for our customer?
+Source: software4kmu learning nuggets.pdf
+
+Context: implementation. note already here that the spectrum of what is covered by non-functional requirements is very broad covering both 
+quality properties of the system under consideration and properties of the overall development process. while we may well differentiate 
+better in later learning nuggets, here, for reasons of cimplicity, we focus on properties of the system itself.
+Source: software4kmu learning nuggets.pdf
+
+Context: types and forms of requirements
+during product development, it is essential to document various types of requirements to guide the project efficiently. these include
+goals and contstraints: these define the high-level goals and expected benefits from a business perspective, providing context for 
+the project objectives.
+Source: software4kmu learning nuggets.pdf
+
+Query: what are functional and non-functional requirements?
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
+Query: is the following requirement good? "the system must load within 2 seconds under a normal load of 1,000 users."
+Context: comprehension on its industry readiness and objectively 
+measuring effort and obtained benefits. the average 
+application effort was reasonably low (15.5 hours) when 
+compared to the obtained benefits (reducing defect rates by 
+46 percent for requirements and 50 percent for designs). 
+while the defect rate results were similar to those mentioned
+Source: Supporting Defect Causal Analysis in Practice with Cross-Company Data on Causes of Requirements Engineering Problems.pdf
+
+Context: quiz
+what type of requirement is this? 
+1. "the system should be able to process 1000 transactions per second".
+2. "all user input should be validated to prevent incorrect data entry".
+3. "the system should allow users to search for products by category and filter the results by price, brand and customer reviews."
+Source: software4kmu learning nuggets.pdf
+
+Context: never be able to formally verify that the requirements are complet. it's therefore vital to take a pragmatic perspective here and ensure 
+that each stakeholder agrees at least on the wording and essence of a requirement to ensure that it is consistent with all specified 
+characteristics.
+let us look at the above properties in a concrete example and refine a bad requirement together.
+Source: software4kmu learning nuggets.pdf
+
+Context: requirement can be observed, which is corroborated by the rejected test of
+independence with a p-value of 0.01 and an eﬀect size of 0.07. investigating this
+correlation is constrained to requirements with a low occurrence of causal
+sentences, where requirements with many causal sentences show a trade-oﬀof
+higher average volatility despite a smaller overall range of volatility values. the
+Source: Causality in Requirements Artifacts Prevalence, Detection, and Impact.pdf
+
+Context: in a non-quantified and textual way. yet, most respondents seem to quantify their non-functional
+requirements. even the confidence intervals do not overlap. we therefore accept proposition p 13
+but replace it with “non-functional requirements are documented textually either quantified or
+non-quantified.” an explanation could be that the respondents primarily thought about performance
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Query: is the following requirement good? "the system must load within 2 seconds under a normal load of 1,000 users."
+Context: To assess the requirement "the system must load within 2 seconds under a normal load of 1,000 users," we can summarize the relevant information from the DataFrame regarding performance efficiency and usability.
+
+1. **Performance Efficiency**: The average score for performance efficiency is approximately 0.55, with a standard deviation of about 0.50. This indicates a mixed level of performance efficiency across the projects, with values ranging from 0 (not meeting performance requirements) to 1 (fully meeting performance requirements).
+
+2. **Usability**: The usability scores are not directly summarized in the output, but they are included in the relevant columns. The usability aspect is crucial for ensuring that users can effectively interact with the system.
+
+3. **Goals**: The goals related to performance and usability are not explicitly detailed in the summary but are essential for understanding the project's objectives.
+
+4. **Quality Properties**: Similar to goals, quality properties are important but not explicitly summarized.
+
+5. **Non-functional Requirements Documentation**: The documentation regarding performance efficiency and usability indicates that these aspects are considered in the projects, which is a positive sign.
+
+6. **Top Problems**: The most common problem identified is "Rework," which can indicate issues with initial requirements or performance expectations not being met.
+
+In conclusion, while the average performance efficiency score suggests that many projects are striving to meet performance requirements, the presence of rework as a top problem indicates that there may be challenges in achieving the specific requirement of loading within 2 seconds under a normal load of 1,000 users. Therefore, the requirement can be considered good, but its feasibility may depend on the specific context and implementation strategies used in the projects.
+Source: napire data
+
+Query: whom to involve in the review of requirements?
+Context: perspective.
+involved stakeholders
+at this phase in the requirement engineering process, various stakeholders should be involved to support the analysis. the leading stakeholders in requirement analysis are roles that have knowledge 
+about the operational context and domain.
+Source: software4kmu learning nuggets.pdf
+
+Context: only the industry participants and researchers were present
+while performing the process, only the industry participants
+will answer this part of the questionnaire. an exception is
+given by the assessment of the sustainability of the approach,
+which is analysed by the external reviewer (only he can
+analyse whether the process is reproducible on the basis of
+given speciﬁcations).
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: ments artifacts, however, need to involve all relevant
+stakeholders [65], who must manually read and un-
+derstand each requirements artifact. moreover, they
+are diﬃcult to perform. they require a high domain
+knowledge and expertise from the reviewers [65] and
+the quality of their outcome depends on the quality of
+the reviewer [75]. on top of all this, reviewers could
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: requirements candidates into accepted requirements through vadalidation by the customers following the scope set out initially. this 
+may be done in an manner as simple as asking them to formally accept the requirements in a written form and extend to employing a 
+structured workshop with a walkthrough through all requirements and asking “why” questions (e.g. “why do you really need that
+Source: software4kmu learning nuggets.pdf
+
+Context: standardizing the requirements specifications, using a validation checklist and peer reviews. 
+training, mentoring, selecting professionals with an adequate profile, a highly skilled team. 
+provide training to the re team. 
+reviewing the re processes. 
+the customer should have a better understanding of the problem; requirements verification with all
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Query: whom to involve in the review of requirements?
+Context: To involve in the review of requirements, the following roles should be considered based on their responsibilities:
+
+1. **Business Analyst** - 60 mentions
+2. **Requirements Engineer** - 44 mentions
+3. **Project Lead / Project Manager** - 39 mentions
+4. **Product Owner** - 36 mentions
+5. **Product Manager** - 19 mentions
+6. **Customer** - 16 mentions
+7. **Architect** - 12 mentions
+8. **Nobody has the primary responsibility** - 8 mentions
+9. **Other** - 8 mentions
+10. **Developer** - 6 mentions
+11. **Scrum Master** - 4 mentions
+12. **Marketing** - 2 mentions
+
+These roles are crucial for ensuring that the requirements are thoroughly reviewed and validated.
+Source: napire data
+
+Query: what are quality requirements?
+Context: sues during veriﬁcation. since the intention of this
+work is to start with the standard as a deﬁnition of
+quality, in the following, we will remain with the pro-
+vided deﬁnition based on the language criteria and
+leave the development of a precise and complete set
+of requirements smells to future work. in detail, we
+use the requirements language criteria to derive the
+smells summarized next.
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: about the expectations practitioners have on particular aspects of their own standards. for instance, based
+on our investigation published in [30, 6], we expect practitioners to demand standards that focus on the
+re artefacts, clear roles and responsibilities, and tailoring mechanisms rather than on strict processes and
+methods to allow for more ﬂexibility and a better communication.
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Context: questionnaire for the assessment (condensed)
+criteria
+statement
+rq 1
+ease of use
+the approach is clear and understandable.
+sustainability
+the process and the taken decisions are reproducible.
+effectivity
+all information and requirements are used in design and management activities.
+flexibility
+the approach supports a ﬂexible process in response to individual project characteristics.
+productivity
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: judge the quality of requirements (and re) based on the extent
+to which they are fit for purpose, i.e., how they impact the
+attributes of requirements-affected activities [3]. still, research
+on requirements quality is dominated by studies aiming to
+determine the quality of a requirements specification solely
+based on normative metrics [4].
+recent endeavors to nuance requirements quality research
+Source: Measuring the Fitness-for-Purpose of Requirements An initial Model of Activities and Attributes.pdf
+
+Context: h 23
+*
+better quality assurance of artefacts motivates a standard.
+< 0.0001
+h 24
+support of benchmarks motivates a standard.
+h 25
+*
+support of project management and planning motivates a standard.
+< 0.0001
+h 26
+*
+higher eﬃciency motivates a standard.
+< 0.0001
+h 27
+*
+knowledge transfer motivates a standard.
+< 0.0001
+compliance to regulations and standards (like cmmi). . .
+h 28
+h 29
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Query: what are quality requirements?
+Context: Quality requirements can be summarized based on the following key aspects, along with their average importance ratings derived from the DataFrame:
+
+1. **Performance Efficiency**: Average rating of approximately **0.578**. This includes aspects like time behavior, resource utilization, and capacity, which are crucial for development.
+
+2. **Reliability**: Average rating of approximately **0.590**. This encompasses availability, fault tolerance, maturity, and recoverability, indicating the system's dependability.
+
+3. **Security**: Average rating of approximately **0.504**. This involves accountability, authenticity, confidentiality, integrity, and non-repudiation, which are essential for protecting data and ensuring trust.
+
+4. **Safety**: Average rating of approximately **0.285**. This focuses on the freedom from risks that could affect health or lead to disasters, highlighting the importance of safety in development.
+
+5. **Usability**: Average rating of approximately **0.631**. This includes accessibility, appropriateness, recognizability, learnability, operability, user error protection, and user interface aesthetics, emphasizing the user experience.
+
+These averages reflect the perceived importance of each quality requirement in the context of development projects.
+Source: napire data
+
+Query: how to deal with ambiguous requirements?
+Context: poor elicitation techniques, too abstract speciﬁcations, and missing completeness
+checks. based on this information, an organisation facing this or similar problems
+could take ﬁrst counter measures, such as:
+1. checking on the qualiﬁcation and experience of its team members, providing
+training if needed, in particular, on avoiding abstract speciﬁcations. this could
+Source: Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf
+
+Context: never be able to formally verify that the requirements are complet. it's therefore vital to take a pragmatic perspective here and ensure 
+that each stakeholder agrees at least on the wording and essence of a requirement to ensure that it is consistent with all specified 
+characteristics.
+let us look at the above properties in a concrete example and refine a bad requirement together.
+Source: software4kmu learning nuggets.pdf
+
+Context: backgrounds. while they are easy to understand, they are susceptible to ambiguity due to potential differences in interpretation.
+structured language: requirements are organised using predefined templates to minimise ambiguity and provide clear guidance. 
+this method dictates specific formats and content, which improves clarity but may limit flexibility.
+Source: software4kmu learning nuggets.pdf
+
+Context: recognizing this difference is a critical determinant for success. jumping directly to solutions without understanding the problem first - 
+commonly referred to as solution orientation -- often results in a loss of time and effort, in the worst-case to a project failure. in more 
+details this question would be addressed in the later in the learning path
+Source: software4kmu learning nuggets.pdf
+
+Context: example, it is very diﬃcult to decide whether a re-
+quirements artifact is complete without domain knowl-
+edge. other issues, however, can be detected more
+easily: if a requirement states that a sensor should
+work with suﬃcient accuracy without detailing what
+suﬃcient means in that context, the requirement is
+vague and consequently not testable. the same holds
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Query: how to deal with ambiguous requirements?
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
+Query: can you provide examples of user stories?
+Context: we analyzed over 1,000 user stories containing roughly
+28,000 words. for rq 2.2, we met with an experienced
+scrum master and a long-term developer, who have
+worked on several projects for techdivision.
+6http://www.magento.com
+7http://www.typo3.org
+8https://atlassian.com/software/jira
+case d: university of stuttgart. the requirements of
+case d were created by 52 groups of three 2nd-year
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: technique is used in the next section. 
+d. motivational example 
+in the following, we demonstrate the application of our 
+approach in an exemplary setting. table 7 shows a user story 
+and its set of security specifications with some defects 
+commonly applicable to any agile software project. 
+table 7.input of the approach as agile requirements specifications. 
+user story 
+security specification
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: involving free form or with some constraints [43]. for this 
+reason, the approach is focused on the user story format. 
+these stories are often expressed in a simple sentence using 
+the role/feature/reason schema and structured as follows: as a 
+[role], i want to [feature], so that [reason]. 
+user stories are analyzed independently. it makes sense to
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: interviews 
+prototyping 
+scenarios 
+workshops meetings 
+observation 
+others 
+percentage of answers 
+[rq1.3] how are requirements typically documented in the ml-enabled 
+system projects? figure 5 shows notebooks as the most frequently used docu- 
+mentation format with p = 37.357 [37.149, 37.564], followed by user stories
+Source: Status Quo and Problems of Requirements Engineering for Machine Learning Results from an International Survey.pdf
+
+Context: common user story practices demand to make acceptance criteria explicit. 
+furthermore, also coverage of requirements by tests is considered in a remarkable 
+number of agile projects. also in this case, test-driven practices linked to agile 
+methodologies may be a trigger for that. in about half of the projects of the
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Query: can you provide examples of user stories?
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
+Query: how to document a requirement?
+Context: mitigation actions for incomplete/hidden requirements 
+improve the documentation and conduct more meetings with the developers to detect analysis defects. 
+hire or specialize a requirements analyst. 
+creating templates. 
+creation of a dor (definition of readiness) for the team. 
+invest more time in requirements specification, using scenarios and prototypes to gather requirements
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: different types and forms of requirements, including business, functional and non-functional, need to be carefully documented and 
+managed. 
+requirements can take different forms, such as natural language, structured formats or model-based approaches, each with its own 
+advantages and disadvantages.
+Source: software4kmu learning nuggets.pdf
+
+Context: students.
+6.1.3. data collection procedure
+we used a 6-step procedure to collect the data
+necessary for answering the research questions.
+1. collect requirements artifact(s) for each case. we
+retrieved the requirements artifacts to be ana-
+lyzed in each case. for one case, the require-
+ments were stored in microsoft word documents.
+for the other cases, this involved extracting the
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: one of the core activities in requirements engineering is eliciting the requirements from relevant
+stakeholders. to characterise the status quo, we want to understand what elicitation techniques
+are employed in practice. in our theory from the first run, we expected practitioners, especially
+in large companies, to conduct workshops as the central technique to elicit requirements. the
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: requirements candidates into accepted requirements through vadalidation by the customers following the scope set out initially. this 
+may be done in an manner as simple as asking them to formally accept the requirements in a written form and extend to employing a 
+structured workshop with a walkthrough through all requirements and asking “why” questions (e.g. “why do you really need that
+Source: software4kmu learning nuggets.pdf
+
+Query: how to document a requirement?
+Context: To document a requirement effectively, the following methods can be utilized based on the summarized data:
+
+1. **Using Non-Quantified Textual Requirements**: This involves documenting requirements in a descriptive manner without specific metrics.
+2. **Using Quantified Textual Requirements**: This method includes specifying requirements with measurable criteria.
+3. **Using Guidelines and Parameters**: Establishing clear guidelines and parameters can help in maintaining consistency in documentation.
+4. **Incorporating Checklists**: Utilizing checklists ensures that all necessary aspects of the requirements are covered.
+5. **Contractual Documentation**: Requirements can be documented as part of contracts or service level agreements (SLAs).
+6. **Diagrams and Visual Aids**: Including diagrams alongside textual descriptions can enhance understanding.
+7. **Textual Requirements and Diagrams**: Combining both textual descriptions and diagrams provides a comprehensive view of the requirements.
+8. **Standards and Parameters Documented**: Following established standards and documenting them can ensure compliance and clarity.
+9. **Team Reviews**: Regular reviews by the team can help validate and refine the documented requirements.
+10. **Test Plans**: Documenting requirements alongside test plans ensures that they are verifiable.
+
+These methods can help ensure that requirements are well-documented, clear, and actionable.
+Source: napire data
+
+Query: how can i identify relevant stakeholders?
+Context: -
+cross-cutting process aspects
+time-boxing
++
++
++
++
+existence external parties
++
++
++
++
++
++
+external acceptance tests
++
++
++
++
++
++
++
+explicit assignment of re
++
+high amount of requirements
++
++
++
+long project duration
++
++
++
++
+estimations of functional complexity
++
+weak given documentation
++
+change mgmt. established
++
++
++
++
++
++
+standardised design process
++
++
++
++
++
++
++
++
++
++
++
++
+large team-size
++
++
++
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Context: main: the industrial sector, the general relationship with the customer and characteristics of the diﬀerent
+stakeholders.
+especially whether project participants have weak access to business process information
+(e.g., for reasons of conﬁdentiality) has an inﬂuence on the ability and the necessity to specify the roi
+calculations, the value for the customer and the business risk analysis.
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Context: system projects 
+regarding the main concerns during each ml life cycle stage, we 
+asked participants to inform up to three challenges related to each 
+ml life cycle stage in an open-text answer. the main challenges 
+related to the problem understanding and requirements stage 
+emerged from open coding applied to all of the 109 open-text an- 
+swers provided for this stage. 
+documentation  method
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Context: stakeholders, legacy system​
+neutral​
+neutral​
+involvement​
+reality​
+apprenticing​
+stakeholders, legacy system​
+neutral​
+individual​
+involvement​
+reality​
+contextual inquiry​
+stakeholders, legacy system​
+neutral​
+individual​
+involvement​
+reality​
+brainstorming​
+stakeholders​
+questioning​
+group​
+analytical​
+neutral​
+analogy technique​
+stakeholders​
+questioning​
+group​
+analytical​
+projecting​
+Source: software4kmu learning nuggets.pdf
+
+Context: - laying the foundation with the 
+relevant information, for example operational workflows in a 
+company capturing processes that shall be supported (partially) 
+with the system under consideration. this context includes also 
+the external systems our system under consideration shall 
+interact with.
+2. identify stakeholders​
+ - laying the foundation with the relevant
+Source: software4kmu learning nuggets.pdf
+
+Query: how can i identify relevant stakeholders?
+Context: To identify relevant stakeholders, you can analyze the following summarized information from the DataFrame:
+
+1. **Stakeholders**: This column lists the various stakeholders involved in the projects.
+2. **Who Responsible for Requirements Elicitation**: This indicates who is responsible for gathering requirements, which can help identify key stakeholders.
+3. **Goals**: Understanding the goals associated with each stakeholder can provide insights into their relevance and importance.
+4. **Quality Properties**: This column may highlight the quality attributes that stakeholders are concerned with, which can help prioritize their involvement.
+5. **Rules (e.g., business rules)**: Identifying the rules that stakeholders are interested in can clarify their roles and responsibilities.
+6. **System Behavior**: This provides insights into how stakeholders expect the system to behave, which can be crucial for stakeholder engagement.
+7. **Technical Interfaces**: Understanding the technical interfaces stakeholders are involved with can help identify their relevance in technical discussions.
+8. **Usage Scenarios**: This column can provide context on how stakeholders intend to use the system, which is vital for requirements gathering.
+9. **User Interfaces**: Insights into user interface preferences can help identify stakeholders who are focused on user experience.
+10. **Business Process Models**: This can help in understanding the business context in which stakeholders operate, further clarifying their relevance.
+
+By analyzing these columns, you can effectively identify and prioritize relevant stakeholders based on their roles, responsibilities, and interests in the project.
+Source: napire data
+
+Query: what are the benefits of using focus groups for elicitation?
+Context: e. validity procedures
+to increase the reliability of the statements of the industry
+participants, and thus the internal validity, we perform a
+group interview. through the interaction between the group
+members, memories and experiences of the participants are
+stimulated. this way, they can produce insights that would
+be less accessible without this technique. furthermore, the
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: as the focus group participants were available, and the results
+of the previous session were analyzed. overall, the sessions
+took place over twelve months. as a result of the focus
+group sessions with the first group of legal researchers, we
+formulated four challenges. after that, we conducted another
+one-hour-long focus group with two other legal researchers
+Source: On Developing an Artifact-based Approach to Regulatory Requirements Engineering.pdf
+
+Context: its distribution among specific companies and (2) to improve the response rate. the responses
+were anonymous allowing our respondents to freely share their experiences made within their
+respective company.
+for each company, we invited one respondent as a representative of the company. in case of
+large companies involving several autonomous business units working each in a different industrial
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: prototyping, and facilitated meetings. scenarios are employed by about half of the 
+respondents, observations by less than a third.  
+we believe these answers fit very well to the expectations on agile projects. roles 
+like a product owner in scrum would use interviews to understand the overall product 
+requirements while the further elicitation is done in workshops with stakeholders and
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Context: results for the elicitation techniques are comparable for traditional 
+re [45]. this could be related to the fact that most practitioners 
+work in large companies, which typically have professionals ex- 
+perienced in conducting such workshops for traditional software 
+systems and have now extended these practices to ml-enabled 
+systems.
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Query: what are the benefits of using focus groups for elicitation?
+Context: The analysis of the DataFrame reveals several benefits of using focus groups for elicitation, summarized as follows:
+
+1. **Workshops and Focus Groups**: Approximately 56.76% of respondents indicated that workshops and focus groups are utilized for requirements elicitation.
+2. **Iterative Refinement**: About 69.88% of participants reported that they elicit and refine requirements in several iterations, suggesting that focus groups facilitate ongoing feedback and adjustments.
+3. **Dedicated Project Phase**: 30.74% of respondents noted that requirements are refined in a specifically dedicated project phase, indicating structured engagement through focus groups.
+4. **Interviews**: A significant 69.47% of respondents also use interviews, which can complement focus group discussions by providing deeper insights.
+5. **Prototyping**: 48.16% of participants engage in prototyping, which can be enhanced by insights gathered from focus groups.
+6. **Observations**: 35.04% of respondents utilize observations, which can be informed by discussions in focus groups.
+7. **External Experts**: Only 17.21% indicated the involvement of external experts, suggesting that focus groups may help in gathering internal perspectives more effectively.
+8. **Design Thinking/Lean Startup**: 19.88% of respondents apply design thinking or lean startup methodologies, which can be supported by focus group insights.
+9. **Risk Analyses**: 19.67% of participants conduct risk analyses, which can benefit from the diverse viewpoints gathered in focus groups.
+10. **Analysis of Existing Documents**: 59.84% of respondents analyze existing documents, indicating that focus groups can help contextualize and interpret these documents.
+
+Overall, focus groups appear to enhance the requirements elicitation process by fostering collaboration, iterative feedback, and diverse perspectives.
+Source: napire data
+
+Query: how can i conduct effective stakeholder interviews?
+Context: as the project lead or as the chief analysts of the project. if the project candidate is selected, this person
+serves as the single point of contact during the study.
+when establishing the ﬁrst contact, we provide information about the study planned (its purpose and
+design) and propose an appointment for an open telephone interview of approximately one hour.
+this
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Context: requirements elicitation can be done in multiple techniques which are adapted according to the stakeholder characteristics.
+inhibition and distortion (e.g., by personal questions)
+example 2: questionnaire-based survey
+similar to interviews, but ​
+no possibility to interact​
+no possibility for inquiries​
+usually conducted individually​
+scales better than interviews​
+Source: software4kmu learning nuggets.pdf
+
+Context: stakeholder
+p3
+specialist engineer
+stakeholder
+p4
+it product owner
+management
+p5
+experienced engineer
+stakeholder
+p6
+senior engineer
+stakeholder
+p7
+senior engineer
+contributor
+p8
+senior engineer
+stakeholder
+p9
+engineer
+engineer invited for discussion
+p10
+expert engineer
+experienced engineer invited for discussion
+the interviews were conducted through microsoft teamstm and
+Source: An investigation of causes and effects of trust in Boundary Artefacts.pdf
+
+Context: which modelling techniques and textual artefact templates could help to avoid
+potential problems.
+qualitative analysis of expert interviews (rq 3). having investigated the
+documents in isolation, we conduct interviews with representatives from the
+corresponding projects. those interviews aim at encouraging the participants to
+Source: Improving Requirements Engineering by Artefact Orientation.pdf
+
+Context: strong dependency on the knowledge about the customers and their domain. in particular, the less familiar
+customers are (e.g., in the ﬁrst development project for this customer), the higher the probability of deﬁning
+system success factors and also acceptance criteria.
+further parameters that the interviewees mentioned consider the stakeholders’ characteristics. the avail-
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Query: how can i conduct effective stakeholder interviews?
+Context: To conduct effective stakeholder interviews, consider the following summarized insights derived from the DataFrame:
+
+1. **Responsible for Elicitation**: The primary individuals responsible for requirements elicitation include:
+   - Business Analysts
+   - Project Leads / Project Managers
+   - Product Owners
+   - Requirements Engineers
+
+2. **Elicitation Methods**:
+   - **Interviews**: A significant majority (134) utilize interviews for requirements elicitation.
+   - **Workshops and Focus Groups**: Also widely used, with 113 instances reported.
+   - **External Experts**: Less frequently used, with 31 instances.
+   - **Observations**: Employed in 77 instances.
+
+3. **Documentation Practices**:
+   - The most common practice is documenting high-level requirements initially and refining them later (134 instances).
+   - Some teams document detailed requirements from the start (32 instances).
+
+4. **Satisfaction with Requirements Engineering**:
+   - A majority of respondents (150) express satisfaction with the requirements engineering process in their projects.
+
+5. **Reasons for Satisfaction**: Common reasons include:
+   - Ability to meet customer needs.
+   - Effective training and processes in place.
+   - Good results from established practices.
+
+6. **Consequences of Satisfaction**: Positive outcomes include:
+   - No sudden changes in requirements.
+   - Successful project completions.
+   - Higher satisfaction among end users.
+
+7. **Top Problems Identified**:
+   - Communication flaws between the project and the customer.
+   - Incomplete or hidden requirements.
+   - Time constraints and moving targets.
+
+These insights can guide you in preparing for stakeholder interviews by focusing on effective communication, understanding the roles of participants, and ensuring clarity in requirements documentation.
+Source: napire data
+
+Query: how does this requirement contribute to the project? requirement: "the system must allow real-time data synchronization across multiple platforms."
+Context: managers, developers, testers and end users all bring unique perspectives that enrich the understanding and management of 
+requirements. consensus among all stakeholders should confirm the need to implement a particular requirement.
+misconception 7: “a perfect re guarantees a successful project”.
+Source: software4kmu learning nuggets.pdf
+
+Context: backbone of project execution benefits (1) syntactic consistency and completeness of 
+the results being compliant to the domain-specific reference model, (2) seamless mod-
+elling of the results and continuity within the development process chain and, (3) can 
+be customised to individual needs. such a customisation can be performed at organisa-
+Source: A Meta Model for Artefact-Orientation Fundamentals and Lessons Learned in Requirements Engineering.pdf
+
+Context: this requirement does not specify what “advanced features“ are, leaving it’s interpretation to the respective stakeholder.
+the system should respond quickly to user input.
+this requirements does not specify what “quickly” means, again leaving it to the stakeholders interpretation.
+context of 
+use
+<a longer statement of the context of use if needed>
+scope
+Source: software4kmu learning nuggets.pdf
+
+Context: testing. another reliability aspect concerns inter-observer reliability, which we 
+improved by including independent peer review in all our qualitative analysis 
+procedures and making all the data and analyses openly available online. 
+7 conclusions 
+literature suggests that re can help to tackle challenges in ml-enabled system
+Source: Status Quo and Problems of Requirements Engineering for Machine Learning Results from an International Survey.pdf
+
+Context: platform seamlessly.
+customer support: a dedicated customer support portal must be integrated into the system, allowing users to submit queries 
+and receive timely responses.
+compliance: the system should comply with gdpr regulations, ensuring that user data is collected and processed in a 
+lawful and transparent manner.
+3. non-functional requirements:
+Source: software4kmu learning nuggets.pdf
+
+Query: how does this requirement contribute to the project? requirement: "the system must allow real-time data synchronization across multiple platforms."
+Context: The analysis of the requirement "the system must allow real-time data synchronization across multiple platforms" can be summarized using the following relevant information from the DataFrame:
+
+1. **Compatibility (Interoperability)**: Approximately 65.06% of respondents indicated that compatibility and interoperability are highly important for development, suggesting that real-time synchronization is crucial for ensuring different platforms can work together effectively.
+
+2. **Performance Efficiency**: The mean value for performance efficiency is 0.65, indicating that a significant portion of the respondents considers performance efficiency, such as time behavior and resource utilization, to be important. This is essential for real-time data synchronization, as it requires efficient performance to function effectively.
+
+3. **Portability**: The data shows a mean of 0.65 for portability, highlighting that adaptability and installability across different platforms are valued. This is directly relevant to the requirement, as real-time synchronization must work seamlessly across various systems.
+
+4. **Reliability**: The mean reliability score is 0.65, indicating that availability and fault tolerance are also considered important. This is critical for real-time synchronization, as the system must be reliable to ensure continuous data flow.
+
+5. **Security**: The mean score for security is 0.65, emphasizing the importance of accountability and confidentiality. Real-time synchronization must ensure that data is securely transmitted across platforms.
+
+6. **Usability**: The usability score averages at 0.65, suggesting that user accessibility and operability are important. A user-friendly interface is necessary for effective real-time data synchronization.
+
+7. **Documentation Granularity**: The responses indicate varying levels of documentation practices, which can impact how well the synchronization requirement is understood and implemented.
+
+8. **How to Document Compatibility**: There are established methods for documenting compatibility, which can guide the implementation of real-time synchronization.
+
+9. **How to Document Performance Efficiency**: Similar to compatibility, there are guidelines for documenting performance efficiency, which are essential for ensuring that the synchronization meets performance standards.
+
+10. **Satisfaction with Requirements Engineering**: About 40% of respondents reported being satisfied with requirements engineering, which reflects the overall effectiveness of capturing and implementing requirements like real-time synchronization.
+
+In summary, the requirement for real-time data synchronization is supported by the importance placed on compatibility, performance efficiency, portability, reliability, security, and usability, all of which are critical for the successful implementation of such a feature in a project.
+Source: napire data
+
+Query: how to deal with running out of time in the requirements phase?
+Context: ﬁt well together: if we need to formally accept the requirements in a context of high innovation and project
+management at the same time gives only a pre-deﬁned time box for re, it will become very diﬃcult to
+provide sensible requirements for acceptance.
+6. lessons learnt
+in the course of planning the family of surveys and of executing the ﬁrst survey presented in the article
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Context: 7 (64%)
+2. communication ﬂaws within the project team
+6 (55%)
+3. moving targets (changing goals, business pro-
+cesses and / or requirements)
+6 (55%)
+4. time boxing / not enough time in general
+5 (45%)
+5. underspeciﬁed requirements that are too abstract
+5 (45%)
+plan-
+driven
+medium
+1. communication ﬂaws between project team and
+the customer
+2 (50%)
+Source: Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf
+
+Context: no. for the last question, we also needed to take
+the criticality into account. therefore, in case
+practitioners answered that they would resolve a
+ﬁnding, we also asked whether they would resolve
+it immediately, in a short time (i.e. within this
+project iteration) or in a long time (e.g. if it hap-
+pens again). in addition to these three questions,
+we took notes of qualitative feedback, such as
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: mitigation actions for incomplete/hidden requirements 
+improve the documentation and conduct more meetings with the developers to detect analysis defects. 
+hire or specialize a requirements analyst. 
+creating templates. 
+creation of a dor (definition of readiness) for the team. 
+invest more time in requirements specification, using scenarios and prototypes to gather requirements
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: of application scenarios. if the project considers standard software instead of custom software, services are
+speciﬁed instead of detailed application scenarios.
+cross-cutting process aspects.
+regarding the characteristics that arise from the development
+process, one remarkable inﬂuence is time-boxing, which means the project team faces a hard deadline for
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Query: how to deal with running out of time in the requirements phase?
+Context: To address the issue of running out of time in the requirements phase, the following strategies and problems have been identified from the data:
+
+1. **Communication Flaws**:
+   - **Top Problem**: Communication flaws between the project and the customer.
+     - **Cause**: Bad communication.
+   - **Top Problem**: Communication flaws within the project team.
+     - **Cause**: Lack of communication.
+
+2. **Technically Unfeasible Requirements**:
+   - **Cause**: Lack of communication.
+
+3. **Terminological Problems**:
+   - **Cause**: Project members have a variety of backgrounds, leading to misunderstandings.
+
+4. **Incomplete or Hidden Requirements**:
+   - **Causes**:
+     - Misunderstandings.
+     - Many customers in different domains.
+     - Little customer engagement.
+     - Legacy requirements needing implementation in new applications.
+
+5. **Weak Relationships**:
+   - **Top Problem**: Weak relationship between customer and project lead.
+     - **Cause**: Lack of trust relationship.
+
+6. **Insufficient Support**:
+   - **Causes**:
+     - Insufficient support by project lead.
+     - Insufficient support by customer.
+
+7. **Moving Targets**:
+   - **Cause**: Changing goals, business processes, and/or requirements.
+
+8. **Underspecified Requirements**:
+   - **Cause**: Requirements that are too abstract and allow for various interpretations.
+
+These insights suggest that improving communication, ensuring clarity in requirements, and fostering strong relationships with stakeholders are critical to managing time effectively during the requirements phase.
+Source: napire data
+
+Query: how to prioritize requirements?
+Context: the structuring of requirement candidates helps handling overlaping requirements and duplicates between requirements effectively, and, on the other hand, it helps building a hierarchy of goals to 
+visualize their interdependencies facilitating conflict resolution, constraint detection and resource sharing. a more detailed explanation of goals is given in later learning nuggets.
+Source: software4kmu learning nuggets.pdf
+
+Context: be done." by focusing on the problem first and identifying solutions second, organizations can ensure that they meet the requirements 
+of stakeholders, consider all project limitations and scope, and choose the best possible solution. this approach helps to streamline the 
+process and achieve the desired outcomes more efficiently.
+types and forms of requirements
+Source: software4kmu learning nuggets.pdf
+
+Context: viable and suﬃciently justiﬁed, the requirement candidates are prioritized in
+a project prioritization state (similar to backlog prioritization), called m1. fi-
+nally, the prioritized requirements are hand-shaken with the developer teams
+in a state called m2 [18]. when a requirement is unclear at the m2 state, it
+is pushed back to m1 for re-prioritization. similarly, a requirement is pushed
+Source: Causality in Requirements Artifacts Prevalence, Detection, and Impact.pdf
+
+Context: mitigation actions for incomplete/hidden requirements 
+improve the documentation and conduct more meetings with the developers to detect analysis defects. 
+hire or specialize a requirements analyst. 
+creating templates. 
+creation of a dor (definition of readiness) for the team. 
+invest more time in requirements specification, using scenarios and prototypes to gather requirements
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: build. 
+while there are many ways to structure goals in complex goal models (e.g. cgm, pistar), these approaches remain often at the more theorical level with little practical application. in practice, we may 
+aggregate goals in simple lists, to not overcomplicate matters. for the abve example, such a list could for instance look like the following one:
+Source: software4kmu learning nuggets.pdf
+
+Query: how to prioritize requirements?
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
+Query: how can i improve the following requirement? requirement: "the system should handle a large number of users."
+Context: system privacy 
+system portability 
+others 
+percentage of answers 
+figure 8: critical non-functional requirements of ml- 
+enabled systems (n = 71) 
+requirements with data (p = 53.556 [53.197, 53.915]), resolving 
+conflicts (p = 42.346 [41.987, 42.706]), managing changing re- 
+quirements (p = 40.915 [40.574, 41.257]), selecting metrics (p = 
+[26.418, 27.021]). 
+customer  expectactions
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Context: of having moving targets, the higher the probability of specifying weak quality requirements. in addition,
+this parameter argues for the speciﬁcation of acceptance criteria.
+system under consideration.
+regarding the system under consideration, the expected degree of
+user interaction has a positive inﬂuence on the use of application scenarios and related content items, such
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Context: distributes software-intensive products for a b2c market. the number of en-
+gineers involved with the product line of the data set in question varied from
+1000 to 4000 worldwide. the original data set, pre-processed by olsson et
+al. [41] contains 4446 requirements collected in 20162. the data set has been
+chosen because it contains the aforementioned features necessary for the eval-
+Source: Causality in Requirements Artifacts Prevalence, Detection, and Impact.pdf
+
+Context: and manage in atlassian jira8. user stories at tech-
+divison follow the common connextra format: as a
+[role], i want [feature], so that [reason]. we will
+also follow this terminology here.
+the systems under analysis consist of two online
+shopping portals, a customer-relationship system and
+a content-management system, all of which we cannot
+name for non-disclosure-agreement reasons. in total,
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: requirements specification: captures the problem space in 
+connection to the concrete software system, defining user 
+requirements without addressing how it should be implemented. 
+answers the “what” question introduced before.
+system specification: captures the solution space and how 
+software system shall be implemented in order to satisfy the
+Source: software4kmu learning nuggets.pdf
+
+Query: how can i improve the following requirement? requirement: "the system should handle a large number of users."
+Context: To improve the requirement "the system should handle a large number of users," consider the following insights derived from the DataFrame:
+
+1. **Performance Efficiency**: The average score for performance efficiency is approximately 0.58, indicating that there is room for improvement in how the system utilizes resources and manages time behavior. Enhancing performance efficiency can directly impact the system's ability to handle more users effectively.
+
+2. **Reliability**: The reliability aspect shows a significant focus, with a majority of responses indicating a score of 0 (not included) and a median score of 1. This suggests that ensuring the system's availability and fault tolerance is crucial. Improving reliability will help maintain service during high user loads.
+
+3. **Usability**: While specific usability metrics were not detailed, ensuring that the system remains user-friendly even under heavy load is essential. This can involve optimizing user interfaces and ensuring that the system can handle user interactions smoothly.
+
+4. **Goals and Quality Properties**: Clearly defining goals related to scalability and performance can help guide development efforts. Establishing quality properties that focus on handling increased user loads will also be beneficial.
+
+5. **Stakeholder Involvement**: Engaging stakeholders in discussions about performance requirements can provide insights into user expectations and necessary system capabilities.
+
+6. **Documentation**: Ensure that non-functional requirements related to performance and reliability are well-documented. This will help in tracking improvements and ensuring that the system meets its performance goals.
+
+By focusing on these areas, you can enhance the requirement to be more specific and actionable, such as: "The system should efficiently manage a minimum of X concurrent users while maintaining a response time of Y seconds and ensuring 99.9% uptime."
+Source: napire data
+
+Query: what are the dependencies between the requirements?
+Context: ulatory requirements’ content item in requirements layer should
+provide an overview of new requirements or needed requirements
+changes combined with the reasoning for such changes. the new
+content items are integrated with existing amdire content items
+through dependencies and relations that encompass the main arte-
+facts and information that regulatory requirements depend on or
+are related to.
+Source: Vision for an Artefact-based Approach to Regulatory Requirements Engineering.pdf
+
+Context: the structuring of requirement candidates helps handling overlaping requirements and duplicates between requirements effectively, and, on the other hand, it helps building a hierarchy of goals to 
+visualize their interdependencies facilitating conflict resolution, constraint detection and resource sharing. a more detailed explanation of goals is given in later learning nuggets.
+Source: software4kmu learning nuggets.pdf
+
+Context: structured language requirements prescribe the content and forms of a requirement, impacting flexibility in requirements 
+specification
+model-based requirements are precise, but need knowledge about the modeling language excluding many stakeholders
+each requirements form has its one advantages and disadvantages and their usage depends on the situation
+[englisch] key takeaway
+Source: software4kmu learning nuggets.pdf
+
+Context: have a strong dependency on the knowledge about
+the customer and his domain. in particular, the less
+familiar customers (e.g., within the ﬁrst development
+project for this customer), the higher the probability of
+deﬁning system success factors. dependencies are also
+related to the degree of innovation of the application. the
+higher the degree, the more speciﬁc success factors are
+documented.
+Source: Field Study on Requirements Engineering Artefacts and Patterns.pdf
+
+Context: when considering requirements, it is important to look at them as a whole rather than individually. collections of requirements should 
+have certain characteristics:
+1. completeness: taken together, the requirements should cover all the necessary aspects of the system.
+2. consistency: they should not contradict each other.
+Source: software4kmu learning nuggets.pdf
+
+Query: what are the dependencies between the requirements?
+Context: The analysis of the DataFrame reveals the following summary of dependencies based on the methods of requirements elicitation:
+
+1. **Requirements Elicitation Methods**:
+   - **Interviews**: 149 and 339 instances.
+   - **Analysis of Existing Documents**: 196 and 292 instances.
+   - **Risk Analyses**: Not explicitly shown in the summary.
+   - **Prototyping**: Not explicitly shown in the summary.
+   - **Workshops and Focus Groups**: Not explicitly shown in the summary.
+   - **Reuse Databases and Guidelines**: Not explicitly shown in the summary.
+   - **Design Thinking / Lean Startup**: Not explicitly shown in the summary.
+   - **External Experts**: 404 and 84 instances.
+   - **Observations**: 317 and 171 instances.
+
+This summary indicates that various methods of requirements elicitation are utilized, with some methods showing higher frequencies than others, suggesting potential dependencies between the requirements based on the elicitation techniques employed.
+Source: napire data
+
+Query: do you have a checklist for security requirements?
+Context: owasp high-level security requirements, are there 
+high-level security requirements or characteristics that 
+were not specified? 
+ambiguity 
+does any security specification allow for multiple 
+interpretations? 
+inconsistency  
+are there two or more security specifications in 
+conflict with one another? 
+incorrect fact 
+is there any security specification stating information
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: checks to perform with customer:
+completeness: does this requirements cover all necessary information? or should users by default login with their 
+username, password and a second factor?
+consistency: does this requirements conflict with other requirements? is there a different requirement prescribing users 
+have to use a passkey to log in?
+Source: software4kmu learning nuggets.pdf
+
+Context: user story 
+security specification 
+1. as a customer, i 
+want to be able to 
+export my personal 
+information so that i 
+can use it in other 
+systems. 
+1. the system shall ensure that there is no residual 
+data exposed. 
+2. the system shall store credentials securely using 
+the aes encryption algorithm. 
+3. the system shall use the rsa encryption 
+algorithm to protect all data all the time.
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: work has been published (e.g., [10][14][16]) on how to 
+support inspectors with detailed reading support for reviewing 
+security related aspects.  
+elberzhager et al. [16] propose a model for security goals 
+that involves guided checklists to support inspectors when 
+checking security. they describe a step-by-step guide that 
+results in questions to be checked by an inspector. this model
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: provide security-specific questions for a requirements 
+inspection. two of them are part of the pbr technique 
+(designer and tester). they also created a new perspective 
+based on the needs of a black hat tester. in this additional 
+perspective, the reviewer focuses on three types of security 
+information: cryptography, authentication, and data validation.
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Query: do you have a checklist for security requirements?
+Context: The DataFrame provides some relevant information regarding security requirements. Here is a summary of the findings:
+
+1. **Security Importance**: 
+   - The average importance rating for security requirements is approximately 0.50, indicating a balanced emphasis on security within the projects.
+   - The values range from 0 (not important) to 1 (highly important).
+
+2. **Documentation of Security Requirements**:
+   - There are various methods for documenting security requirements, with the most common being "non-quantified textual requirements," which appears 5 times in the dataset.
+
+3. **Statistical Overview**:
+   - The count of entries related to security requirements is 488.
+   - The standard deviation of the importance ratings is approximately 0.50, suggesting variability in how different projects prioritize security.
+
+4. **Distribution**:
+   - 25% of the entries rate security requirements as 0 (not important).
+   - 50% of the entries rate them as 1 (important).
+   - 75% of the entries also rate them as 1 (important).
+
+This summary indicates that while there is a significant focus on security requirements, the documentation methods vary, and there is a mix of importance ratings across different projects.
+Source: napire data
+
+Query: why do i need re in agile environments?
+Context: requirements validation and verification – ensuring validity and quality of created requirements.
+impact on project success
+effective requirements engineering is critical to successful software development. research shows that 33% of errors in the software 
+development lifecycle are rooted in insufficient requirements engineering, and 36% of these errors lead to project failure.
+Source: software4kmu learning nuggets.pdf
+
+Context: it is important to recognise that requirements are dynamic and may change due to evolving stakeholder needs, changes in market 
+conditions and advances in technology. it is important to adapt these requirements in the later stages of a project, either by 
+reformulating, deleting or introducing new requirements. adopting this approach is essential to maintaining project responsiveness and
+Source: software4kmu learning nuggets.pdf
+
+Context: management. 
+it’s important to tailor the approach for requirements engineering to the unique needs of each project. 
+while effective re is critical, it does not guarantee project success; several other factors play an important role.
+in diesem lernabschnitt befassen wir uns mit gängigen missverständnissen über requirements engineering (re). wir verstehen, was
+Source: software4kmu learning nuggets.pdf
+
+Context: what are the benefits of applying requirements engineering?
+alignment with stakeholder needs: requirements engineering facilitates clear communication between stakeholders, ensuring 
+that the final product meets their expectations and increasing user satisfaction.
+improved communication and collaboration: requirements engineering fosters collaboration across cross-functional teams,
+Source: software4kmu learning nuggets.pdf
+
+Context: rafael.prikladnicki@pucrs.br 
+requirements engineering (re) constitutes an important success factor for software development projects, 
+since unambiguous and stakeholder-appropriate requirements are critical determinants of quality and productivity 
+[1] [2]. one of the problems we still face, however, is that it is difficult to find proper empirical figures that could
+Source: Naming the Pain in Requirements Engineering Comparing Practices in Brazil and Germany.pdf
+
+Query: why do i need re in agile environments?
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
+Query: give me a template for a textual use case.
+Context: diagrams (activity diagrams, message sequence charts, etc.). 
+use cases integrate all possible scenarios, which might occur 
+when an actor tries to achieve a specific usage goal. notations 
+used for the specification of use cases are structured text, use 
+case diagram. 
+an example of use scenarios.
+5 - pa1463 - requirements engineering - functional 
+requirements.pptx (sharepoint.com)
+link to:
+Source: software4kmu learning nuggets.pdf
+
+Context: textual free form with no constraints, textual with constraints such as the user story template (“as a...,
+and formal semantics. furthermore, we briefly go into non-functional requirements and expect
+them to be documented in a non-quantified and textual way. the propositions of our theory related
+to requirements documentation are given in table 11. they are all new in relation to the theory
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: ✓
+p 7
+use case models are documented textually in free form or textually with constraints.
+✓
+p 8
+use case models are documented semi-formally (e.g. using uml).
+p 9
+domain/business process models are documented textually in free form.
+✓
+p 10
+goal models are commonly used in a textual form.
+✓
+p 11
+goal models are not documented semi-formally or formally.
+✓
+p 12
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: ing, the third case applies the concept of user stories,
+as it is popular in agile software development. the
+fourth case is in an academic background and employs
+both use cases and textual requirements. regarding
+subject selection, for each industrial case we selected
+practitioners involved in the company, domain and
+speciﬁcation. we executed the ﬁndings rating (step 5)
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: els. services, in turn, describe a complementary logical rep-
+resentation of a use case, not necessarily involving actors
+or concrete sequences of interaction. they furthermore oﬀer
+interfaces, which are typed according to the data objects
+of the data model.
+quality
+requirements
+natural
+text
+quality requirements are assessed by measurements that
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Query: give me a template for a textual use case.
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
+Query: how can i ensure regulatory compliance in requirements?
+Context: are crucial in the years to come, together with the expected contri-
+bution of our suggested approach. future regulatory re should:
+empower software engineers to consider regulatory compliance
+and related risks already at the early stages of software system
+development. in our approach this is enabled by its applicability to
+early stage software development artefacts (e.g., business plans).
+Source: Vision for an Artefact-based Approach to Regulatory Requirements Engineering.pdf
+
+Context: coordination. method: we conducted focus group sessions with
+legal researchers to identify the core challenges to establishing
+a regulatory re approach. based on our findings, we developed
+a candidate solution and conducted a first conceptual validation
+to assess its feasibility. results: we introduce the first version
+of our artifact model for regulatory requirements engineering
+Source: On Developing an Artifact-based Approach to Regulatory Requirements Engineering.pdf
+
+Context: very well lead to identifying other applicable regulatory acts.
+it is thus a continuous back and forth along the engineering
+process where re and design decisions and consideration
+of alternative compliance options may require new legal
+interpretation. previous studies also emphasized variability
+and complex interdependencies between different tasks as
+Source: On Developing an Artifact-based Approach to Regulatory Requirements Engineering.pdf
+
+Context: regulatory re: 10 years from now
+already today, law makers are lagging far behind the pace of
+technological development. there is little evidence that problems
+of overregulation and ’technology-unfriendly’ regulations will be
+resolved on the regulatory side of the equation alone. we conjec-
+ture that in the coming decade, regulatory compliance of software
+Source: Vision for an Artefact-based Approach to Regulatory Requirements Engineering.pdf
+
+Context: munich, germany
+jannik.fischbach@netlight.com
+abstract—context: regulatory acts are a challenging source
+when eliciting, interpreting, and analyzing requirements. re-
+quirements engineers often need to involve legal experts who,
+however, may often not be available. this raises the need for ap-
+proaches to regulatory requirements engineering (re) covering
+Source: On Developing an Artifact-based Approach to Regulatory Requirements Engineering.pdf
+
+Query: how can i ensure regulatory compliance in requirements?
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
+Query: how do i prioritize requirements?
+Context: be done." by focusing on the problem first and identifying solutions second, organizations can ensure that they meet the requirements 
+of stakeholders, consider all project limitations and scope, and choose the best possible solution. this approach helps to streamline the 
+process and achieve the desired outcomes more efficiently.
+types and forms of requirements
+Source: software4kmu learning nuggets.pdf
+
+Context: scales better than interviews​
+typically done as online survey​
+there are also qualitative and quantitative questionnaires​
+example 3: prototying
+make requirements “come alive” by visualising or physically instantiating them​
+not exclusive to agile approaches​
+main goals​
+find new or missing requirements (exploring)​
+get feedback on innovative solutions (experimenting)​
+get stakeholders involved​
+Source: software4kmu learning nuggets.pdf
+
+Context: mitigation actions for incomplete/hidden requirements 
+improve the documentation and conduct more meetings with the developers to detect analysis defects. 
+hire or specialize a requirements analyst. 
+creating templates. 
+creation of a dor (definition of readiness) for the team. 
+invest more time in requirements specification, using scenarios and prototypes to gather requirements
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: define priorities (0.38%) 
+model evaluation metric 
+choice (0.38%) 
+balancing risks and benefits (0.38%) 
+estimation issues (0.38%) 
+incomplete/incorrect requirements (1.91%) 
+end to end process (0.38%) 
+scope definition (1.91%) 
+accuracy checking (0.38%) 
+defining/documenting requirements (2.29%) 
+data science complexity (1.15%) 
+unclear requirements (4.96%) 
+lack of data science
+Source: Status Quo and Problems of Requirements Engineering for Machine Learning Results from an International Survey.pdf
+
+Context: engineering as it very much depends on a plethora of project 
+characteristics, such as:
+do we develop a new system or do we replace an already 
+existing system?
+what is the information already documented an known?
+we we develop internally (in-house) or do we elaborate 
+requirements for external suppliers or do we develop 
+requirements as external suppliers for our customer?
+Source: software4kmu learning nuggets.pdf
+
+Query: how do i prioritize requirements?
+Context: To prioritize requirements effectively, you can consider the following summarized information derived from the DataFrame:
+
+1. **Compatibility**: 47.18% importance for co-existence and interoperability.
+2. **Maintainability**: 63.59% importance for aspects like analysability, modularity, and reusability.
+3. **Performance Efficiency**: 56.92% importance regarding time behavior and resource utilization.
+4. **Portability**: 24.62% importance for adaptability and installability.
+5. **Reliability**: 57.95% importance concerning availability and fault tolerance.
+6. **Security**: 57.95% importance for accountability and confidentiality.
+7. **Safety**: 26.67% importance related to health risks and disaster freedom.
+8. **Usability**: 67.69% importance for accessibility and user interface aesthetics.
+
+These percentages indicate the relative importance of various requirements categories. Higher percentages suggest that those areas should be prioritized in the requirements engineering process. 
+
+Additionally, you may want to gather feedback on the reasons for satisfaction in requirements engineering to understand what aspects are valued by stakeholders, which can further guide prioritization.
+Source: napire data
+
+Query: how to document a requirement?
+Context: mitigation actions for incomplete/hidden requirements 
+improve the documentation and conduct more meetings with the developers to detect analysis defects. 
+hire or specialize a requirements analyst. 
+creating templates. 
+creation of a dor (definition of readiness) for the team. 
+invest more time in requirements specification, using scenarios and prototypes to gather requirements
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: different types and forms of requirements, including business, functional and non-functional, need to be carefully documented and 
+managed. 
+requirements can take different forms, such as natural language, structured formats or model-based approaches, each with its own 
+advantages and disadvantages.
+Source: software4kmu learning nuggets.pdf
+
+Context: students.
+6.1.3. data collection procedure
+we used a 6-step procedure to collect the data
+necessary for answering the research questions.
+1. collect requirements artifact(s) for each case. we
+retrieved the requirements artifacts to be ana-
+lyzed in each case. for one case, the require-
+ments were stored in microsoft word documents.
+for the other cases, this involved extracting the
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Context: one of the core activities in requirements engineering is eliciting the requirements from relevant
+stakeholders. to characterise the status quo, we want to understand what elicitation techniques
+are employed in practice. in our theory from the first run, we expected practitioners, especially
+in large companies, to conduct workshops as the central technique to elicit requirements. the
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: requirements candidates into accepted requirements through vadalidation by the customers following the scope set out initially. this 
+may be done in an manner as simple as asking them to formally accept the requirements in a written form and extend to employing a 
+structured workshop with a walkthrough through all requirements and asking “why” questions (e.g. “why do you really need that
+Source: software4kmu learning nuggets.pdf
+
+Query: how to document a requirement?
+Context: To document a requirement, the following approaches and insights can be derived from the DataFrame:
+
+1. **Compatibility Documentation**: The most common method is using non-quantified textual requirements, which was noted by multiple respondents.
+
+2. **Maintainability Documentation**: Various methods are employed, but specific details are not quantified in the summary.
+
+3. **Performance Efficiency Documentation**: Similar to maintainability, the methods are varied but not explicitly detailed.
+
+4. **Portability Documentation**: The documentation methods are not specified in the summary.
+
+5. **Reliability Documentation**: Various approaches are used, but specific methods are not highlighted.
+
+6. **Safety Documentation**: The methods for documenting safety requirements are not explicitly detailed.
+
+7. **Security Documentation**: Various methods are used, but specific documentation techniques are not provided.
+
+8. **Usability Documentation**: The approaches to documenting usability requirements are varied but not specified.
+
+9. **Documentation Granularity**: The level of detail in documentation varies, but specific insights are not provided.
+
+10. **Elicitation and Refinement**: On average, there is a tendency to elicit and refine requirements in several iterations, with a mean value indicating that this practice is common among respondents.
+
+Overall, while the DataFrame provides some insights into the methods of documenting requirements, specific details on each method are not fully quantified.
+Source: napire data
+
+Query: what is re
+Context: < 0.0001
+from our further hypotheses on re improvement, we could support that re is done systematically
+via an own business unit / role in the case of large companies with more than 2,000 employees and by
+project participants in the case of small and medium-sized companies. we could also corroborate that re
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Context: o ·
+m. nayebi · m. oivo · b. penzenstadler ·
+schekelmann · s. sen · r. spinola · a.
+tuzcu · j. l. de la vara · r. wieringa
+received: date / accepted: date
+abstract requirements engineering (re) has received much attention in re-
+search and practice due to its importance to software project success. its inter-
+disciplinary nature, the dependency to the customer, and its inherent uncertainty
+Source: Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf
+
+Context: a system (nuseibeh and easterbrook 2000) and, thus, re
+is an important factor for productivity and (product) qual-
+ity (damian and chisan 2006).
+an important step for companies towards re excellence
+consists in the establishment of an re reference process
+for a company-wide use among different projects. however,
+companies are facing the problem that the re process is
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: only a limited view into re itself and is also known to have serious ﬂaws in its
+design negatively aﬀecting the validity of the results [18], we launched a series
+of empirical investigations on practical problems in re and how those prob-
+lems manifest themselves in the whole software development process [40, 44].
+we discovered that the missing awareness of what should be done in re man-
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: stracts from the idealised execution of the re phase in a development
+project.
+it includes the description of the process (deﬁnition) to follow,
+the artefacts to be created, as well as roles involved [10]. synonyms used:
+re reference model, methodology [11] (taking a broader view)
+theory
+“a theory provides explanations and understanding in terms of basic con-
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Query: what is re
+Context: The relevant information regarding requirements engineering (re) from the DataFrame can be summarized as follows:
+
+1. **Compatibility (Co-existence, Interoperability)**: 
+   - Mean: 0.42
+   - Standard Deviation: 0.49
+   - Range: 0 to 1
+
+2. **Maintainability (Analysability, Modularity, Modifiability, Reusability, Testability)**: 
+   - Not specifically summarized due to lack of numerical data.
+
+3. **Performance Efficiency (Time Behaviour, Resource Utilisation, Capacity)**: 
+   - Not specifically summarized due to lack of numerical data.
+
+4. **Reliability (Availability, Fault Tolerance, Maturity, Recoverability)**: 
+   - Not specifically summarized due to lack of numerical data.
+
+5. **Security (Accountability, Authenticity, Confidentiality, Integrity, Non-repudiation)**: 
+   - Not specifically summarized due to lack of numerical data.
+
+6. **Usability (Accessibility, Appropriateness, Recognisability, Learnability, Operability, User Error Protection, User Interface Aesthetics)**: 
+   - Not specifically summarized due to lack of numerical data.
+
+7. **Satisfaction with Requirements Engineering**: 
+   - Count: 488 responses.
+
+8. **Reasons for Dissatisfaction in Requirements Engineering**: 
+   - Count: 180 responses.
+
+9. **Consequences of Dissatisfaction in Requirements Engineering**: 
+   - Not specifically summarized due to lack of numerical data.
+
+10. **Applied Changes in Requirements Engineering**: 
+    - Most common response: "NO" (26 occurrences).
+
+This summary provides insights into the aspects of requirements engineering as captured in the DataFrame, focusing on compatibility and the general satisfaction levels.
+Source: napire data
+
+Query: what is re
+Context: < 0.0001
+from our further hypotheses on re improvement, we could support that re is done systematically
+via an own business unit / role in the case of large companies with more than 2,000 employees and by
+project participants in the case of small and medium-sized companies. we could also corroborate that re
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Context: o ·
+m. nayebi · m. oivo · b. penzenstadler ·
+schekelmann · s. sen · r. spinola · a.
+tuzcu · j. l. de la vara · r. wieringa
+received: date / accepted: date
+abstract requirements engineering (re) has received much attention in re-
+search and practice due to its importance to software project success. its inter-
+disciplinary nature, the dependency to the customer, and its inherent uncertainty
+Source: Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf
+
+Context: a system (nuseibeh and easterbrook 2000) and, thus, re
+is an important factor for productivity and (product) qual-
+ity (damian and chisan 2006).
+an important step for companies towards re excellence
+consists in the establishment of an re reference process
+for a company-wide use among different projects. however,
+companies are facing the problem that the re process is
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: only a limited view into re itself and is also known to have serious ﬂaws in its
+design negatively aﬀecting the validity of the results [18], we launched a series
+of empirical investigations on practical problems in re and how those prob-
+lems manifest themselves in the whole software development process [40, 44].
+we discovered that the missing awareness of what should be done in re man-
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: stracts from the idealised execution of the re phase in a development
+project.
+it includes the description of the process (deﬁnition) to follow,
+the artefacts to be created, as well as roles involved [10]. synonyms used:
+re reference model, methodology [11] (taking a broader view)
+theory
+“a theory provides explanations and understanding in terms of basic con-
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Query: what is re
+Context: The relevant information regarding requirements engineering (re) from the DataFrame can be summarized as follows:
+
+1. **Compatibility (Co-existence, Interoperability)**: 
+   - Mean: 0.37
+   - Standard Deviation: 0.48
+   - Minimum: 0
+   - Maximum: 1
+
+2. **Maintainability (Analysability, Modularity, Modifiability, Reusability, Testability)**: 
+   - Not applicable (data not provided).
+
+3. **Performance Efficiency (Time Behaviour, Resource Utilisation, Capacity)**: 
+   - Not applicable (data not provided).
+
+4. **Reliability (Availability, Fault Tolerance, Maturity, Recoverability)**: 
+   - Not applicable (data not provided).
+
+5. **Security (Accountability, Authenticity, Confidentiality, Integrity, Non-repudiation)**: 
+   - Not applicable (data not provided).
+
+6. **Usability (Accessibility, Appropriateness, Recognisability, Learnability, Operability, User Error Protection, User Interface Aesthetics)**: 
+   - Not applicable (data not provided).
+
+7. **Satisfaction with Requirements Engineering**: 
+   - Count: 90 entries.
+
+8. **Reasons for Dissatisfaction in Requirements Engineering**: 
+   - Unique reasons: 90 different entries.
+
+9. **Consequences of Dissatisfaction in Requirements Engineering**: 
+   - Unique consequences: 90 different entries.
+
+10. **Necessary Changes in Requirements Engineering**: 
+    - Unique changes: 90 different entries.
+
+This summary indicates that while some quantitative data is available for compatibility, the other aspects of requirements engineering are qualitative and varied, with numerous unique entries for reasons, consequences, and necessary changes.
+Source: napire data
+
+Query: what is re
+Context: < 0.0001
+from our further hypotheses on re improvement, we could support that re is done systematically
+via an own business unit / role in the case of large companies with more than 2,000 employees and by
+project participants in the case of small and medium-sized companies. we could also corroborate that re
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Context: o ·
+m. nayebi · m. oivo · b. penzenstadler ·
+schekelmann · s. sen · r. spinola · a.
+tuzcu · j. l. de la vara · r. wieringa
+received: date / accepted: date
+abstract requirements engineering (re) has received much attention in re-
+search and practice due to its importance to software project success. its inter-
+disciplinary nature, the dependency to the customer, and its inherent uncertainty
+Source: Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf
+
+Context: a system (nuseibeh and easterbrook 2000) and, thus, re
+is an important factor for productivity and (product) qual-
+ity (damian and chisan 2006).
+an important step for companies towards re excellence
+consists in the establishment of an re reference process
+for a company-wide use among different projects. however,
+companies are facing the problem that the re process is
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: only a limited view into re itself and is also known to have serious ﬂaws in its
+design negatively aﬀecting the validity of the results [18], we launched a series
+of empirical investigations on practical problems in re and how those prob-
+lems manifest themselves in the whole software development process [40, 44].
+we discovered that the missing awareness of what should be done in re man-
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: stracts from the idealised execution of the re phase in a development
+project.
+it includes the description of the process (deﬁnition) to follow,
+the artefacts to be created, as well as roles involved [10]. synonyms used:
+re reference model, methodology [11] (taking a broader view)
+theory
+“a theory provides explanations and understanding in terms of basic con-
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Query: what is re
+Context: The relevant information regarding requirements engineering (re) from the DataFrame can be summarized as follows:
+
+1. **We elicit and/or refine requirements in several iterations**: Approximately 69.9% of respondents indicated this practice.
+2. **We elicit and/or refine requirements in a specifically dedicated project phase**: About 30.7% of respondents reported this approach.
+3. **Requirements elicitation with Interviews**: Approximately 69.5% of respondents utilize interviews for requirements elicitation.
+4. **Requirements elicitation with Analysis of existing documents**: About 59.8% of respondents engage in this method.
+5. **Requirements elicitation with Risk analyses**: Only 19.7% of respondents use risk analyses for elicitation.
+6. **Requirements elicitation with Prototyping**: Approximately 48.2% of respondents apply prototyping.
+7. **Requirements elicitation with Workshops and focus groups**: About 56.8% of respondents participate in workshops and focus groups.
+8. **Requirements elicitation with Reuse databases and guidelines**: Only 17.4% of respondents utilize this method.
+9. **Requirements elicitation with Design Thinking / Lean Startup**: Approximately 19.9% of respondents employ this approach.
+10. **Requirements elicitation with External experts**: About 17.2% of respondents involve external experts in the process.
+
+This summary provides insights into the practices and methods used in requirements engineering as reflected in the DataFrame.
+Source: napire data
+
+Query: how i write a good requirement statement?
+Context: syntactic minimality
+there are no unnecessary syntactic elements in the speciﬁcations.
+modularity
+the speciﬁcation is organised in modules, separated according to certain topics.
+traceability
+each requirement has a rationale.
+ease of perception
+the speciﬁcations are well-suited to be understood by people not involved into the process.
+rq 3
+unambiguity
+the requirements are stated unambiguously.
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: and requires some practice to be effective. in essence, while structured language requirements maybe be a bit cumbersome to write 
+down and read (often resembling the user-friendly charme of an instruction manual to a tax declaration form), they offer the benefit of 
+clear structure and some basic quality criteria that make them easier to interpret (implement, and test).
+example
+Source: software4kmu learning nuggets.pdf
+
+Context: draft  
+title
+what makes a good requirement?
+was macht eine gute anforderung aus?
+tags
+requirements quality
+anforderungsqualität
+estimated duration
+10 min
+level
+external ressources
+international standards for systems and software 
+engineering
+requirements engineering quick check
+requirements smells
+dependencies
+next item
+id 1.1.1.9 - form of requirements  
+goals (teaching 
+perspective)
+Source: software4kmu learning nuggets.pdf
+
+Context: requirements candidates into accepted requirements through vadalidation by the customers following the scope set out initially. this 
+may be done in an manner as simple as asking them to formally accept the requirements in a written form and extend to employing a 
+structured workshop with a walkthrough through all requirements and asking “why” questions (e.g. “why do you really need that
+Source: software4kmu learning nuggets.pdf
+
+Context: 5. singularity: it should define only one characteristic or constraint.
+6. feasibility: each requirement should be achievable within the constraints of the project.
+7. verifiability: it should be possible to verify that a requirement has been met.
+8. correctness: it should accurately reflect the need of stakeholder.
+9. conformity: each written requirement should follow the predefined structure.
+Source: software4kmu learning nuggets.pdf
+
+Query: how i write a good requirement statement?
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
+Query: 33% of errors in the software development lifecycle are rooted in insufficient requirements engineering, and 36% of these errors lead to project failure.
+Context: requirements validation and verification – ensuring validity and quality of created requirements.
+impact on project success
+effective requirements engineering is critical to successful software development. research shows that 33% of errors in the software 
+development lifecycle are rooted in insufficient requirements engineering, and 36% of these errors lead to project failure.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: requirements engineering is therefore both inherently difficult and a critical determinent for success. common reasons for project 
+failure include nowaways incomplete, hidden and unclear requirements, and communication problems with customers. a lack of 
+common understanding between stakeholders is a major challenge, as illustrated in the following picture.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: managers, developers, testers and end users all bring unique perspectives that enrich the understanding and management of 
+requirements. consensus among all stakeholders should confirm the need to implement a particular requirement.
+misconception 7: “a perfect re guarantees a successful project”.
+Source: software4kmu-2-5.pdf
+
+Context: systems, improving overall quality.
+german
+risk management: early identification and management of requirements-related risks minimises disruptions and delays, promoting 
+smoother project execution.
+traceability and change management: clear requirements enable systematic change management and maintain the integrity of 
+the software system as requirements evolve.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: goals (teaching 
+perspective)
+to provide an understanding of the role and significance of requirements engineering in software 
+development
+content description 
+(teaching 
+perspective)
+introduction to the discipline of requirements engineering, focusing on its importance, impact and outcomes 
+for projects
+en
+de
+beginner  
+intermediate  
+expert
+Source: software4kmu-6-142-1-5.pdf
+
+Query: 33% of errors in the software development lifecycle are rooted in insufficient requirements engineering, and 36% of these errors lead to project failure.
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
+Query: abbotts textual analysis technique
+Context: spectrum of approaches, their customization to specific project needs is essential for effective requirements gathering and 
+management. on this platform, we will therefore focus on the essence of re - focussing on what matters most - and show how it can be 
+used in different contexts.
+misconception 4: "requirements are static and immutable".
+Source: software4kmu-2-5.pdf
+
+Context: recognizing this difference is a critical determinant for success. jumping directly to solutions without understanding the problem first - 
+commonly referred to as solution orientation -- often results in a loss of time and effort, in the worst-case to a project failure. in more 
+details this question would be addressed in the later in the learning path
+Source: software4kmu-2-5.pdf
+
+Context: anforderungsanalyse - verstehen der anforderungen und erreichen eines konsenses zwischen den stakelholdern.
+anforderungsspezifikation - strukturierung, modellierung und dokumentation von anforderungen.
+ [german] description
+[german] goals and value 
+[german] content
+validierung und verifizierung von anforderungen - sicherstellung der gültigkeit und qualität der erstellten anforderungen.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: id 1.1.1.1 - frequently encountered misconceptions
+meta data
+englisch
+status
+draft  
+title
+frequently encountered misconceptions on 
+requirements engineering
+häufig anzutreffende missverständnisse über 
+requirements engineering
+tags
+estimated duration
+5 min
+level
+external ressources
+dependencies
+next item
+id 1.1.1.2 - what is requirements engineering?  
+goals (teaching 
+perspective)
+Source: software4kmu-2-5.pdf
+
+Context: allgemeinen als der prozess gesehen, in dem festgelegt wird, wie das produkt aussehen soll und welche eigenschaften es 
+haben soll. selbst wenn organisationen agilen prinzipien folgen, die nicht ausdrücklich vorschreiben, was als re-aktivitäten 
+angesehen wird, erstellen, priorisieren und verfolgen sie anforderungen als product backlog items oder user stories. in den folgenden
+Source: software4kmu-2-5.pdf
+
+Query: abbotts textual analysis technique
+Context: The analysis of the relevant columns from the DataFrame provides the following summary:
+
+1. **Compatibility (Co-existence, Interoperability)**:
+   - Mean: 0.37
+   - Standard Deviation: 0.49
+   - Minimum: 0
+   - Maximum: 1
+
+2. **Maintainability (Analysability, Modularity, Modifiability, Reusability, Testability)**:
+   - Data is not numerically summarized due to unique entries.
+
+3. **Performance Efficiency (Time Behaviour, Resource Utilisation, Capacity)**:
+   - Data is not numerically summarized due to unique entries.
+
+4. **Portability (Adaptability, Installability, Replaceability)**:
+   - Data is not numerically summarized due to unique entries.
+
+5. **Reliability (Availability, Fault Tolerance, Maturity, Recoverability)**:
+   - Data is not numerically summarized due to unique entries.
+
+6. **Security (Accountability, Authenticity, Confidentiality, Integrity, Non-repudiation)**:
+   - Data is not numerically summarized due to unique entries.
+
+7. **Safety (Freedom of Risk for Health or Disaster)**:
+   - Data is not numerically summarized due to unique entries.
+
+8. **Usability (Accessibility, Appropriateness, Recognisability, Learnability, Operability, User Error Protection, User Interface Aesthetics)**:
+   - Data is not numerically summarized due to unique entries.
+
+9. **Satisfaction with Requirements Engineering**:
+   - Count: 92 entries
+   - Unique responses: 92
+
+10. **Reasons for Dissatisfaction in Requirements Engineering**:
+    - Count: 92 entries
+    - Most common reason: "Project culture focuses only on development, neglecting requirements."
+
+This summary highlights the importance of compatibility in development, while also indicating a diverse range of unique responses in other areas, particularly regarding satisfaction and dissatisfaction with requirements engineering.
+Source: napire data
+
+Query: y abbotts textual analysis technique and analyze the system description for nouns
+Context: spectrum of approaches, their customization to specific project needs is essential for effective requirements gathering and 
+management. on this platform, we will therefore focus on the essence of re - focussing on what matters most - and show how it can be 
+used in different contexts.
+misconception 4: "requirements are static and immutable".
+Source: software4kmu-2-5.pdf
+
+Context: system specification that all stakeholders agree upon.
+elementary tasks include, but are not limited to:
+requirements elicitation – identifying all relevant stakeholders and their requirements.
+requirements analysis – understanding requirements and achieving consensus among stakeholders.
+requirements specification – structuring, modelling, documenting requirements.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: systems, improving overall quality.
+german
+risk management: early identification and management of requirements-related risks minimises disruptions and delays, promoting 
+smoother project execution.
+traceability and change management: clear requirements enable systematic change management and maintain the integrity of 
+the software system as requirements evolve.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: allgemeinen als der prozess gesehen, in dem festgelegt wird, wie das produkt aussehen soll und welche eigenschaften es 
+haben soll. selbst wenn organisationen agilen prinzipien folgen, die nicht ausdrücklich vorschreiben, was als re-aktivitäten 
+angesehen wird, erstellen, priorisieren und verfolgen sie anforderungen als product backlog items oder user stories. in den folgenden
+Source: software4kmu-2-5.pdf
+
+Context: [german] description
+[german] goals and value 
+[german] content
+engineering gibt. auch wenn re ein breites spektrum an ansätzen bietet, ist deren anpassung an die spezifischen projektbedürfnisse 
+für eine effektive anforderungserhebung und -verwaltung unerlässlich. auf dieser plattform werden wir uns daher auf das wesentliche
+Source: software4kmu-2-5.pdf
+
+Query: y abbotts textual analysis technique and analyze the system description for nouns
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
+Query: y abbotts textual analysis technique and analyze the system description for nouns
+Context: derive requirements from the system description
+at the beginning of product development, stakeholders often have an abstract idea of the system/service. let us explore together how 
+we get from an abstract idea to concrete requirements using the example of an online shopping platform.
+Source: software4kmu-6-142-6-10.pdf
+
+Context: for that purpose, we apply abbotts textual analysis technique and analyze the system description for nouns, verbs and adjectives (see 
+here for a full list of part of speech and their meaning). nouns describe objects relevant for our online shapping platform. verbs describe
+Source: software4kmu-6-142-6-10.pdf
+
+Context: goals (teaching 
+perspective)
+to clarify misconceptions and make a clear distinction between the myths and realities of requirements 
+engineering in order to provide an interesting introduction into the following topics.
+content description 
+(teaching 
+perspective)
+explore common misunderstandings in the field of requirements engineering, such as
+en
+de
+beginner  
+intermediate  
+expert
+Source: software4kmu-2-5.pdf
+
+Context: systems, improving overall quality.
+german
+risk management: early identification and management of requirements-related risks minimises disruptions and delays, promoting 
+smoother project execution.
+traceability and change management: clear requirements enable systematic change management and maintain the integrity of 
+the software system as requirements evolve.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: order tracking feature for users to monitor the status of their purchases.
+purchase history functionality for users to review past orders.
+user-friendly interface with intuitive navigation.
+responsive design for optimal viewing across devices.
+requirements in systems and software engineering cover stakeholder needs, constraints, capabilities and characteristics.
+Source: software4kmu-6-142-6-10.pdf
+
+Query: y abbotts textual analysis technique and analyze the system description for nouns
+Context: The analysis of the system description using Y Abbott's textual analysis technique reveals the following relevant information from the DataFrame:
+
+1. **Agile vs. Plan-driven Project**: 
+   - Categories: Plan-driven, Rather agile, Hybrid, Agile, Rather plan-driven.
+
+2. **Relationship with Customer**: 
+   - Categories: Very good, Good, Neutral, Bad, Very bad.
+
+3. **Who is Responsible for Requirements Elicitation**: 
+   - Roles: Business Analyst, Other, Nobody has the primary responsibility, Customer, Product Manager, Product Owner, Requirements Engineer, Project Lead / Project Manager, Scrum Master, Architect, Developer, Marketing.
+
+4. **Documentation Granularity**: 
+   - Descriptions: 
+     - "We document high-level requirements at beginning of the project and refine them to detailed requirements when needed."
+     - "We document detailed requirements at the beginning of the project."
+     - "Other (please specify)."
+
+5. **Goals**: 
+   - Values: 1, 0.
+
+6. **Quality Properties**: 
+   - Values: 0, 1.
+
+7. **Stakeholders**: 
+   - Values: 0, 1.
+
+8. **System Behaviour**: 
+   - Values: 0, 1.
+
+9. **User Interfaces**: 
+   - Values: 0, 1.
+
+10. **Non-functional Requirements Documentation Include Compatibility**: 
+    - Values: 1, 0.
+
+This summary provides insights into the project management approach, stakeholder roles, documentation practices, and the perceived quality and functionality of the system.
+Source: napire data
+
+Query: abbotts textual analysis technique
+Context: recognizing this difference is a critical determinant for success. jumping directly to solutions without understanding the problem first - 
+commonly referred to as solution orientation -- often results in a loss of time and effort, in the worst-case to a project failure. in more 
+details this question would be addressed in the later in the learning path
+Source: software4kmu-2-5.pdf
+
+Context: for that purpose, we apply abbotts textual analysis technique and analyze the system description for nouns, verbs and adjectives (see 
+here for a full list of part of speech and their meaning). nouns describe objects relevant for our online shapping platform. verbs describe
+Source: software4kmu-6-142-6-10.pdf
+
+Context: anforderungsanalyse - verstehen der anforderungen und erreichen eines konsenses zwischen den stakelholdern.
+anforderungsspezifikation - strukturierung, modellierung und dokumentation von anforderungen.
+ [german] description
+[german] goals and value 
+[german] content
+validierung und verifizierung von anforderungen - sicherstellung der gültigkeit und qualität der erstellten anforderungen.
+Source: software4kmu-6-142-1-5.pdf
+
+Context: requirements:
+browse functionality for users to navigate through product categories.
+examples: 
+1. constraint: the system shall comply with the payment card industry data security standard (pci dss) for handling 
+payment information.
+2. property: the system shall encrypt all sensitive user data (such as credit card information) to ensure pci dss compliance.
+german
+Source: software4kmu-6-142-6-10.pdf
+
+Context: uns gemeinsam am beispiel einer online-einkaufsplattform untersuchen, wie wir von einer abstrakten idee zu konkreten anforderungen 
+gelangen. 
+hierfür wenden wir abbotts textanalysetechnik an und analysieren die systembeschreibung auf nomen, verben und adjektive (siehe 
+hier für eine komplete liste von termen und deren bedeutung). nomen beschreiben relevante objekte für unsere online-
+Source: software4kmu-6-142-6-10.pdf
+
+Query: abbotts textual analysis technique
+Context: The analysis of the provided DataFrame reveals the following insights regarding Abbott's textual analysis technique:
+
+1. **Average Satisfaction**: The average satisfaction level with requirements engineering in the projects is approximately **1.79** on a scale where higher values indicate greater satisfaction. This suggests a general dissatisfaction among respondents.
+
+2. **Reasons for Dissatisfaction**: A variety of reasons were cited for dissatisfaction in requirements engineering, with a total of **92 unique reasons** identified. Some notable themes include:
+   - **Project Culture**: A focus solely on development without adequate attention to requirements and testing.
+   - **Customer Interaction**: Lack of direct contact with users and insufficient collaboration within the project team.
+   - **Time Pressure**: Challenges related to project planning, including time constraints and distributed responsibilities.
+   - **Specification Issues**: Problems arising from specifications being performed by suppliers, leading to omitted requirements that later result in operational issues.
+   - **Quality Concerns**: Insufficient time for detailed functional specifications, resulting in a focus on basic deliverables rather than product quality.
+
+These findings highlight significant areas for improvement in the requirements engineering process, particularly in fostering collaboration, managing time effectively, and ensuring clarity in specifications.
+Source: napire data
+
+Query: however, a first step towards the definition of an artefact-based methodology for a company-wide use consists in the precise definition of the artefacts and thei
+Context: and
+the
+initial
+(overall)
+system
+speciﬁcations.
+regarding the study objects, we distinguish between
+the company-wide process deﬁnition (re deﬁnition at
+organisational level) and the actual analysed projects
+that
+followed
+the
+process.
+the
+ﬁrst
+serves
+as
+a
+preparation of the study in order to get an understanding
+of the used terminology and the process. the study
+Source: Field Study on Requirements Engineering Artefacts and Patterns.pdf
+
+Context: no guidance on how to do it. existing literature in software
+engineering and ai&law points to the need to capture and
+reflect the elementary concepts and relationships from a legal
+perspective. nevertheless, to the best of our knowledge, there
+is no systematic approach to that available yet and our work
+presented here aims at closing this gap.
+iv. methodology overview
+Source: On Developing an Artifact-based Approach to Regulatory Requirements Engineering.pdf
+
+Context: instructions on how to describe use cases at munich re.
+data collection. following the process as described in
+sec. iii-b, the approach contained four phases: first, we
+received and analysed a full set of 51 requirements engineering
+artifacts that were created in the project, including use cases,
+business rules and others. in the ﬁrst, 90-minutes workshop
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Context: business information systems).
+for each artefact type, we furthermore deﬁne two milestones. the ﬁrst mile-
+stone deﬁnes the point in time in which the ﬁrst content item is deﬁned, thus,
+reﬂecting a certain maturity of the content in the artefact as the ﬁrst content
+d. m´
+endez fern´
+andez, b. penzenstadler
+items serve the purpose of a summary for subsequent contents. for instance,
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: those artefacts, however, remain underspeciﬁed, i.e. companies have to deﬁne
+those artefacts in personal responsibility without any guidance or blueprint. the
+guidance on the actual implementation of the improvement is, in general, not in
+scope of those approaches as they focus on comparable benchmarking and the
+adaptation of a company-speciﬁc re to that given norm by adding potentially
+Source: Improving Requirements Engineering by Artefact Orientation.pdf
+
+Query: however, a first step towards the definition of an artefact-based methodology for a company-wide use consists in the precise definition of the artefacts and thei
+Context: The summarized information from the DataFrame regarding the definition of artefacts and their methodology includes the following relevant columns:
+
+1. **Agile vs Plan-driven project**: This column categorizes the project management approach, with a total of 488 entries and 6 unique values. The most frequent category is "Hybrid," appearing 161 times.
+
+2. **Who Responsible for Requirements Elicitation**: This column identifies the roles responsible for requirements elicitation, with 12 unique roles and a total of 488 entries. The most common role is "Business Analyst," with 115 occurrences.
+
+3. **Documentation Granularity**: This column provides insights into the level of detail in documentation, but specific statistics were not calculated in the summary.
+
+4. **Goals**: This column outlines the objectives of the projects, but specific statistics were not calculated in the summary.
+
+5. **Quality properties**: This column addresses the quality attributes considered in the projects, but specific statistics were not calculated in the summary.
+
+6. **Stakeholders**: This column identifies the stakeholders involved in the projects, but specific statistics were not calculated in the summary.
+
+7. **System behaviour**: This column describes the expected behavior of the system, but specific statistics were not calculated in the summary.
+
+8. **User interfaces**: This column outlines the user interface considerations, but specific statistics were not calculated in the summary.
+
+9. **Requirements elicitation with Interviews**: This column indicates the use of interviews for requirements elicitation, with a mean value of approximately 0.69, suggesting that interviews are commonly used.
+
+10. **Requirements elicitation with Workshops and focus groups**: This column indicates the use of workshops and focus groups for requirements elicitation, with a mean value of approximately 0.57, suggesting that these methods are also frequently employed.
+
+Overall, the data provides insights into the project management approaches, roles involved in requirements elicitation, and the methods used for gathering requirements, which are essential for defining artefacts in a methodology.
+Source: napire data
+
+Query: what are functional requirements?
+Context: questionnaire for the assessment (condensed)
+criteria
+statement
+rq 1
+ease of use
+the approach is clear and understandable.
+sustainability
+the process and the taken decisions are reproducible.
+effectivity
+all information and requirements are used in design and management activities.
+flexibility
+the approach supports a ﬂexible process in response to individual project characteristics.
+productivity
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: system privacy 
+system portability 
+others 
+percentage of answers 
+figure 8: critical non-functional requirements of ml- 
+enabled systems (n = 71) 
+requirements with data (p = 53.556 [53.197, 53.915]), resolving 
+conflicts (p = 42.346 [41.987, 42.706]), managing changing re- 
+quirements (p = 40.915 [40.574, 41.257]), selecting metrics (p = 
+[26.418, 27.021]). 
+customer  expectactions
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Context: basic specification of functional requirements
+typical natural language form for functional requirements is "when 
+<input>/<condition>, a system must do <function> and return 
+<output>". functional requirements are usually specified at different 
+levels of abstraction.
+functional requirements can be specified as atomic natural 
+language statements describing isolated functions. in such form,
+Source: software4kmu learning nuggets.pdf
+
+Context: functional requirements are single (atomic) statements describing isolated functional properties. functional requirements derived 
+from the scenario above are: 
+example
+use case title: atm cash withdrawal
+sequence:
+1. the customer inserts their ec into the atm.
+2. the atm checks the card and shows the available functions to the customer.
+3. the atm then prompts the customer to enter their pin.
+Source: software4kmu learning nuggets.pdf
+
+Context: 2. appropriateness: the requirement should be specific to the entity and should not impose unnecessary constraints on the design.
+3. unambiguity: each requirement must be clear and have a single interpretation.
+4. completeness: it should be able to explain the required functionality or constraint without requiring further detail to understand.
+Source: software4kmu learning nuggets.pdf
+
+Query: what are functional requirements?
+Context: Functional requirements refer to the specific behaviors, functionalities, and features that a system must exhibit. Based on the summarized data from the DataFrame, the following insights can be drawn regarding functional requirements:
+
+1. **System Behavior**: The system's expected behavior is categorized into two distinct types, indicating a binary classification of functionalities.
+
+2. **User Interfaces**: There are two types of user interfaces identified, suggesting a focus on how users will interact with the system.
+
+3. **Usage Scenarios**: Similar to system behavior, usage scenarios are also categorized into two types, reflecting different contexts in which the system will be used.
+
+4. **Goals**: The goals of the system are defined in two categories, which likely represent the primary objectives that the system aims to achieve.
+
+5. **Documentation Granularity**: The documentation practices vary, with a predominant approach being the documentation of high-level requirements at the beginning of the project, followed by refinement as needed.
+
+6. **Responsibility for Requirements Elicitation**: There are multiple roles involved in the requirements elicitation process, with the Business Analyst being the most frequently mentioned.
+
+7. **Requirements Elicitation Methods**: The methods used for requirements elicitation include interviews and analysis of existing documents, with a significant portion of respondents indicating the use of interviews.
+
+Overall, functional requirements encompass the essential features and behaviors that the system must fulfill, guided by user interactions, goals, and structured documentation practices.
+Source: napire data
+

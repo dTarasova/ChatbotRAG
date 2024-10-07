@@ -22,4 +22,3 @@ pdfkit
 wkhtmltopdf 
 pysqlite3-binary
 faiss-cpu
-abc
