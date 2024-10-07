@@ -11,7 +11,7 @@ class Retriever:
 
     def __init__(self, path_to_db_directory: str, vector_store_type: VectorStoreType, type='step-back', ranker_type = 'rrf'  ):
         self.embedding_model = OpenAIEmbeddings()
-        self.documentDatabase = create_document_database(vector_store_type, path_to_db_directory)
+        self.documentDatabase = create_document_database(vector_store_type=vector_store_type, path_to_db_directory=path_to_db_directory)
         self.vector_store = self.documentDatabase.get_vectorstore()
 
         self.retriever = self.vector_store.as_retriever(search_type="mmr", search_kwargs={"k": 5})

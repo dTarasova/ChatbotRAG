@@ -3048,3 +3048,76 @@ Context: The summarized information from the DataFrame regarding the definition 
 Overall, the data provides insights into the project management approaches, roles involved in requirements elicitation, and the methods used for gathering requirements, which are essential for defining artefacts in a methodology.
 Source: napire data
 
+Query: what are functional requirements?
+Context: questionnaire for the assessment (condensed)
+criteria
+statement
+rq 1
+ease of use
+the approach is clear and understandable.
+sustainability
+the process and the taken decisions are reproducible.
+effectivity
+all information and requirements are used in design and management activities.
+flexibility
+the approach supports a ﬂexible process in response to individual project characteristics.
+productivity
+Source: A Case Study on the Application of an Artefact-Based Requirements Engineering Approach.pdf
+
+Context: system privacy 
+system portability 
+others 
+percentage of answers 
+figure 8: critical non-functional requirements of ml- 
+enabled systems (n = 71) 
+requirements with data (p = 53.556 [53.197, 53.915]), resolving 
+conflicts (p = 42.346 [41.987, 42.706]), managing changing re- 
+quirements (p = 40.915 [40.574, 41.257]), selecting metrics (p = 
+[26.418, 27.021]). 
+customer  expectactions
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Context: basic specification of functional requirements
+typical natural language form for functional requirements is "when 
+<input>/<condition>, a system must do <function> and return 
+<output>". functional requirements are usually specified at different 
+levels of abstraction.
+functional requirements can be specified as atomic natural 
+language statements describing isolated functions. in such form,
+Source: software4kmu learning nuggets.pdf
+
+Context: functional requirements are single (atomic) statements describing isolated functional properties. functional requirements derived 
+from the scenario above are: 
+example
+use case title: atm cash withdrawal
+sequence:
+1. the customer inserts their ec into the atm.
+2. the atm checks the card and shows the available functions to the customer.
+3. the atm then prompts the customer to enter their pin.
+Source: software4kmu learning nuggets.pdf
+
+Context: 2. appropriateness: the requirement should be specific to the entity and should not impose unnecessary constraints on the design.
+3. unambiguity: each requirement must be clear and have a single interpretation.
+4. completeness: it should be able to explain the required functionality or constraint without requiring further detail to understand.
+Source: software4kmu learning nuggets.pdf
+
+Query: what are functional requirements?
+Context: Functional requirements refer to the specific behaviors, functionalities, and features that a system must exhibit. Based on the summarized data from the DataFrame, the following insights can be drawn regarding functional requirements:
+
+1. **System Behavior**: The system's expected behavior is categorized into two distinct types, indicating a binary classification of functionalities.
+
+2. **User Interfaces**: There are two types of user interfaces identified, suggesting a focus on how users will interact with the system.
+
+3. **Usage Scenarios**: Similar to system behavior, usage scenarios are also categorized into two types, reflecting different contexts in which the system will be used.
+
+4. **Goals**: The goals of the system are defined in two categories, which likely represent the primary objectives that the system aims to achieve.
+
+5. **Documentation Granularity**: The documentation practices vary, with a predominant approach being the documentation of high-level requirements at the beginning of the project, followed by refinement as needed.
+
+6. **Responsibility for Requirements Elicitation**: There are multiple roles involved in the requirements elicitation process, with the Business Analyst being the most frequently mentioned.
+
+7. **Requirements Elicitation Methods**: The methods used for requirements elicitation include interviews and analysis of existing documents, with a significant portion of respondents indicating the use of interviews.
+
+Overall, functional requirements encompass the essential features and behaviors that the system must fulfill, guided by user interactions, goals, and structured documentation practices.
+Source: napire data
+

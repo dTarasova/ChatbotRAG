@@ -1,6 +1,7 @@
 import streamlit as st
 from typing import Dict, Any
 
+from src.custom_types import VectorStoreType
 from src.interface.helper_functions import load_questions, load_results
 from src.rag.rag_model import RAGModel, RAGTypes
 PATH_DB_AMDIRE_NAPIRE = 'knowledge_bases/amdire_napire'
@@ -34,9 +35,9 @@ def display_results(question: str, model_results: Dict[str, Any]):
 
 # Create different RAG models with varying paths to database directories
 def create_rag_models():
-    model1 = RAGModel(path_to_db_directory=PATH_DB_AMDIRE_NAPIRE, evaluate_answers=True)
-    model2 = RAGModel(path_to_db_directory=PATH_DB_AMDIRE_NAPIRE_SOFTWARE4KMU, evaluate_answers=True)
-    model3 = RAGModel(path_to_db_directory=PATH_DB_ALL, evaluate_answers=True)
+    model1 = RAGModel(path_to_db_directory=PATH_DB_AMDIRE_NAPIRE, evaluate_answers=True, vector_store_type=VectorStoreType.CHROMA)
+    model2 = RAGModel(path_to_db_directory=PATH_DB_AMDIRE_NAPIRE_SOFTWARE4KMU, evaluate_answers=True, vector_store_type=VectorStoreType.FAISS)
+    model3 = RAGModel(path_to_db_directory=PATH_DB_ALL, evaluate_answers=True, vector_store_type=VectorStoreType.CHROMA)
     return {"Amdire and Napire": model1, "+ software4kmu": model2, "all": model3}
 
 

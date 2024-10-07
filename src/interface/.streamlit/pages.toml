@@ -10,6 +10,11 @@ name = "Corretness Evaluation"
 icon = "🎯"
 
 [[pages]]
+path = "src/interface/compare_combined_summarised.py"
+name = "Compare Combined Summarised Contexts"
+icon = "🤖"
+
+[[pages]]
 path = "src/interface/compare_full_answers.py"
 name = "Compare All Models"
 icon = "🤖"

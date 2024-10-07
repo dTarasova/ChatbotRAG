@@ -8,12 +8,14 @@ from src.rag.rag_model import RAGModel, RAGTypes
 # Display results in a 5-column layout
 def display_results(question: str, model_results: Dict[str, Any]):
     st.write(f"## Question: {question}")
-    number_of_models = len(model_results)
+    filtered_results = {model_name: data for model_name, data in model_results.items() 
+                        if model_name in [RAGTypes.GPT.name, RAGTypes.COMBINED.name, RAGTypes.SUMMARISER.name]}
+    number_of_models = len(filtered_results)
     st.write("model results ", number_of_models)
     cols = st.columns(number_of_models)
     
     # Iterate over the models and their results with enumerate to track the index
-    for i, (model_name, data) in enumerate(model_results.items()):
+    for i, (model_name, data) in enumerate(filtered_results.items()):
         # Use index `i` to access the appropriate column
         with cols[i]:
             # Column 1: Model name
