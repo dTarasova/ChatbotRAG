@@ -3,14 +3,14 @@ from src.rag.rag_model import RAGModel
 from src.wo_rag import get_openai_answer
 from src.rag.rag_model import RAGTypes
 
-st.write("This chatbot is designed to help you with your questions about Requirements Engineering. Please ask your question below.")
-
-question = st.text_input("Question")
+st.write("This is the LLM-based educational chatbot for Requirements Engineering (RE). It uses evidence-based data sources to provide users in-depth insights on the topic. As it is a prototype, answers may take 1-2 minutes to generate. Please help us evaluate the usability of the chatbot. Kindly ask at least five questions about requirements engineering for evaluation. Please submit your feedback with this questionnaire: https://forms.gle/vxvaRmMr6EHjmZNJ9")
+st.markdown("<h6>Type a question to compare answers. Press 'Ask button' to receive answers.</h3>", unsafe_allow_html=True)
+question = st.text_input("Question", key="key_question", label_visibility="collapsed")
 
 if st.button("Ask"):
     try:
         # Initialize the RAG model
-        st.write("Processing the question...")
+        st.write("Processing the question... Please be aware it might take 1-2 minutes.")
         rag_model = RAGModel(text_retriever_type='step-back')
         
         # Query the model

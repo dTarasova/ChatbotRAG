@@ -61,9 +61,10 @@ if "logging" not in st.session_state:
     st.session_state.logging = {}
 
 st.title("Compare RAG Chatbot and ChatGPT Answers")
-
+st.markdown("<h6>Type a question to compare answers. Press Enter to receive answers.</h3>", unsafe_allow_html=True)
 # Text input for the user to enter a question
-question = st.text_input("Enter a question to compare answers:", key="key_question")
+question = st.text_input("Type a question to compare answers. Press Enter to receive answers.", key="key_question", label_visibility="collapsed")
+st.divider()
 
 results = load_results()
 
@@ -96,9 +97,12 @@ if question and question not in st.session_state.questions:
 # Check if the question exists in session state
 if question and question in st.session_state.logging:
      # Show radio buttons for selecting the better answer
-    correctness_choice = st.radio("Which of these answers is correct?", ("Answer 1 (Left)", "Answer 2 (Right)", "Neither", "Both"))
-    preferred_choice = st.radio("If you would have to pick, which one would you prefer? Rely on depth of the expertise and explainability for choosing", ("Answer 1 (Left)", "Answer 2 (Right)"))
-    choice_explanation = st.text_area("Please provide a reason for your choice", key="key_explanation")
+    st.markdown("<h6>Which of the following answers is correct?</h3>", unsafe_allow_html=True)
+    correctness_choice = st.radio("Correctness", ("Answer 1 (Left)", "Answer 2 (Right)", "Neither", "Both"), label_visibility="collapsed")
+    st.markdown("<h6>If you had to choose, which answer would you prefer? Please choose the one that is less misleading, more accurate, and provides a better depth of knowledge and explanation</h3>", unsafe_allow_html=True)
+    preferred_choice = st.radio("Preferred", ("Answer 1 (Left)", "Answer 2 (Right)"), label_visibility="collapsed")
+    st.markdown("<h6>Please provide a reason for your choice</h3>", unsafe_allow_html=True)
+    choice_explanation = st.text_area("Reasoning", key="key_explanation", label_visibility="collapsed")
 
     submit_button = st.button("Submit your choice", key="key_submit")
 
@@ -145,6 +149,7 @@ if question and question in st.session_state.logging:
             preferred_model=preferred_model,
             choice_explanation=choice_explanation
         )
+        choice_explanation = ""
         
         st.success(f"Your choice has been logged! You selected: {preferred_model}")
 
