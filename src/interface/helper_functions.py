@@ -1,6 +1,8 @@
 import json
 import os
 
+from src.rag.rag_model import RAGModel
+
 
 FILEPATH = "results.json"
 
@@ -45,3 +47,9 @@ def load_questions() -> list[str]:
     with open('evaluation_questions.txt', 'r') as f:
         questions_gathered = [line.strip() for line in f.readlines()]
     return questions_gathered
+
+def get_answer(question, queryType):
+    rag_model = RAGModel(text_retriever_type='step-back')
+    results = rag_model.query(question, query_types=[queryType])
+    answer = results["models"][queryType.name]["answer"]
+    return answer

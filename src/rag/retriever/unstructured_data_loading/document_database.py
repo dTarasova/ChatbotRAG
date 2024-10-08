@@ -111,6 +111,7 @@ class DocumentDatabaseChroma(DocumentDatabaseBase):
 
     def _handle_vector_store_add_documents(self, documents: list[Document]):
         """Chroma-specific logic for adding documents to the vector store."""
+        from langchain_community.vectorstores import Chroma
         if not self.vector_store:
             self.vector_store = Chroma(persist_directory=self.path_to_db_directory, embedding_function=self.embeddings)
         

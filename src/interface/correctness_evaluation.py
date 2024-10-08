@@ -7,7 +7,7 @@ import datetime
 
 from src.rag.rag_model import RAGModel, RAGTypes
 from src.wo_rag import get_openai_answer
-from src.interface.helper_functions import load_questions, load_results, normalize
+from src.interface.helper_functions import get_answer, load_questions, load_results, normalize
 
 def log_choice(question, answerGPT, answerRAG, correct_model, preferred_model, choice_explanation):
     log_entry = {
@@ -75,9 +75,15 @@ if question and question not in st.session_state.questions:
     found_item = next((item for item in results if normalize(item['question']) == normalize(question)), None)
     if found_item:
         model_results = found_item["models"]
-        #st.write("Results already exist for this question.")
-        answerRAG = model_results[RAGTypes.SUMMARISER.name]["answer"]
-        answerGPT = model_results[RAGTypes.GPT.name]["answer"]
+        #st.write("Results already exist for this question."
+        if RAGTypes.SUMMARISER.name in model_results:
+            answerRAG = model_results[RAGTypes.SUMMARISER.name]["answer"]
+        else: 
+            answerRAG = get_answer(question, RAGTypes.SUMMARISER)
+        if RAGTypes.GPT.name in model_results:
+            answerGPT = model_results[RAGTypes.GPT.name]["answer"]
+        else:
+            answerGPT = get_answer(question, RAGTypes.GPT)
         
     else:
         # Query the RAG model if the answer doesn't exist
@@ -154,8 +160,3 @@ if question and question in st.session_state.logging:
         st.success(f"Your choice has been logged! You selected: {preferred_model}")
 
 
-
-    
-
-    
-   # todo check if it is rerenders every time i pick a choice without submitting it 
