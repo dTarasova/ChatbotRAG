@@ -6,7 +6,7 @@ from langchain.vectorstores import FAISS
 from src.rag.retriever.unstructured_data_loading.pdf_preprocessor import process_pdf
 from langchain.embeddings.openai import OpenAIEmbeddings
 import abc
-from langchain_community.vectorstores import Chroma
+
 
 # Base class to encapsulate common functionality
 class DocumentDatabaseBase:

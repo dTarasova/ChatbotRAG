@@ -6,7 +6,6 @@ from src.rag.retriever.retriever_results_ranker import RRFResultsRanker, Results
 from src.rag.retriever.unstructured_data_loading.document_database import create_document_database
 from src.custom_types import VectorStoreType
 
-# amdire_napire_software4kmu_faiss
 class Retriever:
 
     def __init__(self, path_to_db_directory: str, vector_store_type: VectorStoreType, type='step-back', ranker_type = 'rrf'  ):
