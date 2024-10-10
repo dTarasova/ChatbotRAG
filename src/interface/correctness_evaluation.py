@@ -105,7 +105,7 @@ if question and question in st.session_state.logging:
      # Show radio buttons for selecting the better answer
     st.markdown("<h6>Which of the following answers is correct?</h3>", unsafe_allow_html=True)
     correctness_choice = st.radio("Correctness", ("Answer 1 (Left)", "Answer 2 (Right)", "Neither", "Both"), label_visibility="collapsed")
-    st.markdown("<h6>If you had to choose, which answer would you prefer? Please choose the one that is less misleading, more accurate, and provides a better depth of knowledge and explanation</h3>", unsafe_allow_html=True)
+    st.markdown("<h6>If you had to choose, which answer would you prefer? Please choose the option that is more factually accurate, free from misleading or contradictory information, and offers deeper expertise and knowledge from an expert perspective.</h3>", unsafe_allow_html=True)
     preferred_choice = st.radio("Preferred", ("Answer 1 (Left)", "Answer 2 (Right)"), label_visibility="collapsed")
     st.markdown("<h6>Please provide a reason for your choice</h3>", unsafe_allow_html=True)
     choice_explanation = st.text_area("Reasoning", key="key_explanation", label_visibility="collapsed")
