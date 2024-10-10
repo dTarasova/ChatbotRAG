@@ -3,11 +3,10 @@ from src.rag.rag_model import RAGModel
 from src.wo_rag import get_openai_answer
 from src.rag.rag_model import RAGTypes
 
-st.write("""This is the LLM-based educational chatbot for Requirements Engineering (RE).   \n It uses evidence-based data sources to provide users in-depth insights on the topic. 
-            \n Please help us evaluate the usability of the chatbot. 
-          Ask at least five questions related to Requirements Engineering.  \n
-          While testing, please focus on evaluating the chatbot's responses based on their relevance, clarity, level of detail, and suitability for educational purposes.  
-           \n Please submit your feedback with this questionnaire: https://forms.gle/vxvaRmMr6EHjmZNJ9""")
+st.write("""This is the LLM-based educational chatbot for Requirements Engineering (RE). It uses evidence-based data sources to provide users in-depth insights on the topic.
+            \n Please help us evaluate the usability of the chatbot. Ask at least five questions related to Requirements Engineering.
+            \n While testing, please focus on evaluating the chatbot's responses based on their relevance, clarity, level of detail, and suitability for educational purposes.  
+            \n Please submit your feedback with this questionnaire: https://forms.gle/vxvaRmMr6EHjmZNJ9""")
 st.markdown("<h6>Type a question, press 'Ask button' to receive answers.</h3>", unsafe_allow_html=True)
 question = st.text_input("Question", key="key_question", label_visibility="collapsed")
 

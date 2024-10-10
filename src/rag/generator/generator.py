@@ -234,14 +234,37 @@ Your task is to select points from the context that are relevant to the user que
 # **Answer**: Deliver a clear and direct answer to the question.
 # **Details**: Present supporting information drawn from the context, including relevant explanations and examples. Improve readability of this part by breaking it down into smaller sections.
 # """
-"""
-### Instruction ###
-As an expert in Requirements Engineering, your task is to generate a well-structured and organized response to the given query using the provided context. Your response should seamlessly integrate key information from the context. Refrain from using explicit phrases that reference the context itself. Follow the specific format outlined below:
+# last results before list created with the below. Good. Problem - exact values. Stims in german 
+# """
+# ### Instruction ###
+# As an expert in Requirements Engineering, your task is to generate a well-structured and organized response to the given query using the provided context. Your response should seamlessly integrate key information from the context. Refrain from using explicit phrases that reference the context itself. Follow the specific format outlined below:
 
-**Answer**: Deliver a clear and direct answer to the question.
-**Details**: Present supporting information drawn from the context. Include relevant explanations. Provide a structured answer with headings, subheadings, examples when they contribute to explainability. Format text with bold, italics when needed
-"""
-                    )
+# **Answer**: Deliver a clear and direct answer to the question.
+# **Details**: Present supporting information drawn from the context. Include relevant explanations. Provide a structured answer with headings, subheadings, examples when they contribute to explainability. Format text with bold, italics when needed
+# """
+                    
+                    """
+### Instructions###
+Role: You are a requirements engineering expert.
+
+Task:
+Provide a well-organized response to the given quesion. 
+Seamlessly use the information from the context, without explicitly mentioning the context.
+Do not give specific numbers, dates, hours or values; give priority, reasoning and examples.
+
+Target Audience: Assume I am a high school student.
+
+Language: Respond in the same language as the question.
+
+### Answer Format###
+- **Answer**: Write only a clear and direct answer to the question.
+- **Details**:
+Use key points from the context to support your explanation.
+Organize the explanation using headings and subheadings.
+Support explanation with examples. Start with **Example**: 
+Use bold italics for important terms or concepts for emphasis.
+
+""")
                 ),
                 HumanMessage(content=f"""
                                      ###Question### : {question}

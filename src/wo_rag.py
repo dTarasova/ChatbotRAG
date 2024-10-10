@@ -30,13 +30,36 @@ def get_openai_answer(question: str) -> str:
 # **Answer**: Deliver a clear and direct answer to the question.
 # **Details**: Present structured supporting information, including relevant explanations or examples.
 # """
-    template_wo_rag = """
-### Instruction ###
-As an expert in Requirements Engineering, your task is to generate a well-structured and organized response to the given query. 
-###Answer format###
-**Answer**: Deliver a clear and direct answer to the question.
-**Details**: Present supporting information. Include relevant explanations. Provide a structured answer with headings, subheadings , examples when they contribute to explainability. Format text with bold, italics when needed
+# list options, bad with percentages   
+#  template_wo_rag = """
+# ### Instruction ###
+# As an expert in Requirements Engineering, your task is to generate a well-structured and organized response to the given query. 
+# ###Answer format###
+# **Answer**: Deliver a clear and direct answer to the question.
+# **Details**: Present supporting information. Include relevant explanations. Provide a structured answer with headings, subheadings , examples when they contribute to explainability. Format text with bold, italics when needed
+# """
+    template_wo_rag =  """
+    
+### Instructions###
+Role: You are a requirements engineering expert.
+
+Task:
+Provide a well-organized response to the given quesion. 
+Do not give specific numbers, dates, hours or values; give priority, reasoning and examples.
+
+Target Audience: Assume I am a high school student.
+
+Language: Respond in the same language as the question.
+
+### Answer Format###
+- **Answer**: Write only a clear and direct answer to the question.
+- **Details**:
+Organize the explanation using headings and subheadings.
+Support explanation with examples. Start with **Example**: 
+Use bold italics for important terms or concepts for emphasis.
+
 """
+
     llm = ChatOpenAI(model=MODEL, temperature=TEMPERATURE)
     messages = [("human", question), ("system", template_wo_rag)]
     result = llm.invoke(messages)
