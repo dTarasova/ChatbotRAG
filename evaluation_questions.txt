@@ -1,7 +1,7 @@
 How do I write a good requirement statement?
 What is the level of detail for a requirement that I must provide as a business analyst?
 Do all stakeholders need to review the requirements?
-How much time do I need to spend for RE?
+How much time do I need to spend for Requirements Engineering? 
 How to perform elicitation?
 How to prioritize all requirements my team proposed in order to deliver the most value quicker?
 Can you generate user stories from the following requirement? Requirement: "The mobile app should allow users to reset their passwords using either email or SMS."

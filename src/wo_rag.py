@@ -32,8 +32,8 @@ def get_openai_answer(question: str) -> str:
 # """
     template_wo_rag = """
 ### Instruction ###
-As an expert in Requirements Engineering, your task is to generate a well-structured and organized response to the given query. Follow the specific format outlined below:
-
+As an expert in Requirements Engineering, your task is to generate a well-structured and organized response to the given query. 
+###Answer format###
 **Answer**: Deliver a clear and direct answer to the question.
 **Details**: Present supporting information. Include relevant explanations. Provide a structured answer with headings, subheadings , examples when they contribute to explainability. Format text with bold, italics when needed
 """
@@ -42,3 +42,4 @@ As an expert in Requirements Engineering, your task is to generate a well-struct
     result = llm.invoke(messages)
     return result.content
     # return "lalala" + question
+

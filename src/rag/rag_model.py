@@ -135,8 +135,8 @@ class RAGModel:
         if context_from_structured_data is None:
             context_from_structured_data = self.get_context_from_structured_data(question)
 
-        combined_context = f"Context from general knowledge: \n{context_from_text_data}\n\nContext from real practical data: \n{context_from_structured_data}"
-        answer_from_combined = self.generator.generate_answer(question, combined_context, prompt_type='combined')
+        combined_context = f"Context from general knowledge: \n{context_from_text_data}\n\nContext from experience of companies doing requirements engineering: \n{context_from_structured_data}"
+        answer_from_combined = self.generator.generate_answer(question, combined_context, prompt_type='combined_wo_summarisation')
         evaluation = self.get_evaluation(question, answer_from_combined)
         
         return {

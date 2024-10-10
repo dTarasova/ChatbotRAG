@@ -24,6 +24,8 @@ class Generator:
             return self.get_structured_data_prompt(question, context)
         elif prompt_type == 'combined':
             return self.get_combined_prompt(question, context)
+        elif prompt_type == 'combined_wo_summarisation':
+            return self.get_combined_wo_summarisation_prompt(question, context)
         
     def generate_summary(self, context, question):
         prompt = ChatPromptTemplate.from_messages(
@@ -44,7 +46,7 @@ class Generator:
 You are a specialized assistant in extracting highly relevant information from large contexts.
 Your task is to retrieve the most important details that directly respond to the user's query.
 
-Focus only on information that is directly relevant.
+Focus only on information that is directly relevant to the user questoin.
 Omit any unrelated, redundant, or excessive details.
 Condense longer sections without losing key meaning or important facts.
                     """
@@ -252,3 +254,32 @@ As an expert in Requirements Engineering, your task is to generate a well-struct
         )
 
         return prompt
+    
+
+    def get_combined_wo_summarisation_prompt(self, question, context):
+
+        prompt = ChatPromptTemplate.from_messages(
+            [
+                SystemMessage(
+                    content=(
+"""
+### Instruction ###
+As an expert in Requirements Engineering, your task is to generate a well-structured and organized response to the given query using the provided context. Your response should seamlessly integrate key information from the context. Refrain from using explicit phrases that reference the context itself. 
+###Answer format###
+**Answer**: Deliver a clear and direct answer to the question.
+**Details**: Present supporting information drawn from the context. Include relevant explanations. Provide a structured answer with headings, subheadings, examples when they contribute to explainability. Format text with bold, italics when needed. Please use approximate percentages instead of exact values when presenting the insights.
+"""
+                    )
+                ),
+                HumanMessage(content=f"""
+                                     ###Question### : {question}
+
+                                     ---
+
+                                     ### Context ###: {context}, 
+                                    """)
+            ]
+        )
+
+        return prompt
+

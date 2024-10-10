@@ -19,6 +19,7 @@ setup_streamlit()
 ############################################
 # from src.interface.helper_functions import load_questions
 # from src.rag.rag_model import RAGModel, RAGTypes
+# from termcolor import colored
 
 # questions = load_questions()
 # rag_model = RAGModel(text_retriever_type='step-back')
