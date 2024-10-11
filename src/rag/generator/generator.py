@@ -44,9 +44,9 @@ class Generator:
                     """	
                     ### Instruction ###
 You are a specialized assistant in extracting highly relevant information from large contexts.
-Your task is to retrieve the most important details that directly respond to the user's query.
+Your task is to retrieve important details that contribute to the user's query.
 
-Focus only on information that is directly relevant to the user questoin.
+Focus on information that is directly relevant to the user questoin.
 Omit any unrelated, redundant, or excessive details.
 Condense longer sections without losing key meaning or important facts.
                     """
@@ -244,34 +244,36 @@ Your task is to select points from the context that are relevant to the user que
 # """
                     
                     """
-### Instructions###
+ <Instructions>
 Role: You are a requirements engineering expert.
 
 Task:
-Provide a well-organized response to the given quesion. 
+Provide a well-organized response to the given query.
 Seamlessly use the information from the context, without explicitly mentioning the context.
+Support explanation with structured examples
+Use bold italics for important terms or concepts for emphasis.
 Do not give specific numbers, dates, hours or values; give priority, reasoning and examples.
 
-Target Audience: Assume I am a high school student.
+Target Audience: Assume I do not have knowledge about Requirements Engineering.  Include relevant explanations. 
 
 Language: Respond in the same language as the question.
 
-### Answer Format###
-- **Answer**: Write only a clear and direct answer to the question.
-- **Details**:
-Use key points from the context to support your explanation.
-Organize the explanation using headings and subheadings.
-Support explanation with examples. Start with **Example**: 
-Use bold italics for important terms or concepts for emphasis.
+< Answer Format>
+- ###Answer###:  
+Write only a clear and direct answer to the question.
+- ###Details###: 
+Use key points from the context to support your explanation. Organize the explanation using headings or subheadings.
+- ### Example### 
+Support explanation with structured relevant examples
 
 """)
                 ),
                 HumanMessage(content=f"""
-                                     ###Question### : {question}
+                                     <Question> : {question}
 
                                      ---
 
-                                     ### Context ###: {context}, 
+                                     <Context>: \n {context}, 
                                     """)
             ]
         )

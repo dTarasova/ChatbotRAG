@@ -8,5 +8,3 @@ icon = "👤"
 path = "src/interface/correctness_evaluation.py"
 name = "Corretness Evaluation"
 icon = "🎯"
-
-
