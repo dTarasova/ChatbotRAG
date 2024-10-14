@@ -3,11 +3,11 @@ from src.rag.rag_model import RAGModel
 from src.wo_rag import get_openai_answer
 from src.rag.rag_model import RAGTypes
 
-st.write("""This is the LLM-based educational chatbot for Requirements Engineering (RE). It uses evidence-based data sources to provide users in-depth insights on the topic.
-            \n Please help us evaluate the usability of the chatbot. Ask at least five questions related to Requirements Engineering.
+st.write("""Hi there! This is the LLM-based educational chatbot for Requirements Engineering (RE). It uses evidence-based data sources to provide users in-depth insights on the topic.
+            \n We would love your help in evaluating the usability of the chatbot! Please ask at least five questions related to requirements engineering. 
             \n While testing, please focus on evaluating the chatbot's responses based on their relevance, clarity, level of detail, and suitability for educational purposes.  
             \n Please submit your feedback with this questionnaire: https://forms.gle/vxvaRmMr6EHjmZNJ9""")
-st.markdown("<h6>Type a question, press 'Ask button' to receive answers.</h3>", unsafe_allow_html=True)
+st.markdown("<h6>Type a question, press 'Ask button' to receive answer.</h3>", unsafe_allow_html=True)
 question = st.text_input("Question", key="key_question", label_visibility="collapsed")
 
 if st.button("Ask"):
@@ -17,7 +17,7 @@ if st.button("Ask"):
         rag_model = RAGModel(text_retriever_type='step-back')
         
         # Query the model
-        results = rag_model.query(question, query_types=[RAGTypes.SUMMARISER])
+        results = rag_model.query(question, query_types=[RAGTypes.COMBINED])
         
         # Debug: print the entire results structure for checking
         # st.write("Results structure:", results)

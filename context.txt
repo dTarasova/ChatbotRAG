@@ -5325,3 +5325,163 @@ Context: To reformulate the requirement "the system should be fast," it can be m
 This reformulation provides a specific time frame, making the requirement more actionable and testable.
 Source: napire data
 
+Query: what is re valuation
+Context: and volatility of re itself, improving re (going beyond audits and assessments) remains a diﬃcult topic
+with only few known concepts [23, 41]. for this reason, we believe that most participants do not improve
+their re continuously. for those who do, we expect the main reason to be able to determine strengths and
+weaknesses of their re process and standard.
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Context: participant could give a rationale for their rating. table 5 gives a condensed
+view on the closed questions.
+the amdire approach
+table 5: questionnaire for the assessment (condensed)
+criteria
+statement
+flexibility
+the re reference model allows for ﬂexibility.
+ease of use
+the re reference model is easy to understand.
+eﬀectivity
+the re reference model leads to the desired results.
+eﬃciency
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: method holds or what the long-term views are on cost and beneﬁt when adopting
+and applying those methods. in most cases, accurate evaluations starve in the
+future work section of publications [8].
+theoretical and practical contributions to re are heavily steered by conven-
+tional wisdom rather than empirical observations. in our current understanding,
+Source: Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf
+
+Context: products in a systematic and predictable way. therefore, the
+value of the outcome of re cannot be assessed on its own but
+must be evaluated in its use as a function to the rest of the
+engineering endeavor. in this work, we take an artifact-based
+view on re where we concentrate on the artifacts rather than
+on the methods used to create and modify the artifacts. in our
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Context: panies towards good re is to establish an re reference model, i.e. a company-
+wide deﬁnition of activities and modelling methods to be applied, roles to be
+assigned, and artefacts to be created. once an re reference model is estab-
+lished, it should be continuously improved to reﬂect, e.g. project experiences
+and the continuously evolving organisational culture.
+Source: Improving Requirements Engineering by Artefact Orientation.pdf
+
+Query: what is re valuation
+Context: The relevant information from the DataFrame regarding various aspects of requirements engineering is summarized as follows:
+
+1. **Compatibility (Co-existence, Interoperability)**: 
+   - Mean: 0.37
+   - Standard Deviation: 0.49
+   - Minimum: 0
+   - Maximum: 1
+
+2. **Maintainability (Analysability, Modularity, Modifiability, Reusability, Testability)**: 
+   - Mean: Not applicable (categorical data)
+   - Unique Responses: 92
+
+3. **Performance Efficiency (Time Behaviour, Resource Utilisation, Capacity)**: 
+   - Mean: 0.37
+   - Standard Deviation: 0.49
+   - Minimum: 0
+   - Maximum: 1
+
+4. **Portability (Adaptability, Installability, Replaceability)**: 
+   - Mean: 0.37
+   - Standard Deviation: 0.49
+   - Minimum: 0
+   - Maximum: 1
+
+5. **Reliability (Availability, Fault Tolerance, Maturity, Recoverability)**: 
+   - Mean: 0.37
+   - Standard Deviation: 0.49
+   - Minimum: 0
+   - Maximum: 1
+
+6. **Security (Accountability, Authenticity, Confidentiality, Integrity, Non-repudiation)**: 
+   - Mean: 0.37
+   - Standard Deviation: 0.49
+   - Minimum: 0
+   - Maximum: 1
+
+7. **Safety (Freedom of Risk for Health or Disaster)**: 
+   - Mean: 0.37
+   - Standard Deviation: 0.49
+   - Minimum: 0
+   - Maximum: 1
+
+8. **Usability (Accessibility, Appropriateness, Recognisability, Learnability, Operability, User Error Protection, User Interface Aesthetics)**: 
+   - Mean: Not applicable (categorical data)
+   - Unique Responses: 92
+
+9. **Satisfaction with Requirements Engineering**: 
+   - Unique Responses: 92
+
+10. **Reasons for Dissatisfaction in Requirements Engineering**: 
+    - Most common reason: "Project culture focuses only on development."
+
+This summary provides insights into the importance and performance of various aspects of requirements engineering as reflected in the DataFrame.
+Source: napire data
+
+Query: what is re validation
+Context: validation both strengthen our confidence that we already provide
+a valuable basis for systematically integrating legal concepts
+into re. this overcomes contemporary challenges to regulatory
+re and serves as a basis for exposure to critical discussions
+in the community before continuing with the development of
+tool-supported extensions and large-scale empirical evaluations
+in practice.
+Source: On Developing an Artifact-based Approach to Regulatory Requirements Engineering.pdf
+
+Context: define their individual re process. to our knowledge, there is also no systematic literature review
+on requirements engineering standards.
+status quo in requirements engineering improvement
+process improvement is important for any software engineering practice but for an activity as
+volatile and complex as re, we expect this to be essential. we skipped a more general question
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: tively reﬁned over the different phases whenever it was evident
+that information was missing. this happened particularly often
+with the activities. for instance, when we discussed the impact
+of a quality factor, we realized that we needed to add certain
+activities.
+validation. we validated the model in the second, 90-minutes
+workshop with an re lead as well as an experienced de-
+Source: It's the Activities, Stupid! A New Perspective on RE Quality.pdf
+
+Context: requirements verification and validation
+verification and validation of requirements has the primary goals of 
+ensuring that the requirements correctly represent the needs of 
+stakeholders. with validation, we refer to whether we are building 
+the right system (i.e. are the requirements correct?) and with 
+verification, we refer to whether we are building the system right
+Source: software4kmu learning nuggets.pdf
+
+Context: education for re. however, the ireb certification programme, same as other educa-
+tional re curricula built upon the ireb syllabi, are all based on the core assumption 
+that the ireb fl syllabus covers practically relevant topics. yet, there is limited 
+knowledge about the extent to which practitioners actually perceive the content as use-
+ful and relevant in their work.
+Source: Investigating the Practical Relevance of Requirements Engineering.pdf
+
+Query: what is re validation
+Context: Re-validation refers to the process of verifying that the requirements of a system or project are still valid and meet the needs of stakeholders. It involves checking whether the requirements are still relevant and whether they align with the current goals and objectives of the project. 
+
+From the summarized data, we can see the following relevant activities related to requirements validation and verification:
+
+1. **Automatic Checking**: 410 instances of automatic checking used to validate or verify requirements.
+2. **Informal Peer Reviews**: 78 instances of informal peer reviews used for validation.
+3. **Formal Inspections**: 406 instances of formal inspections using reading techniques or checklists.
+4. **Simulations**: 78 instances of simulations used for validation.
+5. **Walkthroughs**: 406 instances of walkthroughs used for validation.
+6. **No Validation**: 78 instances where requirements are not verified or validated.
+7. **Testers Participation**: 410 instances where testers participate in requirements reviews to align testing with requirements.
+8. **Coverage Checking**: 406 instances of checking the coverage of requirements with tests.
+9. **Acceptance Criteria Definition**: 82 instances of defining acceptance criteria and tests for requirements.
+10. **Test Derivation**: 406 instances of deriving tests from system models to align testing with requirements.
+
+These activities are essential for ensuring that the requirements remain aligned with the project goals and that the final product meets the necessary standards and expectations.
+Source: napire data
+

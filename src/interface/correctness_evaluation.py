@@ -42,7 +42,7 @@ def log_choice(question, answerGPT, answerRAG, correct_model, preferred_model, c
 # Function to get answers from two different models
 def get_model_answers(question):
     rag_model = RAGModel(text_retriever_type='step-back')
-    results = rag_model.query(question, query_types=[RAGTypes.GPT, RAGTypes.SUMMARISER])
+    results = rag_model.query(question, query_types=[RAGTypes.GPT, RAGTypes.COMBINED])
     answerRAG = results["models"][RAGTypes.COMBINED.name]["answer"]
     answerGPT = results["models"][RAGTypes.GPT.name]["answer"]
     # context = results["models"][RAGTypes.SUMMARISER.name]["context"]
@@ -103,16 +103,6 @@ if question and question not in st.session_state.questions:
 # Check if the question exists in session state
 if question and question in st.session_state.logging:
      # Show radio buttons for selecting the better answer
-    st.markdown("<h6>Which of the following answers is correct?</h3>", unsafe_allow_html=True)
-    correctness_choice = st.radio("Correctness", ("Answer 1 (Left)", "Answer 2 (Right)", "Neither", "Both"), label_visibility="collapsed")
-    st.markdown("<h6>If you had to choose, which answer would you prefer? Please choose the option that is more factually accurate, free from misleading or contradictory information, and offers deeper expertise and knowledge from an expert perspective.</h3>", unsafe_allow_html=True)
-    preferred_choice = st.radio("Preferred", ("Answer 1 (Left)", "Answer 2 (Right)"), label_visibility="collapsed")
-    st.markdown("<h6>Please provide a reason for your choice</h3>", unsafe_allow_html=True)
-    choice_explanation = st.text_area("Reasoning", key="key_explanation", label_visibility="collapsed")
-
-    submit_button = st.button("Submit your choice", key="key_submit")
-
-        # Display the answers side by side
     col1, col2 = st.columns(2)
     with col1:
         st.subheader("Answer 1 (Left)")
@@ -120,6 +110,20 @@ if question and question in st.session_state.logging:
     with col2:
         st.subheader("Answer 2 (Right)")
         st.write(st.session_state.logging[question][1][0])
+
+
+    st.divider()    
+    st.markdown("<h6>Which of the following answers is correct?</h3>", unsafe_allow_html=True)
+    correctness_choice = st.radio("Correctness", ("Answer 1 (Left)", "Answer 2 (Right)", "Neither", "Both"), label_visibility="collapsed")
+    st.markdown("<h6>If you had to choose, which answer would you prefer? </h6> ", unsafe_allow_html=True)
+    st.markdown("<h6>Please choose the option that is more factually accurate, free from misleading or contradictory information, and offers deeper expertise and knowledge from an expert perspective.</h3>", unsafe_allow_html=True)
+    preferred_choice = st.radio("Preferred", ("Answer 1 (Left)", "Answer 2 (Right)"), label_visibility="collapsed")
+    st.markdown("<h6>Please provide a reason for your choice</h3>", unsafe_allow_html=True)
+    choice_explanation = st.text_area("Reasoning", key="key_explanation", label_visibility="collapsed")
+
+    submit_button = st.button("Submit your choice", key="key_submit")
+
+        # Display the answers side by side
     # Button to submit the choice
     if submit_button:
         

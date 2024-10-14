@@ -52,7 +52,7 @@ class RAGModel:
         except Exception as e:
             return f"Error retrieving structured data: {str(e)}"
 
-    def query(self, question: str, query_types: List[RAGTypes] = [RAGTypes.GPT, RAGTypes.SUMMARISER]) -> Dict[str, Any]:
+    def query(self, question: str, query_types: List[RAGTypes] = [RAGTypes.GPT, RAGTypes.COMBINED]) -> Dict[str, Any]:
         print("querying rag model")
         """
         Queries the model with the given question and retrieves answers based on the query types.
