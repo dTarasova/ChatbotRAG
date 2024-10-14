@@ -5,7 +5,9 @@ from src.rag.rag_model import RAGTypes
 
 st.write("""Hi there! This is the LLM-based educational chatbot for Requirements Engineering (RE). It uses evidence-based data sources to provide users in-depth insights on the topic.
             \n We would love your help in evaluating the usability of the chatbot! Please ask at least five questions related to requirements engineering. 
-            \n While testing, please focus on evaluating the chatbot's responses based on their relevance, clarity, level of detail, and suitability for educational purposes.  
+            \n This is an educational chatbot whose primary purpose is to explain concepts, suggest techniques and provide examples in the Requirements Engineering domain. 
+            \n Its application to concrete projects without enough relevant context is limited. 
+            \n When testing, please evaluate the chatbot's answers based on their relevance, clarity, level of detail, and applicability for educational purposes. 
             \n Please submit your feedback with this questionnaire: https://forms.gle/vxvaRmMr6EHjmZNJ9""")
 st.markdown("<h6>Type a question, press 'Ask button' to receive answer.</h3>", unsafe_allow_html=True)
 question = st.text_input("Question", key="key_question", label_visibility="collapsed")

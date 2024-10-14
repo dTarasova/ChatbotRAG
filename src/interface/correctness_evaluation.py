@@ -159,7 +159,6 @@ if question and question in st.session_state.logging:
             preferred_model=preferred_model,
             choice_explanation=choice_explanation
         )
-        choice_explanation = ""
         
         st.success(f"Your choice has been logged! You selected: {preferred_model}")
 
