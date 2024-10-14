@@ -2,6 +2,7 @@ import streamlit as st
 from src.rag.rag_model import RAGModel
 from src.wo_rag import get_openai_answer
 from src.rag.rag_model import RAGTypes
+import datetime
 
 st.write("""Hi there! This is the LLM-based educational chatbot for Requirements Engineering (RE). It uses evidence-based data sources to provide users in-depth insights on the topic.
             \n We would love your help in evaluating the usability of the chatbot! Please ask at least five questions related to requirements engineering. 
@@ -27,6 +28,13 @@ if st.button("Ask"):
         # Access the answer from the model response
         answer = results["models"][RAGTypes.COMBINED.name]["answer"]
         context = results["models"][RAGTypes.COMBINED.name]["context"]
+        time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        print("\n\n\n Usability evaluation")	
+        print("timestamp: ", time)
+        print("\n Question:", question)  
+        print("\n\n Answer:", answer)
+        print("\n\n Context:", context)
+
         
         # Display the answer
         st.header("Answer:")

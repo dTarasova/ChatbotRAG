@@ -6230,3 +6230,167 @@ Context: To improve the requirement "the system should handle a large number of 
 In summary, to improve the requirement, focus on making it specific, measurable, and actionable by defining user load metrics, enhancing usability, and utilizing effective requirements elicitation and documentation practices.
 Source: napire data
 
+Query: rds using either email or SMS"?
+Context: aspects in our development life cycle." (rer1)
+summary of the main drawbacks of am4rre according
+to the participants are as follows: incapability to fully replace
+communication and interpretation (rer1, rer2, lr2, lr3);
+model can be complex to use (rer1, rer2, lr1); more
+flexibility can be required for different cases (lr1, lr2, lr3),
+unclear how variability will be addressed (rer2, lr2, lr3).
+Source: On Developing an Artifact-based Approach to Regulatory Requirements Engineering.pdf
+
+Context: in turn conducts interviews.  
+cao and ramesh [3] conducted a qualitative study of 16 software development 
+organisations on their agile re practices. they identified and rated detailed re 
+practices. they found, for example, that face-to-face communication, prototyping and 
+reviews and tests are common agile re practices. to some degree comparable is only
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Context: user story 
+security specification 
+1. as a customer, i 
+want to be able to 
+export my personal 
+information so that i 
+can use it in other 
+systems. 
+1. the system shall ensure that there is no residual 
+data exposed. 
+2. the system shall store credentials securely using 
+the aes encryption algorithm. 
+3. the system shall use the rsa encryption 
+algorithm to protect all data all the time.
+Source: An Approach for Reviewing Security-Related Aspects in Agile Requirements Specifications of Web Applications.pdf
+
+Context: contact, even if the participants distribute the invitation to further colleagues. finally, regarding the expert
+opinions, we express the subjects’ opinions with likert scales which are speciﬁed with ordinal scales with no
+1http://promisedata.googlecode.com
+table 8: questions (simpliﬁed and condensed).
+rq
+no.
+question
+type
+–
+q 1
+what is the size of the enterprise?
+closed(sc)
+q 2
+Source: Naming the Pain in Requirements Engineering A Design for a Global Family of Surveys and First Results from Germany.pdf
+
+Context: correction
+invitation
+synthesis & 
+reporting
+1. replication
+(netherlands)
+dissemination
+creation 
+distribution list
+invitation
+data analysis & 
+interpretation
+final reporting
+online 
+survey
+spreadsheet
+data analysis & 
+interpretation
+creation 
+distribution list
+invitation
+creation 
+distribution list
+baseline 
+report
+yearly 
+re community 
+report
+isern '12
+eessmod
+(models '12)
+ease '13
+replication
+Source: Naming the Pain in Requirements Engineering  Design of a Global Family of Surveys and First Results from Germany.pdf
+
+Query: rds using either email or SMS"?
+Context: The summarized information from the DataFrame regarding project management and requirements engineering is as follows:
+
+1. **Agile vs. Plan-driven Project**: There are 6 unique categories, with "Hybrid" being the most frequent (28 occurrences).
+2. **Relationship with Customer**: This also has 6 unique categories, with "Good" being the most common (36 occurrences).
+3. **Elicitation and Refinement of Requirements**:
+   - The practice of refining requirements in several iterations is noted.
+   - There is a specific phase dedicated to refining requirements.
+4. **Documentation Granularity**: Various levels of documentation granularity are reported.
+5. **Satisfaction with Requirements Engineering**: The satisfaction levels are recorded, but specific numerical values are not provided.
+6. **Reasons for Dissatisfaction in Requirements Engineering**: Multiple reasons are identified, with "Incomplete or hidden requirements" being a common issue.
+7. **Consequences of Dissatisfaction**: Various consequences are noted, but specific details are not provided.
+8. **Top Problems Identified**: There are 14 unique problems reported, with "Incomplete or hidden requirements" being the most frequent (17 occurrences).
+9. **Top Problem Causes**: The most common cause for the top problem is "mistrust".
+
+This summary provides insights into the project management dynamics and challenges faced in requirements engineering without referencing specific data points.
+Source: napire data
+
+Query: How should I align requirements with tests? 
+Context: research there is a strong focus on model-based testing and formal approaches when it comes to the
+alignment of requirements specification and testing as a recent systematic mapping study shows [3].
+however, limitations in practice often include the high effort for creating and maintaining models
+as foundation for deriving code and test cases. thus, there is a trade-off between required efforts
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Context: when considering requirements, it is important to look at them as a whole rather than individually. collections of requirements should 
+have certain characteristics:
+1. completeness: taken together, the requirements should cover all the necessary aspects of the system.
+2. consistency: they should not contradict each other.
+Source: software4kmu learning nuggets.pdf
+
+Context: mitigation actions for incomplete/hidden requirements 
+improve the documentation and conduct more meetings with the developers to detect analysis defects. 
+hire or specialize a requirements analyst. 
+creating templates. 
+creation of a dor (definition of readiness) for the team. 
+invest more time in requirements specification, using scenarios and prototypes to gather requirements
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: that the customer gets what they expect
+the developing stakeholders can be sure they address the customers expectations correctly
+requirements validation
+ensure the right system is built. validate, that the requirements correctly reflect the customers needs.
+requirements verification
+ensure the system is built the right way. verify, that the requirements have been implemented correctly.
+Source: software4kmu learning nuggets.pdf
+
+Context: table 15. propositions about the status quo in aligning tests with requirements before the survey
+supported in
+survey
+no.
+propositions
+first run or new
+question
+p 21
+to align tests with requirements, testers participate in requirements reviews.
+new
+q 15
+p 22
+to align tests with requirements, the coverage of requirements with tests is checked.
+new
+q 15
+p 23
+Source: Status Quo in Requirements Engineering A Theory and a Global Family of Surveys.pdf
+
+Query: How should I align requirements with tests? 
+Context: To align requirements with tests, the following strategies can be summarized based on the DataFrame:
+
+1. **Define Acceptance Criteria and Tests**: Approximately 55.5% of respondents indicate that they define acceptance criteria and tests for requirements to align testing with requirements.
+
+2. **Check Coverage of Requirements with Tests**: About 45.7% of respondents check the coverage of requirements with tests to ensure alignment.
+
+3. **Derive Tests from System Models**: Only around 16.8% of respondents derive tests from system models for alignment.
+
+4. **Tester Participation in Requirements Reviews**: Approximately 43.9% of respondents involve testers in requirements reviews to align testing with requirements.
+
+5. **Lack of Alignment**: About 11.9% of respondents do not align tests and requirements at all.
+
+These insights suggest that while there is a reasonable level of engagement in defining criteria and checking coverage, there is significant room for improvement in deriving tests from system models and ensuring tester participation in reviews.
+Source: napire data
+

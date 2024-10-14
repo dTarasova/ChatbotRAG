@@ -23,6 +23,7 @@ def log_choice(question, answerGPT, answerRAG, correct_model, preferred_model, c
             "choice_explanation": choice_explanation
         }
     }
+    print("Logging entry: ", log_entry)
 
     filename = "model_comparisons.json"
     

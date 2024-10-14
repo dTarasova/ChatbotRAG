@@ -32,9 +32,9 @@ class DocumentDatabaseBase:
         query_embedding = self.embeddings.embed_query(query)
         results = self.vector_store.similarity_search_by_vector(query_embedding, k=5)
         
-        for result in results:
-            print(f"Document: {result.metadata['source']}\n")
-            print(f"Content: {result.page_content}\n\n")
+        # for result in results:
+        #     print(f"Document: {result.metadata['source']}\n")
+        #     print(f"Content: {result.page_content}\n\n")
         return results
 
     def add_doc_todb(self, doc_path: str):

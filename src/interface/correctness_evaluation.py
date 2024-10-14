@@ -23,6 +23,7 @@ def log_choice(question, answerGPT, answerRAG, correct_model, preferred_model, c
             "choice_explanation": choice_explanation
         }
     }
+    print("Logging entry: ", log_entry)
 
     filename = "model_comparisons.json"
     
@@ -87,7 +88,7 @@ if question and question not in st.session_state.questions:
         
     else:
         # Query the RAG model if the answer doesn't exist
-        st.write("Querying the RAG model...")
+        st.write("Querying the RAG model... Please be aware that it make up to 1-2 minutes.")
         
         answerGPT, answerRAG = get_model_answers(question)
     

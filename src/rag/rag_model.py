@@ -34,7 +34,7 @@ class RAGModel:
         :return: Context from text data
         """
         try:
-            print("getting context from text data")
+            # print("getting context from text data")
             return self.retriever_text_data.retrieve_context(question)
         except Exception as e:
             return f"Error retrieving text data: {str(e)}"
@@ -47,13 +47,13 @@ class RAGModel:
         :return: Context from structured data
         """
         try:
-            print("getting context from structured data")
+            # print("getting context from structured data")
             return self.retriever_structured_data.retrieve_context(question)
         except Exception as e:
             return f"Error retrieving structured data: {str(e)}"
 
     def query(self, question: str, query_types: List[RAGTypes] = [RAGTypes.GPT, RAGTypes.COMBINED]) -> Dict[str, Any]:
-        print("querying rag model")
+        # print("querying rag model")
         """
         Queries the model with the given question and retrieves answers based on the query types.
         
@@ -73,7 +73,7 @@ class RAGModel:
         context_from_structured_data = None
 
         for query_type in query_types:
-            print(f"Querying model: {query_type.name}")
+            # print(f"Querying model: {query_type.name}")
             if query_type == RAGTypes.GPT:
                 openai_answer = get_openai_answer(question)
 
@@ -146,7 +146,7 @@ class RAGModel:
         }
 
     def process_summarized_query(self, question: str, context_from_text_data: Optional[str], context_from_structured_data: Optional[str]) -> Dict[str, Any]:
-        print("processing summarized query")	
+        # print("processing summarized query")	
         """Processes a summarized query and returns a dictionary with summarized context and answer."""
         if context_from_text_data is None:
             context_from_text_data = self.get_context_from_text_data(question)
@@ -200,5 +200,5 @@ class RAGModel:
 
 if __name__ == "__main__":
     rag_model = RAGModel()
-    results = rag_model.query("What is RAG?", [RAGTypes.TEXT_DATA, RAGTypes.STRUCTURED_DATA])
+    results = rag_model.query("What is RAG?", [RAGTypes.COMBINED])
     print(json.dumps(results, indent=4))

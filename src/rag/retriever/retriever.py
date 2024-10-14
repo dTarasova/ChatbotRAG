@@ -35,8 +35,8 @@ class Retriever:
         return documents
 
     def retrieve_context(self, query: str) -> str:
-        print("checking findings")
-        docs2 = self.documentDatabase.check_findings(query)
+        # print("checking findings")
+        # docs2 = self.documentDatabase.check_findings(query)
 
         if self.type == 'expand':
             self.query_translator = QueryTranslator(type='expand')
