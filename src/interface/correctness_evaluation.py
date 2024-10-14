@@ -43,7 +43,7 @@ def log_choice(question, answerGPT, answerRAG, correct_model, preferred_model, c
 def get_model_answers(question):
     rag_model = RAGModel(text_retriever_type='step-back')
     results = rag_model.query(question, query_types=[RAGTypes.GPT, RAGTypes.SUMMARISER])
-    answerRAG = results["models"][RAGTypes.SUMMARISER.name]["answer"]
+    answerRAG = results["models"][RAGTypes.COMBINED.name]["answer"]
     answerGPT = results["models"][RAGTypes.GPT.name]["answer"]
     # context = results["models"][RAGTypes.SUMMARISER.name]["context"]
     # print("context ", context)
@@ -76,10 +76,10 @@ if question and question not in st.session_state.questions:
     if found_item:
         model_results = found_item["models"]
         #st.write("Results already exist for this question."
-        if RAGTypes.SUMMARISER.name in model_results:
-            answerRAG = model_results[RAGTypes.SUMMARISER.name]["answer"]
+        if RAGTypes.COMBINED.name in model_results:
+            answerRAG = model_results[RAGTypes.COMBINED.name]["answer"]
         else: 
-            answerRAG = get_answer(question, RAGTypes.SUMMARISER)
+            answerRAG = get_answer(question, RAGTypes.COMBINED)
         if RAGTypes.GPT.name in model_results:
             answerGPT = model_results[RAGTypes.GPT.name]["answer"]
         else:

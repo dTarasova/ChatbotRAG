@@ -1,35 +1,34 @@
-How do I write a good requirement statement?
-What is the level of detail for a requirement that I must provide as a business analyst?
-Do all stakeholders need to review the requirements?
-How much time do I need to spend for Requirements Engineering? 
-How to perform elicitation?
-How to prioritize all requirements my team proposed in order to deliver the most value quicker?
-Can you generate user stories from the following requirement? Requirement: "The mobile app should allow users to reset their passwords using either email or SMS."
-How to structure big projects?
-How can we summarize the requirement? Requirement: "The system should allow admins to generate weekly performance reports for all team members."
-What are the common requirements for an authentications system?
-How to deal with incomplete requirements?
-Who are the people/stakeholders to involve in elicitation?
-Please reformulate this requirement to make it more clear: Requirement: "The system should be fast."
-What tools are available for requirements management?
-How to deal with changing requirements?
-What techniques can be used for requirements validation?
-What are functional and non-functional requirements?
-Is the following requirement good? "The system must load within 2 seconds under a normal load of 1,000 users."
-Whom to involve in the review of requirements?
-What are quality requirements?
-How to deal with ambiguous requirements?
-Can you provide examples of user stories?
-How to document a requirement?
-How can I identify relevant stakeholders?
-What are the benefits of using focus groups for elicitation?
-How can I conduct effective stakeholder interviews?
-How does this requirement contribute to the project? Requirement: "The system must allow real-time data synchronization across multiple platforms."
-How to deal with running out of time in the requirements phase?
-How to prioritize requirements?
-How can I improve the following requirement? Requirement: "The system should handle a large number of users."
-What are the dependencies between the requirements?
-Do you have a checklist for security requirements?
-Why do I need RE in agile environments?
-Give me a template for a textual use case.
-How can I ensure regulatory compliance in requirements?
+How do I write a good requirement statement?  
+What is the level of detail for a requirement that I must provide as a business analyst?  
+Do all stakeholders need to review the requirements?  
+How much time do I need to spend for Requirements Engineering?  
+How to perform elicitation?  
+How to prioritize all requirements my team proposed in order to deliver the most value quicker?  
+Can you generate user stories from the following requirement: "The mobile app should allow users to reset their passwords using either email or SMS"?  
+How to structure big projects?  
+What are the common requirements for an authentication system?  
+How to deal with incomplete requirements?  
+Who are the people/stakeholders to involve in elicitation?  
+Please reformulate this requirement to make it more clear: "The system should be fast."  
+What tools are available for requirements management?  
+How to deal with changing requirements?  
+What techniques can be used for requirements validation?  
+What are functional and non-functional requirements?  
+Is the following requirement good: "The system must load within 2 seconds under a normal load of 1,000 users"?  
+Whom to involve in the review of requirements?  
+What are quality requirements?  
+How to deal with ambiguous requirements?  
+Can you provide examples of user stories?  
+How to document a requirement?  
+How can I identify relevant stakeholders?  
+What are the benefits of using focus groups for elicitation?  
+How can I conduct effective stakeholder interviews?  
+How does this requirement contribute to the project: "The system must allow real-time data synchronization across multiple platforms"?  
+How to deal with running out of time in the requirements phase?  
+How to prioritize requirements?  
+How can I improve the following requirement: "The system should handle a large number of users"?  
+Do you have a checklist for security requirements?  
+Why do I need requirements engineering in agile environments?  
+Give me a template for a textual use case.  
+How to handle conflicting requirements?  
+What are the dependencies between the software requirements?  

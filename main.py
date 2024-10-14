@@ -22,7 +22,7 @@ setup_streamlit()
 # from termcolor import colored
 
 # questions = load_questions()
-# rag_model = RAGModel(text_retriever_type='step-back')
+# rag_model = RAGModel(text_retriever_type='step-back', evaluate_answers=True)
 
 # for i, question in enumerate(questions):
 #     print(colored(f"Question: {question}", "blue"))

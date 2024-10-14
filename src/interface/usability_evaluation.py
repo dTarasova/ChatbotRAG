@@ -23,8 +23,8 @@ if st.button("Ask"):
         # st.write("Results structure:", results)
 
         # Access the answer from the model response
-        answer = results["models"][RAGTypes.SUMMARISER.name]["answer"]
-        context = results["models"][RAGTypes.SUMMARISER.name]["context"]
+        answer = results["models"][RAGTypes.COMBINED.name]["answer"]
+        context = results["models"][RAGTypes.COMBINED.name]["context"]
         
         # Display the answer
         st.header("Answer:")
