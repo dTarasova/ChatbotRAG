@@ -5485,3 +5485,748 @@ From the summarized data, we can see the following relevant activities related t
 These activities are essential for ensuring that the requirements remain aligned with the project goals and that the final product meets the necessary standards and expectations.
 Source: napire data
 
+Query: How can I improve the following requirement: "The system should handle a large number of users"?
+Context: quiz
+what type of requirement is this? 
+1. "the system should be able to process 1000 transactions per second".
+2. "all user input should be validated to prevent incorrect data entry".
+3. "the system should allow users to search for products by category and filter the results by price, brand and customer reviews."
+Source: software4kmu learning nuggets.pdf
+
+Context: risk calculations
+system success factors
+application scenarios
+user interface
+user classes
+system interaction
+release strategy
+domain model
+environment model
+system boundaries
+quality requirements
+assumptions
+sw design constraints
+acceptance criteria
+acceptance test cases
+release planning
+behaviour model
+system interaction
+service interaction
+data model
+user interface
+communication interfaces
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Context: but also practitioners by offering an overview of attributes that
+may serve as key performance indicators of their requirements-
+affected activities. we envision that this model will be ex-
+tended and evolved by the requirements engineering commu-
+nity to provide an applicable and suitable model for the task.
+we will actively maintain the presented resources to enable
+Source: Measuring the Fitness-for-Purpose of Requirements An initial Model of Activities and Attributes.pdf
+
+Context: extend existing ones. for instance, the standish group
+m´
+endez fern´
+andez • wagner • lochmann • baumann
+international (1995) states that 12.4% of project failures
+are caused by missing user involvement. we showed not
+only that these problems can be tackled, we also detailed
+this parameter by the availability of end users, their
+technical ability, conﬁdentiality issues, and the general
+Source: Field Study on Requirements Engineering Artefacts and Patterns.pdf
+
+Context: and manage in atlassian jira8. user stories at tech-
+divison follow the common connextra format: as a
+[role], i want [feature], so that [reason]. we will
+also follow this terminology here.
+the systems under analysis consist of two online
+shopping portals, a customer-relationship system and
+a content-management system, all of which we cannot
+name for non-disclosure-agreement reasons. in total,
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Query: Why do I need requirements engineering in agile environments?
+Context: what are the benefits of applying requirements engineering?
+alignment with stakeholder needs: requirements engineering facilitates clear communication between stakeholders, ensuring 
+that the final product meets their expectations and increasing user satisfaction.
+improved communication and collaboration: requirements engineering fosters collaboration across cross-functional teams,
+Source: software4kmu learning nuggets.pdf
+
+Context: requirements validation and verification – ensuring validity and quality of created requirements.
+impact on project success
+effective requirements engineering is critical to successful software development. research shows that 33% of errors in the software 
+development lifecycle are rooted in insufficient requirements engineering, and 36% of these errors lead to project failure.
+Source: software4kmu learning nuggets.pdf
+
+Context: it is important to recognise that requirements are dynamic and may change due to evolving stakeholder needs, changes in market 
+conditions and advances in technology. it is important to adapt these requirements in the later stages of a project, either by 
+reformulating, deleting or introducing new requirements. adopting this approach is essential to maintaining project responsiveness and
+Source: software4kmu learning nuggets.pdf
+
+Context: management. 
+it’s important to tailor the approach for requirements engineering to the unique needs of each project. 
+while effective re is critical, it does not guarantee project success; several other factors play an important role.
+in diesem lernabschnitt befassen wir uns mit gängigen missverständnissen über requirements engineering (re). wir verstehen, was
+Source: software4kmu learning nuggets.pdf
+
+Context: the key activities of requirements management.
+motivation/importance
+effectively and efficiently managing requirements throughout their entire lifecycle is important for various reasons, such as:
+requirements specifications ​
+can become very large as the project evolves and they need to be managed​
+ in order to avoid redundancy and repetition.
+Source: software4kmu learning nuggets.pdf
+
+Query: What are the dependencies between the software requirements?
+Context: the software system as requirements evolve.
+regulatory and standards compliance: requirements engineering ensures compliance with regulatory requirements and industry 
+standards, mitigating the risk of non-compliance during development.
+accurate project planning: knowing the key problems in advance is a foundation for an effective and efficient development and
+Source: software4kmu learning nuggets.pdf
+
+Context: can vary greatly depending on the type of software system (e.g., 
+corporate information systems, embedded systems).
+different stakeholders have different interests and, thus, different 
+requirements. herewith, such interests and requirements need to 
+be reconciled on the basis of the stakeholders' roles and their 
+importance to the software project. for example, users are primarily
+Source: software4kmu learning nuggets.pdf
+
+Context: in order to avoid redundancy and repetition.
+requirements may change (even after when a system is deployed into production)​
+ due to internal or external causes. managing these changes and tracking 
+down the versions is important.
+requirements influence other artefacts (also beyond re)​
+ since they are the starting point for all later activities. 
+requirements are “used” by several persons​
+Source: software4kmu learning nuggets.pdf
+
+Context: have a strong dependency on the knowledge about
+the customer and his domain. in particular, the less
+familiar customers (e.g., within the ﬁrst development
+project for this customer), the higher the probability of
+deﬁning system success factors. dependencies are also
+related to the degree of innovation of the application. the
+higher the degree, the more speciﬁc success factors are
+documented.
+Source: Field Study on Requirements Engineering Artefacts and Patterns.pdf
+
+Context: system privacy 
+system portability 
+others 
+percentage of answers 
+figure 8: critical non-functional requirements of ml- 
+enabled systems (n = 71) 
+requirements with data (p = 53.556 [53.197, 53.915]), resolving 
+conflicts (p = 42.346 [41.987, 42.706]), managing changing re- 
+quirements (p = 40.915 [40.574, 41.257]), selecting metrics (p = 
+[26.418, 27.021]). 
+customer  expectactions
+Source: Industrial Practices of Requirements Engineering for ML-Enabled Systems in Brazil.pdf
+
+Query: How to handle conflicting requirements between different stakeholders?
+Context: and the discussion was which one of them should be given preference, for ex-
+ample context versus environment. or there was one term but diﬀerent stake-
+holders had diﬀerent interpretations of the concept it represented, for example
+function. these discussions are time-consuming but unavoidable and crucial
+to make sure the artefact model will be accepted by all stakeholders later on.
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: can vary greatly depending on the type of software system (e.g., 
+corporate information systems, embedded systems).
+different stakeholders have different interests and, thus, different 
+requirements. herewith, such interests and requirements need to 
+be reconciled on the basis of the stakeholders' roles and their 
+importance to the software project. for example, users are primarily
+Source: software4kmu learning nuggets.pdf
+
+Context: also be supported by including and training re standards that put emphasis
+on the way requirements should be elicited and speciﬁed.
+2. adjusting its portfolio management to avoid accepting projects under extreme
+time pressure or involving stakeholders that lack business vision.
+3. assessing and improving the eﬃciency of their elicitation techniques.
+Source: Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf
+
+Context: of trust of their bas, and the proper management of the content is
+crucial for increasing this trust level. this management should include
+creating content based on stakeholders’ needs and monitoring changes.
+future research could explore and develop other ways for support-
+ing practitioners in creating and managing such artefacts in software
+development environments.
+Source: An investigation of causes and effects of trust in Boundary Artefacts.pdf
+
+Context: common confusion and pitfalls
+confusion often arises when stakeholders focus on implementation details before fully understanding and agreeing the requirements. 
+this can lead to a number of problems:
+overlooking stakeholder needs: discussing solutions prematurely can cause stakeholders to miss the real needs, resulting in 
+solutions that don't address the right problems.
+Source: software4kmu learning nuggets.pdf
+
+Query: How can I improve the following requirement: "The system should handle a large number of users"?
+Context: quiz
+what type of requirement is this? 
+1. "the system should be able to process 1000 transactions per second".
+2. "all user input should be validated to prevent incorrect data entry".
+3. "the system should allow users to search for products by category and filter the results by price, brand and customer reviews."
+Source: software4kmu learning nuggets.pdf
+
+Context: risk calculations
+system success factors
+application scenarios
+user interface
+user classes
+system interaction
+release strategy
+domain model
+environment model
+system boundaries
+quality requirements
+assumptions
+sw design constraints
+acceptance criteria
+acceptance test cases
+release planning
+behaviour model
+system interaction
+service interaction
+data model
+user interface
+communication interfaces
+Source: Field study on requirements engineering Investigation of artefacts, project parameters, and execution strategies.pdf
+
+Context: but also practitioners by offering an overview of attributes that
+may serve as key performance indicators of their requirements-
+affected activities. we envision that this model will be ex-
+tended and evolved by the requirements engineering commu-
+nity to provide an applicable and suitable model for the task.
+we will actively maintain the presented resources to enable
+Source: Measuring the Fitness-for-Purpose of Requirements An initial Model of Activities and Attributes.pdf
+
+Context: extend existing ones. for instance, the standish group
+m´
+endez fern´
+andez • wagner • lochmann • baumann
+international (1995) states that 12.4% of project failures
+are caused by missing user involvement. we showed not
+only that these problems can be tackled, we also detailed
+this parameter by the availability of end users, their
+technical ability, conﬁdentiality issues, and the general
+Source: Field Study on Requirements Engineering Artefacts and Patterns.pdf
+
+Context: and manage in atlassian jira8. user stories at tech-
+divison follow the common connextra format: as a
+[role], i want [feature], so that [reason]. we will
+also follow this terminology here.
+the systems under analysis consist of two online
+shopping portals, a customer-relationship system and
+a content-management system, all of which we cannot
+name for non-disclosure-agreement reasons. in total,
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Query: Why do I need requirements engineering in agile environments?
+Context: what are the benefits of applying requirements engineering?
+alignment with stakeholder needs: requirements engineering facilitates clear communication between stakeholders, ensuring 
+that the final product meets their expectations and increasing user satisfaction.
+improved communication and collaboration: requirements engineering fosters collaboration across cross-functional teams,
+Source: software4kmu learning nuggets.pdf
+
+Context: requirements validation and verification – ensuring validity and quality of created requirements.
+impact on project success
+effective requirements engineering is critical to successful software development. research shows that 33% of errors in the software 
+development lifecycle are rooted in insufficient requirements engineering, and 36% of these errors lead to project failure.
+Source: software4kmu learning nuggets.pdf
+
+Context: it is important to recognise that requirements are dynamic and may change due to evolving stakeholder needs, changes in market 
+conditions and advances in technology. it is important to adapt these requirements in the later stages of a project, either by 
+reformulating, deleting or introducing new requirements. adopting this approach is essential to maintaining project responsiveness and
+Source: software4kmu learning nuggets.pdf
+
+Context: management. 
+it’s important to tailor the approach for requirements engineering to the unique needs of each project. 
+while effective re is critical, it does not guarantee project success; several other factors play an important role.
+in diesem lernabschnitt befassen wir uns mit gängigen missverständnissen über requirements engineering (re). wir verstehen, was
+Source: software4kmu learning nuggets.pdf
+
+Context: the key activities of requirements management.
+motivation/importance
+effectively and efficiently managing requirements throughout their entire lifecycle is important for various reasons, such as:
+requirements specifications ​
+can become very large as the project evolves and they need to be managed​
+ in order to avoid redundancy and repetition.
+Source: software4kmu learning nuggets.pdf
+
+Query: Why do I need requirements engineering in agile environments?
+Context: Requirements engineering is crucial in agile environments for several reasons:
+
+1. **Iterative Refinement**: Agile projects often involve eliciting and refining requirements in several iterations. This iterative process allows teams to adapt to changing needs and ensure that the requirements remain relevant throughout the project lifecycle.
+
+2. **Dedicated Phases**: While agile emphasizes flexibility, there are still dedicated phases for refining requirements. This structured approach helps in managing expectations and aligning the development process with customer needs.
+
+3. **Diverse Elicitation Techniques**: Agile teams utilize various methods for requirements elicitation, including interviews, analysis of existing documents, prototyping, and workshops. These techniques facilitate better understanding and communication between stakeholders, leading to more accurate requirements.
+
+4. **Customer Satisfaction**: Effective requirements engineering contributes to customer satisfaction by ensuring that the delivered product meets their needs. Teams that can provide what customers require are more likely to succeed in agile environments.
+
+5. **Continuous Improvement**: The feedback loop inherent in agile methodologies allows for continuous improvement in requirements engineering practices, which can enhance the overall quality of the project outcomes.
+
+In summary, requirements engineering in agile environments supports adaptability, enhances communication, and ultimately leads to higher customer satisfaction.
+Source: napire data
+
+Query: What are the dependencies between the software requirements?
+Context: The analysis of the DataFrame reveals the following insights regarding dependencies between software requirements:
+
+1. **Requirements Elicitation Methods**:
+   - The most frequently used method for requirements elicitation is through **Interviews**, with approximately 69.5% of the responses indicating its use.
+   - Other methods such as **Workshops and Focus Groups**, **Prototyping**, and **Analysis of Existing Documents** are also utilized, but specific frequencies for these methods are not detailed in the summary.
+
+2. **Documentation Granularity**:
+   - The majority of respondents (approximately 65.3%) document high-level requirements at the beginning of the project, indicating a common practice in initial requirement gathering.
+   - There are four unique categories of documentation granularity, suggesting varying approaches to how requirements are documented across different projects.
+
+3. **Statistical Summary**:
+   - The mean usage of various elicitation methods is around 0.69, indicating a general trend towards active engagement in requirements gathering.
+   - The standard deviation of 0.46 suggests variability in the extent to which these methods are employed across different projects.
+
+Overall, the dependencies between software requirements appear to be influenced by the methods of elicitation and the granularity of documentation practices, highlighting the importance of structured approaches in requirements engineering.
+Source: napire data
+
+Query: How can I improve the following requirement: "The system should handle a large number of users"?
+Context: To improve the requirement "The system should handle a large number of users," consider the following insights derived from the DataFrame:
+
+1. **Performance Efficiency**: Ensure that the system's performance efficiency is rated highly, focusing on time behavior, resource utilization, and capacity. This can be achieved by conducting performance testing and optimization.
+
+2. **Usability**: The usability of the system should be prioritized. This includes ensuring accessibility, learnability, and user error protection. Gathering user feedback can help identify areas for improvement.
+
+3. **Reliability**: The system must be reliable, with high availability and fault tolerance. Implementing redundancy and failover mechanisms can enhance reliability.
+
+4. **Documentation**: Clear documentation of requirements is essential. Consider documenting high-level requirements initially and refining them into detailed requirements as the project progresses.
+
+5. **Goals and Quality Properties**: Define specific goals related to user handling capacity and establish quality properties that the system must meet.
+
+6. **Stakeholder Involvement**: Engage stakeholders throughout the development process to ensure that the system meets their needs and expectations.
+
+7. **System Behavior**: Clearly define how the system should behave under high user loads, including response times and error handling.
+
+8. **User Interfaces**: Design user interfaces that can accommodate a large number of users without compromising performance or usability.
+
+By focusing on these areas, you can enhance the requirement to ensure that the system effectively handles a large number of users.
+Source: napire data
+
+Query: How to handle conflicting requirements between different stakeholders?
+Context: To handle conflicting requirements between different stakeholders, the following insights can be drawn from the summarized data:
+
+### Common Problems Identified:
+1. **Communication Flaws**:
+   - The most frequently reported issue is communication flaws between the project and the customer, as well as within the project team. This indicates a need for improved communication strategies to ensure all stakeholders are aligned.
+
+2. **Incomplete or Hidden Requirements**:
+   - A significant number of stakeholders reported issues with incomplete or hidden requirements, suggesting that thorough documentation and transparency in requirements gathering are essential.
+
+3. **Inconsistent Requirements**:
+   - Inconsistencies in requirements were also highlighted, which can lead to confusion and conflict. Establishing a clear and consistent requirements management process can mitigate this.
+
+4. **Moving Targets**:
+   - Changing goals and business processes were noted as a problem, indicating that stakeholders should be kept informed of any changes and that flexibility in requirements management is necessary.
+
+5. **Weak Relationships**:
+   - Weak relationships between customers and project leads can exacerbate conflicts. Building stronger relationships through regular check-ins and feedback loops can help address this.
+
+### Causes of Problems:
+- **Lack of Methodology**: The absence of a structured methodology for requirements gathering and management can lead to misunderstandings and conflicts.
+- **Poor Specification**: Requirements that are poorly specified or vague can result in different interpretations among stakeholders.
+- **Power Dynamics**: Conflicts may arise from power dynamics within the team, where certain stakeholders may withhold information or influence decisions disproportionately.
+
+### Recommendations:
+- **Enhance Communication**: Implement regular communication channels and updates to ensure all stakeholders are informed and engaged.
+- **Thorough Documentation**: Maintain comprehensive documentation of requirements and changes to provide clarity and reduce misunderstandings.
+- **Stakeholder Engagement**: Foster strong relationships with stakeholders through active engagement and collaboration.
+- **Flexibility and Adaptability**: Be prepared to adapt to changing requirements while ensuring that all stakeholders are aligned with the changes.
+
+By addressing these common problems and their underlying causes, teams can better manage conflicting requirements and improve overall project outcomes.
+Source: napire data
+
+Query: why do i need requirements engineering in agile environments?
+Context: at m¨
+unchen, garching
+tel.: +49-89-28917056
+e-mail: mendezfe@in.tum.de
+birgit penzenstadler
+university of california, irvine
+e-mail: bpenzens@uci.edu
+arxiv:1611.10024v1  [cs.se]  30 nov 2016
+d. m´
+endez fern´
+andez, b. penzenstadler
+1 introduction
+requirements engineering (re) is an important success factor for software
+and systems development projects as precise requirements are critical deter-
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: the software system as requirements evolve.
+regulatory and standards compliance: requirements engineering ensures compliance with regulatory requirements and industry 
+standards, mitigating the risk of non-compliance during development.
+accurate project planning: knowing the key problems in advance is a foundation for an effective and efficient development and
+Source: software4kmu learning nuggets.pdf
+
+Context: in order to avoid redundancy and repetition.
+requirements may change (even after when a system is deployed into production)​
+ due to internal or external causes. managing these changes and tracking 
+down the versions is important.
+requirements influence other artefacts (also beyond re)​
+ since they are the starting point for all later activities. 
+requirements are “used” by several persons​
+Source: software4kmu learning nuggets.pdf
+
+Context: technically unfeasible requirements 
+similarly, unclear responsibilities are rarely experienced as a problem. the clear 
+roles in agile processes seem to provide a good understanding here. respondents who 
+experienced this problem informed problems on the developer side or customer side 
+to really understand and live up to their corresponding roles. hence, the roles in agile
+Source: Requirements Engineering Practice and Problems in Agile Projects Results from an International Survey.pdf
+
+Context: what are the benefits of applying requirements engineering?
+alignment with stakeholder needs: requirements engineering facilitates clear communication between stakeholders, ensuring 
+that the final product meets their expectations and increasing user satisfaction.
+improved communication and collaboration: requirements engineering fosters collaboration across cross-functional teams,
+Source: software4kmu learning nuggets.pdf
+
+Query: Why do I need requirements engineering in agile environments?
+Context: Sorry, the DataFrame doesn’t provide enough information.
+Source: napire data
+
+Query: what are the dependencies between the software requirements?
+Context: can vary greatly depending on the type of software system (e.g., 
+corporate information systems, embedded systems).
+different stakeholders have different interests and, thus, different 
+requirements. herewith, such interests and requirements need to 
+be reconciled on the basis of the stakeholders' roles and their 
+importance to the software project. for example, users are primarily
+Source: software4kmu learning nuggets.pdf
+
+Context: the software system as requirements evolve.
+regulatory and standards compliance: requirements engineering ensures compliance with regulatory requirements and industry 
+standards, mitigating the risk of non-compliance during development.
+accurate project planning: knowing the key problems in advance is a foundation for an effective and efficient development and
+Source: software4kmu learning nuggets.pdf
+
+Context: have a strong dependency on the knowledge about
+the customer and his domain. in particular, the less
+familiar customers (e.g., within the ﬁrst development
+project for this customer), the higher the probability of
+deﬁning system success factors. dependencies are also
+related to the degree of innovation of the application. the
+higher the degree, the more speciﬁc success factors are
+documented.
+Source: Field Study on Requirements Engineering Artefacts and Patterns.pdf
+
+Context: when considering requirements, it is important to look at them as a whole rather than individually. collections of requirements should 
+have certain characteristics:
+1. completeness: taken together, the requirements should cover all the necessary aspects of the system.
+2. consistency: they should not contradict each other.
+Source: software4kmu learning nuggets.pdf
+
+Context: 5 min
+level
+external ressources
+research describing the importance of re
+dependencies
+id 1.1.1.1 - frequently encountered misconceptions  
+next item
+id 1.1.1.3 - what is a requirement?  
+goals (teaching 
+perspective)
+to provide an understanding of the role and significance of requirements engineering in software 
+development
+content description 
+(teaching 
+perspective)
+Source: software4kmu learning nuggets.pdf
+
+Query: How can I improve the following requirement: "The system should handle a large number of users"?
+Context: To improve the requirement "The system should handle a large number of users," consider the following insights derived from the DataFrame:
+
+1. **Performance Efficiency**: The average performance efficiency score is approximately 0.58, indicating that performance is a significant concern. Focus on optimizing system performance to ensure it can handle increased user loads effectively.
+
+2. **Usability**: The usability aspect is crucial for user satisfaction. Ensure that the system remains user-friendly even with a large number of users. This includes accessibility, learnability, and operability.
+
+3. **Reliability**: The reliability score suggests that the system should be designed to be fault-tolerant and maintain high availability. Implement mechanisms to ensure the system remains operational under heavy load.
+
+4. **Security**: With more users, security becomes increasingly important. Ensure that the system can maintain confidentiality, integrity, and accountability, especially when handling sensitive user data.
+
+5. **Maintainability**: The system should be designed for easy maintenance and updates. This will help in scaling the system as the number of users grows.
+
+6. **Portability**: Consider the adaptability of the system across different environments. This can help in scaling the system to accommodate more users.
+
+7. **Goals and Quality Properties**: Clearly define the goals related to user capacity and ensure that quality properties are established to meet user expectations.
+
+8. **Stakeholder Involvement**: Engage stakeholders to gather requirements and feedback on how the system should perform under heavy user loads.
+
+By addressing these areas, you can enhance the requirement to be more specific and actionable, such as: "The system should efficiently handle up to X concurrent users while maintaining performance, usability, reliability, and security standards."
+Source: napire data
+
+Query: how can i improve the following requirement: "the system should handle a large number of users"?
+Context: quiz
+what type of requirement is this? 
+1. "the system should be able to process 1000 transactions per second".
+2. "all user input should be validated to prevent incorrect data entry".
+3. "the system should allow users to search for products by category and filter the results by price, brand and customer reviews."
+Source: software4kmu learning nuggets.pdf
+
+Context: unclear business needs and poor defined requirements as the main causes.  
+to address the first three of these causes, related to the people category, aiming 
+prevention, we recommend training on best re practices, selecting highly 
+experienced requirements analysts and involving domain experts and/or providing 
+appropriate training on the application domain. for cases were the lack of domain
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: system. it defines user-visible characteristics of the system by means of e.g. an (infor-
+mation system) service description and a use case model. the information system’s 
+constraints capture single quantified requirements that address the system in its appli-
+cations, architecture and environment.  
+finally, to define the scope of the different levels that address the business and sys-
+Source: A Meta Model for Artefact-Orientation Fundamentals and Lessons Learned in Requirements Engineering.pdf
+
+Context: improve the analysis to be more detailed.  
+more frequent meetings with the customer to align expectations. 
+requirements reviews and frequent releases. 
+improving the quality of the requirements documentation, or improving elicitation methods. 
+developing requirements according to suggestions of the mps-sw reference model. 
+improvement of the artefacts; adoption of software inspections.
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: and manage in atlassian jira8. user stories at tech-
+divison follow the common connextra format: as a
+[role], i want [feature], so that [reason]. we will
+also follow this terminology here.
+the systems under analysis consist of two online
+shopping portals, a customer-relationship system and
+a content-management system, all of which we cannot
+name for non-disclosure-agreement reasons. in total,
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Query: how to handle conflicting requirements between different stakeholders?
+Context: and the discussion was which one of them should be given preference, for ex-
+ample context versus environment. or there was one term but diﬀerent stake-
+holders had diﬀerent interpretations of the concept it represented, for example
+function. these discussions are time-consuming but unavoidable and crucial
+to make sure the artefact model will be accepted by all stakeholders later on.
+Source: Artefact-based Requirements Engineering The AMDiRE Approach.pdf
+
+Context: can vary greatly depending on the type of software system (e.g., 
+corporate information systems, embedded systems).
+different stakeholders have different interests and, thus, different 
+requirements. herewith, such interests and requirements need to 
+be reconciled on the basis of the stakeholders' roles and their 
+importance to the software project. for example, users are primarily
+Source: software4kmu learning nuggets.pdf
+
+Context: available and what can be used also in the eyes of the various 
+stakeholders who need access to the elaborated requirements 
+along the discussions of the requirements), and 
+2. to what extent  can we make sure that the content outlined by 
+amdire can be captured following the rules defined in amdire
+both are essentially also possible with document management
+Source: software4kmu learning nuggets.pdf
+
+Context: also be supported by including and training re standards that put emphasis
+on the way requirements should be elicited and speciﬁed.
+2. adjusting its portfolio management to avoid accepting projects under extreme
+time pressure or involving stakeholders that lack business vision.
+3. assessing and improving the eﬃciency of their elicitation techniques.
+Source: Naming the Pain in Requirements Engineering Contemporary Problems, Causes, and Effects in Practice.pdf
+
+Context: common confusion and pitfalls
+confusion often arises when stakeholders focus on implementation details before fully understanding and agreeing the requirements. 
+this can lead to a number of problems:
+overlooking stakeholder needs: discussing solutions prematurely can cause stakeholders to miss the real needs, resulting in 
+solutions that don't address the right problems.
+Source: software4kmu learning nuggets.pdf
+
+Query: why do i need requirements engineering in agile environments?
+Context: Requirements engineering is crucial in agile environments for several reasons:
+
+1. **Iterative Refinement**: Agile projects often involve eliciting and refining requirements in several iterations. This iterative approach allows teams to adapt to changing needs and ensure that the requirements remain relevant throughout the project lifecycle.
+
+2. **Dedicated Phases**: While agile emphasizes flexibility, having specifically dedicated phases for refining requirements can enhance clarity and focus, ensuring that all stakeholders are aligned on project goals.
+
+3. **Diverse Elicitation Techniques**: Agile teams utilize various methods for requirements elicitation, including interviews, analysis of existing documents, prototyping, and workshops. This diversity helps capture a comprehensive view of stakeholder needs and expectations.
+
+4. **Satisfaction with Requirements Engineering**: Many respondents express satisfaction with the requirements engineering process in their agile projects, indicating that effective requirements management contributes positively to project outcomes.
+
+5. **Customer-Centric Focus**: A common reason for satisfaction in requirements engineering is the ability to provide what customers truly require, which is essential for delivering value in agile projects.
+
+In summary, requirements engineering in agile environments supports adaptability, stakeholder alignment, and customer satisfaction, ultimately leading to more successful project outcomes.
+Source: napire data
+
+Query: why do i need requirements engineering in agile environments?
+Context: what are the benefits of applying requirements engineering?
+alignment with stakeholder needs: requirements engineering facilitates clear communication between stakeholders, ensuring 
+that the final product meets their expectations and increasing user satisfaction.
+improved communication and collaboration: requirements engineering fosters collaboration across cross-functional teams,
+Source: software4kmu learning nuggets.pdf
+
+Context: requirements validation and verification – ensuring validity and quality of created requirements.
+impact on project success
+effective requirements engineering is critical to successful software development. research shows that 33% of errors in the software 
+development lifecycle are rooted in insufficient requirements engineering, and 36% of these errors lead to project failure.
+Source: software4kmu learning nuggets.pdf
+
+Context: it is important to recognise that requirements are dynamic and may change due to evolving stakeholder needs, changes in market 
+conditions and advances in technology. it is important to adapt these requirements in the later stages of a project, either by 
+reformulating, deleting or introducing new requirements. adopting this approach is essential to maintaining project responsiveness and
+Source: software4kmu learning nuggets.pdf
+
+Context: management. 
+it’s important to tailor the approach for requirements engineering to the unique needs of each project. 
+while effective re is critical, it does not guarantee project success; several other factors play an important role.
+in diesem lernabschnitt befassen wir uns mit gängigen missverständnissen über requirements engineering (re). wir verstehen, was
+Source: software4kmu learning nuggets.pdf
+
+Context: the key activities of requirements management.
+motivation/importance
+effectively and efficiently managing requirements throughout their entire lifecycle is important for various reasons, such as:
+requirements specifications ​
+can become very large as the project evolves and they need to be managed​
+ in order to avoid redundancy and repetition.
+Source: software4kmu learning nuggets.pdf
+
+Query: what are the dependencies between the software requirements?
+Context: The analysis of the DataFrame reveals the following relevant information regarding dependencies between software requirements:
+
+1. **Requirements Elicitation Methods**:
+   - **Interviews**: Approximately 69.5% of the projects utilize interviews for requirements elicitation.
+   - **Analysis of Existing Documents**: The frequency of this method is not explicitly quantified but is included in the analysis.
+   - **Risk Analyses**: Similar to the above, this method's usage is noted but not quantified.
+   - **Prototyping**: This method is also employed, indicating a hands-on approach to understanding requirements.
+   - **Workshops and Focus Groups**: This collaborative method is used, suggesting dependencies on group dynamics and stakeholder involvement.
+   - **Reuse Databases and Guidelines**: Indicates reliance on existing knowledge and resources.
+   - **Design Thinking / Lean Startup**: Reflects a modern approach to requirements gathering, emphasizing user-centric design.
+   - **External Experts**: Involvement of external experts suggests dependencies on specialized knowledge.
+   - **Observations**: This method indicates a practical approach to understanding user needs.
+
+2. **Documentation Granularity**:
+   - The most common approach (approximately 65.3%) is to document high-level requirements at the beginning of the project and refine them as needed. This suggests a dependency on initial stakeholder input and iterative development.
+
+Overall, the data indicates that various elicitation methods are employed, reflecting a dependency on both internal and external resources, stakeholder engagement, and iterative refinement of requirements documentation.
+Source: napire data
+
+Query: how can i improve the following requirement: "the system should handle a large number of users"?
+Context: quiz
+what type of requirement is this? 
+1. "the system should be able to process 1000 transactions per second".
+2. "all user input should be validated to prevent incorrect data entry".
+3. "the system should allow users to search for products by category and filter the results by price, brand and customer reviews."
+Source: software4kmu learning nuggets.pdf
+
+Context: unclear business needs and poor defined requirements as the main causes.  
+to address the first three of these causes, related to the people category, aiming 
+prevention, we recommend training on best re practices, selecting highly 
+experienced requirements analysts and involving domain experts and/or providing 
+appropriate training on the application domain. for cases were the lack of domain
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: system. it defines user-visible characteristics of the system by means of e.g. an (infor-
+mation system) service description and a use case model. the information system’s 
+constraints capture single quantified requirements that address the system in its appli-
+cations, architecture and environment.  
+finally, to define the scope of the different levels that address the business and sys-
+Source: A Meta Model for Artefact-Orientation Fundamentals and Lessons Learned in Requirements Engineering.pdf
+
+Context: improve the analysis to be more detailed.  
+more frequent meetings with the customer to align expectations. 
+requirements reviews and frequent releases. 
+improving the quality of the requirements documentation, or improving elicitation methods. 
+developing requirements according to suggestions of the mps-sw reference model. 
+improvement of the artefacts; adoption of software inspections.
+Source: Preventing Incomplete Hidden Requirements Reflections on Survey Data from Austria and Brazil.pdf
+
+Context: and manage in atlassian jira8. user stories at tech-
+divison follow the common connextra format: as a
+[role], i want [feature], so that [reason]. we will
+also follow this terminology here.
+the systems under analysis consist of two online
+shopping portals, a customer-relationship system and
+a content-management system, all of which we cannot
+name for non-disclosure-agreement reasons. in total,
+Source: Rapid quality assurance with Requirements Smells.pdf
+
+Query: how to handle conflicting requirements between different stakeholders?
+Context: To handle conflicting requirements between different stakeholders, the following strategies can be derived from the summarized data:
+
+1. **Identify Problems**: Common issues include:
+   - Poorly specified requirements.
+   - A lot of features to implement before final delivery.
+   - Delayed projects that had to deliver.
+
+2. **Understand Causes**: The causes of these problems often relate to:
+   - A bad image of the IT team, perceived as ineffective.
+   - Insufficient communication and understanding of requirements.
+   - Change fatigue within the team, leading to low morale.
+
+3. **Assess Effects**: The effects of these problems can manifest as:
+   - Increased rework due to misunderstandings.
+   - Wrong product design when creating solutions.
+   - Low team morale and productivity.
+
+4. **Engagement and Communication**: Regular engagement with stakeholders to clarify requirements and expectations can help mitigate conflicts.
+
+5. **Documentation and Transparency**: Maintaining clear documentation of requirements and changes can reduce misunderstandings and align stakeholder expectations.
+
+6. **Prioritization**: Establishing a prioritization framework for requirements can help manage conflicting demands from different stakeholders.
+
+7. **Facilitation of Discussions**: Organizing workshops or meetings to facilitate discussions among stakeholders can help in reconciling differing views and reaching a consensus.
+
+By implementing these strategies, teams can better navigate the complexities of conflicting requirements and enhance collaboration among stakeholders.
+Source: napire data
+
+Query: how can i improve the following requirement: "the system should handle a large number of users"?
+Context: To improve the requirement "the system should handle a large number of users," consider the following insights derived from the DataFrame:
+
+1. **Performance Efficiency**: The average performance efficiency score is approximately 0.72, indicating that performance is generally considered important. Aim for a more specific performance metric, such as response time or throughput, to quantify what "handling a large number of users" means.
+
+2. **Usability**: Ensure that usability aspects are addressed, as they can impact how well the system performs under load. Focus on accessibility, learnability, and user error protection to enhance user experience.
+
+3. **Requirements Elicitation**: Utilize various methods for requirements elicitation, such as:
+   - **Interviews**: Engage with stakeholders to gather detailed expectations regarding user load.
+   - **Analysis of Existing Documents**: Review any existing performance benchmarks or user load tests.
+   - **Risk Analyses**: Identify potential risks associated with high user loads and plan mitigations.
+
+4. **Prototyping and Workshops**: Conduct prototyping sessions and workshops to visualize how the system will handle a large number of users. This can help in refining the requirement further.
+
+5. **Documentation**: Document performance requirements in a quantified manner. For example, specify the maximum number of concurrent users the system should support and the expected response time under that load.
+
+By focusing on these areas, you can create a more robust and actionable requirement that clearly defines expectations for handling a large number of users.
+Source: napire data
+
+Query: why do i need requirements engineering in agile environments?
+Context: Requirements engineering is crucial in agile environments for several reasons:
+
+1. **Iterative Refinement**: Agile projects often involve refining requirements through several iterations. This ensures that the evolving needs of stakeholders are continuously addressed.
+
+2. **Dedicated Phases**: There are specific phases in agile projects where requirements are elicited and refined, allowing for focused attention on gathering and clarifying requirements.
+
+3. **Diverse Elicitation Techniques**: Various methods such as interviews, analysis of existing documents, prototyping, and workshops are employed to gather requirements. This diversity helps in capturing a comprehensive view of stakeholder needs.
+
+4. **Satisfaction with Requirements Engineering**: Many respondents express satisfaction with the requirements engineering process, indicating its effectiveness in meeting project goals.
+
+5. **Customer-Centric Focus**: A common reason for satisfaction is the ability to provide what customers require, highlighting the importance of aligning requirements with customer expectations.
+
+In summary, requirements engineering in agile environments facilitates adaptability, ensures stakeholder engagement, and enhances the overall quality of the project outcomes.
+Source: napire data
+
+Query: how can i improve the following requirement: "the system should handle a large number of users"?
+Context: To improve the requirement "the system should handle a large number of users," consider the following insights derived from the DataFrame:
+
+1. **Performance Efficiency**: The average score for performance efficiency is approximately 0.72, indicating a generally positive perception of the system's ability to manage performance-related aspects. However, there is a standard deviation of 0.45, suggesting variability in responses. It may be beneficial to conduct further analysis or testing to ensure that the system can consistently handle high user loads.
+
+2. **Usability**: While specific usability metrics were not detailed in the summary, ensuring that the system is user-friendly and accessible is crucial when scaling to a large number of users. Focus on aspects such as learnability and operability to enhance user experience.
+
+3. **Requirements Elicitation**: The data indicates that various methods are used for requirements elicitation, including interviews, analysis of existing documents, and workshops. Engaging stakeholders through these methods can help refine the requirement to be more specific, such as defining what "a large number of users" means in terms of user load, response times, and system performance under stress.
+
+4. **Documentation**: The most common approach to documenting performance efficiency is through quantified textual requirements. This suggests that specifying measurable criteria (e.g., "the system should support 10,000 concurrent users with a response time of less than 2 seconds") can provide clarity and help in assessing whether the requirement is met.
+
+5. **Risk Analysis**: Incorporating risk analyses can help identify potential bottlenecks or issues that may arise when scaling the system. This proactive approach can lead to better planning and implementation strategies.
+
+In summary, to improve the requirement, focus on making it specific, measurable, and actionable by defining user load metrics, enhancing usability, and utilizing effective requirements elicitation and documentation practices.
+Source: napire data
+

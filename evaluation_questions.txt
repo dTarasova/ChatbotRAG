@@ -30,5 +30,6 @@ How can I improve the following requirement: "The system should handle a large n
 Do you have a checklist for security requirements?  
 Why do I need requirements engineering in agile environments?  
 Give me a template for a textual use case.  
-How to handle conflicting requirements?  
+How to handle conflicting requirements between different stakeholders?  
 What are the dependencies between the software requirements?  
+How can I ensure regulatory compliance in requirements? 
