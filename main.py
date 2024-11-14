@@ -2,6 +2,15 @@
 
 from src.interface.streamlit_incorporation import setup_streamlit 
 setup_streamlit()
+###################################
+# Example usage
+# from src.logging_extractor import process_log_file
+
+
+# input_file = 'log_entries.txt'  # Replace with your input .txt file path
+# output_file = 'output.tex'      # Replace with your desired output .tex file path
+# process_log_file(input_file, output_file)
+
 
 #################################
 # from src.rag.retriever.unstructured_data_loading.document_database import DocumentDatabaseFaiss

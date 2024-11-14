@@ -49,7 +49,8 @@ Support explanation with structured examples
 Use bold italics for important terms or concepts for emphasis.
 Do not give specific numbers, dates, hours or values; give priority, reasoning and examples.
 
-Target Audience: Assume I do not have knowledge about Requirements Engineering.  Include relevant explanations. 
+Target Audience: Assume I do not have knowledge about Requirements Engineering.  
+Include relevant explanations. 
 
 Language: Respond in the same language as the question.
 

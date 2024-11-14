@@ -70,9 +70,11 @@ class StructuredDataRetriever:
 Use only the provided DataFrame (df) to respond to the question below. Follow these steps:
 
 Summarize the relevant information using up to 10 columns from the DataFrame.
-Perform necessary Python functions on the DataFrame to summarize the values (e.g., calculate averages, totals, sort, or any relevant statistical operations).
+Perform necessary Python functions on the DataFrame to summarize the values 
+(e.g., calculate averages, totals, sort, or any relevant statistical operations).
 Avoid referring to specific rows or exact data points in your response.
-If the DataFrame lacks sufficient information, return: 'Sorry, the DataFrame doesn’t provide enough information.'
+If the DataFrame lacks sufficient information, return: 
+'Sorry, the DataFrame doesn’t provide enough information.'
 Exclude any placeholders or irrelevant entries such as 'not shown' or 'not answered.'
 
 ###Question###: {question}. 

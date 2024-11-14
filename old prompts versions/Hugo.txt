@@ -1,0 +1,6 @@
+What are the common requirements for an authentication system?  
+How to deal with incomplete requirements?  
+Who are the people/stakeholders to involve in elicitation?  
+Please reformulate this requirement to make it more clear: "The system should be fast."  
+What tools are available for requirements management?  
+How to deal with changing requirements?  
